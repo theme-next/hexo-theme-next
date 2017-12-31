@@ -56,10 +56,6 @@ $ git pull
 
 Приветсвуется любое содействие, не стесняйтесь сообщать «Баги», брать «Форки» и вливать «Пулы».
 
-## Лицензия
-
-«NexT» распространяется под лицензией [AGPL][lic-url].
-
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 

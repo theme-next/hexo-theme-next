@@ -56,10 +56,6 @@ For those who also encounter **«[Error: Cannot find module 'hexo-util'](https:/
 
 Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
 
-## License
-
-«NexT» is licensed under [AGPL][lic-url].
-
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
