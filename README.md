@@ -47,8 +47,6 @@ Howbeit, you can bypass update errors by `Commit`, `Stash` or `Discard` local ch
 
 If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].
 
-Read here.
-
 ## Known Bugs
 
 For those who also encounter **«[Error: Cannot find module 'hexo-util'](https://github.com/iissnan/hexo-theme-next/issues/1490)»**, please check your NPM version.
