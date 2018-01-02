@@ -13,7 +13,7 @@
 [![hexo-image]][hexo-url]
 [![lic-image]][lic-url]
 
-* :triangular_flag_on_post: Recommend Markdown Editor：<a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
+* :triangular_flag_on_post: Recommended Markdown Editor: <a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 ## Live Preview
 

@@ -13,6 +13,8 @@
 [![hexo-image]][hexo-url]
 [![lic-image]][lic-url]
 
+* :triangular_flag_on_post: Рекомендуемый Маркдаун Редактор: <a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
+
 ## Демо
 
 * :heart_decoration: Muse тема: [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me) | [Hui Wang](http://hui-wang.info)
@@ -44,6 +46,8 @@ $ git pull
 
 А если всплывают ошибки во время обновления (что-то наподобии **«Commit your changes or stash them before you can merge»**), рекомендуется ознакомиться с особенностью хранения [дата-файлов в Hexo][docs-data-files-url].\
 Как бы то ни было, можно обойти ошибки при обновлении если «Закомитить», «Стэшнуть» или «Откатить» локальные изменения. Смотрим  [здесь](https://stackoverflow.com/a/15745424/5861495) как это сделать.
+
+Если нужно обновиться с версии v5.1.x на v6.0.x, читаем [здесь][docs-update-5-1-x-url].
 
 ## Известные баги
 
@@ -82,3 +86,4 @@ $ git pull
 
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
+[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/UPDATE-FROM-5.1.X.md
