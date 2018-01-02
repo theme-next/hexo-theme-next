@@ -13,7 +13,7 @@
 [![hexo-image]][hexo-url]
 [![lic-image]][lic-url]
 
-* :triangular_flag_on_post: Рекомендуемый Маркдаун Редактор: <a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
+* :triangular_flag_on_post: Рекомендуемый Маркдаун Редактор: <a href="https://github.com/theme-next/hexo-editor" target="_blank">HexoEditor</a>
 
 ## Демо
 
