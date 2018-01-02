@@ -106,6 +106,20 @@ Set theme in main **hexo root config** `_config.yml` file:
 theme: next
 ```
 
+<h1 align="center">Plugins</h1>
+
+In NexT config now you can find dependencies on each module which was moved to external repo.
+
+For example, you want to use `fancybox` in your site. Go to NexT config and see:
+
+```yml
+# Fancybox
+# Dependencies: https://github.com/theme-next/theme-next-fancybox
+fancybox: false
+```
+
+Then turn on `fancybox` and go to Dependencies link with installation instructions of this module.
+
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
 [releases-url]: https://github.com/theme-next/hexo-theme-next/releases
