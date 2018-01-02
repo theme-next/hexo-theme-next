@@ -108,7 +108,7 @@ theme: next
 
 <h1 align="center">Plugins</h1>
 
-In NexT config now you can find dependencies on each module which was moved to external repo.
+In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
 
 For example, you want to use `fancybox` in your site. Go to NexT config and see:
 
