@@ -644,6 +644,12 @@ tabs:
     labels: true
   border_radius: 0
 
+# Reading progress bar
+reading_progress:
+  enable: false
+  color: "#37c6c0"
+  height: 2px
+
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
