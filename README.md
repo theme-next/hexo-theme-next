@@ -13,6 +13,8 @@
 [![hexo-image]][hexo-url]
 [![lic-image]][lic-url]
 
+* :triangular_flag_on_post: Recommend Markdown Editor：<a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
+
 ## Live Preview
 
 * :heart_decoration: Muse scheme: [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me) | [Hui Wang](http://hui-wang.info)
