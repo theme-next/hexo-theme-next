@@ -16,4 +16,4 @@
 2. Склонировать новый v6.x репозиторий в любую другую директорию, отличную от `next`. Например, в директорию `next-reloaded`: `git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded`. Итак, нет необходимости трогать старую NexT 5.1.x директорию и можно работать с новой `next-reloaded`.
 3. Открываем главную Hexo-конфигурацию и устанавливаем параметр темы: `theme: next-reloaded`. Так Ваша директория `next-reloaded` должна грузиться при генерации. Если Вы будете наблюдать какие-либо баги или Вам попросту не нравится эта новая версия, в любой момент Вы можете использовать старую 5.1.x.
 
-А как активировать 3rd-party библиотеки, смотрим здесь [здесь](https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md#%D0%A8%D0%B0%D0%B3-3--%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D1%83%D0%B5%D0%BC).
+А как активировать 3rd-party библиотеки, смотрим здесь [здесь](https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md#%D0%9F%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D1%8B).
