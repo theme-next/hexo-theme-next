@@ -118,7 +118,7 @@ theme: next
 fancybox: false
 ```
 
-将 `fancybox` 配置项打开，进入它上面的 Dependencies 链接以查看它的安装步骤。
+将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest

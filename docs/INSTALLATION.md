@@ -118,7 +118,7 @@ For example, you want to use `fancybox` in your site. Go to NexT config and see:
 fancybox: false
 ```
 
-Then turn on `fancybox` and go to Dependencies link with installation instructions of this module.
+Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
