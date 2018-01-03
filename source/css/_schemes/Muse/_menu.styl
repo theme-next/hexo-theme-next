@@ -22,12 +22,38 @@
     vertical-align: top;
   }
 
+  .badge {
+    display: inline-block;
+    padding: 1px 4px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $gainsboro;
+    +mobile() {
+      float: right;
+      margin: 0.35em 0 0 0;
+    }
+  }
+
   br {
     +mobile() { display: none; }
   }
 
   a {
-    +mobile() { padding: 5px 10px; }
+    +mobile() {
+      padding: 5px 10px;
+      border-bottom-color: white !important;
+    }
   }
   .fa { margin-right: 0; }
+}
+
+.menu-item-active a {
+  border-bottom-color: $menu-link-hover-border !important;
+  color: $black-deep;
+
+  +mobile() {
+    border-bottom-color: white !important;
+  }
 }
