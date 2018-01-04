@@ -648,6 +648,7 @@ tabs:
   border_radius: 0
 
 # Reading progress bar
+# Dependencies: https://github.com/theme-next/theme-next-reading-progress
 reading_progress:
   enable: false
   color: "#37c6c0"
