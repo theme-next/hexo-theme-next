@@ -15,7 +15,7 @@
 
 ## Live Preview
 
-* :heart_decoration: Muse scheme: [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me) | [Hui Wang](http://hui-wang.info)
+* :heart_decoration: Muse scheme: [LEAFERx](https://leaferx.online) | [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me)
 * :six_pointed_star: Mist scheme: [Jeff](https://blog.zzbd.org) | [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
 * :pisces: Pisces scheme: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Rainy](https://rainylog.com)
 * :gemini: Gemini scheme: [Ivan.Nginx](https://almostover.ru) | [Alynx](http://sh.alynx.xyz) | [Raincal](https://raincal.top)
@@ -57,6 +57,10 @@ For those who also encounter **«[Error: Cannot find module 'hexo-util'](https:/
 ## Contributing
 
 Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
+
+## Third party applications
+
+* :triangular_flag_on_post: <a title="Hexo Markdown Editor" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com

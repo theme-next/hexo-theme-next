@@ -97,10 +97,10 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
-# Enable/Disable menu icons.
-menu_icons:
-  enable: true
-
+# Enable/Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: false
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -116,6 +116,9 @@ scheme: Muse
 # ---------------------------------------------------------------
 # Sidebar Settings
 # ---------------------------------------------------------------
+
+# Posts / Categories / Tags in sidebar.
+site_state: true
 
 # Social Links.
 # Usage: `Key: permalink || icon`
@@ -643,6 +646,13 @@ tabs:
     tabs: false
     labels: true
   border_radius: 0
+
+# Reading progress bar
+# Dependencies: https://github.com/theme-next/theme-next-reading-progress
+reading_progress:
+  enable: false
+  color: "#37c6c0"
+  height: 2px
 
 
 #! ---------------------------------------------------------------
