@@ -13,8 +13,6 @@
 [![hexo-image]][hexo-url]
 [![lic-image]][lic-url]
 
-* :triangular_flag_on_post: Recommended Markdown Editor: <a href="https://github.com/theme-next/hexo-editor" target="_blank">HexoEditor</a>
-
 ## Live Preview
 
 * :heart_decoration: Muse scheme: [LEAFERx](https://leaferx.online) | [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me)
@@ -59,6 +57,10 @@ For those who also encounter **«[Error: Cannot find module 'hexo-util'](https:/
 ## Contributing
 
 Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
+
+## Third party applications
+
+* :triangular_flag_on_post: Hexo Markdown Editor: <a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
