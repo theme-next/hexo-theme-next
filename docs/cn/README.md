@@ -60,7 +60,7 @@ $ git pull
 
 ## 第三方應用程序
 
-* :triangular_flag_on_post: Hexo Markdown 编辑器：<a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
+* :triangular_flag_on_post: <a title="Hexo Markdown 编辑器" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
