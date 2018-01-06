@@ -1,4 +1,4 @@
-{% if not (theme.duoshuo and theme.duoshuo.shortname) and not theme.duoshuo_shortname and not theme.disqus_shortname %}
+{% if not theme.disqus_shortname %}
 
 	{% if theme.hypercomments_id %}
 
