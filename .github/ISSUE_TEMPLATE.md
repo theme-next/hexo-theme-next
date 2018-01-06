@@ -36,6 +36,12 @@ You may delete this recomendations and use template which is placed below.
 ```
 
 ### Hexo Information
+<!-- Paste info from `hexo -v`  (粘貼信息 `hexo -v`) -->
+```
+
+```
+
+### Hexo Config
 <!-- Paste info from Hexo `_config.yml`  (粘貼信息 Hexo `_config.yml`) -->
 ```
 
