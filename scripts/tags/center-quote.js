@@ -3,7 +3,6 @@
 // Alias: {% cq %} Something {% endcq %}
 
 function centerQuote (args, content) {
-	console.log(hexo.render.renderer.store);
   return '<blockquote class="blockquote-center">' +
             hexo.render.renderSync({text: content, engine: 'markdown'}) +
           '</blockquote>';
