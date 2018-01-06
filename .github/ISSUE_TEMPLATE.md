@@ -51,7 +51,7 @@ You may delete this recomendations and use template which is placed below.
 
 #### Hexo Configuration
 <!-- Paste info from Hexo `_config.yml`  (粘貼信息 Hexo `_config.yml`) -->
-```
+```yml
 
 ```
 
