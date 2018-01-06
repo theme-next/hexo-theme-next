@@ -35,23 +35,22 @@ You may delete this recomendations and use template which is placed below.
 
 ```
 
+### Package dependencies Information
+<!-- Paste info from `cat package.json`  (粘貼信息 `cat package.json`) -->
+```
+
+```
+
 ### Hexo Information
+
+#### Hexo version
 <!-- Paste info from `hexo -v`  (粘貼信息 `hexo -v`) -->
 ```
 
 ```
 
-### Hexo Config
+#### Hexo Configuration
 <!-- Paste info from Hexo `_config.yml`  (粘貼信息 Hexo `_config.yml`) -->
-```
-
-```
-
-### Hexo Config
-
-
-### Package dependencies Information
-<!-- Paste info from `cat package.json`  (粘貼信息 `cat package.json`) -->
 ```
 
 ```
@@ -76,7 +75,7 @@ You may delete this recomendations and use template which is placed below.
 [] Gemini
 ```
 
-### NexT Config:
+#### NexT Configuration:
 <!-- Paste info from NexT `_config.yml`  (粘貼信息 NexT `_config.yml`) -->
 ```yml
 
