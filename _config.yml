@@ -679,8 +679,10 @@ motion:
     # Only for Pisces | Gemini.
     sidebar: slideUpIn
 
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
+# Fancybox. There is support for old version 2 and new version 3.
+# Please, choose only any one variant, do not need to install both.
+# For install 2.x: https://github.com/theme-next/theme-next-fancybox
+# For install 3.x: https://github.com/theme-next/theme-next-fancybox3
 fancybox: false
 
 # Added switch option for separated repo in 6.0.0.
