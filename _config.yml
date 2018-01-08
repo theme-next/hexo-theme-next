@@ -343,7 +343,11 @@ font:
 mathjax:
   enable: false
   per_page: false
+  # For newMathJax CDN (cdnjs.cloudflare.com) with fallback to oldMathJax (cdn.mathjax.org).
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com).
+  #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+  # For automatic detect latest varsion link to MathJax.js and get from CloudFlare.
   #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
 # Han Support
