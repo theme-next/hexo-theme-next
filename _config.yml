@@ -142,6 +142,12 @@ social_icons:
   icons_only: false
   transition: false
 
+# Follow me on GitHub banner in right-top corner.
+# Usage: `permalink || title`
+# Value before `||` delimeter is the target permalink.
+# Value after `||` delimeter is the title and aria-label name.
+#github_banner: https://github.com/yourname || Follow me on GitHub
+
 # Blog rolls
 links_icon: link
 links_title: Links
