@@ -41,28 +41,28 @@
         {% set itemName = name.toLowerCase() %}
         <li class="menu-item menu-item-{{ itemName | replace(' ', '-') }}">
           <a href="{{ url_for(path.split('||')[0]) | trim }}" rel="section">
-            {% if theme.menu_settings.icons %}
-              <i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />
-            {% endif %}
+            {% if theme.menu_settings.icons %}{#
+            #}<i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />{#
+          #}{% endif %}{#
 
-            {% if theme.menu_settings.badges %}
-              {% if name == 'archives' %}
-                {{ __('menu.' + name) | replace('menu.', '') }}
-                <span class="badge">{{ site.posts.length }}</span>
-              {% elseif name == 'categories' %}
-                {{ __('menu.' + name) | replace('menu.', '') }}
-                <span class="badge">{{ site.categories.length }}</span>
-              {% elseif name == 'tags' %}
-                {{ __('menu.' + name) | replace('menu.', '') }}
-                <span class="badge">{{ site.tags.length }}</span>
-              {% else %}
-                {{ __('menu.' + name) | replace('menu.', '') }}
-              {% endif %}
-            {% else %}
-              {{ __('menu.' + name) | replace('menu.', '') }}
-            {% endif %}
+          #}{% if theme.menu_settings.badges %}{#
+            #}{% if name == 'archives' %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+              #}<span class="badge">{{ site.posts.length }}</span>
+              {% elseif name == 'categories' %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+              #}<span class="badge">{{ site.categories.length }}</span>
+              {% elseif name == 'tags' %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+              #}<span class="badge">{{ site.tags.length }}</span>
+              {% else %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+            #}{% endif %}{#
+          #}{% else %}{#
+            #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+          #}{% endif %}{#
 
-          </a>
+        #}</a>
         </li>
       {% endfor %}
 
@@ -74,10 +74,10 @@
             <a href="javascript:;" class="popup-trigger">
           {% endif %}
             {% if theme.menu_settings.icons %}
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            {% endif %}
-            {{ __('menu.search') }}
-          </a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />{#
+          #}{% endif %}{#
+          #}{{ __('menu.search') }}{#
+        #}</a>
         </li>
       {% endif %}
     </ul>
