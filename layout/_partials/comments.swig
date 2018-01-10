@@ -1,13 +1,6 @@
 {% if page.comments %}
 
-  {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
-    <div class="comments" id="comments">
-      <div class="ds-thread" data-thread-key="{{ page.path }}"
-           data-title="{{ page.title }}" data-url="{{ page.permalink }}">
-      </div>
-    </div>
-
-  {% elseif theme.facebook_sdk.enable and theme.facebook_comments_plugin.enable %}
+  {% if theme.facebook_sdk.enable and theme.facebook_comments_plugin.enable %}
     <div class="comments" id="comments">
       <div class="fb-comments"
            data-href="{{ page.permalink }}"
