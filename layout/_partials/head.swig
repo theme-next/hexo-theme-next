@@ -4,6 +4,15 @@
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 
 
+{% if theme.needmoreshare2.enable %}
+  {% set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
+  {% if theme.vendors.needmoreshare2 %}
+    {% set needmoreshare2_css = theme.vendors.needmoreshare2_css %}
+  {% endif %}
+  <link rel="stylesheet" href="{{ needmoreshare2_css }}">
+{% endif %}
+
+
 {% if theme.pace %}
   {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
   {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
