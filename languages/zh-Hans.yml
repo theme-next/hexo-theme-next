@@ -34,7 +34,7 @@ post:
   wordcount: 字数统计
   min2read: 阅读时长
   totalcount: 站点总字数
-  totaltime: 站点总阅读次数
+  totaltime: 站点总阅读时间
   copyright:
     author: 本文作者
     link: 本文链接
