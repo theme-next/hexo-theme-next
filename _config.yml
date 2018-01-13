@@ -356,6 +356,15 @@ mathjax:
   # For automatic detect latest varsion link to MathJax.js and get from CloudFlare.
   #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
+# Katex Support
+katex:
+  enable: false
+  per_page: false
+  cdn:
+    css: //cdn.jsdelivr.net/katex/latest/katex.min.css
+    js: //cdn.jsdelivr.net/katex/latest/katex.min.js
+
+
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
