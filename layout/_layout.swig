@@ -10,6 +10,7 @@
   {{ partial('_partials/head.swig', {}, {cache: theme.cache.enable}) }}
   <title>{% block title %}{% endblock %}</title>
   {% include '_third-party/analytics/index.swig' %}
+  {% include '_scripts/noscript.swig' %}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
