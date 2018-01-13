@@ -361,8 +361,12 @@ katex:
   enable: false
   per_page: false
   cdn:
+    # Use Latest Katext as Default(Provided by Jsdelivr)
     css: //cdn.jsdelivr.net/katex/latest/katex.min.css
     js: //cdn.jsdelivr.net/katex/latest/katex.min.js
+    # If you use markdown-it-katex, use two below instead
+    #css: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
+    #js: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.js
 
 
 # Han Support
