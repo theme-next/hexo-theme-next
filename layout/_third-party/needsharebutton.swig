@@ -1,10 +1,4 @@
 {% if theme.needmoreshare2.enable %}
-  {% set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
-  {% if theme.vendors.needmoreshare2 %}
-    {% set needmoreshare2_css = theme.vendors.needmoreshare2_css %}
-  {% endif %}
-  <link rel="stylesheet" href="{{ needmoreshare2_css }}">
-
   {% set needmoreshare2_js = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.js') %}
   {% if theme.vendors.needmoreshare2_js %}
     {% set needmoreshare2_js = theme.vendors.needmoreshare2_js %}
