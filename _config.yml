@@ -366,7 +366,7 @@ math:
     # For automatic detect latest varsion link to MathJax.js and get from CloudFlare.
     #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
-  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-ketex plugin) 
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin)
   # needed to full Katex support.
   katex:
     # Use Katex 0.7.1 as default
