@@ -371,7 +371,7 @@ disqus:
   enable: false
   shortname:
   count: true
-  async: false
+  lazyload: false
 
 # Hypercomments
 #hypercomments_id:

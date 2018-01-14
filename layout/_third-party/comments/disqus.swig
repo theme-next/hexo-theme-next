@@ -17,7 +17,7 @@
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
       }
-      {% if theme.disqus.async %}
+      {% if theme.disqus.lazyload %}
         $(function () {
           var offsetTop = $('#comments').offset().top - $(window).height();
           if (offsetTop <= 0) {
