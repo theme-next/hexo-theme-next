@@ -348,7 +348,12 @@ font:
 # Math Equations Render Support
 math:
   enable: false
+
+  # Default(flase) will load mathjax/katex srcipt EVERY PAGE
+  # If you set to true, you need to add 'mathjax: true' in Front Matter of post
+  # in order to render math equations in post
   per_page: false
+
   engine: mathjax
   #engine: katex
 
@@ -362,7 +367,7 @@ math:
     #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-ketex plugin) 
-  # needed to full katex support.
+  # needed to full Katex support.
   katex:
     # Use Katex 0.7.1 as default
     cdn: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
