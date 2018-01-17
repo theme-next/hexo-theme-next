@@ -107,11 +107,11 @@
                 <span class="post-meta-item-text">{{ __('post.in') }}</span>
               {% endif %}
               {% for cat in post.categories %}
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
-                    <span itemprop="name">{{ cat.name }}</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
+                #}<a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">{#
+                  #}<span itemprop="name">{{ cat.name }}</span>{#
+                #}</a>{#
+              #}</span>
 
                 {% set cat_length = post.categories.length %}
                 {% if cat_length > 1 and loop.index !== cat_length %}

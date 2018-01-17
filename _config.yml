@@ -266,7 +266,7 @@ post_copyright:
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
-# Android Chrome header panel color ($black-deep).
+# Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
 
 # Custom Logo.
@@ -284,6 +284,8 @@ custom_logo:
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
+# Enable "cheers" for archive page.
+cheers_enabled: true
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -389,6 +391,7 @@ disqus:
   enable: false
   shortname:
   count: true
+  lazyload: false
 
 # Hypercomments
 #hypercomments_id:

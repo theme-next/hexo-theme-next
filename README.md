@@ -7,6 +7,7 @@
 <p align="center">«NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch, with love.</p>
 
 [![gitter-image]][gitter-url]
+[![riot-image]][riot-url]
 [![mnt-image]][commits-url]
 [![travis-image]][travis-url]
 [![rel-image]][releases-url]
@@ -67,6 +68,9 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
+
+[riot-image]: https://img.shields.io/badge/riot-join%20chat-green.svg
+[riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
 [travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI"

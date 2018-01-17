@@ -1,0 +1,37 @@
+.github-corner {
+  scheme = hexo-config('scheme');
+  bg_color = unquote(hexo-config('android_chrome_color'));
+
+  :hover .octo-arm {
+    animation:octocat-wave 560ms ease-in-out;
+  }
+  @keyframes octocat-wave {
+    0%,100% {
+      transform:rotate(0);
+    }
+    20%,60% {
+      transform:rotate(-25deg);
+    }
+    40%,80% {
+      transform:rotate(10deg);
+    }
+  }
+  +mobile() {
+    >svg {
+      if scheme == 'Mist' {
+        top: inherit !important; margin-top: -50px;
+      }
+      if (scheme == 'Pisces') || (scheme == 'Gemini') {
+        fill: #fff !important;
+        color: bg_color !important;
+      }
+    }
+    .github-corner:hover .octo-arm {
+      animation:none;
+    }
+    .github-corner .octo-arm {
+      animation:octocat-wave 560ms ease-in-out;
+    }
+  }
+
+}
