@@ -284,6 +284,8 @@ custom_logo:
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
+# Enable "cheers" for archive page.
+cheers_enabled: true
 
 # ---------------------------------------------------------------
 # Font Settings
