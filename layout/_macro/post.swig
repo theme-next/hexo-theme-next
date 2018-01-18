@@ -78,11 +78,16 @@
             #}</time>
             {% endif %}
 
+            {% set date_updated_diff = date(post.date, config_date_format) != date(post.updated, config.date_format) %}
             {% if theme.post_meta.created_at and theme.post_meta.updated_at %}
-              <span class="post-meta-divider">|</span>
+              {% if !theme.post_meta.updated_diff || theme.post_meta.updated_diff &&  date_updated_diff %}
+                {% set display_updated = true %}
+              {% endif %}
             {% endif %}
 
-            {% if theme.post_meta.updated_at %}
+            {% if display_updated %}
+              <span class="post-meta-divider">|</span>
+
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-check-o"></i>
               </span>
