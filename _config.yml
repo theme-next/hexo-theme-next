@@ -2,8 +2,10 @@
 # Theme Core Configuration Settings
 # ---------------------------------------------------------------
 
-# Set to true, if you want to fully override the default configuration.
-# Useful if you don't want to inherit the theme _config.yml configurations.
+# If false, merge configs from `_data/next.yml` into default configuration (rewrite).
+# If true, will fully override default configuration by options from `_data/next.yml` (override). Only for NexT settings.
+# And if true, all config from default NexT `_config.yml` must be copied into `next.yml`. Use if you know what you are doing.
+# Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
 override: false
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
