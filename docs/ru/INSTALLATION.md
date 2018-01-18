@@ -106,20 +106,6 @@
 theme: next
 ```
 
-<h1 align="center">Плагины</h1>
-
-В конфиге NexT'а теперь можно найти зависимости на каждый модуль, который был вынесен во внешние репозитории, которые могут быть найдены по [ссылке основной организации](https://github.com/theme-next).
-
-Например, Вы хотите использовать `fancybox` для своего сайта. Открываем конфиг NexT'а и находим:
-
-```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
-```
-
-Затем включаем параметр `fancybox` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
-
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
 [releases-url]: https://github.com/theme-next/hexo-theme-next/releases

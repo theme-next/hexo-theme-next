@@ -34,6 +34,20 @@ Simplest way to install is by cloning whole repository:
 
 Or you can see [detailed installation instructions][docs-installation-url] if you want any other variant.
 
+## Plugins
+
+In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
+
+For example, you want to use `fancybox` in your site. Go to NexT config and see:
+
+```yml
+# Fancybox
+# Dependencies: https://github.com/theme-next/theme-next-fancybox
+fancybox: false
+```
+
+Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
+
 ## Update
 
 You can update to latest master branch by the following command:

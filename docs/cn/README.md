@@ -34,6 +34,20 @@
 
 此外，如果你想要使用其他方式，你也可以参见[详细安装步骤][docs-installation-url]。
 
+## 插件
+
+在 NexT 配置中你现在可以找到已经被移至外部仓库的依赖项。你可以在[组织主页](https://github.com/theme-next)中找到它们。
+
+例如，假设你想要在你的站点中使用 `fancybox` 插件，请进入 NexT 配置文件，你会看到如下内容：
+
+```yml
+# Fancybox
+# Dependencies: https://github.com/theme-next/theme-next-fancybox
+fancybox: false
+```
+
+将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
+
 ## 更新
 
 你可以通过如下命令更新到最新的 master 分支：
