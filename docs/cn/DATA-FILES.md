@@ -12,7 +12,7 @@
 
 <h2 align="center">选择 1：Hexo 方式</h2>
 
-使用这一方式，你的全部配置都将置于 hexo 主要配置文件中（`hexo/_config.yml`），并且不需要修改 `next/_config.yml`，或者创建什么其他的文件。但是所有的主题选项必须放置在 `theme_config` 后。
+使用这一方式，你的全部配置都将置于 hexo 主要配置文件中（`hexo/_config.yml`），并且不需要修改 `next/_config.yml`，或者创建什么其他的文件。但是所有的主题选项必须放置在 `theme_config` 后，并全部增加两个空格的缩进。
 
 如果在新的 release 中出现了任何新的选项，那么你只需要从 `next/_config.yml` 中将他们复制到 `hexo/_config.yml` 中并设置它们的值为你想要的选项。
 
