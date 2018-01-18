@@ -14,7 +14,7 @@
 <p align="center">从 GitHub 下载主题。</br>
 为了下载这一主题，共有 <b>3 种选项</b>可选。你需要选择其中<b>唯一一个方式</b>。</p>
 
-### 选项 1：下载[最新 release 版本][releases-latest-url]</h3>
+### 选项 1：下载[最新 release 版本][releases-latest-url]
 
    通常情况下请选择 **stable** 版本。推荐不熟悉的用户按此方式进行。
 

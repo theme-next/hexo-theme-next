@@ -14,7 +14,7 @@ Change dir to **hexo root** directory. There must be `node_modules`, `source`, `
 <p align="center">Download theme from GitHub.</br>
 There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
 
-### Option 1: Download [latest release version][releases-latest-url]</h3>
+### Option 1: Download [latest release version][releases-latest-url]
 
    At most cases **stable**. Recommended for beginners.
 
