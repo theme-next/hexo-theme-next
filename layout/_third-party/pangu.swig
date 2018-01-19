@@ -1,4 +1,4 @@
-{% if theme.pangu.enable %}
+{% if theme.pangu %}
   {% set pangu_uri = url_for(theme.vendors._internal + '/pangu/dist/pangu.min.js?v=3.3')%}
   {% if theme.vendors.pangu %}
     {% set pangu_uri = theme.vendors.pangu %}
