@@ -14,7 +14,7 @@
 <p align="center">从 GitHub 下载主题。</br>
 为了下载这一主题，共有 <b>3 种选项</b>可选。你需要选择其中<b>唯一一个方式</b>。</p>
 
-### 选项 1：下载[最新 release 版本][releases-latest-url]</h3>
+### 选项 1：下载[最新 release 版本][releases-latest-url]
 
    通常情况下请选择 **stable** 版本。推荐不熟悉的用户按此方式进行。
 
@@ -105,20 +105,6 @@
 ```yml
 theme: next
 ```
-
-<h1 align="center">插件</h1>
-
-在 NexT 配置中你现在可以找到已经被移至外部仓库的依赖项。你可以在[组织主页](https://github.com/theme-next)中找到它们。
-
-例如，假设你想要在你的站点中使用 `fancybox` 插件，请进入 NexT 配置文件，你会看到如下内容：
-
-```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
-```
-
-将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest

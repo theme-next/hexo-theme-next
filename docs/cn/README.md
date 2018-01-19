@@ -6,6 +6,7 @@
 
 <p align="center">«NexT» 是一款风格优雅的高质量 <a href="http://hexo.io">Hexo</a> 主题，自点点滴滴中用爱雕琢而成。</p>
 
+[![lang-image]][lang-url]
 [![gitter-image]][gitter-url]
 [![riot-image]][riot-url]
 [![mnt-image]][commits-url]
@@ -33,6 +34,20 @@
    ```
 
 此外，如果你想要使用其他方式，你也可以参见[详细安装步骤][docs-installation-url]。
+
+## 插件
+
+在 NexT 配置中你现在可以找到已经被移至外部仓库的依赖项。你可以在[组织主页](https://github.com/theme-next)中找到它们。
+
+例如，假设你想要在你的站点中使用 `fancybox` 插件，请进入 NexT 配置文件，你会看到如下内容：
+
+```yml
+# Fancybox
+# Dependencies: https://github.com/theme-next/theme-next-fancybox
+fancybox: false
+```
+
+将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
 
 ## 更新
 
@@ -65,6 +80,9 @@ $ git pull
 
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
+
+[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "總共15種語言"
+[lang-url]: https://gitlocalize.com/repo/679
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next

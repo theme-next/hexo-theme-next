@@ -6,6 +6,7 @@
 
 <p align="center">«NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch, with love.</p>
 
+[![lang-image]][lang-url]
 [![gitter-image]][gitter-url]
 [![riot-image]][riot-url]
 [![mnt-image]][commits-url]
@@ -33,6 +34,20 @@ Simplest way to install is by cloning whole repository:
    ```
 
 Or you can see [detailed installation instructions][docs-installation-url] if you want any other variant.
+
+## Plugins
+
+In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
+
+For example, you want to use `fancybox` in your site. Go to NexT config and see:
+
+```yml
+# Fancybox
+# Dependencies: https://github.com/theme-next/theme-next-fancybox
+fancybox: false
+```
+
+Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
 
 ## Update
 
@@ -65,6 +80,9 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
+
+[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "15 languages total"
+[lang-url]: https://gitlocalize.com/repo/679
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next

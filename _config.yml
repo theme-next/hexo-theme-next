@@ -2,8 +2,10 @@
 # Theme Core Configuration Settings
 # ---------------------------------------------------------------
 
-# Set to true, if you want to fully override the default configuration.
-# Useful if you don't want to inherit the theme _config.yml configurations.
+# If false, merge configs from `_data/next.yml` into default configuration (rewrite).
+# If true, will fully override default configuration by options from `_data/next.yml` (override). Only for NexT settings.
+# And if true, all config from default NexT `_config.yml` must be copied into `next.yml`. Use if you know what you are doing.
+# Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
 override: false
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
@@ -379,6 +381,11 @@ math:
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
+
+# Pangu Support
+# Dependencies: https://github.com/theme-next/theme-next-pangu
+# For more information: https://github.com/vinta/pangu.js
+pangu: false
 
 # Swiftype Search API Key
 #swiftype_key:
@@ -836,6 +843,10 @@ vendors:
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han
   han:
+
+  # Internal version: 3.3.0
+  # https://github.com/vinta/pangu.js
+  pangu:
 
   # needMoreShare2
   # https://github.com/revir/need-more-share2
