@@ -6,6 +6,7 @@
 
 <p align="center">«NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch, with love.</p>
 
+[![localize-image]][localize-url]
 [![gitter-image]][gitter-url]
 [![riot-image]][riot-url]
 [![mnt-image]][commits-url]
@@ -79,6 +80,9 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
+
+[localize-image]: https://img.shields.io/badge/gitlocalize-15-orange.svg "15 languages total"
+[localize-url]: https://gitlocalize.com/repo/679
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
