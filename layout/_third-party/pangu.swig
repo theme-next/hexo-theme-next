@@ -1,4 +1,8 @@
 {% if theme.pangu.enable %}
-    <script src="{{ theme.pangu.cdn }}" charset="utf-8"></script>
-    <script type="text/javascript">pangu.spacingPage();</script>
+  {% set pangu_uri = url_for(theme.vendors._internal + '/pangu/dist/pangu.min.js?v=3.3')%}
+  {% if theme.vendors.pangu %}
+    {% set pangu_uri = theme.vendors.pangu %}
+  {% endif %}
+  <script src="{{ pangu_uri }}"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
 {% endif %}

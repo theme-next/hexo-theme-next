@@ -366,10 +366,7 @@ han: false
 
 # Pangu Support
 # For more information: https://github.com/vinta/pangu.js
-pangu:
-  enable: false
-  # MUST HAVE a CDN, or it will not work
-  cdn: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
+pangu: false
 
 # Swiftype Search API Key
 #swiftype_key:
