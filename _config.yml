@@ -825,6 +825,10 @@ vendors:
   # https://github.com/ethantw/Han
   han:
 
+  # Internal version: 3.3.0
+  # https://github.com/vinta/pangu.js
+  pangu:
+
   # needMoreShare2
   # https://github.com/revir/need-more-share2
   needMoreShare2:
