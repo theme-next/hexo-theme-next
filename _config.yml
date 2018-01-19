@@ -364,6 +364,11 @@ mathjax:
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
 
+# Pangu Support
+# Dependencies: https://github.com/theme-next/theme-next-pangu
+# For more information: https://github.com/vinta/pangu.js
+pangu: false
+
 # Swiftype Search API Key
 #swiftype_key:
 
@@ -820,6 +825,10 @@ vendors:
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han
   han:
+
+  # Internal version: 3.3.0
+  # https://github.com/vinta/pangu.js
+  pangu:
 
   # needMoreShare2
   # https://github.com/revir/need-more-share2
