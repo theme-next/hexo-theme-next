@@ -365,6 +365,7 @@ mathjax:
 han: false
 
 # Pangu Support
+# Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
 pangu: false
 
