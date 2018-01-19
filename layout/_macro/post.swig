@@ -85,7 +85,7 @@
               {% endif %}
             {% endif %}
 
-            {% if display_updated %}
+            {% if display_updated or (!theme.post_meta.created_at and theme.post_meta.updated_at) %}
               {% if theme.post_meta.created_at and theme.post_meta.updated_at %}
               <span class="post-meta-divider">|</span>
               {% endif %}
