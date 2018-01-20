@@ -18,13 +18,13 @@ cache:
 # outside theme directory in root `source/_data`, set
 # `styles: ../../../../../source/_data/styles.styl`
 #custom_file_path:
-  #head: ../../../../../source-lang/_data/head.swig
-  #header: ../../../../source-lang/_data/header.swig
-  #sidebar: ../../../../source-lang/_data/sidebar.swig
+  #head: ../../../../../source/_data/head.swig
+  #header: ../../../../source/_data/header.swig
+  #sidebar: ../../../../source/_data/sidebar.swig
 
-  #styles: ../../../../../source-lang/_data/styles.styl
-  #mixins: ../../../../../source-lang/_data/mixins.styl
-  #variables: ../../../../../source-lang/_data/variables.styl
+  #styles: ../../../../../source/_data/styles.styl
+  #mixins: ../../../../../source/_data/mixins.styl
+  #variables: ../../../../../source/_data/variables.styl
 
 
 # ---------------------------------------------------------------
