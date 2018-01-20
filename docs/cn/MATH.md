@@ -64,14 +64,14 @@ npm i hexo-renderer-markdown-it-plus --save
 ```
 
 
-然后在 `next/_config.yml` 中将 `math` 的 `enable` 打开，并选择 `mathjax` 作为渲染引擎。
+然后在 `next/_config.yml` 中将 `math` 的 `enable` 打开，并选择 `katex` 作为渲染引擎。
 
 ```yml
 math:
   enable: true
   ...
-  engine: mathjax
-  #engine: katex
+  #engine: mathjax
+  engine: katex
 ```
 
 执行 Hexo 生成，部署，或者启动服务器：
