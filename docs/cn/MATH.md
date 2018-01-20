@@ -22,7 +22,7 @@ math:
 
 如果你选择使用 MathJax 进行数学公式渲染，你需要使用 [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) 或者 [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed) 这两个渲染器的其中一个。
 
-首先，安装这两种渲染器的**其中一个**：
+首先，卸载原有的渲染器 `hexo-renderer-marked`，并安装这两种渲染器的**其中一个**：
 
 ```sh
 npm un hexo-renderer-marked --save
@@ -49,11 +49,13 @@ hexo clean && hexo g -d
 
 ### Katex
 
-Katex 渲染引擎相对于 MathJax 来说**大大提高了速度**，但是 Katex 所支持的东西没有 MathJax 全面，你可以从下面的相关链接中获取更多的信息。
+Katex 渲染引擎相对于 MathJax 来说**大大提高了速度**，而且在关掉 JavaScript 时也能渲染数学公式。
+
+但是 Katex 所支持的东西没有 MathJax 全面，你可以从下面的相关链接中获取更多的信息。
 
 如果你选择使用 Katex 进行数学公式渲染，你需要使用 [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus) 或者 [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it) 这两种渲染器的其中一个。
 
-首先，安装这两种渲染器的**其中一个**：
+首先，卸载原有的渲染器 `hexo-renderer-marked`，并安装这两种渲染器的**其中一个**：
 
 ```sh
 npm un hexo-renderer-marked --save
@@ -138,7 +140,7 @@ markdown:
 math:
   enable: false
 
-  # Default(flase) will load mathjax/katex srcipt EVERY PAGE
+  # Default(false) will load mathjax/katex srcipt EVERY PAGE
   # If you set to true, you need to add 'mathjax: true' in Front Matter of post
   # in order to render math equations in post
   per_page: false
