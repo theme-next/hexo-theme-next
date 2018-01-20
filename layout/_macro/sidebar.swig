@@ -135,7 +135,12 @@
             </div>
           {% endif %}
 
-          {% include '../_custom/sidebar.swig' %}
+          {% if theme.custom_file_path.sidebar %}
+            {% set custom_sidebar = '../../../../' + theme.custom_file_path.sidebar %}
+          {% else %}
+            {% set custom_sidebar = '../_custom/sidebar.swig' %}
+          {% endif %}
+          {% include custom_sidebar %}
         </div>
       </section>
 

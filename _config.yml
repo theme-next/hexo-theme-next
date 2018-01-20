@@ -12,6 +12,22 @@ override: false
 cache:
   enable: true
 
+# Redefine custom file paths. Introduced in NexT v6.0.2.
+# If commented, will be used default custom file paths.
+
+# For example, you want to put your custom styles file
+# outside theme directory in root `source/_data`, set
+# `styles: source/_data/styles.styl`
+#custom_file_path:
+  #head: source/_data/head.swig
+  #header: source/_data/header.swig
+  #sidebar: source/_data/sidebar.swig
+
+  #styles: source/_data/styles.styl
+  #mixins: source/_data/mixins.styl
+  #variables: source/_data/variables.styl
+
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -231,6 +247,8 @@ post_meta:
   item_text: true
   created_at: true
   updated_at: false
+  # Only show 'updated' if different from 'created'.
+  updated_diff: false
   categories: true
 
 # Post wordcount display settings
@@ -349,20 +367,43 @@ font:
 # Third Party Services Settings
 # ---------------------------------------------------------------
 
-# MathJax Support
-mathjax:
+# Math Equations Render Support
+math:
   enable: false
+
+  # Default(false) will load mathjax/katex srcipt EVERY PAGE
+  # If you set to true, you need to add 'mathjax: true' in Front Matter of post
+  # in order to render math equations in post
   per_page: false
-  # For newMathJax CDN (cdnjs.cloudflare.com) with fallback to oldMathJax (cdn.mathjax.org).
-  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com).
-  #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
-  # For automatic detect latest varsion link to MathJax.js and get from CloudFlare.
-  #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+  engine: mathjax
+  #engine: katex
+
+  # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
+  mathjax:
+    # For newMathJax CDN (cdnjs.cloudflare.com) with fallback to oldMathJax (cdn.mathjax.org).
+    cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com).
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+    # For automatic detect latest version link to MathJax.js and get from CloudFlare.
+    #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin)
+  # needed to full Katex support.
+  katex:
+    # Use Katex 0.7.1 as default
+    cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
+    # If you want to try the latest version of Katex, use one below instead
+    #cdn: //cdn.jsdelivr.net/katex/latest/katex.min.css
 
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
+
+# Pangu Support
+# Dependencies: https://github.com/theme-next/theme-next-pangu
+# For more information: https://github.com/vinta/pangu.js
+pangu: false
 
 # Swiftype Search API Key
 #swiftype_key:
@@ -820,6 +861,10 @@ vendors:
   # Internal version: 3.3.0
   # https://github.com/ethantw/Han
   han:
+
+  # Internal version: 3.3.0
+  # https://github.com/vinta/pangu.js
+  pangu:
 
   # needMoreShare2
   # https://github.com/revir/need-more-share2
