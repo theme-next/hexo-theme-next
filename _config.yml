@@ -12,6 +12,21 @@ override: false
 cache:
   enable: true
 
+# Redefine custom file pathes. Introduced in NexT v6.0.2.
+# If commented, will be used default custom file pathes.
+# For example, you want to put your custom styles file
+# outside theme directory in root `source/_data`, set
+# `styles: ../../../../../source/_data/styles.styl`
+#custom_file_path:
+  #head: ../../../../../source-lang/_data/head.swig
+  #header: ../../../../source-lang/_data/header.swig
+  #sidebar: ../../../../source-lang/_data/sidebar.swig
+
+  #styles: ../../../../../source-lang/_data/styles.styl
+  #mixins: ../../../../../source-lang/_data/mixins.styl
+  #variables: ../../../../../source-lang/_data/variables.styl
+
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
