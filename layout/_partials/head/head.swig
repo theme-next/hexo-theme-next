@@ -132,7 +132,7 @@
 </script>
 
 {% if theme.custom_file_path.head %}
-  {% set custom_head = theme.custom_file_path.head %}
+  {% set custom_head = '../../../../../' + theme.custom_file_path.head %}
 {% else %}
   {% set custom_head = '../../_custom/head.swig' %}
 {% endif %}
