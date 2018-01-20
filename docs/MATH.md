@@ -2,7 +2,7 @@
 
 NexT provides render engine for displaying Math Equations.
 
-Use this feature, you won't need to manually import any JS or CSS, just need to trun on the `enable` of `math` and choose a render `engine` for it.(Locate in `next/_config.yml`):
+Use this feature, you won't need to manually import any JS or CSS, just need to turn on the `enable` of `math` and choose a render `engine` for it.(Locate in `next/_config.yml`):
 
 ```yml
 math:
@@ -11,8 +11,8 @@ math:
   engine: mathjax
 ```
 
-Notice, only turn on `enable` of `math` **cannot let you see the displayed equations**, you need a **crosponding Hexo Renderer** to fully support display the Math Equations.
-The crosponding Hexo Renderer per engine will introduce below.
+Notice, only turn on `enable` of `math` **cannot let you see the displayed equations**, you need a **corresponding Hexo Renderer** to fully support display the Math Equations.
+The corresponding Hexo Renderer per engine will introduce below.
 
 <h2 align="center">Provided Render Engine</h2>
 
@@ -49,7 +49,7 @@ hexo clean && hexo g -d
 
 ### Katex
 
-The Katex engine is a **more faster** math render engine compared to MathJax. And it could survive without JavaScript.
+The Katex engine is a **much faster** math render engine compared to MathJax. And it could survive without JavaScript.
 
 But, what Katex supports is not as full as the MathJax does. You could check it from the Useful Links below.
 
@@ -111,19 +111,19 @@ markdown:
 
 
 1. Firstly, please check [Common Issue](https://github.com/Khan/KaTeX#common-issues) of Katex.
-2. Displayed Math(ie. `$$...$$`) needs to loacted in a clear line.\
+2. Displayed Math(ie. `$$...$$`) needs to located in a clear line.\
    That is **before the opening `$$` and after the ending `$$`** you could not have any characters except whitespaces.([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
 3. Don't support Unicode.([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
 4. Inline Math(ie.`$...$`) could not have whitespace **after the opening `$` and before the ending `$`**([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
 5. If you use math in Heading(ie. `## Heading`).\
-   Then in crosponding TOC item, it will show the related LaTex code 3 times. ([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694))
+   Then in corresponding TOC item, it will show the related LaTex code 3 times. ([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694))
 6. If you use math in your post's title, it will not be rendered. ([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879))
 
 We currently use Katex 0.7.1, some of those bugs might cause by the outdated version of Katex we used.
 
 But, as described in beginning, the render of Math Equations relies on Hexo Renderer. Currently, Katex related renderer only support until 0.7.1.
 
-We will continuous monitor the updates of crosponding renderer, if there is a renderer which support newer version of Katex, we will update the Katex we use.
+We will continuously monitor the updates of corresponding renderers, if there is a renderer which supports newer version of Katex, we will update the Katex we use.
 
 
 ### Useful Links
@@ -133,11 +133,11 @@ We will continuous monitor the updates of crosponding renderer, if there is a re
 
 <h2 align="center">Configuration Specifications</h2>
 
-ATTENTION! When you edit those config, **don't change indentation!**
+ATTENTION! When you edit those configs, **don't change indentation!**
 
 Currently, all NexT config use **2 spaces indents**.
 
-If your conent of config just directly after the config name, then a space is needed between the colon and the config content(ie. `enable: true`)
+If your content of config just directly after the config name, then a space is needed between the colon and the config content(ie. `enable: true`)
 
 ```yml
 # Math Equations Render Support
@@ -221,7 +221,7 @@ title: 'Not Render Math Either'
 
 Both MathJax and Katex provide a config `cdn`, if you don't know what is `cdn`, **do not touch it**.
 
-For MathJax, we use a fallback CDN as default, and provide other CDN as optional.
+For MathJax, we use a fallback CDN as default and provide other CDN as optional.
 
-For Katex, we use cdnjs as the default CDN, and use the Katex 0.7.1 version. Due to the problem dsecribed above, if you need to use other CDN, please use the Katex 0.7.1 version.
-Of cause, we also provide a CDN which could automaticly use the latest version of Katex, if you want to check the effect of it.
+For Katex, we use cdnjs as the default CDN and use the Katex 0.7.1 version. Due to the problem described above, if you need to use other CDN, please use the Katex 0.7.1 version.
+Of cause, we also provide a CDN which could automatically use the latest version of Katex, if you want to check the effect of it.
