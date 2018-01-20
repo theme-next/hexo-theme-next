@@ -12,6 +12,22 @@ override: false
 cache:
   enable: true
 
+# Redefine custom file paths. Introduced in NexT v6.0.2.
+# If commented, will be used default custom file paths.
+
+# For example, you want to put your custom styles file
+# outside theme directory in root `source/_data`, set
+# `styles: source/_data/styles.styl`
+#custom_file_path:
+  #head: source/_data/head.swig
+  #header: source/_data/header.swig
+  #sidebar: source/_data/sidebar.swig
+
+  #styles: source/_data/styles.styl
+  #mixins: source/_data/mixins.styl
+  #variables: source/_data/variables.styl
+
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -231,6 +247,8 @@ post_meta:
   item_text: true
   created_at: true
   updated_at: false
+  # Only show 'updated' if different from 'created'.
+  updated_diff: false
   categories: true
 
 # Post wordcount display settings
