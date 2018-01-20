@@ -81,7 +81,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
-[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "15 languages total"
+[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "Add or improve translate with GitLocalize"
 [lang-url]: https://gitlocalize.com/repo/679
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
