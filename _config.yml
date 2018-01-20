@@ -20,7 +20,7 @@ cache:
 # `styles: ../../../../../source/_data/styles.styl`
 
 # ATTENTION! Do not need to touch any `../..` paths,
-# only from relative paths behind `source` can be modified.
+# only relative paths behind `source` can be modified.
 #custom_file_path:
   #head: ../../../../../source/_data/head.swig
   #header: ../../../../source/_data/header.swig
