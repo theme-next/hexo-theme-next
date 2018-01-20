@@ -17,7 +17,7 @@ cache:
 
 # For example, you want to put your custom styles file
 # outside theme directory in root `source/_data`, set
-# `styles: ../../../../../source/_data/styles.styl`
+# `styles: source/_data/styles.styl`
 #custom_file_path:
   #head: source/_data/head.swig
   #header: source/_data/header.swig
