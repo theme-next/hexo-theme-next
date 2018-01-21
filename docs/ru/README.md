@@ -9,7 +9,7 @@
 [![lang-image]][lang-url]
 [![gitter-image]][gitter-url]
 [![riot-image]][riot-url]
-[![mnt-image]][commits-url]
+[![telegram-image]][telegram-url]
 [![travis-image]][travis-url]
 [![rel-image]][releases-url]
 [![hexo-image]][hexo-url]
@@ -81,7 +81,7 @@ $ git pull
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
-[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "Добавить или улучшить перевод через GitLocalize"
+[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "Добавить или улучшить перевод через GitLocalize!"
 [lang-url]: https://gitlocalize.com/repo/679
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
@@ -90,8 +90,11 @@ $ git pull
 [riot-image]: https://img.shields.io/badge/riot-join%20chat-green.svg
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
+[telegram-image]: https://img.shields.io/badge/telegram-channel-lightgrey.svg
+[telegram-url]: https://t.me/theme_next
+
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
-[travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI"
+[travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
 
 [hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg
 [hexo-url]: http://hexo.io
@@ -99,8 +102,9 @@ $ git pull
 [lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg
 [lic-url]: https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md
 
-[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg
-[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg
+<!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->
+[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg
+<!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
