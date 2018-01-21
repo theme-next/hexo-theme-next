@@ -2,7 +2,7 @@
 
 NexT provides render engine for displaying Math Equations.
 
-Use this feature, you won't need to manually import any JS or CSS, just need to turn on the `enable` of `math` and choose a render `engine` for it.(Locate in `next/_config.yml`):
+Use this feature, if you don't need to manually import any JS or CSS, just need to turn on `enable` of `math` and choose a render `engine` for it (located in `next/_config.yml`):
 
 ```yml
 math:
@@ -11,14 +11,14 @@ math:
   engine: mathjax
 ```
 
-Notice, only turn on `enable` of `math` **cannot let you see the displayed equations**, you need a **corresponding Hexo Renderer** to fully support display the Math Equations.
-The corresponding Hexo Renderer per engine will introduce below.
+Notice: only turn on `enable` of `math` **cannot let you see the displayed equations correctly**, you need to install **corresponding Hexo Renderer** to fully support display the Math Equations.
+The corresponding Hexo Renderer per engine will provide below.
 
 <h2 align="center">Provided Render Engine</h2>
 
-For now, NexT provides two Render Engine: [MathJax](https://www.mathjax.org/) and [Katex](https://khan.github.io/KaTeX/), default to MathJax.
+For now, NexT provides two Render Engines: [MathJax](https://www.mathjax.org/) and [Katex](https://khan.github.io/KaTeX/) (default is MathJax).
 
-### MathJax(Default)
+### MathJax (default)
 
 If you use MathJax to render Math Equations, you need to use **only one of them**: [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) or [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed).
 
@@ -29,8 +29,7 @@ npm un hexo-renderer-marked --save
 npm i hexo-renderer-pandoc --save # or hexo-renderer-kramed
 ```
 
-
-Secondly, in `next/_config.yml`, turn on `enable` of `math`, and choose `mathjax` as `engine`.
+Secondly, in `next/_config.yml`, turn on `enable` of `math` and choose `mathjax` as `engine`.
 
 ```yml
 math:
@@ -40,7 +39,7 @@ math:
   #engine: katex
 ```
 
-Finally, run the standart Hexo generate, deploy process or start the server:
+Finally, run standart Hexo generate, deploy process or start the server:
 
 ```sh
 hexo clean && hexo g -d
@@ -55,7 +54,7 @@ But, what Katex supports is not as full as the MathJax does. You could check it 
 
 If you use Katex to render Math Equations, you need to use **only one of those renderer**: [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus) or [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it).
 
-Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and **install one of them above**.
+Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and **install one of selected above**.
 
 ```sh
 npm un hexo-renderer-marked --save
@@ -63,9 +62,7 @@ npm i hexo-renderer-markdown-it-plus --save
 # or hexo-renderer-markdown-it
 ```
 
-
-Secondly, in `next/_config.yml`, turn on the `enable` option of `math`, an choose `katex` as render `engine`.
-
+Secondly, in `next/_config.yml`, turn on `enable` option of `math` and choose `katex` as render `engine`.
 
 ```yml
 math:
@@ -84,14 +81,13 @@ hexo clean && hexo g -d
 
 #### If you use hexo-renderer-markdown-it
 
-
 If you use `hexo-renderer-markdown-it`，you also need to add `markdown-it-katex` as its plugin：
 
 ```
 npm i markdown-it-katex --save
 ```
 
-And then in `hexo/_config.yml` you need to add `markdown-it-katex` as a plugin for`hexo-renderer-markdown-it`:
+And then in `hexo/_config.yml` you need to add `markdown-it-katex` as a plugin for `hexo-renderer-markdown-it`:
 
 ```yml
 # config of hexo-renderer-markdown-it
@@ -109,15 +105,14 @@ markdown:
 
 #### Known Bugs
 
-
-1. Firstly, please check [Common Issue](https://github.com/Khan/KaTeX#common-issues) of Katex.
-2. Displayed Math(ie. `$$...$$`) needs to located in a clear line.\
-   That is **before the opening `$$` and after the ending `$$`** you could not have any characters except whitespaces.([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
-3. Don't support Unicode.([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
-4. Inline Math(ie.`$...$`) could not have whitespace **after the opening `$` and before the ending `$`**([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
-5. If you use math in Heading(ie. `## Heading`).\
-   Then in corresponding TOC item, it will show the related LaTex code 3 times. ([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694))
-6. If you use math in your post's title, it will not be rendered. ([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879))
+1. Firstly, please check [Common Issues](https://github.com/Khan/KaTeX#common-issues) of Katex.
+2. Displayed Math (i.e. `$$...$$`) needs to started with new clear line.\
+   In other words: you must not have any characters (except of whitespaces) **before the opening `$$` and after the ending `$$`** ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509)).
+3. Don't support Unicode ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509)).
+4. Inline Math (..`$...$`) must not have whitespaces **after the opening `$` and before the ending `$`** ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509)).
+5. If you use math in Heading (i.e. `## Heading`).\
+   Then in corresponding TOC item it will show the related LaTex code 3 times ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694)).
+6. If you use math in your post's title, it will not be rendered ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879)).
 
 We currently use Katex 0.7.1, some of those bugs might cause by the outdated version of Katex we used.
 
@@ -125,10 +120,9 @@ But, as described in beginning, the render of Math Equations relies on Hexo Rend
 
 We will continuously monitor the updates of corresponding renderers, if there is a renderer which supports newer version of Katex, we will update the Katex we use.
 
-
 ### Useful Links
 
-* [Speedtest between Katex and  MathJax](https://www.intmath.com/cg5/katex-mathjax-comparison.php)
+* [Speedtest between Katex and MathJax](https://www.intmath.com/cg5/katex-mathjax-comparison.php)
 * [Function support by Katex](https://khan.github.io/KaTeX/function-support.html)
 
 <h2 align="center">Configuration Specifications</h2>
@@ -137,7 +131,7 @@ ATTENTION! When you edit those configs, **don't change indentation!**
 
 Currently, all NexT config use **2 spaces indents**.
 
-If your content of config just directly after the config name, then a space is needed between the colon and the config content(ie. `enable: true`)
+If your content of config just directly after the config name, then a space is needed between the colon and the config content (i.e. `enable: true`)
 
 ```yml
 # Math Equations Render Support
@@ -173,17 +167,17 @@ math:
 
 ### enable
 
-`true` or `false`, default to `false`.
+`true` or `false`, default is `false`.
 
-`true` to turn on render of Math Equations, `false` to close it.
+`true` to turn on render of Math Equations, `false` to off it.
 
 ### per_page
 
-`true` or `false`, default to `false`.
+`true` or `false`, default is `false`.
 
 This option is to control whether to render Math Equations every page.
 
-The behavior of default(`false`) is to render Math Equations **EVERY PAGE**.
+The behavior of default (`false`) is to render Math Equations **EVERY PAGE**.
 
 When you set it to `true`, it will only render the post with `mathjax: true` Front Matter.
 
