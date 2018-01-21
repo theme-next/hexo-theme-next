@@ -657,6 +657,16 @@ local_search:
   # show top n results per article, show all results by setting to -1
   top_n_per_article: 1
 
+# Bookmark Support
+# Dependencies: https://github.com/theme-next/theme-next-bookmark
+bookmark:
+  enable: false
+  # if auto
+  #   - save the reading position when closing the page
+  #   - or clicking the bookmark-icon
+  # if manual, only save it by clicking the bookmark-icon
+  save: auto
+
 
 # ---------------------------------------------------------------
 # Tags Settings
