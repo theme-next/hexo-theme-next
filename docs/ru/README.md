@@ -1,5 +1,5 @@
 <div align="right">Язык: <a title="Английский" href="../../README.md">:us:</a>
-<a title="Китайский" href="../../docs/cn/README.md">:cn:</a>
+<a title="Китайский" href="../../docs/zh-Hans/README.md">:cn:</a>
 :ru:</div>
 
 # <div align="center"><a title="Перейти на сайт" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
