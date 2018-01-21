@@ -2,7 +2,7 @@
 
 NexT provides render engine for displaying Math Equations.
 
-Use this feature, if you don't need to manually import any JS or CSS, just need to turn on `enable` of `math` and choose a render `engine` for it (located in `next/_config.yml`):
+With using this feature, you don't need to manually import any JS or CSS. Just need to turn on `enable` of `math` and choose a render `engine` for it (located in `next/_config.yml`):
 
 ```yml
 math:
