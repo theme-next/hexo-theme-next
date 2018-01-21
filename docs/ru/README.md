@@ -1,5 +1,5 @@
 <div align="right">Язык: <a title="Английский" href="../../README.md">:us:</a>
-<a title="Китайский" href="../../docs/cn/README.md">:cn:</a>
+<a title="Китайский" href="../../docs/zh-Hans/README.md">:cn:</a>
 :ru:</div>
 
 # <div align="center"><a title="Перейти на сайт" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
@@ -9,7 +9,8 @@
 [![lang-image]][lang-url]
 [![gitter-image]][gitter-url]
 [![riot-image]][riot-url]
-[![telegram-image]][telegram-url]
+[![t-chat-image]][t-chat-url]
+[![t-news-image]][t-news-url]
 [![travis-image]][travis-url]
 [![rel-image]][releases-url]
 [![hexo-image]][hexo-url]
@@ -90,8 +91,11 @@ $ git pull
 [riot-image]: https://img.shields.io/badge/riot-join%20chat-green.svg
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[telegram-image]: https://img.shields.io/badge/telegram-channel-lightgrey.svg
-[telegram-url]: https://t.me/theme_next
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-lightgrey.svg
+[t-chat-url]: https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw
+
+[t-news-image]: https://img.shields.io/badge/telegram-news-lightgrey.svg
+[t-news-url]: https://t.me/theme_next
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
 [travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
