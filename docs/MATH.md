@@ -177,7 +177,7 @@ math:
 
 This option is to control whether to render Math Equations every page.
 
-The behavior of default (`false`) is to render Math Equations **EVERY PAGE**.
+The behavior of default (`false`) is to render Math Equations on **every page**.
 
 When you set it to `true`, it will only render the post with `mathjax: true` Front Matter.
 
