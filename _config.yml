@@ -661,7 +661,7 @@ bookmark:
   #   - save the reading position when closing the page
   #   - or clicking the bookmark-icon
   # if manual, only save it by clicking the bookmark-icon
-  save: manual
+  save: auto
 
 
 # ---------------------------------------------------------------
