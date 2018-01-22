@@ -138,10 +138,10 @@ If your content of config just directly after the config name, then a space is n
 math:
   enable: false
 
-  # Default(false) will load mathjax/katex srcipt EVERY PAGE
-  # If you set to true, you need to add 'mathjax: true' in Front Matter of post
-  # in order to render math equations in post
-  per_page: false
+  # Default(true) will load mathjax/katex script on demand
+  # That is it only render those page who has 'mathjax: true' in Front Matter.
+  # If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.
+  per_page: true
 
   engine: mathjax
   #engine: katex
@@ -173,15 +173,13 @@ math:
 
 ### per_page
 
-`true` or `false`, default is `false`.
+`true` or `false`, default is `true`.
 
 This option is to control whether to render Math Equations every page.
 
-The behavior of default (`false`) is to render Math Equations on **every page**.
+The behavior of default (`true`) is to render Math Equations **on demand**.
 
-When you set it to `true`, it will only render the post with `mathjax: true` Front Matter.
-
-If your post's Front Matter doesn't have `mathjax: true` or you set `mathjax: false`, then NexT will not render Math Equations for those posts.
+It will only render those posts which have `mathjax: true` in their Front Matter.
 
 For example:
 
@@ -210,6 +208,8 @@ title: 'Not Render Math Either'
 ---
 ....
 ```
+
+When you set it to `false`, the math will be render on **EVERY PAGE**.
 
 ### cdn
 
