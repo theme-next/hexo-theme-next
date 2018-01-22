@@ -375,10 +375,10 @@ font:
 math:
   enable: false
 
-  # Default(true) will load mathjax/katex srcipt EVERY PAGE
-  # If you set to false, you need to add 'mathjax: true' in Front Matter of post
+  # Default(false) will load mathjax/katex srcipt EVERY PAGE
+  # If you set to true, you need to add 'mathjax: true' in Front Matter of post
   # in order to render math equations in post
-  per_page: true
+  per_page: false
 
   engine: mathjax
   #engine: katex
