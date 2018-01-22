@@ -140,10 +140,10 @@ markdown:
 math:
   enable: false
 
-  # Default(false) will load mathjax/katex srcipt EVERY PAGE
-  # If you set to true, you need to add 'mathjax: true' in Front Matter of post
+  # Default(true) will load mathjax/katex srcipt EVERY PAGE
+  # If you set to false, you need to add 'mathjax: true' in Front Matter of post
   # in order to render math equations in post
-  per_page: false
+  per_page: true
 
   engine: mathjax
   #engine: katex
@@ -175,13 +175,13 @@ math:
 
 ### per_page
 
-`true` 或者 `false`，默认为 `false`。
+`true` 或者 `false`，默认为 `true`。
 
 这个选项是控制是否在每篇文章都渲染数学公式；
 
-默认(`false`)的行为是**对每篇文章都进行数学公式渲染**；
+默认(`true`)的行为是**对每篇文章都进行数学公式渲染**；
 
-`true` 的行为是**只对 Front Matter 中含有 `mathjax: true` 的文章进行数学公式渲染**。
+`false` 的行为是**只对 Front Matter 中含有 `mathjax: true` 的文章进行数学公式渲染**。
 
 如果 Front Matter 中不含有 `mathjax: true`，或者 `mathjax: false`，那么 NexT 将不会对这些文章进行数学公式渲染。
 
