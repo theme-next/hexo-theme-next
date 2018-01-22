@@ -89,7 +89,7 @@
      $ git checkout tags/v6.0.1
      Note: checking out 'tags/v6.0.1'.
      …
-     HEAD now on 1f72f68... CSS: Remove global list-style setting of ul
+     HEAD is now at da9cdd2... Release v6.0.1
      ```
 
      然后，假设你想要切换回 [master 分支][commits-url]，输入如下指令即可：
