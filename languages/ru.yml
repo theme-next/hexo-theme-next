@@ -24,7 +24,7 @@ post:
   sticky: Ссылка
   posted: Размещено
   in: в категории
-  more: далее
+  more: more
   read_more: Читать полностью
   untitled: Без имени
   toc_empty: Эта запись без оглавления
@@ -37,12 +37,12 @@ post:
     author: Автор записи
     link: Ссылка на запись
     license_title: Информация об авторских правах
-    license_content: "Все записи на этом сайте защищены лицензией %s если не указано дополнительно."
+    license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
 page:
   totally: Всего
   tags: тэги
 footer:
-  powered: "Сгенерировано через %s"
+  powered: "Генератор — %s"
   theme: Тема
 counter:
   tag_cloud:
