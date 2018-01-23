@@ -83,7 +83,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [browser-url]: https://www.browserstack.com
 
 [lang-image]: https://img.shields.io/badge/languages-15-orange.svg "Add or improve translate with GitLocalize!"
-[lang-url]: https://gitlocalize.com/repo/697
+[lang-url]: https://gitlocalize.com/repo/698
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
