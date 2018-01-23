@@ -3,20 +3,20 @@ title:
   archive: 歸檔
   category: 分類
   tag: 標籤
-  schedule: 日程表
-author: 博主
+  schedule: 時間表
+author: 作者
 menu:
   home: 首頁
   archives: 歸檔
   categories: 分類
   tags: 標籤
   about: 關於
-  search: 檢索
-  schedule: 日程表
-  sitemap: 站點地圖
+  search: 搜尋
+  schedule: 時間表
+  sitemap: 網站地圖
   commonweal: 公益404
 sidebar:
-  overview: 本站概覽
+  overview: 本站概要
   toc: 文章目錄
 post:
   created: 創建於
@@ -24,20 +24,20 @@ post:
   sticky: 置頂
   posted: 發表於
   in: 分類於
-  more: 閱讀全文
+  more: more
   read_more: 閱讀全文
   untitled: 未命名
-  toc_empty: 此文章未包含目錄
+  toc_empty: 此文章沒有目錄
   visitors: 閱讀次數
   symbols_count: 文章字數
   symbols_time: 閱讀時間
-  total_symbols: 總字數
-  total_time: 總閱讀時間
+  total_symbols: 網站總字數
+  total_time: 網站總閱讀時間
   copyright:
     author: 作者
-    link: Post link
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under <a href=\"%s\" rel=\"external nofollow\" target=\"_blank\">%s</a> unless stating additionally."
+    link: 文章連結
+    license_title: 版權聲明
+    license_content: "本網誌所有文章除特別聲明外，均採用 <a href=\"%s\" rel=\"external nofollow\" target=\"_blank\">%s</a> 許可協議。轉載請註明出處！"
 page:
   totally: 共有
   tags: 標籤
@@ -46,38 +46,38 @@ footer:
   theme: 主題
 counter:
   tag_cloud:
-    zero: 暫無標籤
-    one: 目前共計 1 個標籤
-    other: "目前共計 %d 個標籤"
+    zero: 沒有標籤
+    one: 目前共有 1 個標籤
+    other: "目前共有 %d 個標籤"
   categories:
-    zero: 暫無分類
-    one: 目前共計 1 個分類
-    other: "目前共計 %d 個分類"
+    zero: 沒有分類
+    one: 目前共有 1 個分類
+    other: "目前共有 %d 個分類"
   archive_posts:
-    zero: 暫無文章。
-    one: 目前共計 1 篇文章。
-    other: "目前共計 %d 篇文章。"
+    zero: 沒有文章。
+    one: 目前共有 1 篇文章。
+    other: "目前共有 %d 篇文章。"
 state:
   posts: 文章
   pages: 頁面
   tags: 標籤
   categories: 分類
 search:
-  placeholder: 搜索...
+  placeholder: 搜尋...
 cheers:
   um: 嗯..
   ok: OK
   nice: 好
   good: 很好
   great: 非常好
-  excellent: 非常屌
+  excellent: 太棒了
 keep_on: 繼續努力。
 symbol:
   comma: "， "
   period: "。 "
   colon: "："
 reward:
-  donate: 打賞
+  donate: 捐贈
   wechatpay: 微信支付
   alipay: 支付寶
   bitcoin: 比特幣
