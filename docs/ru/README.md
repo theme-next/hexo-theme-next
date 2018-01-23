@@ -83,7 +83,7 @@ $ git pull
 [browser-url]: https://www.browserstack.com
 
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Добавить или улучшить перевод за несколько секунд!"
-[lang-url]: https://crowdin.com/project/theme-next
+[lang-url]: https://crwd.in/theme-next
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
