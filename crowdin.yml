@@ -1,6 +1,6 @@
 files:
-  - source: /docs/**/*.md
-    ignore:
-      - AGPL3
-      - AUTHORS
-    translation: /docs/%two_letters_code%/%original_file_name%
+  - source: /languages/_en.yml
+    translation: /languages/%locale%.%file_extension%
+    languages_mapping:
+      locale:
+        ru: ru
