@@ -3,7 +3,7 @@
   <script src="{{ bookmark_uri }}"></script>
   <script type="text/javascript">
   {% if is_post() %}
-    bookmark.scrollToMark('{{ theme.bookmark.save }}');
+    bookmark.scrollToMark('{{ theme.bookmark.save }}', "#{{ __('post.more') }}");
   {% else %}
     bookmark.loadBookmark();
   {% endif %}
