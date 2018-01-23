@@ -14,7 +14,7 @@ menu:
   search: 搜索
   schedule: 日程表
   sitemap: 站点地图
-  commonweal: 公益404
+  commonweal: 公益 404
 sidebar:
   overview: 站点概览
   toc: 文章目录
@@ -32,12 +32,12 @@ post:
   symbols_count: 字数统计
   symbols_time: 阅读时长
   total_symbols: 站点总字数
-  total_time: 站点总阅读时间
+  total_time: 站点总阅读时长
   copyright:
     author: 本文作者
     link: 本文链接
     license_title: 版权声明
-    license_content: "本博客所有文章除特别声明外，均采用 <a href=\"%s\" rel=\"external nofollow\" target=\"_blank\">%s</a> 许可协议。转载请注明出处！"
+    license_content: "\"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！\""
 page:
   totally: 共有
   tags: 标签
