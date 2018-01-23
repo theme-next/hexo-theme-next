@@ -83,7 +83,7 @@ $ git pull
 [browser-url]: https://www.browserstack.com
 
 [lang-image]: https://img.shields.io/badge/languages-15-orange.svg "使用 GitLocalize 添加或改進翻譯!"
-[lang-url]: https://gitlocalize.com/repo/679
+[lang-url]: https://gitlocalize.com/repo/697
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
