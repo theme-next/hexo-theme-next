@@ -31,10 +31,10 @@ post:
   untitled: 未命名
   toc_empty: 此文章未包含目錄
   visitors: 閱讀次數
-  wordcount: 字數統計
-  min2read: 閱讀時長
-  totalcount: Site words total count
-  totaltime: Site reading time
+  symbols_count: 字數統計
+  symbols_time: 閱讀時長
+  total_symbols: Site words total count
+  total_time: Site reading time
   copyright:
     author: Post author
     link: Post link

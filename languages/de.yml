@@ -28,10 +28,10 @@ post:
   untitled: Unbenannt
   toc_empty: Dieser Artikel hat kein Inhaltsverzeichnis
   visitors: Visitors
-  wordcount: Words count in article
-  min2read: Reading time
-  totalcount: Site words total count
-  totaltime: Site reading time
+  symbols_count: Words count in article
+  symbols_time: Reading time
+  total_symbols: Site words total count
+  total_time: Site reading time
   copyright:
     author: Post author
     link: Post link

@@ -32,10 +32,10 @@ post:
   untitled: Senza titolo
   toc_empty: Questo post non ha un indice
   visitors: Visitatori
-  wordcount: Numero di parole nell'articolo
-  min2read: Tempo di lettura
-  totalcount: Numero totale di parole
-  totaltime: Site reading time
+  symbols_count: Numero di parole nell'articolo
+  symbols_time: Tempo di lettura
+  total_symbols: Numero totale di parole
+  total_time: Site reading time
   copyright:
     author: Autore
     link: Link
