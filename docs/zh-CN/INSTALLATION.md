@@ -116,5 +116,5 @@ theme: next
 [curl-tar-url]: http://lmgtfy.com/?q=linux+curl+tar+install
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
-[update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-Hans/README.md#update
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-Hans/DATA-FILES.md
+[update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/README.md#update
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md

@@ -116,6 +116,6 @@ $ git pull
 [tags-url]: https://github.com/theme-next/hexo-theme-next/tags
 [commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master
 
-[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-Hans/INSTALLATION.md
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-Hans/DATA-FILES.md
-[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-Hans/UPDATE-FROM-5.1.X.md
+[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
+[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md
