@@ -37,7 +37,7 @@ post:
     author: Người viết
     link: Liên kết bài viết
     license_title: Chú ý bản quyền
-    license_content: "Tất cả bài viết trong blog này được đăng ký bởi <a href=\"%s\" rel=\"external nofollow\" target=\"_blank\">%s</a> trừ khi có thông báo bổ sung."
+    license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
 page:
   totally: Toàn bộ
   tags: thẻ

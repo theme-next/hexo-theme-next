@@ -37,7 +37,7 @@ post:
     author: Post auteur
     link: Post link
     license_title: Copyright melding
-    license_content: "Alle artikelen op deze blog zijn gelicenseerd onder <a href=\"%s\" rel=\"external nofollow\" target=\"_blank\">%s</a>, mits niet anders aangegeven."
+    license_content: "Alle artikelen op deze blog zijn gelicenseerd onder %s, mits niet anders aangegeven."
 page:
   totally: Totaal
   tags: labels
