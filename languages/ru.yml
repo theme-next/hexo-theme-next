@@ -37,22 +37,22 @@ menu:
   about: О сайте
   archives: Архив
   categories: Категории
+  commonweal: Страница 404
   home: Главная
   schedule: Календарь
   search: Поиск
   sitemap: Карта сайта
   tags: Тэги
-  commonweal: Страница 404
 page:
   tags: тэги
   totally: Всего
 post:
   copyright:
     author: Автор записи
-    license_content: Все записи на этом сайте защищены лицензией <a href="%s" rel="external
-      nofollow" target="_blank">%s</a> если не указано дополнительно.
     license_title: Информация об авторских правах
     link: Ссылка на запись
+    license_content: Все записи на этом сайте защищены лицензией %s если не указано
+      дополнительно.
   created: Дата создания записи
   in: в категории
   min2read: Время чтения в минутах
@@ -67,6 +67,10 @@ post:
   untitled: Без имени
   visitors: Просмотров
   wordcount: Кол-во слов в статье
+  symbols_count: Кол-во символов в статье
+  symbols_time: Время чтения в минутах
+  total_symbols: Общее кол-во символов в записях
+  total_time: Время чтения всего сайта
 reward:
   alipay: Alipay
   bitcoin: Bitcoin
@@ -91,3 +95,4 @@ title:
   category: Категория
   schedule: Календарь
   tag: Тэг
+gitmentbutton: Открыть Gitment комментарии
