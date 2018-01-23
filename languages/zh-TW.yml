@@ -24,17 +24,17 @@ post:
   sticky: 置頂
   posted: 發表於
   in: 分類於
-  more: more
+  more: 閱讀全文
   read_more: 閱讀全文
   untitled: 未命名
   toc_empty: 此文章未包含目錄
   visitors: 閱讀次數
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
+  symbols_count: 文章字數
+  symbols_time: 閱讀時間
+  total_symbols: 總字數
+  total_time: 總閱讀時間
   copyright:
-    author: Post author
+    author: 作者
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under <a href=\"%s\" rel=\"external nofollow\" target=\"_blank\">%s</a> unless stating additionally."
