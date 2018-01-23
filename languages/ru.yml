@@ -42,8 +42,8 @@ page:
   totally: Всего
   tags: тэги
 footer:
-  powered: "Powered by %s"
-  theme: Theme
+  powered: "Сгенерировано через %s"
+  theme: Тема
 counter:
   tag_cloud:
     zero: Нет тэгов.
