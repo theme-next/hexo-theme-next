@@ -1,0 +1,6 @@
+files:
+  - source: /docs/**/*.md
+    ignore:
+      - AGPL3
+      - AUTHORS
+    translation: /docs/%two_letters_code%/%original_file_name%
