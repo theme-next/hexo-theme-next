@@ -4,3 +4,10 @@ files:
     languages_mapping:
       locale:
         ru: ru
+        de: de
+        id: id
+        it: it
+        ja: ja
+        ko: ko
+        pt-PT: pt
+        vi: vi
