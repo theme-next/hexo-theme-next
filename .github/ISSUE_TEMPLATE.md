@@ -30,13 +30,13 @@ You may delete this recomendations and use template which is placed below.
 * Link(s) to source code or any usefull link(s): N/A
 
 ### Node.js and NPM Information
-<!-- Paste info from `node -v && npm -v`  (粘贴 `node -v && npm -v` 的输出) -->
+<!-- Paste output from `node -v && npm -v`  (粘贴 `node -v && npm -v` 输出的信息) -->
 ```
 
 ```
 
 ### Package dependencies Information
-<!-- Paste info from `cat package.json`  (粘贴 `cat package.json` 的输出) -->
+<!-- Paste output from `cat package.json`  (粘贴 `cat package.json` 输出的信息) -->
 ```
 
 ```
@@ -44,13 +44,13 @@ You may delete this recomendations and use template which is placed below.
 ### Hexo Information
 
 #### Hexo version
-<!-- Paste info from `hexo -v`  (粘贴 `hexo -v` 的输出) -->
+<!-- Paste output from `hexo -v`  (粘贴 `hexo -v` 输出的信息) -->
 ```
 
 ```
 
 #### Hexo Configuration
-<!-- Paste info from Hexo `_config.yml`  (从 Hexo `_config.yml` 中粘贴信息) -->
+<!-- Paste configuration from Hexo `_config.yml`  (从 Hexo `_config.yml` 中粘贴信息) -->
 ```yml
 
 ```
