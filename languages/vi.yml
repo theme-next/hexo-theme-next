@@ -32,9 +32,9 @@ post:
   untitled: Không có tiêu đề
   toc_empty: Bài viết này không có mục lục
   visitors: Người xem
-  wordcount: Số từ trong bài viết
-  min2read: Thời gian đọc
-  totalcount: Số từ trong trang
+  symbols_count: Số từ trong bài viết
+  symbols_time: Thời gian đọc
+  total_symbols: Số từ trong trang
   copyright:
     author: Người viết
     link: Liên kết bài viết
