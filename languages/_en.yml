@@ -32,10 +32,10 @@ post:
   untitled: Untitled
   toc_empty: This post does not have a Table of Contents
   visitors: Visitors
-  wordcount: Words count in article
-  min2read: Reading time
-  totalcount: Site words total count
-  totaltime: Site reading time
+  symbols_count: Symbols count in article
+  symbols_time: Reading time
+  total_symbols: Symbols count total
+  total_time: Reading time total
   copyright:
     author: Post author
     link: Post link
