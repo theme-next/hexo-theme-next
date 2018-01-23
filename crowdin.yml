@@ -1,15 +1,9 @@
 files:
   - source: /languages/_en.yml
-    translation: /languages/%locale%.%file_extension%
+    translation: /languages/%two_letters_code%.%file_extension%
     languages_mapping:
-      locale:
-        ru: ru
-        de: de
-        id: id
-        it: it
-        ja: ja
-        ko: ko
-        pt-PT: pt
-        vi: vi
-        fr: fr
-        nl: nl
+      two_letters_code:
+        zh-CN: zh-CN
+        zh-TW: zh-TW
+        zh-HK: zh-HK
+        pt-BR: pt-BR
