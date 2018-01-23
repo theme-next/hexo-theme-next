@@ -30,13 +30,13 @@ You may delete this recomendations and use template which is placed below.
 * Link(s) to source code or any usefull link(s): N/A
 
 ### Node.js and NPM Information
-<!-- Paste info from `node -v && npm -v`  (粘貼信息 `node -v && npm -v`) -->
+<!-- Paste info from `node -v && npm -v`  (粘贴 `node -v && npm -v` 的输出) -->
 ```
 
 ```
 
 ### Package dependencies Information
-<!-- Paste info from `cat package.json`  (粘貼信息 `cat package.json`) -->
+<!-- Paste info from `cat package.json`  (粘贴 `cat package.json` 的输出) -->
 ```
 
 ```
@@ -44,13 +44,13 @@ You may delete this recomendations and use template which is placed below.
 ### Hexo Information
 
 #### Hexo version
-<!-- Paste info from `hexo -v`  (粘貼信息 `hexo -v`) -->
+<!-- Paste info from `hexo -v`  (粘贴 `hexo -v` 的输出) -->
 ```
 
 ```
 
 #### Hexo Configuration
-<!-- Paste info from Hexo `_config.yml`  (粘貼信息 Hexo `_config.yml`) -->
+<!-- Paste info from Hexo `_config.yml`  (从 Hexo _config.yml 中粘贴信息) -->
 ```yml
 
 ```
@@ -76,7 +76,7 @@ You may delete this recomendations and use template which is placed below.
 ```
 
 #### NexT Configuration:
-<!-- Paste info from NexT `_config.yml`  (粘貼信息 NexT `_config.yml`) -->
+<!-- Paste ONLY CHANGED CONFIGURATION from NexT `_config.yml` (只粘贴NexT主题配置文件 _config.yml 中修改过的部分) -->
 ```yml
 
 ```
