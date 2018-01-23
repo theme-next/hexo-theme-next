@@ -50,14 +50,15 @@ page:
 post:
   copyright:
     author: Автор записи
-    license_content: Все записи на этом сайте защищены лицензией %s если не указано
-      дополнительно.
     license_title: Информация об авторских правах
     link: Ссылка на запись
+    license_content: Все записи на этом сайте защищены лицензией %s, если не указано
+      дополнительно.
   created: Дата создания записи
   in: в категории
   min2read: Время чтения в минутах
   modified: Дата обновления записи
+  more: далее
   posted: Размещено
   read_more: Читать полностью
   sticky: Ссылка
@@ -71,7 +72,6 @@ post:
   untitled: Без имени
   visitors: Просмотров
   wordcount: Кол-во слов в статье
-  more: more
 reward:
   alipay: Alipay
   bitcoin: Bitcoin
