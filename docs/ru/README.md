@@ -6,11 +6,11 @@
 
 <p align="center">«NexT» — элегантная высококачественная тема под <a href="http://hexo.io">Hexo</a>. Сделана с нуля, с любовью.</p>
 
-[![lang-image]][lang-url]
 [![gitter-image]][gitter-url]
 [![riot-image]][riot-url]
 [![t-chat-image]][t-chat-url]
 [![t-news-image]][t-news-url]
+[![lang-image]][lang-url]
 [![travis-image]][travis-url]
 [![rel-image]][releases-url]
 [![hexo-image]][hexo-url]
@@ -82,8 +82,8 @@ $ git pull
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
-[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "Добавить или улучшить перевод через GitLocalize!"
-[lang-url]: https://gitlocalize.com/repo/698
+[lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Добавить или улучшить перевод за несколько секунд!"
+[lang-url]: https://crowdin.com/project/theme-next
 
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
