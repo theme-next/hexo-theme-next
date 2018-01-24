@@ -5,3 +5,5 @@
 {% include 'changyan.swig' %}
 {% include 'gitment.swig' %}
 {% include 'valine.swig' %}
+{% include '_gitalk.swig' %}
+{% include '_disqus.swig' %}

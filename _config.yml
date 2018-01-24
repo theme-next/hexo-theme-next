@@ -416,10 +416,10 @@ pangu: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
-  count: true
-  lazyload: false
+  enable: true
+  shortname: 
+  count: false
+  click_show: true # if true,need to click to show
 
 # Hypercomments
 #hypercomments_id:
@@ -470,6 +470,16 @@ gitment:
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
+# gitalk
+gitalk:
+  enable: true
+  click_show: false # if true,need to click to show
+  owner: # MUST HAVE, Your Github Username
+  repo: # MUST HAVE, The name of the repo you use to store gitalk comments
+  client_id: # MUST HAVE, Github client id for the gitalk
+  client_secret: # EITHER this or proxy_gateway, Github access secret token for the gitalk
+  admin: # MUST HAVE, Your Github Username
+  
 # Baidu Share
 # Available value:
 #    button | slide
@@ -882,7 +892,6 @@ vendors:
   # needMoreShare2
   # https://github.com/revir/need-more-share2
   needMoreShare2:
-
 
 # Assets
 css: css

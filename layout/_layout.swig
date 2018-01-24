@@ -93,5 +93,25 @@
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
+
+    <script type="text/javascript">
+        var OriginTitile=document.title;
+        var st;
+        document.addEventListener('visibilitychange',function(){
+            if(document.hidden){
+                document.title='╭(°A°`)╮好奇怪崩溃啦!';
+                clearTimeout(st);
+                //console.log(‘hide’);
+            }else{
+                document.title='(ฅ>ω<*ฅ) 噫又好了~ '+OriginTitile;
+                //console.log('show');
+                st=setTimeout(function(){
+                    document.title=OriginTitile;
+                },4000);
+                //console.log('endChange=');
+            }
+        });
+    </script>
+
 </body>
 </html>

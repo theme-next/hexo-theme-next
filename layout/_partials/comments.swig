@@ -1,5 +1,43 @@
 {% if page.comments %}
 
+  
+    {% if theme.gitalk.enable %}
+        {% if theme.gitalk.click_show %}
+            <div onclick="showGitalk();" id="gitalk_title" class="gitalk_title">显示 Gitalk 评论</div>
+        {% endif %}
+    {% endif %}
+    {% if theme.disqus.enable %}
+        {% if theme.disqus.click_show %}
+        <div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div>
+        {% endif %}
+    {% endif %}
+
+
+    {% if theme.gitalk.enable %}
+        <div id="gitalk_container" style="display:none;"></div>
+    {% endif %}
+
+    {% if theme.disqus.enable %}
+        <div id="disqus_thread">
+        <div id="dqs_loading"><div id="dqs_loading_inner"></div></div>
+        <noscript>
+            Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+        </div>
+    {% endif %}
+
+    {#
+    {% if theme.disqus.enable %}
+        <div id="disqus_thread">
+        <noscript>
+            Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+        </div>
+    {% endif %}
+    #}
+
   {% if theme.facebook_sdk.enable and theme.facebook_comments_plugin.enable %}
     <div class="comments" id="comments">
       <div class="fb-comments"
@@ -13,16 +51,6 @@
   {% elseif theme.vkontakte_api.enable and theme.vkontakte_api.comments %}
     <div class="comments" id="comments">
       <div id="vk_comments"></div>
-    </div>
-
-  {% elseif theme.disqus.enable %}
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
     </div>
 
   {% elseif theme.hypercomments_id %}

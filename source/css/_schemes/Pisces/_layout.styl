@@ -2,6 +2,7 @@
   position: relative;
   margin: 0 auto;
   width: $main-desktop;
+  //width: 82%;
 
   +tablet() {
     width: auto;
@@ -48,6 +49,7 @@
 
 .container .main-inner {
   width: $main-desktop;
+  //width: 82%;
 
   +tablet() {
     width: auto;
@@ -62,6 +64,7 @@
   box-sizing: border-box;
   padding: $content-desktop-padding;
   width: $content-desktop;
+  //width: calc(100% - 260px);
   background: white;
   min-height: 700px;
   box-shadow: $box-shadow-inner;
@@ -128,3 +131,7 @@
   }
 }
 
+// 更改页面宽度
+// .header{ width: 80%; }
+//.container .main-inner { width: 80%; }
+//.content-wrap { width: calc(100% - 260px); }
