@@ -51,7 +51,7 @@
 {% if theme.footer.theme.enable %}
   <div class="theme-info">{#
   #}{{ __('footer.theme') }} &mdash; {#
-#}<a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next"{% if theme.seo %} rel="external nofollow"{% endif %}>{#
+  #}<a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next"{% if theme.seo %} rel="external nofollow"{% endif %}>{#
     #}NexT.{{ theme.scheme }}{#
   #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
 #}</div>
