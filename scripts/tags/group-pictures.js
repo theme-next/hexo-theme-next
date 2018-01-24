@@ -823,7 +823,9 @@ var templates = {
     var columnStyle = ' style="width: ' + columnWidth + '%;"';
 
     for (var i = 0; i < pictures.length; i++) {
-      columns.push('<div class="group-picture-column" ' + columnStyle + '>' + pictures[i] + '</div>');
+      var src = /src="(\S+)"/.exec(pictures[i])[1];
+      var alt = /alt="(\S*)"/.exec(pictures[i])[1];
+      columns.push('<div class="group-picture-column" ' + columnStyle + '><a class="fancybox" href="' + src + '" >' + pictures[i] + '</a><div class="fb-alt">'+alt+'</div></div>');
     }
     return columns.join('');
   }

@@ -1,6 +1,6 @@
 {% macro render(post, is_index, post_extra_class) %}
 
-  {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
+  {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture', 'nohead'], post.type) > -1 %}
 
   {% set post_class = 'post post-type-' + post.type | default('normal') %}
   {% if post_extra_class > 0 %}
@@ -129,7 +129,18 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if theme.facebook_comments_plugin.enable %}
+            {% if is_post() and theme.gitalk.enable %}
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                  <span class="post-meta-item-icon">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                <a href="{{ url_for(post.path) }}#gitalk_container" itemprop="discussionUrl">
+                  <span class="post-comments-count gitalk-comment-count"
+                        data-xid="{{ post.path }}" itemprop="commentCount"></span>
+                </a>
+              </span>
+            {% elseif theme.facebook_comments_plugin.enable %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
@@ -279,9 +290,16 @@
           {% for photo in post.photos %}
             {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
               <a class="post-gallery-img fancybox"
-                 href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
+                 href="{{url_for(photo.slice(photo.indexOf(':')+2)) }}" rel="gallery_{{ post._id }}"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
+                <img src="{{ url_for(photo.slice(photo.indexOf(':')+2)) }}" itemprop="contentUrl"/>
+                <div>
+                  {% if photo.indexOf(':')>1 %}
+                    {{ trim(photo.substr(0,photo.indexOf(':'))) }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </div>
               </a>
             {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
           {% endfor %}
@@ -322,7 +340,7 @@
           </div>
           <!--/noindex-->
         {% else %}
-          {% if post.type === 'picture' %}
+          {% if post.type === 'picture' && post.clik %}
             <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
           {% else %}
             {{ post.content }}
