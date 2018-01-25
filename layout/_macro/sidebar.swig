@@ -64,7 +64,11 @@
                 {% set hasCategoriesPage = categoriesPageQuery.length > 0 %}
                 <div class="site-state-item site-state-categories">
                   {% if hasCategoriesPage %}<a href="{{ url_for(categoriesPageQuery[0].path) }}">{% endif %}
-                    <span class="site-state-item-count">{{ site.categories.length }}</span>
+                    {% set visibleCategories = 0 %}
+                    {% for cat in site.categories %}
+                      {% if cat.length %}{% set visibleCategories += 1 %}{% endif %}
+                    {% endfor %}
+                    <span class="site-state-item-count">{{ visibleCategories }}</span>
                     <span class="site-state-item-name">{{ __('state.categories') }}</span>
                   {% if hasCategoriesPage %}</a>{% endif %}
                 </div>
@@ -75,7 +79,11 @@
                 {% set hasTagsPage = tagsPageQuery.length > 0 %}
                 <div class="site-state-item site-state-tags">
                   {% if hasTagsPage %}<a href="{{ url_for(tagsPageQuery[0].path) }}">{% endif %}
-                    <span class="site-state-item-count">{{ site.tags.length }}</span>
+                    {% set visibleTags = 0 %}
+                    {% for tag in site.tags %}
+                      {% if tag.length %}{% set visibleTags += 1 %}{% endif %}
+                    {% endfor %}
+                    <span class="site-state-item-count">{{ visibleTags }}</span>
                     <span class="site-state-item-name">{{ __('state.tags') }}</span>
                   {% if hasTagsPage %}</a>{% endif %}
                 </div>
