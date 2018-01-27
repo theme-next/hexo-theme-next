@@ -16,13 +16,13 @@ NexT provides search plugin for index your hexo website content. To use this fea
     npm install --save hexo-algolia
     ```
 
-1. Go to API Keys and find your credentials. You will need the `Application ID`, the `Search-only API key` and the `Admin API key` in the following sections. the `Admin API key` needd to keep confidential.
+1. Go to API Keys and find your credentials. You will need the `Application ID`, the `Search-only API key` and the `Admin API key` in the following sections. The `Admin API key` need to keep confidential.
 
     ![          ](http://theme-next.iissnan.com/uploads/algolia/algolia-step-3.png)
 
 1. In the API KEY page, click the `ALL API KEYS` and the `edit` option in the created APIKEY to activate a pop-up box where you can setup authorizations and restrictions with a great level of precision. Check `Add records`, `Delete records`, `List indices`, `Delete index` features in ACL permissions that will be allowed for the given API key. And then click the Update button.
 
-1. In your site's `_config.yml`, add the following configuration and replace the `applicationID` & `apiKey` & `indexName` with corresponding fields obtained at Algolia:
+1. In your site's `_config.yml`, add the following configuration and replace the `applicationID` & `apiKey` & `indexName` with corresponding fields obtained at Algolia.
 
     ```yml
     algolia:
@@ -32,7 +32,7 @@ NexT provides search plugin for index your hexo website content. To use this fea
       chunkSize: 5000
     ```
 
-1. Then run the following command to upload index data, keep a weather eye out the output of the command.
+1. Run the following command to upload index data, keep a weather eye out the output of the command.
 
     ```
     $ export(windows 为 set) HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key
