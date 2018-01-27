@@ -58,7 +58,7 @@ NexT provides search plugin for index your hexo website content. To use this fea
 
 <h2 align="center">Known Issues</h2>
 
-1. The lastest version of the [Hexo-Algolia](https://github.com/oncletom/hexo-algolia) plugin removes the content indexing feature, given Algolia's free account limitation.
+1. The latest version of the [Hexo-Algolia](https://github.com/oncletom/hexo-algolia) plugin removes the content indexing feature, given Algolia's free account limitation.
 
 1. The [Hexo-Algoliasearch](https://github.com/LouisBarranqueiro/hexo-algoliasearch) plugin provides content indexing functionality, but requires the replacement of keywords in the NEXT theme. The same problem exists with `Record Too Big` for Algolia's free account.
     - Replace all `applicationID` in `source/js/src/algolia-search.js` with `appId`
