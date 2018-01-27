@@ -12,15 +12,18 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
     npm install --save hexo-algolia
     ```
 
-1. 在 Algolia 服务站点上找到需要使用的一些配置的值，包括 `ApplicationID`、`Search-Only API Key`、`Admin API Key`。注意，`Admin API Key` 需要保密保存。点击 ALL API KEYS 找到新建 INDEX 对应的 key，编辑权限，在弹出框中找到 ACL 选择勾选 Add records, Delete records, List indices, Delete index 权限，点击 update 更新。
+1. 在 Algolia 服务站点上找到需要使用的一些配置的值，包括 `ApplicationID`、`Search-Only API Key`、`Admin API Key`。注意，`Admin API Key` 需要保密保存。
 
     ![          ](http://theme-next.iissnan.com/uploads/algolia/algolia-step-3.png)
+
+1. 在 API KEY 页面，点击 ALL API KEYS 找到新建 INDEX 对应的 key，编辑权限，在弹出框中**找到 ACL 选择勾选 Add records, Delete records, List indices, Delete index 权限，点击 update 更新**。
 
 1. 编辑 `站点配置文件`，新增以下配置，替换除了 `chunkSize` 以外的其他字段为在 Algolia 获取到的值：
 
     ```yml
     algolia:
       applicationID: 'applicationID'
+      apiKey: 'apiKey'
       indexName: 'indexName'
       chunkSize: 5000
     ```
