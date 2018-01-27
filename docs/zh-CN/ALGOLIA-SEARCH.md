@@ -38,7 +38,7 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
 
     ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png)
 
-1. 更改主题配置文件，找到 Algolia Search 配置部分，将 `enable` 改为 `true` 即可，根据需要你可以调整 `labels` 中的文本：
+1. 更改`主题配置文件`，找到 Algolia Search 配置部分，将 `enable` 改为 `true` 即可，根据需要你可以调整 `labels` 中的文本：
 
     ```yml
     # Algolia Search
@@ -55,6 +55,6 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
 <h2 align="center">已知的问题</h2>
 
 1. 考虑到 Algolia 免费账户的限制，目前 [Hexo-Algolia](https://github.com/oncletom/hexo-algolia) 插件最新版本去掉了正文索引功能。
-1. [Hexo-Algoliasearch](https://github.com/LouisBarranqueiro/hexo-algoliasearch) 插件提供了正文索引功能，不过需要替换 NEXT 主题中的关键字。`Record Too Big` 的问题同样存在。
+1. [Hexo-Algoliasearch](https://github.com/LouisBarranqueiro/hexo-algoliasearch) 插件提供了正文索引功能，不过需要替换 NEXT 主题中的关键字。对于免费账户，`Record Too Big` 的问题同样存在。
     - 替换 `source/js/src/algolia-search.js` 中所有的 `applicationID` 为 `appId`
     - 替换 `layout/_partials/head/head.swig` 中所有的 `applicationID` 为 `appId`
