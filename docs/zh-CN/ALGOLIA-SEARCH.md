@@ -1,6 +1,6 @@
 <h1 align="center">Algolia 搜索</h1>
 
-NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用的 NexT 版本在 `v5.1.0` 之后。需要注意的是，仅仅将 `next/_config.yml` 中 `algolia_search` 的 `enable` 打开**并不能让你使用 Algolia 搜索**，你还需要**使用对应的 Hexo-Algolia 插件** 才能真正在博客页面中使用 Algolia 搜索。
+NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用的 NexT 版本在 `v5.1.0` 之后。需要注意的是，仅仅将 `next/_config.yml` 中 `algolia_search` 的 `enable` 打开**并不能让你使用 Algolia 搜索**，你还需要**使用对应的 Hexo-Algolia 插件** 才能真正在博客页面中使用 Algolia 搜索。按照下面介绍的步骤操作即可完成 Algolia 搜索的安装。
 
 1. 前往 [Algolia 注册页面](https://www.algolia.com/)，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。
 
@@ -12,13 +12,13 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
     npm install --save hexo-algolia
     ```
 
-1. 在 Algolia 服务站点上找到需要使用的一些配置的值，包括 `ApplicationID`、`Search-Only API Key`、`Admin API Key`。注意，`Admin API Key` 需要保密保存。
+1. 在 API KEY 页面找到需要使用的一些配置的值，包括 `ApplicationID`、`Search-Only API Key`、`Admin API Key`。注意，`Admin API Key` 需要保密保存。
 
     ![          ](http://theme-next.iissnan.com/uploads/algolia/algolia-step-3.png)
 
 1. 在 API KEY 页面，点击 ALL API KEYS 找到新建 INDEX 对应的 key，编辑权限，在弹出框中**找到 ACL 选择勾选 Add records, Delete records, List indices, Delete index 权限，点击 update 更新**。
 
-1. 编辑 `站点配置文件`，新增以下配置，替换除了 `chunkSize` 以外的其他字段为在 Algolia 获取到的值：
+1. 编辑 `站点配置文件`，新增以下配置，除了 `chunkSize` 字段，替换成在 Algolia 获取到的值：
 
     ```yml
     algolia:
