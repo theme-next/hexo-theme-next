@@ -31,7 +31,8 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
 1. 当配置完成，在站点根目录下执行一下命令来更新 Index。请注意观察命令的输出。
 
     ```
-    $ export(windows 为 set) HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key
+    $ export HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # 使用 Git Bash
+    # set HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # 使用 Windows CMD 命令行
     $ hexo clean
     $ hexo algolia
     ```
