@@ -48,7 +48,7 @@ NexT provides search plugin for index your hexo website content. To use this fea
     ```yml
     # Algolia Search
     algolia_search:
-      enable: false
+      enable: true
       hits:
         per_page: 10
       labels:
