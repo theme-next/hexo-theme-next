@@ -12,11 +12,14 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
     npm install --save hexo-algolia
     ```
 
-1. 在 API KEY 页面找到需要使用的一些配置的值，包括 `ApplicationID`、`Search-Only API Key`、`Admin API Key`。注意，`Admin API Key` 需要保密保存。
+1. 在 `API Keys` 页面找到需要使用的一些配置的值，包括 `ApplicationID` 和 `Search-Only API Key`。注意，`Admin API Key` 需要保密保存，不要外泄。
 
-    ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-3.png)
+    ![](https://user-images.githubusercontent.com/8521181/35479066-64e35aec-0428-11e8-91f9-1ec3afa45c5c.png)
 
-1. 在 API KEY 页面，点击 ALL API KEYS 找到新建 INDEX 对应的 key，编辑权限，在弹出框中**找到 ACL 选择勾选 Add records, Delete records, List indices, Delete index 权限，点击 update 更新**。
+1. 在 `API Keys` 页面，点击 `ALL API KEYS` 找到新建 INDEX 对应的 key，**编辑权限**，在弹出框中找到 ACL ，**勾选 Add records、 Delete records、List indices、Delete index 权限**，点击 update 更新。
+
+    ![](https://user-images.githubusercontent.com/8521181/35479064-611aa0b4-0428-11e8-85a1-cfb449b486ec.png)
+    ![](https://user-images.githubusercontent.com/8521181/35479084-d4f7ac02-0428-11e8-95a6-c4e3b1bef47b.png)
 
 1. 编辑 `站点配置文件`，新增以下配置，除了 `chunkSize` 字段，替换成在 Algolia 获取到的值：
 
@@ -28,7 +31,7 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
       chunkSize: 5000
     ```
 
-1. 当配置完成，在站点根目录下执行一下命令来更新 Index。请注意观察命令的输出。
+1. 当配置完成，在站点根目录下执行一下命令来更新上传 Index。请注意观察命令的输出。
 
     ```
     $ export HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # 使用 Git Bash

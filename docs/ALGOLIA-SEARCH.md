@@ -16,11 +16,14 @@ NexT provides search plugin for index your hexo website content. To use this fea
     npm install --save hexo-algolia
     ```
 
-1. Go to API Keys and find your credentials. You will need the `Application ID`, the `Search-only API key` and the `Admin API key` in the following sections. The `Admin API key` need to keep confidential.
+1. Go to the `API Keys` page and find your credentials. You will need the `Application ID` and the `Search-only API key` in the following sections. The `Admin API key` need to keep confidential. Never store your Admin API Key as apiKey in the` _config.yml` file: it would give full control of your Algolia index to others and you don't want to face the consequences.
 
-    ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-3.png)
+    ![](https://user-images.githubusercontent.com/8521181/35479066-64e35aec-0428-11e8-91f9-1ec3afa45c5c.png)
 
-1. In the API KEY page, click the `ALL API KEYS` and the `edit` option in the created APIKEY to activate a pop-up box where you can setup authorizations and restrictions with a great level of precision. Check `Add records`, `Delete records`, `List indices`, `Delete index` features in ACL permissions that will be allowed for the given API key. And then click the Update button.
+1. In the `API Keys` page, click the `ALL API KEYS` and the `edit` option in the created APIKEY to activate a pop-up box where you can setup authorizations and restrictions with a great level of precision. Check `Add records`, `Delete records`, `List indices`, `Delete index` features in ACL permissions that will be allowed for the given API key. And then click the `Update` button.
+
+    ![](https://user-images.githubusercontent.com/8521181/35479064-611aa0b4-0428-11e8-85a1-cfb449b486ec.png)
+    ![](https://user-images.githubusercontent.com/8521181/35479084-d4f7ac02-0428-11e8-95a6-c4e3b1bef47b.png)
 
 1. In your site's `_config.yml`, add the following configuration and replace the `applicationID` & `apiKey` & `indexName` with corresponding fields obtained at Algolia.
 
