@@ -121,9 +121,6 @@
     lazyload: {{ theme.lazyload }},
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
-    page: {
-      sidebar: {{ page.sidebar | json_encode }},
-    },
     algolia: {
       applicationID: '{{ theme.algolia.applicationID }}',
       apiKey: '{{ theme.algolia.apiKey }}',
