@@ -280,6 +280,18 @@ symbols_count_time:
 #alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
+# Related popular posts
+# Dependencies: https://github.com/tea3/hexo-related-popular-posts
+related_posts:
+  enable: true
+  params:
+    maxCount: 5
+    #ulClass: 'popular-posts'
+    PPMixingRate: 1.0
+    #isDate: false
+    #isImage: false
+    #isExcerpt: false
+
 # Declare license on posts
 post_copyright:
   enable: false

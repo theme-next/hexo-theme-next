@@ -332,6 +332,11 @@
         {{ post.content }}
       {% endif  %}
     </div>
+
+    {% if theme.related_posts.enable %}
+      {{ popular_posts(theme.related_posts.params, post) }}
+    {% endif %}
+
     {#####################}
     {### END POST BODY ###}
     {#####################}
