@@ -3,8 +3,8 @@ title:
   archive: アーカイブ
   category: カテゴリ
   tag: タグ
-  schedule: Schedule
-author: Author
+  schedule: スケジュール
+author: 著者
 menu:
   home: ホーム
   archives: アーカイブ
@@ -12,14 +12,14 @@ menu:
   tags: タグ
   about: About
   search: 検索
-  schedule: Schedule
-  sitemap: Sitemap
+  schedule: スケジュール
+  sitemap: サイトマップ
   commonweal: Commonweal 404
 sidebar:
   overview: 概要
   toc: 見出し
 post:
-  created: Post created
+  created: 作成された時間
   modified: Updated at
   sticky: 固定
   posted: 投稿日
@@ -28,22 +28,22 @@ post:
   read_more: 続きを読む
   untitled: 無題
   toc_empty: 見出しがありません
-  visitors: Visitors
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
+  visitors: 訪問数
+  symbols_count: 単語数
+  symbols_time: 読書の時間
+  total_symbols: 単語の総数
+  total_time: 読書の合計時間
   copyright:
-    author: Post author
+    author: 著者
     link: Post link
-    license_title: Copyright Notice
+    license_title: 著作権表示
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
   totally: 全ページ
   tags: タグ
 footer:
   powered: "Powered by %s"
-  theme: Theme
+  theme: テーマ
 counter:
   tag_cloud:
     zero: タグなし
@@ -63,22 +63,22 @@ state:
   tags: タグ
   categories: カテゴリ
 search:
-  placeholder: Searching...
+  placeholder: 検索…
 cheers:
   um: うーん
-  ok: OK
+  ok: はい
   nice: まあまあ
   good: いいね
   great: すごい
   excellent: 最高
 keep_on: もっと書こう！
 symbol:
-  comma: ", "
-  period: ". "
-  colon: ":"
+  comma: "、 "
+  period: "。 "
+  colon: "："
 reward:
   donate: Donate
-  wechatpay: WeChat Pay
+  wechatpay: WeChat 支払う
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+gitmentbutton: Gitment からのコメントを表示
