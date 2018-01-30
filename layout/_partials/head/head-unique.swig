@@ -26,3 +26,10 @@
 {% if theme.canonical %}
   <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>
 {% endif %}
+
+{# Exports some front-matter variables to Front-End #}
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: {{ page.sidebar | json_encode }},
+  };
+</script>

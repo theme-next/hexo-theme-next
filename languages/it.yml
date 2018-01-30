@@ -37,7 +37,7 @@ post:
     author: Autore
     link: Link
     license_title: Copyright
-    license_content: "Tutti gli articoli in questo sito sono sotto licenza <a href=\"%s\" rel=\"external nofollow\" target=\"_blank\">%s</a> salvo disposizione contraria."
+    license_content: "Tutti gli articoli in questo sito sono sotto licenza %s salvo disposizione contraria."
 page:
   totally: Totale
   tags: tags
