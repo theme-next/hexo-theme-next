@@ -219,3 +219,5 @@ For MathJax, we use a fallback CDN as default and provide other CDN as optional.
 
 For Katex, we use cdnjs as the default CDN and use the Katex 0.7.1 version. Due to the problem described above, if you need to use other CDN, please use the Katex 0.7.1 version.
 Of cause, we also provide a CDN which could automatically use the latest version of Katex, if you want to check the effect of it.
+
+Particularly, if you are Chinese blogger, or most of your visitors are in China, because the default CDN is blocked in some parts of China, please use the `cdn.bootcss.com` version instead of the default `cdnjs.cloudflare.com` version.

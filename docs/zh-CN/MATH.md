@@ -154,7 +154,7 @@ math:
     cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com).
     #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
-    # For automatic detect latest version link to MathJax.js and get from CloudFlare.
+    # For automatic detect latest version link to MathJax.js and get from Bootcdn.
     #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin)
@@ -162,6 +162,8 @@ math:
   katex:
     # Use Katex 0.7.1 as default
     cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
+    # For whose visitors are mostly in China
+    #cdn: ://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
     # If you want to try the latest version of Katex, use one below instead
     #cdn: //cdn.jsdelivr.net/katex/latest/katex.min.css
 ```
@@ -219,3 +221,5 @@ MathJax 和 Katex 都提供了 `cdn` 的配置，如果你不知道什么是 `cd
 对于 MathJax 来说，默认采用了会自动 fallback 的 CDN，也提供了其他 CDN 作为可选项。
 
 对于 Katex 来说，我们使用 cdnjs 作为默认 CDN，并采用 0.7.1 的 Katex 版本；由于上面提到的版本问题，如果你需要使用其他 CDN，也请使用 Katex 0.7.1 版本。当然，如果你想查看最新版本的 Katex 的效果，我们也提供了一个能自动获取最新版本的 Katex 的 CDN 作为可选项。
+
+特别的，对于中国的博客主，或者您博客的访问者大多来源于中国，由于默认的 CDN 在部分中国地区被墙，请使用 `cdn.bootcss.com` 版本的 CDN 替代默认的 `cdnjs.cloudflare.com` CDN。
