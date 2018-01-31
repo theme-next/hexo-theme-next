@@ -163,6 +163,10 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
+  # Dependencies: exturl: true in Tags Settings section below.
+  # To encrypt links above use https://www.base64encode.org
+  # Example encoded link: `GitHub: aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQ= || github`
+  exturl: false
 
 # Follow me on GitHub banner in right-top corner.
 # Usage: `permalink || title`
