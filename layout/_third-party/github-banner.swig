@@ -3,7 +3,7 @@
   {% set github_banner_fg_color = "#fff" %}
   {% set github_title = theme.github_banner.split('||')[1] | trim %}
     {% if theme.exturl && theme.social_icons.exturl %}
-      {% set github_url = '<span class="exturl" data-url=' %}
+      {% set github_url = '<span class="exturl github-corner" data-url=' %}
     {% else %}
       {% set github_url = '<a href=' %}
     {% endif %}
