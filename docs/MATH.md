@@ -161,7 +161,7 @@ math:
     # Use Katex 0.7.1 as default
     cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
     # For whose visitors are mostly in China
-    #cdn: ://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
+    #cdn: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
     # If you want to try the latest version of Katex, use one below instead
     #cdn: //cdn.jsdelivr.net/katex/latest/katex.min.css
 ```
