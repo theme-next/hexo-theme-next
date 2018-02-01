@@ -6,7 +6,9 @@
 // Settings for some of the most global styles.
 // --------------------------------------------------
 $body-bg-color                    = #eee
-$main-desktop                     = 75%
+$main-desktop                     = hexo-config('max_content_width')
+$main-desktop                     = $main-desktop ? unquote($main-desktop) : 75%
+
 $sidebar-desktop                  = 240px
 $content-desktop                  = calc(100% - 252px)
 

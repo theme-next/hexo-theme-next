@@ -314,6 +314,11 @@ highlight_theme: normal
 # Enable "cheers" for archive page.
 cheers_enabled: true
 
+# Manual define the max content width
+# !!Only available for Gemini Scheme currently
+# Leave it empty for the default 75% (suggest not less than 1000px)
+#max_content_width: 1000px
+
 # ---------------------------------------------------------------
 # Font Settings
 # - Find fonts on Google Fonts (https://www.google.com/fonts)
