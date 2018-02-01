@@ -1,7 +1,15 @@
+get_max_content_width() {
+  if (hexo-config('scheme') == 'Gemini') {
+    $max-content-width = hexo-config('max_content_width')
+    max-width: unquote($max-content-width) if $max-content-width
+  }
+}
+
 .header {
   position: relative;
   margin: 0 auto;
   width: $main-desktop;
+  get_max_content_width();
 
   +tablet() {
     width: auto;
@@ -48,6 +56,7 @@
 
 .container .main-inner {
   width: $main-desktop;
+  get_max_content_width();
 
   +tablet() {
     width: auto;
@@ -101,6 +110,7 @@
 
 .footer-inner {
   width: $main-desktop;
+  get_max_content_width();
   padding-left: 260px;
 
   +tablet() {
