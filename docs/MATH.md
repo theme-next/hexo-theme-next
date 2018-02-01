@@ -210,15 +210,22 @@ title: 'Not Render Math Either'
 ....
 ```
 
-When you set it to `false`, the math will be render on **EVERY PAGE**.
+When you set it to `false`, the math will be rendered on **EVERY PAGE**.
 
 ### cdn
 
 Both MathJax and Katex provide a config `cdn`, if you don't know what is `cdn`, **do not touch it**.
 
-For MathJax, we use a fallback CDN as default and provide other CDN as optional.
+Firstly, both MathJax and Katex use the [jsDelivr](https://www.jsdelivr.com/) as default CDN.
 
-For Katex, we use cdnjs as the default CDN and use the Katex 0.7.1 version. Due to the problem described above, if you need to use other CDN, please use the Katex 0.7.1 version.
-Of cause, we also provide a CDN which could automatically use the latest version of Katex, if you want to check the effect of it.
+Why choose the jsDelivr is because it is fast in everywhere, and jsDelivr has the valid ICP license issued by the Chinese government, it can be accessed in China pretty well.
 
-Particularly, if you are Chinese blogger, or most of your visitors are in China, because the default CDN is blocked in some parts of China, please use the `cdn.bootcss.com` version instead of the default `cdnjs.cloudflare.com` version.
+And we also provide other optional CDNs, including the famous [CDNJS](https://cdnjs.com/) and the [Bootcss](http://www.bootcdn.cn/) which has the quite high access speed in China.
+
+For MathJax, we are currently using the 2.7.1 version.
+
+For Katex, due to the problem described above, we are now using the 0.7.1 version.
+
+If you want to try the other CDN not included in the optional list, you must use the corresponding version.
+
+Particularly, if you are Chinese blogger or most of your visits are come from China, please note that **the CDNJS is blocked in some parts of China**, don't use it as CDN.

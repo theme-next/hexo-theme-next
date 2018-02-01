@@ -136,6 +136,7 @@ markdown:
 如果配置的内容接在冒号后面，那么内容和冒号之间必须有一个空格(例如`enable: true`)
 
 ```yml
+
 # Math Equations Render Support
 math:
   enable: false
@@ -150,22 +151,24 @@ math:
 
   # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
   mathjax:
+    # Use 2.7.1 as default, jsdelivr as default CDN, works everywhere even in China
+    cdn: //cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     # For newMathJax CDN (cdnjs.cloudflare.com) with fallback to oldMathJax (cdn.mathjax.org).
-    cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    #cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com).
     #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
-    # For automatic detect latest version link to MathJax.js and get from Bootcdn.
+    # For automatic detect latest version link to MathJax.js and get from Bootcss.
     #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin)
   # needed to full Katex support.
   katex:
-    # Use Katex 0.7.1 as default
-    cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
-    # For whose visitors are mostly in China
+    # Use 0.7.1 as default, jsdelivr as default CDN, works everywhere even in China
+    cdn: //cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css
+    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
+    # Bootcss, works great in China, but not so well in other region
     #cdn: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
-    # If you want to try the latest version of Katex, use one below instead
-    #cdn: //cdn.jsdelivr.net/katex/latest/katex.min.css
 ```
 
 ### enable
@@ -218,8 +221,16 @@ title: 'Not Render Math Either'
 
 MathJax 和 Katex 都提供了 `cdn` 的配置，如果你不知道什么是 `cdn` ，**请不要修改这个配置**。
 
-对于 MathJax 来说，默认采用了会自动 fallback 的 CDN，也提供了其他 CDN 作为可选项。
+首先，MathJax 和 Katex 都使用了 [jsDelivr](https://www.jsdelivr.com/) 作为默认 CDN；
 
-对于 Katex 来说，我们使用 cdnjs 作为默认 CDN，并采用 0.7.1 的 Katex 版本；由于上面提到的版本问题，如果你需要使用其他 CDN，也请使用 Katex 0.7.1 版本。当然，如果你想查看最新版本的 Katex 的效果，我们也提供了一个能自动获取最新版本的 Katex 的 CDN 作为可选项。
+之所以选择 jsDelivr 是因为它在全球各地都有比较不错的速度，而且具有中国官方颁布的 ICP 证书，在中国也能比较好地访问。
 
-特别的，对于中国的博客主，或者您博客的访问者大多来源于中国，由于默认的 CDN 在部分中国地区被墙，请使用 `cdn.bootcss.com` 版本的 CDN 替代默认的 `cdnjs.cloudflare.com` CDN。
+同时，我们也提供了其他的 CDN 备选方案，包括著名的 [CDNJS](https://cdnjs.com/) 和在中国地区具有不错访问效果的 [Bootcss](http://www.bootcdn.cn/)。
+
+对于 MathJax 来说，我们目前采用的版本为 2.7.1。
+
+对于 Katex，由于上面提到的版本问题，我们目前采用的版本为 0.7.1。
+
+如果你想尝试我们提供的备选方案以外的 CDN，请注意使用对应的版本。
+
+特别的，对于中国的博客主，或者您的博客访问大部分来源于中国，由于 CDNJS 在部分中国地区被墙，请不要使用 CDNJS 作为 CDN。
