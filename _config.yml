@@ -894,6 +894,11 @@ vendors:
   needmoreshare2_js:
   needmoreshare2_css:
 
+  # bookmark
+  # Internal version: 1.0.0
+  # https://github.com/theme-next/theme-next-bookmark
+  bookmark:
+
 
 # Assets
 css: css
