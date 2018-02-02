@@ -7,6 +7,7 @@
 // --------------------------------------------------
 $body-bg-color                    = #eee
 $main-desktop                     = 75%
+$max-content-width                = hexo-config('max_content_width')
 $sidebar-desktop                  = 240px
 $content-desktop                  = calc(100% - 252px)
 
@@ -19,15 +20,3 @@ $border-radius-inner              = initial
 $border-radius                    = initial
 //$border-radius-inner            = 0 0 3px 3px;
 //$border-radius                  = 3px;
-
-// Maximum content width.
-// --------------------------------------------------
-$max-content-width                = hexo-config('max_content_width')
-
-if $max-content-width {
-  .header,
-  .container .main-inner,
-  .footer-inner {
-    max-width: unquote($max-content-width);
-  }
-}
