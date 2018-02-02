@@ -284,6 +284,7 @@ symbols_count_time:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: true
+  title:
   params:
     maxCount: 5
     #ulClass: 'popular-posts'
