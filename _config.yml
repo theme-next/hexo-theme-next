@@ -283,12 +283,12 @@ symbols_count_time:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: true
+  enable: false
   title:
   params:
     maxCount: 5
     #ulClass: 'popular-posts'
-    PPMixingRate: 1.0
+    #PPMixingRate: 0.0
     #isDate: false
     #isImage: false
     #isExcerpt: false
