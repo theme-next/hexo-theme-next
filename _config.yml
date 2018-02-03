@@ -904,6 +904,12 @@ vendors:
   # https://github.com/theme-next/theme-next-bookmark
   bookmark:
 
+  # reading_progress
+  # Internal version: 1.0
+  # https://github.com/theme-next/theme-next-reading-progress
+  # Example: https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
+  reading_progress:
+
 
 # Assets
 css: css
