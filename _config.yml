@@ -283,7 +283,7 @@ symbols_count_time:
 # Declare license on posts
 post_copyright:
   enable: false
-  license: <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a>
+  license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
 
 # ---------------------------------------------------------------
