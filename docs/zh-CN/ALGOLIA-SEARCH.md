@@ -9,7 +9,7 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
 1. Index 创建完成后，此时这个 Index 里未包含任何数据。接下来需要安装 [Hexo Algolia](https://github.com/oncletom/hexo-algolia) 扩展，这个扩展的功能是搜集站点的内容并通过 API 发送给 Algolia。前往站点根目录，执行命令安装：
 
     ```
-    $ cd Your-blog-dir
+    $ cd hexo
     $ npm install --save hexo-algolia
     ```
 
@@ -50,7 +50,7 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
     $ git clone https://github.com/theme-next/theme-next-algolia-instant-search source/lib/algolia-instant-search
     ```
 
-    如果你想直接使用 CDN 设置 Algolia Search，在`主题配置文件`中添加 vendors 字段：
+    如果你想直接使用 CDN 设置 Algolia Search，在`主题配置文件`中添加 vendors 字段，并且添加如下个性化代码到 `~/themes/next/source/css/_custom/custom.styl` 或者 `~/source/_data/styles.styl`中。
 
     ```yml
     vendors:
@@ -62,6 +62,12 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
       ...
     ```
 
+    ```~/source/_data/styles.styl
+    // Custom styles.
+    svg path {
+      display: none;
+    }
+    ```
 
 1. 更改`主题配置文件`，找到 Algolia Search 配置部分，将 `enable` 改为 `true` 即可，根据需要你可以调整 `labels` 中的文本：
 

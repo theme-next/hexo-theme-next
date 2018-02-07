@@ -12,7 +12,7 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
 1. Algolia requires users to upload their search index data either manually or via provided APIs. Install and configure [Hexo Algolia](https://github.com/oncletom/hexo-algolia) in your Hexo directory. This plugin will index your site and upload selected data to Algolia.
 
     ```
-    $ cd Your-blog-dir
+    $ cd hexo
     $ npm install --save hexo-algolia
     ```
 
@@ -46,18 +46,30 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
 
     ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png)
 
-1. Change dir to NexT directory, and install module to `source/lib` directory. 
+1. Change dir to NexT directory, and install module to `source/lib` directory.
 
     ```
     $ cd themes/next
     $ git clone https://github.com/theme-next/theme-next-algolia-instant-search source/lib/algolia-instant-search
     ```
 
-    If you want to use the CDN instead of clone this repo, then need to set vendors in NexT `_config.yml` file.
+    If you want to use the CDN instead of clone this repo, then need to **set vendors** in NexT `_config.yml` file and **add** custom code in `~/themes/next/source/css/_custom/custom.styl` or `~/source/_data/styles.styl`
+
+    ```yml
+    vendors:
+      ...
+      # Internal version: 1
+      # https://www.algolia.com
+      algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
+      algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
+      ...
+    ```
 
     ```
-    algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
-    algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
+    // Custom styles.
+    svg path {
+      display: none;
+    }
     ```
 
 1. In `next/_config.yml`, turn on `enable` of `algolia_search`. You can adjust the text in `labels` according to your needs.
