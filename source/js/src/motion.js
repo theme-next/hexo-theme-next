@@ -211,7 +211,7 @@ $(document).ready(function () {
       var $logoLineTop = $('.logo-line-before i');
       var $logoLineBottom = $('.logo-line-after i');
 
-      $brand.size() > 0 && sequence.push({
+      $brand.length > 0 && sequence.push({
         e: $brand,
         p: {opacity: 1},
         o: {duration: 200}
@@ -268,7 +268,7 @@ $(document).ready(function () {
       function hasElement ($elements) {
         $elements = Array.isArray($elements) ? $elements : [$elements];
         return $elements.every(function ($element) {
-          return $.isFunction($element.size) && $element.size() > 0;
+          return $element.length > 0;
         });
       }
     },
@@ -300,7 +300,7 @@ $(document).ready(function () {
       var $collHeaderTransition = CONFIG.motion.transition.coll_header;
       var $sidebarAffix = $('.sidebar-inner');
       var $sidebarAffixTransition = CONFIG.motion.transition.sidebar;
-      var hasPost = $postBlock.size() > 0;
+      var hasPost = $postBlock.length > 0;
 
       hasPost ? postMotion() : integrator.next();
 
