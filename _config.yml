@@ -283,7 +283,7 @@ symbols_count_time:
 # Declare license on posts
 post_copyright:
   enable: false
-  license: <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a>
+  license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
 
 # ---------------------------------------------------------------
@@ -654,6 +654,7 @@ calendar:
   maxResults: 250
 
 # Algolia Search
+# See: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ALGOLIA-SEARCH.md
 # Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
 algolia_search:
   enable: false
@@ -908,6 +909,12 @@ vendors:
   # Internal version: 1.0.0
   # https://github.com/theme-next/theme-next-bookmark
   bookmark:
+
+  # reading_progress
+  # Internal version: 1.0
+  # https://github.com/theme-next/theme-next-reading-progress
+  # Example: https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
+  reading_progress:
 
 
 # Assets
