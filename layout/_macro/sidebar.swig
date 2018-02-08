@@ -36,11 +36,7 @@
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
               <p class="site-description motion-element" itemprop="description">{#
-            #}{% if theme.seo %}{#
-              #}{{ theme.signature }}{#
-            #}{% else %}{#
               #}{{ theme.description }}{#
-            #}{% endif %}{#
             #}</p>
           </div>
 
