@@ -319,6 +319,11 @@ cheers_enabled: true
 # Leave it empty for the default 75% (suggest not less than 1000px)
 #max_content_width: 1000px
 
+# Manual define the sidebar width
+# !!Only available for Gemini Scheme currently
+# Leave it empty for the default 240
+sidebar_width:
+
 # ---------------------------------------------------------------
 # Font Settings
 # - Find fonts on Google Fonts (https://www.google.com/fonts)
