@@ -9,14 +9,15 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
 1. Index 创建完成后，此时这个 Index 里未包含任何数据。接下来需要安装 [Hexo Algolia](https://github.com/oncletom/hexo-algolia) 扩展，这个扩展的功能是搜集站点的内容并通过 API 发送给 Algolia。前往站点根目录，执行命令安装：
 
     ```
-    npm install --save hexo-algolia
+    $ cd hexo
+    $ npm install --save hexo-algolia
     ```
 
 1. 在 `API Keys` 页面找到需要使用的一些配置的值，包括 `ApplicationID` 和 `Search-Only API Key`。注意，`Admin API Key` 需要保密保存，不要外泄。
 
     ![](https://user-images.githubusercontent.com/8521181/35479066-64e35aec-0428-11e8-91f9-1ec3afa45c5c.png)
 
-1. 在 `API Keys` 页面，点击 `ALL API KEYS` 找到新建 INDEX 对应的 key，**编辑权限**，在弹出框中找到 ACL ，**勾选 Add records、 Delete records、List indices、Delete index 权限**，点击 update 更新。
+1. 在 `API Keys` 页面，点击 `ALL API KEYS` 找到新建 INDEX 对应的 key，**编辑权限**，在弹出框中找到 ACL ，**勾选 Add records、 Delete records、List indices、Delete index 权限**，点击 `update` 更新。
 
     ![](https://user-images.githubusercontent.com/8521181/35479064-611aa0b4-0428-11e8-85a1-cfb449b486ec.png)
     ![](https://user-images.githubusercontent.com/8521181/35479084-d4f7ac02-0428-11e8-95a6-c4e3b1bef47b.png)
@@ -41,6 +42,25 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
     ```
 
     ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png)
+
+1. 切换到 NexT 目录，并安装 algolia-instant-search 到 `source/lib` 目录。
+
+    ```
+    $ cd themes/next
+    $ git clone https://github.com/theme-next/theme-next-algolia-instant-search source/lib/algolia-instant-search
+    ```
+
+    如果你想直接使用 CDN 设置 Algolia Search，则需要在`主题配置文件`中添加 vendors 字段：
+
+    ```yml
+    vendors:
+      ...
+      # Internal version: 1
+      # https://www.algolia.com
+      algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
+      algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
+      ...
+    ```
 
 1. 更改`主题配置文件`，找到 Algolia Search 配置部分，将 `enable` 改为 `true` 即可，根据需要你可以调整 `labels` 中的文本：
 
