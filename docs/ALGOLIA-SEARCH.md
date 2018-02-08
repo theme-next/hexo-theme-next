@@ -53,8 +53,7 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
     $ git clone https://github.com/theme-next/theme-next-algolia-instant-search source/lib/algolia-instant-search
     ```
 
-    If you want to use the CDN instead of clone this repo, then need to **set vendors** in NexT `_config.yml` file and **add** custom code in `~/themes/next/source/css/_custom/custom.styl` or `~/source/_data/styles.styl`
-
+    If you want to use the CDN instead of clone this repo, then need to **set vendors** in NexT `_config.yml` file:
     ```yml
     vendors:
       ...
@@ -63,13 +62,6 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
       algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
       algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
       ...
-    ```
-
-    ```
-    // Custom styles.
-    svg path {
-      display: none;
-    }
     ```
 
 1. In `next/_config.yml`, turn on `enable` of `algolia_search`. You can adjust the text in `labels` according to your needs.
