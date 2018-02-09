@@ -3,7 +3,7 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   {% if theme.busuanzi_count.site_uv %}
-    <span class="site-uv">
+    <span class="site-uv" title={{ theme.busuanzi_count.site_uv_title }}>
       {{ theme.busuanzi_count.site_uv_header }}
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       {{ theme.busuanzi_count.site_uv_footer }}
@@ -11,7 +11,7 @@
   {% endif %}
 
   {% if theme.busuanzi_count.site_pv %}
-    <span class="site-pv">
+    <span class="site-pv" title={{ theme.busuanzi_count.site_pv_title }}>
       {{ theme.busuanzi_count.site_pv_header }}
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
       {{ theme.busuanzi_count.site_pv_footer }}

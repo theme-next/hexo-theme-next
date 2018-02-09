@@ -628,14 +628,17 @@ busuanzi_count:
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
   site_uv_footer:
+  site_uv_title:
   # custom pv span for the whole site
   site_pv: true
   site_pv_header: <i class="fa fa-eye"></i>
   site_pv_footer:
+  site_pv_title:
   # custom pv span for one page only
   page_pv: true
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer:
+  page_pv_title:
 
 
 # Tencent analytics ID
