@@ -3,19 +3,18 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   {% if theme.busuanzi_count.site_uv %}
-    <span class="site-uv">
-      {{ theme.busuanzi_count.site_uv_header }}
+    <span class="site-uv" title={{ __('footer.site_uv') }}>
+      <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      {{ theme.busuanzi_count.site_uv_footer }}
     </span>
   {% endif %}
 
   {% if theme.busuanzi_count.site_pv %}
-    <span class="site-pv">
-      {{ theme.busuanzi_count.site_pv_header }}
+    <span class="site-pv" title={{ __('footer.site_pv') }}>
+      <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      {{ theme.busuanzi_count.site_pv_footer }}
     </span>
   {% endif %}
 </div>
 {% endif %}
+
