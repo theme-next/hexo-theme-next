@@ -33,6 +33,7 @@ post:
   symbols_time: 阅读时长
   total_symbols: 站点总字数
   total_time: 站点总阅读时长
+  related_posts: Related Posts
   copyright:
     author: 本文作者
     link: 本文链接
