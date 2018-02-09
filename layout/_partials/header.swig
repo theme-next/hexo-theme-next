@@ -24,7 +24,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="{{ __('accessibility.nav_toggle') }}">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
