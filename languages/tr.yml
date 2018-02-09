@@ -33,6 +33,7 @@ post:
   symbols_time: Okuma zamanı
   total_symbols: İçerilen toplam semboller
   total_time: Toplam okuma zamanı
+  related_posts: Related Posts
   copyright:
     author: Gönderi yazarı
     link: Gönderi linki
