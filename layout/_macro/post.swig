@@ -333,8 +333,10 @@
       {% endif  %}
     </div>
 
-    {% if theme.related_posts.enable %}
-      {{ popular_posts(theme.related_posts.params, post) }}
+    {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
+      {% set popular_html = popular_posts(theme.related_posts.params, post) %}
+      {% if popular_html != '' %}<div class="popular-posts-header">{{ __('post.related_posts') }}</div>{% endif %}
+      {{ popular_html }}
     {% endif %}
 
     {#####################}

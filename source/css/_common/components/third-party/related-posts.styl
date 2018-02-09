@@ -1,14 +1,13 @@
+.popular-posts-header {
+  margin-top: $post-eof-margin-bottom;
+  margin-bottom: 10px;
+  font-size: $font-size-headings-base;
+  border-bottom: 1px solid $gainsboro;
+  display: block;
+}
+
 ul.popular-posts {
   padding: 0;
-
-  &:before {
-    content: hexo-config('related_posts.title') || 'Related Posts';
-    margin-top: $post-eof-margin-bottom;
-    margin-bottom: 10px;
-    font-size: $font-size-headings-base;
-    border-bottom: 1px solid $gainsboro;
-    display: block;
-  }
 
   .popular-posts-item {
     // list-style: none;
