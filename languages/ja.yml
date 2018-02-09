@@ -33,6 +33,7 @@ post:
   symbols_time: 読書の時間
   total_symbols: 単語の総数
   total_time: 読書の合計時間
+  related_posts: Related Posts
   copyright:
     author: 著者
     link: Post link

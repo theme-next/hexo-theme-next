@@ -33,6 +33,7 @@ post:
   symbols_time: 閱讀時間
   total_symbols: 網站總字數
   total_time: 網站總閱讀時間
+  related_posts: 相關文章
   copyright:
     author: 作者
     link: 文章連結
