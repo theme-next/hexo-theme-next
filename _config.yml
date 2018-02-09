@@ -296,7 +296,7 @@ related_posts:
 # Declare license on posts
 post_copyright:
   enable: false
-  license: <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a>
+  license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
 
 # ---------------------------------------------------------------
@@ -319,8 +319,7 @@ custom_logo:
   image:
 
 # Code Highlight theme
-# Available value:
-#    normal | night | night eighties | night blue | night bright
+# Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
@@ -331,6 +330,11 @@ cheers_enabled: true
 # !!Only available for Gemini Scheme currently
 # Leave it empty for the default 75% (suggest not less than 1000px)
 #max_content_width: 1000px
+
+# Manual define the sidebar width
+# !!Only available for Gemini Scheme currently
+# Leave it empty for the default 240
+sidebar_width:
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -355,13 +359,13 @@ font:
   # `family: Times New Roman`. Without any quotes.
   # `size: xx`. Use `px` as unit.
 
-  # Global font settings used on <body> element.
+  # Global font settings used for all elements in <body>.
   global:
     external: true
     family: Lato
     size:
 
-  # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
+  # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
   # Fallback to `global` font settings.
   headings:
     external: true
@@ -662,6 +666,7 @@ calendar:
   maxResults: 250
 
 # Algolia Search
+# See: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ALGOLIA-SEARCH.md
 # Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
 algolia_search:
   enable: false
@@ -916,6 +921,12 @@ vendors:
   # Internal version: 1.0.0
   # https://github.com/theme-next/theme-next-bookmark
   bookmark:
+
+  # reading_progress
+  # Internal version: 1.0
+  # https://github.com/theme-next/theme-next-reading-progress
+  # Example: https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
+  reading_progress:
 
 
 # Assets
