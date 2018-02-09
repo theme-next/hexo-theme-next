@@ -284,7 +284,7 @@ symbols_count_time:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: false
-  title: Test # custom header, leave empty to use the default one
+  title: # custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
