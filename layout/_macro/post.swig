@@ -217,9 +217,9 @@
           {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
             <span class="post-meta-divider">|</span>
             <span class="post-meta-item-icon"
-            {% if not theme.post_meta.item_text %} title={{ __('post.page_pv') }} {% endif %}>
+            {% if not theme.post_meta.item_text %} title="{{ __('post.visitors') }}" {% endif %}>
             <i class="fa fa-file-o"></i>
-            {% if theme.post_meta.item_text %} {{__('post.page_pv') }} {% endif %}
+            {% if theme.post_meta.item_text %} {{__('post.visitors') }} {% endif %}
             <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           {% endif %}
