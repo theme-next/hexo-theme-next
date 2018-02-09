@@ -36,6 +36,7 @@ post:
   symbols_time: Reading time
   total_symbols: Symbols count total
   total_time: Reading time total
+  related_posts: Related Posts
   copyright:
     author: Post author
     link: Post link
