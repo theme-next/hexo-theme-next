@@ -218,8 +218,8 @@
             <span class="post-meta-divider">|</span>
             <span class="post-meta-item-icon"
             {% if not theme.post_meta.item_text %} title="{{ __('post.visitors') }}" {% endif %}>
-            <i class="fa fa-file-o"></i>
-            {% if theme.post_meta.item_text %} {{__('post.visitors') }} {% endif %}
+            <i class="fa fa-{{ theme.busuanzi_count.page_pv_icon }}"></i>
+            {% if theme.post_meta.item_text %} {{__('post.visitors') }}: {% endif %}
             <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           {% endif %}
