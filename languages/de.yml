@@ -28,7 +28,7 @@ post:
   read_more: Weiterlesen
   untitled: Unbenannt
   toc_empty: Dieser Artikel hat kein Inhaltsverzeichnis
-  visitors: Visitors
+  views: Views
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
@@ -45,6 +45,8 @@ page:
 footer:
   powered: "Erstellt mit  %s"
   theme: Theme
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Keine Tags
