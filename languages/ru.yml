@@ -28,7 +28,7 @@ post:
   read_more: Читать полностью
   untitled: Без имени
   toc_empty: Эта запись без оглавления
-  views: Views
+  views: Просмотров
   symbols_count: Кол-во символов в статье
   symbols_time: Время чтения в минутах
   total_symbols: Общее кол-во символов в записях
@@ -45,8 +45,8 @@ page:
 footer:
   powered: "Генератор — %s"
   theme: Тема
-  total_views: Total Views
-  total_visitors: Total Visitors
+  total_views: Всего просмотров
+  total_visitors: Всего посетителей
 counter:
   tag_cloud:
     zero: Нет тэгов.
