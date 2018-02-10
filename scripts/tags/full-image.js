@@ -1,6 +1,13 @@
-/* global hexo */
-// Usage: {% fullimage /path/to/image, alt, title %}
-// Alias: {% fi /path/to/image, alt, title %}
+/**
+ * full-image.js | global hexo script.
+ *
+ * Usage:
+ *
+ * {% fullimage /path/to/image, alt, title %}
+ * {% fi /path/to/image, alt, title %}
+ */
+
+'use strict';
 
 function fullImage(args) {
   args = args.join(' ').split(',');
@@ -22,5 +29,5 @@ function fullImage(args) {
   return image.join(' ');
 }
 
-hexo.extend.tag.register('fullimage', fullImage);
-hexo.extend.tag.register('fi', fullImage);
+hexo.extend.tag.register('fullimage', fullImage, { ends: false });
+hexo.extend.tag.register('fi', fullImage, { ends: false });
