@@ -46,7 +46,7 @@ footer:
   powered: "由 %s 强力驱动"
   theme: 主题
   total_views: 总访问量
-  total_visitors: Total Visitors
+  total_visitors: 总访客量
 counter:
   tag_cloud:
     zero: 暂无标签
