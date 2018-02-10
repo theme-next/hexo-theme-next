@@ -28,7 +28,7 @@ post:
   read_more: Đọc tiếp
   untitled: Không có tiêu đề
   toc_empty: Bài viết này không có mục lục
-  visitors: Người xem
+  views: Views
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
@@ -45,6 +45,8 @@ page:
 footer:
   powered: "Cung cấp bởi %s"
   theme: Giao Diện
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Không có thẻ nào

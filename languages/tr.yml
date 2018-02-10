@@ -28,7 +28,7 @@ post:
   read_more: Daha fazla oku
   untitled: Başlıksız
   toc_empty: Bu gönderinin içindekiler kısmı yok
-  visitors: Ziyaretçiler
+  views: Views
   symbols_count: Yazının içerdiği semboller
   symbols_time: Okuma zamanı
   total_symbols: İçerilen toplam semboller
@@ -45,6 +45,8 @@ page:
 footer:
   powered: "%s tarafından desteklenmektedir"
   theme: Tema
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Etiket yok

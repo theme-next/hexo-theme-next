@@ -31,7 +31,7 @@ post:
   read_more: Read more
   untitled: Untitled
   toc_empty: This post does not have a Table of Contents
-  visitors: Visitors
+  views: Views
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
@@ -50,6 +50,8 @@ page:
 footer:
   powered: "Powered by %s"
   theme: Theme
+  total_views: Total Views
+  total_visitors: Total Visitors
 
 counter:
   tag_cloud:

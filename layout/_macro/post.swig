@@ -208,16 +208,19 @@
                  <i class="fa fa-eye"></i>
                </span>
                {% if theme.post_meta.item_text %}
-                 <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span>
+                 <span class="post-meta-item-text">{{__('post.views')}}&#58;</span>
                {% endif %}
                  <span class="leancloud-visitors-count"></span>
              </span>
           {% endif %}
 
-          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
+          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
             <span class="post-meta-divider">|</span>
-            <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ theme.busuanzi_count.page_pv_footer }}
+            <span class="post-meta-item-icon"
+            {% if not theme.post_meta.item_text %} title="{{ __('post.views') }}" {% endif %}>
+            <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
+            {% if theme.post_meta.item_text %} {{__('post.views') + __('symbol.colon') }} {% endif %}
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           {% endif %}
 
