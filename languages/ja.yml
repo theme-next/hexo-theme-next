@@ -28,7 +28,7 @@ post:
   read_more: 続きを読む
   untitled: 無題
   toc_empty: 見出しがありません
-  visitors: 訪問数
+  views: Views
   symbols_count: 単語数
   symbols_time: 読書の時間
   total_symbols: 単語の総数
@@ -45,6 +45,8 @@ page:
 footer:
   powered: "Powered by %s"
   theme: テーマ
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: タグなし
