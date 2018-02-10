@@ -28,7 +28,7 @@ post:
   read_more: Leia mais
   untitled: Sem título
   toc_empty: Este post não possui tabela de conteúdo
-  visitors: Visitantes
+  views: Views
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
@@ -45,6 +45,8 @@ page:
 footer:
   powered: "Feito com %s"
   theme: Tema
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Sem tags
