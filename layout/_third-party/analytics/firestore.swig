@@ -56,7 +56,7 @@
               $('<span>').addClass('post-meta-item-icon').append(
                 $('<i>').addClass('fa fa-users')
               )
-              ).append($('<span>').text('{{ __("post.visitors")}} ' + count))
+              ).append($('<span>').text('{{ __("post.views")}} ' + count))
           )
         }
       }

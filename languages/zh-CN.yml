@@ -45,6 +45,8 @@ page:
 footer:
   powered: "由 %s 强力驱动"
   theme: 主题
+  site_pv: 总访问量
+  site_uv: 总访客量
 counter:
   tag_cloud:
     zero: 暂无标签
