@@ -28,7 +28,7 @@ post:
   read_more: Lees meer
   untitled: Naamloos
   toc_empty: Deze post heeft geen inhoudsopgave
-  visitors: Bezoekers
+  views: Views
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
@@ -45,6 +45,8 @@ page:
 footer:
   powered: "Mede mogelijk gemaakt door %s"
   theme: Thema
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Geen labels
