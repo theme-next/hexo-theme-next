@@ -45,8 +45,8 @@ page:
 footer:
   powered: "由 %s 強力驅動"
   theme: 主題
-  total_views: 總訪問量
-  total_visitors: 總訪客量
+  total_views: 總瀏覽次數
+  total_visitors: 訪客總數
 counter:
   tag_cloud:
     zero: 沒有標籤
