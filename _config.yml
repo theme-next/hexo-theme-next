@@ -252,7 +252,7 @@ auto_excerpt:
 
 # Post meta display settings
 post_meta:
-  item_text: true 
+  item_text: true
   created_at: true
   updated_at: false
   # Only show 'updated' if different from 'created'.
@@ -619,18 +619,16 @@ firestore:
   projectId: #required
   bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
 
-# Show PV/UV of the website/page with busuanzi.
-# PV: number of visitors
-# UV: number of unique visitors
+# Show Views/Visitors of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   enable: false
-  site_uv: true
-  site_uv_icon: user
-  site_pv: true
-  site_pv_icon: eye
-  page_pv: true
-  page_pv_icon: eye
+  total_visitors: true
+  total_visitors_icon: user
+  total_views: true
+  total_views_icon: eye
+  post_views: true
+  post_views_icon: eye
 
 
 # Tencent analytics ID
