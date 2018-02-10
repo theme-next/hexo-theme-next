@@ -28,7 +28,7 @@ post:
   read_more: 閱讀全文
   untitled: 未命名
   toc_empty: 此文章沒有目錄
-  visitors: 閱讀次數
+  views: Views
   symbols_count: 文章字數
   symbols_time: 閱讀時間
   total_symbols: 網站總字數
@@ -45,6 +45,8 @@ page:
 footer:
   powered: "由 %s 強力驅動"
   theme: 主題
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: 沒有標籤
