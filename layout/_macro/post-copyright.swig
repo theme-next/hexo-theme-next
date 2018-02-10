@@ -1,6 +1,6 @@
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>{{ __('post.copyright.author') + __('symbol.colon') }}</strong>{#
+    <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>{#
   #}{{ post.author | default(config.author) }}{#
 #}</li>
   <li class="post-copyright-link">
