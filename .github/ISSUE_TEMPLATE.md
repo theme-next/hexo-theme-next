@@ -8,7 +8,7 @@ You may delete this recomendations and use template which is placed below.
 
 ### I agree and want to create new issue <!-- (我确认我已经查看了) -->
 
-<!-- Check all with "x" (使用 "x" 选择) -->
+<!-- Check all with [x] (把 [ ] 换成 [X] 来选择) -->
 - [] Yes, I was on [Hexo Docs page](https://hexo.io/docs/), especially on [Templates](https://hexo.io/docs/templates.html), [Variables](https://hexo.io/docs/variables.html), [Helpers](https://hexo.io/docs/helpers.html) and [Troubleshooting](https://hexo.io/docs/troubleshooting.html).
 - [] Yes, I was on [NexT Documentation Site](http://theme-next.org/docs/).
 - [] And yes, I already searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue) and this is not help to me.
@@ -30,13 +30,13 @@ You may delete this recomendations and use template which is placed below.
 * Link(s) to source code or any usefull link(s): N/A
 
 ### Node.js and NPM Information
-<!-- Paste info from `node -v && npm -v`  (粘貼信息 `node -v && npm -v`) -->
+<!-- Paste output from `node -v && npm -v`  (粘贴 `node -v && npm -v` 输出的信息) -->
 ```
 
 ```
 
 ### Package dependencies Information
-<!-- Paste info from `cat package.json`  (粘貼信息 `cat package.json`) -->
+<!-- Paste output from `cat package.json`  (粘贴 `cat package.json` 输出的信息) -->
 ```
 
 ```
@@ -44,13 +44,13 @@ You may delete this recomendations and use template which is placed below.
 ### Hexo Information
 
 #### Hexo version
-<!-- Paste info from `hexo -v`  (粘貼信息 `hexo -v`) -->
+<!-- Paste output from `hexo -v`  (粘贴 `hexo -v` 输出的信息) -->
 ```
 
 ```
 
 #### Hexo Configuration
-<!-- Paste info from Hexo `_config.yml`  (粘貼信息 Hexo `_config.yml`) -->
+<!-- Paste configuration from Hexo `_config.yml`  (从 Hexo `_config.yml` 中粘贴信息) -->
 ```yml
 
 ```
@@ -58,7 +58,7 @@ You may delete this recomendations and use template which is placed below.
 ### NexT Information
 
 **NexT Version:**
-<!-- Check one with "x" (使用 "x" 选择) -->
+<!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
 ```
 [] Latest Master branch.
 [] Latest Release version.
@@ -66,7 +66,7 @@ You may delete this recomendations and use template which is placed below.
 ```
 
 **NexT Scheme:**
-<!-- Check one with "x" (使用 "x" 选择) -->
+<!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
 ```
 [] All schemes
 [] Muse
@@ -76,7 +76,7 @@ You may delete this recomendations and use template which is placed below.
 ```
 
 #### NexT Configuration:
-<!-- Paste info from NexT `_config.yml`  (粘貼信息 NexT `_config.yml`) -->
+<!-- Paste ONLY CHANGED CONFIGURATION from NexT `_config.yml` (只粘贴NexT主题配置文件 `_config.yml` 中修改过的部分) -->
 ```yml
 
 ```

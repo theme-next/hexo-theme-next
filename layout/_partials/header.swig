@@ -90,4 +90,9 @@
   {% endif %}
 </nav>
 
-{% include '../_custom/header.swig' %}
+{% if theme.custom_file_path.header %}
+  {% set custom_header = '../../../../' + theme.custom_file_path.header %}
+{% else %}
+  {% set custom_header = '../_custom/header.swig' %}
+{% endif %}
+{% include custom_header %}

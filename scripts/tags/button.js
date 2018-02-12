@@ -1,6 +1,13 @@
-/* global hexo */
-// Usage: {% button /path/to/url/, text, icon [class], title %}
-// Alias: {% btn /path/to/url/, text, icon [class], title %}
+/**
+ * button.js | global hexo script.
+ *
+ * Usage:
+ *
+ * {% button /path/to/url/, text, icon [class], title %}
+ * {% btn /path/to/url/, text, icon [class], title %}
+ */
+
+'use strict';
 
 function postButton(args) {
   args = args.join(' ').split(',');
@@ -27,5 +34,5 @@ function postButton(args) {
   return result.join('');
 }
 
-hexo.extend.tag.register('button', postButton);
-hexo.extend.tag.register('btn', postButton);
+hexo.extend.tag.register('button', postButton, { ends: false });
+hexo.extend.tag.register('btn', postButton, { ends: false });

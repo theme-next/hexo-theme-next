@@ -1,11 +1,10 @@
+---
 title:
   archive: Archive
   category: Category
   tag: Tag
   schedule: Schedule
-
 author: Author
-
 menu:
   home: Home
   archives: Archives
@@ -16,11 +15,9 @@ menu:
   schedule: Schedule
   sitemap: Sitemap
   commonweal: Commonweal 404
-
 sidebar:
   overview: Overview
   toc: Table of Contents
-
 post:
   created: Post created
   modified: Post modified
@@ -31,51 +28,45 @@ post:
   read_more: Read more
   untitled: Untitled
   toc_empty: This post does not have a Table of Contents
-  visitors: Visitors
-  wordcount: Words count in article
-  min2read: Reading time
-  totalcount: Site words total count
-  totaltime: Site reading time
+  views: Views
+  symbols_count: Symbols count in article
+  symbols_time: Reading time
+  total_symbols: Symbols count total
+  total_time: Reading time total
+  related_posts: Related Posts
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
-    license_content: 'All articles in this blog are licensed under
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
-
+    license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
   totally: Totally
   tags: tags
-
 footer:
   powered: "Powered by %s"
   theme: Theme
-
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: No tags
     one: 1 tag in total
     other: "%d tags in total"
-
   categories:
     zero: No categories
     one: 1 category in total
     other: "%d categories in total"
-
   archive_posts:
     zero: No posts.
     one: 1 post.
     other: "%d posts in total."
-
 state:
   posts: posts
   pages: pages
   tags: tags
   categories: categories
-
 search:
   placeholder: Searching...
-
 cheers:
   um: Um..
   ok: OK
@@ -83,16 +74,14 @@ cheers:
   good: Good
   great: Great
   excellent: Excellent
-
 keep_on: Keep on posting.
-
 symbol:
-  comma: ', '
-  period: '. '
-  colon: ':'
-
+  comma: ", "
+  period: ". "
+  colon: ":"
 reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Show comments from Gitment

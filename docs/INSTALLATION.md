@@ -14,7 +14,7 @@ Change dir to **hexo root** directory. There must be `node_modules`, `source`, `
 <p align="center">Download theme from GitHub.</br>
 There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
 
-### Option 1: Download [latest release version][releases-latest-url]</h3>
+### Option 1: Download [latest release version][releases-latest-url]
 
    At most cases **stable**. Recommended for beginners.
 
@@ -89,7 +89,7 @@ There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
      $ git checkout tags/v6.0.1
      Note: checking out 'tags/v6.0.1'.
      …
-     HEAD now on 1f72f68... CSS: Remove global list-style setting of ul
+     HEAD is now at da9cdd2... Release v6.0.1
      ```
 
      And if you want to switch back on [master branch][commits-url], input this command:
@@ -105,20 +105,6 @@ Set theme in main **hexo root config** `_config.yml` file:
 ```yml
 theme: next
 ```
-
-<h1 align="center">Plugins</h1>
-
-In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
-
-For example, you want to use `fancybox` in your site. Go to NexT config and see:
-
-```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
-```
-
-Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest

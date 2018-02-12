@@ -14,7 +14,7 @@
 <p align="center">Скачиваем тему с GitHub.</br>
 Имеются <b>3 способа</b> как зделать это, нужно <b>выбрать только 1</b> из них.</p>
 
-### Способ 1: Скачиваем [последнюю версию релиза][releases-latest-url]</h3>
+### Способ 1: Скачиваем [последнюю версию релиза][releases-latest-url]
 
    В большинстве случаев **стабильна**. Рекомендуется для начинающих пользователей.
 
@@ -89,7 +89,7 @@
      $ git checkout tags/v6.0.1
      Note: checking out 'tags/v6.0.1'.
      …
-     HEAD now on 1f72f68... CSS: Remove global list-style setting of ul
+     HEAD is now at da9cdd2... Release v6.0.1
      ```
 
      И если вы хотите переключиться обратно на [мастер-ветку][commits-url], вводим следующее:
@@ -105,20 +105,6 @@
 ```yml
 theme: next
 ```
-
-<h1 align="center">Плагины</h1>
-
-В конфиге NexT'а теперь можно найти зависимости на каждый модуль, который был вынесен во внешние репозитории, которые могут быть найдены по [ссылке основной организации](https://github.com/theme-next).
-
-Например, Вы хотите использовать `fancybox` для своего сайта. Открываем конфиг NexT'а и находим:
-
-```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
-```
-
-Затем включаем параметр `fancybox` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest

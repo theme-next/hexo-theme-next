@@ -1,10 +1,10 @@
+---
 title:
   archive: Arsip
   category: Kategori
   tag: Tag
-
+  schedule: Schedule
 author: Penulis
-
 menu:
   home: Beranda
   archives: Arsip
@@ -12,61 +12,61 @@ menu:
   tags: Tags
   about: Tentang
   search: Pencarian
-
+  schedule: Schedule
+  sitemap: Sitemap
+  commonweal: Commonweal 404
 sidebar:
   overview: Ikhtisar
   toc: Daftar Isi
-
 post:
+  created: Post created
+  modified: Updated at
   sticky: Sticky
   posted: Diposting di
-  modified: Updated at
   in: Di
+  more: more
   read_more: Baca lebih
   untitled: Tidak ada title
   toc_empty: Posting ini tidak memiliki Daftar Isi
-  visitors: Pengunjung
-  wordcount: Words count in article
-  min2read: Reading time
-  totalcount: Site words total count
-  totaltime: Site reading time
+  views: Views
+  symbols_count: Symbols count in article
+  symbols_time: Reading time
+  total_symbols: Symbols count total
+  total_time: Reading time total
+  related_posts: Related Posts
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
-    license_content: 'All articles in this blog are licensed under
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
-
+    license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
   totally: Total
   tags: tags
-
 footer:
   powered: "Powered by %s"
   theme: Tema
-
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Tidak ada tags
     one: 1 total tag
     other: "%d total tags"
-
   categories:
     zero: Tidak ada kategori
     one: 1 total categori
     other: "%d total kategori"
-
   archive_posts:
     zero: Tidak ada posting.
     one: 1 posting.
     other: "%d total posting."
-
 state:
   posts: posting
   pages: halaman
   tags: tags
   categories: kategori
-
+search:
+  placeholder: Searching...
 cheers:
   um: Um..
   ok: OK
@@ -74,16 +74,14 @@ cheers:
   good: Bagus
   great: Besar
   excellent: Baik
-
 keep_on: Terus Posting.
-
 symbol:
-  comma: ', '
-  period: '. '
-  colon: ':'
-
+  comma: ", "
+  period: ". "
+  colon: ":"
 reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Show comments from Gitment

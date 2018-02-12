@@ -1,10 +1,10 @@
+---
 title:
   archive: アーカイブ
   category: カテゴリ
   tag: タグ
-
-author: Author
-
+  schedule: スケジュール
+author: 著者
 menu:
   home: ホーム
   archives: アーカイブ
@@ -12,78 +12,76 @@ menu:
   tags: タグ
   about: About
   search: 検索
-
+  schedule: スケジュール
+  sitemap: サイトマップ
+  commonweal: Commonweal 404
 sidebar:
   overview: 概要
   toc: 見出し
-
 post:
+  created: 作成された時間
+  modified: Updated at
   sticky: 固定
   posted: 投稿日
-  modified: Updated at
   in: In
+  more: more
   read_more: 続きを読む
   untitled: 無題
   toc_empty: 見出しがありません
-  visitors: Visitors
-  wordcount: Words count in article
-  min2read: Reading time
-  totalcount: Site words total count
-  totaltime: Site reading time
+  views: Views
+  symbols_count: 単語数
+  symbols_time: 読書の時間
+  total_symbols: 単語の総数
+  total_time: 読書の合計時間
+  related_posts: Related Posts
   copyright:
-    author: Post author
+    author: 著者
     link: Post link
-    license_title: Copyright Notice
-    license_content: 'All articles in this blog are licensed under
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
-
+    license_title: 著作権表示
+    license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
   totally: 全ページ
   tags: タグ
-
 footer:
   powered: "Powered by %s"
-  theme: Theme
-
+  theme: テーマ
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: タグなし
-    one: "全 1 タグ"
+    one: 全 1 タグ
     other: "全 %d タグ"
-
   categories:
     zero: カテゴリなし
-    one: "全 1 カテゴリ"
+    one: 全 1 カテゴリ
     other: "全 %d カテゴリ"
-
   archive_posts:
     zero: ポストなし
-    one: "全 1 ポスト"
+    one: 全 1 ポスト
     other: "全 %d ポスト"
-
 state:
   posts: ポスト
   pages: ページ
   tags: タグ
   categories: カテゴリ
-
+search:
+  placeholder: 検索…
 cheers:
   um: うーん
-  ok: OK
+  ok: はい
   nice: まあまあ
   good: いいね
   great: すごい
   excellent: 最高
-
 keep_on: もっと書こう！
-
 symbol:
-  comma: ', '
-  period: '. '
-  colon: ':'
-
+  comma: "、 "
+  period: "。 "
+  colon: "："
 reward:
   donate: Donate
-  wechatpay: WeChat Pay
+  wechatpay: WeChat 支払う
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Gitment からのコメントを表示

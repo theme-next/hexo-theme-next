@@ -14,7 +14,7 @@
 <p align="center">从 GitHub 下载主题。</br>
 为了下载这一主题，共有 <b>3 种选项</b>可选。你需要选择其中<b>唯一一个方式</b>。</p>
 
-### 选项 1：下载[最新 release 版本][releases-latest-url]</h3>
+### 选项 1：下载[最新 release 版本][releases-latest-url]
 
    通常情况下请选择 **stable** 版本。推荐不熟悉的用户按此方式进行。
 
@@ -89,7 +89,7 @@
      $ git checkout tags/v6.0.1
      Note: checking out 'tags/v6.0.1'.
      …
-     HEAD now on 1f72f68... CSS: Remove global list-style setting of ul
+     HEAD is now at da9cdd2... Release v6.0.1
      ```
 
      然后，假设你想要切换回 [master 分支][commits-url]，输入如下指令即可：
@@ -106,20 +106,6 @@
 theme: next
 ```
 
-<h1 align="center">插件</h1>
-
-在 NexT 配置中你现在可以找到已经被移至外部仓库的依赖项。你可以在[组织主页](https://github.com/theme-next)中找到它们。
-
-例如，假设你想要在你的站点中使用 `fancybox` 插件，请进入 NexT 配置文件，你会看到如下内容：
-
-```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
-```
-
-将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
-
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
 [releases-url]: https://github.com/theme-next/hexo-theme-next/releases
@@ -130,5 +116,5 @@ fancybox: false
 [curl-tar-url]: http://lmgtfy.com/?q=linux+curl+tar+install
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
-[update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/cn/README.md#update
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/cn/DATA-FILES.md
+[update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/README.md#update
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md

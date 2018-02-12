@@ -1,0 +1,87 @@
+---
+title:
+  archive: Arşiv
+  category: Kategori
+  tag: Etiket
+  schedule: Plan
+author: Yazar
+menu:
+  home: Ana Sayfa
+  archives: Arşivler
+  categories: Kategoriler
+  tags: Etiketler
+  about: Hakkında
+  search: Arama
+  schedule: Plan
+  sitemap: Site Haritası
+  commonweal: Ortak Yarar 404
+sidebar:
+  overview: Genel Bakış
+  toc: İçindekiler
+post:
+  created: Gönderi Oluşturuldu
+  modified: Gönderi Değiştirildi
+  sticky: Sabit
+  posted: Şurada Yayımlandı
+  in: İçinde
+  more: daha
+  read_more: Daha fazla oku
+  untitled: Başlıksız
+  toc_empty: Bu gönderinin içindekiler kısmı yok
+  views: Views
+  symbols_count: Yazının içerdiği semboller
+  symbols_time: Okuma zamanı
+  total_symbols: İçerilen toplam semboller
+  total_time: Toplam okuma zamanı
+  related_posts: Related Posts
+  copyright:
+    author: Gönderi yazarı
+    link: Gönderi linki
+    license_title: Telif Hakkı Uyarısı
+    license_content: "Bu blogda yer alan yazıların hepsi aksine bir ifade olmadığı sürece %s altında lisanslıdır."
+page:
+  totally: Toplamda
+  tags: etiketler
+footer:
+  powered: "%s tarafından desteklenmektedir"
+  theme: Tema
+  total_views: Total Views
+  total_visitors: Total Visitors
+counter:
+  tag_cloud:
+    zero: Etiket yok
+    one: Toplam 1 etiket
+    other: "Toplamda %d etiket"
+  categories:
+    zero: Kategori yok
+    one: Toplamda 1 kategori
+    other: "Toplamda %d kategori"
+  archive_posts:
+    zero: Gönderi yok.
+    one: 1 gönderi.
+    other: "Toplamda %d gönderi."
+state:
+  posts: gönderiler
+  pages: sayfalar
+  tags: etiketler
+  categories: kategoriler
+search:
+  placeholder: Aranıyor...
+cheers:
+  um: Um..
+  ok: Tamam
+  nice: Güzel
+  good: İyi
+  great: Müthiş
+  excellent: Mükemmel
+keep_on: Gönderiye devam.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ":"
+reward:
+  donate: Bağış
+  wechatpay: WeChat Ödeme
+  alipay: Alipay
+  bitcoin: Bitcoin
+gitmentbutton: Gitment'ın yorumlarını göster

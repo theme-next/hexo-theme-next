@@ -1,4 +1,4 @@
-# Theme configurations using Hexo data files ([#328](https://github.com/iissnan/hexo-theme-next/issues/328))
+<h1 align="center">Data Files</h1>
 
 Currently, it is not smooth to update NexT theme from pulling or downloading new releases. It is quite often running into conflict status when updating NexT theme via `git pull`, or need to merge configurations manually when upgrading to new releases.
 
@@ -10,14 +10,52 @@ In order to resolve this issue, NexT will take advantage of Hexo [Data files](ht
 
 If you prefer Hexo 2.x, you can still use the old approach for configurations. NexT is still compatible with Hexo 2.x (but errors are possible).
 
-## Benefits
+<h2 align="center">Option 1: Hexo-Way</h2>
 
-With this feature, now you can put all your configurations into one place (`source/_data/next.yml`), you don't need to touch `next/_config.yml`. If there are any new options in new releases, you just need to copy those options from `next/_config.yml`, paste into `_data/next.yml` and set their values to whatever you want.
+With this way, all your configurations locate in main hexo config file (`hexo/_config.yml`), you don't need to touch `next/_config.yml` or create any new files. But you must preserve double spaces indents within `theme_config` option.
 
-## How to use this feature
+If there are any new options in new releases, you just need to copy those options from `next/_config.yml`, paste into `hexo/_config.yml` and set their values to whatever you want.
 
-1. Please ensure you are using Hexo 3 (or above)
-2. Create an file named `next.yml` in site's `hexo/source/_data` directory (create `_data` directory if it did not exist)
-3. Copy NexT theme options both in site's `_config.yml` and theme's `_config.yml` into `hexo/source/_data/next.yml`.
-4. Use `--config source/_data/next.yml` parameter to start server, generate or deploy.\
-   For example: `hexo clean --config source/_data/next.yml && hexo g --config source/_data/next.yml`.
+### Usage
+
+1. Check for no exists `hexo/source/_data/next.yml` file (delete it if exists).
+2. Copy needed NexT theme options from theme's `next/_config.yml` into `hexo/_config.yml`, then\
+   2.1. Move all this settings to the right with two spaces (in Visual Studio Code: select all strings, <kbd>CTRL</kbd> + <kbd>]</kbd>).\
+   2.2. Add `theme_config:` parameter above all this settings.
+
+### Useful links
+
+* [Hexo Configuration](https://hexo.io/docs/configuration.html)
+* [Hexo Pull #757](https://github.com/hexojs/hexo/pull/757)
+
+<h2 align="center">Option 2: NexT-Way</h2>
+
+With this way, you can put all your configurations into one place (`source/_data/next.yml`), you don't need to touch `next/_config.yml`.
+But option may not accurately procces all hexo external libraries with their additional options (for example, `hexo-server` module options may be readed only in default hexo config).
+
+If there are any new options in new releases, you just need to copy those options from `next/_config.yml`, paste into `_data/next.yml` and set their values to whatever you want.
+
+### Usage
+
+1. Please ensure you are using Hexo 3 (or above).
+2. Create an file named `next.yml` in site's `hexo/source/_data` directory (create `_data` directory if it did not exists).
+
+<p align="center">And after that steps there are <b>2 variants</b>, need to <b>choose only one</b> of them and <b>resume next steps</b>.</p>
+
+* **Variant 1: `override: false` (default)**:
+
+  1. Check your `override` option in default NexT config, it must set on `false`.\
+     In `next.yml` it must not be defined or set on `false` too.
+  2. Copy needed options from both site's `_config.yml` and theme's `_config.yml` into `hexo/source/_data/next.yml`.
+
+* **Variant 2: `override: true`**:
+
+  1. In `next.yml` set `override` option on `true`.
+  2. Copy **all** NexT theme options from theme's `next/_config.yml` into `hexo/source/_data/next.yml`.
+
+3. Then, in main site's `hexo/_config.yml` need to define `theme: next` option (and if needed, `source_dir: source`).
+4. Use standart parameters to start server, generate or deploy (`hexo clean && hexo g -d && hexo s`).
+
+### Useful links
+
+* [NexT Issue #328](https://github.com/iissnan/hexo-theme-next/issues/328)

@@ -1,10 +1,10 @@
+---
 title:
   archive: Arquivo
   category: Categoria
   tag: Tag
-
+  schedule: Schedule
 author: Author
-
 menu:
   home: Home
   archives: Arquivos
@@ -12,61 +12,61 @@ menu:
   tags: Tags
   about: Sobre
   search: Pesquisa
-
+  schedule: Schedule
+  sitemap: Sitemap
+  commonweal: Commonweal 404
 sidebar:
   overview: Visão Geral
   toc: Tabela de Conteúdo
-
 post:
+  created: Post created
+  modified: Updated at
   sticky: Sticky
   posted: Postado em
-  modified: Updated at
   in: Em
+  more: more
   read_more: Ler mais
   untitled: Sem título
   toc_empty: Esta publicação não possui uma tabela de conteúdo
-  visitors: Visitors
-  wordcount: Words count in article
-  min2read: Reading time
-  totalcount: Site words total count
-  totaltime: Site reading time
+  views: Views
+  symbols_count: Symbols count in article
+  symbols_time: Reading time
+  total_symbols: Symbols count total
+  total_time: Reading time total
+  related_posts: Related Posts
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
-    license_content: 'All articles in this blog are licensed under
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
-
+    license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
   totally: Totalmente
   tags: tags
-
 footer:
   powered: "Desenvolvido com amor com %s"
   theme: Tema
-
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Sem tags
     one: 1 tag no total
     other: "%d tags no total"
-
   categories:
     zero: Sem categorias
     one: 1 categoria no total
     other: "%d categorias no total"
-
   archive_posts:
     zero: Sem publicações.
     one: 1 post.
     other: "%d publicações no total."
-
 state:
   posts: publicações
   pages: páginas
   tags: tags
   categories: categorias
-
+search:
+  placeholder: Searching...
 cheers:
   um: Um..
   ok: OK
@@ -74,16 +74,14 @@ cheers:
   good: Bom
   great: Grandioso
   excellent: Excelente
-
 keep_on: Mantenha-se publicando!
-
 symbol:
-  comma: ', '
-  period: '. '
-  colon: ':'
-
+  comma: ", "
+  period: ". "
+  colon: ":"
 reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Show comments from Gitment
