@@ -5,7 +5,7 @@
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = '{{ theme.valine.guest_info }}';
-    guest = guest.split(',').filter(item=>{
+    guest = guest.split(',').filter(function (item) {
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
