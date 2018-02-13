@@ -924,6 +924,10 @@ vendors:
   # Example: https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
   reading_progress:
 
+  # valine comment
+  # Example: https://cdn.jsdelivr.net/npm/valine@1.1.8/dist/Valine.min.js
+  valine:
+
 
 # Assets
 css: css
