@@ -605,10 +605,9 @@ rating:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
-# 
 leancloud_visitors:
   enable: false
-  security: false
+  security: false # See more at: https://leaferx.online/2018/02/11/lc-security/ . A serious security bug fix.
   app_id: #<app_id>
   app_key: #<app_key>
 
