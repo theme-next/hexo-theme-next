@@ -605,9 +605,11 @@ rating:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
+# Set up instruction: https://leaferx.online/2018/02/11/lc-security/
+# Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
 leancloud_visitors:
   enable: false
-  security: false # See more at: https://leaferx.online/2018/02/11/lc-security/ . A serious security bug fix.
+  security: false
   app_id: #<app_id>
   app_key: #<app_key>
 
