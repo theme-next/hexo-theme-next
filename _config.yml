@@ -605,13 +605,12 @@ rating:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
-# Set up instruction: https://leaferx.online/2018/02/11/lc-security/
-# Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
 leancloud_visitors:
   enable: false
-  security: false
   app_id: #<app_id>
   app_key: #<app_key>
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  security: false
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
