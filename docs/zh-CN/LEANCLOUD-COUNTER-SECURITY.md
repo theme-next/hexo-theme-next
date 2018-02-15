@@ -2,9 +2,9 @@ NexT主题使用的Leancloud访客统计插件存在重大安全漏洞，拥有�
 
 该漏洞由[我](https://github.com/LEAFERx/)独立发现，并由[Ivan.Nginx](https://github.com/ivan-nginx)确认。
 
-- 有关的issue：#25
+- 有关的issue：[#25](https://github.com/theme-next/hexo-theme-next/issues/25)
 
-- 有关的pr： #137
+- 有关的pr： [#137](https://github.com/theme-next/hexo-theme-next/pull/137)
 
 - 有关的插件：[hexo-leancloud-counter-security](https://github.com/theme-next/hexo-leancloud-counter-security)
 
