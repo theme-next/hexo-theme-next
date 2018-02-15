@@ -71,7 +71,7 @@
             {% if theme.leancloud_visitors.security %}
               var $element = $(document.getElementById(url));
               $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, for solve it see here: https://github.com/theme-next/hexo-leancloud-counter-security. \n If you see this message, you must have set the security config to true but not install the plugin.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set 'security' option to 'false'.');
             {% else %}
               var newcounter = new Counter();
               /* Set ACL */
