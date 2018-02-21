@@ -133,6 +133,16 @@ leancloud_visitors:
   npm install hexo-leancloud-counter-security --save
   ```
 
+- 打开**博客配置文件**`_config.yml`，新增以下配置：
+  ```yml
+  leancloud_counter_security:
+    enable_sync: true
+    app_id: <<your app id>>
+    app_key: <<your app key>
+    username: 
+    password: 
+  ```
+
 - 在相同目录键入以下命令：
   ```
   hexo lc-counter register <<username>> <<password>>
@@ -144,15 +154,15 @@ leancloud_visitors:
 
   将`<<username>>`和`<<password>>`替换为你自己的用户名和密码（不必与leancloud的账号）相同。此用户名和密码将在hexo部署时使用。
 
-- 打开**博客配置文件**`_config.yml`，新增以下配置：
-```yml
-leancloud_counter_security:
-  enable_sync: true
-  app_id: <<your app id>>
-  app_key: <<your app key>
-  username: <<your username>> #如留空则将在部署时询问
-  password: <<your password>> #建议留空以保证安全性，如留空则将在部署时询问
-```
+  - 打开**博客配置文件**`_config.yml`，将`<<username>>`和`<<password>>`替换为你刚刚设置的用户名和密码：
+  ```yml
+  leancloud_counter_security:
+    enable_sync: true
+    app_id: <<your app id>>
+    app_key: <<your app key>
+    username: <<your username>> #如留空则将在部署时询问
+    password: <<your password>> #建议留空以保证安全性，如留空则将在部署时询问
+  ```
 
 - 在**博客配置文件**`_config.yml`的`deploy`下添加项：
   ```yml
