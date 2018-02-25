@@ -58,10 +58,16 @@
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
+            {% if theme.leancloud_visitors.betterPerformance %}
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            {% endif %}
             counter.save(null, {
               success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                {% if not theme.leancloud_visitors.betterPerformance %}
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                {% endif %}
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
