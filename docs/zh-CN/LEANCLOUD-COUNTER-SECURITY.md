@@ -123,10 +123,15 @@ leancloud_visitors:
   ```yml
   leancloud_visitors:
     enable: true
-    security: true
     app_id: <<your app id>>
     app_key: <<your app key>>
+    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+    security: true
+    betterPerformance: false
   ```
+
+  **对`betterPerformance`选项的说明：**
+  由于Leancloud免费版的云引擎存在请求线程数和运行时间限制以及休眠机制，很多时候访客数量加载会很慢。如果设置`betterPerformance`为`true`，则网页则会在提交请求之前直接显示访客人数为查询到的人数+1，以增加用户体验。
 
 - 打开cmd并切换至**博客根目录**，键入以下命令以安装`hexo-leancloud-counter-security`插件：
   ```
