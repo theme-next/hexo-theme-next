@@ -633,6 +633,9 @@ busuanzi_count:
   site_uv: true
   site_uv_header: 本站访客数
   site_uv_footer: 人次
+  page_pv: true
+  page_pv_header: 本文总阅读量
+  page_pv_footer: 次
 
 
 # Tencent analytics ID
