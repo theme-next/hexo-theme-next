@@ -1,6 +1,7 @@
 .github-corner {
   scheme = hexo-config('scheme');
   bg_color = unquote(hexo-config('android_chrome_color'));
+  mobile_layout_economy = hexo-config('mobile_layout_economy');
 
   :hover .octo-arm {
     animation:octocat-wave 560ms ease-in-out;
@@ -16,11 +17,8 @@
       transform:rotate(10deg);
     }
   }
-  +mobile() {
+  +tablet-mobile() {
     >svg {
-      if scheme == 'Mist' {
-        top: inherit !important; margin-top: -50px;
-      }
       if (scheme == 'Pisces') || (scheme == 'Gemini') {
         fill: #fff !important;
         color: bg_color !important;
@@ -31,6 +29,19 @@
     }
     .github-corner .octo-arm {
       animation:octocat-wave 560ms ease-in-out;
+    }
+  }
+  +mobile() {
+    >svg {
+      if (scheme == 'Mist') {
+        top: inherit !important;
+        margin-top: -50px;
+        if mobile_layout_economy {
+          +mobile-small() {
+            margin-top: initial;
+          }
+        }
+      }
     }
   }
 
