@@ -60,19 +60,19 @@ You may delete this recomendations and use template which is placed below.
 **NexT Version:**
 <!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
 
-[] Latest Master branch
-[] Latest Release version
-[] Old version
+- [] Latest Master branch
+- [] Latest Release version
+- [] Old version
 
 
 **NexT Scheme:**
 <!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
 
-[] All schemes
-[] Muse
-[] Mist
-[] Pisces
-[] Gemini
+- [] All schemes
+- [] Muse
+- [] Mist
+- [] Pisces
+- [] Gemini
 
 
 #### NexT Configuration:
