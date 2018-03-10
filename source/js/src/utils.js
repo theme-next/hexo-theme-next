@@ -245,6 +245,10 @@ NexT.utils = NexT.$u = {
     return CONFIG.scheme === 'Mist';
   },
 
+  isMuse: function () {
+    return CONFIG.scheme === 'Muse';
+  },
+
   isPisces: function () {
     return CONFIG.scheme === 'Pisces';
   },

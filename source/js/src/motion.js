@@ -54,7 +54,7 @@ $(document).ready(function () {
   var sidebarToggleLine1st;
   var sidebarToggleLine2nd;
   var sidebarToggleLine3rd;
-  var isRight = (NexT.utils.isMist() && (CONFIG.sidebar.position != 'left'));
+  var isRight = ((NexT.utils.isMist() || NexT.utils.isMuse()) && (CONFIG.sidebar.position != 'left'));
   if (isRight){
     sidebarToggleLine1st = new SidebarToggleLine({
       el: '.sidebar-toggle-line-first',
