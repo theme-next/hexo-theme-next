@@ -204,7 +204,7 @@ toc:
 #creative_commons:
 
 sidebar:
-  # Sidebar Position, available value: left | right (only for Pisces | Gemini).
+  # Sidebar Position, available value: left | right .
   position: left
   #position: right
 
