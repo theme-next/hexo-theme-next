@@ -1,3 +1,7 @@
+{% import '../_macro/menu/menu-item.swig' as menu_item %}
+{% import '../_macro/menu/menu-badge-1.swig' as menu_badge_1 %}
+{% import '../_macro/menu/menu-badge-2.swig' as menu_badge_2 %}
+
 <div class="site-brand-wrapper">
   <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
     {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
@@ -10,7 +14,7 @@
     {% endif %}
 
     <div class="custom-logo-site-title">
-      <a href="{{ config.root }}"  class="brand" rel="start">
+      <a href="{{ config.root }}" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">{{ config.title }}</span>
         <span class="logo-line-after"><i></i></span>
@@ -24,7 +28,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="{{ __('accessibility.nav_toggle') }}">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -38,32 +42,21 @@
   {% if theme.menu %}
     <ul id="menu" class="menu">
       {% for name, path in theme.menu %}
-        {% set itemName = name.toLowerCase() %}
-        <li class="menu-item menu-item-{{ itemName | replace(' ', '-') }}">
-          <a href="{{ url_for(path.split('||')[0]) | trim }}" rel="section">
-            {% if theme.menu_settings.icons %}{#
-            #}<i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />{#
-          #}{% endif %}{#
-
-          #}{% if theme.menu_settings.badges %}{#
-            #}{% if name == 'archives' %}{#
-              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
-              #}<span class="badge">{{ site.posts.length }}</span>
-              {% elseif name == 'categories' %}{#
-              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
-              #}<span class="badge">{{ site.categories.length }}</span>
-              {% elseif name == 'tags' %}{#
-              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
-              #}<span class="badge">{{ site.tags.length }}</span>
-              {% else %}{#
-              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
-            #}{% endif %}{#
-          #}{% else %}{#
-            #}{{ __('menu.' + name) | replace('menu.', '') }}{#
-          #}{% endif %}{#
-
-        #}</a>
-        </li>
+        {% set respath = path %}
+        {% if path == '[object Object]' %}
+          {% for subname, subpath in path %}
+            {% set itemName = subname.toLowerCase() %}
+            {% set respath = subpath %}
+              {% if itemName == 'default' %}
+                {% set itemName = name.toLowerCase() %}{#
+              #}{{ menu_item.render(name, respath) }}{#
+            #}{% endif %}
+          {% endfor %}
+        {% else %}
+          {% set itemName = name.toLowerCase() %}{#
+        #}{{ menu_badge_1.render(respath) }}{#
+      #}{% endif %}{#
+        #}{{ menu_badge_2.render(name, path) }}
       {% endfor %}
 
       {% if hasSearch %}
@@ -81,6 +74,10 @@
         </li>
       {% endif %}
     </ul>
+  {% endif %}
+
+  {% if theme.scheme === 'Muse' || theme.scheme === 'Mist' %}
+    {% include 'sub-menu.swig' %}
   {% endif %}
 
   {% if hasSearch %}
