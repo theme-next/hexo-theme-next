@@ -253,12 +253,12 @@ NexT.utils = NexT.$u = {
     $('.sidebar-toggle').trigger('click');
   },
 
-  isMist: function () {
-    return CONFIG.scheme === 'Mist';
-  },
-
   isMuse: function () {
     return CONFIG.scheme === 'Muse';
+  },
+
+  isMist: function () {
+    return CONFIG.scheme === 'Mist';
   },
 
   isPisces: function () {
