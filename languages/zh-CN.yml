@@ -86,6 +86,6 @@ reward:
   bitcoin: 比特币
 gitmentbutton: 显示 Gitment 评论
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: 切换导航栏
+  prev_page: 上一页
+  next_page: 下一页
