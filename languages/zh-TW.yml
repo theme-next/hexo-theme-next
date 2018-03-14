@@ -86,6 +86,6 @@ reward:
   bitcoin: 比特幣
 gitmentbutton: 顯示 Gitment 評論
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: 切換導航欄
+  prev_page: 上一頁
+  next_page: 下一頁
