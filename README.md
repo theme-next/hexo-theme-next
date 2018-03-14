@@ -50,6 +50,23 @@ fancybox: false
 
 Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
 
+### exception
+
+If you use cdn for any plugins. Please replace your cdn link.
+
+For example, you want to use `fancybox` and you configured a cdn link. Go to NexT config and see:
+
+```yml
+vendors:
+  # ...
+  # Some contents...
+  # ...
+  fancybox: # Set or update fancybox cdn url.
+  fancybox_css: # Set or update fancybox cdn url.
+```
+
+Instead of using [main organization link](https://github.com/theme-next) for updates.
+
 ## Update
 
 You can update to latest master branch by the following command:
@@ -100,7 +117,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
 [travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
 
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.3.5-blue.svg
 [hexo-url]: http://hexo.io
 
 [lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg

@@ -1,6 +1,13 @@
-/* global hexo */
-// Usage: {% exturl text url "title" %}
-// Alias: {% extlink text url "title" %}
+/**
+ * exturl.js | global hexo script.
+ *
+ * Usage:
+ *
+ * {% exturl text url "title" %}
+ * {% extlink text url "title" %}
+ *
+ * If title not defined, url will be used as title.
+ */
 
 'use strict';
 
