@@ -610,6 +610,7 @@ leancloud_visitors:
   app_id: #<app_id>
   app_key: #<app_key>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  # If you donnot want to use the security plugin(not recommended), please set the security to false.
   security: true
   betterPerformance: false
 
