@@ -50,9 +50,9 @@ fancybox: false
 
 Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
 
-### exception
+### Exceptions
 
-If you use cdn for any plugins. Please replace your cdn link.
+If you use cdn for any plugins, you need to replace your cdn link.
 
 For example, you want to use `fancybox` and you configured a cdn link. Go to NexT config and see:
 
@@ -65,7 +65,7 @@ vendors:
   fancybox_css: # Set or update fancybox cdn url.
 ```
 
-Instead of using [main organization link](https://github.com/theme-next) for updates.
+Instead of defining [main organization link](https://github.com/theme-next) for updates.
 
 ## Update
 
@@ -79,7 +79,7 @@ $ git pull
 And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
 Howbeit, you can bypass update errors by `Commit`, `Stash` or `Discard` local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
-If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].
+**If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].**
 
 ## Known Bugs
 
