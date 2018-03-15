@@ -96,5 +96,7 @@
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
+{% include '_my/audio.swig' %}
+<script type="text/javascript" src="/js/custom.js"></script>
 </body>
 </html>
