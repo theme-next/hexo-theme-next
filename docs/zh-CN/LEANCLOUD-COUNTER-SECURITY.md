@@ -67,14 +67,14 @@ NexT主题使用的Leancloud访客统计插件存在重大安全漏洞，拥有�
 ```yml
 leancloud_visitors:
   enable: true
-  security: true 
+  security: true
   app_id: <<your app id>>
   app_key: <<your app key>>
 ```
 
 - 设置Web安全域名确保域名调用安全。点击`1`处进入安全中心，然后在`2`处填写自己博客对应的域名（**注意协议、域名和端口号需严格一致**）：
 
- ![9](https://dn-cqha0xyi.qbox.me/0e537cc4bec2e185201d.jpg) 
+ ![9](https://dn-cqha0xyi.qbox.me/0e537cc4bec2e185201d.jpg)
 
 到这里内容均与Doublemine的[为NexT主题添加文章阅读量统计功能](https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud)这篇文章相同，只不过截图为新版的Leancloud的界面。
 
@@ -102,7 +102,7 @@ leancloud_visitors:
   如图所示：
 
   ![12](https://dn-cqha0xyi.qbox.me/a8e13418ed1d9405315b.jpg)
-   
+
 - 点击保存后应出现类似红框处函数。此时点击`1`处部署：
 
   ![13](https://dn-cqha0xyi.qbox.me/ca56bf2e5fc2a1343565.jpg)
@@ -144,8 +144,8 @@ leancloud_visitors:
     enable_sync: true
     app_id: <<your app id>>
     app_key: <<your app key>
-    username: 
-    password: 
+    username:
+    password:
   ```
 
 - 在相同目录键入以下命令：
@@ -157,7 +157,7 @@ leancloud_visitors:
   hexo lc-counter r <<username>> <<password>>
   ```
 
-  将`<<username>>`和`<<password>>`替换为你自己的用户名和密码（不必与leancloud的账号）相同。此用户名和密码将在hexo部署时使用。
+  将`<<username>>`和`<<password>>`替换为你自己的用户名和密码（不必与leancloud的账号相同）。此用户名和密码将在hexo部署时使用。
 
   - 打开**博客配置文件**`_config.yml`，将`<<username>>`和`<<password>>`替换为你刚刚设置的用户名和密码：
   ```yml
