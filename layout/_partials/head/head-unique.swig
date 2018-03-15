@@ -1,7 +1,3 @@
-{% if theme.keywords and !page.keywords and !(page.tags and page.tags.length) and !config.keywords %}
-  <meta name="keywords" content="{{ theme.keywords }}" />
-{% endif %}
-
 {{
   open_graph({
     twitter_id: theme.twitter,
