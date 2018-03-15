@@ -1,6 +1,7 @@
 @import "../Pisces/_layout";
 @import "../Pisces/_brand";
 @import "../Pisces/_menu";
+@import "../Pisces/_sub-menu";
 @import "../Pisces/_sidebar";
 // Import _posts if want to justify text-align on mobile.
 //@import "../Pisces/_posts";
@@ -111,6 +112,25 @@ if $max-content-width {
 }
 .footer {
   bottom: auto;
+}
+
+// Sub-menu(s).
+.sub-menu {
+  border-bottom: initial !important;
+  box-shadow: $box-shadow-inner;
+  // Adapt submenu(s) with post-blocks.
+  &+ #content > #posts {
+    .post-block {
+      box-shadow: $box-shadow;
+      margin-top: sboffset;
+      +tablet() {
+        margin-top: $content-tablet-padding;
+      }
+      +mobile() {
+        margin-top: $content-mobile-padding;
+      }
+    }
+  }
 }
 
 // =================================================

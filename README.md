@@ -50,6 +50,23 @@ fancybox: false
 
 Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
 
+### Exceptions
+
+If you use cdn for any plugins, you need to replace your cdn link.
+
+For example, you want to use `fancybox` and you configured a cdn link. Go to NexT config and see:
+
+```yml
+vendors:
+  # ...
+  # Some contents...
+  # ...
+  fancybox: # Set or update fancybox cdn url.
+  fancybox_css: # Set or update fancybox cdn url.
+```
+
+Instead of defining [main organization link](https://github.com/theme-next) for updates.
+
 ## Update
 
 You can update to latest master branch by the following command:
@@ -62,7 +79,7 @@ $ git pull
 And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
 Howbeit, you can bypass update errors by `Commit`, `Stash` or `Discard` local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
-If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].
+**If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].**
 
 ## Known Bugs
 
@@ -100,7 +117,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
 [travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
 
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.3.5-blue.svg
 [hexo-url]: http://hexo.io
 
 [lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg

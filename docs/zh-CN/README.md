@@ -62,7 +62,7 @@ $ git pull
 如果你在此过程中收到了任何错误报告 (例如 **«Commit your changes or stash them before you can merge»**)，我们推荐你使用 [Hexo 数据文件][docs-data-files-url]特性。\
 然而你也可以通过提交（`Commit`）、贮藏（`Stash`）或忽视（`Discard`）本地更改以绕过这种更新错误。具体方法请参考[这里](https://stackoverflow.com/a/15745424/5861495)。
 
-如果你想要从 v5.1.x 更新到 v6.0.x，阅读[这篇文档][docs-update-5-1-x-url]。
+**如果你想要从 v5.1.x 更新到 v6.0.x，阅读[这篇文档][docs-update-5-1-x-url]。**
 
 ## 已知问题
 
@@ -100,7 +100,7 @@ $ git pull
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
 [travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
 
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.3.5-blue.svg
 [hexo-url]: http://hexo.io
 
 [lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg
