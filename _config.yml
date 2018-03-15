@@ -618,11 +618,10 @@ leancloud_visitors:
   enable: false
   app_id: #<app_id>
   app_key: #<app_key>
-  # LeanCloud Counter Security Plugin (beta, currently under the testing).
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in lc counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set the `security` to `false`.
-  security: false
+  security: true
   betterPerformance: false
 
 # Another tool to show number of visitors to each article.
