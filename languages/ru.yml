@@ -85,3 +85,7 @@ reward:
   alipay: Alipay
   bitcoin: Bitcoin
 gitmentbutton: Открыть Gitment комментарии
+accessibility:
+  nav_toggle: Показать/скрыть меню
+  prev_page: Предыдущая страница
+  next_page: Следующая страница

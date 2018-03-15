@@ -64,7 +64,7 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
       ...
     ```
 
-1. In `next/_config.yml`, turn on `enable` of `algolia_search`. You can adjust the text in `labels` according to your needs.
+1. In `next/_config.yml`, turn on `enable` of `algolia_search`. At the same time, you need to **turn off other search plugins** like Local Search. You can also adjust the text in `labels` according to your needs.
 
     ```yml
     # Algolia Search

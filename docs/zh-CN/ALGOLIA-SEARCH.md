@@ -62,7 +62,7 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
       ...
     ```
 
-1. 更改`主题配置文件`，找到 Algolia Search 配置部分，将 `enable` 改为 `true` 即可，根据需要你可以调整 `labels` 中的文本：
+1. 更改`主题配置文件`，找到 Algolia Search 配置部分，将 `enable` 改为 `true`。同时你需要**关闭**其他搜索插件，如 Local Search 等。你也可以根据需要调整 `labels` 中的文本：
 
     ```yml
     # Algolia Search
