@@ -1,21 +1,3 @@
-The Leancloud visitor counter plugin used in NexT has a big security bug, by which someone could change your visitor number easily and even add/delete records in your database.
-
-This bug is found by [LEAFERx](https://github.com/LEAFERx/) and confirmed by [Ivan.Nginx](https://github.com/ivan-nginx).
-
-- Related issue: [#25](https://github.com/theme-next/hexo-theme-next/issues/25)
-
-- Related pr: [#137](https://github.com/theme-next/hexo-theme-next/pull/137)
-
-- Related plugin: [hexo-leancloud-counter-security](https://github.com/theme-next/hexo-leancloud-counter-security)
-
-This bug could only be fixed manually.
-
-**Warning: All NexT sites using Leancloud visitor counter that are not fixed and other sites integrated this function by similiar ways are considered unsecurity. Please fix it as soon as possible.**
-
----
-
-For convience, this doc also includes the way to setup the plugin. If you have already done this, skip to *Deploy web engine to avoid your data being changed illegally*.
-
 Before you make the config, please upgrade your NexT version to v6.0.6 or greater.
 
 Please note the difference between **site config file** and **theme config file**
@@ -187,4 +169,6 @@ Please note the difference between **site config file** and **theme config file*
 
 Now the bug is fixed.
 
-Every time when you run `hexo d`, plugin will scan posts in the `source/_posts` and compare to the database, then add create records for those posts which are not list in the database. This procedure is done locally so that database can only be changed by you.
+---
+
+See detailed version here: https://leaferx.online/2018/03/16/lc-security-en/
