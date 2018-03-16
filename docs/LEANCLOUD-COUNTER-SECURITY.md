@@ -116,7 +116,6 @@ Please note the difference between **site config file** and **theme config file*
   ```
 
   **Explaination for `betterPerformance`:**
-  由于Leancloud免费版的云引擎存在请求线程数和运行时间限制以及休眠机制，很多时候访客数量加载会很慢。如果设置`betterPerformance`为`true`，则网页则会在提交请求之前直接显示访客人数为查询到的人数+1，以增加用户体验。
   Because the Leancloud developer's plan has limits in requst thread amount and running time, counter number may be very slow to load in some times. If set `betterPerformance` to true, counter number will be displayed quickly by assuming the request is accepted normally.
 
 - Open cmd then switch to **root path of site**, type commands to install `hexo-leancloud-counter-security` plugin:
