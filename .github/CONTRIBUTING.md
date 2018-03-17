@@ -90,7 +90,7 @@ Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com
 * **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
 * **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of Next which the suggestion is related to. You can use [licecap](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [silentcast](https://github.com/colinkeenan/silentcast) or [byzanz](https://github.com/GNOME/byzanz) on Linux. Then [attach the file](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests/) to an issue or pull request conversation, drag and drop it into the comment box.
 * **Explain why this enhancement would be useful** to most Next users.
-* **Specify **Which version of Node, Hexo and Next are you using?** You can get the exact version by running `node -v`, `hexo version` in your terminal, or copy the contents in site's`package.json`.
+* **Specify Which version of Node, Hexo and Next are you using?** You can get the exact version by running `node -v`, `hexo version` in your terminal, or copy the contents in site's`package.json`.
 
 ### Submitting a Pull Request
 
@@ -101,7 +101,7 @@ Before you submit your Pull Request (PR) consider the following guidelines. The 
 1. In GitHub, send a pull request to `theme-next/hexo-theme-next:master`.
     - Fill in [the required template](PULL_REQUEST_TEMPLATE.md).
     - Include screenshots and animated GIFs in your pull request whenever possible.
-    - Document new code based on the [Documentation Styleguide](#documentation-styleguide)
+    - Document new code based on the [Documentation Styleguide](#documentation-styleguide).
 1. After your pull request is merged, you can safely delete your branch and pull the changes from the main (upstream) repository.
 
 That's it! Thank you for your contribution!
@@ -136,9 +136,9 @@ Each commit message consists of a **header**, a **body** and a **footer**. Any l
         * **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
     - The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages.
     - The subject contains a succinct description of the change:
-        * use the imperative, present tense: "change" not "changed" nor "changes"
-        * don't capitalize the first letter
-        * no dot (.) at the end
+        * use the imperative, present tense: "change" not "changed" nor "changes".
+        * don't capitalize the first letter.
+        * no dot (.) at the end.
 - The body should include the motivation for the change and contrast this with previous behavior. Use the imperative, present tense: "change" not "changed" nor "changes".
 - The footer should contain any information about **Breaking Changes** and is also the place to reference GitHub issues that this commit **Closes**.
 
