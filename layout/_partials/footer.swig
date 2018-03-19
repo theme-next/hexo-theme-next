@@ -13,7 +13,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     {% if theme.symbols_count_time.item_text_total %}
-      <span class="post-meta-item-text">{{ __('post.total_symbols') }}&#58;</span>
+      <span class="post-meta-item-text">{{ __('post.total_symbols')  + __('symbol.colon') }}</span>
     {% endif %}
     <span title="{{ __('post.total_symbols') }}">{#
     #}{{ symbolsCountTotal(site) }}{#
@@ -26,7 +26,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     {% if theme.symbols_count_time.item_text_total %}
-      <span class="post-meta-item-text">{{ __('post.total_time') }}&#58;</span>
+      <span class="post-meta-item-text">{{ __('post.total_time')  + __('symbol.colon') }}</span>
     {% endif %}
     <span title="{{ __('post.total_time') }}">{#
     #}{{ symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm) }}{#
