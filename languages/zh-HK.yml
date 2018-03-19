@@ -29,6 +29,7 @@ post:
   untitled: 未命名
   toc_empty: 此文章未包含目錄
   views: 閱讀次數
+  comments_count: Comments
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
