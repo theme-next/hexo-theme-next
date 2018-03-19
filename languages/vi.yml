@@ -29,6 +29,7 @@ post:
   untitled: Không có tiêu đề
   toc_empty: Bài viết này không có mục lục
   views: Views
+  comments_count: Comments
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
