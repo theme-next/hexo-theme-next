@@ -1,7 +1,9 @@
 <div align="right">Language: :us:
-<a title="Chinese" href="docs/zh-CN/CONTRIBUTING.md">:cn:</a></div>
+<a title="Chinese" href="../docs/zh-CN/CONTRIBUTING.md">:cn:</a></div>
 
-:tada::tada::tada:First of all, thanks for taking the time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to Theme-Next and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+# <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
+
+:tada::tada::tada:First of all, thanks for taking the time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme-Next](https://github.com/theme-next) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 # Table Of Contents
 
