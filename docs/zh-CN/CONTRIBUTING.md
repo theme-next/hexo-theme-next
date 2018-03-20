@@ -1,11 +1,12 @@
 <div align="right">语言：<a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
-:cn:</div>
+:cn:
+<a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a></div>
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-:tada::tada::tada:首先，非常感谢大家抽出宝贵时间来让我们的 NexT 主题越变越好。在这里，我们介绍一下 [NexT 主题及其子模块](https://github.com/theme-next)的开源贡献指南。不过，我们希望大家不要局限于此，更欢迎大家随时进行补充。
+首先，非常感谢大家抽出宝贵时间来让我们的 NexT 主题越变越好。在这里，我们介绍一下 [NexT 主题及其子模块](https://github.com/theme-next)的开源贡献指南。不过，我们希望大家不要局限于此，更欢迎大家随时进行补充。
 
-# 目录
+## 目录
 
 [如何为 Next 做贡献](#how-can-i-contribute)
 
@@ -21,21 +22,21 @@
   * [提交信息规范](#commit-messages-rules)
 
 <a name="how-can-i-contribute"></a>
-# 如何为 Next 做贡献
+## 如何为 Next 做贡献
 
 目前 Next 主题已经从 [iissnan](https://github.com/iissnan/hexo-theme-next) 的个人仓库移动到了 [Theme-Next](https://github.com/theme-next) 组织仓库中，并升级到 V6 版本。在 V6+ 版本中，`next/source/lib` 目录下的第三方依赖库将独立放置在 [Theme-Next](https://github.com/theme-next) 组织仓库中。在大多数情况下，NexT V5 版本仍然能够正常运行，但是如果你想获得更多的功能和帮助，还是建议您[升级到 NexT V6+ 版本](https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md)，并移步 [Theme-Next](https://github.com/theme-next/hexo-theme-next) 仓库。
 
 <a name="before-submitting-an-issue"></a>
-## 你需要了解的
+### 你需要了解的
 
 如果你在使用过程中遇到了问题，你可以查阅 FAQs（建设中） 或者 [NexT 帮助文档](https://theme-next.org/docs/)（建设中）。另外，你也可以通过[这里](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93)进行大致检索，有些问题已经得到解答，你可以自行解决。对于没有解决的 Issue，你也可以继续提问。
 
 如果你在使用过程中发现了 Bug，请再次确认 Bug 在[最新发布版本](https://github.com/theme-next/hexo-theme-next/releases/latest)中是否重现。如果 Bug 重现，欢迎你到我们的 [Theme-NexT 仓库](https://github.com/theme-next/hexo-theme-next)中[反馈 Bug ](#reporting-bugs) 和[提交功能需求](#suggesting-enhancements)，也更期待您[提交合并请求](#submitting-a-pull-request)
 
 <a name="reporting-bugs"></a>
-## 反馈 Bug
+### 反馈 Bug
 
-反馈 Bug 前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照[模板](ISSUE_TEMPLATE.md)尽可能的详细填写相关信息。
+反馈 Bug 前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照[模板](../../.github/ISSUE_TEMPLATE.md)尽可能的详细填写相关信息。
 
 请认真遵守如下指南，这样我们才能更好地理解问题，重现问题和解决问题。
 
@@ -52,9 +53,9 @@
 * 详细描述你期待的结果。
 
 <a name="suggesting-enhancements"></a>
-## 提交功能需求
+### 提交功能需求
 
-提交功能需求前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照[模板](ISSUE_TEMPLATE.md)尽可能的详细填写相关信息。
+提交功能需求前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照[模板](../../.github/ISSUE_TEMPLATE.md)尽可能的详细填写相关信息。
 
 请认真遵守如下指南，这样我们才能更好地理解和开发功能需求:pencil:：
 
@@ -63,22 +64,22 @@
 * 提供功能需求的样例，如图像文件、在线演示网址等等。
 
 <a name="submitting-a-pull-request"></a>
-## 提交合并请求
+### 提交合并请求
 
 提交合并请求前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的合并请求。确定相关仓库后，创建合并请求。更多详细操作过程可以查看[帮助文档](https://help.github.com/articles/creating-a-pull-request/)。
 
 1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 源仓库，点击`Fork`。
 2. 进入到已经`Fork`的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
-    ```
+    ```bash
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
 3. 进入 `hexo-theme-next` 本地文件夹，并创建分支。
-    ```
+    ```bash
     $ cd hexo-theme-next
     $ git checkout -b patchname
     ```
 4. 本地修改并测试，推送分支。
-    ```
+    ```bash
     $ git add .
     $ git commit -m "add commit messamge"
     $ git push origin patchname
@@ -87,24 +88,24 @@
 
 请认真遵守如下指南，这样我们才能更好地理解你的合并请求：
 
-* 创建合并请求时，请遵守[编码规范](#coding-rules)和[提交信息规范](#git-commit-messages)。
+* 创建合并请求时，请遵守[编码规范](#coding-rules)和[提交信息规范](#commit-messages-rules)。
 * 在标题中清晰准确地描述你的合并请求，不要加入 Issue 编号。
-* 按照[模板](PULL_REQUEST_TEMPLATE.md)尽可能的详细填写相关信息。
+* 按照[模板](../../.github/PULL_REQUEST_TEMPLATE.md)尽可能的详细填写相关信息。
 * 合并请求需要在所有主题样式中测试通过，并提供所表现功能的样例，如图像文件、在线演示网址等等。
 
 <a name="style-guides"></a>
-# 语法规范
+## 语法规范
 
 <a name="coding-rules"></a>
-## 行为规范
+### 行为规范
 
 为了保证本项目的顺利运作，所有参与人都需要遵守[行为规范](CODE_OF_CONDUCT.md)。
 
 <a name="coding-standards"></a>
-## 编码规范
+### 编码规范
 
 <a name="commit-messages-rules"></a>
-## 提交信息规范
+### 提交信息规范
 
 我们对项目的 git 提交信息格式进行统一格式约定，每条提交信息由 `type`+`subject` 组成，这将提升项目日志的可读性。
 
@@ -117,8 +118,8 @@
     * `perf`：性能优化
     * `refactor`：重构（即不是新增功能，也不是修改 Bug 的代码变动）
     * `style`：格式（不影响代码运行的变动）
-    * `revert`：回滚代码
-    * `release`：发布版本
+    * `revert`：代码回滚
+    * `release`：版本发布
 - `subject` 用于简要描述修改变更的内容，如 `Update code highlighting in readme.md`。
     * 句尾不要使用符号。
-    * 使用现在时，祈使句形式。
+    * 使用现在时、祈使句语气。

@@ -1,11 +1,12 @@
 <div align="right">Language: :us:
-<a title="Chinese" href="../docs/zh-CN/CONTRIBUTING.md">:cn:</a></div>
+<a title="Chinese" href="../docs/zh-CN/CONTRIBUTING.md">:cn:</a>
+<a title="Russian" href="../docs/ru/CONTRIBUTING.md">:ru:</a></div>
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-:tada::tada::tada:First of all, thanks for taking the time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme-Next](https://github.com/theme-next) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+First of all, thanks for taking the time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme-Next](https://github.com/theme-next) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-# Table Of Contents
+## Table Of Contents
 
 [How Can I Contribute?](#how-can-i-contribute)
 
@@ -21,12 +22,12 @@
   * [Commit Messages Rules](#commit-messages-rules)
 
 <a name="how-can-i-contribute"></a>
-# How Can I Contribute?
+## How Can I Contribute?
 
 Main Theme-Next repository was rebased from [iissnan's](https://github.com/iissnan/hexo-theme-next) profile to [Theme-Next](https://github.com/theme-next) organization on GitHub. Most libraries under the `next/source/lib` directory was moved out to [external repos](https://github.com/theme-next) under NexT organization. Version 5 works fine at most cases, but for frequent users, you maybe need to [upgrade version 5 to 6](https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md) to get features and supports in new [Theme-Next](https://github.com/theme-next/hexo-theme-next) repository.
 
 <a name="before-submitting-an-issue"></a>
-## Before Submitting An Issue
+### Before Submitting An Issue
 
 If you just have a question, you'll get faster results by checking the FAQs for a list of common questions and problems (Work in progress) or the [«NexT» Documentation Site](https://theme-next.org/docs/) (Work in progress).
 
@@ -37,7 +38,7 @@ If you find a bug in the source code, most importantly, please check carefully i
 [submit a Pull Request](#submitting-a-pull-request) with a fix.
 
 <a name="reporting-bugs"></a>
-## Reporting Bugs
+### Reporting Bugs
 
 Before creating bug reports, please check [this list](#before-submitting-an-issue) as you might find out that you don't need to create one. After you've determined the repository your bug is related to, create an issue on that repository and provide the information as many details as possible by filling in [the required template](ISSUE_TEMPLATE.md).
 
@@ -55,7 +56,7 @@ Following these guidelines helps maintainers and the community understand your r
 * Describe the behavior you observed after following the steps and point out what exactly is the problem with that behavior.
 * Explain which behavior you expected to see instead and why.
 
-## Suggesting Enhancements
+### Suggesting Enhancements
 
 Before creating enhancement suggestions, please check [this list](#before-submitting-an-issue) as you might find out that you don't need to create one. After you've determined the repository your enhancement suggestion is related to, create an issue on that repository and provide the information as many details as possible by filling in [the required template](ISSUE_TEMPLATE.md).
 
@@ -65,22 +66,22 @@ Following these guidelines helps maintainers and the community understand your s
 * Describe the current behavior and explain which behavior you expected to see instead and Explain why this enhancement would be useful to most users.
 * Provide specific examples to demonstrate the suggestion. Include links to files (screenshots or GIFs) or live demo.
 
-## Submitting a Pull Request
+### Submitting a Pull Request
 
 Before creating a Pull Request (PR), please check [this list](#before-submitting-an-issue) as you might find out that you don't need to create one. After you've determined the repository your pull request is related to, create a pull request on that repository. The detailed document of creating a pull request can be found [here](https://help.github.com/articles/creating-a-pull-request/).
 
 1. On GitHub, navigate to the original page of the [hexo-theme-next](https://github.com/theme-next/hexo-theme-next). In the top-right corner of the page, click **Fork**.
 2. Under the repository name in your forked repository, click **Clone or download**. In the `Clone with SSH` section, copy the clone URL for the repository. Open Git Bash, and change the current working directory to the location where you want the cloned directory to be made. Type `git clone`, and then paste the URL you copied. Press **Enter**. Your local clone will be created.
-    ```
+    ```bash
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
 3. Navigate into your new cloned repository. Switch branches to the compare branch of the pull request where the original changes were made.
-    ```
+    ```bash
     $ cd hexo-theme-next
     $ git checkout -b patchname
     ```
 4. After you commit your changes to the head branch of the pull request you can push your changes up to the original pull request directly.
-    ```
+    ```bash
     $ git add .
     $ git commit -m "add commit messamge"
     $ git push origin patchname
@@ -89,25 +90,25 @@ Before creating a Pull Request (PR), please check [this list](#before-submitting
 
 Following these guidelines helps maintainers and the community understand your pull request :pencil::
 
-* Follow our [Coding Rules](#coding-rules) and [commit message conventions](#git-commit-messages).
+* Follow our [Coding Rules](#coding-rules) and [commit message conventions](#commit-messages-rules).
 * Use a clear and descriptive title for the issue to identify the pull request. Do not include issue numbers in the PR title.
 * Fill in [the required template](PULL_REQUEST_TEMPLATE.md) as many details as possible.
 * All features or bug fixes must be tested in all schemes. And provide specific examples to demonstrate the pull request. Include links to files (screenshots or GIFs) or live demo.
 
-# Style Guides
+## Style Guides
 
-## Coding Rules
+### Coding Rules
 
 This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md) to keep open and inclusive. By participating, you are expected to uphold this code.
 
-## Coding Standards
+### Coding Standards
 
-## Commit Messages Rules
+### Commit Messages Rules
 
 We have very precise rules over how our git commit messages can be formatted. Each commit message consists of a `type` and a `subject`. This leads to more
 readable messages that are easy to follow when looking through the project history.
 
-- `type` describes the meaning of this commit including but not limited to the following items:
+- `type` describes the meaning of this commit including but not limited to the following items, and capitalize the first letter.
     * `build`: Changes that affect the build system or external dependencies
     * `ci`: Changes to our CI configuration files and scripts
     * `docs`: Documentation only changes
@@ -117,7 +118,7 @@ readable messages that are easy to follow when looking through the project histo
     * `refactor`: A code change that neither fixes a bug nor adds a feature
     * `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
     * `revert`: Revert some existing commits
-    * `release`: Commit a release for a conventional changelog project.
+    * `release`: Commit a release for a conventional changelog project
 - The `subject` contains a succinct description of the change, like `Update code highlighting in readme.md`.
-    * Capitalize the first letter, and no dot (.) at the end.
+    * no dot (.) at the end.
     * use the imperative, present tense: "change" not "changed" nor "changes".
