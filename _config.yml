@@ -63,7 +63,14 @@ footer:
   #since: 2015
 
   # Icon between year and copyright info.
-  icon: user
+  icon: 
+    # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
+    # `heart` is recommended with animation in red (#ff0000).
+    name: user
+    # If you want to animate the icon, set it to true.
+    animated: false
+    # Change the color of icon, using Hex Code.
+    color: "#808080"
 
   # If not defined, will be used `author` from Hexo main config.
   copyright:
