@@ -64,6 +64,10 @@ footer:
 
   # Icon between year and copyright info.
   icon: user
+  # If you want to animate the Icon, set it to true.
+  icon_animated: false
+  # Change the color of icon, using Hex Code.
+  icon_color: "#808080"
 
   # If not defined, will be used `author` from Hexo main config.
   copyright:

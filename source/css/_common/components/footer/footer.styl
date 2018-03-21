@@ -13,14 +13,17 @@
     20%,40%,60%,80%{transform:scale(1.1);}
     50%,70%{transform:scale(1.1);}
 }
-#heart {
+
+if hexo-config('footer.icon_animated') {
+	#heart {
     animation: heartAnimate 1.33s ease-in-out infinite;
+	}
 }
 
 .with-love {
   display: inline-block;
   margin: 0 5px;
-  color: rgb(255, 113, 168);
+  color: unquote(hexo-config('footer.icon_color'));
 }
 
 .powered-by,
