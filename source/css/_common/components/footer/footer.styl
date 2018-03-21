@@ -7,9 +7,20 @@
 
 .footer-inner { text-align: center; }
 
+@keyframes heartAnimate {
+    0%,100%{transform:scale(1);}
+    10%,30%{transform:scale(0.9);}
+    20%,40%,60%,80%{transform:scale(1.1);}
+    50%,70%{transform:scale(1.1);}
+}
+#heart {
+    animation: heartAnimate 1.33s ease-in-out infinite;
+}
+
 .with-love {
   display: inline-block;
   margin: 0 5px;
+  color: rgb(255, 113, 168);
 }
 
 .powered-by,
