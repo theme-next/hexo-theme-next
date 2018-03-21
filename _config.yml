@@ -265,6 +265,11 @@ symbols_count_time:
   awl: 5
   wpm: 200
 
+# Manual define the border radius in codeblock
+# Leave it empty for the default 1
+codeblock:
+  border_radius: 
+
 # Wechat Subscriber
 #wechat_subscriber:
   #enabled: true
