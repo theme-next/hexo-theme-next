@@ -28,6 +28,7 @@ code {
 pre {
   @extend $code-block;
   padding: 10px;
+  if hexo-config('codeblock.rounded') { border-radius: 5px;}
 
   code {
     padding: 0;
@@ -39,7 +40,8 @@ pre {
 
 .highlight {
   @extend $code-block;
-  border-radius: 1px
+  if hexo-config('codeblock.rounded') { border-radius: 5px;}
+  if not hexo-config('codeblock.rounded'){ border-radius: 1px;}
 
   pre {
     border: none;
@@ -64,6 +66,10 @@ pre {
     color: $highlight-foreground;
     line-height: 1em;
     margin-bottom: 1em;
+	margin: 0em;
+	padding: 0.5em;
+	background: #eee;
+	border-bottom: 1px solid #e9e9e9;
 
     a {
       float: right;

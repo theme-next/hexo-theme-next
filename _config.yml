@@ -265,6 +265,11 @@ symbols_count_time:
   awl: 5
   wpm: 200
 
+# codeblock border-radius settings
+# If enabled, the codeblock would be loaded with rounded corners
+codeblock:
+  rounded: false
+
 # Wechat Subscriber
 #wechat_subscriber:
   #enabled: true
