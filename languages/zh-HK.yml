@@ -32,13 +32,13 @@ post:
   comments_count: 評論數
   symbols_count: 文章字數
   symbols_time: 閱讀時間
-  total_symbols: Symbols count total
-  total_time: Reading time total
-  related_posts: Related Posts
+  total_symbols: 網站總字數
+  total_time: 網站總閱讀時間
+  related_posts: 相關文章
   copyright:
-    author: Post author
+    author: 作者
     link: Post link
-    license_title: Copyright Notice
+    license_title: 版權聲明
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
   totally: 共有
@@ -46,8 +46,8 @@ page:
 footer:
   powered: "由 %s 強力驅動"
   theme: 主題
-  total_views: Total Views
-  total_visitors: Total Visitors
+  total_views: 總瀏覽次數
+  total_visitors: 訪客總數
 counter:
   tag_cloud:
     zero: 暫無標籤
@@ -70,7 +70,7 @@ search:
   placeholder: 搜索...
 cheers:
   um: 嗯..
-  ok: OK
+  ok: 還行
   nice: 好
   good: 很好
   great: 非常好
@@ -87,6 +87,6 @@ reward:
   bitcoin: 比特幣
 gitmentbutton: 顯示 Gitment 評論
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: 切換導航欄
+  prev_page: 上一頁
+  next_page: 下一頁
