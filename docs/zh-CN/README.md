@@ -21,7 +21,7 @@
 * :heart_decoration: Muse 主题: [LEAFERx](https://leaferx.online) | [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me)
 * :six_pointed_star: Mist 主题: [Jeff](https://blog.zzbd.org) | [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
 * :pisces: Pisces 主题: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Rainy](https://rainylog.com)
-* :gemini: Gemini 主题: [Ivan.Nginx](https://almostover.ru) | [Alynx](http://sh.alynx.xyz) | [Raincal](https://raincal.com)
+* :gemini: Gemini 主题: [Ivan.Nginx](https://almostover.ru) | [Raincal](https://raincal.com) | [Dandy](https://dandyxu.me)
 
 更多 «NexT» 的例子参见[这里](https://github.com/iissnan/hexo-theme-next/issues/119)。
 
@@ -49,6 +49,23 @@ fancybox: false
 ```
 
 将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
+
+### 例外
+
+如果你使用的插件脚本依赖 CDN，那么需要替换你的 CDN 链接：
+
+例如，假如你使用了 `fancybox` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
+
+```yml
+vendors:
+  # ...
+  # Some contents...
+  # ...
+  fancybox: # Set or update fancybox cdn url.
+  fancybox_css: # Set or update fancybox cdn url.
+```
+
+通过替换 CDN 链接来替换 [插件列表](https://github.com/theme-next) 项目来升级。
 
 ## 更新
 
