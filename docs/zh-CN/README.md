@@ -50,6 +50,23 @@ fancybox: false
 
 将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
 
+### 例外
+
+如果你使用的插件脚本依赖 CDN，那么需要替换你的 CDN 链接：
+
+例如，假如你使用了 `fancybox` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
+
+```yml
+vendors:
+  # ...
+  # Some contents...
+  # ...
+  fancybox: # Set or update fancybox cdn url.
+  fancybox_css: # Set or update fancybox cdn url.
+```
+
+通过替换 CDN 链接来替换 [插件列表](https://github.com/theme-next) 项目来升级。
+
 ## 更新
 
 你可以通过如下命令更新到最新的 master 分支：
