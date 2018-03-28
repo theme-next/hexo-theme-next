@@ -29,6 +29,7 @@ post:
   untitled: 제목 없음
   toc_empty: 목차 없음
   views: Views
+  comments_count: 댓글
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total

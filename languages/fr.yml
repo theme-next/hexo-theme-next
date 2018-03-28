@@ -29,6 +29,7 @@ post:
   untitled: Non titré
   toc_empty: This post does not have a Table of Contents
   views: Views
+  comments_count: Comments
   symbols_count: Symbols count in article
   symbols_time: Reading time
   total_symbols: Symbols count total
