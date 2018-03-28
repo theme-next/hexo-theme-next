@@ -22,13 +22,12 @@ code {
   color: $code-foreground;
   background: $code-background;
   border-radius: $code-border-radius;
-  font-size $code-font-size;
+  font-size: $code-font-size;
 }
 
 pre {
   @extend $code-block;
   padding: 10px;
-
   code {
     padding: 0;
     color: $highlight-foreground;
@@ -39,7 +38,9 @@ pre {
 
 .highlight {
   @extend $code-block;
-  border-radius: 1px
+  // Read values from NexT config and set they as local variables to use as string variables (in any CSS section). 
+  hexo-config('codeblock.border_radius') is a 'unit' ? (cbradius = unit(hexo-config('codeblock.border_radius'), px)) : (cbradius = 1px) 
+  border-radius: cbradius;
 
   pre {
     border: none;
@@ -64,6 +65,10 @@ pre {
     color: $highlight-foreground;
     line-height: 1em;
     margin-bottom: 1em;
+    margin: 0em;
+    padding: 0.5em;
+    background: $code-background;
+    border-bottom: 1px solid #e9e9e9;
 
     a {
       float: right;
