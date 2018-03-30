@@ -29,14 +29,14 @@ post:
   untitled: 未命名
   toc_empty: 此文章未包含目錄
   views: 閱讀次數
-  comments_count: 評論
+  comments_count: 評論數
   symbols_count: 文章字數
   symbols_time: 閱讀時間
   total_symbols: 網站總字數
   total_time: 網站總閱讀時間
   related_posts: 相關文章
   copyright:
-    author: 作者
+    author: 博主
     link: 文章連結
     license_title: 版權聲明
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
