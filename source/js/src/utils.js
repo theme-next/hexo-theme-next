@@ -204,7 +204,7 @@ NexT.utils = NexT.$u = {
     if (path !== '/') {
       var path = path.split('/');
       var partPath = '';
-      for (i = 0; i < path.length; i++) {
+      for (var i = 0; i < path.length; i++) {
         if (path[i] !== '') {
           partPath += '/' + path[i];
           $('.menu-item a[href^="' + partPath + '"]:first').parent().addClass('menu-item-active');
