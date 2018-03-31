@@ -24,19 +24,19 @@ post:
   sticky: 置頂
   posted: 發表於
   in: 分類於
-  more: more
+  more: 更多
   read_more: 閱讀全文
   untitled: 未命名
   toc_empty: 此文章未包含目錄
   views: 閱讀次數
-  comments_count: 評論
+  comments_count: 評論數
   symbols_count: 文章字數
   symbols_time: 閱讀時間
   total_symbols: 網站總字數
   total_time: 網站總閱讀時間
   related_posts: 相關文章
   copyright:
-    author: 作者
+    author: 博主
     link: 文章連結
     license_title: 版權聲明
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
@@ -70,11 +70,11 @@ search:
   placeholder: 搜索...
 cheers:
   um: 嗯..
-  ok: OK
+  ok: 還行
   nice: 好
   good: 很好
   great: 非常好
-  excellent: 激爆好
+  excellent: 太棒了
 keep_on: 繼續努力。
 symbol:
   comma: "， "
