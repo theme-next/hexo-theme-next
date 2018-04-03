@@ -59,7 +59,12 @@
                 <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">{#
                 #}{{ post.title | default(__('post.untitled'))}}{#
               #}</a>{#
-            #}{% else %}{{ post.title }}{% endif %}{#
+            #}{% else %}
+              {{ post.title }}
+              {% if theme.post_edit.enable %} 
+                <a href="{{theme.post_edit.url}}{{post.source.slice(7)}}" class="article-edit-link" title="{{ __('post.edit') }}"><i class="fa fa-pencil"></i></a>    
+              {% endif %}
+            {% endif %}{#
           #}{% endif %}{#
         #}</{% if theme.seo %}h2{% else %}h1{% endif %}>
         {% endif %}

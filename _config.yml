@@ -254,6 +254,11 @@ auto_excerpt:
   enable: false
   length: 150
 
+# Post edit
+post_edit:
+  enable: false
+  url:
+
 # Post meta display settings
 post_meta:
   item_text: true
