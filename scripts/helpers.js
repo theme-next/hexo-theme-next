@@ -13,3 +13,7 @@ hexo.extend.helper.register('item_active', function(path, className) {
   }
   return result;
 });
+
+hexo.extend.helper.register('hexo_version', function() {
+  return this.env.version;
+});

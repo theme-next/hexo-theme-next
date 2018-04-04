@@ -63,7 +63,7 @@ footer:
   #since: 2015
 
   # Icon between year and copyright info.
-  icon: 
+  icon:
     # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
     # `heart` is recommended with animation in red (#ff0000).
     name: user
@@ -75,8 +75,11 @@ footer:
   # If not defined, will be used `author` from Hexo main config.
   copyright:
   # -------------------------------------------------------------
-  # Hexo link (Powered by Hexo).
-  powered: true
+  powered:
+    # Hexo link (Powered by Hexo).
+    enable: true
+    # Version info of Hexo after Hexo link (vX.X.X).
+    version: true
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
@@ -275,7 +278,7 @@ symbols_count_time:
 # Manual define the border radius in codeblock
 # Leave it empty for the default 1
 codeblock:
-  border_radius: 
+  border_radius:
 
 # Wechat Subscriber
 #wechat_subscriber:
