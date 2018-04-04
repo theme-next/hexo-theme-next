@@ -107,7 +107,7 @@ Releases are a great way to ship projects on GitHub to your users.
     - Use the version as the title.
     - The types of changes include **Breaking Changes**, **Updates**, **Features**, and **Bugfixes**. In the section of Breaking Changes, use multiple secondary headings, and use item list in other sections.
     - Use the passive tense and subject-less sentences.
-    - All changes must be documented in release notes. If commits happen without pull request (minimal changes) commits by push directly into repo.), just add this commit ID into release notes. If commits happen within pull request alreay, just add the related pull request ID including all possible commits.
+    - All changes must be documented in release notes. If commits happen without pull request (minimal changes), just add this commit ID into release notes. If commits happen within pull request alreay, just add the related pull request ID including all possible commits.
 5. If you'd like to include binary files along with your release, such as compiled programs, drag and drop or select files manually in the binaries box.
 6. If the release is unstable, select **This is a pre-release** to notify users that it's not ready for production. If you're ready to publicize your release, click **Publish release**. Otherwise, click **Save draft** to work on it later.
 
