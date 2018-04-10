@@ -66,6 +66,12 @@
 
         <div class="post-meta">
           <span class="post-time">
+            {% if theme.post_meta.date_time_merge %}
+                {% set datetime_format = config.date_format + ' ' + config.time_format %}
+            {% else %}
+                {% set datetime_format = config.date_format %}
+            {% endif %}
+
             {% if theme.post_meta.created_at %}
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -74,11 +80,11 @@
                 <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
               <time title="{{ __('post.created') }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
-              #}{{ date(post.date, config.date_format) }}{#
+              #}{{ date(post.date, datetime_format) }}{#
             #}</time>
             {% endif %}
 
-            {% set date_updated_diff = date(post.date, config.date_format) != date(post.updated, config.date_format) %}
+            {% set date_updated_diff = date(post.date, datetime_format) != date(post.updated, datetime_format) %}
             {% if theme.post_meta.updated_at %}
               {% if !theme.post_meta.updated_diff || theme.post_meta.updated_diff && date_updated_diff %}
                 {% set display_updated = true %}
@@ -97,7 +103,7 @@
                 <span class="post-meta-item-text">{{ __('post.modified') + __('symbol.colon') }}</span>
               {% endif %}
               <time title="{{ __('post.modified') }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
-              #}{{ date(post.updated, config.date_format) }}{#
+              #}{{ date(post.updated, datetime_format) }}{#
             #}</time>
             {% endif %}
           </span>
