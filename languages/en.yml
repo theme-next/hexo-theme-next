@@ -24,6 +24,7 @@ sidebar:
 post:
   created: Post created
   modified: Post modified
+  edit: Edit this post
   sticky: Sticky
   posted: Posted on
   in: In

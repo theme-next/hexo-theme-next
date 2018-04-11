@@ -19,6 +19,7 @@ sidebar:
   overview: 站点概览
   toc: 文章目录
 post:
+  edit: 编辑
   created: 创建于
   modified: 更新于
   sticky: 置顶
