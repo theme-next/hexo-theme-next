@@ -56,18 +56,23 @@
                     <i class="fa fa-thumb-tack"></i>
                   </span>
                 {% endif %}
-                <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">{#
-                #}{{ post.title | default(__('post.untitled'))}}{#
-              #}</a>{#
-            #}{% else %}
-              {{ post.title }}
-              {% if theme.post_edit.enable %} 
-                <a href="{{theme.post_edit.url}}{{post.source.slice(7)}}" class="article-edit-link" title="{{ __('post.edit') }}"><i class="fa fa-pencil"></i></a>    
+                <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
+                  {{ post.title | default(__('post.untitled'))}}
+                </a>
+              {% else -%}
+                {{- post.title -}}
+                {% if theme.post_edit.enable -%}
+                  <a href="{{ theme.post_edit.url }}{{ post.source.slice(7) }}" class="post-edit-link" title="{{ __('post.edit') }}" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                {%- endif %}
               {% endif %}
-            {% endif %}{#
-          #}{% endif %}{#
-        #}</{% if theme.seo %}h2{% else %}h1{% endif %}>
+            {% endif %}
+          </{% if theme.seo %}h2{% else %}h1{% endif %}>
+
         {% endif %}
+
+
 
         <div class="post-meta">
           <span class="post-time">

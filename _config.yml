@@ -63,7 +63,7 @@ footer:
   #since: 2015
 
   # Icon between year and copyright info.
-  icon: 
+  icon:
     # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
     # `heart` is recommended with animation in red (#ff0000).
     name: user
@@ -254,11 +254,6 @@ auto_excerpt:
   enable: false
   length: 150
 
-# Post edit
-post_edit:
-  enable: false
-  url:
-
 # Post meta display settings
 post_meta:
   item_text: true
@@ -280,7 +275,7 @@ symbols_count_time:
 # Manual define the border radius in codeblock
 # Leave it empty for the default 1
 codeblock:
-  border_radius: 
+  border_radius:
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -311,6 +306,13 @@ related_posts:
 post_copyright:
   enable: false
   license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
+
+# Post edit
+# Dependencies: https://github.com/hexojs/hexo-deployer-git
+post_edit:
+  enable: true
+  url: https://github.com/theme-next/theme-next.org/_posts/tree/master/ # Link for view source.
+# url: https://github.com/theme-next/theme-next.org/_posts/edit/master/ # Link for fork & edit.
 
 
 # ---------------------------------------------------------------
