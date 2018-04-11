@@ -14,7 +14,7 @@ menu:
   search: 搜尋
   schedule: 時間表
   sitemap: 網站地圖
-  commonweal: 公益404
+  commonweal: 公益 404
 sidebar:
   overview: 本站概要
   toc: 文章目錄
@@ -71,7 +71,7 @@ search:
   placeholder: 搜尋...
 cheers:
   um: 嗯..
-  ok: OK
+  ok: 還行
   nice: 好
   good: 很好
   great: 非常好
