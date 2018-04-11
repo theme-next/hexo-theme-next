@@ -14,14 +14,14 @@ menu:
   search: 檢索
   schedule: 日程表
   sitemap: 站點地圖
-  commonweal: 公益404
+  commonweal: 公益 404
 sidebar:
   overview: 本站概覽
   toc: 文章目錄
 post:
   created: 創建於
   modified: 更新於
-  edit: Edit this post
+  edit: 編輯
   sticky: 置頂
   posted: 發表於
   in: 分類於
