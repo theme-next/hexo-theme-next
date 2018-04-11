@@ -21,6 +21,7 @@ sidebar:
 post:
   created: 作成された時間
   modified: Updated at
+  edit: Edit this post
   sticky: 固定
   posted: 投稿日
   in: In
