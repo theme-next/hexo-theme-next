@@ -69,10 +69,7 @@
               {% endif %}
             {% endif %}
           </{% if theme.seo %}h2{% else %}h1{% endif %}>
-
         {% endif %}
-
-
 
         <div class="post-meta">
           <span class="post-time">
