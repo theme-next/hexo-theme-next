@@ -38,13 +38,13 @@
   {% set nofollow = ' rel="external nofollow"' %}
 {% endif %}
 
-{% if theme.footer.powered %}
+{% if theme.footer.powered.enable %}
   <div class="powered-by">{#
   #}{{ __('footer.powered', '<a class="theme-link" target="_blank"' + nofollow + ' href="https://hexo.io">Hexo</a>') }}{% if theme.footer.powered.version %} v{{ hexo_version() }}{% endif %}{#
 #}</div>
 {% endif %}
 
-{% if theme.footer.powered and theme.footer.theme.enable %}
+{% if theme.footer.powered.enable and theme.footer.theme.enable %}
   <span class="post-meta-divider">|</span>
 {% endif %}
 
