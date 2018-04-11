@@ -1,7 +1,7 @@
 {% if not is_home() && not is_post() %}
   {% if theme.menu %}
 
-    {% import '../_macro/menu/menu-item.swig' as menu_item %}
+    {% import '../../_macro/menu/menu-item.swig' as menu_item %}
 
     {# Submenu & Submenu-2 #}
     {% for name, value in theme.menu %}

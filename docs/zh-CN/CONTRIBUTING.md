@@ -14,8 +14,9 @@
   * [反馈 Bug](#reporting-bugs)
   * [提交功能需求](#suggesting-enhancements)
   * [提交合并请求](#submitting-a-pull-request)
+  * [发布版本](#creating-releases)
 
-[语法规范](#style-guides)
+[规范](#guides)
 
   * [行为规范](#coding-rules)
   * [编码规范](#coding-standards)
@@ -93,8 +94,24 @@
 * 按照[模板](../../.github/PULL_REQUEST_TEMPLATE.md)尽可能的详细填写相关信息。
 * 合并请求需要在所有主题样式中测试通过，并提供所表现功能的样例，如图像文件、在线演示网址等等。
 
-<a name="style-guides"></a>
-## 语法规范
+<a name="creating-releases"></a>
+### 发布版本
+
+版本发布是将项目发布给用户的一种很好的方式。
+
+1. 进入 GitHub 项目主页，点击 **Releases** 和 **Draft a new release**。
+2. 输入你需要发布的版本号。版本控制是基于 [Git tags](https://git-scm.com/book/en/Git-Basics-Tagging) 工作的，建议按照 [About Major and Minor NexT versions](https://github.com/theme-next/hexo-theme-next/issues/187) 确定版本号。
+3. 确定你需要发布的分支。除非发布测试版本，通常情况下选择 `master` 分支。
+4. 输入发布版本的标题和说明。
+    - 标题为版本号。
+    - 所有内容更改的类型包括了 **Breaking Changes**, **Updates**, **Features** 和 **Bugfixes**。在描述 Breaking Changes 时，使用二级标题分别陈述，描述其他类型时，使用项目列表陈述。
+    - 使用被动语态，省略主语。
+    - 所有的变化都需要记录在版本说明中。对于没有使用 PR 的更改，需要添加相应的 commit 编号。如果使用了 PR 进行合并修改，则直接添加相应的 PR 编号即可。
+5. 如果您希望随版本一起发布二进制文件（如编译的程序），请在上传二进制文件对话框中手动拖放或选择文件。
+6. 如果版本不稳定，请选择 **This is a pre-release**，以通知用户它尚未完全准备好。如果您准备公布您的版本，请点击 **Publish release**。否则，请单击 **Save draft** 以稍后处理。
+
+<a name="guides"></a>
+## 规范
 
 <a name="coding-rules"></a>
 ### 行为规范
@@ -104,22 +121,24 @@
 <a name="coding-standards"></a>
 ### 编码规范
 
+未完待续。
+
 <a name="commit-messages-rules"></a>
 ### 提交信息规范
 
 我们对项目的 git 提交信息格式进行统一格式约定，每条提交信息由 `type`+`subject` 组成，这将提升项目日志的可读性。
 
 - `type` 用于表述此次提交信息的意义，首写字母大写，包括但不局限于如下类型：
-    * `build`：基础构建系统或依赖库的变化
-    * `ci`：CI 构建系统及其脚本变化
-    * `docs`：文档内容变化
-    * `feat`：新功能
-    * `fix`：Bug 修复
-    * `perf`：性能优化
-    * `refactor`：重构（即不是新增功能，也不是修改 Bug 的代码变动）
-    * `style`：格式（不影响代码运行的变动）
-    * `revert`：代码回滚
-    * `release`：版本发布
+    * `Build`：基础构建系统或依赖库的变化
+    * `Ci`：CI 构建系统及其脚本变化
+    * `Docs`：文档内容变化
+    * `Feat`：新功能
+    * `Fix`：Bug 修复
+    * `Perf`：性能优化
+    * `Refactor`：重构（即不是新增功能，也不是修改 Bug 的代码变动）
+    * `Style`：格式（不影响代码运行的变动）
+    * `Revert`：代码回滚
+    * `Release`：版本发布
 - `subject` 用于简要描述修改变更的内容，如 `Update code highlighting in readme.md`。
     * 句尾不要使用符号。
     * 使用现在时、祈使句语气。
