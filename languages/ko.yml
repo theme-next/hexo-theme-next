@@ -21,6 +21,7 @@ sidebar:
 post:
   created: Post created
   modified: Updated at
+  edit: Edit this post
   sticky: 고정
   posted: 작성일
   in: In
