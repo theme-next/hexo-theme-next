@@ -264,6 +264,8 @@ post_meta:
   updated_at: false
   # Only show 'updated' if different from 'created'.
   updated_diff: false
+  # If true, post's time format will be hexo config's date_format + ' ' + time_format.
+  date_time_merge: false
   categories: true
 
 # Post wordcount display settings
@@ -958,3 +960,4 @@ images: images
 
 # Theme version
 version: 6.1.0
+
