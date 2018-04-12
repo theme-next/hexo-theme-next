@@ -81,8 +81,8 @@
               {% if theme.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
-              <time title="{{ __('post.created') }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
-              #}{{ date(post.date, datetime_format) }}{#
+              <time title="{{ __('post.created') }} {{ full_date(post.date) }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
+              #}{{ full_date(post.date, datetime_format) }}{#
             #}</time>
             {% endif %}
 
@@ -101,7 +101,7 @@
                 {% if theme.post_meta.item_text %}
                   <span class="post-meta-item-text">{{ __('post.modified') + __('symbol.colon') }}</span>
                 {% endif %}
-                <time title="{{ __('post.modified') }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
+                <time title="{{ __('post.modified') }} {{ full_date(post.updated ) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
                 #}{{ full_date(post.updated, theme.post_meta.datetime_format) }}{#
               #}</time>
               {% endif %}
