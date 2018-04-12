@@ -264,8 +264,11 @@ post_meta:
   updated_at: false
   # Only show 'updated' if different from 'created'.
   updated_diff: false
-  # If true, post's time format will be hexo config's date_format + ' ' + time_format.
-  date_time_merge: false
+  # If set this option, the updated_diff will check diff base on this format.
+  # Leave empty will check by both date and time.
+  updated_diff_check_format:
+  # Leave empty will use default hexo date_formt + ' ' + time_format for every post.
+  datetime_format:
   categories: true
 
 # Post wordcount display settings
