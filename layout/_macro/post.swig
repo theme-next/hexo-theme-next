@@ -85,7 +85,7 @@
                 <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
 
-              {% if !date_diff %}
+              {% if !date_diff && theme.post_meta.updated_at %}
                 {% set create_title = __('post.created') + ' ' + full_date(post.date) + '/' + __('post.modified') + ' ' + full_date(post.updated) %}
               {% else %}
                 {% set create_title = full_date(post.date) %}
