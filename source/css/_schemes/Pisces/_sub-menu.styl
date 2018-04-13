@@ -28,4 +28,11 @@
     background: #fff !important;
     border-bottom-color: $sidebar-highlight;
   }
+
+  badges = hexo-config('menu_settings.badges');
+  if not badges {
+    &:after {
+      content: initial;
+    }
+  }
 }
