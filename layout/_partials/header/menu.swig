@@ -1,6 +1,4 @@
 {% import '../../_macro/menu/menu-item.swig' as menu_item %}
-{% import '../../_macro/menu/menu-badge-1.swig' as menu_badge_1 %}
-{% import '../../_macro/menu/menu-badge-2.swig' as menu_badge_2 %}
 
 <nav class="site-nav">
   {% if theme.menu %}
@@ -8,20 +6,21 @@
       {% for name, path in theme.menu %}
         {% set respath = path %}
         {% if path == '[object Object]' %}
+        {# Main Menu (default menu item for Submenu) #}
           {% for subname, subpath in path %}
             {% set itemName = subname.toLowerCase() %}
             {% set respath = subpath %}
-              {% if itemName == 'default' %}
-                {% set itemName = name.toLowerCase() %}{#
-              #}{{ menu_item.render(name, respath) }}{#
-            #}{% endif %}
+            {% if itemName == 'default' %}
+              {% set itemName = name.toLowerCase() %}
+              {{ menu_item.render(name, respath) }}
+            {% endif %}
           {% endfor %}
         {% else %}
-          {% set itemName = name.toLowerCase() %}{#
-        #}{{ menu_badge_1.render(respath) }}{#
-      #}{% endif %}{#
-        #}{{ menu_badge_2.render(name, path) }}
-      {% endfor %}
+        {# Main Menu (standart menu items) #}
+          {% set itemName = name.toLowerCase() %}
+          {{- menu_item.render(name, respath) | trim -}}
+        {%- endif -%}
+      {%- endfor %}
 
       {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.tinysou_Key || theme.local_search.enable %}
       {% if hasSearch %}
