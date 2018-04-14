@@ -250,9 +250,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 {% if theme.symbols_count_time.item_text_post %}
-                  <span class="post-meta-item-text">{{ __('post.symbols_count') + __('symbol.colon') }}</span>
+                  <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
                 {% endif %}
-                <span title="{{ __('post.symbols_count') }}">{#
+                <span title="{{ __('symbols_count_time.count') }}">{#
                 #}{{ symbolsCount(post.content) }}{#
               #}</span>
               {% endif %}
@@ -266,10 +266,10 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 {% if theme.symbols_count_time.item_text_post %}
-                  <span class="post-meta-item-text">{{ __('post.symbols_time') }}&asymp;</span>
+                  <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
                 {% endif %}
-                <span title="{{ __('post.symbols_time') }}">{#
-                #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm) }}{#
+                <span title="{{ __('symbols_count_time.time') }}">{#
+                #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
               #}</span>
               {% endif %}
             </div>
