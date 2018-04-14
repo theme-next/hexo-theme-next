@@ -31,10 +31,6 @@ post:
   toc_empty: 此文章未包含目录
   views: 阅读次数
   comments_count: 评论数
-  symbols_count: 字数统计
-  symbols_time: 阅读时长
-  total_symbols: 站点总字数
-  total_time: 站点总阅读时长
   related_posts: 相关文章
   copyright:
     author: 本文作者
@@ -91,3 +87,9 @@ accessibility:
   nav_toggle: 切换导航栏
   prev_page: 上一页
   next_page: 下一页
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.
