@@ -88,8 +88,8 @@ accessibility:
   prev_page: Предыдущая страница
   next_page: Следующая страница
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: Кол-во символов в статье
+  count_total: Общее кол-во символов в записях
+  time: Время чтения в минутах
+  time_total: Время чтения всего сайта
+  time_minutes: мин.
