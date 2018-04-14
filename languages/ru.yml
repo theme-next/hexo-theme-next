@@ -31,10 +31,6 @@ post:
   toc_empty: Эта запись без оглавления
   views: Просмотров
   comments_count: Комментариев
-  symbols_count: Кол-во символов в статье
-  symbols_time: Время чтения в минутах
-  total_symbols: Общее кол-во символов в записях
-  total_time: Время чтения всего сайта
   related_posts: Похожие записи
   copyright:
     author: Автор записи
@@ -91,3 +87,9 @@ accessibility:
   nav_toggle: Показать/скрыть меню
   prev_page: Предыдущая страница
   next_page: Следующая страница
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.
