@@ -31,10 +31,6 @@ post:
   toc_empty: 목차 없음
   views: Views
   comments_count: 댓글
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
   related_posts: Related Posts
   copyright:
     author: Post author
@@ -91,3 +87,9 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page
   next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.
