@@ -19,8 +19,8 @@ sidebar:
   overview: 站点概览
   toc: 文章目录
 post:
-  created: 创建于
-  modified: 更新于
+  created: 创建时间
+  modified: 更新时间
   edit: 编辑
   sticky: 置顶
   posted: 发表于
