@@ -78,7 +78,7 @@ keep_on: Gönderiye devam.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Bağış
   wechatpay: WeChat Ödeme
