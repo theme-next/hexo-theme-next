@@ -90,6 +90,6 @@ accessibility:
 symbols_count_time:
   count: 本文字數
   count_total: 站點總字數
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  time: 閱讀時長
+  time_total: 站點閱讀時長
+  time_minutes: 分鍾
