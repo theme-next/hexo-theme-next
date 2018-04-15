@@ -19,15 +19,16 @@ sidebar:
   overview: 概要
   toc: 見出し
 post:
-  created: 作成された時間
-  modified: Updated at
-  edit: Edit this post
-  sticky: 固定
   posted: 投稿日
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: Edit this post
   in: In
   more: more
   read_more: 続きを読む
   untitled: 無題
+  sticky: 固定
   toc_empty: 見出しがありません
   views: Views
   comments_count: コメント
@@ -76,7 +77,7 @@ keep_on: もっと書こう！
 symbol:
   comma: "、 "
   period: "。 "
-  colon: "："
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat 支払う
