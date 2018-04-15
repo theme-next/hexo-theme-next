@@ -283,7 +283,7 @@ codeblock:
   # Leave it empty for the default 1
   border_radius:
   # Add copy button on codeblock
-  copy_button: true
+  copy_button: false
 
 # Wechat Subscriber
 #wechat_subscriber:
