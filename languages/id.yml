@@ -19,15 +19,16 @@ sidebar:
   overview: Ikhtisar
   toc: Daftar Isi
 post:
-  created: Post created
-  modified: Updated at
-  edit: Edit this post
-  sticky: Sticky
   posted: Diposting di
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: Edit this post
   in: Di
   more: more
   read_more: Baca lebih
   untitled: Tidak ada title
+  sticky: Sticky
   toc_empty: Posting ini tidak memiliki Daftar Isi
   views: Views
   comments_count: Comments
@@ -76,7 +77,7 @@ keep_on: Terus Posting.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
