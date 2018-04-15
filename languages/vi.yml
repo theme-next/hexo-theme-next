@@ -78,7 +78,7 @@ keep_on: Giữ tiến độ nha.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Tài trợ
   wechatpay: WeChat Pay
