@@ -33,6 +33,7 @@ post:
   views: 阅读次数
   comments_count: 评论数
   related_posts: 相关文章
+  copy_button: Copy
   copyright:
     author: 本文作者
     link: 本文链接
