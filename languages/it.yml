@@ -19,15 +19,16 @@ sidebar:
   overview: Panoramica
   toc: Indice
 post:
-  created: Post creato
-  modified: Post modificato
-  edit: Edit this post
-  sticky: Sticky
   posted: Scritto il
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: Edit this post
   in: In
   more: espandi
   read_more: Leggi di più
   untitled: Senza titolo
+  sticky: Sticky
   toc_empty: Questo post non ha un indice
   views: Views
   comments_count: Comments
@@ -76,7 +77,7 @@ keep_on: Continua così.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Dona
   wechatpay: WeChat Pay
