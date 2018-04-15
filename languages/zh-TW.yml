@@ -88,8 +88,8 @@ accessibility:
   prev_page: 上一頁
   next_page: 下一頁
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: 文章字數
+  count_total: 總字數
+  time: 所需閱讀時間
+  time_total: 所需總閱讀時間
+  time_minutes: 分鐘
