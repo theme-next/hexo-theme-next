@@ -33,6 +33,7 @@ post:
   views: Views
   comments_count: Yorumlar
   related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: Gönderi yazarı
     link: Gönderi linki
