@@ -33,6 +33,7 @@ post:
   views: Views
   comments_count: コメント
   related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: 著者
     link: Post link
