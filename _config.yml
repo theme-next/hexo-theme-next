@@ -261,11 +261,12 @@ auto_excerpt:
 post_meta:
   item_text: true
   created_at: true
-  updated_at: false
-  # Only show 'updated' if different from 'created'.
-  updated_diff: false
-  # If true, post's time format will be hexo config's date_format + ' ' + time_format.
-  date_time_merge: false
+  updated_at:
+    enabled: true
+    # If true, show updated date label only if `updated date` different from 'created date' (post edited in another day than was created).
+    # And if post will edited in same day as created, edited time will show in popup title under created time label.
+    # If false show anyway, but if post edited in same day, show only edited time.
+    another_day: true
   categories: true
 
 # Post wordcount display settings
