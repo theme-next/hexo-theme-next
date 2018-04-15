@@ -33,6 +33,7 @@ post:
   views: Views
   comments_count: Comments
   related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: Autore
     link: Link
