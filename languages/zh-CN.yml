@@ -76,8 +76,8 @@ cheers:
   excellent: 太棒了
 keep_on: 继续努力。
 symbol:
-  comma: "， "
-  period: "。 "
+  comma: "，"
+  period: "。"
   colon: "："
 reward:
   donate: 打赏
