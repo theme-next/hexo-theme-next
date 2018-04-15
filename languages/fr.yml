@@ -78,7 +78,7 @@ keep_on: Et ca ne fait que commencer.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
