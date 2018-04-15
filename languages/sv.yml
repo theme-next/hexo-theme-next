@@ -19,15 +19,16 @@ sidebar:
   overview: Overview
   toc: Table of Contents
 post:
-  created: Post created
-  modified: Post modified
-  edit: Edit this post
-  sticky: Sticky
   posted: Posted on
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: Edit this post
   in: In
   more: more
   read_more: Read more
   untitled: Untitled
+  sticky: Sticky
   toc_empty: This post does not have a Table of Contents
   views: Views
   comments_count: Comments
@@ -76,7 +77,7 @@ keep_on: Keep on posting.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
