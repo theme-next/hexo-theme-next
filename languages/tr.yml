@@ -19,15 +19,16 @@ sidebar:
   overview: Genel Bakış
   toc: İçindekiler
 post:
-  created: Gönderi Oluşturuldu
-  modified: Gönderi Değiştirildi
-  edit: Edit this post
-  sticky: Sabit
   posted: Şurada Yayımlandı
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: Edit this post
   in: İçinde
   more: daha
   read_more: Daha fazla oku
   untitled: Başlıksız
+  sticky: Sabit
   toc_empty: Bu gönderinin içindekiler kısmı yok
   views: Views
   comments_count: Yorumlar
@@ -76,7 +77,7 @@ keep_on: Gönderiye devam.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Bağış
   wechatpay: WeChat Ödeme
