@@ -33,7 +33,7 @@ post:
   views: 閱讀次數
   comments_count: 評論數
   related_posts: 相關文章
-  copy_button: Copy
+  copy_button: 複製
   copyright:
     author: 作者
     link: 文章連結
