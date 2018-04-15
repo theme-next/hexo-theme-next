@@ -21,6 +21,7 @@ sidebar:
 post:
   created: Post created
   modified: Updated at
+  edit: Edit this post
   sticky: Sticky
   posted: Postado em
   in: Em
@@ -30,10 +31,6 @@ post:
   toc_empty: Esta publicação não possui uma tabela de conteúdo
   views: Views
   comments_count: Comments
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
   related_posts: Related Posts
   copyright:
     author: Post author
@@ -90,3 +87,9 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page
   next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.

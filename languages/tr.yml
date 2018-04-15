@@ -21,6 +21,7 @@ sidebar:
 post:
   created: Gönderi Oluşturuldu
   modified: Gönderi Değiştirildi
+  edit: Edit this post
   sticky: Sabit
   posted: Şurada Yayımlandı
   in: İçinde
@@ -30,10 +31,6 @@ post:
   toc_empty: Bu gönderinin içindekiler kısmı yok
   views: Views
   comments_count: Yorumlar
-  symbols_count: Yazının içerdiği semboller
-  symbols_time: Okuma zamanı
-  total_symbols: İçerilen toplam semboller
-  total_time: Toplam okuma zamanı
   related_posts: Related Posts
   copyright:
     author: Gönderi yazarı
@@ -90,3 +87,9 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page
   next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.

@@ -22,19 +22,16 @@ post:
   edit: 编辑
   created: 创建于
   modified: 更新于
+  edit: 编辑
   sticky: 置顶
   posted: 发表于
   in: 分类于
-  more: more
+  more: 更多
   read_more: 阅读全文
   untitled: 未命名
   toc_empty: 此文章未包含目录
   views: 阅读次数
   comments_count: 评论数
-  symbols_count: 字数统计
-  symbols_time: 阅读时长
-  total_symbols: 站点总字数
-  total_time: 站点总阅读时长
   related_posts: 相关文章
   copyright:
     author: 本文作者
@@ -71,7 +68,7 @@ search:
   placeholder: 搜索...
 cheers:
   um: 嗯..
-  ok: OK
+  ok: 还行
   nice: 不错
   good: 很好
   great: 非常好
@@ -91,3 +88,9 @@ accessibility:
   nav_toggle: 切换导航栏
   prev_page: 上一页
   next_page: 下一页
+symbols_count_time:
+  count: 本文字数
+  count_total: 站点总字数
+  time: 阅读时长
+  time_total: 站点阅读时长
+  time_minutes: 分钟
