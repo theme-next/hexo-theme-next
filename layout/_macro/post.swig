@@ -107,7 +107,7 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.modified') + __('symbol.colon') }}</span>
+                <span class="post-meta-item-text">{{ __('post.amended')}}</span>
               {% endif %}
               <time title="{{ __('post.modified') }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
               #}{{ date(post.updated, datetime_format) }}{#
