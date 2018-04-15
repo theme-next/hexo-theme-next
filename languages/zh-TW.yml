@@ -19,15 +19,16 @@ sidebar:
   overview: 本站概要
   toc: 文章目錄
 post:
-  created: 創建時間
-  modified: 更新時間
-  edit: 編輯
-  sticky: 置頂
   posted: 發表於
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: 編輯
   in: 分類於
   more: 更多
   read_more: 閱讀全文
   untitled: 未命名
+  sticky: 置頂
   toc_empty: 此文章沒有目錄
   views: 閱讀次數
   comments_count: 評論數
@@ -76,7 +77,7 @@ keep_on: 繼續努力。
 symbol:
   comma: "， "
   period: "。 "
-  colon: "："
+  colon: ": "
 reward:
   donate: 捐贈
   wechatpay: 微信支付
