@@ -35,6 +35,7 @@ post:
   views: Views
   comments_count: Comments
   related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: Post author
     link: Post link
@@ -110,5 +111,3 @@ symbols_count_time:
   time: Reading time
   time_total: Reading time total
   time_minutes: mins.
-
-copy: Copy

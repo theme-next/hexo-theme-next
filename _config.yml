@@ -277,10 +277,12 @@ symbols_count_time:
   awl: 4
   wpm: 275
 
-# Manual define the border radius in codeblock
-# Leave it empty for the default 1
 codeblock:
+  # Manual define the border radius in codeblock
+  # Leave it empty for the default 1
   border_radius:
+  # Add copy button on codeblock
+  copy_button: true
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -719,8 +721,6 @@ bookmark:
   # if manual, only save it by clicking the bookmark-icon
   save: auto
 
-# Add copy button on codeblock
-copycode: false
 
 # ---------------------------------------------------------------
 # Tags Settings

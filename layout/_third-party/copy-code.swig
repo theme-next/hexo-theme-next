@@ -1,4 +1,4 @@
-{% if theme.copycode %}
+{% if theme.codeblock.copy_button %}
   <style>
     .copy-btn {
         position: relative;
@@ -37,7 +37,7 @@
     }
   </style>
   <script>
-    $('.highlight').prepend($('<button>').addClass('copy-btn').append('{{__("copy")}}').on('click', function(e) {
+    $('.highlight').prepend($('<button>').addClass('copy-btn').append('{{__("post.copy_button")}}').on('click', function(e) {
       var code = $(e.target).parent().find('.code').find('.line').map(function(i, e){
         return $(e).text()
       }).toArray().join('\n')
