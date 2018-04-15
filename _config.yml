@@ -719,6 +719,8 @@ bookmark:
   # if manual, only save it by clicking the bookmark-icon
   save: auto
 
+# Add copy button on codeblock
+copycode: false
 
 # ---------------------------------------------------------------
 # Tags Settings

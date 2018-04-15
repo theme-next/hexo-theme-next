@@ -96,5 +96,6 @@
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
+  {% include '_third-party/copycode.swig' %}
 </body>
 </html>
