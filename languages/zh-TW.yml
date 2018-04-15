@@ -14,26 +14,24 @@ menu:
   search: 搜尋
   schedule: 時間表
   sitemap: 網站地圖
-  commonweal: 公益404
+  commonweal: 公益 404
 sidebar:
   overview: 本站概要
   toc: 文章目錄
 post:
+  posted: 發表於
+  edited: Edited on
   created: 創建於
   modified: 更新於
-  sticky: 置頂
-  posted: 發表於
+  edit: 編輯
   in: 分類於
-  more: more
+  more: 更多
   read_more: 閱讀全文
   untitled: 未命名
+  sticky: 置頂
   toc_empty: 此文章沒有目錄
   views: 閱讀次數
   comments_count: 評論數
-  symbols_count: 文章字數
-  symbols_time: 閱讀時間
-  total_symbols: 網站總字數
-  total_time: 網站總閱讀時間
   related_posts: 相關文章
   copy_button: 複製
   copyright:
@@ -71,7 +69,7 @@ search:
   placeholder: 搜尋...
 cheers:
   um: 嗯..
-  ok: OK
+  ok: 還行
   nice: 好
   good: 很好
   great: 非常好
@@ -91,3 +89,9 @@ accessibility:
   nav_toggle: 切換導航欄
   prev_page: 上一頁
   next_page: 下一頁
+symbols_count_time:
+  count: 文章字數
+  count_total: 總字數
+  time: 所需閱讀時間
+  time_total: 所需總閱讀時間
+  time_minutes: 分鐘
