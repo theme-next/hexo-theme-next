@@ -19,15 +19,16 @@ sidebar:
   overview: Overzicht
   toc: Inhoudsopgave
 post:
-  created: Post aangemaakt
-  modified: Post aangepast
-  edit: Edit this post
-  sticky: Sticky
   posted: Geplaatst op
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: Edit this post
   in: In
   more: meer
   read_more: Lees meer
   untitled: Naamloos
+  sticky: Sticky
   toc_empty: Deze post heeft geen inhoudsopgave
   views: Views
   comments_count: Comments
@@ -76,7 +77,7 @@ keep_on: Blijf posten.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Doneer
   wechatpay: WeChat Pay
