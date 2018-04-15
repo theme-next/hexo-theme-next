@@ -88,8 +88,8 @@ accessibility:
   prev_page: 上一页
   next_page: 下一页
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: 本文字数
+  count_total: 站点总字数
+  time: 阅读时长
+  time_total: 站点阅读时长
+  time_minutes: 分钟
