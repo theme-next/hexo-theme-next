@@ -19,15 +19,16 @@ sidebar:
   overview: Ensemble
   toc: Table Des Matières
 post:
-  created: Post created
-  modified: Updated at
-  edit: Edit this post
-  sticky: Sticky
   posted: Posté le
+  edited: Edited on
+  created: Created
+  modified: Modified
+  edit: Edit this post
   in: In
   more: more
   read_more: Lire la suite
   untitled: Non titré
+  sticky: Sticky
   toc_empty: This post does not have a Table of Contents
   views: Views
   comments_count: Comments
@@ -76,7 +77,7 @@ keep_on: Et ca ne fait que commencer.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
