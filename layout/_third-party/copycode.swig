@@ -38,7 +38,9 @@
   </style>
   <script>
     $('.highlight').prepend($('<button>').addClass('copy-btn').append('{{__("copy")}}').on('click', function(e) {
-      var code = $(e.target).parent().find('.code').find('.line').map((i, e) => $(e).text()).toArray().join('\n')
+      var code = $(e.target).parent().find('.code').find('.line').map(function(i, e){
+        return $(e).text()
+      }).toArray().join('\n')
       var ta = document.createElement('textarea')
       document.body.appendChild(ta)
       ta.style.position = 'fixed'
