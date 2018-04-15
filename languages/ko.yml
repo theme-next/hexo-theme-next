@@ -78,7 +78,7 @@ keep_on: 포스트를 마저 작성하세요
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
