@@ -21,8 +21,8 @@ sidebar:
 post:
   posted: 發表於
   edited: Edited on
-  created: Created
-  modified: Modified
+  created: 創建於
+  modified: 更新於
   edit: 編輯
   in: 分類於
   more: 更多
@@ -33,7 +33,7 @@ post:
   views: 閱讀次數
   comments_count: 評論數
   related_posts: 相關文章
-  copy_button: Copy
+  copy_button: 複製
   copyright:
     author: 博主
     link: 文章連結
