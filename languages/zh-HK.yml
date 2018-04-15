@@ -19,8 +19,8 @@ sidebar:
   overview: 本站概覽
   toc: 文章目錄
 post:
-  created: 創建於
-  modified: 更新於
+  created: 創建時間
+  modified: 更新時間
   edit: 編輯
   sticky: 置頂
   posted: 發表於
@@ -88,8 +88,8 @@ accessibility:
   prev_page: 上一頁
   next_page: 下一頁
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
+  count: 本文字數
+  count_total: 站點總字數
   time: Reading time
   time_total: Reading time total
   time_minutes: mins.
