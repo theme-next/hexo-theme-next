@@ -78,7 +78,7 @@ keep_on: Bleib dran.
 symbol:
   comma: ". "
   period: ", "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
