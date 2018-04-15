@@ -76,8 +76,8 @@ cheers:
   excellent: 最高
 keep_on: もっと書こう！
 symbol:
-  comma: "、 "
-  period: "。 "
+  comma: "、"
+  period: "。"
   colon: "："
 reward:
   donate: Donate
