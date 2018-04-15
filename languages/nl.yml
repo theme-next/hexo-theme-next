@@ -78,7 +78,7 @@ keep_on: Blijf posten.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Doneer
   wechatpay: WeChat Pay
