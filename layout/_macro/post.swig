@@ -97,8 +97,8 @@
             #}</time>
             {% endif %}
 
-            {% if theme.post_meta.updated_at.enabled && date_diff %}
-              {% set display_updated = !theme.post_meta.updated_at.only_diff || theme.post_meta.updated_at.only_diff && datetime_diff %}
+            {% if theme.post_meta.updated_at.enabled && datetime_diff %}
+              {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
               {% if display_updated or !theme.post_meta.created_at %}
                 {% if theme.post_meta.created_at and theme.post_meta.updated_at.enabled %}

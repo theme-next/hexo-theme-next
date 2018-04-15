@@ -263,7 +263,9 @@ post_meta:
   created_at: true
   updated_at:
     enabled: true
-    only_diff: false # Show 'updated' only if different from 'created'.
+    # Show updated date only if `updated date` different from 'created date'. If false, will show even if `updated time` have difference from 'created time'.
+    # Another words: show updated label only if post edited in another day than was created.
+    another_day: false
   categories: true
 
 # Post wordcount display settings
