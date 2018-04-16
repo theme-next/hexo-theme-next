@@ -19,22 +19,21 @@ sidebar:
   overview: Genel Bakış
   toc: İçindekiler
 post:
+  posted: Şurada Yayımlandı
+  edited: Edited on
   created: Gönderi Oluşturuldu
   modified: Gönderi Değiştirildi
-  sticky: Sabit
-  posted: Şurada Yayımlandı
+  edit: Edit this post
   in: İçinde
   more: daha
   read_more: Daha fazla oku
   untitled: Başlıksız
+  sticky: Sabit
   toc_empty: Bu gönderinin içindekiler kısmı yok
   views: Views
   comments_count: Yorumlar
-  symbols_count: Yazının içerdiği semboller
-  symbols_time: Okuma zamanı
-  total_symbols: İçerilen toplam semboller
-  total_time: Toplam okuma zamanı
   related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: Gönderi yazarı
     link: Gönderi linki
@@ -79,7 +78,7 @@ keep_on: Gönderiye devam.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Bağış
   wechatpay: WeChat Ödeme
@@ -90,3 +89,9 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page
   next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.

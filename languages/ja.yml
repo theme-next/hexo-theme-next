@@ -19,22 +19,21 @@ sidebar:
   overview: 概要
   toc: 見出し
 post:
+  posted: 投稿日
+  edited: Edited on
   created: 作成された時間
   modified: Updated at
-  sticky: 固定
-  posted: 投稿日
+  edit: Edit this post
   in: In
   more: more
   read_more: 続きを読む
   untitled: 無題
+  sticky: 固定
   toc_empty: 見出しがありません
   views: Views
   comments_count: コメント
-  symbols_count: 単語数
-  symbols_time: 読書の時間
-  total_symbols: 単語の総数
-  total_time: 読書の合計時間
   related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: 著者
     link: Post link
@@ -77,8 +76,8 @@ cheers:
   excellent: 最高
 keep_on: もっと書こう！
 symbol:
-  comma: "、 "
-  period: "。 "
+  comma: "、"
+  period: "。"
   colon: "："
 reward:
   donate: Donate
@@ -90,3 +89,9 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page
   next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.
