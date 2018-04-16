@@ -19,22 +19,21 @@ sidebar:
   overview: Ensemble
   toc: Table Des Matières
 post:
+  posted: Posté le
+  edited: Edited on
   created: Post created
   modified: Updated at
-  sticky: Sticky
-  posted: Posté le
+  edit: Edit this post
   in: In
   more: more
   read_more: Lire la suite
   untitled: Non titré
+  sticky: Sticky
   toc_empty: This post does not have a Table of Contents
   views: Views
   comments_count: Comments
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
   related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: Post author
     link: Post link
@@ -79,7 +78,7 @@ keep_on: Et ca ne fait que commencer.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
@@ -90,3 +89,9 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page
   next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.
