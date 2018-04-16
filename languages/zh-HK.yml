@@ -21,8 +21,8 @@ sidebar:
 post:
   posted: 發表於
   edited: 更新於
-  created: 創建於
-  modified: 更新於
+  created: 創建時間
+  modified: 修改時間
   edit: 編輯
   in: 分類於
   more: 更多
