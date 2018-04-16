@@ -20,9 +20,9 @@ sidebar:
   toc: 文章目录
 post:
   posted: 发表于
-  edited: Edited on
+  edited: 修改于
   created: 创建于
-  modified: 更新于
+  modified: 修改时间
   edit: 编辑
   in: 分类于
   more: 更多
@@ -33,7 +33,7 @@ post:
   views: 阅读次数
   comments_count: 评论数
   related_posts: 相关文章
-  copy_button: Copy
+  copy_button: 复制
   copyright:
     author: 本文作者
     link: 本文链接
