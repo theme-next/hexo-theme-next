@@ -80,19 +80,19 @@
 {% endif %}
 <link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css" />
 
-<link href="{{ url_for(theme.css) }}/main.css?v={{ theme.version }}" rel="stylesheet" type="text/css" />
+<link href="{{ url_for(theme.css) }}/main.css?v={{ version }}" rel="stylesheet" type="text/css" />
 
 {% if theme.favicon.apple_touch_icon %}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ theme.version }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
 {% endif %}
 {% if theme.favicon.medium %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}?v={{ theme.version }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}?v={{ version }}">
 {% endif %}
 {% if theme.favicon.small %}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}?v={{ theme.version }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}?v={{ version }}">
 {% endif %}
 {% if theme.favicon.safari_pinned_tab %}
-  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}?v={{ theme.version }}" color="{{ theme.android_chrome_color }}">
+  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}?v={{ version }}" color="{{ theme.android_chrome_color }}">
 {% endif %}
 {% if theme.favicon.android_manifest %}
   <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
@@ -114,7 +114,7 @@
   var CONFIG = {
     root: '{{ theme.root }}',
     scheme: '{{ theme.scheme }}',
-    version: '{{ theme.version }}',
+    version: '{{ version }}',
     sidebar: {{ theme.sidebar | json_encode }},
     fancybox: {{ theme.fancybox }},
     fastclick: {{ theme.fastclick }},
