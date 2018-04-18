@@ -21,7 +21,7 @@
           transition: opacity .3s ease-in-out;
           opacity: 0;
           padding: 2px 6px;
-          position: fixed;
+          position: absolute;
           right: 4px;
           top: 8px;
       }
@@ -32,7 +32,7 @@
       }
 
       .highlight-wrap {
-          transform: translateZ(0);
+          position: relative;
       }
   </style>
   <script>
