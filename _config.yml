@@ -274,6 +274,8 @@ post_meta:
 symbols_count_time:
   symbols: true 
   time: true 
+  total_symbols: true
+  total_time: true
   separated_meta: true
   item_text_post: true
   item_text_total: false
