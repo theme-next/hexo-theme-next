@@ -272,6 +272,8 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
+  symbols: true 
+  time: true 
   separated_meta: true
   item_text_post: true
   item_text_total: false
