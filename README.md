@@ -102,22 +102,22 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Add or improve translation in few seconds!"
 [lang-url]: https://crwd.in/theme-next
 
-[gitter-image]: https://img.shields.io/badge/gitter-chat-green.svg
+[gitter-image]: https://img.shields.io/badge/gitter-chat-brightgreen.svg
 [gitter-url]: https://gitter.im/theme-next
 
 [riot-image]: https://img.shields.io/badge/riot-chat-green.svg
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[t-chat-image]: https://img.shields.io/badge/telegram-chat-green.svg
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-yellowgreen.svg
 [t-chat-url]: https://t.me/theme_next
 
-[t-news-image]: https://img.shields.io/badge/telegram-news-green.svg
+[t-news-image]: https://img.shields.io/badge/telegram-news-yellow.svg
 [t-news-url]: https://t.me/theme_next_news
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
 [travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
 
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.5.0-orange.svg
 [hexo-url]: http://hexo.io
 
 [lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg
