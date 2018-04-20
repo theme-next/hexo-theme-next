@@ -105,7 +105,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-join%20chat-green.svg
+[riot-image]: https://img.shields.io/badge/riot-chat-green.svg
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
 [t-chat-image]: https://img.shields.io/badge/telegram-chat-lightgrey.svg
