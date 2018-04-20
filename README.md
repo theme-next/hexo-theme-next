@@ -96,22 +96,22 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 * :triangular_flag_on_post: <a title="Hexo Markdown Editor" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
-[browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
+[browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-green.svg
 [browser-url]: https://www.browserstack.com
 
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Add or improve translation in few seconds!"
 [lang-url]: https://crwd.in/theme-next
 
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
+[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg "Join to our Gitter room"
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-chat-green.svg
+[riot-image]: https://img.shields.io/badge/riot-chat-DCAB08.svg "Join to our Riot room"
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[t-chat-image]: https://img.shields.io/badge/telegram-chat-lightgrey.svg
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-BAB210.svg "Join to our Telegram group"
 [t-chat-url]: https://t.me/theme_next
 
-[t-news-image]: https://img.shields.io/badge/telegram-news-lightgrey.svg
+[t-news-image]: https://img.shields.io/badge/telegram-news-98B919.svg "Join to our Telegram news channel"
 [t-news-url]: https://t.me/theme_next_news
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
