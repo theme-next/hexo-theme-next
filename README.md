@@ -102,7 +102,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Add or improve translation in few seconds!"
 [lang-url]: https://crwd.in/theme-next
 
-[gitter-image]: https://img.shields.io/badge/gitter-chat-brightgreen.svg
+[gitter-image]: https://img.shields.io/badge/gitter-chat-b0c4de.svg
 [gitter-url]: https://gitter.im/theme-next
 
 [riot-image]: https://img.shields.io/badge/riot-chat-green.svg
