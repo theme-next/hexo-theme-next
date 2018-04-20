@@ -102,13 +102,13 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Add or improve translation in few seconds!"
 [lang-url]: https://crwd.in/theme-next
 
-[gitter-image]: https://img.shields.io/badge/gitter-chat-46bc99.svg
+[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-chat-orange.svg
+[riot-image]: https://img.shields.io/badge/riot-chat-green.svg
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[t-chat-image]: https://img.shields.io/badge/telegram-chat-499dd9.svg
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-yellowgreen.svg
 [t-chat-url]: https://t.me/theme_next
 
 [t-news-image]: https://img.shields.io/badge/telegram-news-yellow.svg
