@@ -102,16 +102,16 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Add or improve translation in few seconds!"
 [lang-url]: https://crwd.in/theme-next
 
-[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg "Join our Gitter group"
+[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg "Join to our Gitter room"
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-chat-DCAB08.svg "Join our Riot group"
+[riot-image]: https://img.shields.io/badge/riot-chat-DCAB08.svg "Join to our Riot room"
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[t-chat-image]: https://img.shields.io/badge/telegram-chat-BAB210.svg "Join our Telegram group"
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-BAB210.svg "Join to our Telegram group"
 [t-chat-url]: https://t.me/theme_next
 
-[t-news-image]: https://img.shields.io/badge/telegram-news-98B919.svg "Join our Telegram news group"
+[t-news-image]: https://img.shields.io/badge/telegram-news-98B919.svg "Join to our Telegram news channel"
 [t-news-url]: https://t.me/theme_next_news
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
