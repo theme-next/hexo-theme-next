@@ -105,14 +105,14 @@ $ git pull
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-join%20chat-green.svg
+[riot-image]: https://img.shields.io/badge/riot-chat-green.svg
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
 [t-chat-image]: https://img.shields.io/badge/telegram-chat-lightgrey.svg
-[t-chat-url]: https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw
+[t-chat-url]: https://t.me/theme_next
 
 [t-news-image]: https://img.shields.io/badge/telegram-news-lightgrey.svg
-[t-news-url]: https://t.me/theme_next
+[t-news-url]: https://t.me/theme_next_news
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
 [travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
