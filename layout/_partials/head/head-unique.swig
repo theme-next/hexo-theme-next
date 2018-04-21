@@ -11,7 +11,7 @@
   {% set theme.rss = config.feed.path %}
 {% endif %}
 {% if theme.rss %}
-  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ config.title }}" type="application/atom+xml" />
+  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml" />
 {% endif %}
 
 {# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}

@@ -1,4 +1,4 @@
-/* global hexo */
+'use strict';
 
 var merge = require('./merge');
 
@@ -22,6 +22,25 @@ hexo.on('generateBefore', function () {
      */
     } else {
       merge(hexo.theme.config, hexo.config.theme_config);
+    }
+    /**
+     * Custom languages support. Introduced in NexT v6.3.0.
+     */
+    if (data && data.languages) {
+      var lang = this.config.language;
+      var i18n = this.theme.i18n;
+
+      function mergeLang(lang) {
+        i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
+      }
+
+      if(Array.isArray(lang)){
+        for (var i = 0; i < lang.length; i++) {
+          mergeLang(lang[i]);
+        }
+      } else {
+        mergeLang(lang);
+      }
     }
   }
 });
