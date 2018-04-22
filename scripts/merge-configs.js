@@ -1,3 +1,5 @@
+/* global hexo */
+
 'use strict';
 
 var merge = require('./merge');
