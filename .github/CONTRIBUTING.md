@@ -4,7 +4,7 @@
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-First of all, thanks for taking the time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme-Next](https://github.com/theme-next) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+First of all, thanks for taking your time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme-Next](https://github.com/theme-next) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## Table Of Contents
 
@@ -14,8 +14,9 @@ First of all, thanks for taking the time to contribute and help make our project
   * [Reporting Bugs](#reporting-bugs)
   * [Suggesting Enhancements](#suggesting-enhancements)
   * [Submitting a Pull Request](#submitting-a-pull-request)
+  * [Creating Releases](#creating-releases)
 
-[Style Guides](#style-guides)
+[Guides](#guides)
 
   * [Coding Rules](#coding-rules)
   * [Coding Standards](#coding-standards)
@@ -95,7 +96,22 @@ Following these guidelines helps maintainers and the community understand your p
 * Fill in [the required template](PULL_REQUEST_TEMPLATE.md) as many details as possible.
 * All features or bug fixes must be tested in all schemes. And provide specific examples to demonstrate the pull request. Include links to files (screenshots or GIFs) or live demo.
 
-## Style Guides
+### Creating Releases
+
+Releases are a great way to ship projects on GitHub to your users.
+
+1. On GitHub, navigate to the main page of the repository. Under your repository name, click **Releases**. Click **Draft a new release**.
+2. Type a version number for your release. Versions are based on [Git tags](https://git-scm.com/book/en/Git-Basics-Tagging). We recommend naming tags that fit within [About Major and Minor NexT versions](https://github.com/theme-next/hexo-theme-next/issues/187).
+3. Select a branch that contains the project you want to release. Usually, you'll want to release against your `master` branch, unless you're releasing beta software.
+4. Type a title and description that describes your release.
+    - Use the version as the title.
+    - The types of changes include **Breaking Changes**, **Updates**, **Features**, and **Bugfixes**. In the section of Breaking Changes, use multiple secondary headings, and use item list in other sections.
+    - Use the passive tense and subject-less sentences.
+    - All changes must be documented in release notes. If commits happen without pull request (minimal changes), just add this commit ID into release notes. If commits happen within pull request alreay, just add the related pull request ID including all possible commits.
+5. If you'd like to include binary files along with your release, such as compiled programs, drag and drop or select files manually in the binaries box.
+6. If the release is unstable, select **This is a pre-release** to notify users that it's not ready for production. If you're ready to publicize your release, click **Publish release**. Otherwise, click **Save draft** to work on it later.
+
+## Guides
 
 ### Coding Rules
 
@@ -103,22 +119,24 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 ### Coding Standards
 
+To be continued.
+
 ### Commit Messages Rules
 
 We have very precise rules over how our git commit messages can be formatted. Each commit message consists of a `type` and a `subject`. This leads to more
 readable messages that are easy to follow when looking through the project history.
 
 - `type` describes the meaning of this commit including but not limited to the following items, and capitalize the first letter.
-    * `build`: Changes that affect the build system or external dependencies
-    * `ci`: Changes to our CI configuration files and scripts
-    * `docs`: Documentation only changes
-    * `feat`: A new feature
-    * `fix`: A bug fix
-    * `perf`: A code change that improves performance
-    * `refactor`: A code change that neither fixes a bug nor adds a feature
-    * `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-    * `revert`: Revert some existing commits
-    * `release`: Commit a release for a conventional changelog project
+    * `Build`: Changes that affect the build system or external dependencies
+    * `Ci`: Changes to our CI configuration files and scripts
+    * `Docs`: Documentation only changes
+    * `Feat`: A new feature
+    * `Fix`: A bug fix
+    * `Perf`: A code change that improves performance
+    * `Refactor`: A code change that neither fixes a bug nor adds a feature
+    * `Style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+    * `Revert`: Revert some existing commits
+    * `Release`: Commit a release for a conventional changelog project
 - The `subject` contains a succinct description of the change, like `Update code highlighting in readme.md`.
-    * no dot (.) at the end.
-    * use the imperative, present tense: "change" not "changed" nor "changes".
+    * No dot (.) at the end.
+    * Use the imperative, present tense: "change" not "changed" nor "changes".
