@@ -151,7 +151,7 @@ Please note the difference between **site config file** and **theme config file*
 
   ![17](https://lc-cqha0xyi.cn-n1.lcfile.com/b72a9e64579f5b71749d.jpg)
 
-- Click `1`(add_fields), then choose `2`:
+- <del>Click `1`(add_fields), then choose `2`:</del>Do as below "create" setting(choose the user you create):
 
   ![18](https://lc-cqha0xyi.cn-n1.lcfile.com/14a8cb37062693d768ad.jpg)
 

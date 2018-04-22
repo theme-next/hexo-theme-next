@@ -158,7 +158,7 @@ leancloud_visitors:
 
   ![17](https://lc-cqha0xyi.cn-n1.lcfile.com/b72a9e64579f5b71749d.jpg)
 
-- 点击`1`add_fields后选择`2`指定用户， 并将下两栏留空：
+- <del>点击`1`add_fields后选择`2`指定用户， 并将下两栏留空：</del>此处应与下条create设置相同（选择你所创建的用户）：
 
   ![18](https://lc-cqha0xyi.cn-n1.lcfile.com/14a8cb37062693d768ad.jpg)
 
