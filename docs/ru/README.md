@@ -85,16 +85,16 @@ $ git pull
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Добавить или улучшить перевод за несколько секунд!"
 [lang-url]: https://crwd.in/theme-next
 
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
+[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg "Вступить в нашу комнату Gitter'а"
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-chat-green.svg
+[riot-image]: https://img.shields.io/badge/riot-chat-DCAB08.svg "Вступить в нашу комнату Riot'а"
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[t-chat-image]: https://img.shields.io/badge/telegram-chat-lightgrey.svg
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-BAB210.svg "Вступить в нашу группу Telegram'а"
 [t-chat-url]: https://t.me/theme_next
 
-[t-news-image]: https://img.shields.io/badge/telegram-news-lightgrey.svg
+[t-news-image]: https://img.shields.io/badge/telegram-news-98B919.svg "Подписаться на канал Telegram'а с новостями"
 [t-news-url]: https://t.me/theme_next_news
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master

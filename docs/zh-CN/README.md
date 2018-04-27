@@ -102,16 +102,16 @@ $ git pull
 [lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "请花几秒钟来添加或修正翻译！"
 [lang-url]: https://crwd.in/theme-next
 
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
+[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg "Join to our Gitter room"
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-chat-green.svg
+[riot-image]: https://img.shields.io/badge/riot-chat-DCAB08.svg "Join to our Riot room"
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[t-chat-image]: https://img.shields.io/badge/telegram-chat-lightgrey.svg
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-BAB210.svg "Join to our Telegram group"
 [t-chat-url]: https://t.me/theme_next
 
-[t-news-image]: https://img.shields.io/badge/telegram-news-lightgrey.svg
+[t-news-image]: https://img.shields.io/badge/telegram-news-98B919.svg "Join to our Telegram news channel"
 [t-news-url]: https://t.me/theme_next_news
 
 [travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
