@@ -7,6 +7,7 @@ var merge = require('./merge');
 hexo.on('generateBefore', function() {
   if (hexo.locals.get) {
     var data = hexo.locals.get('data');
+
     /**
      * Merge configs from _data/next.yml into hexo.theme.config.
      * If `override`, configs in next.yml will rewrite configs in hexo.theme.config.
