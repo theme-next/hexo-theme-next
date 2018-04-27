@@ -1,0 +1,8 @@
+linters:
+  eslint:
+    config: '.eslintrc.json'
+  csslint: {  }
+files:
+  ignore:
+    - 'bower_components/*'
+    - 'node_modules/*'
