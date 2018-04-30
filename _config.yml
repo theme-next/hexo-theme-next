@@ -192,7 +192,12 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar:
+  rul: 
+  rounded: false
+  # The value of opacity should be choose from 0 to 1
+  opacity: 1
+  animated: false
 
 # Table Of Contents in the Sidebar
 toc:
