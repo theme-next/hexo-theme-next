@@ -29,10 +29,10 @@
       <section class="site-overview-wrap sidebar-panel{% if not display_toc or toc(page.content).length <= 1 %} sidebar-panel-active{% endif %}">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            {% if theme.avatar.rul %}
+            {% if theme.avatar.url %}
               <a href="/" class="site-author-image" rel="start" style="border:none">
               <img class="site-author-image" itemprop="image"
-                src="{{ url_for( theme.avatar.rul | default(theme.images + '/avatar.gif') ) }}"
+                src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
                 alt="{{ theme.author }}" />
               </a>
             {% endif %}
