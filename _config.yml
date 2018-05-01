@@ -195,9 +195,6 @@ avatar:
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
   url: #/images/avatar.gif
-  # You can set the `exturl` to linking the avatar. 
-  # `exturl: /` means linking to the homepage.
-  exturl: #/
   # If true, the avatar would be dispalyed in circle. 
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
