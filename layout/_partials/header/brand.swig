@@ -16,11 +16,11 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    <div{% if theme.custom_logo.enabled %} class="custom-logo"{% endif %}>
       {% if theme.custom_logo.enabled and theme.custom_logo.image and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
+        <div class="custom-logo">
           <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ config.title }}"/>
+        </div>
       {% endif %}
-    </div>
       {% if theme.seo %}
         <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
       {% else %}
