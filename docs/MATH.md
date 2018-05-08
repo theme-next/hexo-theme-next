@@ -49,7 +49,7 @@ hexo clean && hexo g -d
 
 In the new version of NexT, we have added feature to automatically number equations and to refer to equations. We briefly describe how to use this feature below.
 
-In general, to make the automatic equation numbering work, you have to wrap your LaTeX equations in `equation` environment. Using the plain old style (i.e., wrap an equation with two dollar signs in each side) will not work. How to refer to an equation? Just give a `\label{}` tag and then in your later text, use `\ref{}` or `\eqref{}` to refer it. Using `\eqref{}` is preferred since if you use `\ref{}`, there are no parentheses around the equation number. But there are some variations I would like to elaborate.
+In general, to make the automatic equation numbering work, you have to wrap your LaTeX equations in `equation` environment. Using the plain old style (i.e., wrap an equation with two dollar signs in each side) will not work. How to refer to an equation? Just give a `\label{}` tag and then in your later text, use `\ref{}` or `\eqref{}` to refer it. Using `\eqref{}` is preferred since if you use `\ref{}`, there are no parentheses around the equation number. Below are some of the common scenarios for equation numbering.
 
 For simple equations, use the following form to give a tag,
 
@@ -103,7 +103,7 @@ Sometimes, you want to use more “exotic” style to refer your equation. You c
 $$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
 ```
 
-For more information, you can visit this [post](https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/). 
+For more information, you can visit the [official MathJax documentation on equation numbering](http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering). You can also visit this [post](https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/) for more details. 
 
 ### Katex
 
