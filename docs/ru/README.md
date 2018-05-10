@@ -1,5 +1,5 @@
 <div align="right">Язык: <a title="Английский" href="../../README.md">:us:</a>
-<a title="Китайский" href="../../docs/cn/README.md">:cn:</a>
+<a title="Китайский" href="../../docs/zh-CN/README.md">:cn:</a>
 :ru:</div>
 
 # <div align="center"><a title="Перейти на сайт" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
@@ -8,7 +8,9 @@
 
 [![gitter-image]][gitter-url]
 [![riot-image]][riot-url]
-[![mnt-image]][commits-url]
+[![t-chat-image]][t-chat-url]
+[![t-news-image]][t-news-url]
+[![lang-image]][lang-url]
 [![travis-image]][travis-url]
 [![rel-image]][releases-url]
 [![hexo-image]][hexo-url]
@@ -19,7 +21,7 @@
 * :heart_decoration: Muse тема: [LEAFERx](https://leaferx.online) | [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me)
 * :six_pointed_star: Mist тема: [Jeff](https://blog.zzbd.org) | [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
 * :pisces: Pisces тема: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Rainy](https://rainylog.com)
-* :gemini: Gemini тема: [Ivan.Nginx](https://almostover.ru) | [Alynx](http://sh.alynx.xyz) | [Raincal](https://raincal.top)
+* :gemini: Gemini тема: [Ivan.Nginx](https://almostover.ru) | [Raincal](https://raincal.com) | [Dandy](https://dandyxu.me)
 
 Больше примеров «NexT» [здесь](https://github.com/iissnan/hexo-theme-next/issues/119).
 
@@ -60,7 +62,7 @@ $ git pull
 А если всплывают ошибки во время обновления (что-то наподобии **«Commit your changes or stash them before you can merge»**), рекомендуется ознакомиться с особенностью хранения [дата-файлов в Hexo][docs-data-files-url].\
 Как бы то ни было, можно обойти ошибки при обновлении если «Закомитить», «Стэшнуть» или «Откатить» локальные изменения. Смотрим  [здесь](https://stackoverflow.com/a/15745424/5861495) как это сделать.
 
-Если нужно обновиться с версии v5.1.x на v6.0.x, читаем [здесь][docs-update-5-1-x-url].
+**Если нужно обновиться с версии v5.1.x на v6.0.x, читаем [здесь][docs-update-5-1-x-url].**
 
 ## Известные баги
 
@@ -80,23 +82,33 @@ $ git pull
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
+[lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Добавить или улучшить перевод за несколько секунд!"
+[lang-url]: https://crwd.in/theme-next
+
+[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg "Вступить в нашу комнату Gitter'а"
 [gitter-url]: https://gitter.im/theme-next
 
-[riot-image]: https://img.shields.io/badge/riot-join%20chat-green.svg
+[riot-image]: https://img.shields.io/badge/riot-chat-DCAB08.svg "Вступить в нашу комнату Riot'а"
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
 
-[travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
-[travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI"
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-BAB210.svg "Вступить в нашу группу Telegram'а"
+[t-chat-url]: https://t.me/theme_next
 
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg
+[t-news-image]: https://img.shields.io/badge/telegram-news-98B919.svg "Подписаться на канал Telegram'а с новостями"
+[t-news-url]: https://t.me/theme_next_news
+
+[travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
+[travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
+
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg
 [hexo-url]: http://hexo.io
 
 [lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg
 [lic-url]: https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md
 
-[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg
-[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg
+<!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->
+[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg
+<!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest

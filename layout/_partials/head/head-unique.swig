@@ -1,11 +1,3 @@
-{% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords }}" />
-{% elif page.tags and page.tags.length %}
-  <meta name="keywords" content="{% for tag in page.tags %}{{ tag.name }},{% endfor %}" />
-{% elif theme.keywords %}
-  <meta name="keywords" content="{{ theme.keywords }}" />
-{% endif %}
-
 {{
   open_graph({
     twitter_id: theme.twitter,
@@ -26,3 +18,10 @@
 {% if theme.canonical %}
   <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>
 {% endif %}
+
+{# Exports some front-matter variables to Front-End #}
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: {{ page.sidebar | json_encode }},
+  };
+</script>

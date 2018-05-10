@@ -1,6 +1,7 @@
 @import "../Pisces/_layout";
 @import "../Pisces/_brand";
 @import "../Pisces/_menu";
+@import "../Pisces/_sub-menu";
 @import "../Pisces/_sidebar";
 // Import _posts if want to justify text-align on mobile.
 //@import "../Pisces/_posts";
@@ -21,6 +22,17 @@
 // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
 hexo-config('sidebar.offset') is a 'unit' ? (sboffset = unit(hexo-config('sidebar.offset'), px)) : (sboffset = 0)
 use_seo = hexo-config('seo');
+
+// Maximum content width.
+// =================================================
+$max-content-width = hexo-config('max_content_width')
+if $max-content-width {
+  .header,
+  .container .main-inner,
+  .footer-inner {
+    max-width: unquote($max-content-width);
+  }
+}
 
 // =================================================
 // Desktop layout styles.
@@ -100,6 +112,25 @@ use_seo = hexo-config('seo');
 }
 .footer {
   bottom: auto;
+}
+
+// Sub-menu(s).
+.sub-menu {
+  border-bottom: initial !important;
+  box-shadow: $box-shadow-inner;
+  // Adapt submenu(s) with post-blocks.
+  &+ #content > #posts {
+    .post-block {
+      box-shadow: $box-shadow;
+      margin-top: sboffset;
+      +tablet() {
+        margin-top: $content-tablet-padding;
+      }
+      +mobile() {
+        margin-top: $content-mobile-padding;
+      }
+    }
+  }
 }
 
 // =================================================

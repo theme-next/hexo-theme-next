@@ -66,6 +66,7 @@
       {### END PAGE BODY ###}
       {#####################}
     </div>
+    {% include '_partials/breadcrumb.swig' %}
     {######################}
     {### END PAGE BLOCK ###}
     {######################}

@@ -43,7 +43,7 @@
     background-color: $grey-light;
     border-radius: 10px;
     float: right;
-    margin: 0.35em 0.9em 0 0;
+    margin: 0.35em 0 0 0;
     text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
   }
 
@@ -53,17 +53,21 @@
 .menu-item-active a {
   @extend .menu .menu-item a:hover;
 
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    margin-top: -3px;
-    right: 15px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: $grey;
+  badges = hexo-config('menu_settings.badges');
+  if not badges {
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      right: 15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $grey;
+    }
   }
+
 }
 
 .btn-bar {

@@ -1,74 +1,71 @@
+---
 title:
   archive: Archiv
   category: Kategorie
   tag: Tag
-
-author: Author
-
+  schedule: Schedule
 menu:
   home: Startseite
   archives: Archiv
   categories: Kategorien
   tags: Tags
   about: Über
-  feed: RSS
   search: Suche
-
+  schedule: Schedule
+  sitemap: Sitemap
+  commonweal: Commonweal 404
 sidebar:
   overview: Übersicht
   toc: Inhaltsverzeichnis
-
 post:
-  created: Post created
-  sticky: Sticky
   posted: Veröffentlicht am
+  edited: Edited on
+  created: Post created
   modified: Updated at
+  edit: Edit this post
   in: in
+  more: more
   read_more: Weiterlesen
   untitled: Unbenannt
+  sticky: Sticky
   toc_empty: Dieser Artikel hat kein Inhaltsverzeichnis
-  visitors: Visitors
-  wordcount: Words count in article
-  min2read: Reading time
-  totalcount: Site words total count
-  totaltime: Site reading time
+  views: Views
+  comments_count: Comments
+  related_posts: Related Posts
+  copy_button: Copy
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
-    license_content: 'All articles in this blog are licensed under
-      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
-
+    license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
   totally: Gesamt
   tags: tags
-
 footer:
   powered: "Erstellt mit  %s"
   theme: Theme
-
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
     zero: Keine Tags
     one: Insgesamt ein Tag
     other: "Insgesamt %d Tags"
-
   categories:
     zero: Keine Kategorien
     one: Insgesamt eine Kategorie
     other: "Insgesamt %d Kategorien"
-
   archive_posts:
     zero: Keine Artikel vorhanden.
     one: Ein Artikel.
     other: "Insgesamt %d Artikel."
-
 state:
   posts: Artikel
   pages: Seiten
   tags: Tags
   categories: Kategorien
-
+search:
+  placeholder: Searching...
 cheers:
   um: Öhm..
   ok: OK
@@ -76,16 +73,24 @@ cheers:
   good: Gut
   great: Wunderbar
   excellent: Exzellent
-
 keep_on: Bleib dran.
-
 symbol:
-  comma: '. '
-  period: ', '
-  colon: ':'
-
+  comma: ". "
+  period: ", "
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Show comments from Gitment
+accessibility:
+  nav_toggle: Toggle navigation bar
+  prev_page: Previous page
+  next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.

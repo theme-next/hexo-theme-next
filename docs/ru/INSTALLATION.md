@@ -89,7 +89,7 @@
      $ git checkout tags/v6.0.1
      Note: checking out 'tags/v6.0.1'.
      …
-     HEAD now on 1f72f68... CSS: Remove global list-style setting of ul
+     HEAD is now at da9cdd2... Release v6.0.1
      ```
 
      И если вы хотите переключиться обратно на [мастер-ветку][commits-url], вводим следующее:

@@ -87,10 +87,15 @@ $(document).ready(function () {
 
   // Expand sidebar on post detail page by default, when post has a toc.
   var $tocContent = $('.post-toc-content');
-  var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||
+  var display = CONFIG.page.sidebar;
+  if (typeof display !== 'boolean') {
+    // There's no definition sidebar in the page front-matter
+    var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||
       CONFIG.sidebar.display === 'always';
-  var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
-  if (isSidebarCouldDisplay && hasTOC) {
+    var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
+    display = isSidebarCouldDisplay && hasTOC;
+  }
+  if (display) {
     CONFIG.motion.enable ?
       (NexT.motion.middleWares.sidebar = function () {
           NexT.utils.displaySidebar();

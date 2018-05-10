@@ -89,7 +89,7 @@
      $ git checkout tags/v6.0.1
      Note: checking out 'tags/v6.0.1'.
      …
-     HEAD now on 1f72f68... CSS: Remove global list-style setting of ul
+     HEAD is now at da9cdd2... Release v6.0.1
      ```
 
      然后，假设你想要切换回 [master 分支][commits-url]，输入如下指令即可：
@@ -116,5 +116,5 @@ theme: next
 [curl-tar-url]: http://lmgtfy.com/?q=linux+curl+tar+install
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
-[update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/cn/README.md#update
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/cn/DATA-FILES.md
+[update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/README.md#update
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
