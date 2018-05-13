@@ -103,7 +103,7 @@ reward:
 gitmentbutton: Gitment'ten yorumlar göster
 
 accessibility:
-  nav_toggle: Gezinti çubuğunun değiştir
+  nav_toggle: Gezinti çubuğunu değiştir
   prev_page: Önceki sayfa
   next_page: Sonraki sayfa
 
