@@ -3,17 +3,17 @@ title:
   archive: Arşiv
   category: Kategori
   tag: Etiket
-  schedule: Plan
+  schedule: Program
 menu:
   home: Ana Sayfa
   archives: Arşivler
   categories: Kategoriler
   tags: Etiketler
-  about: Hakkında
-  search: Arama
-  schedule: Plan
+  about: Hakkımda
+  search: Ara
+  schedule: Program
   sitemap: Site Haritası
-  commonweal: Ortak Yarar 404
+  commonweal: Hata 404
 sidebar:
   overview: Genel Bakış
   toc: İçindekiler
