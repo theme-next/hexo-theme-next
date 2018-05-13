@@ -39,7 +39,7 @@ post:
     author: Gönderiyi yazan
     link: Gönderi bağlantısı
     license_title: Telif Hakkı Bildirimi
-    license_content: "Bu blogda yer alan yazıların hepsi aksine bir ifade olmadığı sürece %s altında lisanslıdır."
+    license_content: "Bu blogdaki tüm makaleler aksi belirtilmediği sürece %s altında lisanslıdır."
 page:
   totally: Toplamda
   tags: etiketler
