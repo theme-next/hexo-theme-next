@@ -82,7 +82,7 @@ symbol:
   colon: ": "
 reward:
   donate: Bağış
-  wechatpay: WeChat Ödeme
+  wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
 gitmentbutton: Gitment'ın yorumlarını göster
