@@ -36,9 +36,9 @@ post:
   copy_success: Kopyalandı
   copy_failure: Kopyalanamadı
   copyright:
-    author: Gönderi yazarı
-    link: Gönderi linki
-    license_title: Telif Hakkı Uyarısı
+    author: Gönderiyi yazan
+    link: Gönderi bağlantısı
+    license_title: Telif Hakkı Bildirimi
     license_content: "Bu blogda yer alan yazıların hepsi aksine bir ifade olmadığı sürece %s altında lisanslıdır."
 page:
   totally: Toplamda
