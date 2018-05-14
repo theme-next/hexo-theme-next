@@ -22,13 +22,13 @@
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="{{ theme.author }}">
-      <meta itemprop="description" content="{{ theme.signature }}">
+      <meta itemprop="name" content="{{ author }}">
+      <meta itemprop="description" content="{{ description }}">
       <meta itemprop="image" content="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{{ config.title }}">
+      <meta itemprop="name" content="{{ title }}">
     </span>
 
     {% if not headlessPost %}
@@ -166,6 +166,9 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                {% if __('disqus') !== 'disqus' -%}
+                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+                {% endif %}
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
                 </a>

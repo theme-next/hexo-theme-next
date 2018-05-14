@@ -4,7 +4,7 @@
       <div class="site-meta-headline">
         <a>
           <img class="custom-logo-image" src="{{ theme.custom_logo.image }}"
-               alt="{{ config.title }}"/>
+               alt="{{ title }}"/>
         </a>
       </div>
     {% endif %}
@@ -12,15 +12,17 @@
     <div class="custom-logo-site-title">
       <a href="{{ config.root }}" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">{{ config.title }}</span>
+        <span class="site-title">{{ title }}</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    {% if subtitle %}
       {% if theme.seo %}
-        <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
+        <h1 class="site-subtitle" itemprop="description">{{ subtitle }}</h1>
       {% else %}
-        <p class="site-subtitle">{{ config.subtitle }}</p>
+        <p class="site-subtitle">{{ subtitle }}</p>
       {% endif %}
+    {% endif %}
   </div>
 
   <div class="site-nav-toggle">

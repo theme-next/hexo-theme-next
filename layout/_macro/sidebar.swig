@@ -32,11 +32,11 @@
             {% if theme.avatar.url %}
               <img class="site-author-image" itemprop="image"
                 src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
-                alt="{{ theme.author }}" />
+                alt="{{ author }}" />
             {% endif %}
-              <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
+              <p class="site-author-name" itemprop="name">{{ author }}</p>
               <p class="site-description motion-element" itemprop="description">{#
-              #}{{ theme.description }}{#
+              #}{{ description }}{#
             #}</p>
           </div>
 
