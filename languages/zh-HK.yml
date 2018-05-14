@@ -33,6 +33,8 @@ post:
   comments_count: 評論數
   related_posts: 相關文章
   copy_button: 複製
+  copy_success: 複製成功
+  copy_failure: 複製失敗
   copyright:
     author: 博主
     link: 文章連結
