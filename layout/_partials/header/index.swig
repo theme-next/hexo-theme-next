@@ -1,5 +1,4 @@
 {{ partial('_partials/header/brand.swig', {}, {cache: theme.cache.enable}) }}
-{#{% include 'brand.swig' %}#}
 {% include 'menu.swig' %}
 
 {% if theme.custom_file_path.header %}
