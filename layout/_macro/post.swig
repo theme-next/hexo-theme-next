@@ -83,7 +83,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.posted') }}</span>
+                <span class="post-meta-item-text">{{ __('post.posted') + __('symbol.colon') }}</span>
               {% endif %}
 
               {% if !date_diff && time_diff && theme.post_meta.updated_at.enabled && theme.post_meta.updated_at.another_day %}
@@ -109,14 +109,10 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 {% if theme.post_meta.item_text %}
-                  <span class="post-meta-item-text">{{ __('post.edited') }}</span>
+                  <span class="post-meta-item-text">{{ __('post.edited') + __('symbol.colon') }}</span>
                 {% endif %}
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
-                #}{% if date_diff -%}
-                    {{- date(post.updated) -}}
-                  {%- else -%}
-                    {{- time(post.updated) -}}
-                  {%- endif -%}
+                #}{{ date(post.updated) -}}
                 </time>
               {% endif %}
             {% endif %}
@@ -131,7 +127,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.in') }}</span>
+                <span class="post-meta-item-text">{{ __('post.in') + __('symbol.colon') }}</span>
               {% endif %}
               {% for cat in post.categories %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
@@ -274,7 +270,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 {% if theme.symbols_count_time.item_text_post %}
-                  <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
+                  <span class="post-meta-item-text">{{ __('symbols_count_time.time') + __('symbol.colon') }}</span>
                 {% endif %}
                 <span title="{{ __('symbols_count_time.time') }}">{#
                 #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
