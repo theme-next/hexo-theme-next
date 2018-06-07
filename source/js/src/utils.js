@@ -1,7 +1,6 @@
 /* global NexT: true */
 
 NexT.utils = NexT.$u = {
-
   /**
    * Wrap images with fancybox support.
    */
