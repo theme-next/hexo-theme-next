@@ -15,7 +15,7 @@
 var pathFn = require('path');
 var fs = require('hexo-fs');
 
-function include_raw(args) {
+function includeRaw(args) {
   var path = pathFn.join(hexo.source_dir, args[0]);
 
   return fs.exists(path).then(function(exist) {
@@ -33,4 +33,4 @@ function include_raw(args) {
   });
 }
 
-hexo.extend.tag.register('include_raw', include_raw, {ends: false, async: true});
+hexo.extend.tag.register('include_raw', includeRaw, {ends: false, async: true});
