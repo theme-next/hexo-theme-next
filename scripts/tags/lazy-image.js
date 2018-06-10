@@ -7,6 +7,8 @@
  * {% li /path/to/image, alt, title %}
  */
 
+/* global hexo */
+
 'use strict';
 
 function lazyImage(args) {
