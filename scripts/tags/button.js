@@ -7,6 +7,8 @@
  * {% btn /path/to/url/, text, icon [class], title %}
  */
 
+/* global hexo */
+
 'use strict';
 
 function postButton(args) {
