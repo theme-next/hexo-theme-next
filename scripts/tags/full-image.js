@@ -7,6 +7,8 @@
  * {% fi /path/to/image, alt, title %}
  */
 
+/* global hexo */
+
 'use strict';
 
 function fullImage(args) {
