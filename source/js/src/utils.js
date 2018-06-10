@@ -4,7 +4,7 @@ NexT.utils = NexT.$u = {
   /**
    * Wrap images with fancybox support.
    */
-  wrapImageWithFancyBox: function() {
+  wrapImageWithFancyBox: function () {
     $('.content img')
       .not('[hidden]')
       .not('.group-picture img, .post-gallery img')
