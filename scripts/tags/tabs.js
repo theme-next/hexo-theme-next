@@ -32,9 +32,9 @@
 function postTabs(args, content) {
   var tabBlock = /<!--\s*tab (.*?)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
 
-  var params = args.join(' ').split(',');
-  var tabName = params[0];
-  var tabActive = params[1] || '';
+  args = args.join(' ').split(',');
+  var tabName = args[0];
+  var tabActive = args[1] || '';
 
   var matches = [];
   var match;
