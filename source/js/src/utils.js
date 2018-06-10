@@ -264,7 +264,6 @@ NexT.utils = NexT.$u = {
   getSidebarb2tHeight: function() {
     //var sidebarb2tHeight = (CONFIG.sidebar.b2t) ? document.getElementsByClassName('back-to-top')[0].clientHeight : 0;
     var sidebarb2tHeight = CONFIG.sidebar.b2t ? $('.back-to-top').height() : 0;
-    //var sidebarb2tHeight = (CONFIG.sidebar.b2t) ? 24 : 0;
     return sidebarb2tHeight;
   },
 
