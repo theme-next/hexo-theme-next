@@ -278,14 +278,6 @@ NexT.utils = NexT.$u = {
     return sidebarSchemePadding;
   }
 
-  /**
-   * Affix behaviour for Sidebar.
-   *
-   * @returns {Boolean}
-   */
-//  needAffix: function () {
-//    return this.isPisces() || this.isGemini();
-//  }
 };
 
 $(document).ready(function() {
