@@ -132,6 +132,17 @@ NexT.utils = NexT.$u = {
     ];
     var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
 
+    function getDimension($element) {
+      return {
+        width : $element.width(),
+        height: $element.height()
+      };
+    }
+
+    function getAspectRadio(width, height) {
+      return height / width * 100;
+    }
+
     $iframes.each(function() {
       var iframe = this;
       var $iframe = $(this);
@@ -151,7 +162,6 @@ NexT.utils = NexT.$u = {
             top     : '0',
             left    : '0'
           });
-
 
         // Wrap the iframe in a new <div> which uses a dynamically fetched padding-top property
         // based on the video's w/h dimensions
@@ -183,16 +193,6 @@ NexT.utils = NexT.$u = {
       }
     });
 
-    function getDimension($element) {
-      return {
-        width : $element.width(),
-        height: $element.height()
-      };
-    }
-
-    function getAspectRadio(width, height) {
-      return height / width * 100;
-    }
   },
 
   hasMobileUA: function() {
@@ -281,12 +281,16 @@ NexT.utils = NexT.$u = {
 
 $(document).ready(function() {
 
-  initSidebarDimension();
-
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
+
+  function updateSidebarHeight(height) {
+    height = height || 'auto';
+    $('.site-overview, .post-toc').css('max-height', height);
+  }
+
   function initSidebarDimension() {
     var updateSidebarHeightTimer;
 
@@ -313,9 +317,6 @@ $(document).ready(function() {
     updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
   }
 
-  function updateSidebarHeight(height) {
-    height = height || 'auto';
-    $('.site-overview, .post-toc').css('max-height', height);
-  }
+  initSidebarDimension();
 
 });
