@@ -13,9 +13,11 @@
  *           May be not defined.
  */
 
+/* global hexo */
+
 'use strict';
 
-function bscallOut (args, content) {
+function bscallOut(args, content) {
   return '<div class="note ' + args.join(' ') + '">' + hexo.render.renderSync({text: content, engine: 'markdown'}).trim() + '</div>';
 }
 
