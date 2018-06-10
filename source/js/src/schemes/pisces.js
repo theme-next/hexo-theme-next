@@ -1,6 +1,6 @@
-$(document).ready(function() {
-
 /* global NexT, CONFIG */
+
+$(document).ready(function() {
 
   var sidebarInner = $('.sidebar-inner');
 
