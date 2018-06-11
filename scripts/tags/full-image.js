@@ -14,14 +14,12 @@
 function fullImage(args) {
   args = args.join(' ').split(',');
   var src = args[0];
-  var alt = args[1] || '';
-  var title = args[2] || '';
+  var alt = args[1].trim() || '';
+  var title = args[2].trim() || '';
 
   if (!src) {
     hexo.log.warn('Image src can NOT be empty');
   }
-  alt = alt.trim();
-  title = title.trim();
 
   var image = ['<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="' + src + '" class="full-image"'];
   alt.length > 0 && image.push('alt="' + alt + '"');
