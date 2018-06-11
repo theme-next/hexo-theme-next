@@ -39,8 +39,8 @@ $(document).ready(function() {
           var link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return (
             '<a href="' + link + '" class="algolia-hit-item-link">'
-              + data._highlightResult.title.value
-            + '</a>'
+          + data._highlightResult.title.value
+          + '</a>'
           );
         },
         empty: function(data) {
