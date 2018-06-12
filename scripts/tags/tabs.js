@@ -34,7 +34,7 @@ function postTabs(args, content) {
 
   args = args.join(' ').split(',');
   var tabName = args[0];
-  var tabActive = args[1] || '';
+  var tabActive = Number(args[1]) || 0;
 
   var matches = [];
   var match;
@@ -66,7 +66,7 @@ function postTabs(args, content) {
     var isOnlyicon = tabIcon.length > 0 && tabCaption.length === 0 ? 'style="text-align: center;' : '';
     tabIcon.length > 0 && (tabIcon = '<i class="fa fa-' + tabIcon.trim() + '"' + isOnlyicon + '"></i>');
 
-    var isActive = (tabActive.length > 0 && tabActive === tabId) || (tabActive.length === 0 && tabId === 1) ? ' active' : '';
+    var isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : '';
     tabNav += '<li class="tab' + isActive + '"><a href="#' + tabHref + '">' + tabIcon + tabCaption + '</a></li>';
     tabContent += '<div class="tab-pane' + isActive + '" id="' + tabHref + '">' + postContent + '</div>';
   }
