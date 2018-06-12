@@ -1,5 +1,5 @@
 /**
- * note.js | global hexo script.
+ * note.js
  *
  * ATTENTION! No need to write this tag in 1 line if u don't want see probally bugs.
  *

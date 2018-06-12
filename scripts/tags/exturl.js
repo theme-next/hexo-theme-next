@@ -1,5 +1,5 @@
 /**
- * exturl.js | global hexo script.
+ * exturl.js
  *
  * Usage:
  *

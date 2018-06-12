@@ -1,5 +1,5 @@
 /**
- * include.js | global hexo script.
+ * include.js
  *
  * Usage:
  *

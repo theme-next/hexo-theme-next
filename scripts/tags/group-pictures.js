@@ -1,5 +1,5 @@
 /**
- * group-pictures.js | global hexo script.
+ * group-pictures.js
  *
  * Usage:
  *

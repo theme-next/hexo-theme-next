@@ -1,5 +1,5 @@
 /**
- * label.js | global hexo script.
+ * label.js
  *
  * Usage:
  *

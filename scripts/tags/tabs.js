@@ -1,5 +1,5 @@
 /**
- * tabs.js | global hexo script.
+ * tabs.js
  *
  * Usage:
  *

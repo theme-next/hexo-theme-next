@@ -1,5 +1,5 @@
 /**
- * lazy-image.js | global hexo script.
+ * lazy-image.js
  *
  * Usage:
  *

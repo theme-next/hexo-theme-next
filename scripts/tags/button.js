@@ -1,5 +1,5 @@
 /**
- * button.js | global hexo script.
+ * button.js
  *
  * Usage:
  *

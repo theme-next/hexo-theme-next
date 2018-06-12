@@ -1,5 +1,5 @@
 /**
- * center-quote.js | global hexo script.
+ * center-quote.js
  *
  * Usage:
  *
