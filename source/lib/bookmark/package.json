@@ -1,0 +1,31 @@
+{
+  "name": "theme-next-bookmark",
+  "version": "1.0.2",
+  "description": "A plugin of local-bookmarks for NexT theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js",
+    "dist": "eslint index.js && uglifyjs --compress --mangle -o bookmark.min.js -- index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theme-next/theme-next-bookmark.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme-next",
+    "plugin",
+    "bookmark"
+  ],
+  "author": "Tsanie Lily",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theme-next/theme-next-bookmark/issues"
+  },
+  "homepage": "https://github.com/theme-next/theme-next-bookmark#readme",
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-google": "^0.9.1",
+    "uglify-js": "^3.3.10"
+  }
+}

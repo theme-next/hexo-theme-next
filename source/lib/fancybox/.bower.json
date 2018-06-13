@@ -1,0 +1,24 @@
+{
+	"name": "fancybox",
+	"description": "Touch enabled, responsive and fully customizable jQuery lightbox script",
+	"keywords": [
+	  "touch",
+	  "responsive",
+	  "lightbox",
+	  "fancybox",
+	  "gallery",
+	  "jQuery",
+	  "plugin"
+	],
+	"homepage": "http://fancyapps.com/fancybox/",
+	"license": "GPL-3.0",
+	"moduleType": "globals",
+	"main": [
+	  "dist/jquery.fancybox.min.css",
+	  "dist/jquery.fancybox.min.js"
+	],
+	"dependencies": {
+	  "jquery": ">=1.9.0"
+	}
+}
+  
