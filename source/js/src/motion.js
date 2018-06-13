@@ -266,7 +266,9 @@ $(document).ready(function() {
         sequence[sequence.length - 1].o.complete = function() {
           integrator.next();
         };
-        $.Velocity.runSequence(sequence);
+        /* eslint-disable */
+        $.Velocity.RunSequence(sequence);
+        /* eslint-enable */
       } else {
         integrator.next();
       }
