@@ -6,10 +6,11 @@
 
 'use strict';
 
-function bscallOut(args, content) {
+function postNote(args, content) {
   return '<div class="note ' + args.join(' ') + '">'
        + hexo.render.renderSync({text: content, engine: 'markdown'}).trim()
        + '</div>';
 }
 
-hexo.extend.tag.register('note', bscallOut, {ends: true});
+hexo.extend.tag.register('note', postNote, {ends: true});
+hexo.extend.tag.register('alert', postNote, {ends: true});
