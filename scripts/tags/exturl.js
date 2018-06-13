@@ -1,12 +1,5 @@
 /**
- * exturl.js
- *
- * Usage:
- *
- * {% exturl text url "title" %}
- * {% extlink text url "title" %}
- *
- * If title not defined, url will be used as title.
+ * exturl.js | https://theme-next.org/docs/tag-plugins/exturl/
  */
 
 /* global hexo */
@@ -25,12 +18,12 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 
 function extURL(args) {
   var exturl = 'exturl';
-  var url = '';
-  var text = ['<i class="fa fa-external-link"></i>'];
-  var title = '';
-  var item = '';
-  var i = 0;
-  var len = args.length;
+  var url    = '';
+  var text   = [];
+  var title  = '';
+  var item   = '';
+  var i      = 0;
+  var len    = args.length;
 
   // Find link URL and text
   for (; i < len; i++) {
@@ -61,7 +54,7 @@ function extURL(args) {
     title     : title
   };
 
-  return htmlTag('span', attrs, text.join(' '));
+  return htmlTag('span', attrs, text.join(' ') + '<i class="fa fa-external-link"></i>');
 }
 
 hexo.extend.tag.register('exturl', extURL, {ends: false});

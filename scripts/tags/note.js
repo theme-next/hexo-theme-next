@@ -1,16 +1,5 @@
 /**
- * note.js
- *
- * ATTENTION! No need to write this tag in 1 line if u don't want see probally bugs.
- *
- * Usage:
- *
- * {% note [class] %}
- * Any content (support inline tags too).
- * {% endnote %}
- *
- * [class] : default | primary | success | info | warning | danger.
- *           May be not defined.
+ * note.js | https://theme-next.org/docs/tag-plugins/note/
  */
 
 /* global hexo */

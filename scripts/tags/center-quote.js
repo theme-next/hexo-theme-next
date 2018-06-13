@@ -1,10 +1,5 @@
 /**
- * center-quote.js
- *
- * Usage:
- *
- * {% centerquote %}Something{% endcenterquote %}
- * {% cq %}Something{% endcq %}
+ * center-quote.js | https://theme-next.org/docs/tag-plugins/
  */
 
 /* global hexo */
