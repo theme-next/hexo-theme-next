@@ -72,7 +72,9 @@
           && $href.is(':visible')
           && [[$href[offsetMethod]().top + offsetBase, href]]) || null;
       })
-      .sort(function(a, b) { return a[0] - b[0]; })
+      .sort(function(a, b) {
+        return a[0] - b[0];
+      })
       .each(function() {
         that.offsets.push(this[0]);
         that.targets.push(this[1]);
