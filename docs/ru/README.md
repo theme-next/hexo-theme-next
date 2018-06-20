@@ -6,15 +6,14 @@
 
 <p align="center">«NexT» — элегантная высококачественная тема под <a href="http://hexo.io">Hexo</a>. Сделана с нуля, с любовью.</p>
 
-[![gitter-image]][gitter-url]
-[![riot-image]][riot-url]
-[![t-chat-image]][t-chat-url]
-[![t-news-image]][t-news-url]
-[![lang-image]][lang-url]
-[![travis-image]][travis-url]
-[![rel-image]][releases-url]
-[![hexo-image]][hexo-url]
-[![lic-image]][lic-url]
+<p align="center">
+  <a href="https://www.codacy.com/app/theme-next/hexo-theme-next?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=theme-next/hexo-theme-next&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/72f7fe7609c2438a92069f448e5a341a" title="Project Grade"></a>
+  <a href="https://travis-ci.org/theme-next/hexo-theme-next?branch=master"><img src="https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master" title="Travis CI [Linux]"></a>
+  <a href="https://crwd.in/theme-next"><img src="https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg" title="Добавить или улучшить перевод за несколько секунд!"></a>
+  <a href="https://github.com/theme-next/hexo-theme-next/releases"><img src="https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg"></a>
+  <a href="http://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg"></a>
+  <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-blue.svg"></a>
+</p>
 
 ## Демо
 
@@ -75,6 +74,15 @@ $ git pull
 
 Приветсвуется любое содействие, не стесняйтесь сообщать «Баги», брать «Форки» и вливать «Пулы».
 
+## Обратная связь
+
+* Задать вопрос на [Stack Overflow][stack-url].
+* Запросить новую возможность на [GitHub][contributing-url].
+* Голосовать за [популярные запросы возможностей][feat-req-vote-url].
+* Сообщить об ошибке в разделе [GitHub Issues][issues-url].
+* Вступить в наши [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] чаты.
+* Подписаться на новости через [канал Telegram'а][t-news-url].
+
 ## Сторонние приложения
 
 * :triangular_flag_on_post: <a title="Маркдаун Редактор под Hexo" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
@@ -82,37 +90,23 @@ $ git pull
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
-[lang-image]: https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg "Добавить или улучшить перевод за несколько секунд!"
-[lang-url]: https://crwd.in/theme-next
+[stack-url]: https://stackoverflow.com/questions/tagged/theme-next
+[contributing-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
+[feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc
+[issues-url]: https://github.com/theme-next/hexo-theme-next/issues
 
-[gitter-image]: https://img.shields.io/badge/gitter-chat-orange.svg "Вступить в нашу комнату Gitter'а"
 [gitter-url]: https://gitter.im/theme-next
-
-[riot-image]: https://img.shields.io/badge/riot-chat-DCAB08.svg "Вступить в нашу комнату Riot'а"
 [riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
-
-[t-chat-image]: https://img.shields.io/badge/telegram-chat-BAB210.svg "Вступить в нашу группу Telegram'а"
 [t-chat-url]: https://t.me/theme_next
-
-[t-news-image]: https://img.shields.io/badge/telegram-news-98B919.svg "Подписаться на канал Telegram'а с новостями"
 [t-news-url]: https://t.me/theme_next_news
 
-[travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
-[travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
-
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg
-[hexo-url]: http://hexo.io
-
-[lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg
-[lic-url]: https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md
-
 <!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->
-[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg
+<!--[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg-->
 <!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
-[releases-url]: https://github.com/theme-next/hexo-theme-next/releases
+<!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases-->
 [tags-url]: https://github.com/theme-next/hexo-theme-next/tags
 [commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master
 
