@@ -195,7 +195,7 @@ avatar:
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
   url: #/images/avatar.gif
-  # If true, the avatar would be dispalyed in circle. 
+  # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
   opacity: 1
@@ -919,19 +919,15 @@ vendors:
   # https://github.com/hustcc/canvas-nest.js
   canvas_nest:
 
-  # three
+  # Internal version: 1.0.0
+  # See: https://github.com/theme-next/theme-next-three
+  # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js
+  # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three-waves.min.js
+  # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
+  # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js
   three:
-
-  # three_waves
-  # https://github.com/jjandxa/three_waves
   three_waves:
-
-  # three_waves
-  # https://github.com/jjandxa/canvas_lines
   canvas_lines:
-
-  # three_waves
-  # https://github.com/jjandxa/canvas_sphere
   canvas_sphere:
 
   # Internal version: 1.0.0
