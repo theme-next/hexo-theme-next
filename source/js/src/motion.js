@@ -77,7 +77,7 @@ $(document).ready(function() {
   sidebarToggleLines.push(sidebarToggleLine2nd);
   sidebarToggleLines.push(sidebarToggleLine3rd);
 
-  var SIDEBAR_WIDTH = '320px';
+  var SIDEBAR_WIDTH = CONFIG.sidebar.width ? CONFIG.sidebar.width : '320px';
   var SIDEBAR_DISPLAY_DURATION = 200;
   var xPos, yPos;
 
