@@ -7,7 +7,9 @@ hexo.extend.helper.register('hexo_env', function(type) {
 });
 
 hexo.extend.helper.register('next_env', function(type) {
-  var env = require('../package.json');
+  var pathFn = require('path');
+  var path = pathFn.normalize('../package.json');
+  var env = require(path);
   return env[type];
 });
 
