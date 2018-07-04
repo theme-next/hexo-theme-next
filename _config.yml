@@ -195,7 +195,7 @@ avatar:
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
   url: #/images/avatar.gif
-  # If true, the avatar would be dispalyed in circle. 
+  # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
   opacity: 1
@@ -222,6 +222,12 @@ sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
   position: left
   #position: right
+
+  # Manual define the sidebar width.
+  # If commented, will be default for:
+  # Muse | Mist: 320
+  # Pisces | Gemini: 240
+  #width: 300
 
   # Sidebar Display, available value (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
@@ -361,15 +367,6 @@ highlight_theme: normal
 # Enable "cheers" for archive page.
 cheers_enabled: true
 
-# Manual define the max content width
-# !!Only available for Gemini Scheme currently
-# Leave it empty for the default 75% (suggest not less than 1000px)
-#max_content_width: 1000px
-
-# Manual define the sidebar width
-# !!Only available for Gemini Scheme currently
-# Leave it empty for the default 240
-sidebar_width:
 
 # ---------------------------------------------------------------
 # Font Settings

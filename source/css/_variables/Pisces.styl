@@ -5,6 +5,15 @@
 // --------------------------------------------------
 $body-bg-color                = #f5f7f9
 
+$sidebar-offset               = unit(hexo-config('sidebar.offset'), px) if hexo-config('sidebar.offset') is a 'unit'
+$sidebar-width                = hexo-config('sidebar.width') is a 'unit' ? hexo-config('sidebar.width') : 240
+$sidebar-desktop              = unit($sidebar-width, 'px')
+$content-wrap                 = 'calc(100% - %s)' % unit($sidebar-width + $sidebar-offset, 'px')
+
+$content-desktop              = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px')
+$content-desktop-large        = 1160px
+$content-desktop-largest      = 73%
+
 
 // Borders
 // --------------------------------------------------
@@ -21,8 +30,6 @@ $subtitle-color                   = $gray-lighter
 
 // Sidebar
 // --------------------------------------------------
-$sidebar-offset             = unit(hexo-config('sidebar.offset'), px) if hexo-config('sidebar.offset') is a 'unit'
-
 $sidebar-nav-hover-color          = $orange
 $sidebar-highlight                = $orange
 

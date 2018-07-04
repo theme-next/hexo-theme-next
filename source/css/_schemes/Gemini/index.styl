@@ -23,17 +23,6 @@
 hexo-config('sidebar.offset') is a 'unit' ? (sboffset = unit(hexo-config('sidebar.offset'), px)) : (sboffset = 0)
 use_seo = hexo-config('seo');
 
-// Maximum content width.
-// =================================================
-$max-content-width = hexo-config('max_content_width')
-if $max-content-width {
-  .header,
-  .container .main-inner,
-  .footer-inner {
-    max-width: unquote($max-content-width);
-  }
-}
-
 // =================================================
 // Desktop layout styles.
 // =================================================
