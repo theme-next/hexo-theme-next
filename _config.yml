@@ -503,6 +503,7 @@ valine:
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
+  visitor: false # Article reading statistic https://valine.js.org/visitor.html
 
 
 # Support for youyan comments system.
