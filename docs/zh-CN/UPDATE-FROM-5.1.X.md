@@ -26,4 +26,10 @@
     ```
     如此，你的 `next-reloaded` 主题将在生成站点时被加载。如果你遇到了任何错误、或只是不喜欢这一新版本，你可以随时切换回旧的 v5.1.x 版本。
 
+4. 更新语言配置
+
+    从 v6.0.3版本起，`zh-Hans`改名为`zh-CN`：https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3
+    
+    升级到v6.0.3及以后版本的用户，需要显式修改`_config.xml`里的language配置，否则语言显示不正确。
+
 关于第三方库的启用，参见[这里](https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md#插件)。
