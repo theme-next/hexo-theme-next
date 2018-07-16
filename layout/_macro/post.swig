@@ -112,11 +112,7 @@
                   <span class="post-meta-item-text">{{ __('post.edited') }}</span>
                 {% endif %}
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
-                #}{% if date_diff -%}
-                    {{- date(post.updated) -}}
-                  {%- else -%}
-                    {{- time(post.updated) -}}
-                  {%- endif -%}
+                #}{{ date(post.updated) -}}
                 </time>
               {% endif %}
             {% endif %}
@@ -212,7 +208,7 @@
           {% endif %}
 
           {# LeanCould PageView #}
-          {% if theme.leancloud_visitors.enable %}
+          {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
              <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
