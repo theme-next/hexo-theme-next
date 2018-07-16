@@ -131,6 +131,16 @@
   };
 </script>
 
+{% if theme.math.enable %}
+  {% if theme.math.per_page %}
+    {% if theme.math.engine == 'katex' %}
+      <link rel="stylesheet" href="{{ theme.math.katex.cdn }}">
+    {% elseif theme.math.engine == 'mathjax' %}
+      <link rel="stylesheet" href="{{ theme.math.mathjax.cdn }}">
+    {% endif %}
+  {% endif %}
+{% endif %}
+
 {% if theme.custom_file_path.head %}
   {% set custom_head = '../../../../../' + theme.custom_file_path.head %}
 {% else %}
