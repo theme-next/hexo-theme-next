@@ -20,12 +20,12 @@ sidebar:
   toc: Table of Contents
 
 post:
-  posted: Posted
-  edited: Last updated
+  posted: Posted on
+  edited: Edited on
   created: Created
   modified: Modified
   edit: Edit this post
-  in: Filed as
+  in: In
   more: more
   read_more: Read more
   untitled: Untitled

@@ -83,7 +83,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.posted') + __('symbol.colon') }}</span>
+                <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
 
               {% if !date_diff && time_diff && theme.post_meta.updated_at.enabled && theme.post_meta.updated_at.another_day %}
@@ -109,7 +109,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 {% if theme.post_meta.item_text %}
-                  <span class="post-meta-item-text">{{ __('post.edited') + __('symbol.colon') }}</span>
+                  <span class="post-meta-item-text">{{ __('post.edited') }}</span>
                 {% endif %}
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
                 #}{{ date(post.updated) -}}
@@ -127,7 +127,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.in') + __('symbol.colon') }}</span>
+                <span class="post-meta-item-text">{{ __('post.in') }}</span>
               {% endif %}
               {% for cat in post.categories %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
