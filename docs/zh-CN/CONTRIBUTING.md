@@ -20,6 +20,7 @@
 
   * [行为规范](#coding-rules)
   * [编码规范](#coding-standards)
+  * [标签规范](#labels-rules)
   * [提交信息规范](#commit-messages-rules)
 
 <a name="how-can-i-contribute"></a>
@@ -122,6 +123,60 @@
 ### 编码规范
 
 未完待续。
+
+<a name="labels-rules"></a>
+### 标签规范
+
+为了方便维护人员和用户能够快速找到他们想要查看的问题，我们使用“标签”功能对拉取请求和问题进行分类。
+
+如果您不确定某个标签的含义，或者不知道将哪些标签应用于拉取请求或问题，千万别错过这个。
+
+Issues 的标签：使用`类型`+`内容`+`结果`的组合
+
+- 类型
+    - `Irrelevant`: 与主题 Next 无关的 Issue
+    - `Duplicate`: 已经存在同样 Issue
+    - `Bug`: 提出了 Bug，等待确认
+    - `Discussion`: 需要讨论的 Issue
+    - `Question`: 有关咨询的 Issue
+    - `Feature-Request`: 提出了特性需求的 Issue
+    - `Backlog`: 待解决的 Issue
+- 内容
+    - `Roadmap`: 与主题 Next 发展相关的 Issue
+    - `Hexo`: 与 Hexo 相关的 Issue
+    - `Scheme [1] - Mist`: 与样式 Mist 相关的 Issue
+    - `Scheme [2] - Muse`: 与样式 Muse 相关的 Issue
+    - `Scheme [3] - Pisces`: 与样式 Pisces 相关的 Issue
+    - `Scheme [4] - Gemini`: 与样式 Gemini 相关的 Issue
+    - `3rd party service`: 与第三方服务相关的 Issue
+    - `Docs`: 需要添加文档说明的 Issue
+    - `Configurations`: 与主题 Next 设置相关的 Issue
+    - `CSS`: 与主题 Next CSS 文件相关的 Issue
+    - `Custom`: 与主题 Next 个性化相关的 Issue
+    - `Optimization`: 需要进行优化的 Issue
+- 结果
+    - `Wontfix`: 不能或不被修复的 Issue
+    - `Need More Info`: 需要更多信息的 Issue
+    - `Need Confirm`: 需要开发人员或用户确认的 Issue
+    - `Can't Reproduce`: 不能被重现的 Issue
+    - `Verified`: 已经被确认的 Issue
+    - `Help wanted`: 需要帮助的 Issue
+    - `Wait for Answer`: 需要开发人员或用户回复的 Issue
+    - `Resolved Maybe`: 可能已经解决的 Issue
+    - `Solved`: 已经解决的 Issue
+    - `Stale`: 由于长期无人回应被封存的 Issue
+
+Pull requests 的标签：
+
+- `Breaking Change`: 涉及主题 Next 重大架构的 Pull request
+- `Bugfix`: 修复 Bug 的 Pull request
+- `Docs`: 添加了文档说明的 Pull request
+- `Feature`: 添加了新特性的 Pull request
+- `Configurations`: 涉及主题 Next 配置的 Pull request
+- `Optimization`: 优化了主题 Next 的 Pull request
+- `i18n`: 更新了翻译的 Pull request
+- `Performance`: 提高了主题 Next 性能的 Pull request
+- `Discussion`: 需要进行讨论的 Pull request
 
 <a name="commit-messages-rules"></a>
 ### 提交信息规范
