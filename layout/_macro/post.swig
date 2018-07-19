@@ -406,11 +406,9 @@
           </div>
         {% endif %}
 
-        {% if (theme.baidushare) or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
+        {% if (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare.type === "button") %}
           {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-            {% if theme.baidushare.type === "button" %}
-              <span class="post-meta-divider">|</span>
-            {% endif %}
+            <span class="post-meta-divider">|</span>
           {% endif %}
           <div class="social_share">
             {% if theme.baidushare.type === "button" %}
