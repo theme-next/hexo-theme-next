@@ -404,7 +404,9 @@
         {% endif %}
 
         {% if theme.baidushare and theme.baidushare.type === "button" %}
-           {% include 'baidushare.swig' %}
+          <div>
+            {% include '../_partials/share/baidushare.swig' %}
+          </div>
         {% endif %}
 		
         {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
