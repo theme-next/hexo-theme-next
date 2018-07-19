@@ -408,7 +408,9 @@
 
         {% if (theme.baidushare) or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
           {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-            <span class="post-meta-divider">|</span>
+            {% if theme.baidushare.type === "button" %}
+              <span class="post-meta-divider">|</span>
+            {% endif %}
           {% endif %}
           <div class="social_share">
             {% if theme.baidushare.type === "button" %}
