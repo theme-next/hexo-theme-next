@@ -22,7 +22,7 @@ post:
   edited: Edited on
   created: 作成された時間
   modified: Updated at
-  edit: Edit this post
+  edit: この記事を編集する
   in: In
   more: more
   read_more: 続きを読む
@@ -31,13 +31,13 @@ post:
   toc_empty: 見出しがありません
   views: Views
   comments_count: コメント
-  related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
+  related_posts: 関連記事
+  copy_button: コピー
+  copy_success: コピーしました
+  copy_failure: コピーに失敗しました
   copyright:
     author: 著者
-    link: Post link
+    link: 記事へのリンク
     license_title: 著作権表示
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 page:
