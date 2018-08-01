@@ -20,6 +20,7 @@ First of all, thanks for taking your time to contribute and help make our projec
 
   * [Coding Rules](#coding-rules)
   * [Coding Standards](#coding-standards)
+  * [Labels Rules](#labels-rules)
   * [Commit Messages Rules](#commit-messages-rules)
 
 <a name="how-can-i-contribute"></a>
@@ -120,6 +121,59 @@ This project and everyone participating in it is governed by the [Code of Conduc
 ### Coding Standards
 
 To be continued.
+
+### Labels Rules
+
+We use "labels" in the issue tracker to help classify pull requests and issues. Using labels enables maintainers and users to quickly find issues they should look into, either because they experience them, or because it meets their area of expertise.
+
+If you are unsure what a label is about or which labels you should apply to a PR or issue, look no further!
+
+Issues related: `types`+`contents`+`results`
+
+- By types
+    - `Irrelevant`: An irrelevant issue for Next
+    - `Duplicate`: An issue which had been mentioned
+    - `Bug`: A detected bug that needs to be confirmed
+    - `Discussion`: An issue that needs to be discussed
+    - `Question`: An issue about questions
+    - `Feature-Request`: An issue that wants a new feature
+    - `Backlog`: An issue that is to be completed and later compensated
+- By contents
+    - `Roadmap`: An issue about future development
+    - `Hexo`: An issue related to Hexo
+    - `Scheme [1] - Mist`: An issue related to Scheme Mist
+    - `Scheme [2] - Muse`: An issue related to Scheme Muse
+    - `Scheme [3] - Pisces`: An issue related to Scheme Pisces
+    - `Scheme [4] - Gemini`: An issue related to Scheme Gemini
+    - `3rd party service`: An issue related to 3rd party service
+    - `Docs`: Need to add instruction document
+    - `Configurations`: An issue related to configurations
+    - `CSS`: An issue related to CSS
+    - `Custom`: An issue related to custom things
+    - `Optimization`: An issue that needs to be optimized
+- By results
+    - `Wontfix`: An issue that will not to be fixed
+    - `Need More Info`: Need more information for solving the issue
+    - `Need Confirm`: Need confirmation from the developers or user about the bug or solution
+    - `Can't Reproduce`: An issue that can’t be reproduced
+    - `Verified`: An issue that has been verified
+    - `Help wanted`: An issue that needs help
+    - `Wait for Answer`: An issue that needs to be answered by the developers or user
+    - `Resolved Maybe`: An issue that has been resolved maybe
+    - `Solved`: An issue that has been solved
+    - `Stale`: This issue has been automatically marked as stale because lack of recent activity
+
+Pull requests related:
+
+- `Breaking Change`: A Pull requests that makes breaking change
+- `Bugfix`: A Pull requests that fixes the related bug
+- `Docs`: A Pull requests that Instruction document has been added
+- `Feature`: A Pull requests that provides a new feature
+- `Configurations`: A Pull requests related to configurations
+- `Optimization`: A Pull requests that optimizates the Next
+- `i18n`: A Pull requests that makes new languages translation
+- `Performance`: A Pull requests that improves the performance
+- `Discussion`: A Pull requests that needs to be discussed
 
 ### Commit Messages Rules
 
