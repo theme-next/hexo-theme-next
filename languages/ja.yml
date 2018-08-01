@@ -9,7 +9,7 @@ menu:
   archives: アーカイブ
   categories: カテゴリ
   tags: タグ
-  about: About
+  about: について
   search: 検索
   schedule: スケジュール
   sitemap: サイトマップ
@@ -19,35 +19,35 @@ sidebar:
   toc: 見出し
 post:
   posted: 投稿日
-  edited: Edited on
+  edited: に編集されました
   created: 作成された時間
   modified: Updated at
-  edit: Edit this post
+  edit: この記事を編集する
   in: In
-  more: more
+  more: もっと見る
   read_more: 続きを読む
   untitled: 無題
   sticky: 固定
   toc_empty: 見出しがありません
-  views: Views
+  views: 閲覧数
   comments_count: コメント
-  related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
+  related_posts: 関連記事
+  copy_button: コピー
+  copy_success: コピーしました
+  copy_failure: コピーに失敗しました
   copyright:
     author: 著者
-    link: Post link
+    link: 記事へのリンク
     license_title: 著作権表示
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    license_content: "このブログ内のすべての記事は、特別な記載がない限り %s の下のライセンスで保護されています。"
 page:
   totally: 全ページ
   tags: タグ
 footer:
   powered: "Powered by %s"
   theme: テーマ
-  total_views: Total Views
-  total_visitors: Total Visitors
+  total_views: 閲覧合計数
+  total_visitors: 合計閲覧者数
 counter:
   tag_cloud:
     zero: タグなし
@@ -81,18 +81,18 @@ symbol:
   period: "。"
   colon: "："
 reward:
-  donate: Donate
+  donate: 寄付
   wechatpay: WeChat 支払う
   alipay: Alipay
-  bitcoin: Bitcoin
+  bitcoin: ビットコイン
 gitmentbutton: Gitment からのコメントを表示
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: ナビゲーションバーの切り替え
+  prev_page: 前のページ
+  next_page: 次のページ
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total
   time: Reading time
   time_total: Reading time total
-  time_minutes: mins.
+  time_minutes: 分
