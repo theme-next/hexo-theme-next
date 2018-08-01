@@ -578,6 +578,10 @@ needmoreshare2:
 # See: https://webmaster.yandex.ru/
 #yandex_site_verification:
 
+# Baidu Webmaster tools verification setting
+# See: https://ziyuan.baidu.com/site/
+#baidu_site_verification:
+
 # CNZZ count
 #cnzz_siteid:
 
