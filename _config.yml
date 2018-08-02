@@ -525,6 +525,16 @@ gitment:
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
+# Gitalk
+# introduction: https://github.com/gitalk/gitalk/
+gitalk:
+  enable: false
+  repo: # Github repository you use for Gitalk comments.
+  owner: # GitHub repository owner. Can be personal user or organization.
+  admin: # GitHub repository owner and collaborators. (Users who having write access to this repository).
+  client_id: # GitHub Application Client ID.
+  client_secret: # GitHub Application Client Secret.
+
 # Baidu Share
 # Available value:
 #    button | slide
