@@ -36,8 +36,8 @@
             }
           }
         })
-        .fail(function (error) {
-          console.log("Error: " + error.code + " " + error.message);
+        .fail(function ({ responseJSON }) {
+          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
         });
     }
 
@@ -61,8 +61,8 @@
                   $element.find('.leancloud-visitors-count').text(counter.time + 1);
             })
             {% endif %}
-            .fail(function (error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
             })
           } else {
             {% if theme.leancloud_visitors.security %}
@@ -81,8 +81,8 @@
             {% endif %}
           }
         })
-      .fail(function (error) {
-        console.log('Error:' + error.code + " " + error.message);
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
       });
     }
 
