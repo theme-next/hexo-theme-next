@@ -87,23 +87,26 @@
     }
 
     $(function() {
-      var Counter = function (method, url, data) {
-        return $.ajax({
-          method: method,
-          url: `https://api.leancloud.cn/1.1${url}`,
-          headers: {
-            'X-LC-Id': "{{theme.leancloud_visitors.app_id}}",
-            'X-LC-Key': "{{theme.leancloud_visitors.app_key}}",
-            'Content-Type': 'application/json',
-          },
-          data: data,
-        });
-      };
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "{{theme.leancloud_visitors.app_id}}")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "{{theme.leancloud_visitors.app_id}}",
+                'X-LC-Key': "{{theme.leancloud_visitors.app_key}}",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          if ($('.leancloud_visitors').length == 1) {
+            addCount(Counter);
+          } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+          }
+        })
     });
   </script>
 
