@@ -333,6 +333,8 @@ post_copyright:
   license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
 # Hide single post or posts in specific categories on the home page
+#  If `hide_post` is `true`, you need to add `hide: true` in your post which you want to hide on the home page.
+#  If you enabled the item `hide_categories`, you need just list the categories which you want to hide on the home page under the item `categories`.
 hide:
   hide_post: false
   hide_categories:
