@@ -332,6 +332,16 @@ post_copyright:
   enable: false
   license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
+# Hide single post or posts in specific categories on the home page
+hide:
+  hide_post: false
+  hide_categories:
+    enable: false
+    categories:
+#     - categorie1
+#     - categorie2
+
+
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:

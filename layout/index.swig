@@ -11,7 +11,33 @@
 {% block content %}
   <section id="posts" class="posts-expand">
     {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
+      {% set hide = false %}
+
+      {% if theme.hide.hide_post %}
+        {% if post.hide %}
+          {% set hide = true %}
+        {% endif %}
+      {% endif %}
+
+      {% if theme.hide.hide_categories.enable && !hide %}
+        {% for cat in post.categories %}
+          {% if !hide %}
+            {% for categorie in cat %}
+              {% if !hide %}
+                {% for item in theme.hide.hide_categories.categories %}
+                  {% if !hide && item == categorie %}
+                    {% set hide = true %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if !hide %}
+        {{ post_template.render(post, true) }}
+      {% endif %}
     {% endfor %}
   </section>
 
