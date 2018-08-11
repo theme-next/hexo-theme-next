@@ -13,7 +13,7 @@ menu:
   search: 検索
   schedule: スケジュール
   sitemap: サイトマップ
-  commonweal: Commonweal 404
+  commonweal: 公益 404
 sidebar:
   overview: 概要
   toc: 見出し
@@ -91,8 +91,8 @@ accessibility:
   prev_page: 前のページ
   next_page: 次のページ
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
+  count: 単語数
+  count_total: 単語の総数
+  time: 読書の時間
+  time_total: 読書の合計時間
   time_minutes: 分
