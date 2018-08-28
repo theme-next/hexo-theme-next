@@ -4,7 +4,6 @@ title:
   category: Categoria
   tag: Tag
   schedule: Schedule
-author: Author
 menu:
   home: Home
   archives: Arquivos
@@ -19,21 +18,23 @@ sidebar:
   overview: Visão Geral
   toc: Tabela de Conteúdo
 post:
+  posted: Postado em
+  edited: Edited on
   created: Post created
   modified: Updated at
-  sticky: Sticky
-  posted: Postado em
+  edit: Edit this post
   in: Em
   more: more
   read_more: Ler mais
   untitled: Sem título
+  sticky: Sticky
   toc_empty: Esta publicação não possui uma tabela de conteúdo
   views: Views
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
+  comments_count: Comments
   related_posts: Related Posts
+  copy_button: Copy
+  copy_success: Copied
+  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
@@ -78,10 +79,20 @@ keep_on: Mantenha-se publicando!
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
 gitmentbutton: Show comments from Gitment
+accessibility:
+  nav_toggle: Toggle navigation bar
+  prev_page: Previous page
+  next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.

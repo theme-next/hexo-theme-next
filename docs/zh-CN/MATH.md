@@ -47,6 +47,67 @@ hexo clean && hexo g -d
 # 或者 hexo clean && hexo s
 ```
 
+#### 使用 MathJax 给公式编号并引用公式
+
+在新版本的 NexT 主题中，我们加入了公式自动编号和引用功能。下面简要介绍一下如何使用这项功能。
+
+为了使用这项功能，一般来说，你必须把所使用的 LaTeX 公式放在 `equation` 环境里面，采用旧的方法（也就是说，仅仅把公式的每一边用两个 $ 符号包含起来）是无效的。如何引用公式？你只需要在书写公式的时候给公式一个 `\
+label{}` 标记（tag），然后在正文中，可以使用 `\ref{}` 或者 `\eqref{}` 命令来引用对应的公式。使用 `\eqref{}` 是推荐的方式，因为如果你使用 `\ref{}`，公式在文中的引用编号将没有圆括号包围。下面介绍几种常见的公式编号例子。
+
+对于简单的公式，使用下面的方式给公式一个标记，
+
+```latex
+$$\begin{equation}
+e=mc^2
+\end{equation}\label{eq1}$$
+```
+
+然后，在正文中，你可以轻松引用上述公式，一个简单的例子如下：
+
+```
+著名的质能方程 $\eqref{eq1}$ 由爱因斯坦提出 ...
+```
+
+对于多行公式，在 `equation` 环境中，你可以使用 `aligned` 环境把公式分成多行，
+
+```latex
+$$\begin{equation}
+\begin{aligned}
+a &= b + c \\
+  &= d + e + f + g \\
+  &= h + i
+\end{aligned}
+\end{equation}\label{eq2}$$
+```
+
+要对齐多个公式，我们需要使用 `align` 环境。align 环境中的每个公式都有自己的编号：
+
+```
+$$\begin{align}
+a &= b + c \label{eq3} \\
+x &= yz \label{eq4}\\
+l &= m - n \label{eq5}
+\end{align}$$
+```
+
+在 `align` 环境中，如果你不想给某个或某几个公式编号，那么在这些公式后面使用 [`\nonumber`](https://tex.stackexchange.com/questions/17528/show-equation-number-only-once-in-align-environment) 命令即可。例如：
+
+```latex
+$$\begin{align}
+-4 + 5x &= 2+y \nonumber  \\
+ w+2 &= -1+w \\
+ ab &= cb
+\end{align}$$
+```
+
+有时，你可能会希望采用更加奇特的方式来标记和引用你的公式，你可以通过使用 `\tag{}` 命令来实现，例如：
+
+```latex
+$$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
+```
+
+如果你想要了解更多信息，请访问 [MathJax 关于公式编号的官方文档](http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering)。同时，你也可以访问[这篇博客](https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/) 来获取更多细节信息。
+
 ### Katex
 
 Katex 渲染引擎相对于 MathJax 来说**大大提高了速度**，而且在关掉 JavaScript 时也能渲染数学公式。

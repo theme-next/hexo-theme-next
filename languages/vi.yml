@@ -4,7 +4,6 @@ title:
   category: Phân Loại
   tag: Thẻ
   schedule: Danh Mục
-author: Tác giả
 menu:
   home: Trang Chủ
   archives: Lưu Trữ
@@ -19,21 +18,23 @@ sidebar:
   overview: Tổng Quan
   toc: Mục Lục
 post:
+  posted: Tạo lúc
+  edited: Edited on
   created: Được tạo
   modified: Được thay đổi
-  sticky: Đính
-  posted: Tạo lúc
+  edit: Edit this post
   in: Trong
   more: thêm
   read_more: Đọc tiếp
   untitled: Không có tiêu đề
+  sticky: Đính
   toc_empty: Bài viết này không có mục lục
   views: Views
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
+  comments_count: Comments
   related_posts: Related Posts
+  copy_button: Copy
+  copy_success: Copied
+  copy_failure: Copy failed
   copyright:
     author: Người viết
     link: Liên kết bài viết
@@ -78,10 +79,20 @@ keep_on: Giữ tiến độ nha.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
   donate: Tài trợ
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
 gitmentbutton: Hiển thị bình luận từ Gitment
+accessibility:
+  nav_toggle: Toggle navigation bar
+  prev_page: Previous page
+  next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.

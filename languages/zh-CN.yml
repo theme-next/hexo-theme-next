@@ -4,7 +4,6 @@ title:
   category: 分类
   tag: 标签
   schedule: 日程表
-author: 博主
 menu:
   home: 首页
   archives: 归档
@@ -19,21 +18,23 @@ sidebar:
   overview: 站点概览
   toc: 文章目录
 post:
-  created: 创建于
-  modified: 更新于
-  sticky: 置顶
   posted: 发表于
+  edited: 更新于
+  created: 创建时间
+  modified: 修改时间
+  edit: 编辑
   in: 分类于
-  more: more
+  more: 更多
   read_more: 阅读全文
   untitled: 未命名
+  sticky: 置顶
   toc_empty: 此文章未包含目录
   views: 阅读次数
-  symbols_count: 字数统计
-  symbols_time: 阅读时长
-  total_symbols: 站点总字数
-  total_time: 站点总阅读时长
+  comments_count: 评论数
   related_posts: 相关文章
+  copy_button: 复制
+  copy_success: 复制成功
+  copy_failure: 复制失败
   copyright:
     author: 本文作者
     link: 本文链接
@@ -69,15 +70,15 @@ search:
   placeholder: 搜索...
 cheers:
   um: 嗯..
-  ok: OK
+  ok: 还行
   nice: 不错
   good: 很好
   great: 非常好
   excellent: 太棒了
 keep_on: 继续努力。
 symbol:
-  comma: "， "
-  period: "。 "
+  comma: "，"
+  period: "。"
   colon: "："
 reward:
   donate: 打赏
@@ -85,3 +86,13 @@ reward:
   alipay: 支付宝
   bitcoin: 比特币
 gitmentbutton: 显示 Gitment 评论
+accessibility:
+  nav_toggle: 切换导航栏
+  prev_page: 上一页
+  next_page: 下一页
+symbols_count_time:
+  count: 本文字数
+  count_total: 站点总字数
+  time: 阅读时长
+  time_total: 站点阅读时长
+  time_minutes: 分钟
