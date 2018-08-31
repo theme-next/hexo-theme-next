@@ -34,7 +34,7 @@ var LAYOUTS = {
     1: [1, 2, 2],
     2: [2, 1, 2],
     3: [2, 3],
-    4: [3, 2],
+    4: [3, 2]
   },
   6: {
     1: [1, 2, 3],
@@ -79,20 +79,20 @@ var LAYOUTS = {
   }
 };
 
-function groupBy(group, data){
-  var r = []
-  for(var i = 0; i < group.length; i++){
-    r.push(data.slice(0, group[i]))
-    data = data.slice(group[i])
+function groupBy(group, data) {
+  var r = [];
+  for (var i = 0; i < group.length; i++) {
+    r.push(data.slice(0, group[i]));
+    data = data.slice(group[i]);
   }
-  return r
+  return r;
 }
 
 var templates = {
 
   dispatch: function(pictures, group, layout) {
-    var rule = LAYOUTS[group] ? LAYOUTS[group][layout]: null
-    return rule ? this.getHTML(groupBy(rule, pictures)): templates.defaults(pictures);
+    var rule = LAYOUTS[group] ? LAYOUTS[group][layout] : null;
+    return rule ? this.getHTML(groupBy(rule, pictures)) : templates.defaults(pictures);
   },
 
   /**
