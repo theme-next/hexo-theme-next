@@ -28,7 +28,7 @@
             loadComments();
           } else {
             $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
+              var scrollTop = $(window).scrollTop();
               if (scrollTop >= offsetTop) {
                 $(window).off('.disqus_scroll');
                 loadComments();
