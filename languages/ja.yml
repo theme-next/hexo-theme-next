@@ -13,17 +13,17 @@ menu:
   search: 検索
   schedule: スケジュール
   sitemap: サイトマップ
-  commonweal: Commonweal 404
+  commonweal: 公益 404
 sidebar:
   overview: 概要
   toc: 見出し
 post:
   posted: 投稿日
   edited: に編集されました
-  created: 作成された時間
-  modified: Updated at
+  created: 建てられる
+  modified: 修正する
   edit: この記事を編集する
-  in: In
+  in: 分類された
   more: もっと見る
   read_more: 続きを読む
   untitled: 無題
@@ -91,8 +91,8 @@ accessibility:
   prev_page: 前のページ
   next_page: 次のページ
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
+  count: 単語数
+  count_total: 単語の総数
+  time: 読書の時間
+  time_total: 読書の合計時間
   time_minutes: 分
