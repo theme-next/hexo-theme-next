@@ -14,766 +14,85 @@
 
 'use strict';
 
+var LAYOUTS = {
+  2: {
+    1: [1, 1],
+    2: [2]
+  },
+  3: {
+    1: [3],
+    2: [1, 2],
+    3: [2, 1]
+  },
+  4: {
+    1: [1, 2, 1],
+    2: [1, 3],
+    3: [2, 2],
+    4: [3, 1]
+  },
+  5: {
+    1: [1, 2, 2],
+    2: [2, 1, 2],
+    3: [2, 3],
+    4: [3, 2]
+  },
+  6: {
+    1: [1, 2, 3],
+    2: [1, 3, 2],
+    3: [2, 1, 3],
+    4: [2, 2, 2],
+    5: [3, 3]
+  },
+  7: {
+    1: [1, 2, 2, 2],
+    2: [1, 3, 3],
+    3: [2, 2, 3],
+    4: [2, 3, 2],
+    5: [3, 2, 2]
+  },
+  8: {
+    1: [1, 2, 2, 3],
+    2: [1, 2, 3, 2],
+    3: [1, 3, 2, 2],
+    4: [2, 2, 2, 2],
+    5: [2, 3, 3],
+    6: [3, 2, 3],
+    7: [3, 3, 2]
+  },
+  9: {
+    1: [1, 2, 3, 3],
+    2: [1, 3, 2, 3],
+    3: [2, 2, 2, 3],
+    4: [2, 2, 3, 2],
+    5: [2, 3, 2, 2],
+    6: [3, 2, 2, 2],
+    7: [3, 3, 3]
+  },
+  10: {
+    1: [1, 3, 3, 3],
+    2: [2, 2, 3, 3],
+    3: [2, 3, 2, 3],
+    4: [2, 3, 3, 2],
+    5: [3, 2, 2, 3],
+    6: [3, 2, 3, 2],
+    7: [3, 3, 2, 2]
+  }
+};
+
+function groupBy(group, data) {
+  var r = [];
+  for (var i = 0; i < group.length; i++) {
+    r.push(data.slice(0, group[i]));
+    data = data.slice(group[i]);
+  }
+  return r;
+}
+
 var templates = {
 
   dispatch: function(pictures, group, layout) {
-    var fn = 'group' + group + 'Layout' + layout;
-    fn = templates[fn] || templates.defaults;
-    return fn.call(templates, pictures);
-  },
-
-  /**
-   * 2-1
-   *
-   *  □
-   *  □
-   *
-   * @param pictures
-   * @returns {string}
-   */
-  group2Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1)
-    ]);
-  },
-
-  /**
-   * 2-2
-   *
-   * □ □
-   *
-   * @param pictures
-   */
-  group2Layout2: function(pictures) {
-    return this.getHTML(pictures);
-  },
-
-  /**
-   * 3-1
-   *
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group3Layout1: function(pictures) {
-    return this.getHTML(pictures);
-  },
-
-  /**
-   * 3-2
-   *
-   *  □
-   * □ □
-   *
-   * @param pictures
-   */
-  group3Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1)
-    ]);
-  },
-
-  /**
-   * 3-3
-   *
-   * □ □
-   *  □
-   *
-   * @param pictures
-   */
-  group3Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2)
-    ]);
-  },
-
-  /**
-   * 4-1
-   *
-   *  □
-   * □ □
-   *  □
-   *
-   * @param pictures
-   */
-  group4Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 4-2
-   *
-   *   □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group4Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1)
-    ]);
-  },
-
-  /**
-   * 4-3
-   *
-   * □ □
-   * □ □
-   *
-   * @param pictures
-   */
-  group4Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2)
-    ]);
-  },
-
-  /**
-   * 4-4
-   *
-   * □ □ □
-   *   □
-   *
-   * @param pictures
-   */
-  group4Layout4: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 5-1
-   *
-   *  □
-   * □ □
-   * □ □
-   *
-   * @param pictures
-   */
-  group5Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 5-2
-   *
-   * □ □
-   *  □
-   * □ □
-   *
-   * @param pictures
-   */
-  group5Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 5-3
-   *
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group5Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2)
-    ]);
-  },
-
-  /**
-   * 5-4
-   *
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group5Layout4: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 6-1
-   *
-   *   □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group6Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 6-2
-   *
-   *   □
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group6Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 4),
-      pictures.slice(4)
-    ]);
-  },
-
-  /**
-   * 6-3
-   *
-   *  □ □
-   *   □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group6Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 6-4
-   *
-   * □ □
-   * □ □
-   * □ □
-   *
-   * @param pictures
-   */
-  group6Layout4: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 4),
-      pictures.slice(4)
-    ]);
-  },
-
-  /**
-   * 6-5
-   *
-   * □ □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group6Layout5: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3)
-    ]);
-  },
-
-  /**
-   * 7-1
-   *
-   *  □
-   * □ □
-   * □ □
-   * □ □
-   *
-   * @param pictures
-   */
-  group7Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 3),
-      pictures.slice(3, 5),
-      pictures.slice(5)
-    ]);
-  },
-
-  /**
-   * 7-2
-   *
-   *   □
-   * □ □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group7Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 4),
-      pictures.slice(4)
-    ]);
-  },
-
-  /**
-   * 7-3
-   *
-   *  □ □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group7Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 4),
-      pictures.slice(4)
-    ]);
-  },
-
-  /**
-   * 7-4
-   *
-   *  □ □
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group7Layout4: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 5),
-      pictures.slice(5)
-    ]);
-  },
-
-  /**
-   * 7-5
-   *
-   * □ □ □
-   *  □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group7Layout5: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 5),
-      pictures.slice(5)
-    ]);
-  },
-
-  /**
-   * 8-1
-   *
-   *   □
-   *  □ □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group8Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 3),
-      pictures.slice(3, 5),
-      pictures.slice(5)
-    ]);
-  },
-
-  /**
-   * 8-2
-   *
-   *   □
-   *  □ □
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group8Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 3),
-      pictures.slice(3, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 8-3
-   *
-   *   □
-   * □ □ □
-   *  □ □
-   *  □ □
-   * @param pictures
-   */
-  group8Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 4),
-      pictures.slice(4, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 8-4
-   *
-   * □ □
-   * □ □
-   * □ □
-   * □ □
-   *
-   * @param pictures
-   */
-  group8Layout4: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 4),
-      pictures.slice(4, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 8-5
-   *
-   *  □ □
-   * □ □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group8Layout5: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 5),
-      pictures.slice(5)
-    ]);
-  },
-
-  /**
-   * 8-6
-   *
-   * □ □ □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group8Layout6: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 5),
-      pictures.slice(5)
-    ]);
-  },
-
-  /**
-   * 8-7
-   *
-   * □ □ □
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group8Layout7: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 9-1
-   *
-   *   □
-   *  □ □
-   * □ □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group9Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 3),
-      pictures.slice(3, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 9-2
-   *
-   *   □
-   * □ □ □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group9Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 4),
-      pictures.slice(4, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 9-3
-   *
-   *  □ □
-   *  □ □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group9Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 4),
-      pictures.slice(4, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 9-4
-   *
-   *  □ □
-   *  □ □
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group9Layout4: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 4),
-      pictures.slice(4, 7),
-      pictures.slice(7)
-    ]);
-  },
-
-  /**
-   * 9-5
-   *
-   *  □ □
-   * □ □ □
-   *  □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group9Layout5: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 5),
-      pictures.slice(5, 7),
-      pictures.slice(7)
-    ]);
-  },
-
-  /**
-   * 9-6
-   *
-   * □ □ □
-   *  □ □
-   *  □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group9Layout6: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 5),
-      pictures.slice(5, 7),
-      pictures.slice(7)
-    ]);
-  },
-
-  /**
-   * 9-7
-   *
-   * □ □ □
-   * □ □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group9Layout7: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 6),
-      pictures.slice(6)
-    ]);
-  },
-
-  /**
-   * 10-1
-   *
-   *   □
-   * □ □ □
-   * □ □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group10Layout1: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 1),
-      pictures.slice(1, 4),
-      pictures.slice(4, 7),
-      pictures.slice(7)
-    ]);
-  },
-
-  /**
-   * 10-2
-   *
-   *  □ □
-   *  □ □
-   * □ □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group10Layout2: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 4),
-      pictures.slice(4, 7),
-      pictures.slice(7)
-    ]);
-  },
-
-  /**
-   * 10-3
-   *
-   *  □ □
-   * □ □ □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group10Layout3: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 5),
-      pictures.slice(5, 7),
-      pictures.slice(7)
-    ]);
-  },
-
-  /**
-   * 10-4
-   *
-   *  □ □
-   * □ □ □
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group10Layout4: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 2),
-      pictures.slice(2, 5),
-      pictures.slice(5, 8),
-      pictures.slice(8)
-    ]);
-  },
-
-  /**
-   * 10-5
-   *
-   * □ □ □
-   *  □ □
-   *  □ □
-   * □ □ □
-   *
-   * @param pictures
-   */
-  group10Layout5: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 5),
-      pictures.slice(5, 7),
-      pictures.slice(7)
-    ]);
-  },
-
-  /**
-   * 10-6
-   *
-   * □ □ □
-   *  □ □
-   * □ □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group10Layout6: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 5),
-      pictures.slice(5, 8),
-      pictures.slice(8)
-    ]);
-  },
-
-  /**
-   * 10-7
-   *
-   * □ □ □
-   * □ □ □
-   *  □ □
-   *  □ □
-   *
-   * @param pictures
-   */
-  group10Layout7: function(pictures) {
-    return this.getHTML([
-      pictures.slice(0, 3),
-      pictures.slice(3, 6),
-      pictures.slice(6, 8),
-      pictures.slice(8)
-    ]);
+    var rule = LAYOUTS[group] ? LAYOUTS[group][layout] : null;
+    return rule ? this.getHTML(groupBy(rule, pictures)) : templates.defaults(pictures);
   },
 
   /**
