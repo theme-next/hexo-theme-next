@@ -39,22 +39,25 @@ $(document).ready(function() {
     setSidebarMarginTop(headerOffset).css({ 'margin-left': 'initial' });
   }
 
-  function recalculateAffixPosition() {
+  /* function recalculateAffixPosition() {
     $(window).off('.affix');
     sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     initAffix();
-  }
+  } */
 
   function resizeListener() {
     var mql = window.matchMedia('(min-width: 991px)');
     mql.addListener(function(e) {
       if (e.matches) {
-        recalculateAffixPosition();
+        //recalculateAffixPosition();
+        sidebarInner.affix('checkPosition');
       }
     });
   }
 
   initAffix();
   resizeListener();
+  // Fixed wrong top alignment if page scrolled to the bottom after cleared cache and browser refresh.
+  sidebarInner.affix('checkPosition');
 
 });

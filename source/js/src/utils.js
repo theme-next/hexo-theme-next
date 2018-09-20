@@ -99,7 +99,7 @@ NexT.utils = NexT.$u = {
     var THRESHOLD = 50;
     var $top = $('.back-to-top');
 
-    $(window).on('scroll', function() {
+    function initBackToTop() {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
       var scrollTop = $(window).scrollTop();
@@ -108,6 +108,15 @@ NexT.utils = NexT.$u = {
       var scrollPercentRounded = Math.round(scrollPercent * 100);
       var scrollPercentMaxed = scrollPercentRounded > 100 ? 100 : scrollPercentRounded;
       $('#scrollpercent>span').html(scrollPercentMaxed);
+    }
+
+    // For init back to top in sidebar if page was already scrolled.
+    $(document).ready(function() {
+      initBackToTop();
+    });
+
+    $(window).on('scroll', function() {
+      initBackToTop();
     });
 
     $top.on('click', function() {
