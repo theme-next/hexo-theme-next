@@ -41,17 +41,24 @@ for headline in (1..6) {
 
 p { margin: 0 0 20px 0; }
 
-a {
+a, span.exturl {
+  // Remove the gray background color from active links in IE 10.
+  background-color: transparent;
   color: $link-color;
   text-decoration: none;
   outline: none;
-  border-bottom: 1px solid $grey-dark;
+  border-bottom: 1px solid $link-decoration-color;
   word-wrap: break-word;
 
-  &:hover {
+  &:hover,
+  // Improve readability when focused.
+  &:active {
     color: $link-hover-color;
     border-bottom-color: $link-decoration-hover-color;
   }
+
+  // For spanned external links.
+  cursor: pointer;
 }
 
 blockquote {
