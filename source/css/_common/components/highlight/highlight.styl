@@ -18,6 +18,7 @@ pre, code { font-family: $code-font-family; }
 
 code {
   padding: 2px 4px;
+  overflow-wrap: break-word;
   word-wrap: break-word;
   color: $code-foreground;
   background: $code-background;
@@ -38,8 +39,8 @@ pre {
 
 .highlight {
   @extend $code-block;
-  // Read values from NexT config and set they as local variables to use as string variables (in any CSS section). 
-  hexo-config('codeblock.border_radius') is a 'unit' ? (cbradius = unit(hexo-config('codeblock.border_radius'), px)) : (cbradius = 1px) 
+  // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
+  hexo-config('codeblock.border_radius') is a 'unit' ? (cbradius = unit(hexo-config('codeblock.border_radius'), px)) : (cbradius = 1px)
   border-radius: cbradius;
 
   pre {
