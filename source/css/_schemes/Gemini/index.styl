@@ -11,16 +11,18 @@
 // =================================================
 // Sidebar padding used as main desktop content padding for sidebar padding and post blocks padding too.
 
-// In main NexT config set `sidebar: offset: 12` option as main padding.
-// In `source/css/_variables/Gemini.styl` there are variables for other resolutions:
-// $content-tablet-paddin            = 10px;
+// In `source/css/_variables/Pisces.styl` there are variable for main offset:
+// $sidebar-offset                   = 12px;
+// This value alse can be changed in main NexT config as `sidebar: offset: 12` option.
+
+// In `source/css/_variables/base.styl` there are variables for other resolutions:
+// $content-tablet-padding           = 10px;
 // $content-mobile-padding           = 8px;
 // P.S. If u want to change this paddings u may set this variables into `source/css/_variables/custom.styl`.
 
 // So, it will 12px in Desktop, 10px in Tablets and 8px in Mobiles for all possible paddings.
 // =================================================
 // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
-hexo-config('sidebar.offset') is a 'unit' ? (sboffset = unit(hexo-config('sidebar.offset'), px)) : (sboffset = 0)
 use_seo = hexo-config('seo');
 
 // =================================================
@@ -45,7 +47,7 @@ use_seo = hexo-config('seo');
 // When blocks are siblings (homepage).
 #posts > article + article {
   .post-block {
-    margin-top: sboffset;
+    margin-top: $sidebar-offset;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
     border-radius: $border-radius;
@@ -56,7 +58,7 @@ use_seo = hexo-config('seo');
 .comments {
   padding: $content-desktop-padding;
   margin: initial;
-  margin-top: sboffset;
+  margin-top: $sidebar-offset;
   background: white;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
@@ -87,7 +89,7 @@ use_seo = hexo-config('seo');
     margin-bottom: initial;
     top: initial;
   }
-  margin: sboffset 0 0;
+  margin: $sidebar-offset 0 0;
   border-top: initial;
   background: white;
   box-shadow: $box-shadow;
@@ -111,7 +113,7 @@ use_seo = hexo-config('seo');
   &+ #content > #posts {
     .post-block {
       box-shadow: $box-shadow;
-      margin-top: sboffset;
+      margin-top: $sidebar-offset;
       +tablet() {
         margin-top: $content-tablet-padding;
       }
@@ -227,7 +229,7 @@ use_seo = hexo-config('seo');
 
     // Components inside Posts.
     .post-button {
-      margin-top: sboffset;
+      margin-top: $sidebar-offset;
       //padding-bottom : 15px;
     }
     img {
@@ -237,7 +239,7 @@ use_seo = hexo-config('seo');
 
   .post-block {
     // Inside posts blocks content padding (default 40px).
-    padding: sboffset;
+    padding: $sidebar-offset;
     min-height: auto;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
@@ -253,7 +255,7 @@ use_seo = hexo-config('seo');
 
   .comments {
     margin-top: $content-mobile-padding;
-    padding: 0 sboffset;
+    padding: 0 $sidebar-offset;
   }
 
   .pagination {
