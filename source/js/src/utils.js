@@ -110,8 +110,8 @@ NexT.utils = NexT.$u = {
       $('#scrollpercent>span').html(scrollPercentMaxed);
     }
 
-    // For init back to top in sidebar if page was already scrolled.
-    $(document).ready(function() {
+    // For init back to top in sidebar if page was scrolled after page refresh.
+    $(window).on('load', function() {
       initBackToTop();
     });
 
