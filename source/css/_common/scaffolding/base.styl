@@ -42,13 +42,13 @@ for headline in (1..6) {
 p { margin: 0 0 20px 0; }
 
 a, span.exturl {
+  word-wrap();
   // Remove the gray background color from active links in IE 10.
   background-color: transparent;
   color: $link-color;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid $link-decoration-color;
-  word-wrap: break-word;
 
   &:hover,
   // Improve readability when focused.
