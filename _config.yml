@@ -476,6 +476,9 @@ pangu: false
 # Baidu Analytics ID
 #baidu_analytics:
 
+# Growingio Analytics ID
+#growingio:
+
 # Disqus
 disqus:
   enable: false
