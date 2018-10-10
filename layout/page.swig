@@ -8,6 +8,8 @@
     #}{{ __('title.category') + page_title_suffix }}{#
   #}{% elif page.type === "tags" and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
+  #}{% elif page.type === "schedule" and not page.title %}{#
+    #}{{ __('title.schedule') + page_title_suffix }}{#
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
   #}{% endif %}{#
@@ -56,6 +58,13 @@
             </div>
             <div class="category-all">
               {{ list_categories() }}
+            </div>
+          </div>
+        {% elif page.type === 'schedule' %}
+          <div class="schedule">
+            <div id="schedule">
+              <ul id="event-list">
+              </ul>
             </div>
           </div>
         {% else %}
