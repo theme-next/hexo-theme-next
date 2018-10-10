@@ -471,13 +471,14 @@ han: false
 pangu: false
 
 # Swiftype Search API Key
-#swiftype_key:
+#swiftype_key: 
 
 # Baidu Analytics ID
-#baidu_analytics:
+#baidu_analytics: 
 
 # Growingio Analytics ID
-#growingio:
+# Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com
+#growingio_analytics: #your projectId
 
 # Disqus
 disqus:
