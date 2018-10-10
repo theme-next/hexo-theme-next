@@ -675,13 +675,16 @@ baidu_push: false
 #
 # API Documentation:
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
+# Enabled APIs and services
+# api_key: https://console.developers.google.com/
+# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083?hl=en
 calendar:
   enable: false
-  calendar_id: <required>
+  calendar_id: <required> # Your Google account E-Mail
   api_key: <required>
   orderBy: startTime
-  offsetMax: 24
-  offsetMin: 4
+  offsetMax: 24 # Time Range
+  offsetMin: 4 # Time Range
   timeZone:
   showDeleted: false
   singleEvents: true
