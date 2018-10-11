@@ -282,7 +282,7 @@ MathJax 和 Katex 都提供了 `cdn` 的配置，如果你不知道什么是 `cd
 
 之所以选择 jsDelivr 是因为它在全球各地都有比较不错的速度，而且具有中国官方颁布的 ICP 证书，在中国也能比较好地访问。
 
-同时，我们也提供了其他的 CDN 备选方案，包括著名的 [CDNJS](https://cdnjs.com/)
+同时，我们也提供了其他的 CDN 备选方案，包括著名的 [CDNJS](https://cdnjs.com/)。
 
 对于 MathJax 来说，我们目前采用的版本为 2.7.1。
 
