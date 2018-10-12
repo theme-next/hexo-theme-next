@@ -841,11 +841,11 @@ pace: true
 # pace_theme: pace-theme-center-simple
 pace_theme: pace-theme-minimal
 
-# Canvas-nest
+# Canvas-nest 动画效果 - 1
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 canvas_nest: true
 
-# JavaScript 3D library.
+# JavaScript 3D library. 动画效果 - 2
 # Dependencies: https://github.com/theme-next/theme-next-three
 # three_waves
 three_waves: false

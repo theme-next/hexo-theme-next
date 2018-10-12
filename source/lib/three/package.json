@@ -1,0 +1,17 @@
+{
+  "name": "theme-next-three",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:theme-next/theme-next-three.git",
+  "author": "Raincal <cyj94228@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp"
+  },
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}
