@@ -1,0 +1,22 @@
+{
+  "name": "theme-next-reading-progress",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Reading Progress for <a href=\"https://github.com/theme-next\">NexT</a></h1>",
+  "main": "reading_progress.js",
+  "scripts": {
+    "uglify": "uglifyjs --compress --mangle -o reading_progress.min.js -- reading_progress.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theme-next/theme-next-reading-progress.git"
+  },
+  "author": "theme-next",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theme-next/theme-next-reading-progress/issues"
+  },
+  "homepage": "https://github.com/theme-next/theme-next-reading-progress#readme",
+  "dependencies": {
+    "uglify-js": "^3.3.9"
+  }
+}
