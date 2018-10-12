@@ -126,19 +126,28 @@ index_with_subtitle: false
 #  #sitemap: /sitemap.xml || sitemap
 #  #commonweal: /404/ || heartbeat
 menu:
-  home: /
-  categories: /categories
-  #about: /about
-  archives: /archives
-  tags: /tags
-  #commonweal: /404.html
-  atom: /atom.xml
+  home: / || home
+  categories: /categories || th
+  #about: /about || user
+  archives: /archives || archive
+  tags: /tags || tags
+  #commonweal: /404.html || heartbeat
 
 # Enable/Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
+#menu_icons:
+#  enable: true
+#  icons: true
+#  # Icon Mapping.
+#  home: home
+#  about: user
+#  categories: th
+#  tags: tags
+#  archives: archive
+#  commonweal: heartbeat
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -207,7 +216,7 @@ avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: https://avatars0.githubusercontent.com/u/11239812
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -503,11 +512,11 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  appid: VL4PVIHFgBTavO1d38DtBqOF-gzGzoHsz # your leancloud application appid
+  appkey: 25PBfJEywRHzhdNyIqVj0VDc # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
+  verify: true # Verification code
   placeholder: Just go go # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
@@ -917,9 +926,9 @@ vendors:
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
   # Example:
-  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
-  fontawesome:
+   fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+#  fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
+  #  fontawesome:
 
   # Internal version: 1
   # https://www.algolia.com
