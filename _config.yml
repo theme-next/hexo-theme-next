@@ -60,7 +60,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2016
 
   # Icon between year and copyright info.
   icon:
@@ -116,15 +116,23 @@ index_with_subtitle: false
 # Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
+#menu:
+#  home: / || home
+#  #about: /about/ || user
+#  #tags: /tags/ || tags
+#  #categories: /categories/ || th
+#  archives: /archives/ || archive
+#  #schedule: /schedule/ || calendar
+#  #sitemap: /sitemap.xml || sitemap
+#  #commonweal: /404/ || heartbeat
 menu:
-  home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
-  archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  home: /
+  categories: /categories
+  #about: /about
+  archives: /archives
+  tags: /tags
+  #commonweal: /404.html
+  atom: /atom.xml
 
 # Enable/Disable menu icons / item badges.
 menu_settings:
@@ -136,8 +144,8 @@ menu_settings:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
 
@@ -165,6 +173,11 @@ site_state: true
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
+
+social:
+  #LinkLabel: Link
+  微博: http://weibo.com/weizhimiao/home
+  GitHub: https://github.com/weizhimiao
 
 social_icons:
   enable: true
@@ -220,8 +233,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
-  position: left
-  #position: right
+#  position: left
+  position: right
 
   # Manual define the sidebar width.
   # If commented, will be default for:
@@ -430,7 +443,7 @@ font:
 
 # Math Equations Render Support
 math:
-  enable: false
+  enable: true
 
   # Default(true) will load mathjax/katex script on demand
   # That is it only render those page who has 'mathjax: true' in Front Matter.
@@ -855,14 +868,14 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  # Example: 
+  # Example:
   # jquery: //cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
   jquery:
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  # Example: 
+  # Example:
   # fancybox: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js
   # fancybox_css: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css
   # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js
@@ -872,7 +885,7 @@ vendors:
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  # Example: 
+  # Example:
   # fastclick: //cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js
   fastclick:
 
@@ -883,7 +896,7 @@ vendors:
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  # Example: 
+  # Example:
   # velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.min.js
   # velocity: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
   velocity:
@@ -896,21 +909,21 @@ vendors:
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  # Example: 
+  # Example:
   # ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0.7.17/src/ua-parser.min.js
   # ua_parser: //cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
   ua_parser:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  # Example: 
+  # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
   fontawesome:
 
   # Internal version: 1
   # https://www.algolia.com
-  # Example: 
+  # Example:
   # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
   # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
   algolia_instant_js:
@@ -918,7 +931,7 @@ vendors:
 
   # Internal version: 1.0.2
   # See: https://github.com/HubSpot/pace
-  # Example: 
+  # Example:
   # pace: //cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
   # pace_css: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css
@@ -928,14 +941,14 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  # Example: 
+  # Example:
   # canvas_nest: //cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js
   # canvas_nest: //cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/1.0.1/canvas-nest.min.js
   canvas_nest:
 
   # Internal version: 1.0.0
   # See: https://github.com/theme-next/theme-next-three
-  # Example: 
+  # Example:
   # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js
   # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three-waves.min.js
   # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
@@ -955,14 +968,14 @@ vendors:
 
   # Internal version: 3.3.0
   # https://github.com/vinta/pangu.js
-  # Example: 
+  # Example:
   # pangu: //cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
   pangu:
 
   # needMoreShare2
   # https://github.com/revir/need-more-share2
-  # Example: 
+  # Example:
   # needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.js
   # needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.css
   needmoreshare2_js:
@@ -971,14 +984,14 @@ vendors:
   # bookmark
   # Internal version: 1.0.0
   # https://github.com/theme-next/theme-next-bookmark
-  # Example: 
+  # Example:
   # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1.0.0/bookmark.min.js
   bookmark:
 
   # reading_progress
   # Internal version: 1.0
   # https://github.com/theme-next/theme-next-reading-progress
-  # Example: 
+  # Example:
   # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
   reading_progress:
 
