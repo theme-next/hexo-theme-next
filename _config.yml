@@ -549,11 +549,11 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-baidushare:
-  type: slide
+#baidushare:
+#  type: slide
 
 # addthis Share, see: https://www.addthis.com/
-#add_this_id: 5bc1b6fcd580b13d
+add_this_id: 5bc1b6fcd580b13d
 
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
