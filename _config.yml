@@ -55,7 +55,7 @@ favicon:
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: /atom.xml
 
 footer:
   # Specify the date when the site was setup.
@@ -185,8 +185,8 @@ site_state: true
 
 social:
   #LinkLabel: Link
-  微博: http://weibo.com/weizhimiao/home
-  GitHub: https://github.com/weizhimiao
+  微博: http://weibo.com/weizhimiao/home || weibo
+  GitHub: https://github.com/weizhimiao || github
 
 social_icons:
   enable: true
