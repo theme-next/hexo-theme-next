@@ -268,10 +268,10 @@ sidebar:
   b2t: false
 
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------
@@ -282,7 +282,7 @@ sidebar:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.
-save_scroll: false
+save_scroll: true
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
@@ -320,9 +320,9 @@ codeblock:
   border_radius:
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result
-    show_result: false
+    show_result: true
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -340,8 +340,8 @@ codeblock:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: false
-  title: # custom header, leave empty to use the default one
-  display_in_home: false
+  title: 相关内容 # custom header, leave empty to use the default one
+  display_in_home: true
   params:
     maxCount: 5
     #PPMixingRate: 0.0
@@ -351,15 +351,17 @@ related_posts:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
-  enable: false
-  url: https://github.com/theme-next/theme-next.org/_posts/tree/master/ # Link for view source.
-# url: https://github.com/theme-next/theme-next.org/_posts/edit/master/ # Link for fork & edit.
+  enable: true
+  # url: https://github.com/theme-next/theme-next.org/_posts/tree/master/ # Link for view source.
+  # url: https://github.com/weizhimiao/xylsh_blog_data/_posts/tree/master/ # Link for view source.
+  # url: https://github.com/theme-next/theme-next.org/_posts/edit/master/ # Link for fork & edit.
+  url: https://github.com/weizhimiao/xylsh_blog_data/edit/master/_posts/ # Link for fork & edit.
 
 
 # ---------------------------------------------------------------
@@ -367,7 +369,7 @@ post_edit:
 # ---------------------------------------------------------------
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
+mobile_layout_economy: true
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
@@ -547,8 +549,8 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
+baidushare:
+  type: slide
 
 # addthis Share, see: https://www.addthis.com/
 #add_this_id:
