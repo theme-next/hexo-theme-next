@@ -825,7 +825,10 @@ pace_theme: pace-theme-minimal
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest: false
+canvas_nest:
+  enable: false
+  onmobile: 
+    enable: false
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
