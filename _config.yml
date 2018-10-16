@@ -827,8 +827,11 @@ pace_theme: pace-theme-minimal
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 canvas_nest:
   enable: false
-  onmobile: 
-    enable: false
+  onmobile: true # display on mobile or not
+  color: '0,0,255' # RGB values, use ',' to separate
+  opacity: 0.5 # the opacity of line: 0~1
+  zIndex: -1 # z-index property of the background
+  count: 99 # the number of lines
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
@@ -907,8 +910,9 @@ vendors:
   pace_css:
 
   # Internal version: 1.0.0
-  # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
+  # See: https://github.com/theme-next/theme-next-canvas-nest
+  canvas_nest: 
+  canvas_nest_nomobile: 
 
   # Internal version: 1.0.0
   # See: https://github.com/theme-next/theme-next-three

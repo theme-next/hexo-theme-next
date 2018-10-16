@@ -25,11 +25,18 @@
 {% endif %}
 
 {% if theme.canvas_nest.enable %}
-  {% if theme.canvas_nest.onmobile.enable %}
-    {% set js_vendors.canvas_nest  = 'canvas-nest/canvas-nest.min.js' %}
+  {% if theme.canvas_nest.onmobile %}
+    {% set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest.min.js')%}
+      {% if theme.vendors.canvas_nest %}
+        {% set canvas_nest_uri = theme.vendors.canvas_nest %}
+      {% endif %}
   {% else %}
-    {% set js_vendors.canvas_nest  = 'canvas-nest/canvas-nest-mobile.min.js' %}
+    {% set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest-nomobile.min.js')%}
+      {% if theme.vendors.canvas_nest_nomobile %}
+        {% set canvas_nest_uri = theme.vendors.canvas_nest_nomobile %}
+      {% endif %}
   {% endif %}
+  <script type="text/javascript" color='{{ theme.canvas_nest.color }}' opacity='{{ theme.canvas_nest.opacity }}' zIndex='{{ theme.canvas_nest.zIndex }}' count='{{ theme.canvas_nest.count }}' src="{{ canvas_nest_uri }}"></script>
 {% endif %}
 
 {% if theme.three_waves %}
