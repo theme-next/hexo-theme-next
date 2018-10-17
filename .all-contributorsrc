@@ -46,6 +46,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "wafer-li",
+      "name": "Wafer Li",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12459199?v=4",
+      "profile": "https://wafer.li",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
