@@ -72,6 +72,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "maple3142",
+      "name": "maple",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9370547?v=4",
+      "profile": "https://blog.maple3142.net/",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
