@@ -214,6 +214,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "Albert-Gao",
+      "name": "AlbertGao",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/18282328?v=4",
+      "profile": "http://www.albertgao.xyz",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
