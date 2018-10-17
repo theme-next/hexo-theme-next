@@ -346,6 +346,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "shenchsh",
+      "name": "Chanson Shen",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4521477?v=4",
+      "profile": "http://chansonshen.com/",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
