@@ -111,6 +111,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "liolok",
+      "name": "李皓奇",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/34574198?v=4",
+      "profile": "https://liolok.github.io/",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
