@@ -192,6 +192,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "kuleyu",
+      "name": "kuleyu",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/25771340?v=4",
+      "profile": "https://kuleyu-hugo.netlify.com/",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
