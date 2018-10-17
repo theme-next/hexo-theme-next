@@ -59,6 +59,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "LEAFERx",
+      "name": "Lawrence Ye",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/20595509?v=4",
+      "profile": "https://leaferx.online",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
