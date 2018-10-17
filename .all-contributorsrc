@@ -378,6 +378,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "legendarynacar",
+      "name": "Legendary Nacar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8149261?v=4",
+      "profile": "http://legendarynacar.github.io",
+      "contributions": [
+        "translation"
+      ]
     }
   ]
 }
