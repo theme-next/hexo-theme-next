@@ -148,6 +148,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "xu-song",
+      "name": "Xu Song",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13825126?v=4",
+      "profile": "https://github.com/xu-song",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
