@@ -137,6 +137,17 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "jackey8616",
+      "name": "Clooooode",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12930377?v=4",
+      "profile": "https://github.com/jackey8616",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
