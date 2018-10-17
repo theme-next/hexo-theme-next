@@ -357,6 +357,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "ywjno",
+      "name": "Thomas Yang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/842383?v=4",
+      "profile": "http://ywjno.com",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
