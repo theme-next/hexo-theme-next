@@ -85,6 +85,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "Raincal",
+      "name": "Raincal",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6279478?v=4",
+      "profile": "https://raincal.com",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
