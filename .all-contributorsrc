@@ -335,6 +335,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "BlueFisher",
+      "name": "Fisher Chang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6104460?v=4",
+      "profile": "http://bluefisher.github.io",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
