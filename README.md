@@ -16,6 +16,8 @@
   <a href="#contributors"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" title="All Contributors"></a>
 </p>
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+
 ## Live Preview
 
 * :heart_decoration: Muse scheme: [LEAFERx](https://leaferx.online) | [Alex LEE](http://saili.science) | [Miaia](https://11.tt)
@@ -138,8 +140,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars2.githubusercontent.com/u/16944225?v=4" width="100px;"/><br /><sub><b>Ivan.Nginx</b></sub>](https://almostover.ru)<br />[🐛](https://github.com/theme-next/hexo-theme-next/issues?q=author%3Aivan-nginx "Bug reports") [💻](https://github.com/theme-next/hexo-theme-next/commits?author=ivan-nginx "Code") [📖](https://github.com/theme-next/hexo-theme-next/commits?author=ivan-nginx "Documentation") [🤔](#ideas-ivan-nginx "Ideas, Planning, & Feedback") | [<img src="https://avatars3.githubusercontent.com/u/8521181?v=4" width="100px;"/><br /><sub><b>Alex LEE</b></sub>](http://saili.science)<br />[🐛](https://github.com/theme-next/hexo-theme-next/issues?q=author%3Asli1989 "Bug reports") [💻](https://github.com/theme-next/hexo-theme-next/commits?author=sli1989 "Code") [📖](https://github.com/theme-next/hexo-theme-next/commits?author=sli1989 "Documentation") [👀](#review-sli1989 "Reviewed Pull Requests") [⚠️](https://github.com/theme-next/hexo-theme-next/commits?author=sli1989 "Tests") |
-| :---: | :---: |
+| [<img src="https://avatars2.githubusercontent.com/u/16944225?v=4" width="100px;"/><br /><sub><b>Ivan.Nginx</b></sub>](https://almostover.ru)<br />[🐛](https://github.com/theme-next/hexo-theme-next/issues?q=author%3Aivan-nginx "Bug reports") [💻](https://github.com/theme-next/hexo-theme-next/commits?author=ivan-nginx "Code") [📖](https://github.com/theme-next/hexo-theme-next/commits?author=ivan-nginx "Documentation") [🤔](#ideas-ivan-nginx "Ideas, Planning, & Feedback") | [<img src="https://avatars3.githubusercontent.com/u/8521181?v=4" width="100px;"/><br /><sub><b>Alex LEE</b></sub>](http://saili.science)<br />[🐛](https://github.com/theme-next/hexo-theme-next/issues?q=author%3Asli1989 "Bug reports") [💻](https://github.com/theme-next/hexo-theme-next/commits?author=sli1989 "Code") [📖](https://github.com/theme-next/hexo-theme-next/commits?author=sli1989 "Documentation") [👀](#review-sli1989 "Reviewed Pull Requests") [⚠️](https://github.com/theme-next/hexo-theme-next/commits?author=sli1989 "Tests") | [<img src="https://avatars1.githubusercontent.com/u/980449?v=4" width="100px;"/><br /><sub><b>Tsanie Lily</b></sub>](https://tsanie.us)<br />[🐛](https://github.com/theme-next/hexo-theme-next/issues?q=author%3Atsanie "Bug reports") [💻](https://github.com/theme-next/hexo-theme-next/commits?author=tsanie "Code") [📖](https://github.com/theme-next/hexo-theme-next/commits?author=tsanie "Documentation") [👀](#review-tsanie "Reviewed Pull Requests") [⚠️](https://github.com/theme-next/hexo-theme-next/commits?author=tsanie "Tests") |
+| :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

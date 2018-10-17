@@ -33,6 +33,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "tsanie",
+      "name": "Tsanie Lily",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/980449?v=4",
+      "profile": "https://tsanie.us",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
