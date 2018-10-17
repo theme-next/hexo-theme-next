@@ -35,7 +35,8 @@
         "code",
         "doc",
         "review",
-        "test"
+        "test",
+        "translation"
       ]
     },
     {
