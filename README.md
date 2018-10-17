@@ -1,4 +1,5 @@
 <div align="right">Language: :us:
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 <a title="Chinese" href="docs/zh-CN/README.md">:cn:</a>
 <a title="Russian" href="docs/ru/README.md">:ru:</a></div>
 
@@ -130,3 +131,15 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars2.githubusercontent.com/u/16944225?v=4" width="100px;"/><br /><sub><b>Ivan.Nginx</b></sub>](https://almostover.ru)<br />[🐛](https://github.com/theme-next/hexo-theme-next/issues?q=author%3Aivan-nginx "Bug reports") [💻](https://github.com/theme-next/hexo-theme-next/commits?author=ivan-nginx "Code") [📖](https://github.com/theme-next/hexo-theme-next/commits?author=ivan-nginx "Documentation") [🤔](#ideas-ivan-nginx "Ideas, Planning, & Feedback") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

@@ -1,0 +1,25 @@
+{
+  "projectName": "hexo-theme-next",
+  "projectOwner": "theme-next",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "ivan-nginx",
+      "name": "Ivan.Nginx",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16944225?v=4",
+      "profile": "https://almostover.ru",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "ideas"
+      ]
+    }
+  ]
+}
