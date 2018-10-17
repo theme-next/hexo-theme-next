@@ -20,6 +20,19 @@
         "doc",
         "ideas"
       ]
+    },
+    {
+      "login": "sli1989",
+      "name": "Alex LEE",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8521181?v=4",
+      "profile": "http://saili.science",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
