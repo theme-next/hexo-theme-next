@@ -124,6 +124,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "xCss",
+      "name": "Nine",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10877162?v=4",
+      "profile": "http://ioliu.cn",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test"
+      ]
     }
   ]
 }
