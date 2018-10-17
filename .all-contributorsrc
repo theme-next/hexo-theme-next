@@ -280,6 +280,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "zhaojun1998",
+      "name": "赵俊",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/35387985?v=4",
+      "profile": "http://www.zhaojun.im",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
