@@ -313,6 +313,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "yzca",
+      "name": "花蛄",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/15226118?v=4",
+      "profile": "https://github.com/yzca",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }
