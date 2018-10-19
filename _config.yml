@@ -269,6 +269,7 @@ excerpt_description: true
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: false
+  read_more_btn: true
   length: 150
 
 # Post meta display settings

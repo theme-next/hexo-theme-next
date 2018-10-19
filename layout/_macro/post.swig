@@ -325,11 +325,13 @@
           {{ content.substring(0, theme.auto_excerpt.length) }}
           {% if content.length > theme.auto_excerpt.length %}...{% endif %}
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
-              {{ __('post.read_more') }} &raquo;
-            </a>
-          </div>
+          {% if theme.auto_excerpt.read_more_btn %}
+            <div class="post-button text-center">
+              <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+                {{ __('post.read_more') }} &raquo;
+              </a>
+            </div>
+          {% endif %}
           <!--/noindex-->
         {% else %}
           {% if post.type === 'picture' %}
