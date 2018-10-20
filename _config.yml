@@ -272,6 +272,7 @@ auto_excerpt:
   length: 150
 
 # Read more button
+# If true, the read more button would be displayed in excerpt section
 read_more_btn: true
 
 # Post meta display settings
