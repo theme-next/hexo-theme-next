@@ -264,12 +264,12 @@ save_scroll: false
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
+read_more_btn: true
 
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: false
-  read_more_btn: true
   length: 150
 
 # Post meta display settings
