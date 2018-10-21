@@ -283,6 +283,10 @@ post_meta:
     another_day: true
   categories: true
 
+# Post photo preview settings. Set photos in post front-matter first
+photos:
+  display_in_post: true
+
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:

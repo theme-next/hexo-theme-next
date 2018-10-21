@@ -283,7 +283,7 @@
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
       {# Gallery support #}
-      {% if post.photos and post.photos.length %}
+      {% if post.photos and post.photos.length and (theme.photos.display_in_post or is_index) %}
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           {% set COLUMN_NUMBER = 3 %}
           {% for photo in post.photos %}
