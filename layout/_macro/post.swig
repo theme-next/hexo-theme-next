@@ -306,23 +306,23 @@
           {{ post.description }}
           <!--noindex-->
           {% if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
+          <div class="post-button text-center">
+            <a class="btn" href="{{ url_for(post.path) }}">
+              {{ __('post.read_more') }} &raquo;
+            </a>
+          </div>
           {% endif %}
           <!--/noindex-->
         {% elif post.excerpt  %}
           {{ post.excerpt }}
           <!--noindex-->
           {% if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
-         {% endif %}
+          <div class="post-button text-center">
+            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+              {{ __('post.read_more') }} &raquo;
+            </a>
+          </div>
+          {% endif %}
           <!--/noindex-->
         {% elif theme.auto_excerpt.enable %}
           {% set content = post.content | striptags %}
@@ -330,11 +330,11 @@
           {% if content.length > theme.auto_excerpt.length %}...{% endif %}
           <!--noindex-->
           {% if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
+          <div class="post-button text-center">
+            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
+              {{ __('post.read_more') }} &raquo;
+            </a>
+          </div>
           {% endif %}
           <!--/noindex-->
         {% else %}
@@ -357,6 +357,16 @@
     {### END POST BODY ###}
     {#####################}
 
+    {## PASSAGE END TAG ##}
+
+    <div>
+      {% if not is_index %}
+        {% include 'passage-end-tag.swig' %}
+      {% endif %}
+    </div>
+    
+    {###### END TAG ######}
+    
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
         {% include 'wechat-subscriber.swig' %}
@@ -379,7 +389,7 @@
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"></i> {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}
