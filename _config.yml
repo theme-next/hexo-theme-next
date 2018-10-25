@@ -87,6 +87,13 @@ footer:
     # Version info of NexT after scheme info (vX.X.X).
     version: true
   # -------------------------------------------------------------
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # http://www.miitbeian.gov.cn/
+  beian:
+    enable: false
+    icp: 
+
+  # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
 
