@@ -87,6 +87,13 @@ footer:
     # Version info of NexT after scheme info (vX.X.X).
     version: true
   # -------------------------------------------------------------
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # http://www.miitbeian.gov.cn/
+  beian:
+    enable: false
+    icp: 
+
+  # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
 
@@ -471,10 +478,14 @@ han: false
 pangu: false
 
 # Swiftype Search API Key
-#swiftype_key:
+#swiftype_key: 
 
 # Baidu Analytics ID
-#baidu_analytics:
+#baidu_analytics: 
+
+# Growingio Analytics ID
+# Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com
+#growingio_analytics: #your projectId
 
 # Disqus
 disqus:
@@ -675,13 +686,16 @@ baidu_push: false
 #
 # API Documentation:
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
+# Enabled APIs and services
+# api_key: https://console.developers.google.com/
+# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083?hl=en
 calendar:
   enable: false
-  calendar_id: <required>
+  calendar_id: <required> # Your Google account E-Mail
   api_key: <required>
   orderBy: startTime
-  offsetMax: 24
-  offsetMin: 4
+  offsetMax: 24 # Time Range
+  offsetMin: 4 # Time Range
   timeZone:
   showDeleted: false
   singleEvents: true

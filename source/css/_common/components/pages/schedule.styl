@@ -71,8 +71,9 @@
     }
     li.event-past {
       background: #FCFCFC
+	  padding: 15px 0 15px 10px
       & > * {
-        opacity: .6
+        opacity: .9
       }
       h2.event-summary {
         color: #bbb
@@ -82,6 +83,22 @@
       }
     }
     li.event-now {
+      background: #222
+      color: #FFF
+      padding: 15px 0 15px 10px
+      h2.event-summary {
+        &:before {
+          transform: scale(1.2)
+          color: #FFF
+          animation: dot-flash 1s alternate infinite ease-in-out;
+        }
+      }
+      * {
+        color: #FFF!important
+      }
+    }
+	
+    li.event-future {
       background: #222
       color: #FFF
       padding: 15px 0 15px 10px
