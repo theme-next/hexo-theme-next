@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "gulp"
+    "test": "gulp",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
   },
   "homepage": "https://theme-next.org",
   "devDependencies": {
+    "all-contributors-cli": "^5.4.0",
     "coffee-script": "^1.10.0",
     "gulp": "^3.9.0",
     "gulp-jshint": "^1.12.0",
