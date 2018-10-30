@@ -87,6 +87,13 @@ footer:
     # Version info of NexT after scheme info (vX.X.X).
     version: true
   # -------------------------------------------------------------
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # http://www.miitbeian.gov.cn/
+  beian:
+    enable: false
+    icp: 
+
+  # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
 
@@ -157,6 +164,7 @@ site_state: true
 #social:
   #GitHub: https://github.com/yourname || github
   #E-Mail: mailto:yourname@gmail.com || envelope
+  #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -471,10 +479,14 @@ han: false
 pangu: false
 
 # Swiftype Search API Key
-#swiftype_key:
+#swiftype_key: 
 
 # Baidu Analytics ID
-#baidu_analytics:
+#baidu_analytics: 
+
+# Growingio Analytics ID
+# Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com
+#growingio_analytics: #your projectId
 
 # Disqus
 disqus:
@@ -675,13 +687,16 @@ baidu_push: false
 #
 # API Documentation:
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
+# Enabled APIs and services
+# api_key: https://console.developers.google.com/
+# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083?hl=en
 calendar:
   enable: false
-  calendar_id: <required>
+  calendar_id: <required> # Your Google account E-Mail
   api_key: <required>
   orderBy: startTime
-  offsetMax: 24
-  offsetMin: 4
+  offsetMax: 24 # Time Range
+  offsetMin: 4 # Time Range
   timeZone:
   showDeleted: false
   singleEvents: true
@@ -825,7 +840,13 @@ pace_theme: pace-theme-minimal
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest: false
+canvas_nest:
+  enable: false
+  onmobile: true # display on mobile or not
+  color: '0,0,255' # RGB values, use ',' to separate
+  opacity: 0.5 # the opacity of line: 0~1
+  zIndex: -1 # z-index property of the background
+  count: 99 # the number of lines
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
@@ -931,11 +952,9 @@ vendors:
   pace_css:
 
   # Internal version: 1.0.0
-  # https://github.com/hustcc/canvas-nest.js
-  # Example: 
-  # canvas_nest: //cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js
-  # canvas_nest: //cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/1.0.1/canvas-nest.min.js
-  canvas_nest:
+  # See: https://github.com/theme-next/theme-next-canvas-nest
+  canvas_nest: #//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js
+  canvas_nest_nomobile: #//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js
 
   # Internal version: 1.0.0
   # See: https://github.com/theme-next/theme-next-three
