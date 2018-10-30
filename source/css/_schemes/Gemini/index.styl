@@ -36,10 +36,14 @@ use_seo = hexo-config('seo');
   border-radius: initial;
 }
 
+.sidebar-inner {
+  background: $sidebar-inner-bg-color;
+}
+
 // Post & Comments blocks.
 .post-block {
   padding: $content-desktop-padding;
-  background: white;
+  background: $post-bg-color;
   box-shadow: $box-shadow-inner;
   border-radius: $border-radius-inner;
 }
@@ -59,7 +63,7 @@ use_seo = hexo-config('seo');
   padding: $content-desktop-padding;
   margin: initial;
   margin-top: $sidebar-offset;
-  background: white;
+  background: $post-bg-color;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
