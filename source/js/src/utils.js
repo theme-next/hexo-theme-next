@@ -17,10 +17,9 @@ NexT.utils = NexT.$u = {
         if ($imageWrapLink.length < 1) {
           var imageLink = $image.attr('data-original') ? this.getAttribute('data-original') : this.getAttribute('src');
           $imageWrapLink = $image.wrap('<a data-fancybox="group" href="' + imageLink + '"></a>').parent('a');
+          $imageWrapLink.addClass('fancybox fancybox.image');
+          $imageWrapLink.attr('rel', 'group');
         }
-
-        $imageWrapLink.addClass('fancybox fancybox.image');
-        $imageWrapLink.attr('rel', 'group');
 
         if (imageTitle) {
           $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
@@ -57,7 +56,7 @@ NexT.utils = NexT.$u = {
     $(function() {
       $(window).bind('hashchange', function() {
         var tHash = location.hash;
-        if (tHash !== '') {
+        if (tHash !== '' && !tHash.match(/%\S{2}/)) {
           $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
           $(tHash).addClass('active').siblings().removeClass('active');
         }
