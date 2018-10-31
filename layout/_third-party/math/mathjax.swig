@@ -6,10 +6,32 @@
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
       TeX: { equationNumbers: { autoNumber: "AMS" } },
-      "HTML-CSS": { linebreaks: { automatic: true, width: "80% container" }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-      SVG: { linebreaks: { automatic: true, width: "80% container" } },
-      PreviewHTML: { linebreaks: { automatic: true, width: "80% container" } },
-      CommonHTML: { linebreaks: { automatic: true, width: "80% container" } }
+      "HTML-CSS": {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      SVG: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+      },
+      PreviewHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      },
+      CommonHTML: {
+        linebreaks: {
+          automatic: true,
+          width: "90% container"
+        }
+      }
     });
 </script>
 
