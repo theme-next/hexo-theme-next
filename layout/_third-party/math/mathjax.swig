@@ -1,11 +1,13 @@
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
+      TeX: {equationNumbers: { autoNumber: "AMS" }},
+      "HTML-CSS": { linebreaks: { automatic: true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+      SVG: { linebreaks: { automatic: true }}
     });
 </script>
 
