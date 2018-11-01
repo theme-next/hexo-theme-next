@@ -7,31 +7,15 @@
       },
       TeX: { equationNumbers: { autoNumber: "AMS" } },
       "HTML-CSS": {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        },
+        linebreaks: { automatic: true },
         EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
       },
       SVG: {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        },
+        linebreaks: { automatic: true },
         EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
       },
-      PreviewHTML: {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        }
-      },
-      CommonHTML: {
-        linebreaks: {
-          automatic: true,
-          width: "90% container"
-        }
-      }
+      PreviewHTML: { linebreaks: { automatic: true } },
+      CommonHTML: { linebreaks: { automatic: true } }
     });
 </script>
 
@@ -44,3 +28,9 @@
     });
 </script>
 <script type="text/javascript" src="{{ theme.math.mathjax.cdn }}"></script>
+<style>
+.MathJax_Display {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+</style>
