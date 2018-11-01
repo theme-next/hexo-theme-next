@@ -30,6 +30,7 @@
 <script type="text/javascript" src="{{ theme.math.mathjax.cdn }}"></script>
 <style>
 .MathJax_Display {
-    overflow: auto hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 </style>
