@@ -1,17 +1,17 @@
 {% if page.comments && theme.gitalk.enable %}
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script src="/js/src/md5.js"></script>
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-      clientID: '{{ theme.gitalk.ClientID }}',
-      clientSecret: '{{ theme.gitalk.ClientSecret }}',
-      repo: '{{ theme.gitalk.repo }}',
-      owner: '{{ theme.gitalk.githubID }}',
-      admin: ['{{ theme.gitalk.adminUser }}'],
-      id: md5(location.pathname),
-      distractionFreeMode: '{{ theme.gitalk.distractionFreeMode }}'
-    })
-    gitalk.render('gitalk-container')           
-  </script>
+  <link rel="stylesheet" href=" {{ theme.gitalk.gitalk_cdn_prefix }}gitalk.css">
+  <script type="text/javascript" src="{{ theme.gitalk.gitalk_cdn_prefix }}gitalk.min.js"></script>
+  <script type="text/javascript" src="{{ theme.gitalk.md5_cdn }}"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '{{ theme.gitalk.client_id }}',
+          clientSecret: '{{ theme.gitalk.client_secret }}',
+          repo: '{{ theme.gitalk.repo }}',
+          owner: '{{ theme.gitalk.github_id }}',
+          admin: ['{{ theme.gitalk.admin_user }}'],
+          id: md5(location.pathname),
+          distractionFreeMode: '{{ theme.gitalk.distraction_free_mode }}'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 {% endif %}
