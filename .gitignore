@@ -20,3 +20,4 @@ source/lib/ua-parser-js/*
 !source/lib/ua-parser-js/dist/
 
 !source/lib/velocity/
+!source/lib/pdf/
