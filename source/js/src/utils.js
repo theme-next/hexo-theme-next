@@ -17,10 +17,9 @@ NexT.utils = NexT.$u = {
         if ($imageWrapLink.length < 1) {
           var imageLink = $image.attr('data-original') ? this.getAttribute('data-original') : this.getAttribute('src');
           $imageWrapLink = $image.wrap('<a data-fancybox="group" href="' + imageLink + '"></a>').parent('a');
+          $imageWrapLink.addClass('fancybox fancybox.image');
+          $imageWrapLink.attr('rel', 'group');
         }
-
-        $imageWrapLink.addClass('fancybox fancybox.image');
-        $imageWrapLink.attr('rel', 'group');
 
         if (imageTitle) {
           $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
