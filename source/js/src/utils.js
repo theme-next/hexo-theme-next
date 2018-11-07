@@ -57,7 +57,7 @@ NexT.utils = NexT.$u = {
     $(function() {
       $(window).bind('hashchange', function() {
         var tHash = location.hash;
-        if (tHash !== '') {
+        if (tHash !== '' && !tHash.match(/%\S{2}/)) {
           $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
           $(tHash).addClass('active').siblings().removeClass('active');
         }
