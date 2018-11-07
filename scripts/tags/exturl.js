@@ -1,5 +1,6 @@
 /**
  * exturl.js | https://theme-next.org/docs/tag-plugins/exturl/
+ * Note: need to remove in NexT v7.0.0
  */
 
 /* global hexo */
