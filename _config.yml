@@ -91,11 +91,20 @@ footer:
   # http://www.miitbeian.gov.cn/
   beian:
     enable: false
-    icp: 
+    icp:
 
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+
+# Creative Commons 4.0 International License.
+# https://creativecommons.org/share-your-work/licensing-types-examples/
+# Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+creative_commons:
+  license: by-nc-sa
+  sidebar: false
+  post: false
+
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -112,6 +121,9 @@ seo: false
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
 index_with_subtitle: false
+
+# Automatically add external URL with BASE64 encrypt & decrypt.
+exturl: false
 
 
 # ---------------------------------------------------------------
@@ -178,10 +190,6 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
-  # Dependencies: exturl: true in Tags Settings section below.
-  # To encrypt links above use https://www.base64encode.org
-  # Example encoded link: `GitHub: aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQ= || github`
-  exturl: false
 
 # Follow me on GitHub banner in right-top corner.
 # Usage: `permalink || title`
@@ -219,12 +227,6 @@ toc:
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false
-
-# Creative Commons 4.0 International License.
-# http://creativecommons.org/
-# Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#creative_commons: by-nc-sa
-#creative_commons:
 
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
@@ -342,11 +344,6 @@ related_posts:
     #isDate: false
     #isImage: false
     #isExcerpt: false
-
-# Declare license on posts
-post_copyright:
-  enable: false
-  license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
 
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
@@ -483,10 +480,10 @@ han: false
 pangu: false
 
 # Swiftype Search API Key
-#swiftype_key: 
+#swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics: 
+#baidu_analytics:
 
 # Growingio Analytics ID
 # Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com
@@ -745,11 +742,6 @@ bookmark:
 # Tags Settings
 # ---------------------------------------------------------------
 
-# External URL with BASE64 encrypt & decrypt.
-# Usage: {% exturl text url "title" %}
-# Alias: {% extlink text url "title" %}
-exturl: false
-
 # Note tag (bs-callout).
 note:
   # Note tag style values:
@@ -884,14 +876,14 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  # Example: 
+  # Example:
   # jquery: //cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
   jquery:
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  # Example: 
+  # Example:
   # fancybox: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js
   # fancybox_css: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css
   # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js
@@ -901,7 +893,7 @@ vendors:
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  # Example: 
+  # Example:
   # fastclick: //cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js
   fastclick:
 
@@ -912,7 +904,7 @@ vendors:
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  # Example: 
+  # Example:
   # velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.min.js
   # velocity: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
   velocity:
@@ -925,21 +917,21 @@ vendors:
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  # Example: 
+  # Example:
   # ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0.7.17/src/ua-parser.min.js
   # ua_parser: //cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
   ua_parser:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  # Example: 
+  # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
   fontawesome:
 
   # Internal version: 1
   # https://www.algolia.com
-  # Example: 
+  # Example:
   # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
   # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
   algolia_instant_js:
@@ -947,7 +939,7 @@ vendors:
 
   # Internal version: 1.0.2
   # See: https://github.com/HubSpot/pace
-  # Example: 
+  # Example:
   # pace: //cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
   # pace_css: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css
@@ -962,7 +954,7 @@ vendors:
 
   # Internal version: 1.0.0
   # See: https://github.com/theme-next/theme-next-three
-  # Example: 
+  # Example:
   # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js
   # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three-waves.min.js
   # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
@@ -982,14 +974,14 @@ vendors:
 
   # Internal version: 3.3.0
   # https://github.com/vinta/pangu.js
-  # Example: 
+  # Example:
   # pangu: //cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
   pangu:
 
   # needMoreShare2
   # https://github.com/revir/need-more-share2
-  # Example: 
+  # Example:
   # needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.js
   # needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.css
   needmoreshare2_js:
@@ -998,14 +990,14 @@ vendors:
   # bookmark
   # Internal version: 1.0.0
   # https://github.com/theme-next/theme-next-bookmark
-  # Example: 
+  # Example:
   # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1.0.0/bookmark.min.js
   bookmark:
 
   # reading_progress
   # Internal version: 1.0
   # https://github.com/theme-next/theme-next-reading-progress
-  # Example: 
+  # Example:
   # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
   reading_progress:
 
