@@ -470,6 +470,21 @@ math:
     # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
     #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
 
+# PDF Support
+# Dependencies: https://github.com/theme-next/theme-next-pdf
+pdf:
+  enable: false
+
+  # Default(true) will load PDFObject/PDF.js script on demand
+  # That is it only render those page who has 'pdf: true' in Front Matter.
+  # If you set it to false, it will load PDFObject/PDF.js srcipt EVERY PAGE.
+  per_page: true
+
+  pdfobject:
+    # Use 2.1.1 as default, cloudflare as default CDN
+    cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
+    height: 500px
+
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
