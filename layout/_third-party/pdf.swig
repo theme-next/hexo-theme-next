@@ -22,7 +22,7 @@
         view: "FitV"
       },
       PDFJS_URL: "/lib/pdf/web/viewer.html",
-      height: "{{ theme.pdf.pdfobject.height }}"
+      height: "{{ theme.pdf.height }}"
     };
     $("#main a").each(function() {
       var href = $(this).attr("href");
@@ -39,7 +39,7 @@
       position: relative;
       overflow: auto;
       width: 100%;
-      height: {{ theme.pdf.pdfobject.height }};
+      height: {{ theme.pdf.height }};
     }
     </style>
   {% endif %}
