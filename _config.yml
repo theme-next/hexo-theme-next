@@ -470,6 +470,7 @@ math:
     #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
 
 # PDF Support
+# Dependencies: https://github.com/theme-next/theme-next-pdf
 pdf:
   enable: false
 
