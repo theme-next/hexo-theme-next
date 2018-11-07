@@ -42,7 +42,7 @@
 }
 
 .sidebar a,
-.sidebar .exturl {
+.sidebar span.exturl {
   color: $black-light;
 
   &:hover { color: $black-deep; }
@@ -53,8 +53,8 @@
 }
 
 .links-of-author-item {
-  a:before, .exturl:before { display: none; }
-  a, .exturl {
+  a:before, span.exturl:before { display: none; }
+  a, span.exturl {
     border-bottom: none;
     text-decoration: underline;
   }
@@ -85,14 +85,14 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  .exturl {
+  span.exturl {
     font-size: 13px;
   }
 }
 .links-of-author-item {
   sidebar-inline-links-item();
 
-  a, .exturl {
+  a, span.exturl {
     display: block;
     text-decoration: none;
 
