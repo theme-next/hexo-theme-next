@@ -1,7 +1,23 @@
 {% if page.comments && theme.gitalk.enable %}
-  <link rel="stylesheet" href=" {{ theme.gitalk.gitalk_cdn_prefix }}gitalk.css">
-  <script type="text/javascript" src="{{ theme.gitalk.gitalk_cdn_prefix }}gitalk.min.js"></script>
-  <script type="text/javascript" src="{{ theme.gitalk.md5_cdn }}"></script>
+
+  {% set gitalk_js_url = "//cdn.bootcss.com/gitalk/1.4.0/gitalk.min.js" %}
+  {% if theme.vendors.gitalk_js %}
+    {% set gitalk_js_url = theme.vendors.gitalk_js %}
+  {% endif %}
+  <script type="text/javascript" src="{{ gitalk_js_url }}"></script>
+
+  {% set gitalk_css_url = "//cdn.bootcss.com/gitalk/1.4.0/gitalk.css" %}
+  {% if theme.vendors.gitalk_css %}
+    {% set gitalk_css_url = theme.vendors.gitalk_css %}
+  {% endif %}
+  <link rel="stylesheet" href="{{ gitalk_css_url }}">
+
+  {% set md5_url = "//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js" %}
+  {% if theme.vendors.md5 %}
+    {% set md5_url = theme.vendors.md5 %}
+  {% endif %}
+  <script type="text/javascript" src="{{ md5_url }}"></script>
+    
    <script type="text/javascript">
         var gitalk = new Gitalk({
           clientID: '{{ theme.gitalk.client_id }}',
