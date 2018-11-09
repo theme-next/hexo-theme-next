@@ -118,6 +118,7 @@
   {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
+  {% include '_third-party/pdf.swig' %}
   {% include '_third-party/leftclick/leftclick.swig' %}
 </body>
 </html>

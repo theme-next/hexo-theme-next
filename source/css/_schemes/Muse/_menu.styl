@@ -15,6 +15,16 @@
 .menu {
   +mobile() { text-align: left; }
 }
+
+.menu-item-active a {
+  border-bottom-color: $menu-link-hover-border !important;
+  color: $black-deep;
+
+  +mobile() {
+    border-bottom: 1px dotted $gray-lighter !important;
+  }
+}
+
 .menu .menu-item {
   +mobile() {
     display: block;
@@ -41,20 +51,21 @@
     +mobile() { display: none; }
   }
 
-  a {
+  a, span.exturl {
     +mobile() {
       padding: 5px 10px;
-      border-bottom-color: white !important;
+    }
+
+    &:hover {
+      @extend .menu-item-active a;
+    }
+
+    // To prevent hover on external links with touch devices after click.
+    @media (hover:none) {
+      &:hover {
+        border-bottom-color: transparent !important;
+      }
     }
   }
   .fa { margin-right: 0; }
-}
-
-.menu-item-active a {
-  border-bottom-color: $menu-link-hover-border !important;
-  color: $black-deep;
-
-  +mobile() {
-    border-bottom-color: white !important;
-  }
 }

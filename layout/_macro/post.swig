@@ -45,10 +45,8 @@
                   <i class="fa fa-thumb-tack"></i>
                 </span>
               {% endif %}
-              <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}" itemprop="url">
-                {{ post.title or post.link }}
-                <i class="fa fa-external-link"></i>
-              </a>
+              {% set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
+              {{ next_url(url_for(post.link), (post.title or post.link) + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
             {% else %}{#
             #}{% if is_index %}
                 {% if post.sticky > 0 %}
@@ -56,15 +54,13 @@
                     <i class="fa fa-thumb-tack"></i>
                   </span>
                 {% endif %}
-                <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
-                  {{ post.title | default(__('post.untitled'))}}
-                </a>
+                {# Need to delete maybe? #}
+                {{ next_url(url_for(post.path), post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: url }) }}
               {% else -%}
                 {{- post.title -}}
                 {% if theme.post_edit.enable -%}
-                  <a href="{{ theme.post_edit.url }}{{ post.source.slice(7) }}" class="post-edit-link" title="{{ __('post.edit') }}" target="_blank">
-                    <i class="fa fa-pencil"></i>
-                  </a>
+                  {% set editIcon = '<i class="fa fa-pencil"></i>' -%}
+                  {{ next_url(theme.post_edit.url + post.source.slice(7), editIcon, {class: 'post-edit-link', title: __('post.edit') }) }}
                 {%- endif %}
               {% endif %}
             {% endif %}
@@ -373,15 +369,20 @@
       </div>
     {% endif %}
 
-    {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
+    {% if page.reward === undefined and theme.reward.enable %}
+      {% set reward_able = true %} 
+    {% else %}
+      {% set reward_able = page.reward %} 
+    {% endif %}
+    {% if reward_able and (theme.reward.alipay or theme.reward.wechatpay or theme.reward.bitcoin) and not is_index %}
       <div>
         {% include 'reward.swig' %}
       </div>
     {% endif %}
 
-    {% if theme.post_copyright.enable and not is_index %}
+    {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
       <div>
-        {% include 'post-copyright.swig' with { post: post } %}
+        {% include '../_partials/post-copyright.swig' with { post: post } %}
       </div>
     {% endif %}
 
