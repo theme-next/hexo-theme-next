@@ -107,3 +107,12 @@ word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
+disable-touch-hover() {
+  // To prevent hover on external links with touch devices after click.
+  @media (hover:none) {
+    &:hover {
+      background: none;
+    }
+  }
+}

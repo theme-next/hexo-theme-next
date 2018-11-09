@@ -100,34 +100,30 @@
             <div class="links-of-author motion-element">
               {% for name, link in theme.social %}
                 <span class="links-of-author-item">
-                  {% if theme.exturl && theme.social_icons.exturl %}
-                    <span class="exturl" data-url="{{ link.split('||')[0] | trim }}" title="{{ name }}">{#
-                #}{% else %}{#
-                  #}<a href="{{ link.split('||')[0] | trim }}" target="_blank" title="{{ name }}"{% if theme.seo %} rel="external nofollow"{% endif %}>{#
-                #}{% endif %}{#
-                  #}{% if theme.social_icons.enable %}{#
-                    #}<i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>{#
-                  #}{% endif %}{#
-                  #}{% if not theme.social_icons.icons_only %}{#
-                    #}{{ name }}{#
-                  #}{% endif %}{#
-                #}{% if theme.exturl && theme.social_icons.exturl %}{#
-                  #}</span>
-                  {% else %}{#
-                  #}</a>
+                  {% set sidebarURL = link.split('||')[0] | trim %}
+                  {% if not (theme.social_icons.enable) or (not theme.social_icons.icons_only) %}
+                    {% set sidebarText = name %}
                   {% endif %}
+                  {%  if theme.social_icons.enable %}
+                    {% set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim | default('globe') + '"></i>' %}
+                  {% endif %}
+                  {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
                 </span>
               {% endfor %}
             </div>
           {% endif %}
 
-          {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
-          {% if theme.creative_commons in cc %}
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/{% if theme.creative_commons === 'zero' %}publicdomain/zero/1.0{% else %}licenses/{{ theme.creative_commons }}/4.0{% endif %}/" class="cc-opacity" target="_blank"{% if theme.seo %} rel="external nofollow"{% endif %}>
-                <img src="{{ url_for(theme.images) }}/cc-{{ theme.creative_commons }}.svg" alt="Creative Commons" />
-              </a>
-            </div>
+          {% if theme.creative_commons.license and theme.creative_commons.sidebar %}
+             <div class="cc-license motion-element" itemprop="license">
+              {% if theme.creative_commons.license === 'zero' %}
+                {% set ccType = 'publicdomain/zero/1.0/' %}
+              {% else %}
+                {% set ccType = 'licenses/' + theme.creative_commons.license + '/4.0/' %}
+              {% endif %}
+              {% set ccURL = 'https://creativecommons.org/' + ccType %}
+              {% set ccImage = '<img src="' + url_for(theme.images) + '/cc-' + theme.creative_commons.license + '.svg" alt="Creative Commons" />' %}
+              {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
+             </div>
           {% endif %}
 
           {# Blogroll #}
@@ -138,9 +134,9 @@
                 {{ theme.links_title }}
               </div>
               <ul class="links-of-blogroll-list">
-                {% for name, link in theme.links %}
+                {% for blogrollText, blogrollURL in theme.links %}
                   <li class="links-of-blogroll-item">
-                    <a href="{{ link }}" title="{{ name }}" target="_blank">{{ name }}</a>
+                    {{ next_url(blogrollURL, blogrollText, {title: blogrollURL}) }}
                   </li>
                 {% endfor %}
               </ul>
