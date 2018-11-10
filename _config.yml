@@ -1051,10 +1051,10 @@ vendors:
   gitalk_js:
   gitalk_css:
 
-  # Internal version: 2.10.0
-  # See: https://github.com/blueimp/JavaScript-MD5
+  # Internal version: 0.7.3
+  # See: https://github.com/emn178/js-md5/
   # Example: 
-  # md5: https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js
+  # md5: https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js
   md5:
 
 # Assets

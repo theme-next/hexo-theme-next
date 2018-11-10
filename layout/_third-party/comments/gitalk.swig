@@ -12,7 +12,7 @@
   {% endif %}
   <link rel="stylesheet" href="{{ gitalk_css_url }}">
 
-  {% set md5_url = "//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js" %}
+  {% set md5_url = "//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js" %}
   {% if theme.vendors.md5 %}
     {% set md5_url = theme.vendors.md5 %}
   {% endif %}
