@@ -1021,11 +1021,11 @@ vendors:
   # Example: https://cdn.jsdelivr.net/npm/valine@1.1.8/dist/Valine.min.js
   valine:
 
-  # Internal version: 
-  # See: 
+  # Internal version: 1.4.0
+  # See: https://github.com/gitalk/gitalk
   # Examples:
-  # gitalk_js: https://cdn.bootcss.com/gitalk/1.4.0/gitalk.min.js
-  # gitalk_css: https://cdn.bootcss.com/gitalk/1.4.0/gitalk.css
+  # gitalk_js: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js
+  # gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css
   gitalk_js:
   gitalk_css:
 
