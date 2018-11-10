@@ -540,21 +540,13 @@ gitment:
 # Gitalk 
 # Demo: https://gitalk.github.io
 # Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.cn/2018/8/10/gitalk-error/#more
-# gitalk:
-#   enable: false
-#   github_id:  # Github repo owner
-#   repo:  # Repository name to store issues.
-#   client_id:  # Github Application Client ID
-#   client_secret:  # Github Application Client Secret
-#   admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
-#   distraction_free_mode: true # Facebook-like distraction free mode
 gitalk:
-  enable: true
-  github_id: Jactor-Sue # Github repo owner
-  repo: Jactor-Sue.github.io # Repository name to store issues.
-  client_id: 58fa2e0d1d9986df9611 # Github Application Client ID
-  client_secret: fda9924ebbf38a9aa8788921635544417cc6b875 # Github Application Client Secret
-  admin_user: Jactor-Sue # GitHub repo owner and collaborators, only these guys can initialize github issues
+  enable: false
+  github_id:  # Github repo owner
+  repo:  # Repository name to store issues.
+  client_id:  # Github Application Client ID
+  client_secret:  # Github Application Client Secret
+  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
   distraction_free_mode: true # Facebook-like distraction free mode
 
 # Baidu Share
@@ -1029,11 +1021,11 @@ vendors:
   # Example: https://cdn.jsdelivr.net/npm/valine@1.1.8/dist/Valine.min.js
   valine:
 
-  # Internal version: 1.4.0
-  # See: https://github.com/gitalk/gitalk
+  # Internal version: 
+  # See: 
   # Examples:
-  # gitalk_js: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js
-  # gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css
+  # gitalk_js: https://cdn.bootcss.com/gitalk/1.4.0/gitalk.min.js
+  # gitalk_css: https://cdn.bootcss.com/gitalk/1.4.0/gitalk.css
   gitalk_js:
   gitalk_css:
 
@@ -1041,7 +1033,6 @@ vendors:
   # See: https://github.com/blueimp/JavaScript-MD5
   # Example: 
   # md5: https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js
-  # md5: https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js
   md5:
 
 # Assets
