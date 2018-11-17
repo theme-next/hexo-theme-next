@@ -21,10 +21,10 @@
     .highlight-wrap .copy-btn {
       transition: opacity .3s ease-in-out;
       opacity: 0;
-      padding: 2px 6px;
+      padding: 2px 4px;
       position: absolute;
-      right: 4px;
-      top: 35px;
+      left: -40px;
+      top: 8px;
     }
 
     .highlight-wrap:hover .copy-btn,
