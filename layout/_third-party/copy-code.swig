@@ -24,7 +24,7 @@
       padding: 2px 6px;
       position: absolute;
       right: 4px;
-      top: 8px;
+      top: 35px;
     }
 
     .highlight-wrap:hover .copy-btn,
