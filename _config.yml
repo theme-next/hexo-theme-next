@@ -689,6 +689,14 @@ busuanzi_count:
   total_views_icon: eye
   post_views: true
   post_views_icon: eye
+  header:
+    enable: false
+    total_visitors_header:  
+    total_views_header:  
+  footer:
+    enable: false
+    total_visitors_footer: 
+    total_views_footer: 
 
 
 # Tencent analytics ID
