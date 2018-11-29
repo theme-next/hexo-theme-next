@@ -556,6 +556,18 @@ gitment:
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
+# Gitalk 
+# Demo: https://gitalk.github.io
+# Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.cn/2018/8/10/gitalk-error/#more
+gitalk:
+  enable: false
+  github_id:  # Github repo owner
+  repo:  # Repository name to store issues.
+  client_id:  # Github Application Client ID
+  client_secret:  # Github Application Client Secret
+  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  distraction_free_mode: true # Facebook-like distraction free mode
+
 # Baidu Share
 # Available value:
 #    button | slide
@@ -1031,6 +1043,19 @@ vendors:
   # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.3/Valine.min.js
   valine:
 
+  # Internal version: 1.4.0
+  # See: https://github.com/gitalk/gitalk
+  # Examples:
+  # gitalk_js: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js
+  # gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css
+  gitalk_js:
+  gitalk_css:
+
+  # Internal version: 0.7.3
+  # See: https://github.com/emn178/js-md5/
+  # Example: 
+  # md5: https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js
+  md5:
 
 # Assets
 css: css
