@@ -45,19 +45,25 @@
           return $(e).text()
         }).toArray().join('\n')
         var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
+        var range = document.createRange()
+        var sel = window.getSelection()
+        ta.style.width = '0px'
+        ta.style.height = '0px'
+        ta.style.opacity = '0'
         ta.value = code
-        ta.select()
-        ta.focus()
+        ta.contentEditable = true
+        ta.readOnly = false
+        document.body.appendChild(ta)
+        range.selectNodeContents(ta)
+        sel.removeAllRanges()
+        sel.addRange(range)
+        ta.setSelectionRange(0, ta.value.length)
         var result = document.execCommand('copy')
-        document.body.removeChild(ta)
         {% if theme.codeblock.copy_button.show_result %}
           if(result)$(this).text('{{__("post.copy_success")}}')
           else $(this).text('{{__("post.copy_failure")}}')
         {% endif %}
+        ta.blur()
         $(this).blur()
       })).on('mouseleave', function (e) {
         var $b = $(this).find('.copy-btn')
