@@ -46,7 +46,8 @@
                 </span>
               {% endif %}
               {% set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
-              {{ next_url(url_for(post.link), (post.title or post.link) + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
+              {% set postText = post.title or post.link %}
+              {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
             {% else %}{#
             #}{% if is_index %}
                 {% if post.sticky > 0 %}
@@ -55,7 +56,7 @@
                   </span>
                 {% endif %}
                 {# Need to delete maybe? #}
-                {{ next_url(url_for(post.path), post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: url }) }}
+                {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: url }) }}
               {% else -%}
                 {{- post.title -}}
                 {% if theme.post_edit.enable -%}
