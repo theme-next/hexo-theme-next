@@ -2,7 +2,7 @@
 {% import 'menu-badge.swig' as menu_badge %}
 
   {% set itemURL = value.split('||')[0] | trim %}
-  {% if itemURL.indexOf("http://") != 0 && itemURL.indexOf("https://") != 0 %}
+  {% if itemURL.indexOf('http') != 0 %}
     {% set itemURL = itemURL | replace('//', '/', 'g') %}
   {% endif %}
   <li class="menu-item menu-item-{{ itemName | replace(' ', '-', 'g') }}{{ item_active(itemURL, 'menu-item-active') }}">

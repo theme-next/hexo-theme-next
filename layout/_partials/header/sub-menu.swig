@@ -21,7 +21,7 @@
               {% if itemName == 'default' %}
                 {% set parentValue = subvalue.split('||')[0] | trim %}
               {% else %}
-                {% if subvalue.indexOf("http://") == 0 || subvalue.indexOf("https://") == 0 %}
+                {% if subvalue.indexOf('http') == 0 %}
                   {% set respath = subvalue %}
                 {% else %}
                   {% set respath = parentValue + subvalue %}
@@ -67,7 +67,7 @@
                         {% if itemName == 'default' %}
                           {% set parentSubValue = subvalue2.split('||')[0] | trim %}
                         {% else %}
-                          {% if subvalue2.indexOf("http://") == 0 || subvalue2.indexOf("https://") == 0 %}
+                          {% if subvalue2.indexOf('http') == 0 %}
                             {% set respath2 = subvalue2 %}
                           {% else %}
                             {% set respath2 = parentValue + parentSubValue + subvalue2 %}
