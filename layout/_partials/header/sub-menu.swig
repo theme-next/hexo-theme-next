@@ -52,8 +52,8 @@
 
                   {# If current URL is value of parent submenu 'default' path #}
                   {% set paths = page.path.split('/') %}
-                  {% for currentSubParentUrl in paths %}
-                    {% if currentSubParentUrl == subvalue.default.split('||')[0] | trim | replace('/', '', 'g') %}
+                  {% if paths.length > 2 %}
+                    {% if paths[1] == subvalue.default.split('||')[0] | trim | replace('/', '', 'g') %}
 
                       {# Submenu-2 items #}
                       <ul id="sub-menu-2" class="sub-menu menu">
@@ -71,7 +71,7 @@
                       {# End Submenu-2 items #}
 
                     {% endif %}
-                  {% endfor %}
+                  {% endif %}
                   {# End URL & path comparing #}
 
                 {% endif %}
