@@ -33,7 +33,7 @@ $(document).ready(function() {
       sidebarInner.affix('checkPosition');
     }
 
-    $('#sidebar').css({ 'margin-top': headerOffset, 'margin-left': 'initial' });
+    $('#sidebar').css({ 'margin-top': headerOffset, 'margin-left': 'auto' });
   }
 
   function recalculateAffixPosition() {
