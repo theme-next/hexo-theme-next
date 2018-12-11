@@ -19,7 +19,7 @@
     {% endif %}
 
     {% if page.comments %}
-      <script type="text/javascript">
+      <script>
       function renderGitment(){
         var gitment = new {{CommentsClass}}({
             id: window.location.pathname,

@@ -1,5 +1,5 @@
 {% if theme.tencent_analytics %}
-  <script type="text/javascript">
+  <script>
     (function() {
       var hm = document.createElement("script");
       hm.src = "//tajs.qq.com/stats?sId={{ theme.tencent_analytics }}";

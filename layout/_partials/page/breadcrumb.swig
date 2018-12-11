@@ -10,12 +10,12 @@
         {% if current == count - 1 %}
           <li>{{ path | upper }}</li>
         {% else %}
-          <li><a href="{{ link }}{{ url_for(path) }}/">{{ path | upper }}</a></li>
           {% if link == '' %}
             {% set link = '/' + path %}
           {% else %}
             {% set link += '/' + path %}
           {% endif %}
+          <li><a href="{{ url_for(link) }}/">{{ path | upper }}</a></li>
         {% endif %}
       {% endif %}
     {% endfor %}

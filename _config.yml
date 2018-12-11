@@ -95,7 +95,7 @@ footer:
 
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  #custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+  #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>
 
 # Creative Commons 4.0 International License.
 # https://creativecommons.org/share-your-work/licensing-types-examples
@@ -135,6 +135,7 @@ exturl: false
 # Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
+# External url should start with http:// or https:// .
 menu:
   home: / || home
   #about: /about/ || user
@@ -349,13 +350,16 @@ related_posts:
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
   enable: false
-  url: https://github.com/theme-next/theme-next.org/_posts/tree/master/ # Link for view source.
-# url: https://github.com/theme-next/theme-next.org/_posts/edit/master/ # Link for fork & edit.
+  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source.
+  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit.
 
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
+
+# Disable Baidu tranformation on mobile devices.
+disable_baidu_tranformation: false
 
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
@@ -556,7 +560,7 @@ gitment:
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
-# Gitalk 
+# Gitalk
 # Demo: https://gitalk.github.io
 # Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.cn/2018/8/10/gitalk-error/#more
 gitalk:
@@ -1053,7 +1057,7 @@ vendors:
 
   # Internal version: 0.7.3
   # See: https://github.com/emn178/js-md5/
-  # Example: 
+  # Example:
   # md5: https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js
   md5:
 
