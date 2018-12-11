@@ -1,5 +1,5 @@
 <noscript>
-  <style type="text/css">
+  <style>
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
