@@ -6,5 +6,5 @@
 %}
 
 {% for common in js_commons %}
-  <script type="text/javascript" src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
+  <script src="{{ url_for(theme.js) }}/{{ common }}?v={{ version }}"></script>
 {% endfor %}

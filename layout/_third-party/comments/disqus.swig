@@ -5,7 +5,7 @@
   {% endif %}
 
   {% if page.comments %}
-    <script type="text/javascript">
+    <script>
       var disqus_config = function () {
         this.page.url = '{{ page.permalink }}';
         this.page.identifier = '{{ page.path }}';

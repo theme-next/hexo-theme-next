@@ -108,7 +108,7 @@
 
 
 {# Export some HEXO Configurations to Front-End #}
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '{{ theme.root }}',

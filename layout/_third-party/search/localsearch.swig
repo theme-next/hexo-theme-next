@@ -1,5 +1,5 @@
 {% if theme.local_search.enable %}
-  <script type="text/javascript">
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
