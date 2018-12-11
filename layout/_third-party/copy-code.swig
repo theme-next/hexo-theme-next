@@ -71,7 +71,7 @@
         var $b = $(this).find('.copy-btn');
         setTimeout(function () {
           $b.text('{{__("post.copy_button")}}');
-        }, 300)
+        }, 300);
       }).append(e);
     })
   </script>
