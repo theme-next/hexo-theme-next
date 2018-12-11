@@ -344,7 +344,7 @@
     </div>
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {% include 'post-related.swig' with { post: post } %}
+      {% include '../partials/post/post-related.swig' with { post: post } %}
     {% endif %}
 
     {#####################}
@@ -353,7 +353,7 @@
 
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
-        {% include 'wechat-subscriber.swig' %}
+        {% include '../partials/post/wechat-subscriber.swig' %}
       </div>
     {% endif %}
 
@@ -364,7 +364,7 @@
     {% endif %}
     {% if reward_able and (theme.reward.alipay or theme.reward.wechatpay or theme.reward.bitcoin) and not is_index %}
       <div>
-        {% include 'reward.swig' %}
+        {% include '../partials/post/reward.swig' %}
       </div>
     {% endif %}
 
