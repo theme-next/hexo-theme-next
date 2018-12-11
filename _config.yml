@@ -358,6 +358,9 @@ post_edit:
 # Misc Theme Settings
 # ---------------------------------------------------------------
 
+# Disable Baidu tranformation on mobile devices.
+disable_baidu_tranformation: false
+
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
