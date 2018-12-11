@@ -4,5 +4,5 @@
     {% set pangu_uri = theme.vendors.pangu %}
   {% endif %}
   <script src="{{ pangu_uri }}"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
 {% endif %}

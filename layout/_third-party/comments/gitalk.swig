@@ -4,7 +4,7 @@
   {% if theme.vendors.gitalk_js %}
     {% set gitalk_js_url = theme.vendors.gitalk_js %}
   {% endif %}
-  <script type="text/javascript" src="{{ gitalk_js_url }}"></script>
+  <script src="{{ gitalk_js_url }}"></script>
 
   {% set gitalk_css_url = "//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css" %}
   {% if theme.vendors.gitalk_css %}
@@ -16,9 +16,9 @@
   {% if theme.vendors.md5 %}
     {% set md5_url = theme.vendors.md5 %}
   {% endif %}
-  <script type="text/javascript" src="{{ md5_url }}"></script>
-    
-   <script type="text/javascript">
+  <script src="{{ md5_url }}"></script>
+
+   <script>
         var gitalk = new Gitalk({
           clientID: '{{ theme.gitalk.client_id }}',
           clientSecret: '{{ theme.gitalk.client_secret }}',
@@ -28,6 +28,6 @@
           id: md5(location.pathname),
           distractionFreeMode: '{{ theme.gitalk.distraction_free_mode }}'
         })
-        gitalk.render('gitalk-container')           
+        gitalk.render('gitalk-container')
        </script>
 {% endif %}

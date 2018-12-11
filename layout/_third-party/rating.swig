@@ -1,5 +1,5 @@
 {% if theme.rating.enable and (not is_home() and is_post()) %}
-  <script type="text/javascript">
+  <script>
   wpac_init = window.wpac_init || [];
   wpac_init.push({widget: 'Rating', id: {{ theme.rating.id }},
     el: 'wpac-rating',
