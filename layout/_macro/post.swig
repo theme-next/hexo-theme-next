@@ -59,10 +59,7 @@
                 {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: url }) }}
               {% else -%}
                 {{- post.title -}}
-                {% if theme.post_edit.enable -%}
-                  {% set editIcon = '<i class="fa fa-pencil"></i>' -%}
-                  {{ next_url(theme.post_edit.url + post.source.slice(7), editIcon, {class: 'post-edit-link', title: __('post.edit') }) }}
-                {%- endif %}
+                {% include '../_partials/post-edit.swig' %}
               {% endif %}
             {% endif %}
           </{% if theme.seo %}h2{% else %}h1{% endif %}>
@@ -361,9 +358,9 @@
     {% endif %}
 
     {% if page.reward === undefined and theme.reward.enable %}
-      {% set reward_able = true %} 
+      {% set reward_able = true %}
     {% else %}
-      {% set reward_able = page.reward %} 
+      {% set reward_able = page.reward %}
     {% endif %}
     {% if reward_able and (theme.reward.alipay or theme.reward.wechatpay or theme.reward.bitcoin) and not is_index %}
       <div>
@@ -373,7 +370,7 @@
 
     {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
       <div>
-        {% include '../_partials/post-copyright.swig' with { post: post } %}
+        {% include '../_partials/post/post-copyright.swig' with { post: post } %}
       </div>
     {% endif %}
 

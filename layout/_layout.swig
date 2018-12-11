@@ -37,7 +37,7 @@
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
 
-    {{ partial('_third-party/github-banner.swig', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -80,7 +80,7 @@
         </span>
       </div>
     {% endif %}
-	
+
     {% if theme.baidushare and theme.baidushare.type === "slide" %}
       <div>
         {% include '_partials/share/baidushare.swig' %}
