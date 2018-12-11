@@ -20,6 +20,5 @@
 
     .use-motion .logo-line-before i { left: initial; }
     .use-motion .logo-line-after i { right: initial; }
-    }
   </style>
 </noscript>
