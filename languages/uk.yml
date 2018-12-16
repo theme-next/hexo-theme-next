@@ -59,40 +59,40 @@ counter:
     other: "%d категорій всього."
   archive_posts:
     zero: Немає записів.
-    one: 1 post.
-    other: "%d posts in total."
+    one: 1 запис.
+    other: "%d записів всього."
 state:
-  posts: posts
-  pages: pages
-  tags: tags
-  categories: categories
+  posts: Архів
+  pages: Сторінки
+  tags: Теги
+  categories: Категорії
 search:
-  placeholder: Searching...
+  placeholder: Пошук...
 cheers:
-  um: Um..
-  ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  um: Ем..
+  ok: ОК
+  nice: Не погано
+  good: Добре
+  great: Чудово
+  excellent: Прекрасно
+keep_on: Продовжую писати.
 symbol:
   comma: ", "
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
+  donate: Донат
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+gitmentbutton: Відкрити Gitment коментарі
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: Показати/приховати меню
+  prev_page: Попередня сторінка
+  next_page: Наступна сторінка
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: К-сть символів в статті
+  count_total: Загальна к-сть символів
+  time: Час читання
+  time_total: Загальний час читання
+  time_minutes: хв.
