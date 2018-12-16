@@ -1011,7 +1011,7 @@ vendors:
 
   # Internal version: 3.3.0
   # See: https://github.com/ethantw/Han
-  Han:
+  han:
 
   # Internal version: 3.3.0
   # See: https://github.com/vinta/pangu.js
