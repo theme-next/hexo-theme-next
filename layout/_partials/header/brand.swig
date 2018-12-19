@@ -23,9 +23,9 @@
       {% endif %}
     {% endif %}
     {% if theme.custom_logo.enabled and theme.custom_logo.image and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
-      <div class="custom-logo">
+      <a>
         <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ title }}"/>
-      </div>
+      </a>
     {% endif %}
   </div>
 

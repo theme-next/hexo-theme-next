@@ -241,17 +241,21 @@ $(document).ready(function() {
         };
       }
 
+      function pushImageToSequence() {
+        sequence.push({
+          e: $image,
+          p: {opacity: 1, top: 0},
+          o: {duration: 200}
+        });
+      }
+
       NexT.utils.isMist() && hasElement([$logoLineTop, $logoLineBottom])
       && sequence.push(
         getMistLineSettings($logoLineTop, '100%'),
         getMistLineSettings($logoLineBottom, '-100%')
       );
 
-      NexT.utils.isMist() && hasElement($image) && sequence.push({
-        e: $image,
-        p: {opacity: 1, top: 0},
-        o: {duration: 200}
-      });
+      NexT.utils.isMuse() && hasElement($image) && pushImageToSequence();
 
       hasElement($title) && sequence.push({
         e: $title,
@@ -265,11 +269,7 @@ $(document).ready(function() {
         o: {duration: 200}
       });
 
-      (NexT.utils.isPisces() || NexT.utils.isGemini()) && hasElement($image) && sequence.push({
-        e: $image,
-        p: {opacity: 1, top: 0},
-        o: {duration: 200}
-      });
+      (NexT.utils.isPisces() || NexT.utils.isGemini()) && hasElement($image) && pushImageToSequence();
 
       if (CONFIG.motion.async) {
         integrator.next();
