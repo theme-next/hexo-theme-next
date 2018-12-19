@@ -206,6 +206,7 @@ $(document).ready(function() {
     logo: function(integrator) {
       var sequence = [];
       var $brand = $('.brand');
+      var $image = $('.custom-logo-image');
       var $title = $('.site-title');
       var $subtitle = $('.site-subtitle');
       var $logoLineTop = $('.logo-line-before i');
@@ -246,14 +247,26 @@ $(document).ready(function() {
         getMistLineSettings($logoLineBottom, '-100%')
       );
 
+      NexT.utils.isMist() && hasElement($image) && sequence.push({
+        e: $image,
+        p: {opacity: 1, top: 0},
+        o: {duration: 200}
+      });
+
       hasElement($title) && sequence.push({
         e: $title,
         p: {opacity: 1, top: 0},
-        o: { duration: 200 }
+        o: {duration: 200}
       });
 
       hasElement($subtitle) && sequence.push({
         e: $subtitle,
+        p: {opacity: 1, top: 0},
+        o: {duration: 200}
+      });
+
+      (NexT.utils.isPisces() || NexT.utils.isGemini()) && hasElement($image) && sequence.push({
+        e: $image,
         p: {opacity: 1, top: 0},
         o: {duration: 200}
       });
