@@ -157,11 +157,12 @@
         <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
-            {% if page.toc_number === undefined %}
-              {% set toc = toc(page.content, { "class": "nav", list_number: theme.toc.number }) %}
-            {% else %}
-              {% set toc = toc(page.content, { "class": "nav", list_number: page.toc_number }) %}
+            {% set next_toc_number = theme.toc.number %}
+            {% if page.toc_number !== undefined %}
+              {% set next_toc_number = page.toc_number %}
             {% endif %}
+            {% set next_toc_max_depth = page.toc_max_depth|default(theme.toc.max_depth)|default(6) %}
+            {% set toc = toc(page.content, { "class": "nav", list_number: next_toc_number, max_depth: next_toc_max_depth }) %}
 
             {% if toc.length <= 1 %}
               <p class="post-toc-empty">{{ __('post.toc_empty') }}</p>
