@@ -240,6 +240,10 @@ NexT.utils = NexT.$u = {
     $('.sidebar-toggle').trigger('click');
   },
 
+  isMuse: function() {
+    return CONFIG.scheme === 'Muse';
+  },
+
   isMist: function() {
     return CONFIG.scheme === 'Mist';
   },
