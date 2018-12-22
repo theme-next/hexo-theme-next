@@ -29,8 +29,8 @@
 
 {% if theme.han %}
   {% set Han_uri = url_for(theme.vendors._internal + '/Han/dist/han.min.css?v=3.3') %}
-  {% if theme.vendors.Han %}
-    {% set Han_uri = theme.vendors.Han %}
+  {% if theme.vendors.han %}
+    {% set Han_uri = theme.vendors.han %}
   {% endif %}
   <link rel="stylesheet" media="all" href="{{ Han_uri }}">
 {% endif %}
