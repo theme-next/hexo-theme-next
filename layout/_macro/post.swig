@@ -56,7 +56,7 @@
                   </span>
                 {% endif %}
                 {# Need to delete maybe? #}
-                {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: url }) }}
+                {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
               {% else -%}
                 {{- post.title -}}
                 {% include '../_partials/post-edit.swig' %}
