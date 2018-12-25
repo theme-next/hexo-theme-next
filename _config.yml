@@ -151,6 +151,7 @@ menu_settings:
   icons: true
   badges: false
 
+
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -634,7 +635,7 @@ needmoreshare2:
 
 # Application Insights
 # See https://azure.microsoft.com/en-us/services/application-insights
-# application_insights:
+#application_insights:
 
 # Post widgets & FB/VK comments settings.
 # ---------------------------------------------------------------
@@ -706,13 +707,11 @@ busuanzi_count:
   post_views: true
   post_views_icon: eye
 
-
 # Tencent analytics ID
 #tencent_analytics:
 
 # Tencent MTA ID
 #tencent_mta:
-
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: false
