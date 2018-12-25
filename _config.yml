@@ -151,6 +151,7 @@ menu_settings:
   icons: true
   badges: false
 
+
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -252,13 +253,10 @@ sidebar:
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
-
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: false
-
   # Scroll percent label in b2t button.
   scrollpercent: false
-
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
 
@@ -370,8 +368,8 @@ android_chrome_color: "#222"
 # Custom Logo.
 # Do not support Scheme Mist currently.
 # Options:
-#   enabled: [true/false] - Replace with specific image
-#   image: url-of-image   - Images's url
+#   enabled: If true, will enable custom logo
+#   image: Images's url, replace it with specific image
 custom_logo:
   enabled: false
   image:
@@ -524,7 +522,6 @@ changyan:
   appid:
   appkey:
 
-
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
@@ -634,7 +631,7 @@ needmoreshare2:
 
 # Application Insights
 # See https://azure.microsoft.com/en-us/services/application-insights
-# application_insights:
+#application_insights:
 
 # Post widgets & FB/VK comments settings.
 # ---------------------------------------------------------------
@@ -706,13 +703,11 @@ busuanzi_count:
   post_views: true
   post_views_icon: eye
 
-
 # Tencent analytics ID
 #tencent_analytics:
 
 # Tencent MTA ID
 #tencent_mta:
-
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: false
@@ -877,9 +872,8 @@ canvas_lines: false
 # canvas_sphere
 canvas_sphere: false
 
-# Only fit scheme Pisces
-# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
 # Canvas-ribbon
+# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
 # size: The width of the ribbon.
 # alpha: The transparency of the ribbon.
 # zIndex: The display level of the ribbon.
@@ -1040,15 +1034,15 @@ vendors:
   # Internal version: 1.4.0
   # See: https://github.com/gitalk/gitalk
   # Example:
-  # gitalk_js: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js
-  # gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css
+  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js
+  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css
   gitalk_js:
   gitalk_css:
 
   # Internal version: 0.7.3
   # See: https://github.com/emn178/js-md5
   # Example:
-  # md5: https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js
+  # md5: //cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js
   md5:
 
 # Assets
