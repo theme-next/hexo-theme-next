@@ -100,7 +100,7 @@
                 content = unescapeHtml(content);
                 {% endif %}
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = "{{ config.url }}" + decodeURIComponent(data.url);
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
