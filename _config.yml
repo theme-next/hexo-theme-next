@@ -281,7 +281,7 @@ auto_excerpt:
   length: 150
 
 # Read more button
-# If true, the read more button would be displayed in excerpt section
+# If true, the read more button would be displayed in excerpt section.
 read_more_btn: true
 
 # Post meta display settings
@@ -290,7 +290,7 @@ post_meta:
   created_at: true
   updated_at:
     enabled: true
-    # If true, show updated date label only if `updated date` different from 'created date' (post edited in another day than was created).
+    # If true, show updated date label only if `updated date` different from `created date` (post edited in another day than was created).
     # And if post will edited in same day as created, edited time will show in popup title under created time label.
     # If false show anyway, but if post edited in same day, show only edited time.
     another_day: true
@@ -448,7 +448,7 @@ math:
   enable: false
 
   # Default(true) will load mathjax/katex script on demand
-  # That is it only render those page who has 'mathjax: true' in Front Matter.
+  # That is it only render those page who has `mathjax: true` in Front Matter.
   # If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.
   per_page: true
 
@@ -478,7 +478,7 @@ pdf:
   enable: false
 
   # Default(true) will load PDFObject/PDF.js script on demand
-  # That is it only render those page who has 'pdf: true' in Front Matter.
+  # That is it only render those page who has `pdf: true` in Front Matter.
   # If you set it to false, it will load PDFObject/PDF.js srcipt EVERY PAGE.
   per_page: true
 
@@ -586,10 +586,9 @@ gitalk:
 # iconStyle: default | box
 # boxForm: horizontal | vertical
 # position: top / middle / bottom + Left / Center / Right
-# networks: Weibo,Wechat,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,
-#           Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,Slashdot,
-#           Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,
-#           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
+# networks:
+# Weibo,Wechat,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,
+# Slashdot,Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
   enable: false
   postbottom:
