@@ -9,14 +9,14 @@
     {% if theme.needmoreshare2.postbottom.enable %}
       pbOptions = {};
       {% for k,v in theme.needmoreshare2.postbottom.options %}
-          pbOptions.{{ k }} = "{{ v }}";
+        pbOptions.{{ k }} = "{{ v }}";
       {% endfor %}
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     {% endif %}
     {% if theme.needmoreshare2.float.enable %}
       flOptions = {};
       {% for k,v in theme.needmoreshare2.float.options %}
-          flOptions.{{ k }} = "{{ v }}";
+        flOptions.{{ k }} = "{{ v }}";
       {% endfor %}
       new needShareButton('#needsharebutton-float', flOptions);
     {% endif %}

@@ -1023,11 +1023,17 @@ vendors:
   # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
   reading_progress:
 
-  # valine comment
+  # Internal version: 3.11.1
+  # See: https://www.npmjs.com/package/leancloud-storage
+  # Example:
+  # leancloud: //cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js
+  leancloud:
+
+  # Internal version: 1.3.4
   # See: https://github.com/xCss/Valine
   # Example:
-  # valine: //cdn.jsdelivr.net/npm/valine@1.3.3/dist/Valine.min.js
-  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.3/Valine.min.js
+  # valine: //cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js
+  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
   valine:
 
   # Internal version: 1.4.0
