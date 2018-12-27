@@ -11,31 +11,29 @@
 {% block content %}
   <section id="posts" class="posts-expand">
     {% for post in page.posts %}
-      {% set hide = false %}
-
-      {% if theme.hide.hide_post %}
-        {% if post.hide %}
+      {% if is_home() && page.current === 1 %}
+        {% set hide = false %}
+        {% if theme.hide.hide_post && post.hide %}
           {% set hide = true %}
+        {% elif theme.hide.hide_categories.enable %}
+          {% for cat in post.categories %}
+            {% if !hide %}
+              {% for categorie in cat %}
+                {% if !hide %}
+                  {% for item in theme.hide.hide_categories.categories %}
+                    {% if !hide && item == categorie %}
+                      {% set hide = true %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
         {% endif %}
-      {% endif %}
-
-      {% if theme.hide.hide_categories.enable && !hide %}
-        {% for cat in post.categories %}
-          {% if !hide %}
-            {% for categorie in cat %}
-              {% if !hide %}
-                {% for item in theme.hide.hide_categories.categories %}
-                  {% if !hide && item == categorie %}
-                    {% set hide = true %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-
-      {% if !hide %}
+        {% if !hide %}
+          {{ post_template.render(post, true) }}
+        {% endif %}
+      {% else %}
         {{ post_template.render(post, true) }}
       {% endif %}
     {% endfor %}
