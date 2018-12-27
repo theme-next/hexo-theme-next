@@ -8,6 +8,8 @@
     #}{{ __('title.category') + page_title_suffix }}{#
   #}{% elif page.type === "tags" and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
+  #}{% elif page.type === "schedule" and not page.title %}{#
+    #}{{ __('title.schedule') + page_title_suffix }}{#
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
   #}{% endif %}{#
@@ -22,7 +24,7 @@
     {### PAGE BLOCK ###}
     {##################}
     <div class="post-block page">
-      {% include '_partials/page-header.swig' %}
+      {% include '_partials/page/page-header.swig' %}
       {#################}
       {### PAGE BODY ###}
       {#################}
@@ -58,6 +60,8 @@
               {{ list_categories() }}
             </div>
           </div>
+        {% elif page.type === 'schedule' %}
+          {% include 'schedule.swig' %}
         {% else %}
           {{ page.content }}
         {% endif %}
@@ -66,7 +70,7 @@
       {### END PAGE BODY ###}
       {#####################}
     </div>
-    {% include '_partials/breadcrumb.swig' %}
+    {% include '_partials/page/breadcrumb.swig' %}
     {######################}
     {### END PAGE BLOCK ###}
     {######################}

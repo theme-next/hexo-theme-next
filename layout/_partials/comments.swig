@@ -18,10 +18,9 @@
   {% elseif theme.disqus.enable %}
     <div class="comments" id="comments">
       <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+        <noscript>{#
+        #}Please enable JavaScript to view the comments powered by Disqus.{#
+      #}</noscript>
       </div>
     </div>
 
@@ -48,6 +47,11 @@
   {% elseif theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
     <div class="comments" id="comments">
     </div>
+
+  {% elseif theme.gitalk.enable %}
+    <div id="gitalk-container">
+    </div>
+    
   {% endif %}
 
 {% endif %}

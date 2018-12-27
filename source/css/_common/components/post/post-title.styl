@@ -1,6 +1,6 @@
 .posts-expand .post-title {
+  word-wrap();
   text-align: center;
-  word-break: break-word;
   font-weight: $posts-expand-title-font-weight;
 
   if hexo-config('post_edit.enable') {
@@ -47,5 +47,8 @@
     transform: scaleX(1);
   }
 
-  .fa { font-size: 16px; }
+  .fa {
+    font-size: 20px;
+    margin-left: 5px;
+  }
 }

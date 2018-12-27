@@ -29,17 +29,16 @@
 
 {% if theme.han %}
   {% set Han_uri = url_for(theme.vendors._internal + '/Han/dist/han.min.css?v=3.3') %}
-  {% if theme.vendors.Han %}
-    {% set Han_uri = theme.vendors.Han %}
+  {% if theme.vendors.han %}
+    {% set Han_uri = theme.vendors.han %}
   {% endif %}
   <link rel="stylesheet" media="all" href="{{ Han_uri }}">
 {% endif %}
 
-
-{# #238, Disable Baidu tranformation #}
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
+{% if theme.disable_baidu_tranformation %}
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+{% endif %}
 
 {% if theme.google_site_verification %}
   <meta name="google-site-verification" content="{{ theme.google_site_verification }}" />
@@ -109,7 +108,7 @@
 
 
 {# Export some HEXO Configurations to Front-End #}
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '{{ theme.root }}',

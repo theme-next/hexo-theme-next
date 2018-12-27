@@ -19,7 +19,9 @@
   padding: 0;
   background: none;
 
-  &:hover { color: white; }
+  &:hover {
+   color: white;
+  }
 }
 
 .site-subtitle {
@@ -27,4 +29,16 @@
   font-weight: initial;
 }
 
-.site-search form { display: none; }
+.custom-logo-image {
+  margin-top: 20px;
+  +tablet() {
+    display: none;
+  }
+  +mobile() {
+    display: none;
+  }
+}
+
+.site-search form {
+  display: none;
+}

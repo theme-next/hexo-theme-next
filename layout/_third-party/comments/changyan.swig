@@ -2,7 +2,7 @@
   {% if is_home() %}
     <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{theme.changyan.appid}}"></script>
   {% else %}
-    <script type="text/javascript">
+    <script>
     (function(){
       var appid = '{{theme.changyan.appid}}';
       var conf = '{{theme.changyan.appkey}}';
@@ -13,6 +13,6 @@
       }
     })();
     </script>
-    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+    <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
   {% endif %}
 {% endif %}

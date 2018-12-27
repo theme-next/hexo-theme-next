@@ -30,28 +30,39 @@ h1, h2, h3, h4, h5, h6 { margin: 20px 0 15px; }
 for headline in (1..6) {
   h{headline} {
     font-size: $font-size-headings-base - $font-size-headings-step * headline;
+    code {
+      font-size: $font-size-headings-base - $font-size-headings-step * headline;
+    }
   }
 
   +mobile() {
     h{headline} {
       font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
+      code {
+        font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
+      }
     }
   }
 }
 
 p { margin: 0 0 20px 0; }
 
-a {
+a, span.exturl {
+  word-wrap();
+  // Remove the gray background color from active links in IE 10.
+  background-color: transparent;
   color: $link-color;
   text-decoration: none;
   outline: none;
-  border-bottom: 1px solid $grey-dark;
-  word-wrap: break-word;
+  border-bottom: 1px solid $link-decoration-color;
 
   &:hover {
     color: $link-hover-color;
     border-bottom-color: $link-decoration-hover-color;
   }
+
+  // For spanned external links.
+  cursor: pointer;
 }
 
 blockquote {

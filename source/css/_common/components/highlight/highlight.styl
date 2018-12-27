@@ -17,8 +17,8 @@ $code-block {
 pre, code { font-family: $code-font-family; }
 
 code {
+  word-wrap();
   padding: 2px 4px;
-  word-wrap: break-word;
   color: $code-foreground;
   background: $code-background;
   border-radius: $code-border-radius;
@@ -38,8 +38,8 @@ pre {
 
 .highlight {
   @extend $code-block;
-  // Read values from NexT config and set they as local variables to use as string variables (in any CSS section). 
-  hexo-config('codeblock.border_radius') is a 'unit' ? (cbradius = unit(hexo-config('codeblock.border_radius'), px)) : (cbradius = 1px) 
+  // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
+  hexo-config('codeblock.border_radius') is a 'unit' ? (cbradius = unit(hexo-config('codeblock.border_radius'), px)) : (cbradius = 1px)
   border-radius: cbradius;
 
   pre {
@@ -122,6 +122,7 @@ pre {
   .variable
   .attribute
   .tag
+  .name
   .regexp
   .ruby .constant
   .xml .tag .title
@@ -137,6 +138,7 @@ pre {
   .number
   .preprocessor
   .built_in
+  .builtin-name
   .literal
   .params
   .constant
@@ -147,13 +149,13 @@ pre {
   .ruby .class .title
   .css .rules .attribute
   .string
+  .symbol
   .value
   .inheritance
   .header
   .ruby .symbol
   .xml .cdata
   .special
-  .number
   .formula {
     color: $highlight-green;
   }
