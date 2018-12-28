@@ -32,7 +32,7 @@
             {% if theme.avatar.url %}
               <img class="site-author-image" itemprop="image"
                 src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
-                alt="{{ author }}" />
+                alt="{{ author }}"/>
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ author }}</p>
               <p class="site-description motion-element" itemprop="description">{#
@@ -121,7 +121,7 @@
                 {% set ccType = 'licenses/' + theme.creative_commons.license + '/4.0/' %}
               {% endif %}
               {% set ccURL = 'https://creativecommons.org/' + ccType %}
-              {% set ccImage = '<img src="' + url_for(theme.images) + '/cc-' + theme.creative_commons.license + '.svg" alt="Creative Commons" />' %}
+              {% set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons"/>' %}
               {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
              </div>
           {% endif %}

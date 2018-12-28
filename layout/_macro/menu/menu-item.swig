@@ -10,7 +10,7 @@
     {% set menuText = __('menu.' + name ) | replace('menu.', '') %}
     {% set menuURL = itemURL %}
     {% if theme.menu_settings.icons %}
-      {% set menuIcon = '<i class="menu-item-icon fa fa-fw fa-' + value.split('||')[1] | trim | default('question-circle') + '"></i> <br />' %}
+      {% set menuIcon = '<i class="menu-item-icon fa fa-fw fa-' + value.split('||')[1] | trim | default('question-circle') + '"></i> <br/>' %}
     {% endif %}
 
     {% if theme.menu_settings.badges %}

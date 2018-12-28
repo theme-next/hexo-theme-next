@@ -55,7 +55,11 @@
 {% endif %}
 
 {% if theme.canvas_ribbon.enable %}
-  {% set js_vendors.canvas_ribbon = 'canvas-ribbon/canvas-ribbon.js' %}
+  {% set canvas_ribbon_uri = url_for(theme.vendors._internal + '/canvas-ribbon/canvas-ribbon.js') %}
+  {% if theme.vendors.canvas_ribbon %}
+    {% set canvas_ribbon_uri = theme.vendors.canvas_ribbon %}
+  {% endif %}
+  <script id="ribbon" size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
 {% endif %}
 
 {% if theme.reading_progress.enable %}
@@ -63,10 +67,6 @@
 {% endif %}
 
 {% for name, internal in js_vendors %}
-  {% set internal_script = url_for(theme.vendors._internal) + '/' + internal %}
-  {% if name == 'canvas_ribbon' %}
-    <script id="ribbon" size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}"  zIndex="{{theme.canvas_ribbon.zIndex }}" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
-  {% else %}
-    <script src="{{ theme.vendors[name] | default(internal_script) }}"></script>
-  {% endif %}
+  {% set internal_script = url_for(theme.vendors._internal + '/' + internal) %}
+  <script src="{{ theme.vendors[name] | default(internal_script) }}"></script>
 {% endfor %}
