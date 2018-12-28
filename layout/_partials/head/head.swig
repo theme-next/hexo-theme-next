@@ -8,7 +8,7 @@
   {% if theme.vendors.needmoreshare2_css %}
     {% set needmoreshare2_css = theme.vendors.needmoreshare2_css %}
   {% endif %}
-  <link rel="stylesheet" href="{{ needmoreshare2_css }}">
+  <link rel="stylesheet" href="{{ needmoreshare2_css }}"/>
 {% endif %}
 
 {% if theme.pace %}
@@ -21,7 +21,7 @@
       {% set pace_css_uri = theme.vendors.pace_css %}
     {% endif %}
   <script src="{{ pace_js_uri }}"></script>
-  <link href="{{ pace_css_uri }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ pace_css_uri }}"/>
 {% endif %}
 
 {% if theme.han %}
@@ -29,7 +29,7 @@
   {% if theme.vendors.han %}
     {% set Han_uri = theme.vendors.han %}
   {% endif %}
-  <link rel="stylesheet" media="all" href="{{ Han_uri }}">
+  <link rel="stylesheet" href="{{ Han_uri }}"/>
 {% endif %}
 
 {% if theme.disable_baidu_tranformation %}
@@ -62,7 +62,7 @@
   {% if theme.vendors.fancybox_css %}
     {% set fancybox_css_uri = theme.vendors.fancybox_css %}
   {% endif %}
-  <link href="{{ fancybox_css_uri }}" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="{{ fancybox_css_uri }}"/>
 {% endif %}
 
 {% include "./external-fonts.swig" %}
@@ -71,9 +71,9 @@
 {% if theme.vendors.fontawesome %}
   {% set font_awesome_uri = theme.vendors.fontawesome %}
 {% endif %}
-<link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="{{ font_awesome_uri }}"/>
 
-<link href="{{ url_for(theme.css) }}/main.css?v={{ version }}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}"/>
 
 {% if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
