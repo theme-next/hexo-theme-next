@@ -119,7 +119,7 @@ NexT.utils = NexT.$u = {
     });
 
     $top.on('click', function() {
-      $.isFunction($('html').velocity) ? $('body').velocity('scroll') : $("html, body").animate({ scrollTop: 0 });
+      $.isFunction($('html').velocity) ? $('body').velocity('scroll') : $('html, body').animate({ scrollTop: 0 });
     });
   },
 
