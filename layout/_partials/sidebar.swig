@@ -1,4 +1,3 @@
-{% macro render(is_post) %}
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -13,7 +12,7 @@
     {% endif %}
     <div class="sidebar-inner">
 
-      {% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
+      {% set display_toc = is_post and theme.toc.enable %}
 
       {% if display_toc and toc(page.content).length > 1 %}
         <ul class="sidebar-nav motion-element">
@@ -84,6 +83,7 @@
                   {% if hasTagsPage %}</a>{% endif %}
                 </div>
               {% endif %}
+
             </nav>
           {% endif %}
 
@@ -186,4 +186,3 @@
 
     </div>
   </aside>
-{% endmacro %}

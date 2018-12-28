@@ -94,30 +94,31 @@
     {% endif %}
   </div>
 
-  {% include '_scripts/vendors.swig' %}
-  {% include '_scripts/commons.swig' %}
+  {{ partial('_scripts/vendors.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_scripts/commons.swig', {}, {cache: theme.cache.enable}) }}
 
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
-  {% include scheme_script %}
+  {{ partial(scheme_script, {}, {cache: theme.cache.enable}) }}
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/boostrap.swig' %}
+  {{ partial('_scripts/boostrap.swig', {}, {cache: theme.cache.enable}) }}
 
-  {% include '_third-party/comments/index.swig' %}
-  {% include '_third-party/search/index.swig' %}
-  {% include '_third-party/analytics/lean-analytics.swig' %}
-  {% include '_third-party/analytics/firestore.swig' %}
-  {% include '_third-party/seo/baidu-push.swig' %}
-  {% include '_third-party/schedule.swig' %}
-  {% include '_third-party/math/index.swig' %}
-  {% include '_third-party/needsharebutton.swig' %}
-  {% include '_third-party/rating.swig' %}
-  {% include '_third-party/pangu.swig' %}
-  {% include '_third-party/scroll-cookie.swig' %}
-  {% include '_third-party/exturl.swig' %}
-  {% include '_third-party/bookmark.swig' %}
-  {% include '_third-party/copy-code.swig' %}
-  {% include '_third-party/pdf.swig' %}
+  {{ partial('_third-party/comments/index.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/search/index.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/analytics/lean-analytics.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/analytics/firestore.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/seo/baidu-push.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/schedule.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/math/index.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/needsharebutton.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/rating.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/pangu.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/scroll-cookie.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/exturl.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/bookmark.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/copy-code.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/pdf.swig', {}, {cache: theme.cache.enable}) }}
+
 </body>
 </html>

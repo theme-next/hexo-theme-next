@@ -1,6 +1,5 @@
 {% extends '_layout.swig' %}
 {% import '_macro/post-collapse.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
@@ -60,5 +59,5 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ sidebar_template.render(false) }}
+{{ partial('_partials/sidebar.swig', {}, {cache: theme.cache.enable}) }}
 {% endblock %}
