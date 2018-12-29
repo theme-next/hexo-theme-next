@@ -15,6 +15,6 @@
       {% include 'mathjax.swig' %}
     {% elif theme.math.engine == 'katex' %}
       {% include 'katex.swig' %}
-   {% endif %}
+    {% endif %}
   {% endif %}
 {% endif %}
