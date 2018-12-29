@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block sidebar %}
-{{ partial('_partials/sidebar.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_partials/sidebar.swig', {}, {cache: theme.cache.enable}) }}
 {% endblock %}
 
 {% block script_extra %}
