@@ -23,7 +23,7 @@ function fullImage(args) {
   alt.length > 0 && image.push('alt="' + alt.trim() + '"');
   title.length > 0 && image.push('title="' + title.trim() + '"');
   width.length > 0 && image.push('style="max-width: none; width:' + width + ';"');
-  image.push('/><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>');
+  image.push('/><meta itemprop="width" content="auto"/><meta itemprop="height" content="auto"/></span>');
 
   return image.join(' ');
 }
