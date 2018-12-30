@@ -79,7 +79,6 @@ NexT.utils = NexT.$u = {
         }
       }
     });
-
   },
 
   registerESCKeyEvent: function() {
@@ -260,14 +259,13 @@ NexT.utils = NexT.$u = {
     var $div = $('<div />').addClass('scrollbar-measure').prependTo('body');
     var div = $div[0];
     var scrollbarWidth = div.offsetWidth - div.clientWidth;
-
     $div.remove();
 
     return scrollbarWidth;
   },
 
   getContentVisibilityHeight: function() {
-    var docHeight = $('#content').height();
+    var docHeight = $('.container').height();
     var winHeight = $(window).height();
     var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : $(document).height() - winHeight;
     return contentVisibilityHeight;
@@ -289,7 +287,6 @@ NexT.utils = NexT.$u = {
       : (sidebarPadding * 2) + (sidebarNavHeight / 2);
     return sidebarSchemePadding;
   }
-
 };
 
 $(document).ready(function() {
@@ -329,7 +326,5 @@ $(document).ready(function() {
     // Initialize Sidebar & TOC Height.
     updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
   }
-
   initSidebarDimension();
-
 });
