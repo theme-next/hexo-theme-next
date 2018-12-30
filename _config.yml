@@ -275,7 +275,7 @@ save_scroll: false
 excerpt_description: true
 
 # Automatically Excerpt. Not recommend.
-# Please use <!-- more --> in the post to control excerpt accurately.
+# Use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: false
   length: 150
@@ -527,9 +527,9 @@ changyan:
   appid:
   appkey:
 
-# Valine.
+# Valine
 # You can get your appid and appkey from https://leancloud.cn
-# more info please open https://valine.js.org
+# More info available at https://valine.js.org
 valine:
   enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
   appid:  # your leancloud application appid
@@ -634,7 +634,7 @@ needmoreshare2:
 #cnzz_siteid:
 
 # Application Insights
-# See https://azure.microsoft.com/en-us/services/application-insights
+# See: https://azure.microsoft.com/en-us/services/application-insights
 #application_insights:
 
 # Post widgets & FB/VK comments settings.
@@ -657,7 +657,7 @@ facebook_comments_plugin:
   width:        100%  # default width is 550px
   scheme:       light # default scheme is light (light or dark)
 
-# VKontakte API Support.
+# VKontakte API Support
 # To get your AppID visit https://vk.com/editapp?act=create
 vkontakte_api:
   enable:       false
@@ -681,14 +681,14 @@ leancloud_visitors:
   app_id: #<app_id>
   app_key: #<app_key>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-  # If you don't care about security in lc counter and just want to use it directly
-  # (without hexo-leancloud-counter-security plugin), set the `security` to `false`.
+  # If you don't care about security in leancloud counter and just want to use it directly
+  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
   security: true
   betterPerformance: false
 
 # Another tool to show number of visitors to each article.
-# visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
-# visit https://firebase.google.com/docs/firestore/ to get more information about firestore
+# Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
+# Visit https://firebase.google.com/docs/firestore/ to get more information about firestore.
 firestore:
   enable: false
   collection: articles #required, a string collection name to access firestore database
@@ -713,17 +713,15 @@ busuanzi_count:
 # Tencent MTA ID
 #tencent_mta:
 
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: false
 
 # Google Calendar
-# Share your recent schedule to others via calendar page
-#
-# API Documentation:
-# https://developers.google.com/google-apps/calendar/v3/reference/events/list
+# Share your recent schedule to others via calendar page.
+# API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
 # Enabled APIs and services
 # api_key: https://console.developers.google.com
-# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083?hl=en
+# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
 calendar:
   enable: false
   calendar_id: <required> # Your Google account E-Mail
@@ -731,7 +729,6 @@ calendar:
   orderBy: startTime
   offsetMax: 24 # Time Range
   offsetMin: 4 # Time Range
-  timeZone:
   showDeleted: false
   singleEvents: true
   maxResults: 250
@@ -775,7 +772,7 @@ bookmark:
 # Tags Settings
 # ---------------------------------------------------------------
 
-# Note tag (bs-callout).
+# Note tag (bs-callout)
 note:
   # Note tag style values:
   #  - simple    bs-callout old alert style. Default.
@@ -789,10 +786,10 @@ note:
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0
 
-# Label tag.
+# Label tag
 label: true
 
-# Tabs tag.
+# Tabs tag
 tabs:
   enable: true
   transition:
@@ -833,9 +830,9 @@ motion:
     sidebar: slideUpIn
 
 # Fancybox. There is support for old version 2 and new version 3.
-# Please, choose only any one variant, do not need to install both.
-# For install 2.x: https://github.com/theme-next/theme-next-fancybox
-# For install 3.x: https://github.com/theme-next/theme-next-fancybox3
+# Choose only any one variant, do not need to install both.
+# To install 2.x: https://github.com/theme-next/theme-next-fancybox
+# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
 fancybox: false
 
 # Added switch option for separated repo in 6.0.0.
