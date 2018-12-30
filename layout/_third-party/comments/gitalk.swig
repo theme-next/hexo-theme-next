@@ -10,7 +10,7 @@
   {% if theme.vendors.gitalk_css %}
     {% set gitalk_css_url = theme.vendors.gitalk_css %}
   {% endif %}
-  <link rel="stylesheet" href="{{ gitalk_css_url }}">
+  <link rel="stylesheet" href="{{ gitalk_css_url }}"/>
 
   {% set md5_url = "//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js" %}
   {% if theme.vendors.md5 %}
