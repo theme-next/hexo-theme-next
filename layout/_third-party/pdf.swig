@@ -29,7 +29,7 @@
       if (!href) return;
       if (href.endsWith(".pdf") || href.endsWith(".pdf/")) {
         var id = "pdf" + Math.floor(Math.random() * 10000);
-        $(this).after("<div id='" + id + "'></div>").remove();
+        $(this).after(`<div id="${id}"></div>`).remove();
         PDFObject.embed(href, "#" + id, options);
       }
     });

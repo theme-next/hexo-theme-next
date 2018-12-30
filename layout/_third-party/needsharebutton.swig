@@ -4,7 +4,6 @@
     {% set needmoreshare2_js = theme.vendors.needmoreshare2_js %}
   {% endif %}
   <script src="{{ needmoreshare2_js }}"></script>
-
   <script>
     {% if theme.needmoreshare2.postbottom.enable %}
       pbOptions = {};
