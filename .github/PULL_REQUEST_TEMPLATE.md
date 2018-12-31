@@ -14,10 +14,10 @@
 **Please check if your PR fulfills the following requirements:**
 
 - [ ] The commit message follows [our guidelines](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
-- [ ] Tests for the changes have been added (for bug fixes / features).
+- [ ] Tests for the changes was maked (for bug fixes / features).
    - [ ] Muse | Mist have been tested.
    - [ ] Pisces | Gemini have been tested.
-- [ ] Docs have been added / updated (for bug fixes / features).
+- [ ] Docs in [NexT website](https://theme-next.org/docs/) have been added / updated (for new features).
 
 ## PR Type
 **What kind of change does this PR introduce?**  <!-- (Check one with "x") -->

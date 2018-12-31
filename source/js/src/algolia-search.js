@@ -40,11 +40,9 @@ $(document).ready(function() {
           return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
         },
         empty: function(data) {
-          return (
-            '<div id="algolia-hits-empty">'
-          + algoliaSettings.labels.hits_empty.replace(/\$\{query}/, data.query)
-          + '</div>'
-          );
+          return `<div id="algolia-hits-empty">
+              ${algoliaSettings.labels.hits_empty.replace(/\$\{query}/, data.query)}
+            </div>`;
         }
       },
       cssClasses: {
@@ -59,8 +57,7 @@ $(document).ready(function() {
           var stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
-          return
-            `${stats}
+          return `${stats}
             <span class="algolia-powered">
               <img src="${CONFIG.root}images/algolia_logo.svg" alt="Algolia"/>
             </span>

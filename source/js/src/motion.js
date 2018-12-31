@@ -158,8 +158,7 @@ $(document).ready(function() {
           self.sidebarEl.addClass('sidebar-active');
           self.sidebarEl.trigger('sidebar.didShow');
         }
-      }
-      );
+      });
 
       this.sidebarEl.trigger('sidebar.isShowing');
     },
