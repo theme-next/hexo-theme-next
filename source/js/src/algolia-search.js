@@ -37,11 +37,7 @@ $(document).ready(function() {
       templates  : {
         item: function(data) {
           var link = data.permalink ? data.permalink : CONFIG.root + data.path;
-          return (
-            '<a href="' + link + '" class="algolia-hit-item-link">'
-          + data._highlightResult.title.value
-          + '</a>'
-          );
+          return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
         },
         empty: function(data) {
           return (
@@ -63,13 +59,12 @@ $(document).ready(function() {
           var stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
-          return (
-            stats
-            + '<span class="algolia-powered">'
-            + '  <img src="' + CONFIG.root + 'images/algolia_logo.svg" alt="Algolia" />'
-            + '</span>'
-            + '<hr />'
-          );
+          return
+            `${stats}
+            <span class="algolia-powered">
+              <img src="${CONFIG.root}images/algolia_logo.svg" alt="Algolia"/>
+            </span>
+            <hr/>`;
         }
       }
     }),

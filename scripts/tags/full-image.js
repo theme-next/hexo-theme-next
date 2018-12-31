@@ -19,10 +19,10 @@ function fullImage(args) {
     hexo.log.warn('Image src can NOT be empty');
   }
 
-  var image = ['<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="' + src + '" class="full-image"'];
-  alt.length > 0 && image.push('alt="' + alt.trim() + '"');
-  title.length > 0 && image.push('title="' + title.trim() + '"');
-  width.length > 0 && image.push('style="max-width: none; width:' + width + ';"');
+  var image = [`<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="${src}" class="full-image"`];
+  alt.length > 0 && image.push(`alt="${alt.trim()}"`);
+  title.length > 0 && image.push(`title="${title.trim()}"`);
+  width.length > 0 && image.push(`style="max-width: none; width:${width};"`);
   image.push('/><meta itemprop="width" content="auto"/><meta itemprop="height" content="auto"/></span>');
 
   return image.join(' ');
