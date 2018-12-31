@@ -253,7 +253,7 @@ sidebar:
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
-  # Back to top in sidebar (only for Pisces | Gemini).
+  # Back to top in sidebar.
   b2t: false
   # Scroll percent label in b2t button.
   scrollpercent: false
