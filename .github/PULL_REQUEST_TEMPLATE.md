@@ -34,7 +34,7 @@
 ## What is the current behavior?
 <!-- Please describe the current behavior that you are modifying, or link to a relevant issue. -->
 
-Issue Number(s): N/A
+Issue resolved N/A
 
 ## What is the new behavior?
 Description about this pull, in several words...
