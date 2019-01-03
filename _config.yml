@@ -389,7 +389,7 @@ cheers_enabled: true
 # - All fonts set here will have the following styles:
 #     light, light italic, normal, normal italic, bold, bold italic
 # - Be aware that setting too much fonts will cause site running slowly
-# - Introduce in 5.0.1
+# - Introduced in 5.0.1
 # ---------------------------------------------------------------
 # CAUTION! Safari Version 10.1.2 bug: https://github.com/iissnan/hexo-theme-next/issues/1844
 # To avoid space between header and sidebar in Pisces / Gemini themes recommended to use Web Safe fonts for `global` (and `logo`):
@@ -523,7 +523,7 @@ disqus:
   count: true
   lazyload: false
 
-# changyan
+# Changyan
 changyan:
   enable: false
   appid:
@@ -584,7 +584,7 @@ gitalk:
 #baidushare:
 ##  type: button
 
-# addthis Share, see: https://www.addthis.com
+# AddThis Share, See: https://www.addthis.com
 #add_this_id:
 
 # NeedMoreShare2
