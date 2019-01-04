@@ -24,7 +24,7 @@
             })
             {% endif %}
             .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+                console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
             })
           } else {
             {% if theme.leancloud_visitors.security %}
@@ -44,7 +44,7 @@
           }
         })
       .fail(function ({ responseJSON }) {
-        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+        console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
       });
     }
     {% else %}
@@ -83,7 +83,7 @@
           }
         })
         .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
         });
     }
     {% endif %}
