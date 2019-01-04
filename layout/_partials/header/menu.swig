@@ -22,7 +22,7 @@
         {%- endif -%}
       {%- endfor %}
 
-      {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.tinysou_Key || theme.local_search.enable %}
+      {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.local_search.enable %}
       {% if hasSearch %}
         <li class="menu-item menu-item-search">
           {% if theme.swiftype_key %}
