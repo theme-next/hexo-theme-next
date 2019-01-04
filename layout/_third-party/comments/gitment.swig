@@ -1,10 +1,10 @@
 <!-- LOCAL: You can save these files to your site and update links -->
 {% if theme.gitment.mint %}
-  {% set CommentsClass = "Gitmint" %}
+  {% set CommentsClass = 'Gitmint' %}
   <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css"/>
   <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
 {% else %}
-  {% set CommentsClass = "Gitment" %}
+  {% set CommentsClass = 'Gitment' %}
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"/>
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 {% endif %}
@@ -24,7 +24,7 @@
       owner: '{{ theme.gitment.github_user }}',
       repo: '{{ theme.gitment.github_repo }}',
       {% if theme.gitment.mint %}
-      lang: "{{ theme.gitment.language }}" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      lang: '{{ theme.gitment.language }}' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
       {% endif %}
       oauth: {
       {% if theme.gitment.mint and theme.gitment.redirect_protocol %}
@@ -43,9 +43,9 @@
   {% if not theme.gitment.lazy %}
     renderGitment();
   {% else %}
-    function showGitment(){
-      document.getElementById("gitment-display-button").style.display = "none";
-      document.getElementById("gitment-container").style.display = "block";
+    function showGitment() {
+      document.getElementById('gitment-display-button').style.display = 'none';
+      document.getElementById('gitment-container').style.display = 'block';
       renderGitment();
     }
   {% endif %}
