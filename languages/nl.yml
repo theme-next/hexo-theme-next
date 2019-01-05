@@ -4,6 +4,7 @@ title:
   category: Categorie
   tag: Label
   schedule: Rooster
+
 menu:
   home: Home
   archives: Archieven
@@ -14,9 +15,11 @@ menu:
   schedule: Rooster
   sitemap: Sitemap
   commonweal: Gezond verstand 404
+
 sidebar:
   overview: Overzicht
   toc: Inhoudsopgave
+
 post:
   posted: Geplaatst op
   edited: Edited on
@@ -40,34 +43,42 @@ post:
     link: Post link
     license_title: Copyright melding
     license_content: "Alle artikelen op deze blog zijn gelicenseerd onder %s, mits niet anders aangegeven."
+
 page:
   totally: Totaal
   tags: labels
+
 footer:
   powered: "Mede mogelijk gemaakt door %s"
   theme: Thema
   total_views: Total Views
   total_visitors: Total Visitors
+
 counter:
   tag_cloud:
     zero: Geen labels
     one: 1 label in totaal
     other: "%d labels in totaal"
+
   categories:
     zero: Geen categorieën
     one: 1 categorie in totaal
     other: "%d categorieën in totaal"
+
   archive_posts:
     zero: Geen posts.
     one: 1 post.
     other: "%d posts in totaal."
+
 state:
   posts: posts
   pages: pagina's
   tags: labels
   categories: categorieën
+
 search:
   placeholder: Zoeken...
+
 cheers:
   um: Um..
   ok: Oké
@@ -75,21 +86,27 @@ cheers:
   good: Goed
   great: Geweldig
   excellent: Uitstekend
+
 keep_on: Blijf posten.
+
 symbol:
   comma: ", "
   period: ". "
   colon: ": "
+
 reward:
   donate: Doneer
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+
 gitmentbutton: Show comments from Gitment
+
 accessibility:
   nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  prev_page: Vorige pagina
+  next_page: Volgende pagina
+
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total

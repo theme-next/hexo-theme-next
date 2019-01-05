@@ -4,6 +4,7 @@ title:
   category: カテゴリ
   tag: タグ
   schedule: スケジュール
+
 menu:
   home: ホーム
   archives: アーカイブ
@@ -14,9 +15,11 @@ menu:
   schedule: スケジュール
   sitemap: サイトマップ
   commonweal: 公益 404
+
 sidebar:
   overview: 概要
   toc: 見出し
+
 post:
   posted: 投稿日
   edited: に編集されました
@@ -40,34 +43,42 @@ post:
     link: 記事へのリンク
     license_title: 著作権表示
     license_content: "このブログ内のすべての記事は、特別な記載がない限り %s の下のライセンスで保護されています。"
+
 page:
   totally: 全ページ
   tags: タグ
+
 footer:
   powered: "Powered by %s"
   theme: テーマ
   total_views: 閲覧合計数
   total_visitors: 合計閲覧者数
+
 counter:
   tag_cloud:
     zero: タグなし
     one: 全 1 タグ
     other: "全 %d タグ"
+
   categories:
     zero: カテゴリなし
     one: 全 1 カテゴリ
     other: "全 %d カテゴリ"
+
   archive_posts:
     zero: ポストなし
     one: 全 1 ポスト
     other: "全 %d ポスト"
+
 state:
   posts: ポスト
   pages: ページ
   tags: タグ
   categories: カテゴリ
+
 search:
   placeholder: 検索…
+
 cheers:
   um: うーん
   ok: はい
@@ -75,21 +86,27 @@ cheers:
   good: いいね
   great: すごい
   excellent: 最高
+
 keep_on: もっと書こう！
+
 symbol:
   comma: "、"
   period: "。"
   colon: "："
+
 reward:
   donate: 寄付
   wechatpay: WeChat 支払う
   alipay: Alipay
   bitcoin: ビットコイン
+
 gitmentbutton: Gitment からのコメントを表示
+
 accessibility:
   nav_toggle: ナビゲーションバーの切り替え
   prev_page: 前のページ
   next_page: 次のページ
+
 symbols_count_time:
   count: 単語数
   count_total: 単語の総数

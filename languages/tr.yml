@@ -4,6 +4,7 @@ title:
   category: Kategori
   tag: Etiket
   schedule: Program
+
 menu:
   home: Ana Sayfa
   archives: Arşivler
@@ -14,9 +15,11 @@ menu:
   schedule: Program
   sitemap: Site Haritası
   commonweal: Hata 404
+
 sidebar:
   overview: Genel Bakış
   toc: İçindekiler
+
 post:
   posted: Yayınlandı
   edited: Düzenlendi
@@ -40,34 +43,42 @@ post:
     link: Gönderi bağlantısı
     license_title: Telif Hakkı Bildirimi
     license_content: "Bu blogdaki tüm makaleler aksi belirtilmediği sürece %s altında lisanslıdır."
+
 page:
   totally: Toplamda
   tags: etiketler
+
 footer:
   powered: "%s tarafından desteklenmektedir"
   theme: Tema
   total_views: Toplam görüntülenme
   total_visitors: Toplam Ziyaretçi
+
 counter:
   tag_cloud:
     zero: Etiket yok
     one: Toplam 1 etiket
     other: "Toplamda %d etiket"
+
   categories:
     zero: Kategori yok
     one: Toplamda 1 kategori
     other: "Toplamda %d kategori"
+
   archive_posts:
     zero: Gönderi yok.
     one: 1 gönderi.
     other: "Toplamda %d gönderi."
+
 state:
   posts: gönderiler
   pages: sayfalar
   tags: etiketler
   categories: kategoriler
+
 search:
   placeholder: Aranıyor...
+
 cheers:
   um: Um..
   ok: Tamam
@@ -75,21 +86,27 @@ cheers:
   good: İyi
   great: Müthiş
   excellent: Mükemmel
+
 keep_on: Gönderiye devam.
+
 symbol:
   comma: ", "
   period: ". "
   colon: ": "
+
 reward:
   donate: Bağış
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+
 gitmentbutton: Gitment'ın yorumlarını göster
+
 accessibility:
   nav_toggle: Gezinti çubuğunu değiştir
   prev_page: Önceki sayfa
   next_page: Sonraki sayfa
+
 symbols_count_time:
   count: Makalede sayılan semboller
   count_total: Sayılan toplan semboller
