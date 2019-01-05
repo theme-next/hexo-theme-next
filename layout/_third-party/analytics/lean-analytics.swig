@@ -22,8 +22,8 @@
                 $element.find('.leancloud-visitors-count').text(counter.time + 1);
               })
             {% endif %}
-              .fail(function({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              .fail(function ({ responseJSON }) {
+                console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
               })
           } else {
             {% if theme.leancloud_visitors.security %}
@@ -42,9 +42,9 @@
             {% endif %}
           }
         })
-      .fail(function({ responseJSON }) {
-        console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-      });
+        .fail(function ({ responseJSON }) {
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
+        });
     }
     {% else %}
     function showTime(Counter) {
@@ -81,8 +81,8 @@
             }
           }
         })
-        .fail(function({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        .fail(function ({ responseJSON }) {
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
         });
     }
     {% endif %}

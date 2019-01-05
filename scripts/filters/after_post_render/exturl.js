@@ -31,12 +31,12 @@ hexo.extend.filter.register('after_post_render', function(data) {
     if (data.hostname === siteHost) return;
 
     // If title atribute filled, set it as title; if not, set url as title.
-    var title = $(this).attr('title') ? $(this).attr('title') : href;
+    var title = $(this).attr('title') || href;
 
     var encoded = new Buffer(href).toString('base64');
 
     $(this).replaceWith(function() {
-      return $('<span class="exturl" data-url="' + encoded + '" title="' + title + '">' + $(this).html() + '<i class="fa fa-external-link"></i></span>');
+      return $(`<span class="exturl" data-url="${encoded}" title="${title}">${$(this).html()}<i class="fa fa-external-link"></i></span>`);
     });
 
   });

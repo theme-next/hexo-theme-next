@@ -7,7 +7,7 @@
     {% set post_class = post_class + ' ' + post_extra_class | default('') %}
   {% endif %}
   {% if post.sticky > 0 %}
-    {% set post_class = post_class + ' ' + 'post-sticky' %}
+    {% set post_class = post_class + ' post-sticky' %}
   {% endif %}
 
   {% if theme.reading_progress.enable && not is_index %}
