@@ -1,5 +1,5 @@
 {% if theme.disqus.count %}
-  <script id="dsq-count-scr" src="https://{{theme.disqus.shortname}}.disqus.com/count.js" async></script>
+  <script id="dsq-count-scr" src="https://{{ theme.disqus.shortname }}.disqus.com/count.js" async></script>
 {% endif %}
 
 <script>
@@ -13,7 +13,7 @@
   };
   function loadComments () {
     var d = document, s = d.createElement('script');
-    s.src = 'https://{{theme.disqus.shortname}}.disqus.com/embed.js';
+    s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', '' + +new Date());
     (d.head || d.body).appendChild(s);
   }
