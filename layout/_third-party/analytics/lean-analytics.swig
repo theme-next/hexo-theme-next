@@ -22,9 +22,9 @@
                 $element.find('.leancloud-visitors-count').text(counter.time + 1);
               })
             {% endif %}
-            .fail(function ({ responseJSON }) {
+              .fail(function ({ responseJSON }) {
                 console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
-            })
+              })
           } else {
             {% if theme.leancloud_visitors.security %}
               var $element = $(document.getElementById(url));
