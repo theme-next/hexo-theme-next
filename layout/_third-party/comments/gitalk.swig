@@ -1,10 +1,10 @@
-{% set gitalk_js_url = '//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js' %}
+{% set gitalk_js_url = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js' %}
 {% if theme.vendors.gitalk_js %}
   {% set gitalk_js_url = theme.vendors.gitalk_js %}
 {% endif %}
 <script src="{{ gitalk_js_url }}"></script>
 
-{% set gitalk_css_url = '//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css' %}
+{% set gitalk_css_url = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css' %}
 {% if theme.vendors.gitalk_css %}
   {% set gitalk_css_url = theme.vendors.gitalk_css %}
 {% endif %}
