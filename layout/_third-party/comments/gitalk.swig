@@ -4,7 +4,7 @@
 {% endif %}
 <script src="{{ gitalk_js_url }}"></script>
 
-{% set gitalk_css_url = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css' %}
+{% set gitalk_css_url = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css' %}
 {% if theme.vendors.gitalk_css %}
   {% set gitalk_css_url = theme.vendors.gitalk_css %}
 {% endif %}

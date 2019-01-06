@@ -15,10 +15,7 @@
   border-bottom: none;
 }
 {% if theme.gitment.cleanly %}
-  a.gitment-editor-footer-tip {
-    display: none;
-  }
-  .gitment-container.gitment-footer-container {
+  a.gitment-editor-footer-tip, .gitment-container.gitment-footer-container {
     display: none;
   }
 {% endif %}
