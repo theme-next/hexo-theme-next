@@ -49,7 +49,7 @@
     </div>
 
   {% elif theme.gitalk.enable %}
-    <div id="gitalk-container">
+    <div class="comments" id="gitalk-container">
     </div>
 
   {% endif %}

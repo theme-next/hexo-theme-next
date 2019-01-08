@@ -10,12 +10,16 @@
 {% endif %}
 <!-- END LOCAL -->
 
+<style>
+#gitment-container a {
+  border-bottom: none;
+}
 {% if theme.gitment.cleanly %}
-  <style>
-    a.gitment-editor-footer-tip { display: none; }
-    .gitment-container.gitment-footer-container { display: none; }
-  </style>
+  a.gitment-editor-footer-tip, .gitment-container.gitment-footer-container {
+    display: none;
+  }
 {% endif %}
+</style>
 
 <script>
   function renderGitment() {
@@ -24,7 +28,7 @@
       owner: '{{ theme.gitment.github_user }}',
       repo: '{{ theme.gitment.github_repo }}',
       {% if theme.gitment.mint %}
-      lang: '{{ theme.gitment.language }}' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+        lang: '{{ theme.gitment.language }}' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
       {% endif %}
       oauth: {
       {% if theme.gitment.mint and theme.gitment.redirect_protocol %}
@@ -36,7 +40,8 @@
         client_secret: '{{ theme.gitment.client_secret }}',
       {% endif %}
         client_id: '{{ theme.gitment.client_id }}'
-      }});
+      }
+    });
     gitment.render('gitment-container');
   }
 

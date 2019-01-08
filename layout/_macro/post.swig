@@ -307,7 +307,7 @@
             </div>
           {% endif %}
           <!--/noindex-->
-        {% elif post.excerpt  %}
+        {% elif post.excerpt %}
           {{ post.excerpt }}
           <!--noindex-->
           {% if theme.read_more_btn %}
@@ -342,7 +342,7 @@
         {% endif %}
       {% else %}
         {{ post.content }}
-      {% endif  %}
+      {% endif %}
     </div>
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
