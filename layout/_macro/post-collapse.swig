@@ -22,7 +22,7 @@
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="{{ moment(post.date).format() }}"
-              content="{{ date(post.date, config.date_format) }}" >
+              content="{{ date(post.date, config.date_format) }}">
           {{ date(post.date, 'MM-DD') }}
         </time>
       </div>
