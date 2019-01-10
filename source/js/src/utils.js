@@ -295,7 +295,6 @@ $(document).ready(function() {
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
-
   function updateSidebarHeight(height) {
     height = height || 'auto';
     $('.site-overview, .post-toc').css('max-height', height);
