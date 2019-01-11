@@ -139,22 +139,12 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if theme.facebook_comments_plugin.enable %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
-                </a>
-              </span>
-            {% elseif theme.disqus.enable and theme.disqus.count %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
+            {% if theme.disqus.enable and theme.disqus.count %}
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
                 {% if __('disqus') !== 'disqus' -%}
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
@@ -162,13 +152,7 @@
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
-              </span>
             {% elseif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
               {% if is_post() %}
                 <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span>
@@ -178,27 +162,19 @@
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentsCount"></span>
                 </a>
               {% endif %}
-            {% elseif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            {% elseif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                </a>
-              </span>
+            {% else %}
+                  <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                    <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+              {% if theme.facebook_comments_plugin.enable %}             
+                     <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
+              {% elseif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
+                    <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentsCount"></span>
+              {% elseif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
+                    <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+              {% endif %}
+                  </a>
             {% endif %}
+              </span>
           {% endif %}
 
           {# LeanCould PageView #}
