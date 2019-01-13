@@ -1,6 +1,6 @@
 {% if theme.github_banner %}
   {% set github_banner_bg_color = theme.android_chrome_color %}
-  {% set github_banner_fg_color = "#fff" %}
+  {% set github_banner_fg_color = '#fff' %}
   {% set github_URL = theme.github_banner.split('||')[0] | trim %}
   {% set github_title = theme.github_banner.split('||')[1] | trim %}
 
