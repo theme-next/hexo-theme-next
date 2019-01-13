@@ -1,5 +1,5 @@
 {% if theme.google_analytics %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics }}"></script>
+  <script async src="//www.googletagmanager.com/gtag/js?id={{ theme.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
