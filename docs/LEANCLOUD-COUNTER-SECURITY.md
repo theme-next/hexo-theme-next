@@ -142,7 +142,15 @@ Please note the difference between **site config file** and **theme config file*
     # other deployer
     - type: leancloud_counter_security_sync
   ```
-
+  Maybe you've already configured thi gitHub, and you need to write like this
+  ```yml
+  deploy:
+    - type: git
+      repo: // your repo
+      ...
+    - type: leancloud_counter_security_sync
+  ```
+  
 - Return to the Leancloud console. Click `1 -> 2`, check if there is a record added in the _User (the img below is using username "admin" for example):
 
   ![16](https://lc-cqha0xyi.cn-n1.lcfile.com/99faa5a0e7160e66d506.jpg)
