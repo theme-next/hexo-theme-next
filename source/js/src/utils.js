@@ -16,13 +16,13 @@ NexT.utils = NexT.$u = {
 
         if ($imageWrapLink.length < 1) {
           var imageLink = $image.attr('data-original') ? this.getAttribute('data-original') : this.getAttribute('src');
-          $imageWrapLink = $image.wrap(`<a data-fancybox="group" href="${imageLink}"></a>`).parent('a');
+          $imageWrapLink = $image.wrap('<a data-fancybox="group" href="' + imageLink + '"></a>').parent('a');
           $imageWrapLink.addClass('fancybox fancybox.image');
           $imageWrapLink.attr('rel', 'group');
         }
 
         if (imageTitle) {
-          $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
+          $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
 
           //make sure img title tag will show correctly in fancybox
           $imageWrapLink.attr('title', imageTitle);
@@ -57,7 +57,7 @@ NexT.utils = NexT.$u = {
       $(window).bind('hashchange', function() {
         var tHash = location.hash;
         if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-          $(`${tNav}li:has(a[href="${tHash}"])`).addClass('active').siblings().removeClass('active');
+          $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
           $(tHash).addClass('active').siblings().removeClass('active');
         }
       }).trigger('hashchange');
@@ -256,7 +256,7 @@ NexT.utils = NexT.$u = {
   },
 
   getScrollbarWidth: function() {
-    var $div = $('<div/>').addClass('scrollbar-measure').prependTo('body');
+    var $div = $('<div />').addClass('scrollbar-measure').prependTo('body');
     var div = $div[0];
     var scrollbarWidth = div.offsetWidth - div.clientWidth;
     $div.remove();
@@ -295,6 +295,7 @@ $(document).ready(function() {
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
+
   function updateSidebarHeight(height) {
     height = height || 'auto';
     $('.site-overview, .post-toc').css('max-height', height);
@@ -316,10 +317,10 @@ $(document).ready(function() {
     // Initialize Sidebar & TOC Width.
     var scrollbarWidth = NexT.utils.getScrollbarWidth();
     if ($('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.site-overview').css('width', `calc(100% + ${scrollbarWidth}px)`);
+      $('.site-overview').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
     }
     if ($('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.post-toc').css('width', `calc(100% + ${scrollbarWidth}px)`);
+      $('.post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
     }
 
     // Initialize Sidebar & TOC Height.
