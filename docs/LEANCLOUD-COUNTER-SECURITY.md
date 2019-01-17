@@ -140,7 +140,9 @@ Please note the difference between **site config file** and **theme config file*
 - Add the deployer in the `deploy` of **site config file**`_config.yml`:
   ```yml
   deploy:
-    # other deployer
+    - type: git
+      repo: // your repo
+      ...
     - type: leancloud_counter_security_sync
   ```
 
