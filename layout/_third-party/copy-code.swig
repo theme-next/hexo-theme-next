@@ -37,11 +37,11 @@
     }
   </style>
   <script>
-    $('.highlight').each(function (i, e) {
+    $('.highlight').each(function(i, e) {
       var $wrap = $('<div>').addClass('highlight-wrap');
       $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('{{__("post.copy_button")}}').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+      $wrap.append($('<button>').addClass('copy-btn').append('{{__("post.copy_button")}}').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
           return $(e).text();
         }).toArray().join('\n');
         var ta = document.createElement('textarea');
@@ -67,9 +67,9 @@
         {% endif %}
         ta.blur(); //For iOS
         $(this).blur();
-      })).on('mouseleave', function (e) {
+      })).on('mouseleave', function(e) {
         var $b = $(this).find('.copy-btn');
-        setTimeout(function () {
+        setTimeout(function() {
           $b.text('{{__("post.copy_button")}}');
         }, 300);
       }).append(e);

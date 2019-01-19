@@ -385,11 +385,11 @@ cheers_enabled: true
 
 # ---------------------------------------------------------------
 # Font Settings
-# - Find fonts on Google Fonts (https://www.google.com/fonts)
-# - All fonts set here will have the following styles:
-#     light, light italic, normal, normal italic, bold, bold italic
-# - Be aware that setting too much fonts will cause site running slowly
-# - Introduced in 5.0.1
+# Find fonts on Google Fonts (https://www.google.com/fonts)
+# All fonts set here will have the following styles:
+#   light, light italic, normal, normal italic, bold, bold italic
+# Be aware that setting too much fonts will cause site running slowly
+# Introduced in 5.0.1
 # ---------------------------------------------------------------
 # CAUTION! Safari Version 10.1.2 bug: https://github.com/iissnan/hexo-theme-next/issues/1844
 # To avoid space between header and sidebar in Pisces / Gemini themes recommended to use Web Safe fonts for `global` (and `logo`):
@@ -567,7 +567,7 @@ gitment:
 
 # Gitalk
 # Demo: https://gitalk.github.io
-# Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.cn/2018/8/10/gitalk-error/#more
+# Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.top/2018/8/10/gitalk-error/
 gitalk:
   enable: false
   github_id:  # Github repo owner
@@ -578,8 +578,7 @@ gitalk:
   distraction_free_mode: true # Facebook-like distraction free mode
 
 # Baidu Share
-# Available values:
-#    button | slide
+# Available values: button | slide
 # Warning: Baidu Share does not support https.
 #baidushare:
 ##  type: button
@@ -765,8 +764,8 @@ local_search:
 bookmark:
   enable: false
   # if auto
-  #   - save the reading position when closing the page
-  #   - or clicking the bookmark-icon
+  #  - save the reading position when closing the page
+  #  - or clicking the bookmark-icon
   # if manual, only save it by clicking the bookmark-icon
   save: auto
 
@@ -891,7 +890,7 @@ canvas_ribbon:
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
 # For example
-#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
+#   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
 # Be aware that you should use the same version as internal ones to avoid potential problems.
 # Please use the https protocol of CDN files when you enable https on your site.
 vendors:
@@ -1027,7 +1026,7 @@ vendors:
   # Internal version: 1.1
   # See: https://github.com/theme-next/theme-next-reading-progress
   # Example:
-  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
+  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
   reading_progress:
 
   # leancloud-storage
