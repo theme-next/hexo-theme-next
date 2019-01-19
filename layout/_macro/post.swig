@@ -149,7 +149,7 @@
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
                 </a>
               </span>
-            {% elseif theme.disqus.enable and theme.disqus.count %}
+            {% elif theme.disqus.enable and theme.disqus.count %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
@@ -163,7 +163,7 @@
                         data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
               </span>
-            {% elseif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
+            {% elif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
               <span class="post-comments-count">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
@@ -178,7 +178,7 @@
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentsCount" ></span>
                 </a>
               {% endif %}
-            {% elseif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
+            {% elif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
@@ -188,7 +188,7 @@
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentsCount"></span>
                 </a>
               </span>
-            {% elseif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
+            {% elif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
