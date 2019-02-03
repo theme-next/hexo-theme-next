@@ -45,10 +45,10 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: https://st.razeen.me/static/img/avatar.png?imageView2/2/w/32/h/32/q/75|imageslim
+  medium: https://st.razeen.me/static/img/avatar.png?imageView2/2/w/64/h/64/q/75|imageslim
+  apple_touch_icon: https://st.razeen.me/static/img/avatar.png?imageView2/2/w/64/h/64/q/75|imageslim
+  safari_pinned_tab: https://st.razeen.me/static/img/avatar.png?imageView2/2/w/64/h/64/q/75|imageslim
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -60,7 +60,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2016
 
   # Icon between year and copyright info.
   icon:
@@ -73,25 +73,25 @@ footer:
     color: "#808080"
 
   # If not defined, `author` from Hexo main config will be used.
-  copyright:
+  copyright: 
   # -------------------------------------------------------------
   powered:
     # Hexo link (Powered by Hexo).
-    enable: true
+    enable: false
     # Version info of Hexo after Hexo link (vX.X.X).
-    version: true
+    version: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
   beian:
-    enable: false
-    icp:
+    enable: true
+    icp: 皖 ICP 备16006623 号
 
   # -------------------------------------------------------------
   # Any custom text can be defined here.
@@ -116,7 +116,7 @@ creative_commons:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -138,12 +138,12 @@ exturl: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
+  about: /about/ || user
+  schedule: /schedule/ || calendar
+  sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons / item badges.
@@ -157,9 +157,9 @@ menu_settings:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+# scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 
@@ -197,22 +197,25 @@ social_icons:
 # Usage: `permalink || title`
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the title and aria-label name.
-#github_banner: https://github.com/yourname || Follow me on GitHub
+# github_banner: https://github.com/razeencheng/blog  || Follow me on GitHub
 
 # Blog rolls
-links_icon: link
-links_title: Links
+links_icon: heart
+links_title: 友链
 links_layout: block
-#links_layout: inline
-#links:
-  #Title: http://example.com
+# links_layout: inline
+links:
+  一人游走: https://yryz.net/
+  Deepzz: https://deepzz.com/
+  Demon Wang: https://wangcch.cc/
+  Tommy Yang’s Blog: http://blog.tommyyang.cn/
 
 # Sidebar Avatar
 avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: https://st.razeen.me/static/img/avatar.png
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -232,8 +235,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available values: left | right (only for Pisces | Gemini).
-  position: left
-  #position: right
+  # position: left
+  position: right
 
   # Manual define the sidebar width.
   # If commented, will be default for:
@@ -266,7 +269,7 @@ sidebar:
 # ---------------------------------------------------------------
 
 # Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
+scroll_to_more: false
 
 # Automatically saving scroll position on each post/page in cookies.
 save_scroll: false
@@ -316,19 +319,19 @@ codeblock:
     show_result: false
 
 # Wechat Subscriber
-#wechat_subscriber:
-  #enabled: true
-  #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
-  #description: e.g. subscribe to my blog by scanning my public wechat account
+wechat_subscriber:
+  enabled: true
+  qcode: https://st.razeen.me/next/qrcode_for_gh_26c540711047_258.jpg
+  description: 关注微信公众好，推送最新博客哦～
 
 # Reward
 # If true, reward would be displayed in every article by default.
 # And you can show or hide one article specially through add page variable `reward: true/false`.
 reward:
-  enable: false
-  #comment: Donate comment here
+  enable: true
+  comment: 谢谢老板
   #wechatpay: /images/wechatpay.jpg
-  #alipay: /images/alipay.jpg
+  alipay: https://st.razeen.me/next/zhifubao.png
   #bitcoin: /images/bitcoin.jpg
 
 # Related popular posts
@@ -348,7 +351,7 @@ related_posts:
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
   enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
+  url: https://github.com/razeencheng/razeencheng.github.io.git # Link for view source.
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit.
 
 
@@ -377,7 +380,7 @@ custom_logo:
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night
 
 # Enable "cheers" for archive page.
 cheers_enabled: true
@@ -510,7 +513,7 @@ pangu: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 9e1fda9f1853710abeeee2f2f580d094
 
 # Growingio Analytics ID
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
@@ -518,10 +521,10 @@ pangu: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: razeen-me
   count: true
-  lazyload: false
+  lazyload: true
 
 # Changyan
 changyan:
@@ -618,7 +621,7 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-82194091-1
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster
@@ -716,7 +719,7 @@ busuanzi_count:
 #tencent_mta:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page.
@@ -750,7 +753,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -762,7 +765,7 @@ local_search:
 # Bookmark Support
 # Dependencies: https://github.com/theme-next/theme-next-bookmark
 bookmark:
-  enable: false
+  enable: true
   # if auto
   #  - save the reading position when closing the page
   #  - or clicking the bookmark-icon
@@ -815,7 +818,7 @@ reading_progress:
 
 # Use velocity to animate everything.
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # Transition variants:
@@ -844,7 +847,7 @@ fastclick: false
 
 # Added switch option for separated repo in 6.0.0.
 # Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
-lazyload: false
+lazyload: true
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
@@ -895,168 +898,200 @@ canvas_ribbon:
 # Please use the https protocol of CDN files when you enable https on your site.
 vendors:
   # Internal path prefix. Please do not edit it.
-  _internal: lib
+  _internal: libs
 
   # Internal version: 2.1.3
   # Example:
   # jquery: //cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js
-  # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
-  jquery:
+  # jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
+  # jquery:  
 
   # Internal version: 2.1.5
   # See: https://fancyapps.com/fancybox
   # Example:
   # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-  # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js
+  # fancybox: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js
   # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-  # fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css
-  fancybox:
-  fancybox_css:
+  # fancybox_css: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css
+  # fancybox:  
+  # fancybox_css:  
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
   # Example:
   # fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
-  # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
-  fastclick:
+  # fastclick: https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
+  # fastclick:  
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
   # Example:
   # lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
-  # lazyload: //cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
-  lazyload:
+  # lazyload: https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+  # lazyload:  
 
   # Internal version: 1.2.1
   # See: http://velocityjs.org
   # Example:
   # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
-  # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
+  # velocity: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
   # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
-  # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
-  velocity:
-  velocity_ui:
+  # velocity_ui: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
+  # velocity:  
+  # velocity_ui:  
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js
   # Example:
   # ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0/src/ua-parser.min.js
-  # ua_parser: //cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
-  ua_parser:
+  # ua_parser: https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
+  # ua_parser: 
 
   # Internal version: 4.6.2
   # See: https://fontawesome.com
   # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
-  fontawesome:
+  # fontawesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
+  # fontawesome: 
 
   # Internal version: 2.4.1
   # See: https://www.algolia.com
   # Example:
-  # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js
-  # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
-  algolia_instant_js:
-  algolia_instant_css:
+  # algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js
+  # algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
+  # algolia_instant_js: 
+  # algolia_instant_css: 
 
   # Internal version: 1.0.2
   # See: https://github.com/HubSpot/pace
   # Example:
   # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
-  # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
+  # pace: https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
   # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
-  # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
-  pace:
-  pace_css:
+  # pace_css: https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
+  # pace: 
+  # pace_css: 
 
   # Internal version: 1.0.0
   # See: https://github.com/theme-next/theme-next-canvas-nest
   # Example:
-  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
-  # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
-  canvas_nest:
-  canvas_nest_nomobile:
+  # canvas_nest: https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
+  # canvas_nest_nomobile: https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
+  # canvas_nest: 
+  # canvas_nest_nomobile: 
 
   # Internal version: 1.0.0
   # See: https://github.com/theme-next/theme-next-three
   # Example:
-  # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
-  # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
-  # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
-  # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
-  three:
-  three_waves:
-  canvas_lines:
-  canvas_sphere:
+  # three: https://cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
+  # three_waves: https://cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
+  # canvas_lines: https://cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
+  # canvas_sphere: https://cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
+  # three: 
+  # three_waves: 
+  # canvas_lines: 
+  # canvas_sphere: 
 
   # Internal version: 1.0.0
   # See: https://github.com/zproo/canvas-ribbon
   # Example:
-  # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
-  canvas_ribbon:
+  # canvas_ribbon: https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
+  # canvas_ribbon: 
 
   # Internal version: 3.3.0
   # See: https://github.com/ethantw/Han
   # Example:
   # han: //cdn.jsdelivr.net/npm/han-css@3/dist/han.min.css
-  # han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
-  han:
+  # han: https://cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
+  # han: 
 
   # Internal version: 3.3.0
   # See: https://github.com/vinta/pangu.js
   # Example:
   # pangu: //cdn.jsdelivr.net/npm/pangu@3/dist/browser/pangu.min.js
-  # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
-  pangu:
+  # pangu: https://cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
+  # pangu: 
 
   # Internal version: 1.0.0
   # See: https://github.com/revir/need-more-share2
   # Example:
-  # needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
-  # needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
-  needmoreshare2_js:
-  needmoreshare2_css:
+  # needmoreshare2_js: https://cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
+  # needmoreshare2_css: https://cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
+  #  needmoreshare2_js: 
+  #  needmoreshare2_css: 
 
   # Internal version: 1.0.0
   # See: https://github.com/theme-next/theme-next-bookmark
   # Example:
-  # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
-  bookmark:
+  # bookmark: https://cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
+  # bookmark: 
 
   # Internal version: 1.1
   # See: https://github.com/theme-next/theme-next-reading-progress
   # Example:
-  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
-  reading_progress:
+  # reading_progress: https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
+  # reading_progress: 
 
   # leancloud-storage
   # See: https://www.npmjs.com/package/leancloud-storage
   # Example:
-  # leancloud: //cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js
-  leancloud:
+  # leancloud: 
+  # leancloud:
 
   # valine
   # See: https://github.com/xCss/Valine
   # Example:
   # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
-  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
-  valine:
+  # valine: https://cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
+  # valine: 
 
   # gitalk
   # See: https://github.com/gitalk/gitalk
   # Example:
-  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
-  gitalk_js:
-  gitalk_css:
+  # gitalk_js: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+  # gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+  # gitalk_js: 
+  # gitalk_css: 
 
   # js-md5
   # See: https://github.com/emn178/js-md5
   # Example:
-  # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
-  md5:
+  # md5: https://cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
+  # md5: 
+
+  jquery: https://st.razeen.me/next/libs/jquery/2.1.3/jquery.min.js"
+  fancybox: https://st.razeen.me/next/libs/fancybox/3.5.6/jquery.fancybox.min.js"
+  fancybox_css: https://st.razeen.me/next/libs/fancybox/3.5.6/jquery.fancybox.min.css"
+  fastclick: https://st.razeen.me/next/libs/fastclick/1.0.6/fastclick.min.js"
+  lazyload: https://st.razeen.me/next/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"
+  velocity: https://st.razeen.me/next/libs/velocity/1.2.1/velocity.min.js"
+  velocity_ui: https://st.razeen.me/next/libs/velocity/1.2.1/velocity.ui.min.js"
+  ua_parser: https://st.razeen.me/next/libs/UAParser.js/0.7.9/ua-parser.min.js"
+  fontawesome: https://st.razeen.me/next/libs/font-awesome/4.6.2/css/font-awesome.min.css"
+  algolia_instant_js: https://st.razeen.me/next/npm/instantsearch.js@2/dist/instantsearch.js"
+  algolia_instant_css: https://st.razeen.me/next/npm/instantsearch.js@2/dist/instantsearch.min.css"
+  pace: https://st.razeen.me/next/libs/pace/1.0.2/pace.min.js"
+  pace_css: https://st.razeen.me/next/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css"
+  canvas_nest: https://st.razeen.me/next/theme-next-canvas-nest@1/canvas-nest.min.js"
+  canvas_nest_nomobile: https://st.razeen.me/next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js"
+  three: https://st.razeen.me/next/theme-next-three@1/three.min.js"
+  three_waves: https://st.razeen.me/next/theme-next-three@1/three-waves.min.js"
+  canvas_lines: https://st.razeen.me/next/theme-next-three@1/canvas_lines.min.js
+  canvas_sphere: https://st.razeen.me/next/theme-next-three@1/canvas_sphere.min.js"
+  canvas_ribbon: https://st.razeen.me/next/theme-next-canvas-ribbon@1/canvas-ribbon.js"
+  han: https://st.razeen.me/next/libs/Han/3.3.0/han.min.css"
+  pangu: https://st.razeen.me/next/libs/pangu/3.3.0/pangu.min.js"
+  needmoreshare2_js: https://st.razeen.me/next/theme-next-needmoreshare2@1/needsharebutton.min.js"
+  needmoreshare2_css: https://st.razeen.me/next/theme-next-needmoreshare2@1/needsharebutton.min.css"
+  bookmark: https://st.razeen.me/next/theme-next-bookmark@1/bookmark.min.js"
+  reading_progress: https://st.razeen.me/next/theme-next-reading-progress@1/reading_progress.min.js"
+  leancloud: https://st.razeen.me/next/npm/leancloud-storage@3/dist/av-min.js"
+  valine: https://st.razeen.me/next/libs/valine/1.3.4/Valine.min.js"
+  gitalk_js: https://st.razeen.me/next/npm/gitalk@1/dist/gitalk.min.js"
+  gitalk_css: https://st.razeen.me/next/npm/gitalk@1/dist/gitalk.css"
+  md5: https://st.razeen.me/next/npm/js-md5@0/src/md5.min.js"
 
 # Assets
 css: css
-js: js
-images: images
+js: https://st.razeen.me/next/js
+images: https://st.razeen.me/next/images
