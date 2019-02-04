@@ -148,37 +148,43 @@
             {% endmacro %}
             {% if theme.facebook_comments_plugin.enable %}
               {{ comments() }}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
+                  <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
                 </a>
               </span>
             {% elseif theme.disqus.enable and theme.disqus.count %}
               {{ comments() }}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
               </span>
             {% elseif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
               {{ comments() }}
               {% if is_post() %}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
                 <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
               {% else %}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
                 <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
+                  <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
               {% endif %}
             {% elseif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
               {{ comments() }}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
                 </a>
               </span>
             {% elseif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
               {{ comments() }}
+                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
                 </a>
               </span>
             {% endif %}

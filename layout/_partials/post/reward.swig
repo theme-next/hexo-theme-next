@@ -1,6 +1,6 @@
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
   <div>{{ theme.reward.comment }}</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>{{ __('reward.donate') }}</span>
   </button>
   <div id="QR" style="display: none;">
