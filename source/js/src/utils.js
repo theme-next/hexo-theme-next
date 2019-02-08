@@ -30,6 +30,7 @@ NexT.utils = NexT.$u = {
       });
 
     $('.fancybox').fancybox({
+      loop: true,
       helpers: {
         overlay: {
           locked: false
@@ -265,7 +266,7 @@ NexT.utils = NexT.$u = {
   },
 
   getContentVisibilityHeight: function() {
-    var docHeight = $('#content').height();
+    var docHeight = $('.container').height();
     var winHeight = $(window).height();
     var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : $(document).height() - winHeight;
     return contentVisibilityHeight;
