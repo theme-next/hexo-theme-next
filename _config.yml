@@ -243,13 +243,10 @@ sidebar:
 
   # Sidebar Display, available values (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
-  #  - always  expand for all pages automatically
+  #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
   display: post
-  #display: always
-  #display: hide
-  #display: remove
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
@@ -322,8 +319,8 @@ wechat_subscriber:
   #description: e.g. subscribe to my blog by scanning my public wechat account
 
 # Reward
-# If true, reward would be displayed in every article by default
-# You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter
+# If true, reward would be displayed in every article by default.
+# You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
 reward:
   enable: false
   #comment: Donate comment here
@@ -445,9 +442,9 @@ font:
 math:
   enable: false
 
-  # Default(true) will load mathjax / katex script on demand
-  # That is it only render those page who has `mathjax: true` in Front Matter
-  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE
+  # Default (true) will load mathjax / katex script on demand.
+  # That is it only render those page which has `mathjax: true` in Front Matter.
+  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
   per_page: true
 
   engine: mathjax
@@ -482,9 +479,9 @@ math:
 pdf:
   enable: false
 
-  # Default(true) will load PDFObject / PDF.js script on demand
-  # That is it only render those page who has `pdf: true` in Front Matter
-  # If you set it to false, it will load PDFObject / PDF.js srcipt EVERY PAGE
+  # Default (true) will load PDFObject / PDF.js script on demand.
+  # That is it only render those page which has `pdf: true` in Front Matter.
+  # If you set it to false, it will load PDFObject / PDF.js srcipt EVERY PAGE.
   per_page: true
 
   height: 500px
@@ -582,7 +579,7 @@ gitalk:
 ##  type: button
 
 # AddThis Share, See: https://www.addthis.com
-# Go to https://www.addthis.com/dashboard to customize your tools
+# Go to https://www.addthis.com/dashboard to customize your tools.
 #add_this_id:
 
 # NeedMoreShare2
@@ -719,7 +716,7 @@ baidu_push: false
 # Google Calendar
 # Share your recent schedule to others via calendar page.
 # API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
-# To get an api_key: https://console.developers.google.com
+# To get api_key: https://console.developers.google.com
 # Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
 calendar:
   enable: false
@@ -748,21 +745,28 @@ algolia_search:
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
   enable: false
-  # if auto, trigger search by changing input
-  # if manual, trigger search by pressing enter key or search button
+  # If auto, trigger search by changing input.
+  # If manual, trigger search by pressing enter key or search button.
   trigger: auto
-  # show top n results per article, show all results by setting to -1
+  # Show top n results per article, show all results by setting to -1
   top_n_per_article: 1
-  # unescape html strings to the readable one
+  # Unescape html strings to the readable one.
   unescape: false
 
 # Bookmark Support
 # Dependencies: https://github.com/theme-next/theme-next-bookmark
 bookmark:
   enable: false
-  # If auto, save the reading position when closing the page or clicking the bookmark-icon
-  # If manual, only save it by clicking the bookmark-icon
+  # If auto, save the reading position when closing the page or clicking the bookmark-icon.
+  # If manual, only save it by clicking the bookmark-icon.
   save: auto
+
+# Reading progress bar
+# Dependencies: https://github.com/theme-next/theme-next-reading-progress
+reading_progress:
+  enable: false
+  color: "#37c6c0"
+  height: 2px
 
 
 # ---------------------------------------------------------------
@@ -794,13 +798,6 @@ tabs:
     tabs: false
     labels: true
   border_radius: 0
-
-# Reading progress bar
-# Dependencies: https://github.com/theme-next/theme-next-reading-progress
-reading_progress:
-  enable: false
-  color: "#37c6c0"
-  height: 2px
 
 
 #! ---------------------------------------------------------------
@@ -848,8 +845,6 @@ pace: false
 # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
 # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
 # pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
-# For example
-# pace_theme: pace-theme-center-simple
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
