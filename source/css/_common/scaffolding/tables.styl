@@ -1,11 +1,14 @@
-table {
+.table-container {
   margin: 20px 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
   width: $table-width;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid $table-border-color;
   font-size: $table-font-size;
-  word-break: break-all;
 }
 
 table>tbody>tr {
@@ -21,8 +24,8 @@ caption, th, td {
 }
 
 th, td {
+  border: 1px solid $table-border-color;
   border-bottom: 3px solid $table-cell-border-bottom-color;
-  border-right: 1px solid $table-cell-border-right-color;
 }
 
 th {
