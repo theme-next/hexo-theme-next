@@ -291,6 +291,10 @@ NexT.utils = NexT.$u = {
 
 $(document).ready(function() {
 
+  function wrapTable() {
+    $('table').wrap('<div class="table-container"></div>');
+  }
+
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
@@ -327,4 +331,5 @@ $(document).ready(function() {
     updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
   }
   initSidebarDimension();
+  wrapTable();
 });
