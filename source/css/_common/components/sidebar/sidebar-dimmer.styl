@@ -1,9 +1,9 @@
 .sidebar-active + #sidebar-dimmer {
   +mobile() {
     opacity: .7;
+    transition: opacity .5s;
   }
   transform: translateX(-100%);
-  transition: opacity .2s;
 }
 
 #sidebar-dimmer {
@@ -15,5 +15,4 @@
   height: 100%;
   background: #000;
   opacity: 0;
-  transition: opacity .2s, transform 0s .2s;
 }
