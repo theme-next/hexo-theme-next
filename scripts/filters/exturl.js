@@ -33,7 +33,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
     // If title atribute filled, set it as title; if not, set url as title.
     var title = $(this).attr('title') || href;
 
-    var encoded = new Buffer(href).toString('base64');
+    var encoded = Buffer.from(href).toString('base64');
 
     $(this).replaceWith(function() {
       return $(`<span class="exturl" data-url="${encoded}" title="${title}">${$(this).html()}<i class="fa fa-external-link"></i></span>`);
@@ -42,4 +42,4 @@ hexo.extend.filter.register('after_post_render', function(data) {
   });
 
   data.content = $.html();
-});
+}, 0);
