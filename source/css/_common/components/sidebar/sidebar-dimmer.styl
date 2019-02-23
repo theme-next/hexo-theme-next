@@ -1,21 +1,18 @@
-.sidebar-active #sidebar-dimmer {
-  opacity: .7;
-  -webkit-transform: translateX(-150%);
-  transform: translateX(-150%);
-  transition: opacity .2s;
+.sidebar-active + #sidebar-dimmer {
+  +mobile() {
+    opacity: .7;
+    transition: opacity .5s;
+  }
+  transform: translateX(-100%);
 }
 
 #sidebar-dimmer {
-  display: none;
-  position: absolute;
+  display: block;
+  position: fixed;
   top: 0;
   left: 100%;
-  width: 200%;
+  width: 100%;
   height: 100%;
   background: #000;
   opacity: 0;
-  transition: opacity .2s,transform 0s .2s;
-  +mobile() {
-    display: block;
-  }
 }
