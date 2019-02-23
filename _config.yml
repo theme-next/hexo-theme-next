@@ -19,18 +19,17 @@ cache:
 # outside theme directory in root `source/_data`, set
 # `styles: source/_data/styles.styl`
 #custom_file_path:
-  # Default paths: layout/_custom/*
-  #head: source/_data/head.swig
-  #header: source/_data/header.swig
-  #sidebar: source/_data/sidebar.swig
+# Default paths: layout/_custom/*
+#head: source/_data/head.swig
+#header: source/_data/header.swig
+#sidebar: source/_data/sidebar.swig
 
-  # Default path: source/css/_variables/custom.styl
-  #variables: source/_data/variables.styl
-  # Default path: source/css/_mixins/custom.styl
-  #mixins: source/_data/mixins.styl
-  # Default path: source/css/_custom/custom.styl
-  #styles: source/_data/styles.styl
-
+# Default path: source/css/_variables/custom.styl
+#variables: source/_data/variables.styl
+# Default path: source/css/_mixins/custom.styl
+#mixins: source/_data/mixins.styl
+# Default path: source/css/_custom/custom.styl
+#styles: source/_data/styles.styl
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -45,9 +44,9 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
+  small: /images/favicon-16x16png
+  medium: /images/favicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
@@ -60,7 +59,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2019
 
   # Icon between year and copyright info.
   icon:
@@ -83,7 +82,7 @@ footer:
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
     version: true
   # -------------------------------------------------------------
@@ -105,7 +104,6 @@ creative_commons:
   sidebar: false
   post: false
 
-
 # ---------------------------------------------------------------
 # SEO Settings
 # ---------------------------------------------------------------
@@ -125,7 +123,6 @@ index_with_subtitle: false
 # Automatically add external URL with BASE64 encrypt & decrypt.
 exturl: false
 
-
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
@@ -138,9 +135,9 @@ exturl: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -151,17 +148,15 @@ menu_settings:
   icons: true
   badges: false
 
-
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+# scheme: Muse
+scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
-
 
 # ---------------------------------------------------------------
 # Sidebar Settings
@@ -176,17 +171,17 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 #social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
-  #Weibo: https://weibo.com/yourname || weibo
-  #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
-  #VK Group: https://vk.com/yourname || vk
-  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-  #YouTube: https://youtube.com/yourname || youtube
-  #Instagram: https://instagram.com/yourname || instagram
-  #Skype: skype:yourname?call|chat || skype
+GitHub: https://github.com/openjny || github
+#E-Mail: mailto:yourname@gmail.com || envelope
+#Weibo: https://weibo.com/yourname || weibo
+#Google: https://plus.google.com/yourname || google
+Twitter: https://twitter.com/openjny || twitter
+#FB Page: https://www.facebook.com/yourname || facebook
+#VK Group: https://vk.com/yourname || vk
+#StackOverflow: https://stackoverflow.com/yourname || stack-overflow
+#YouTube: https://youtube.com/yourname || youtube
+#Instagram: https://instagram.com/yourname || instagram
+#Skype: skype:yourname?call|chat || skype
 
 social_icons:
   enable: true
@@ -205,14 +200,14 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 #links:
-  #Title: http://example.com
+#Title: http://example.com
 
 # Sidebar Avatar
 avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: /images/avatar.jpg
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -246,7 +241,7 @@ sidebar:
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
   display: post
-  #display: always
+  # display: always
   #display: hide
   #display: remove
 
@@ -260,7 +255,6 @@ sidebar:
   onmobile: false
   # Click any blank part of the page to close sidebar (only for Muse | Mist).
   dimmer: false
-
 
 # ---------------------------------------------------------------
 # Post Settings
@@ -318,9 +312,9 @@ codeblock:
 
 # Wechat Subscriber
 #wechat_subscriber:
-  #enabled: true
-  #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
-  #description: e.g. subscribe to my blog by scanning my public wechat account
+#enabled: true
+#qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
+#description: e.g. subscribe to my blog by scanning my public wechat account
 
 # Reward
 # If true, reward would be displayed in every article by default.
@@ -352,7 +346,6 @@ post_edit:
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit.
 
-
 # ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
@@ -382,7 +375,6 @@ highlight_theme: normal
 
 # Enable "cheers" for archive page.
 cheers_enabled: true
-
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -439,7 +431,6 @@ font:
     family:
     size:
 
-
 # ---------------------------------------------------------------
 # Third Party Services Settings
 # ---------------------------------------------------------------
@@ -462,7 +453,6 @@ math:
     cdn: //cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com)
     #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
-
     # See: https://mhchem.github.io/MathJax-mhchem/
     #mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3
     #mhchem: //cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.0
@@ -540,8 +530,8 @@ changyan:
 # More info available at https://valine.js.org
 valine:
   enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  appid: # your leancloud application appid
+  appkey: # your leancloud application appkey
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
@@ -576,11 +566,11 @@ gitment:
 # Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.top/2018/8/10/gitalk-error/
 gitalk:
   enable: false
-  github_id:  # Github repo owner
-  repo:  # Repository name to store issues.
-  client_id:  # Github Application Client ID
-  client_secret:  # Github Application Client Secret
-  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  github_id: # Github repo owner
+  repo: # Repository name to store issues.
+  client_id: # Github Application Client ID
+  client_secret: # Github Application Client Secret
+  admin_user: # GitHub repo owner and collaborators, only these guys can initialize github issues
   distraction_free_mode: true # Facebook-like distraction free mode
 
 # Baidu Share
@@ -624,7 +614,7 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-# google_analytics: 
+# google_analytics:
 #   tracking_id:
 #   localhost_ignored: true
 
@@ -652,36 +642,36 @@ needmoreshare2:
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
 facebook_sdk:
-  enable:       false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
+  enable: false
+  app_id: #<app_id>
+  fb_admin: #<user_id>
+  like_button: #true
+  webmaster: #true
 
 # Facebook comments plugin
 # This plugin depends on Facebook SDK.
 # If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
 facebook_comments_plugin:
-  enable:       false
-  num_of_posts: 10    # min posts num is 1
-  width:        100%  # default width is 550px
-  scheme:       light # default scheme is light (light or dark)
+  enable: false
+  num_of_posts: 10 # min posts num is 1
+  width: 100% # default width is 550px
+  scheme: light # default scheme is light (light or dark)
 
 # VKontakte API Support
 # To get your AppID visit https://vk.com/editapp?act=create
 vkontakte_api:
-  enable:       false
-  app_id:       #<app_id>
-  like:         true
-  comments:     true
+  enable: false
+  app_id: #<app_id>
+  like: true
+  comments: true
   num_of_posts: 10
 
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id:     #<app_id>
-  color:  fc6423
+  id: #<app_id>
+  color: fc6423
 # ---------------------------------------------------------------
 
 # Show number of visitors to each article.
@@ -777,7 +767,6 @@ bookmark:
   # if manual, only save it by clicking the bookmark-icon
   save: auto
 
-
 # ---------------------------------------------------------------
 # Tags Settings
 # ---------------------------------------------------------------
@@ -815,7 +804,6 @@ reading_progress:
   color: "#37c6c0"
   height: 2px
 
-
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
@@ -824,7 +812,7 @@ reading_progress:
 # Use velocity to animate everything.
 motion:
   enable: true
-  async: false
+  async: true
   transition:
     # Transition variants:
     # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
@@ -870,7 +858,7 @@ pace_theme: pace-theme-minimal
 canvas_nest:
   enable: false
   onmobile: true # display on mobile or not
-  color: '0,0,255' # RGB values, use ',' to separate
+  color: "0,0,255" # RGB values, use ',' to separate
   opacity: 0.5 # the opacity of line: 0~1
   zIndex: -1 # z-index property of the background
   count: 99 # the number of lines

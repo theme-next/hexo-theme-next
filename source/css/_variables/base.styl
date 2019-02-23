@@ -55,7 +55,7 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "PingFang SC", "Microsoft YaHei"
+$font-family-chinese      = -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif
 
 $font-family-base         = $font-family-chinese, sans-serif
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
@@ -69,8 +69,8 @@ $font-family-headings     = get_font_family('headings'), $font-family-base if ge
 $font-family-posts        = $font-family-base
 $font-family-posts        = get_font_family('posts'), $font-family-base if get_font_family('posts')
 
-$font-family-monospace    = consolas, Menlo, $font-family-chinese, monospace
-$font-family-monospace    = get_font_family('codes'), consolas, Menlo, $font-family-chinese, monospace if get_font_family('codes')
+$font-family-monospace    = consolas, Menlo, monospace
+$font-family-monospace    = get_font_family('codes'), consolas, Menlo, monospace if get_font_family('codes')
 
 $font-family-icons        = 'FontAwesome'
 
@@ -87,9 +87,9 @@ $font-weight-bolder       = 700
 $font-size-base           = 14px
 $font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
 $font-size-small          = $font-size-base - 2px
-$font-size-smaller        = $font-size-base - 4px
+$font-size-smaller        = $font-size-base - 3px
 $font-size-large          = $font-size-base + 2px
-$font-size-larger         = $font-size-base + 4px
+$font-size-larger         = $font-size-base + 3px
 
 
 // Headings font size
@@ -102,7 +102,7 @@ $font-size-headings-large   = $font-size-headings-base + $font-size-headings-ste
 $font-size-headings-larger  = $font-size-headings-large + $font-size-headings-step
 
 // Global line height
-$line-height-base           = 2
+$line-height-base           = 1.8
 $line-height-code-block     = 1.6  // Can't be less than 1.3
 
 
