@@ -235,8 +235,7 @@ sidebar:
   position: left
   #position: right
 
-  # Manual define the sidebar width.
-  # If commented, will be default for:
+  # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
   # Pisces | Gemini: 240
   #width: 300
@@ -259,6 +258,8 @@ sidebar:
   scrollpercent: false
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
+  # Click any blank part of the page to close sidebar (only for Muse | Mist).
+  dimmer: false
 
 
 # ---------------------------------------------------------------

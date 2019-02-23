@@ -183,5 +183,7 @@
 
     </div>
   </aside>
-  <div id="sidebar-dimmer"></div>
+  {% if theme.sidebar.dimmer %}
+    <div id="sidebar-dimmer"></div>
+  {% endif %}
 {% endmacro %}
