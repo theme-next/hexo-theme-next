@@ -507,10 +507,20 @@ han: false
 # For more information: https://github.com/vinta/pangu.js
 pangu: false
 
-# quicklink Support
+# Quicklink Support
 # Dependencies: https://cdn.jsdelivr.net/npm/quicklink/dist/
 # Visit https://github.com/GoogleChromeLabs/quicklink for details
-quicklink: false
+quicklink:
+  enable: false
+  timeout: 3000 # Custom a timeout (milliseconds) for prefetching resources
+  priority: true # Set true to enable fetch() or falls back to XHR
+  # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores
+  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
+  # Leave ignores as empty if you don't understand what it means
+  # Example:
+  # ignores: uri => uri.includes('.xml'), (uri, elem) => elem.hasAttribute('noprefetch')
+  # ignores: [/\/api\/?/, uri => uri.includes('123.html')]
+  ignores:
 
 # Swiftype Search API Key
 #swiftype_key:
