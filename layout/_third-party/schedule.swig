@@ -59,7 +59,7 @@ function fetchData() {
       $eventList = $('#schedule #event-list');
 
       // clean the event list
-      $eventList.html("");
+      $eventList.html('');
       var prevEnd = 0; // used to decide where to insert an <hr/>
 
       data.items.forEach((event) => {
@@ -90,7 +90,7 @@ function getRelativeTime(current, previous) {
   var msPerYear = msPerDay * 365;
 
   var elapsed = current - previous;
-  var tense = elapsed > 0 ? "ago" : "later";
+  var tense = elapsed > 0 ? 'ago' : 'later';
 
   elapsed = Math.abs(elapsed);
 
@@ -118,48 +118,42 @@ function judgeTense(now, eventStart, eventEnd) {
 }
 
 function buildEventDOM(tense, event) {
-  var tenseClass = "";
+  var tenseClass = '';
   var start      = event.start.dateTime;
   var end        = event.end.dateTime;
   switch(tense) {
     case 0 : // now
-      tenseClass = "event-now";
+      tenseClass = 'event-now';
       break;
     case 1 : // future
-      tenseClass = "event-future";
+      tenseClass = 'event-future';
       break;
     case -1: // past
-      tenseClass = "event-past";
+      tenseClass = 'event-past';
       break;
     default:
-      throw "Time data error";
+      throw 'Time data error';
   }
   durationFormat = {
     weekday: 'short',
     hour   : '2-digit',
     minute : '2-digit'
   };
-  relativeTimeStr = (tense == 0) ? "NOW" : getRelativeTime(now, start);
-  durationStr = start.toLocaleTimeString([], durationFormat) + " - " +
+  relativeTimeStr = (tense == 0) ? 'NOW' : getRelativeTime(now, start);
+  durationStr = start.toLocaleTimeString([], durationFormat) + ' - ' +
                 end.toLocaleTimeString([], durationFormat);
 
-  liOpen  = `<li class="event ${tenseClass}">`;
-  liClose = `</li>`;
-  h2Open  = `<h2 class="event-summary">`;
-  h2Close = `</h2>`;
+  liOpen  = '<li class="event ' + tenseClass + '">';
+  liClose = '</li>';
+  h2Open  = '<h2 class="event-summary">';
+  h2Close = '</h2>';
 
-  locationDOM     = "";
+  locationDOM     = '';
   if (showLocation && event.location) {
-    locationDOM   = `<span class="event-location event-details">
-                      ${event.location}
-                     </span>`;
+    locationDOM   = '<span class="event-location event-details">' + event.location + '</span>';
   }
-  relativeTimeDOM = `<span class="event-relative-time">
-                      ${relativeTimeStr}
-                     </span>`;
-  durationDOM     = `<span class="event-duration event-details">
-                      ${durationStr}
-                     </span>`;
+  relativeTimeDOM = '<span class="event-relative-time">' + relativeTimeStr + '</span>';
+  durationDOM     = '<span class="event-duration event-details">' + durationStr + '</span>';
 
   eventContent =
     liOpen +

@@ -5,7 +5,7 @@
 
   MathJax.Hub.Config({
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
       processEscapes: true,
       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     },
@@ -14,9 +14,18 @@
         extensions: ['[mhchem]/mhchem.js'],
       {% endif %}
       equationNumbers: {
-        autoNumber: "AMS"
+        autoNumber: 'AMS'
       }
     }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
   });
 </script>
 
@@ -32,6 +41,7 @@
 
 <style>
 .MathJax_Display {
-  overflow: auto hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 </style>
