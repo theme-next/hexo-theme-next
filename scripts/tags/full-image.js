@@ -28,5 +28,5 @@ function fullImage(args) {
   return image.join(' ');
 }
 
-hexo.extend.tag.register('fullimage', fullImage, { ends: false });
-hexo.extend.tag.register('fi', fullImage, { ends: false });
+hexo.extend.tag.register('fullimage', fullImage, {ends: false});
+hexo.extend.tag.register('fi', fullImage, {ends: false});
