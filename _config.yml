@@ -99,11 +99,15 @@ footer:
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
-# Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# You can set a language value if you prefer a translated version of CC license.
+# CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
+# Valid values of language: deed.zh, deed.fr, deed.de , etc.
 creative_commons:
   license: by-nc-sa
   sidebar: false
   post: false
+  language:
 
 
 # ---------------------------------------------------------------
