@@ -112,10 +112,11 @@
 
           {% if theme.creative_commons.license and theme.creative_commons.sidebar %}
              <div class="cc-license motion-element" itemprop="license">
+              {% set ccLanguage = theme.creative_commons.language %}
               {% if theme.creative_commons.license === 'zero' %}
-                {% set ccType = 'publicdomain/zero/1.0/' %}
+                {% set ccType = 'publicdomain/zero/1.0/' + ccLanguage %}
               {% else %}
-                {% set ccType = 'licenses/' + theme.creative_commons.license + '/4.0/' %}
+                {% set ccType = 'licenses/' + theme.creative_commons.license + '/4.0/' + ccLanguage %}
               {% endif %}
               {% set ccURL = 'https://creativecommons.org/' + ccType %}
               {% set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons"/>' %}
