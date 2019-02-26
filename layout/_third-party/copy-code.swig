@@ -55,27 +55,22 @@
           return $(e).text();
         }).toArray().join('\n');
         var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
         var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
+        ta.readOnly = true;
         ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
         document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
+        ta.select();
         ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
         var result = document.execCommand('copy');
         {% if theme.codeblock.copy_button.show_result %}
           if (result) $(this).text('{{__("post.copy_success")}}');
           else $(this).text('{{__("post.copy_failure")}}');
         {% endif %}
-        ta.blur(); //For iOS
+        ta.blur(); // For iOS
         $(this).blur();
       })).on('mouseleave', function(e) {
         var $b = $(this).find('.copy-btn');
