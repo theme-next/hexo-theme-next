@@ -513,14 +513,29 @@ pangu: false
 # Visit https://github.com/GoogleChromeLabs/quicklink for details
 quicklink:
   enable: false
-  timeout: 3000 # Custom a timeout (milliseconds) for prefetching resources
-  priority: true # Set true to enable fetch() or falls back to XHR
+
+  # Default (true) will load quicklink.umd.js script on demand.
+  # That is it only render those page which has `quicklink: true` in Front Matter.
+  # If you set it to false, it will load quicklink.umd.js srcipt EVERY PAGE.
+  per_page: true
+
+  # Default (true) will initialize quicklink after the load event fires
+  delay: true
+
+  # Custom a time in milliseconds by which the browser must execute prefetching
+  timeout: 3000
+
+  # Default (true) will enable fetch() or falls back to XHR
+  priority: true
+
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   # Leave ignores as empty if you don't understand what it means
   # Example:
-  # ignores: uri => uri.includes('.xml'), (uri, elem) => elem.hasAttribute('noprefetch')
-  # ignores: [/\/api\/?/, uri => uri.includes('123.html')]
+  # ignores:
+  #   - /\/api\/?/
+  #   - uri => uri.includes('.xml')
+  #   - (uri, el) => el.hasAttribute('noopener')
   ignores:
 
 # Swiftype Search API Key
