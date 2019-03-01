@@ -17,13 +17,13 @@
     {% endif %}
     <script src="{{ quicklink_uri }}"></script>
     <script>
-      window.addEventListener('load', () => {
-        quicklink({
-          timeout: {{ theme.quicklink.timeout }},
-          priority: {{ theme.quicklink.priority }},
-          ignores: [uri => uri.includes('#'),uri => uri == '{{ url.replace('index.html', '') }}',{{ theme.quicklink.ignores }}]
+      {% if theme.quicklink.delay %}
+        window.addEventListener('load', () => {
+          {% include 'quicklink.swig' %}
         });
-      });
+      {% elif not theme.quicklink.delay %}
+        {% include 'quicklink.swig' %}
+      {% endif %}
     </script>
   {% endif %}
 {% endif %}
