@@ -8,7 +8,7 @@ daysUntilClose: 7
 exemptLabels:
   - bug
   - discussion
-  - need confirm
+  - need verify
   - wait for answer
   - feature request
   - enhancement
