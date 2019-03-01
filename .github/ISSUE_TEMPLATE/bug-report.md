@@ -35,7 +35,7 @@ You may delete this recomendations and use template which is placed below.
 2. N/A
 3. N/A
 
-* Link to demo site with this issue: N/A
+* Link to demo site with this bug: N/A
 * Link(s) to source code or any usefull link(s): N/A
 
 ### Node.js and NPM Information

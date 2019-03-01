@@ -35,44 +35,8 @@ You may delete this recomendations and use template which is placed below.
 2. N/A
 3. N/A
 
-* Link to demo site with this issue: N/A
+* Link to demo site with this feature: N/A
 * Link(s) to source code or any usefull link(s): N/A
-
-### Node.js and NPM Information
-<!-- Paste output from `node -v && npm -v`  (粘贴 `node -v && npm -v` 输出的信息) -->
-```
-
-```
-
-### Package dependencies Information
-<!-- Paste output from `cat package.json`  (粘贴 `cat package.json` 输出的信息) -->
-```
-
-```
-
-### Hexo Information
-
-#### Hexo version
-<!-- Paste output from `hexo -v`  (粘贴 `hexo -v` 输出的信息) -->
-```
-
-```
-
-#### Hexo Configuration
-<!-- Paste configuration from Hexo `_config.yml`  (从 Hexo `_config.yml` 中粘贴信息) -->
-```yml
-
-```
-
-### NexT Information
-
-**NexT Version:**
-<!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
-
-- [ ] Latest Master branch
-- [ ] Latest Release version
-- [ ] Old version
-
 
 **NexT Scheme:**
 <!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
@@ -82,12 +46,3 @@ You may delete this recomendations and use template which is placed below.
 - [ ] Mist
 - [ ] Pisces
 - [ ] Gemini
-
-
-#### NexT Configuration:
-<!-- Paste ONLY CHANGED CONFIGURATION from NexT `_config.yml` (只粘贴NexT主题配置文件 `_config.yml` 中修改过的部分) -->
-```yml
-
-```
-
-### Other Information <!-- (Like Browser, System, Screenshots) -->
