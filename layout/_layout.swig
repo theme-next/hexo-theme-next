@@ -102,7 +102,7 @@
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/boostrap.swig' %}
+  {% include '_scripts/bootstrap.swig' %}
   {% include '_third-party/quicklink/index.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
