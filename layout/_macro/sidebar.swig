@@ -32,9 +32,7 @@
                 alt="{{ author }}"/>
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ author }}</p>
-              <p class="site-description motion-element" itemprop="description">{#
-              #}{{ description }}{#
-            #}</p>
+              <div class="site-description motion-element" itemprop="description">{{ description }}</div>
           </div>
 
           {% if theme.site_state %}

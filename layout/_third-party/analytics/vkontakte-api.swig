@@ -11,7 +11,7 @@
       {% endif %}
 
       {% if page.comments and theme.vkontakte_api.comments %}
-        VK.Widgets.Comments("vk_comments", {limit: {{  theme.vkontakte_api.num_of_posts }}, attach: "*"});
+        VK.Widgets.Comments("vk_comments", {limit: {{ theme.vkontakte_api.num_of_posts }}, attach: "*"});
       {% endif %}
     };
     setTimeout(function() {
