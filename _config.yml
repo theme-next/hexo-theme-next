@@ -385,6 +385,21 @@ cheers: true
 
 
 # ---------------------------------------------------------------
+# Tagcloud Settings
+# ---------------------------------------------------------------
+
+tagcloud:
+  # If true, font size and color can be customized
+  enable: false 
+
+  # All values below are same as default, change them by yourself
+  min: 12 # min font size in px
+  max: 30 # max font size in px
+  start: '#ccc' # start color (hex, rgba, hsla or color keywords)
+  end: '#111' # end color (hex, rgba, hsla or color keywords)
+
+
+# ---------------------------------------------------------------
 # Font Settings. Introduced in NexT v5.0.1.
 # Find fonts on Google Fonts (https://www.google.com/fonts)
 # All fonts set here will have the following styles:
@@ -394,6 +409,7 @@ cheers: true
 # To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `logo`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
+
 font:
   enable: false
 
