@@ -1,5 +1,5 @@
 <!-- ATTENTION!
-1. Please, write pulls readme in English. Not all contributors / collaborators understand Chinese language and Google translate can't always give true translates on issues. Thanks!
+1. Please, write pull request readme in English. Not all contributors / collaborators know Chinese and Google translate can't always translate issues accurately. Thanks!
 
 2. Always remember that NexT includes 4 schemes. And if on one of them works fine after the changes, on another scheme this changes can be broken. Muse and Mist have similar structure, but Pisces is very difference from them. Gemini is a mirror of Pisces with some styles and layouts remakes. So, please, make the tests at least on two schemes (Muse or Mist and Pisces or Gemini).
 -->
