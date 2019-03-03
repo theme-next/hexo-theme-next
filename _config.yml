@@ -109,6 +109,12 @@ creative_commons:
   post: false
   language:
 
+# Follow me on GitHub banner in right-top corner.
+github_banner:
+  enable: false
+  permalink: https://github.com/yourname
+  title: Follow me on GitHub
+
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -196,12 +202,6 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
-
-# Follow me on GitHub banner in right-top corner.
-# Usage: `permalink || title`
-# Value before `||` delimeter is the target permalink.
-# Value after `||` delimeter is the title and aria-label name.
-#github_banner: https://github.com/yourname || Follow me on GitHub
 
 # Blog rolls
 links_icon: link
@@ -291,9 +291,9 @@ post_meta:
   item_text: true
   created_at: true
   updated_at:
-    enabled: true
-    # If true, show updated date label only if `updated date` different from `created date` (post edited in another day than was created).
-    # And if post will edited in same day as created, edited time will show in popup title under created time label.
+    enable: true
+    # If true, show updated date label only if `updated date` is different from `created date` (post edited in another day than was created).
+    # And if post was edited in same day as created, edited time will show in popup title under created time label.
     # If false show anyway, but if post edited in same day, show only edited time.
     another_day: true
   categories: true
@@ -321,7 +321,7 @@ codeblock:
 
 # Wechat Subscriber
 wechat_subscriber:
-  #enabled: true
+  enable: false
   #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
   #description: e.g. subscribe to my blog by scanning my public wechat account
 
@@ -371,12 +371,9 @@ android_chrome_color: "#222"
 
 # Custom Logo
 # Do not support Scheme Mist currently.
-# Options:
-#   enabled: If true, will enable custom logo
-#   image: Images's url, e.g. /uploads/custom-logo.jpg
 custom_logo:
-  enabled: false
-  image:
+  enable: false
+  image: #/uploads/custom-logo.jpg
 
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
@@ -384,7 +381,7 @@ custom_logo:
 highlight_theme: normal
 
 # Enable "cheers" for archive page.
-cheers_enabled: true
+cheers: true
 
 
 # ---------------------------------------------------------------
@@ -1039,7 +1036,6 @@ vendors:
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
   pangu:
 
-  # Internal version: 1.0.0
   # See: https://github.com/GoogleChromeLabs/quicklink
   # Example:
   # quicklink: //cdn.jsdelivr.net/npm/quicklink@1.0.0/dist/quicklink.umd.js
