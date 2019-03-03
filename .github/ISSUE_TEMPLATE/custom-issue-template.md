@@ -12,7 +12,6 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 如果你不填充下面的内容，我们可能会直接关闭你的 issue。
 
 If you want to fast resolve your issue, WRITE IT IN ENGLISH, please. Not all contributors / collaborators know Chinese and Google translate can't always translate issues accurately. Thanks!
-You may delete this recomendations and use template which is placed below.
 -->
 
 ### I agree and want to create new issue <!-- 我确认我已经查看了 -->
