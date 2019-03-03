@@ -20,8 +20,8 @@ sidebar:
 post:
   posted: Veröffentlicht am
   edited: Bearbeitet am
-  created: Post created
-  modified: Updated at
+  created: Erstellt
+  modified: Geändert am
   edit: Diesen Beitrag bearbeiten
   in: in
   more: mehr
@@ -50,9 +50,9 @@ footer:
   total_visitors: Alle Besucher
 counter:
   tag_cloud:
-    zero: Keine Tags
-    one: Insgesamt ein Tag
-    other: "Insgesamt %d Tags"
+    zero: Keine Schlagworte
+    one: Insgesamt ein Schlagwort
+    other: "Insgesamt %d Schlagwörter"
   categories:
     zero: Keine Kategorien
     one: Insgesamt eine Kategorie
@@ -64,7 +64,7 @@ counter:
 state:
   posts: Artikel
   pages: Seiten
-  tags: Tags
+  tags: schlagwörter
   categories: Kategorien
 search:
   placeholder: Suche...
