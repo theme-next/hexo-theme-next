@@ -514,10 +514,11 @@ pangu: false
 quicklink:
   enable: false
 
-  # Default (true) will load quicklink.umd.js script on demand.
-  # That is it only render those page which has `quicklink: true` in Front Matter.
-  # If you set it to false, it will load quicklink.umd.js srcipt EVERY PAGE.
-  per_page: true
+  # Quicklink (quicklink.umd.js script) is loaded on demand
+  # Add `quicklink: true` in Front Matter of the page or post you need
+  # Home page and archive page can be controlled through home and archive options below
+  home: true
+  archive: true
 
   # Default (true) will initialize quicklink after the load event fires
   delay: true

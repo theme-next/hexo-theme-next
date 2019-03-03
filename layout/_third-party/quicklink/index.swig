@@ -1,20 +1,22 @@
 {% if theme.quicklink.enable %}
-  {% set is_index_has_quicklink = false %}
-
-  {# At home, check if there has `quicklink: true` post #}
-  {% if is_home() %}
-    {% for post in page.posts %}
-      {% if post.quicklink and not is_index_has_quicklink %}
-        {% set is_index_has_quicklink = true %}
-      {% endif %}
-    {% endfor %}
+  {% set quicklink_uri = url_for(theme.vendors._internal + '/quicklink/dist/quicklink.umd.js') %}
+  {% if theme.vendors.quicklink %}
+    {% set quicklink_uri = theme.vendors.quicklink %}
   {% endif %}
 
-  {% if not theme.quicklink.per_page or (is_index_has_quicklink or page.quicklink) %}
-    {% set quicklink_uri = url_for(theme.vendors._internal + '/quicklink/dist/quicklink.umd.js') %}
-    {% if theme.vendors.quicklink %}
-      {% set quicklink_uri = theme.vendors.quicklink %}
+  {% if is_home() %}
+    {% if theme.quicklink.home %}
+      {% set loadQL = true %}
     {% endif %}
+  {% endif %}
+
+  {% if is_archive() %}
+    {% if theme.quicklink.archive %}
+      {% set loadQL = true %}
+    {% endif %}
+  {% endif %}
+  
+  {% if loadQL or (page.quicklink or post.quicklink) %}
     <script src="{{ quicklink_uri }}"></script>
     <script>
       {% if theme.quicklink.delay %}
