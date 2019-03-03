@@ -81,15 +81,15 @@ symbol:
   period: ", "
   colon: ": "
 reward:
-  donate: Donate
+  donate: Spenden
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
 gitmentbutton: Show comments from Gitment
 accessibility:
   nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  prev_page: Vorherige Seite
+  next_page: Nächste Seite
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total
