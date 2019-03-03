@@ -139,7 +139,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Bug`: 提出了 Bug，等待确认
     - `Discussion`: 需要讨论的 Issue
     - `Question`: 有关咨询的 Issue
-    - `Feature-Request`: 提出了特性需求的 Issue
+    - `Feature Request`: 提出了特性需求的 Issue
     - `Backlog`: 待解决的 Issue
 - 内容
     - `Roadmap`: 与主题 Next 发展相关的 Issue
@@ -148,7 +148,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Scheme [2] - Muse`: 与样式 Muse 相关的 Issue
     - `Scheme [3] - Pisces`: 与样式 Pisces 相关的 Issue
     - `Scheme [4] - Gemini`: 与样式 Gemini 相关的 Issue
-    - `3rd party service`: 与第三方服务相关的 Issue
+    - `3rd Party Service`: 与第三方服务相关的 Issue
     - `Docs`: 需要添加文档说明的 Issue
     - `Configurations`: 与主题 Next 设置相关的 Issue
     - `CSS`: 与主题 Next CSS 文件相关的 Issue
@@ -171,7 +171,8 @@ Pull requests 的标签：
 - `Breaking Change`: 涉及主题 Next 重大架构的 Pull request
 - `Bugfix`: 修复 Bug 的 Pull request
 - `Docs`: 添加了文档说明的 Pull request
-- `Feature`: 添加了新特性的 Pull request
+- `New Feature`: 添加了新特性的 Pull request
+- `Feature`: 为已存在的特性添加了选项或功能的 Pull request
 - `Configurations`: 涉及主题 Next 配置的 Pull request
 - `Optimization`: 优化了主题 Next 的 Pull request
 - `i18n`: 更新了翻译的 Pull request

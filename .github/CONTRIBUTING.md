@@ -136,7 +136,7 @@ Issues related: `types`+`contents`+`results`
     - `Bug`: A detected bug that needs to be confirmed
     - `Discussion`: An issue that needs to be discussed
     - `Question`: An issue about questions
-    - `Feature-Request`: An issue that wants a new feature
+    - `Feature Request`: An issue that wants a new feature
     - `Backlog`: An issue that is to be completed and later compensated
 - By contents
     - `Roadmap`: An issue about future development
@@ -145,7 +145,7 @@ Issues related: `types`+`contents`+`results`
     - `Scheme [2] - Muse`: An issue related to Scheme Muse
     - `Scheme [3] - Pisces`: An issue related to Scheme Pisces
     - `Scheme [4] - Gemini`: An issue related to Scheme Gemini
-    - `3rd party service`: An issue related to 3rd party service
+    - `3rd Party Service`: An issue related to 3rd party service
     - `Docs`: Need to add instruction document
     - `Configurations`: An issue related to configurations
     - `CSS`: An issue related to CSS
@@ -168,7 +168,8 @@ Pull requests related:
 - `Breaking Change`: A Pull requests that makes breaking change
 - `Bugfix`: A Pull requests that fixes the related bug
 - `Docs`: A Pull requests that Instruction document has been added
-- `Feature`: A Pull requests that provides a new feature
+- `New Feature`: A Pull requests that provides a new feature
+- `Feature`: A Pull requests that provides an option or addition to existing feature
 - `Configurations`: A Pull requests related to configurations
 - `Optimization`: A Pull requests that optimizates the Next
 - `i18n`: A Pull requests that makes new languages translation
