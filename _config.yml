@@ -390,7 +390,7 @@ cheers: true
 
 tagcloud:
   # If true, font size and color can be customized
-  enable: false 
+  enable: false
 
   # All values below are same as default, change them by yourself
   min: 12 # min font size in px
