@@ -54,7 +54,7 @@ function extURL(args) {
     'data-url': url,
     title     : title
   };
-
+  console.log('WARNING: `exturl` and `extlink` tag has been deprecated in NexT v7.');
   return htmlTag('span', attrs, text.join(' ') + '<i class="fa fa-external-link"></i>');
 }
 

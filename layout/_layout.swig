@@ -102,8 +102,8 @@
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/boostrap.swig' %}
-  {% include '_third-party/quicklink.swig' %}
+  {% include '_scripts/next-boot.swig' %}
+  {% include '_third-party/quicklink/index.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
   {% include '_third-party/analytics/lean-analytics.swig' %}
@@ -115,9 +115,28 @@
   {% include '_third-party/needsharebutton.swig' %}
   {% include '_third-party/rating.swig' %}
   {% include '_third-party/pangu.swig' %}
-  {% include '_third-party/scroll-cookie.swig' %}
-  {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
+
+  {% if theme.exturl %}
+    <script src="{{ url_for(theme.js) }}/src/exturl.js?v={{ version }}"></script>
+  {% endif %}
+  {% if theme.mermaid.enable %}
+    <script src="{{ url_for(theme.js) }}/src/mermaid.js?v={{ version }}"></script>
+    <script>
+      mermaid.initialize({
+        theme: '{{ theme.mermaid.theme }}',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    </script>
+  {% endif %}
+  {% if theme.save_scroll %}
+    <script src="{{ url_for(theme.js) }}/src/js.cookie.js?v={{ version }}"></script>
+    <script src="{{ url_for(theme.js) }}/src/scroll-cookie.js?v={{ version }}"></script>
+  {% endif %}
+
 </body>
 </html>
