@@ -841,9 +841,6 @@ note:
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0
 
-# Label tag
-label: true
-
 # Tabs tag
 tabs:
   enable: true

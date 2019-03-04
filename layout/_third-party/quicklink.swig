@@ -21,10 +21,14 @@
     <script>
       {% if theme.quicklink.delay %}
         window.addEventListener('load', () => {
-          {% include 'quicklink.swig' %}
+      {% endif %}
+        quicklink({
+          timeout: {{ theme.quicklink.timeout }},
+          priority: {{ theme.quicklink.priority }},
+          ignores: [uri => uri.includes('#'),uri => uri == '{{ url.replace('index.html', '') }}',{{ theme.quicklink.ignores }}]
         });
-      {% elif not theme.quicklink.delay %}
-        {% include 'quicklink.swig' %}
+      {% if theme.quicklink.delay %}
+        });
       {% endif %}
     </script>
   {% endif %}
