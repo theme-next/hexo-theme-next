@@ -1,6 +1,11 @@
 <script>
-  if ($('body').find('pre.mermaid').length) {
-    $.getScript('{{ theme.mermaid.cdn }}', function() {
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '{{ theme.mermaid.cdn }}',
+    dataType: 'script',
+    cache: true,
+    success: function() {
       mermaid.initialize({
         theme: '{{ theme.mermaid.theme }}',
         logLevel: 3,
@@ -8,6 +13,7 @@
         gantt: { axisFormat: '%m/%d/%Y' },
         sequence: { actorMargin: 50 }
       });
-    });
-  }
+    }
+  });
+}
 </script>
