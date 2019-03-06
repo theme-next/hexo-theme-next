@@ -386,6 +386,7 @@ highlight_theme: normal
 # Enable "cheers" for archive page.
 cheers: true
 
+# TagCloud settings for tags page.
 tagcloud:
   # If true, font size and color can be customized
   enable: false
