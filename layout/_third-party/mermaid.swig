@@ -1,5 +1,5 @@
 <script>
-  if ($('body').find('pre.mermaid')) {
+  if ($('body').find('pre.mermaid').length) {
     $.getScript('{{ theme.mermaid.cdn }}', function() {
       mermaid.initialize({
         theme: '{{ theme.mermaid.theme }}',
