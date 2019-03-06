@@ -1,5 +1,6 @@
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
+# See: https://theme-next.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
 # If false, merge configs from `_data/next.yml` into default configuration (rewrite).
@@ -175,6 +176,7 @@ scheme: Muse
 
 # ---------------------------------------------------------------
 # Sidebar Settings
+# See: https://theme-next.org/docs/theme-settings/sidebar/
 # ---------------------------------------------------------------
 
 # Posts / Categories / Tags in sidebar.
@@ -265,6 +267,7 @@ sidebar:
 
 # ---------------------------------------------------------------
 # Post Settings
+# See: https://theme-next.org/docs/theme-settings/posts/
 # ---------------------------------------------------------------
 
 # Automatically scroll page to section which is under <!-- more --> mark.
@@ -383,11 +386,6 @@ highlight_theme: normal
 # Enable "cheers" for archive page.
 cheers: true
 
-
-# ---------------------------------------------------------------
-# Tagcloud Settings
-# ---------------------------------------------------------------
-
 tagcloud:
   # If true, font size and color can be customized
   enable: false
@@ -456,6 +454,7 @@ font:
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
+# See: https://theme-next.org/docs/third-party-services/
 # ---------------------------------------------------------------
 
 # Math Equations Render Support
@@ -824,9 +823,9 @@ reading_progress:
 
 # ---------------------------------------------------------------
 # Tags Settings
+# See: https://theme-next.org/docs/tag-plugins/
 # ---------------------------------------------------------------
 
-# See: https://theme-next.org/docs/tag-plugins/
 # Note tag (bs-callout)
 note:
   # Note tag style values:
@@ -929,9 +928,10 @@ canvas_ribbon:
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
+# See: https://theme-next.org/docs/advanced-settings/
 # For example
 #   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
-# Be aware that you should use the same version as internal ones to avoid potential problems.
+# Be aware that you would better use the same version as internal ones to avoid potential problems.
 # Please use the https protocol of CDN files when you enable https on your site.
 vendors:
   # Internal path prefix. Please do not edit it.
