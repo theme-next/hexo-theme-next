@@ -134,10 +134,14 @@ Issues related: `types`+`contents`+`results`
     - `Irrelevant`: An irrelevant issue for Next
     - `Duplicate`: An issue which had been mentioned
     - `Bug`: A detected bug that needs to be confirmed
+    - `Feature Request`: An issue that wants a new feature
+    - `High Priority`: A detected bugs or misprints with high priority
+    - `Low Priority`: A detected bugs or misprints with low priority
+    - `Non English`: Requires the attention of a multi-lingual maintainer
     - `Discussion`: An issue that needs to be discussed
     - `Question`: An issue about questions
-    - `Feature-Request`: An issue that wants a new feature
     - `Backlog`: An issue that is to be completed and later compensated
+    - `Meta`: Denoting a change of usage conditions
 - By contents
     - `Roadmap`: An issue about future development
     - `Hexo`: An issue related to Hexo
@@ -145,7 +149,7 @@ Issues related: `types`+`contents`+`results`
     - `Scheme [2] - Muse`: An issue related to Scheme Muse
     - `Scheme [3] - Pisces`: An issue related to Scheme Pisces
     - `Scheme [4] - Gemini`: An issue related to Scheme Gemini
-    - `3rd party service`: An issue related to 3rd party service
+    - `3rd Party Service`: An issue related to 3rd party service
     - `Docs`: Need to add instruction document
     - `Configurations`: An issue related to configurations
     - `CSS`: An issue related to CSS
@@ -154,10 +158,10 @@ Issues related: `types`+`contents`+`results`
 - By results
     - `Wontfix`: An issue that will not to be fixed
     - `Need More Info`: Need more information for solving the issue
-    - `Need Confirm`: Need confirmation from the developers or user about the bug or solution
+    - `Need Verify`: Need confirmation from the developers or user about the bug or solution
     - `Can't Reproduce`: An issue that can’t be reproduced
     - `Verified`: An issue that has been verified
-    - `Help wanted`: An issue that needs help
+    - `Help Wanted`: An issue that needs help
     - `Wait for Answer`: An issue that needs to be answered by the developers or user
     - `Resolved Maybe`: An issue that has been resolved maybe
     - `Solved`: An issue that has been solved
@@ -168,12 +172,15 @@ Pull requests related:
 - `Breaking Change`: A Pull requests that makes breaking change
 - `Bugfix`: A Pull requests that fixes the related bug
 - `Docs`: A Pull requests that Instruction document has been added
-- `Feature`: A Pull requests that provides a new feature
+- `New Feature`: A Pull requests that provides a new feature
+- `Feature`: A Pull requests that provides an option or addition to existing feature
 - `Configurations`: A Pull requests related to configurations
 - `Optimization`: A Pull requests that optimizates the Next
 - `i18n`: A Pull requests that makes new languages translation
 - `Performance`: A Pull requests that improves the performance
 - `Discussion`: A Pull requests that needs to be discussed
+- `v6.x`: A Pull requests that bugfixes and some optimizations related to old NexT version 6
+- `v7.x`: A Pull requests that bugfixes and some optimizations, related to old NexT version 7
 
 ### Commit Messages Rules
 

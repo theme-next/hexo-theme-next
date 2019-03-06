@@ -396,6 +396,39 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "JiangTJ",
+      "name": "Mr.J",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15902347?v=4",
+      "profile": "https://www.dnocm.com",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "1v9",
+      "name": "1v9",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29083921?v=4",
+      "profile": "https://1v9.im",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "stevenjoezhang",
+      "name": "Mimi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/16272760?v=4",
+      "profile": "https://zhangshuqiao.org",
+      "contributions": [
+        "bug",
+        "code",
+        "doc"
+      ]
     }
   ]
 }

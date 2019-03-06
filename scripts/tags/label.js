@@ -16,4 +16,4 @@ function postLabel(args) {
   return `<span class="label ${classes.trim()}">${text}</span>`;
 }
 
-hexo.extend.tag.register('label', postLabel, { ends: false });
+hexo.extend.tag.register('label', postLabel, {ends: false});

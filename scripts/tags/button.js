@@ -31,5 +31,5 @@ function postButton(args) {
   return result.join('');
 }
 
-hexo.extend.tag.register('button', postButton, { ends: false });
-hexo.extend.tag.register('btn', postButton, { ends: false });
+hexo.extend.tag.register('button', postButton, {ends: false});
+hexo.extend.tag.register('btn', postButton, {ends: false});
