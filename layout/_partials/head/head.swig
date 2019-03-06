@@ -107,6 +107,8 @@
     scheme: '{{ theme.scheme }}',
     version: '{{ version }}',
     sidebar: {{ theme.sidebar | json_encode }},
+    back2top: {{ theme.back2top.enable }},
+    back2top_sidebar: {{ theme.back2top.sidebar }},
     fancybox: {{ theme.fancybox }},
     fastclick: {{ theme.fastclick }},
     lazyload: {{ theme.lazyload }},
