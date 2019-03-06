@@ -172,7 +172,7 @@
       <!--/noindex-->
       {% endif %}
 
-      {% if theme.sidebar.b2t %}
+      {% if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           {% if theme.sidebar.scrollpercent %}
