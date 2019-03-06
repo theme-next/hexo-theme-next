@@ -795,6 +795,7 @@ tabs:
 # So, YOU MUST install the dependency of pdf.js if you want to use pdf tag and make it work on all browsers.
 # See: https://github.com/theme-next/theme-next-pdf
 pdf:
+  enable: false
   # Default height
   height: 500px
   pdfobject:

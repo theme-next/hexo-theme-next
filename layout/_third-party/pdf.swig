@@ -1,3 +1,4 @@
+{% if theme.pdf.enable %}
 <style>
 .pdfobject-container {
   position: relative;
@@ -30,3 +31,4 @@ if ($('body').find('div.pdf').length) {
   });
 }
 </script>
+{% endif %}
