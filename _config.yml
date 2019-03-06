@@ -809,6 +809,7 @@ tabs:
 
 # Mermaid tag
 mermaid:
+  enable: false
   # Available themes: default | dark | forest | neutral
   theme: forest
   # Use 8.0.0 as default, jsdelivr as default CDN, works everywhere even in China
