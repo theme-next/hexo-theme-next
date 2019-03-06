@@ -522,7 +522,7 @@ han: false
 pangu: false
 
 # Quicklink Support
-# Dependencies: https://cdn.jsdelivr.net/npm/quicklink/dist/
+# Dependencies: https://github.com/theme-next/theme-next-quicklink
 # Visit https://github.com/GoogleChromeLabs/quicklink for details
 quicklink:
   enable: false
