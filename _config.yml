@@ -496,24 +496,6 @@ math:
       copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
       copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
 
-# PDF Support
-# Dependencies: https://github.com/theme-next/theme-next-pdf
-pdf:
-  enable: false
-
-  # Default (true) will load PDFObject / PDF.js script on demand.
-  # That is it only render those page which has `pdf: true` in Front Matter.
-  # If you set it to false, it will load PDFObject / PDF.js srcipt EVERY PAGE.
-  per_page: true
-
-  height: 500px
-
-  pdfobject:
-    # Use 2.1.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js
-    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
-
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
@@ -854,6 +836,21 @@ tabs:
     tabs: false
     labels: true
   border_radius: 0
+
+# PDF tag, requires two plugins: pdfObject and pdf.js
+# pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
+# The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
+# So, YOU MUST install the dependency of pdf.js if you want to use pdf tag and make it work on all browsers.
+# See: https://github.com/theme-next/theme-next-pdf
+pdf:
+  enable: false
+  # Default height
+  height: 500px
+  pdfobject:
+    # Use 2.1.1 as default, jsdelivr as default CDN, works everywhere even in China
+    cdn: //cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js
+    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
 
 
 #! ---------------------------------------------------------------
