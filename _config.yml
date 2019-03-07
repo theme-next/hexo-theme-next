@@ -394,6 +394,7 @@ tagcloud:
   enable: false
 
   # All values below are same as default, change them by yourself
+  amount: 200 # amount of tags, set `enable` to `true` and edit this option if you have more than 200 tags
   min: 12 # min font size in px
   max: 30 # max font size in px
   start: '#ccc' # start color (hex, rgba, hsla or color keywords)
