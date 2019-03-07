@@ -137,10 +137,14 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Irrelevant`: 与主题 Next 无关的 Issue
     - `Duplicate`: 已经存在同样 Issue
     - `Bug`: 提出了 Bug，等待确认
+    - `Feature Request`: 提出了特性需求的 Issue
+    - `High Priority`: 检测到的高优先级错误或笔误 Issue
+    - `Low Priority`: 检测到的低优先级错误或笔误 Issue
+    - `Non English`: 需要多语言维护者注意 Issue
     - `Discussion`: 需要讨论的 Issue
     - `Question`: 有关咨询的 Issue
-    - `Feature-Request`: 提出了特性需求的 Issue
     - `Backlog`: 待解决的 Issue
+    - `Meta`: 表明使用条款变更 Issue
 - 内容
     - `Roadmap`: 与主题 Next 发展相关的 Issue
     - `Hexo`: 与 Hexo 相关的 Issue
@@ -148,7 +152,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Scheme [2] - Muse`: 与样式 Muse 相关的 Issue
     - `Scheme [3] - Pisces`: 与样式 Pisces 相关的 Issue
     - `Scheme [4] - Gemini`: 与样式 Gemini 相关的 Issue
-    - `3rd party service`: 与第三方服务相关的 Issue
+    - `3rd Party Service`: 与第三方服务相关的 Issue
     - `Docs`: 需要添加文档说明的 Issue
     - `Configurations`: 与主题 Next 设置相关的 Issue
     - `CSS`: 与主题 Next CSS 文件相关的 Issue
@@ -157,10 +161,10 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
 - 结果
     - `Wontfix`: 不能或不被修复的 Issue
     - `Need More Info`: 需要更多信息的 Issue
-    - `Need Confirm`: 需要开发人员或用户确认的 Issue
+    - `Need Verify`: 需要开发人员或用户确认的 Issue
     - `Can't Reproduce`: 不能被重现的 Issue
     - `Verified`: 已经被确认的 Issue
-    - `Help wanted`: 需要帮助的 Issue
+    - `Help Wanted`: 需要帮助的 Issue
     - `Wait for Answer`: 需要开发人员或用户回复的 Issue
     - `Resolved Maybe`: 可能已经解决的 Issue
     - `Solved`: 已经解决的 Issue
@@ -171,14 +175,16 @@ Pull requests 的标签：
 - `Breaking Change`: 涉及主题 Next 重大架构的 Pull request
 - `Bugfix`: 修复 Bug 的 Pull request
 - `Docs`: 添加了文档说明的 Pull request
-- `Feature`: 添加了新特性的 Pull request
+- `New Feature`: 添加了新特性的 Pull request
+- `Feature`: 为已存在的特性添加了选项或功能的 Pull request
 - `Configurations`: 涉及主题 Next 配置的 Pull request
 - `Optimization`: 优化了主题 Next 的 Pull request
 - `i18n`: 更新了翻译的 Pull request
 - `Performance`: 提高了主题 Next 性能的 Pull request
 - `Discussion`: 需要进行讨论的 Pull request
+- `v6.x`: NexT v6.x 旧版相关的修复和优化类型 Pull request
+- `v7.x`: NexT v7.x 旧版相关的修复和优化类型 Pull request
 
-<a name="commit-messages-rules"></a>
 ### 提交信息规范
 
 我们对项目的 git 提交信息格式进行统一格式约定，每条提交信息由 `type`+`subject` 组成，这将提升项目日志的可读性。

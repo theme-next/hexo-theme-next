@@ -64,10 +64,10 @@
       </div>
     </footer>
 
-    {% if not theme.sidebar.b2t %}
+    {% if theme.back2top.enable and not theme.back2top.sidebar %}
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        {% if theme.sidebar.scrollpercent %}
+        {% if theme.back2top.scrollpercent %}
           <span id="scrollpercent"><span>0</span>%</span>
         {% endif %}
       </div>
@@ -102,7 +102,7 @@
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/boostrap.swig' %}
+  {% include '_scripts/next-boot.swig' %}
   {% include '_third-party/quicklink.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}

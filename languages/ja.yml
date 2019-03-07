@@ -9,7 +9,7 @@ menu:
   archives: アーカイブ
   categories: カテゴリ
   tags: タグ
-  about: について
+  about: プロフィール
   search: 検索
   schedule: スケジュール
   sitemap: サイトマップ
@@ -19,11 +19,11 @@ sidebar:
   toc: 見出し
 post:
   posted: 投稿日
-  edited: に編集されました
-  created: 建てられる
-  modified: 修正する
+  edited: 編集日
+  created: 作成日
+  modified: 修正日
   edit: この記事を編集する
-  in: 分類された
+  in: カテゴリ
   more: もっと見る
   read_more: 続きを読む
   untitled: 無題

@@ -15,7 +15,7 @@
       <div class="collection-title">
         <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
         #}{{ page.category }}{#
-        #}<small>{{  __('title.category')  }}</small>
+        #}<small>{{ __('title.category') }}</small>
         </{% if theme.seo %}h2{% else %}h1{% endif %}>
       </div>
 

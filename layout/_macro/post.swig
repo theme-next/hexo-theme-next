@@ -80,7 +80,7 @@
                 <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
 
-              {% if !date_diff && time_diff && theme.post_meta.updated_at.enabled && theme.post_meta.updated_at.another_day %}
+              {% if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
                 {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
               {% else %}
                 {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
@@ -91,11 +91,11 @@
               </time>
             {% endif %}
 
-            {% if theme.post_meta.updated_at.enabled && datetime_diff %}
+            {% if theme.post_meta.updated_at.enable && datetime_diff %}
               {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
               {% if display_updated or !theme.post_meta.created_at %}
-                {% if theme.post_meta.created_at and theme.post_meta.updated_at.enabled %}
+                {% if theme.post_meta.created_at and theme.post_meta.updated_at.enable %}
                 <span class="post-meta-divider">|</span>
                 {% endif %}
 
@@ -342,10 +342,8 @@
     {### END POST BODY ###}
     {#####################}
 
-    {% if theme.wechat_subscriber.enabled and not is_index %}
-      <div>
-        {% include '../_partials/post/wechat-subscriber.swig' %}
-      </div>
+    {% if theme.wechat_subscriber.enable and not is_index %}
+      {% include '../_partials/post/wechat-subscriber.swig' %}
     {% endif %}
 
     {% if page.reward === undefined and theme.reward.enable %}

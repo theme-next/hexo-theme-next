@@ -88,8 +88,8 @@ reward:
 gitmentbutton: Show comments from Gitment
 accessibility:
   nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  prev_page: Halaman sebelumnya
+  next_page: Halaman selanjutnya
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total
