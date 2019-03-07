@@ -1,0 +1,45 @@
+[submodule "Han"]
+	path = source/lib/Han
+	url = https://github.com/theme-next/theme-next-han
+[submodule "needsharebutton"]
+	path = source/lib/needsharebutton
+	url = https://github.com/theme-next/theme-next-needmoreshare2
+[submodule "pdf"]
+	path = source/lib/pdf
+	url = https://github.com/theme-next/theme-next-pdf
+[submodule "canvas-nest"]
+	path = source/lib/canvas-nest
+	url = https://github.com/theme-next/theme-next-canvas-nest
+[submodule "canvas-ribbon"]
+	path = source/lib/canvas-ribbon
+	url = https://github.com/theme-next/theme-next-canvas-ribbon
+[submodule "three"]
+	path = source/lib/three
+	url = https://github.com/theme-next/theme-next-three
+[submodule "bookmark"]
+	path = source/lib/bookmark
+	url = https://github.com/theme-next/theme-next-bookmark
+[submodule "pangu"]
+	path = source/lib/pangu
+	url = https://github.com/theme-next/theme-next-pangu
+[submodule "fancybox"]
+	path = source/lib/fancybox
+	url = https://github.com/theme-next/theme-next-fancybox3
+[submodule "pace"]
+	path = source/lib/pace
+	url = https://github.com/theme-next/theme-next-pace
+[submodule "jquery_lazyload"]
+	path = source/lib/jquery_lazyload
+	url = https://github.com/theme-next/theme-next-jquery-lazyload
+[submodule "fastclick"]
+	path = source/lib/fastclick
+	url = https://github.com/theme-next/theme-next-fastclick
+[submodule "algolia-instant-search"]
+	path = source/lib/algolia-instant-search
+	url = https://github.com/theme-next/theme-next-algolia-instant-search
+[submodule "reading_progress"]
+	path = source/lib/reading_progress
+	url = https://github.com/theme-next/theme-next-reading-progress
+[submodule "quicklink"]
+	path = source/lib/quicklink
+	url = https://github.com/theme-next/theme-next-quicklink
