@@ -388,17 +388,16 @@ highlight_theme: normal
 # Enable "cheers" for archive page.
 cheers: true
 
-# TagCloud settings for tags page.
 tagcloud:
-  # If true, font size and color can be customized
-  enable: false
+  # If true, font size, font color and amount of tags can be customized
+  enable: true
 
   # All values below are same as default, change them by yourself
-  amount: 200 # amount of tags, set `enable` to `true` and edit this option if you have more than 200 tags
   min: 12 # min font size in px
   max: 30 # max font size in px
   start: '#ccc' # start color (hex, rgba, hsla or color keywords)
   end: '#111' # end color (hex, rgba, hsla or color keywords)
+  amount: 200 # amount of tags, chage it if you have more than 200 tags
 
 
 # ---------------------------------------------------------------
