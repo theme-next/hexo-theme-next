@@ -1,5 +1,6 @@
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
+# See: https://theme-next.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
 # If false, merge configs from `_data/next.yml` into default configuration (rewrite).
@@ -99,11 +100,21 @@ footer:
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
-# Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# You can set a language value if you prefer a translated version of CC license.
+# CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
+# Valid values of language: deed.zh, deed.fr, deed.de , etc.
 creative_commons:
   license: by-nc-sa
   sidebar: false
   post: false
+  language:
+
+# Follow me on GitHub banner in right-top corner.
+github_banner:
+  enable: false
+  permalink: https://github.com/yourname
+  title: Follow me on GitHub
 
 
 # ---------------------------------------------------------------
@@ -165,6 +176,7 @@ scheme: Muse
 
 # ---------------------------------------------------------------
 # Sidebar Settings
+# See: https://theme-next.org/docs/theme-settings/sidebar/
 # ---------------------------------------------------------------
 
 # Posts / Categories / Tags in sidebar.
@@ -192,12 +204,6 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
-
-# Follow me on GitHub banner in right-top corner.
-# Usage: `permalink || title`
-# Value before `||` delimeter is the target permalink.
-# Value after `||` delimeter is the title and aria-label name.
-#github_banner: https://github.com/yourname || Follow me on GitHub
 
 # Blog rolls
 links_icon: link
@@ -249,18 +255,21 @@ sidebar:
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
-  # Back to top in sidebar.
-  b2t: false
-  # Scroll percent label in b2t button.
-  scrollpercent: false
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
   # Click any blank part of the page to close sidebar (only for Muse | Mist).
   dimmer: false
 
+back2top:
+  enable: true
+  # Back to top in sidebar.
+  sidebar: false
+  # Scroll percent label in b2t button.
+  scrollpercent: false
 
 # ---------------------------------------------------------------
 # Post Settings
+# See: https://theme-next.org/docs/theme-settings/posts/
 # ---------------------------------------------------------------
 
 # Automatically scroll page to section which is under <!-- more --> mark.
@@ -287,9 +296,9 @@ post_meta:
   item_text: true
   created_at: true
   updated_at:
-    enabled: true
-    # If true, show updated date label only if `updated date` different from `created date` (post edited in another day than was created).
-    # And if post will edited in same day as created, edited time will show in popup title under created time label.
+    enable: true
+    # If true, show updated date label only if `updated date` is different from `created date` (post edited in another day than was created).
+    # And if post was edited in same day as created, edited time will show in popup title under created time label.
     # If false show anyway, but if post edited in same day, show only edited time.
     another_day: true
   categories: true
@@ -312,10 +321,12 @@ codeblock:
     enable: false
     # Show text copy result
     show_result: false
+    # Style: only 'flat' is currently available, leave it blank if you prefer default theme
+    style:
 
 # Wechat Subscriber
 wechat_subscriber:
-  #enabled: true
+  enable: false
   #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
   #description: e.g. subscribe to my blog by scanning my public wechat account
 
@@ -365,12 +376,9 @@ android_chrome_color: "#222"
 
 # Custom Logo
 # Do not support Scheme Mist currently.
-# Options:
-#   enabled: If true, will enable custom logo
-#   image: Images's url, e.g. /uploads/custom-logo.jpg
 custom_logo:
-  enabled: false
-  image:
+  enable: false
+  image: #/uploads/custom-logo.jpg
 
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
@@ -378,7 +386,19 @@ custom_logo:
 highlight_theme: normal
 
 # Enable "cheers" for archive page.
-cheers_enabled: true
+cheers: true
+
+# TagCloud settings for tags page.
+tagcloud:
+  # If true, font size and color can be customized
+  enable: false
+
+  # All values below are same as default, change them by yourself
+  amount: 200 # amount of tags, set `enable` to `true` and edit this option if you have more than 200 tags
+  min: 12 # min font size in px
+  max: 30 # max font size in px
+  start: '#ccc' # start color (hex, rgba, hsla or color keywords)
+  end: '#111' # end color (hex, rgba, hsla or color keywords)
 
 
 # ---------------------------------------------------------------
@@ -391,6 +411,7 @@ cheers_enabled: true
 # To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `logo`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
+
 font:
   enable: false
 
@@ -437,6 +458,7 @@ font:
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
+# See: https://theme-next.org/docs/third-party-services/
 # ---------------------------------------------------------------
 
 # Math Equations Render Support
@@ -475,24 +497,6 @@ math:
       copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
       copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
 
-# PDF Support
-# Dependencies: https://github.com/theme-next/theme-next-pdf
-pdf:
-  enable: false
-
-  # Default (true) will load PDFObject / PDF.js script on demand.
-  # That is it only render those page which has `pdf: true` in Front Matter.
-  # If you set it to false, it will load PDFObject / PDF.js srcipt EVERY PAGE.
-  per_page: true
-
-  height: 500px
-
-  pdfobject:
-    # Use 2.1.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js
-    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
-
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
@@ -502,10 +506,36 @@ han: false
 # For more information: https://github.com/vinta/pangu.js
 pangu: false
 
-# quicklink Support
-# Dependencies: https://cdn.jsdelivr.net/npm/quicklink/dist/
+# Quicklink Support
+# Dependencies: https://github.com/theme-next/theme-next-quicklink
 # Visit https://github.com/GoogleChromeLabs/quicklink for details
-quicklink: false
+quicklink:
+  enable: false
+
+  # Quicklink (quicklink.umd.js script) is loaded on demand
+  # Add `quicklink: true` in Front Matter of the page or post you need
+  # Home page and archive page can be controlled through home and archive options below
+  home: true
+  archive: true
+
+  # Default (true) will initialize quicklink after the load event fires
+  delay: true
+
+  # Custom a time in milliseconds by which the browser must execute prefetching
+  timeout: 3000
+
+  # Default (true) will enable fetch() or falls back to XHR
+  priority: true
+
+  # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores
+  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
+  # Leave ignores as empty if you don't understand what it means
+  # Example:
+  # ignores:
+  #   - /\/api\/?/
+  #   - uri => uri.includes('.xml')
+  #   - (uri, el) => el.hasAttribute('noopener')
+  ignores:
 
 # Swiftype Search API Key
 #swiftype_key:
@@ -572,11 +602,15 @@ gitment:
 gitalk:
   enable: false
   github_id:  # Github repo owner
-  repo:  # Repository name to store issues.
+  repo:  # Repository name to store issues
   client_id:  # Github Application Client ID
   client_secret:  # Github Application Client Secret
   admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
   distraction_free_mode: true # Facebook-like distraction free mode
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available value: en, es-ES, fr, ru, zh-CN, zh-TW
+  language:
 
 # Baidu Share
 # Available values: button | slide
@@ -619,7 +653,7 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-# google_analytics: 
+# google_analytics:
 #   tracking_id:
 #   localhost_ignored: true
 
@@ -779,9 +813,9 @@ reading_progress:
 
 # ---------------------------------------------------------------
 # Tags Settings
+# See: https://theme-next.org/docs/tag-plugins/
 # ---------------------------------------------------------------
 
-# See: https://theme-next.org/docs/tag-plugins/
 # Note tag (bs-callout)
 note:
   # Note tag style values:
@@ -796,9 +830,6 @@ note:
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0
 
-# Label tag
-label: true
-
 # Tabs tag
 tabs:
   enable: true
@@ -806,6 +837,21 @@ tabs:
     tabs: false
     labels: true
   border_radius: 0
+
+# PDF tag, requires two plugins: pdfObject and pdf.js
+# pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
+# The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
+# So, YOU MUST install the dependency of pdf.js if you want to use pdf tag and make it work on all browsers.
+# See: https://github.com/theme-next/theme-next-pdf
+pdf:
+  enable: false
+  # Default height
+  height: 500px
+  pdfobject:
+    # Use 2.1.1 as default, jsdelivr as default CDN, works everywhere even in China
+    cdn: //cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js
+    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
 
 # Mermaid tag
 mermaid:
@@ -897,9 +943,10 @@ canvas_ribbon:
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
+# See: https://theme-next.org/docs/advanced-settings/
 # For example
 #   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
-# Be aware that you should use the same version as internal ones to avoid potential problems.
+# Be aware that you would better use the same version as internal ones to avoid potential problems.
 # Please use the https protocol of CDN files when you enable https on your site.
 vendors:
   # Internal path prefix. Please do not edit it.
@@ -1017,7 +1064,6 @@ vendors:
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
   pangu:
 
-  # Internal version: 1.0.0
   # See: https://github.com/GoogleChromeLabs/quicklink
   # Example:
   # quicklink: //cdn.jsdelivr.net/npm/quicklink@1.0.0/dist/quicklink.umd.js
