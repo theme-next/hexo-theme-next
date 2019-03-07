@@ -853,6 +853,16 @@ pdf:
     # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
     #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
 
+# Mermaid tag
+mermaid:
+  enable: false
+  # Available themes: default | dark | forest | neutral
+  theme: forest
+  # Use 8.0.0 as default, jsdelivr as default CDN, works everywhere even in China
+  cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
+  # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
+  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
+
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
@@ -879,16 +889,16 @@ motion:
     sidebar: slideUpIn
 
 # Fancybox. There is support for old version 2 and new version 3.
-# Choose only any one variant, do not need to install both.
+# Choose only one variant, do not need to install both.
 # To install 2.x: https://github.com/theme-next/theme-next-fancybox
 # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
 fancybox: false
 
-# Added switch option for separated repo in 6.0.0.
+# Polyfill to remove click delays on browsers with touch UIs.
 # Dependencies: https://github.com/theme-next/theme-next-fastclick
 fastclick: false
 
-# Added switch option for separated repo in 6.0.0.
+# Vanilla JavaScript plugin for lazyloading images.
 # Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
 lazyload: false
 
