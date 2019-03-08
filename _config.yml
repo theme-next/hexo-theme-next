@@ -459,6 +459,7 @@ font:
 # ---------------------------------------------------------------
 # Third Party Services Settings
 # See: https://theme-next.org/docs/third-party-services/
+# You may need to install dependencies or set CDN urls in `vendors`
 # ---------------------------------------------------------------
 
 # Math Equations Render Support
@@ -487,7 +488,7 @@ math:
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) needed to full Katex support.
   katex:
     # Use 0.7.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css
+    cdn: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
     # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
     #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
 
@@ -520,10 +521,8 @@ quicklink:
 
   # Default (true) will initialize quicklink after the load event fires
   delay: true
-
   # Custom a time in milliseconds by which the browser must execute prefetching
   timeout: 3000
-
   # Default (true) will enable fetch() or falls back to XHR
   priority: true
 
@@ -653,9 +652,9 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-# google_analytics:
-#   tracking_id:
-#   localhost_ignored: true
+#google_analytics:
+#  tracking_id:
+#  localhost_ignored: true
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster
@@ -864,10 +863,9 @@ mermaid:
   #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
 
 
-#! ---------------------------------------------------------------
-#! DO NOT EDIT THE FOLLOWING SETTINGS
-#! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! ---------------------------------------------------------------
+# ---------------------------------------------------------------
+# Animation Settings
+# ---------------------------------------------------------------
 
 # Use velocity to animate everything.
 motion:
@@ -941,9 +939,14 @@ canvas_ribbon:
   alpha: 0.6
   zIndex: -1
 
-# Script Vendors.
-# Set a CDN address for the vendor you want to customize.
-# See: https://theme-next.org/docs/advanced-settings/
+
+#! ---------------------------------------------------------------
+#! DO NOT EDIT THE FOLLOWING SETTINGS
+#! UNLESS YOU KNOW WHAT YOU ARE DOING
+#! See: https://theme-next.org/docs/advanced-settings/
+#! ---------------------------------------------------------------
+
+# Script Vendors. Set a CDN address for the vendor you want to customize.
 # For example
 #   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
 # Be aware that you would better use the same version as internal ones to avoid potential problems.
@@ -1006,7 +1009,7 @@ vendors:
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
   fontawesome:
 
-  # Internal version: 2.4.1
+  # Internal version: 2.10.4
   # See: https://www.algolia.com
   # Example:
   # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js
@@ -1057,16 +1060,17 @@ vendors:
   # han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
   han:
 
-  # Internal version: 3.3.0
+  # Internal version: 4.0.7
   # See: https://github.com/vinta/pangu.js
   # Example:
-  # pangu: //cdn.jsdelivr.net/npm/pangu@3/dist/browser/pangu.min.js
-  # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
+  # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
+  # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
   pangu:
 
+  # Internal version: 1.0.0
   # See: https://github.com/GoogleChromeLabs/quicklink
   # Example:
-  # quicklink: //cdn.jsdelivr.net/npm/quicklink@1.0.0/dist/quicklink.umd.js
+  # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
   quicklink:
 
   # Internal version: 1.0.0
