@@ -1,11 +1,4 @@
 {% if theme.pdf.enable %}
-<style>
-.pdfobject-container {
-  position: relative;
-  overflow: auto;
-  width: 100%;
-}
-</style>
 <script>
 if ($('body').find('div.pdf').length) {
   $.ajax({
