@@ -96,7 +96,6 @@ pre {
   .line { height: 20px; }
 }
 
-
 .gutter {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -122,6 +121,7 @@ pre {
   .variable
   .attribute
   .tag
+  .name
   .regexp
   .ruby .constant
   .xml .tag .title
@@ -137,6 +137,7 @@ pre {
   .number
   .preprocessor
   .built_in
+  .builtin-name
   .literal
   .params
   .constant
@@ -147,13 +148,13 @@ pre {
   .ruby .class .title
   .css .rules .attribute
   .string
+  .symbol
   .value
   .inheritance
   .header
   .ruby .symbol
   .xml .cdata
   .special
-  .number
   .formula {
     color: $highlight-green;
   }
@@ -178,5 +179,4 @@ pre {
   .javascript .function {
     color: $highlight-purple;
   }
-
 }

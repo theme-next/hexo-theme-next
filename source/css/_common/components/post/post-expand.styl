@@ -28,38 +28,38 @@
 }
 
 .posts-expand .post-body {
-  +desktop() { text-align: justify; }
-
+  +desktop() {
+    text-align: justify;
+  }
 
   h2, h3, h4, h5, h6 {
     padding-top: 10px;
 
-    .header-anchor{
+    .header-anchor {
       float: right;
       margin-left: 10px;
       color: $grey-light;
       border-bottom-style: none;
       visibility: hidden;
 
-      &:hover{
+      &:hover {
         color: inherit;
       }
     }
 
-    &:hover .header-anchor{
+    &:hover .header-anchor {
       visibility: visible;
     }
   }
 
-  ul li { list-style: circle; }
+  ul > li {
+    list-style: circle;
+  }
 
   img {
     box-sizing: border-box;
-    margin: auto;
+    margin: 0 auto 25px;
     padding: 3px;
     border: 1px solid $gray-lighter;
   }
 }
-
-.posts-expand .post-body .fancybox img { margin: 0 auto 25px; }
-.posts-expand .post-body img { margin: 0 auto 25px; }

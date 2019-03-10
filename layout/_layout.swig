@@ -25,9 +25,9 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
-  {% set container_class = "container " %}
+  {% set container_class = 'container' %}
   {% if theme.sidebar.position %}
-    {% set container_class = container_class + 'sidebar-position-' + theme.sidebar.position %}
+    {% set container_class = container_class + ' sidebar-position-' + theme.sidebar.position %}
   {% endif %}
 
   <div class="{{ container_class }} {% block page_class %}{% endblock %}">
@@ -37,7 +37,7 @@
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
 
-    {{ partial('_third-party/github-banner.swig', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -64,10 +64,10 @@
       </div>
     </footer>
 
-    {% if not theme.sidebar.b2t %}
+    {% if theme.back2top.enable and not theme.back2top.sidebar %}
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        {% if theme.sidebar.scrollpercent %}
+        {% if theme.back2top.scrollpercent %}
           <span id="scrollpercent"><span>0</span>%</span>
         {% endif %}
       </div>
@@ -80,7 +80,7 @@
         </span>
       </div>
     {% endif %}
-	
+
     {% if theme.baidushare and theme.baidushare.type === "slide" %}
       <div>
         {% include '_partials/share/baidushare.swig' %}
@@ -102,19 +102,22 @@
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/boostrap.swig' %}
-
+  {% include '_scripts/next-boot.swig' %}
+  {% include '_scripts/scroll-cookie.swig' %}
+  {% include '_scripts/exturl.swig' %}
+  {% include '_third-party/quicklink.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
   {% include '_third-party/analytics/lean-analytics.swig' %}
   {% include '_third-party/analytics/firestore.swig' %}
-  {% include '_third-party/seo/baidu-push.swig' %}
   {% include '_third-party/math/index.swig' %}
+  {% include '_third-party/pdf.swig' %}
+  {% include '_third-party/mermaid.swig' %}
+  {% include '_third-party/baidu-push.swig' %}
+  {% include '_third-party/schedule.swig' %}
   {% include '_third-party/needsharebutton.swig' %}
   {% include '_third-party/rating.swig' %}
   {% include '_third-party/pangu.swig' %}
-  {% include '_third-party/scroll-cookie.swig' %}
-  {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
 </body>

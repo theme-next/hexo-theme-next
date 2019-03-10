@@ -11,7 +11,7 @@
   {% set theme.rss = config.feed.path %}
 {% endif %}
 {% if theme.rss %}
-  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml" />
+  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml"/>
 {% endif %}
 
 {# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}
@@ -20,7 +20,7 @@
 {% endif %}
 
 {# Exports some front-matter variables to Front-End #}
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: {{ page.sidebar | json_encode }},
   };

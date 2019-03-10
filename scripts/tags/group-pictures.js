@@ -1,13 +1,5 @@
 /**
- * group-pictures.js
- *
- * Usage:
- *
- * {% grouppicture [group]-[layout] %}{% endgrouppicture %}
- * {% gp [group]-[layout] %}{% endgp %}
- *
- * [group]  : Total number of pictures to add in the group.
- * [layout] : Default picture under the group to show.
+ * group-pictures.js | https://theme-next.org/docs/tag-plugins/group-pictures/
  */
 
 /* global hexo */
@@ -123,22 +115,20 @@ var templates = {
       rowHTML += this.getRowHTML(rows[i]);
     }
 
-    return '<div class="group-picture-container">' + rowHTML + '</div>';
+    return `<div class="group-picture-container">${rowHTML}</div>`;
   },
 
   getRowHTML: function(pictures) {
-    return (
-      '<div class="group-picture-row">' + this.getColumnHTML(pictures) + '</div>'
-    );
+    return `<div class="group-picture-row">${this.getColumnHTML(pictures)}</div>`;
   },
 
   getColumnHTML: function(pictures) {
     var columns = [];
     var columnWidth = 100 / pictures.length;
-    var columnStyle = ' style="width: ' + columnWidth + '%;"';
+    var columnStyle = `style="width: ${columnWidth}%;"`;
 
     for (var i = 0; i < pictures.length; i++) {
-      columns.push('<div class="group-picture-column" ' + columnStyle + '>' + pictures[i] + '</div>');
+      columns.push(`<div class="group-picture-column" ${columnStyle}>${pictures[i]}</div>`);
     }
     return columns.join('');
   }
@@ -153,7 +143,7 @@ function groupPicture(args, content) {
 
   var pictures = content.match(/<img[\s\S]*?>/g);
 
-  return '<div class="group-picture">' + templates.dispatch(pictures, group, layout) + '</div>';
+  return `<div class="group-picture">${templates.dispatch(pictures, group, layout)}</div>`;
 }
 
 hexo.extend.tag.register('grouppicture', groupPicture, {ends: true});

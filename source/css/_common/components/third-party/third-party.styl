@@ -1,7 +1,7 @@
 @import "gitment" if hexo-config('gitment.enable');
-@import "han";
+@import "han" if hexo-config('han');
 @import "localsearch";
-@import "busuanzi-counter";
 @import "algolia-search" if hexo-config('algolia_search.enable');
 @import "needsharebutton" if hexo-config('needmoreshare2.enable');
 @import "related-posts" if hexo-config('related_posts.enable');
+@import "gitalk" if hexo-config('gitalk.enable');

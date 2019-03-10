@@ -12,11 +12,31 @@
   }
 }
 
+.menu-item-active a {
+  background: #f9f9f9;
+  border-bottom-color: white;
+
+  badges = hexo-config('menu_settings.badges');
+  if not badges {
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      right: 15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $grey;
+    }
+  }
+}
+
 .menu .menu-item {
   display: block;
   margin: 0;
 
-  a {
+  a, span.exturl {
     position: relative;
     box-sizing: border-box;
     padding: 5px 20px;
@@ -26,9 +46,10 @@
     the-transition();
 
     &:hover {
-      background: #f9f9f9;
-      border-bottom-color: white;
+      @extend .menu-item-active a;
     }
+
+    disable-touch-hover();
   }
 
   .badge {
@@ -48,26 +69,6 @@
   }
 
   br { display: none; }
-}
-
-.menu-item-active a {
-  @extend .menu .menu-item a:hover;
-
-  badges = hexo-config('menu_settings.badges');
-  if not badges {
-    &:after {
-      content: " ";
-      position: absolute;
-      top: 50%;
-      margin-top: -3px;
-      right: 15px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: $grey;
-    }
-  }
-
 }
 
 .btn-bar {

@@ -1,10 +1,9 @@
 <div class="site-brand-wrapper">
-  <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
-    {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
+  <div class="site-meta{% if theme.custom_logo.enable %} custom-logo{% endif %}">
+    {% if theme.custom_logo.enable and theme.custom_logo.image and theme.scheme === 'Muse' %}
       <div class="site-meta-headline">
         <a>
-          <img class="custom-logo-image" src="{{ theme.custom_logo.image }}"
-               alt="{{ title }}"/>
+          <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ title }}"/>
         </a>
       </div>
     {% endif %}
@@ -22,6 +21,11 @@
       {% else %}
         <p class="site-subtitle">{{ subtitle }}</p>
       {% endif %}
+    {% endif %}
+    {% if theme.custom_logo.enable and theme.custom_logo.image and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
+      <a>
+        <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ title }}"/>
+      </a>
     {% endif %}
   </div>
 

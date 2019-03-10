@@ -1,6 +1,6 @@
 @keyframes dot-flash {
-    from {opacity: 1; transform:scale(1.1);}
-    to {opacity: 0; transform:scale(1);}
+  from { opacity: 1; transform: scale(1.1); }
+  to { opacity: 0; transform: scale(1); }
 }
 
 #schedule {
@@ -71,8 +71,9 @@
     }
     li.event-past {
       background: #FCFCFC
+      padding: 15px 0 15px 10px
       & > * {
-        opacity: .6
+        opacity: .9
       }
       h2.event-summary {
         color: #bbb
@@ -96,6 +97,20 @@
         color: #FFF!important
       }
     }
+    li.event-future {
+      background: #222
+      color: #FFF
+      padding: 15px 0 15px 10px
+      h2.event-summary {
+        &:before {
+          transform: scale(1.2)
+          color: #FFF
+          animation: dot-flash 1s alternate infinite ease-in-out;
+        }
+      }
+      * {
+        color: #FFF!important
+      }
+    }
   }
 }
-

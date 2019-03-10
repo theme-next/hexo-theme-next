@@ -57,7 +57,7 @@ use_seo = hexo-config('seo');
 // Comments blocks.
 .comments {
   padding: $content-desktop-padding;
-  margin: initial;
+  margin: auto;
   margin-top: $sidebar-offset;
   background: white;
   box-shadow: $box-shadow;
@@ -143,13 +143,22 @@ use_seo = hexo-config('seo');
   h1 {
     font-size: 1.6em;
     border-bottom: 1px solid $body-bg-color;
+    code {
+      font-size: 1em;
+    }
   }
   h2 {
     font-size: 1.45em;
     border-bottom: 1px solid $body-bg-color;
+    code {
+      font-size: 1em;
+    }
   }
   h3 {
     font-size: 1.3em;
+    code {
+      font-size: 1em;
+    }
     if use_seo {
       border-bottom: 1px solid $body-bg-color;
     } else {
@@ -158,15 +167,24 @@ use_seo = hexo-config('seo');
   }
   h4 {
     font-size: 1.2em;
+    code {
+      font-size: 1em;
+    }
     if use_seo {
       border-bottom: 1px dotted $body-bg-color;
     }
   }
   h5 {
     font-size: 1.07em;
+    code {
+      font-size: 1em;
+    }
   }
   h6 {
     font-size: 1.03em;
+    code {
+      font-size: 1em;
+    }
   }
 }
 
@@ -229,8 +247,7 @@ use_seo = hexo-config('seo');
 
     // Components inside Posts.
     .post-button {
-      margin-top: $sidebar-offset;
-      //padding-bottom : 15px;
+      margin: $sidebar-offset 0px;
     }
     img {
       padding: initial !important;
@@ -261,5 +278,4 @@ use_seo = hexo-config('seo');
   .pagination {
     margin: $content-mobile-padding 0 0;
   }
-
 }

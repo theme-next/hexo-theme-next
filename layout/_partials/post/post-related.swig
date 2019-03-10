@@ -8,7 +8,7 @@
         <div class="popular-posts-date">{{ popular_post.date }}</div>
       {% endif %}
       {% if popular_post.img && popular_post.img != '' %}
-        <div class="popular-posts-img"><img src="{{ popular_post.img }}" /></div>
+        <div class="popular-posts-img"><img src="{{ popular_post.img }}"/></div>
       {% endif %}
       <div class="popular-posts-title"><a href="{{ popular_post.path }}" rel="bookmark">{{ popular_post.title }}</a></div>
       {% if popular_post.excerpt && popular_post.excerpt != '' %}
