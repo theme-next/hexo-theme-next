@@ -1131,8 +1131,8 @@ vendors:
   # likely
   # See: https://github.com/ilyabirman/Likely
   # Example:
-  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.min.js
-  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.min.css
+  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js
+  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
   likely_js:
   likely_css:
 
