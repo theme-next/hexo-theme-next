@@ -715,15 +715,10 @@ rating:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
+# Dependencies: https://github.com/LEAFERx/hexo-leancloud-counter/
+# Checkout https://github.com/LEAFERx/hexo-leancloud-counter/ for how to setup.
 leancloud_visitors:
   enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
-  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-  # If you don't care about security in leancloud counter and just want to use it directly
-  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: true
-  betterPerformance: false
 
 # Another tool to show number of visitors to each article.
 # Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.

@@ -108,7 +108,9 @@
   {% include '_third-party/quicklink.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
-  {% include '_third-party/analytics/lean-analytics.swig' %}
+  {% if theme.leancloud_visitors.enable %}
+    {{ leancloud_counter_script(page.layout) }}
+  {% endif %}
   {% include '_third-party/analytics/firestore.swig' %}
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/pdf.swig' %}
