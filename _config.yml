@@ -103,7 +103,7 @@ footer:
 creative_commons:
   license: by-nc-sa
   sidebar: false
-  post: false
+  post: true
 
 
 # ---------------------------------------------------------------
@@ -158,9 +158,9 @@ menu_settings:
 
 # Schemes
 # scheme: Muse
-#scheme: Mist
-scheme: Pisces
-#scheme: Gemini
+scheme: Mist
+# scheme: Pisces
+# scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -1095,3 +1095,11 @@ vendors:
 css: css
 js: https://st.razeen.me/next/js
 images: https://st.razeen.me/next/images
+
+
+custom_css:
+  # the style of post body link
+  post_body_a:
+    enable: true
+    normal_color: "#0593d3"
+    hover_color: "#0477ab"

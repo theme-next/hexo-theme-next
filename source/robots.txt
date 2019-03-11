@@ -5,12 +5,5 @@ Allow: /categories/
 Allow: /tags/
 Allow: /about/
 
-Disallow: /vendors/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /vendors/
-Disallow: /fancybox/
-
 Sitemap: https://razeen.me/sitemap.xml
 Sitemap: https://razeen.me/baidusitemap.xml

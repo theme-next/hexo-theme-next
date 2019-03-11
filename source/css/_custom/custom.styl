@@ -1,1 +1,9 @@
 // Custom styles.
+if hexo-config("custom_css.post_body_a.enable")
+  .post-body
+    a{
+      color: convert(hexo-config("custom_css.post_body_a.normal_color"));
+      &:hover {
+        color: convert(hexo-config("custom_css.post_body_a.hover_color"));
+      }
+    }
