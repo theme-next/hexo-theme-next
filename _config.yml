@@ -103,7 +103,7 @@ footer:
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license.
 # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
-# Valid values of language: deed.zh, deed.fr, deed.de , etc.
+# Valid values of language: deed.zh, deed.fr, deed.de, etc.
 creative_commons:
   license: by-nc-sa
   sidebar: false
@@ -572,6 +572,7 @@ valine:
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
+  language: # language, available values: en, zh-cn
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # if false, comment count will only be displayed in post page, not in home page
 
@@ -608,7 +609,7 @@ gitalk:
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
-  # Available value: en, es-ES, fr, ru, zh-CN, zh-TW
+  # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
   language:
 
 # Baidu Share
