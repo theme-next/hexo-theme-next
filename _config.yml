@@ -622,6 +622,24 @@ gitalk:
 # Go to https://www.addthis.com/dashboard to customize your tools.
 #add_this_id:
 
+# Likely Share
+# See: https://ilyabirman.net/projects/likely/
+# Likely supports four looks, nine social networks, any button text
+# You are free to modify the text value and order of any network
+likely:
+  enable: false
+  look: normal # available values: normal, light, small, big
+  networks:
+    twitter: Tweet
+    facebook: Share
+    linkedin: Link
+    gplus: Plus
+    vkontakte: Share
+    odnoklassniki: Class
+    telegram: Send
+    whatsapp: Send
+    pinterest: Pin
+
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
 # See: https://github.com/revir/need-more-share2, https://github.com/DzmVasileusky/needShareButton
@@ -1109,6 +1127,14 @@ vendors:
   gitalk_js:
   gitalk_css:
   md5:
+
+  # likely
+  # See: https://github.com/ilyabirman/Likely
+  # Example:
+  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js
+  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
+  likely_js:
+  likely_css:
 
 # Assets
 css: css
