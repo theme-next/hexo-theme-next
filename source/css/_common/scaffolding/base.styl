@@ -17,20 +17,18 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  margin: 20px 0 15px;
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
   font-family: $font-family-headings;
 }
 
-h1, h2, h3, h4, h5, h6 { margin: 20px 0 15px; }
-
 for headline in (1..6) {
   h{headline} {
     font-size: $font-size-headings-base - $font-size-headings-step * headline;
     code {
-      font-size: $font-size-headings-base - $font-size-headings-step * headline;
+      font-size: 1em;
     }
   }
 
@@ -38,7 +36,7 @@ for headline in (1..6) {
     h{headline} {
       font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
       code {
-        font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
+        font-size: 1em;
       }
     }
   }
@@ -114,10 +112,10 @@ dd {
 kbd {
   border: 1px solid $grey-light;
   border-radius: 0.2em;
-  box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
   font-family: inherit;
-  background-image: -webkit-linear-gradient(top, #eee, white, #eee);
+  background-image: linear-gradient(top, #eee, white, #eee);
   padding: 0.1em 0.3em;
   white-space: nowrap;
 }
