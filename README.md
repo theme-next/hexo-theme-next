@@ -4,7 +4,7 @@
 
 # <div align="center"><a title="NexT website repository" href="https://github.com/theme-next/theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-<p align="center">«NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch, with love.</p>
+<p align="center">«NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch with love.</p>
 
 <p align="center">
   <a href="https://www.codacy.com/app/theme-next/hexo-theme-next?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=theme-next/hexo-theme-next&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/72f7fe7609c2438a92069f448e5a341a" title="Project Grade"></a>
@@ -26,7 +26,7 @@ More «NexT» examples [here](https://github.com/iissnan/hexo-theme-next/issues/
 
 ## Installation
 
-Simplest way to install is by cloning whole repository:
+Simplest way to install is by cloning the entire repository:
 
    ```sh
    $ cd hexo
@@ -39,7 +39,7 @@ Or you can see [detailed installation instructions][docs-installation-url] if yo
 
 In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
 
-For example, you want to use `fancybox` in your site. Go to NexT config and see:
+For example, if you want to use `fancybox` in your site, go to NexT config and see:
 
 ```yml
 # Fancybox
@@ -53,7 +53,7 @@ Then turn on `fancybox` and go to «Dependencies» link with installation instru
 
 If you use cdn for any plugins, you need to replace your cdn link.
 
-For example, you want to use `fancybox` and you configured a cdn link. Go to NexT config and see:
+For example, if you want to use `fancybox` and you configured a cdn link, go to NexT config and see:
 
 ```yml
 vendors:
@@ -76,7 +76,7 @@ $ git pull
 ```
 
 And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
-Howbeit, you can bypass update errors by `Commit`, `Stash` or `Discard` local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
+However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
 **If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].**
 
