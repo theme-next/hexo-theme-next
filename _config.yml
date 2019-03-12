@@ -103,7 +103,7 @@ footer:
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license.
 # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
-# Valid values of language: deed.zh, deed.fr, deed.de , etc.
+# Valid values of language: deed.zh, deed.fr, deed.de, etc.
 creative_commons:
   license: by-nc-sa
   sidebar: false
@@ -396,8 +396,8 @@ tagcloud:
   # All values below are same as default, change them by yourself
   min: 12 # min font size in px
   max: 30 # max font size in px
-  start: '#ccc' # start color (hex, rgba, hsla or color keywords)
-  end: '#111' # end color (hex, rgba, hsla or color keywords)
+  start: "#ccc" # start color (hex, rgba, hsla or color keywords)
+  end: "#111" # end color (hex, rgba, hsla or color keywords)
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
 
@@ -504,6 +504,7 @@ han: false
 
 # Pangu Support
 # Dependencies: https://github.com/theme-next/theme-next-pangu
+# For more information: https://github.com/vinta/pangu.js
 pangu: false
 
 # Quicklink Support
@@ -571,6 +572,7 @@ valine:
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
+  language: # language, available values: en, zh-cn
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # if false, comment count will only be displayed in post page, not in home page
 
@@ -606,7 +608,7 @@ gitalk:
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
-  # Available value: en, es-ES, fr, ru, zh-CN, zh-TW
+  # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
   language:
 
 # Baidu Share
@@ -618,6 +620,24 @@ gitalk:
 # AddThis Share, See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 #add_this_id:
+
+# Likely Share
+# See: https://ilyabirman.net/projects/likely/
+# Likely supports four looks, nine social networks, any button text
+# You are free to modify the text value and order of any network
+likely:
+  enable: false
+  look: normal # available values: normal, light, small, big
+  networks:
+    twitter: Tweet
+    facebook: Share
+    linkedin: Link
+    gplus: Plus
+    vkontakte: Share
+    odnoklassniki: Class
+    telegram: Send
+    whatsapp: Send
+    pinterest: Pin
 
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
@@ -991,13 +1011,6 @@ vendors:
   velocity:
   velocity_ui:
 
-  # Internal version: 0.7.9
-  # See: https://faisalman.github.io/ua-parser-js
-  # Example:
-  # ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0/src/ua-parser.min.js
-  # ua_parser: //cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
-  ua_parser:
-
   # Internal version: 4.6.2
   # See: https://fontawesome.com
   # Example:
@@ -1102,19 +1115,23 @@ vendors:
   # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
   valine:
 
-  # gitalk
-  # See: https://github.com/gitalk/gitalk
+  # gitalk & js-md5
+  # See: https://github.com/gitalk/gitalk, https://github.com/emn178/js-md5
   # Example:
   # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
   # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+  # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
   gitalk_js:
   gitalk_css:
-
-  # js-md5
-  # See: https://github.com/emn178/js-md5
-  # Example:
-  # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
   md5:
+
+  # likely
+  # See: https://github.com/ilyabirman/Likely
+  # Example:
+  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js
+  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
+  likely_js:
+  likely_css:
 
 # Assets
 css: css
