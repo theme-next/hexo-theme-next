@@ -76,6 +76,25 @@
   }
 }
 
+.chat {
+  border-top: 1px dotted $grey-light;
+  border-bottom: 1px dotted $grey-light;
+  text-align: center;
+}
+
+.chat a {
+  display: block;
+  color: $orange;
+  border: none;
+
+  &:hover {
+    background: none;
+    color: darken($orange, 20%);
+
+    i { color: darken($orange, 20%); }
+  }
+}
+
 .links-of-author {
   //clearfix();
   display: flex;
