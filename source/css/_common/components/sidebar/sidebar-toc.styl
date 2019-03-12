@@ -37,7 +37,9 @@
   line-height: 1.8;
 }
 
-.post-toc .nav .nav-child { display: none; }
+.post-toc .nav .nav-child {
+  display: hexo-config('toc.expand_all') ? block : none;
+}
 
 .post-toc .nav .active > .nav-child { display: block; }
 
