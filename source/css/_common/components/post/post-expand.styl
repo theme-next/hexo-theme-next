@@ -4,7 +4,7 @@
   padding-top: 40px;
 }
 
-@media (max-width: 767px) {
++mobile() {
   .posts-expand {
     margin: 0 20px;
   }
@@ -30,6 +30,9 @@
 .posts-expand .post-body {
   +desktop() {
     text-align: justify;
+  }
+  +tablet-mobile() {
+    text-align: justify; if hexo-config('mobile_text_justify');
   }
 
   h2, h3, h4, h5, h6 {
