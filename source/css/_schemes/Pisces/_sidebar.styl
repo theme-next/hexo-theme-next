@@ -76,6 +76,25 @@
   }
 }
 
+.chat {
+  border-top: 1px dotted $grey-light;
+  border-bottom: 1px dotted $grey-light;
+  text-align: center;
+}
+
+.chat a {
+  display: block;
+  color: $orange;
+  border: none;
+
+  &:hover {
+    background: none;
+    color: darken($orange, 20%);
+
+    i { color: darken($orange, 20%); }
+  }
+}
+
 .links-of-author {
   //clearfix();
   display: flex;
@@ -108,9 +127,8 @@
 
 .links-of-blogroll {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 3px 0 0;
-  border-top: 1px dotted $grey-light;
 }
 .links-of-blogroll-title { margin-top: 0; }
 .links-of-blogroll-item { padding: 0; }

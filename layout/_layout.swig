@@ -64,10 +64,10 @@
       </div>
     </footer>
 
-    {% if not theme.sidebar.b2t %}
+    {% if theme.back2top.enable and not theme.back2top.sidebar %}
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        {% if theme.sidebar.scrollpercent %}
+        {% if theme.back2top.scrollpercent %}
           <span id="scrollpercent"><span>0</span>%</span>
         {% endif %}
       </div>
@@ -102,7 +102,9 @@
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/boostrap.swig' %}
+  {% include '_scripts/next-boot.swig' %}
+  {% include '_scripts/scroll-cookie.swig' %}
+  {% include '_scripts/exturl.swig' %}
   {% include '_third-party/quicklink.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
@@ -110,14 +112,15 @@
   {% include '_third-party/analytics/firestore.swig' %}
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/pdf.swig' %}
+  {% include '_third-party/mermaid.swig' %}
   {% include '_third-party/baidu-push.swig' %}
   {% include '_third-party/schedule.swig' %}
   {% include '_third-party/needsharebutton.swig' %}
   {% include '_third-party/rating.swig' %}
   {% include '_third-party/pangu.swig' %}
-  {% include '_third-party/scroll-cookie.swig' %}
-  {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
+  {% include '_third-party/chatra.swig' %}
+  {% include '_third-party/tidio.swig' %}
 </body>
 </html>

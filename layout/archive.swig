@@ -15,7 +15,7 @@
     <div id="posts" class="posts-collapse">
       <span class="archive-move-on"></span>
 
-      {% if theme.cheers_enabled %}
+      {% if theme.cheers %}
       <span class="archive-page-counter">
         {% set cheers %}
         {% set posts_length = site.posts.length %}

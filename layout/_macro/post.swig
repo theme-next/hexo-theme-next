@@ -80,7 +80,7 @@
                 <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
 
-              {% if !date_diff && time_diff && theme.post_meta.updated_at.enabled && theme.post_meta.updated_at.another_day %}
+              {% if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
                 {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
               {% else %}
                 {% set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
@@ -91,11 +91,11 @@
               </time>
             {% endif %}
 
-            {% if theme.post_meta.updated_at.enabled && datetime_diff %}
+            {% if theme.post_meta.updated_at.enable && datetime_diff %}
               {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
               {% if display_updated or !theme.post_meta.created_at %}
-                {% if theme.post_meta.created_at and theme.post_meta.updated_at.enabled %}
+                {% if theme.post_meta.created_at and theme.post_meta.updated_at.enable %}
                 <span class="post-meta-divider">|</span>
                 {% endif %}
 
@@ -271,11 +271,7 @@
           {% set COLUMN_NUMBER = 3 %}
           {% for photo in post.photos %}
             {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
-              <a class="post-gallery-img fancybox"
-                 href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
-              </a>
+              <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
             {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
           {% endfor %}
 
@@ -342,10 +338,8 @@
     {### END POST BODY ###}
     {#####################}
 
-    {% if theme.wechat_subscriber.enabled and not is_index %}
-      <div>
-        {% include '../_partials/post/wechat-subscriber.swig' %}
-      </div>
+    {% if theme.wechat_subscriber.enable and not is_index %}
+      {% include '../_partials/post/wechat-subscriber.swig' %}
     {% endif %}
 
     {% if page.reward === undefined and theme.reward.enable %}
@@ -375,7 +369,7 @@
       {% endif %}
 
       {% if not is_index %}
-      {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare and theme.baidushare.type === "button") %}
+      {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare and theme.baidushare.type === "button") %}
         <div class="post-widgets">
         {% if theme.rating.enable %}
           <div class="wp_rating">
@@ -402,14 +396,14 @@
           </div>
         {% endif %}
 
-        {% if (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare.type === "button") %}
+        {% if theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare.type === "button") %}
           {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
             <span class="post-meta-divider">|</span>
           {% endif %}
           <div class="social_share">
-            {% if theme.baidushare.type === "button" %}
+            {% if theme.likely.enable %}
               <div>
-                {% include '../_partials/share/baidushare.swig' %}
+                {% include '../_partials/share/likely.swig' %}
               </div>
             {% endif %}
             {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
@@ -417,6 +411,11 @@
                 <span class="btn">
                   <i class="fa fa-share-alt" aria-hidden="true"></i>
                 </span>
+              </div>
+            {% endif %}
+            {% if theme.baidushare.type === "button" %}
+              <div>
+                {% include '../_partials/share/baidushare.swig' %}
               </div>
             {% endif %}
           </div>

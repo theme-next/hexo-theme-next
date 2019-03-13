@@ -9,17 +9,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
 <!-- END LOCAL -->
 
-<style>
-#gitment-container a {
-  border-bottom: none;
-}
-{% if theme.gitment.cleanly %}
-  a.gitment-editor-footer-tip, .gitment-container.gitment-footer-container {
-    display: none;
-  }
-{% endif %}
-</style>
-
 <script>
   function renderGitment() {
     var gitment = new {{ CommentsClass }}({

@@ -8,9 +8,9 @@ daysUntilClose: 7
 exemptLabels:
   - bug
   - discussion
-  - need-verify
-  - pending-reply
-  - feature-request
+  - need verify
+  - wait for answer
+  - feature request
   - enhancement
   - documentation
 # Label to use when marking as stale
