@@ -41,7 +41,6 @@
         margin: 0.35em 0 0 0;
       }
     }
-
   }
 
   .menu-item a,
@@ -63,10 +62,9 @@
   }
 
   a::before {
-      display: none;
-
-      +mobile() { display: block; }
-    }
+    display: none;
+    +mobile() { display: block; }
+  }
 
   +mobile() { float: none; }
 }
