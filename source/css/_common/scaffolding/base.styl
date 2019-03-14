@@ -27,17 +27,11 @@ h1, h2, h3, h4, h5, h6 {
 for headline in (1..6) {
   h{headline} {
     font-size: $font-size-headings-base - $font-size-headings-step * headline;
-    code {
-      font-size: 1em;
-    }
   }
 
   +mobile() {
     h{headline} {
       font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
-      code {
-        font-size: 1em;
-      }
     }
   }
 }
