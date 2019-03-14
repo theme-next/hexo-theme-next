@@ -9,13 +9,8 @@
   -webkit-transform: translateZ(0);
     &:hover { opacity: 0.8; }
 
-  +tablet() {
-    fixbutton() if hexo-config('sidebar.onmobile');
-    hide() if not hexo-config('sidebar.onmobile');
-  }
-  +mobile() {
-    fixbutton() if hexo-config('sidebar.onmobile');
-    hide() if not hexo-config('sidebar.onmobile');
+  +tablet()-mobile() {
+    hexo-config('sidebar.onmobile') ? fixbutton() : hide();
   }
 
   &.back-to-top-on {
