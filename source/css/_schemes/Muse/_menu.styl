@@ -2,7 +2,7 @@
   +mobile() {
     position: absolute;
     left: 0;
-    top: 52px;
+    top: $font-size-large * 2 + 20px;
     margin: 0;
     width: 100%;
     padding: 0;
@@ -48,7 +48,9 @@
   }
 
   br {
-    +mobile() { display: none; }
+    +mobile() {
+      display: none;
+    }
   }
 
   a, span.exturl {
@@ -67,7 +69,13 @@
       }
     }
   }
+
   .fa {
-    width: 100%;
+    +tablet() {
+      width: 100%;
+    }
+    +desktop() {
+      width: 100%;
+    }
   }
 }
