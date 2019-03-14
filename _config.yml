@@ -121,6 +121,9 @@ github_banner:
 # SEO Settings
 # ---------------------------------------------------------------
 
+# Disable Baidu tranformation on mobile devices.
+disable_baidu_tranformation: false
+
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
@@ -375,14 +378,17 @@ post_edit:
 # Misc Theme Settings
 # ---------------------------------------------------------------
 
-# Disable Baidu tranformation on mobile devices.
-disable_baidu_tranformation: false
-
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
+
+# Hide sticky headers and color the menu bar on Safari (iOS / macOS).
+safari_rainbow: false
+
+# Optimize the display of scrollbars on webkit based browsers.
+custom_scrollbar: false
 
 # Custom Logo
 # Do not support Scheme Mist currently.
