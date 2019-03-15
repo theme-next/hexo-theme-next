@@ -16,10 +16,7 @@
     &:hover { color: $gainsboro; }
   }
 
-  +tablet() {
-    hide() if not hexo-config('sidebar.onmobile');
-  }
-  +mobile() {
+  +tablet-mobile() {
     hide() if not hexo-config('sidebar.onmobile');
   }
 }
@@ -57,9 +54,9 @@
 @import "sidebar-toggle";
 @import "sidebar-author";
 @import "sidebar-author-links";
+@import "sidebar-button";
 @import "sidebar-blogroll";
 @import "sidebar-nav";
 @import "site-state" if hexo-config('site_state');
 @import "sidebar-toc" if hexo-config('toc.enable');
 @import "sidebar-dimmer" if hexo-config('sidebar.dimmer');
-@import "sidebar-button" if (hexo-config('chat.enable') or hexo-config('rss') !== false);
