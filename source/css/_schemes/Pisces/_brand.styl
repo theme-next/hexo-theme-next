@@ -7,8 +7,11 @@
   color: white;
   background: $black-deep;
 
-  +tablet-mobile() {
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  +tablet() {
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+  +mobile() {
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
   }
 }
 
@@ -28,7 +31,10 @@
 
 .custom-logo-image {
   margin-top: 20px;
-  +tablet-mobile() {
+  +tablet() {
+    display: none;
+  }
+  +mobile() {
     display: none;
   }
 }
