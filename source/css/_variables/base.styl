@@ -61,7 +61,7 @@ $font-family-base         = $font-family-chinese, sans-serif
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
 
 $font-family-logo         = $font-family-base
-$font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
+$font-family-logo         = get_font_family('title'), $font-family-base if get_font_family('title')
 
 $font-family-headings     = $font-family-base
 $font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings')
@@ -92,7 +92,7 @@ $font-size-large          = $font-size-base + 2px
 
 // Headings font size
 $font-size-headings-step    = 2px
-$font-size-headings-base    = 24px
+$font-size-headings-base    = 26px
 $font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
 $font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
 $font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
@@ -196,7 +196,7 @@ $brand-color                    = white
 $brand-hover-color              = white
 $brand-bg                       = $black-deep
 
-$logo-font-size                 = 22px
+$logo-font-size                 = 24px
 $logo-font-size                 = unit(hexo-config('font.title.size'), px) if hexo-config('font.title.size') is a 'unit'
 
 $site-subtitle-color            = $grey-dark
