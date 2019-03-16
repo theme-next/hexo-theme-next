@@ -29,10 +29,10 @@
 
 .posts-expand .post-body {
   +desktop() {
-    text-align: justify;
+    text-align: unquote(hexo-config('text_align.desktop'));
   }
   +tablet-mobile() {
-    text-align: justify; if hexo-config('mobile_text_justify');
+    text-align: unquote(hexo-config('text_align.mobile'));
   }
 
   h2, h3, h4, h5, h6 {

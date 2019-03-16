@@ -282,6 +282,12 @@ chat:
 # See: https://theme-next.org/docs/theme-settings/posts/
 # ---------------------------------------------------------------
 
+# Set the text alignment in the posts.
+text_align:
+  # Available values: start | end | left | right | center | justify | justify-all | match-parent
+  desktop: justify
+  mobile: justify
+
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
 
@@ -380,9 +386,6 @@ disable_baidu_tranformation: false
 
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
-
-# Enable text justification on mobile.
-mobile_text_justify: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
