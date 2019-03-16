@@ -7,6 +7,13 @@
   // Do NOT delete this line
   // or Affix (position: fixed) will not work in Google Chrome.
   -webkit-transform: none;
+
+  a, span.exturl {
+    color: $black-light;
+
+    &:hover { color: $black-deep; }
+  }
+  span.exturl:hover { border-bottom-color: $black-deep; }
 }
 
 .sidebar-inner {
@@ -36,13 +43,6 @@
 
 .site-author {
   clearfix();
-}
-
-.sidebar a,
-.sidebar span.exturl {
-  color: $black-light;
-
-  &:hover { color: $black-deep; }
 }
 
 .site-state-item {
@@ -127,10 +127,8 @@
 
 .links-of-blogroll {
   text-align: center;
-  margin-top: 5px;
   padding: 3px 0 0;
 }
-.links-of-blogroll-title { margin-top: 0; }
 .links-of-blogroll-item { padding: 0; }
 .links-of-blogroll-inline {
   clearfix();
