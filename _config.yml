@@ -350,15 +350,18 @@ wechat_subscriber:
   #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
   #description: e.g. subscribe to my blog by scanning my public wechat account
 
-# Reward
-# If true, reward would be displayed in every article by default.
-# You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
-reward:
+# Reward (Donate)
+reward_settings:
+  # If true, reward would be displayed in every article by default.
+  # You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
   enable: false
+  animation: false
   #comment: Donate comment here
-  #wechatpay: /images/wechatpay.jpg
-  #alipay: /images/alipay.jpg
-  #bitcoin: /images/bitcoin.jpg
+
+reward:
+  #wechatpay: /images/wechatpay.png
+  #alipay: /images/alipay.png
+  #bitcoin: /images/bitcoin.png
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
