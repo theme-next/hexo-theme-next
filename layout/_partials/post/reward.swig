@@ -1,5 +1,5 @@
 <div id="reward-container">
-  <div>{{ theme.reward.comment }}</div>
+  <div>{{ theme.reward_settings.comment }}</div>
   <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     {{ __('reward.donate') }}
   </button>
