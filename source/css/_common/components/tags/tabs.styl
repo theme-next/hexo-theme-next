@@ -11,6 +11,8 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: -1px;
 
     +mobile-smallest() {
@@ -19,11 +21,9 @@
     }
 
     li.tab {
-      list-style-type: none !important;
-      margin: 0 .25em 0 0;
-      border-top: 3px solid transparent;
-      border-left: 1px solid transparent;
-      border-right: 1px solid transparent;
+      flex-grow: 1;
+      border: 1px solid #ddd;
+      list-style-type: none;
 
       +mobile-smallest() {
         margin: initial;
@@ -40,6 +40,7 @@
       if hexo-config('tabs.transition.tabs') { the-transition-ease-out(); }
 
       & a {
+        text-align: center;
         outline: 0;
         border-bottom: initial;
         display: block;
@@ -51,15 +52,16 @@
 
       &.active {
         border-top: 3px solid $orange;
-        border-left: 1px solid $table-border-color;
         border-right: 1px solid $table-border-color;
+        border-bottom: initial;
+        border-left: 1px solid $table-border-color;
         background-color: #fff;
 
         +mobile-smallest() {
           border-top: 1px solid $table-border-color;
-          border-left: 3px solid $orange;
           border-right: 1px solid $table-border-color;
           border-bottom: 1px solid $table-border-color;
+          border-left: 3px solid $orange;
         }
 
         & a {
