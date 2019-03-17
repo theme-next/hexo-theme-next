@@ -636,6 +636,19 @@ gitalk:
   # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
   language:
 
+# DisqusJS
+# Demo: https://suka.js.org/DisqusJS/
+disqusjs:
+  enable: false
+  # API Endpoint of Disqus API (https://disqus.com/api/)
+  # leave api empty if you are able to connect to Disqus API
+  # otherwise you need a reverse proxy for Disqus API
+  # For example: 
+  # api: https://disqus.skk.moe/disqus/
+  api:
+  apikey: # register new application from https://disqus.com/api/applications/
+  shortname: # See: https://disqus.com/admin/settings/general/
+
 # Baidu Share
 # Available values: button | slide
 # Warning: Baidu Share does not support https.
@@ -1168,6 +1181,14 @@ vendors:
   # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
   likely_js:
   likely_css:
+
+  # DisqusJS
+  # See: https://github.com/SukkaW/DisqusJS
+  # Example:
+  # likely_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
+  # likely_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
+  disqusjs_js:
+  disqusjs_css:
 
 # Assets
 css: css
