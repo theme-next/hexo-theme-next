@@ -11,7 +11,7 @@
 
 .menu {
   //float: right;
-  margin: 0px;
+  margin: 8px 0 0 0;
 
   +mobile() {
     margin: 20px 0 0 0;
@@ -22,10 +22,7 @@
 
   .menu-item {
     margin: 0;
-    +mobile() {
-      display: block;
-      margin-top: 5px;
-    }
+    +mobile() { display: block; }
 
     .badge {
       display: inline-block;
@@ -38,12 +35,13 @@
       white-space: nowrap;
       background-color: #fff;
       border-radius: 10px;
-      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+      text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
       +mobile() {
         float: right;
         margin: 0.35em 0 0 0;
       }
     }
+
   }
 
   .menu-item a,
