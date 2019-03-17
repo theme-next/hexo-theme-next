@@ -106,7 +106,7 @@ Releases are a great way to ship projects on GitHub to your users.
 3. Select a branch that contains the project you want to release. Usually, you'll want to release against your `master` branch, unless you're releasing beta software.
 4. Type a title and description that describes your release.
     - Use the version as the title.
-    - The types of changes include **Breaking Changes**, **Updates**, **Features**, and **Bugfixes**. In the section of Breaking Changes, use multiple secondary headings, and use item list in other sections.
+    - The types of changes include **Breaking Changes**, **Updates**, **Features**, and **Bug Fixes**. In the section of Breaking Changes, use multiple secondary headings, and use item list in other sections.
     - Use the passive tense and subject-less sentences.
     - All changes must be documented in release notes. If commits happen without pull request (minimal changes), just add this commit ID into release notes. If commits happen within pull request alreay, just add the related pull request ID including all possible commits.
 5. If you'd like to include binary files along with your release, such as compiled programs, drag and drop or select files manually in the binaries box.
@@ -170,7 +170,7 @@ Issues related: `types`+`contents`+`results`
 Pull requests related:
 
 - `Breaking Change`: A Pull requests that makes breaking change
-- `Bugfix`: A Pull requests that fixes the related bug
+- `Bug Fix`: A Pull requests that fixes the related bug
 - `Docs`: A Pull requests that Instruction document has been added
 - `New Feature`: A Pull requests that provides a new feature
 - `Feature`: A Pull requests that provides an option or addition to existing feature
@@ -179,8 +179,8 @@ Pull requests related:
 - `i18n`: A Pull requests that makes new languages translation
 - `Performance`: A Pull requests that improves the performance
 - `Discussion`: A Pull requests that needs to be discussed
-- `v6.x`: A Pull requests that bugfixes and some optimizations related to old NexT version 6
-- `v7.x`: A Pull requests that bugfixes and some optimizations, related to old NexT version 7
+- `v6.x`: A Pull requests that bug fixes and some optimizations related to old NexT version 6
+- `v7.x`: A Pull requests that bug fixes and some optimizations, related to old NexT version 7
 
 ### Commit Messages Rules
 

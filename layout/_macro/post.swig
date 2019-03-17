@@ -342,12 +342,12 @@
       {% include '../_partials/post/wechat-subscriber.swig' %}
     {% endif %}
 
-    {% if page.reward === undefined and theme.reward.enable %}
+    {% if page.reward === undefined and theme.reward_settings.enable %}
       {% set reward_able = true %}
     {% else %}
       {% set reward_able = page.reward %}
     {% endif %}
-    {% if reward_able and (theme.reward.alipay or theme.reward.wechatpay or theme.reward.bitcoin) and not is_index %}
+    {% if reward_able and not is_index %}
       <div>
         {% include '../_partials/post/reward.swig' %}
       </div>
