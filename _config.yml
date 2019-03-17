@@ -1185,8 +1185,8 @@ vendors:
   # DisqusJS
   # See: https://github.com/SukkaW/DisqusJS
   # Example:
-  # likely_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
-  # likely_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
+  # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
+  # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
   disqusjs_js:
   disqusjs_css:
 
