@@ -121,6 +121,9 @@ github_banner:
 # SEO Settings
 # ---------------------------------------------------------------
 
+# Disable Baidu tranformation on mobile devices.
+disable_baidu_tranformation: false
+
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
@@ -233,6 +236,8 @@ toc:
   number: true
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: false
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front Matter.
   max_depth: 6
 
@@ -267,10 +272,25 @@ back2top:
   # Scroll percent label in b2t button.
   scrollpercent: false
 
+# A button to open designated chat widget in sidebar.
+# Firstly, you need enable the chat service you want to activate its sidebar button.
+chat:
+  enable: false
+  #service: chatra
+  #service: tidio
+  icon: comment # icon in Font Awesome 4, set false to disable icon
+  text: Chat # button text, change it as you wish
+
 # ---------------------------------------------------------------
 # Post Settings
 # See: https://theme-next.org/docs/theme-settings/posts/
 # ---------------------------------------------------------------
+
+# Set the text alignment in the posts.
+text_align:
+  # Available values: start | end | left | right | center | justify | justify-all | match-parent
+  desktop: justify
+  mobile: justify
 
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
@@ -330,15 +350,18 @@ wechat_subscriber:
   #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
   #description: e.g. subscribe to my blog by scanning my public wechat account
 
-# Reward
-# If true, reward would be displayed in every article by default.
-# You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
-reward:
+# Reward (Donate)
+reward_settings:
+  # If true, reward would be displayed in every article by default.
+  # You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
   enable: false
+  animation: false
   #comment: Donate comment here
-  #wechatpay: /images/wechatpay.jpg
-  #alipay: /images/alipay.jpg
-  #bitcoin: /images/bitcoin.jpg
+
+reward:
+  #wechatpay: /images/wechatpay.png
+  #alipay: /images/alipay.png
+  #bitcoin: /images/bitcoin.png
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -365,14 +388,17 @@ post_edit:
 # Misc Theme Settings
 # ---------------------------------------------------------------
 
-# Disable Baidu tranformation on mobile devices.
-disable_baidu_tranformation: false
-
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
+
+# Hide sticky headers and color the menu bar on Safari (iOS / macOS).
+safari_rainbow: false
+
+# Optimize the display of scrollbars on webkit based browsers.
+custom_scrollbar: false
 
 # Custom Logo
 # Do not support Scheme Mist currently.
@@ -459,7 +485,10 @@ font:
 # ---------------------------------------------------------------
 # Third Party Services Settings
 # See: https://theme-next.org/docs/third-party-services/
-# You may need to install dependencies or set CDN urls in `vendors`
+# You may need to install dependencies or set CDN URLs in `vendors`
+# There are two different CDN providers by default:
+#   - jsDelivr (cdn.jsdelivr.net), works everywhere even in China
+#   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare
 # ---------------------------------------------------------------
 
 # Math Equations Render Support
@@ -476,10 +505,8 @@ math:
 
   # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
   mathjax:
-    # Use 2.7.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com)
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+    cdn: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
 
     # See: https://mhchem.github.io/MathJax-mhchem/
     #mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3
@@ -487,9 +514,7 @@ math:
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) needed to full Katex support.
   katex:
-    # Use 0.7.1 as default, jsdelivr as default CDN, works everywhere even in China
     cdn: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
-    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
     #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
 
     copy_tex:
@@ -553,6 +578,20 @@ disqus:
   count: true
   lazyload: false
 
+# DisqusJS
+# Alternative Disqus - Render comment component using Disqus API
+# Demo: https://suka.js.org/DisqusJS/
+disqusjs:
+  enable: false
+  # API Endpoint of Disqus API (https://disqus.com/api/)
+  # leave api empty if you are able to connect to Disqus API
+  # otherwise you need a reverse proxy for Disqus API
+  # For example: 
+  # api: https://disqus.skk.moe/disqus/
+  api:
+  apikey: # register new application from https://disqus.com/api/applications/
+  shortname: # See: https://disqus.com/admin/settings/general/
+
 # Changyan
 changyan:
   enable: false
@@ -598,7 +637,6 @@ gitment:
 
 # Gitalk
 # Demo: https://gitalk.github.io
-# Reference: https://asdfv1929.github.io/2018/01/20/gitalk/, https://liujunzhou.top/2018/8/10/gitalk-error/
 gitalk:
   enable: false
   github_id:  # Github repo owner
@@ -622,9 +660,26 @@ gitalk:
 # Go to https://www.addthis.com/dashboard to customize your tools.
 #add_this_id:
 
+# Likely Share
+# See: https://ilyabirman.net/projects/likely/
+# Likely supports four looks, nine social networks, any button text
+# You are free to modify the text value and order of any network
+likely:
+  enable: false
+  look: normal # available values: normal, light, small, big
+  networks:
+    twitter: Tweet
+    facebook: Share
+    linkedin: Link
+    gplus: Plus
+    vkontakte: Share
+    odnoklassniki: Class
+    telegram: Send
+    whatsapp: Send
+    pinterest: Pin
+
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
-# See: https://github.com/revir/need-more-share2, https://github.com/DzmVasileusky/needShareButton
 # iconStyle: default | box
 # boxForm: horizontal | vertical
 # position: top / middle / bottom + Left / Center / Right
@@ -678,8 +733,7 @@ needmoreshare2:
 
 # Post widgets & FB/VK comments settings.
 # ---------------------------------------------------------------
-# Facebook SDK Support.
-# https://github.com/iissnan/hexo-theme-next/pull/410
+# Facebook SDK Support
 facebook_sdk:
   enable:       false
   app_id:       #<app_id>
@@ -805,6 +859,21 @@ reading_progress:
   color: "#37c6c0"
   height: 2px
 
+# Chatra Support
+# See: https://chatra.io
+# Dashboard: https://app.chatra.io/settings/general
+chatra:
+  enable: false
+  async: true
+  id: # visit Dashboard to get your ChatraID
+  #embed: # unfinished experimental feature for developers, See: https://chatra.io/help/api/#injectto
+
+# Tidio Support
+# See: https://www.tidiochat.com
+# Dashboard: https://www.tidiochat.com/panel/dashboard
+tidio:
+  enable: false
+  key: # Public Key, get it from Dashboard, See: https://www.tidiochat.com/panel/settings/developer
 
 # ---------------------------------------------------------------
 # Tags Settings
@@ -843,9 +912,7 @@ pdf:
   # Default height
   height: 500px
   pdfobject:
-    # Use 2.1.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js
-    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
+    cdn: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
     #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
 
 # Mermaid tag
@@ -853,9 +920,7 @@ mermaid:
   enable: false
   # Available themes: default | dark | forest | neutral
   theme: forest
-  # Use 8.0.0 as default, jsdelivr as default CDN, works everywhere even in China
   cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
-  # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
   #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
 
 
@@ -910,7 +975,7 @@ pace_theme: pace-theme-minimal
 canvas_nest:
   enable: false
   onmobile: true # display on mobile or not
-  color: '0,0,255' # RGB values, use ',' to separate
+  color: "0,0,255" # RGB values, use ',' to separate
   opacity: 0.5 # the opacity of line: 0~1
   zIndex: -1 # z-index property of the background
   count: 99 # the number of lines
@@ -957,7 +1022,7 @@ vendors:
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
   jquery:
 
-  # Internal version: 2.1.5
+  # Internal version: 2.1.5 & 3.5.6
   # See: https://fancyapps.com/fancybox
   # Example:
   # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
@@ -1104,6 +1169,22 @@ vendors:
   gitalk_js:
   gitalk_css:
   md5:
+
+  # likely
+  # See: https://github.com/ilyabirman/Likely
+  # Example:
+  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js
+  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
+  likely_js:
+  likely_css:
+
+  # DisqusJS
+  # See: https://github.com/SukkaW/DisqusJS
+  # Example:
+  # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
+  # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
+  disqusjs_js:
+  disqusjs_css:
 
 # Assets
 css: css

@@ -122,5 +122,7 @@
   {% include '_third-party/pangu.swig' %}
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
+  {% include '_third-party/chatra.swig' %}
+  {% include '_third-party/tidio.swig' %}
 </body>
 </html>

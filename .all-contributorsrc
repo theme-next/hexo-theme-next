@@ -429,6 +429,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "zq-97",
+      "name": "张强",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17429111?v=4",
+      "profile": "https://i-m.dev",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
-  ]
+  ],
+  "contributorsPerLine": 7
 }
