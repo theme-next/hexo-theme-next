@@ -1,3 +1,8 @@
+# 不推荐再使用！！
+此插件已经过时，请使用 [hexo-leancloud-counter](https://theme-next.github.io/hexo-leancloud-counter/zh/) 代替。
+
+---
+
 在配置前，请升级NexT至**v6.0.6**以上。
 
 在配置过程中请注意**博客配置文件**和**主题配置文件**的区别。
@@ -68,7 +73,7 @@ leancloud_visitors:
       return query.get(request.object.id).then(function (obj) {
           if (obj.get("time") > request.object.get("time")) {
               throw new AV.Cloud.Error('Invalid update!');
-          } 
+          }
           return request.object.save();
       });
   }
