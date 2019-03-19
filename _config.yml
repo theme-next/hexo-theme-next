@@ -474,12 +474,6 @@ font:
     family: Lato
     size:
 
-  # Font settings for site title.
-  title:
-    external: true
-    family:
-    size:
-
   # Font settings for headlines (H1, H2, H3, H4, H5, H6).
   headings:
     external: true
@@ -491,9 +485,15 @@ font:
   posts:
     external: true
     family:
+    size:
+
+  # Font settings for site title.
+  title:
+    external: true
+    family:
+    size:
 
   # Font settings for <code> and code blocks.
-  # Fallback to `global` font size settings.
   codes:
     external: true
     family:

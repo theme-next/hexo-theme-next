@@ -100,6 +100,11 @@ $font-size-headings-small   = $font-size-headings-base - $font-size-headings-ste
 $font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
 
 
+// Posts font size
+$font-size-posts            = $font-size-base
+$font-size-posts            = unit(hexo-config('font.posts.size'), px) if hexo-config('font.posts.size') is a 'unit'
+
+
 // Global line height
 $line-height-base           = 2
 $line-height-code-block     = 1.6  // Can't be less than 1.3
@@ -119,7 +124,7 @@ $zindex-5       = 1050
 // --------------------------------------------------
 $table-width                    = 100%
 $table-border-color             = $gray-lighter
-$table-font-size                = $font-size-base
+$table-font-size                = $font-size-posts
 $table-content-alignment        = left
 $table-content-vertical         = middle
 $table-th-font-weight           = 700
