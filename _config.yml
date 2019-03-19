@@ -556,6 +556,11 @@ quicklink:
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
 #growingio_analytics: #your projectId
 
+# Comments Service: Disqus Changyan Valine LiveRe Gitment Gitalk facebook_comments_plugin.
+# You can set one value to enable.
+# Example: comments_service: Disqus
+comments_service:
+
 # Disqus
 disqus:
   enable: false

@@ -140,7 +140,7 @@
 
           {% if post.comments %}
             {% if theme.comments_service %}
-              {% set comments_service_count_path = theme.comments_service + '/count.swig' %}
+              {% set comments_service_count_path = '../_third-party/comments/' + theme.comments_service|lower + '/count.swig' %}
               {% include comments_service_count_path %}
             {% endif %}
           {% endif %}
