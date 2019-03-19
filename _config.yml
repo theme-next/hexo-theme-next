@@ -121,7 +121,7 @@ github_banner:
 # SEO Settings
 # ---------------------------------------------------------------
 
-# Disable Baidu tranformation on mobile devices.
+# Disable Baidu transformation on mobile devices.
 disable_baidu_transformation: false
 
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
