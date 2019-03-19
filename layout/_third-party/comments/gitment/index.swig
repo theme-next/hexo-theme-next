@@ -1,3 +1,4 @@
+{% if page.comments and theme.gitment.client_id %}
 <!-- LOCAL: You can save these files to your site and update links -->
 {% if theme.gitment.mint %}
   {% set CommentsClass = 'Gitmint' %}
@@ -43,3 +44,4 @@
     }
   {% endif %}
 </script>
+{% endif %}

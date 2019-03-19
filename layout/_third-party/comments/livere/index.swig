@@ -1,3 +1,4 @@
+{% if page.comments %}
 <script>
   window.livereOptions = {
     refer: '{{ page.path }}'
@@ -11,3 +12,4 @@
     e.parentNode.insertBefore(j, e);
   })(document, 'script');
 </script>
+{% endif %}

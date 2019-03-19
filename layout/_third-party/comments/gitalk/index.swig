@@ -1,3 +1,4 @@
+{% if page.comments %}
 {% set gitalk_js_url = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js' %}
 {% if theme.vendors.gitalk_js %}
   {% set gitalk_js_url = theme.vendors.gitalk_js %}
@@ -33,3 +34,4 @@
   });
   gitalk.render('gitalk-container');
 </script>
+{% endif %}
