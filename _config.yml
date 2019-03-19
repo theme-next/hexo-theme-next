@@ -590,7 +590,7 @@ quicklink:
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
 #growingio_analytics: #your projectId
 
-# Comments Service: Disqus Changyan Valine LiveRe Gitment Gitalk facebook_comments_plugin.
+# Comments Service: Disqus Changyan Valine LiveRe Gitment Gitalk facebook_comments_plugin vkontakte disqusjs.
 # You can set one value to enable.
 # Example: comments_service: Disqus.
 comments_service:
@@ -759,7 +759,6 @@ vkontakte_api:
   enable:       false
   app_id:       #<app_id>
   like:         true
-  comments:     true
   num_of_posts: 10
 
 # Star rating support to each article.
