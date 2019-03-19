@@ -86,8 +86,10 @@ $font-weight-bolder       = 700
 // Font size
 $font-size-base           = 14px
 $font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
-$font-size-small          = $font-size-base - 2px
+$font-size-smaller        = $font-size-base - 2px
+$font-size-small          = $font-size-base - 1px
 $font-size-large          = $font-size-base + 2px
+$font-size-larger         = $font-size-base + 4px
 
 
 // Headings font size
@@ -196,7 +198,7 @@ $brand-color                    = white
 $brand-hover-color              = white
 $brand-bg                       = $black-deep
 
-$logo-font-size                 = 24px
+$logo-font-size                 = 22px
 $logo-font-size                 = unit(hexo-config('font.title.size'), px) if hexo-config('font.title.size') is a 'unit'
 
 $site-subtitle-color            = $grey-dark
@@ -254,7 +256,7 @@ $site-description-margin-top          = 5px
 $site-description-align               = center
 
 $site-state-align                     = center
-$site-state-item-count-font-size      = $font-size-large
+$site-state-item-count-font-size      = $font-size-larger
 $site-state-item-count-color          = inherit
 $site-state-item-name-font-size       = $font-size-small
 $site-state-item-name-color           = inherit
