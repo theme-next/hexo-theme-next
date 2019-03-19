@@ -1,7 +1,7 @@
 {% extends '../count.swig' %}
 
-{% if theme.changyan.appid and theme.changyan.appkey %}
-  {% block count %}
+{% block count %}
+  {% if theme.changyan.appid and theme.changyan.appkey %}
     {% if is_post() %}
       <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
       <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
@@ -13,5 +13,5 @@
         <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
       </a>
     {% endif %}
-  {% endblock %}
-{% endif %}
+  {% endif %}
+{% endblock %}
