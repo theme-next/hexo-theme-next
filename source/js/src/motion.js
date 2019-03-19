@@ -143,14 +143,20 @@ $(document).ready(function() {
         display : 'block',
         duration: SIDEBAR_DISPLAY_DURATION,
         begin   : function() {
-          $('.sidebar .motion-element').velocity(
-            'transition.slideRightIn',
-            {
+          $('.sidebar .motion-element').not('.site-state').velocity(
+            'transition.slideRightIn', {
               stagger : 50,
               drag    : true,
               complete: function() {
                 self.sidebarEl.trigger('sidebar.motion.complete');
               }
+            }
+          );
+          $('.site-state').velocity(
+            'transition.slideRightIn', {
+              stagger : 50,
+              drag    : true,
+              display : 'flex'
             }
           );
         },

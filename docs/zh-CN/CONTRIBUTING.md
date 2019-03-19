@@ -105,7 +105,7 @@
 3. 确定你需要发布的分支。除非发布测试版本，通常情况下选择 `master` 分支。
 4. 输入发布版本的标题和说明。
     - 标题为版本号。
-    - 所有内容更改的类型包括了 **Breaking Changes**, **Updates**, **Features** 和 **Bugfixes**。在描述 Breaking Changes 时，使用二级标题分别陈述，描述其他类型时，使用项目列表陈述。
+    - 所有内容更改的类型包括了 **Breaking Changes**, **Updates**, **Features** 和 **Bug Fixes**。在描述 Breaking Changes 时，使用二级标题分别陈述，描述其他类型时，使用项目列表陈述。
     - 使用被动语态，省略主语。
     - 所有的变化都需要记录在版本说明中。对于没有使用 PR 的更改，需要添加相应的 commit 编号。如果使用了 PR 进行合并修改，则直接添加相应的 PR 编号即可。
 5. 如果您希望随版本一起发布二进制文件（如编译的程序），请在上传二进制文件对话框中手动拖放或选择文件。
@@ -173,7 +173,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
 Pull requests 的标签：
 
 - `Breaking Change`: 涉及主题 Next 重大架构的 Pull request
-- `Bugfix`: 修复 Bug 的 Pull request
+- `Bug Fix`: 修复 Bug 的 Pull request
 - `Docs`: 添加了文档说明的 Pull request
 - `New Feature`: 添加了新特性的 Pull request
 - `Feature`: 为已存在的特性添加了选项或功能的 Pull request

@@ -111,7 +111,7 @@
               {% if theme.chat.service == 'tidio' and theme.tidio.enable %}
                 <a onclick="tidioChatApi.open();">
               {% endif %}
-                  <i class="fa fa-comment"></i>
+              {% if theme.chat.icon %}<i class="fa fa-{{ theme.chat.icon }}"></i>{% endif %}
                   {{ theme.chat.text }}
                 </a>
             </div>

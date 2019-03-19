@@ -53,12 +53,8 @@
   <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}"/>
 {% endif %}
 
-{% if theme.qihu_site_verification %}
-  <meta name="360-site-verification" content="{{ theme.qihu_site_verification }}"/>
-{% endif %}
-
 {% if theme.fancybox %}
-  {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css?v=2.1.5') %}
+  {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css') %}
   {% if theme.vendors.fancybox_css %}
     {% set fancybox_css_uri = theme.vendors.fancybox_css %}
   {% endif %}
