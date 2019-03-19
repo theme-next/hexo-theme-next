@@ -1,4 +1,4 @@
-{% extends '../count.html' %}
+{% extends '../count.swig' %}
 
 {% if theme.disqus.count %}
   {% block count %}

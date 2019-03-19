@@ -1,4 +1,4 @@
-{% extends '../count.html' %}
+{% extends '../count.swig' %}
 
 {% block count %}
   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>

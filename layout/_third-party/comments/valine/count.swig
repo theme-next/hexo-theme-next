@@ -1,4 +1,4 @@
-{% extends '../count.html' %}
+{% extends '../count.swig' %}
 
 {% if (is_post() or theme.valine.comment_count) and theme.valine.appid and theme.valine.appkey %}
   {% block count %}

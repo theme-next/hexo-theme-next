@@ -1,4 +1,4 @@
-{% extends '../count.html' %}
+{% extends '../count.swig' %}
 
 {% if theme.changyan.appid and theme.changyan.appkey %}
   {% block count %}

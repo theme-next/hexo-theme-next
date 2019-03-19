@@ -1,4 +1,4 @@
-{% extends '../count.html' %}
+{% extends '../count.swig' %}
 
 {% if is_post() and theme.gitment.mint and theme.gitment.count %}
   {% block count %}
