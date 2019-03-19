@@ -2,12 +2,15 @@
 // --------------------------------------------------
 .header { background: $whitesmoke; }
 .header-inner {
-  padding: 25px 0 20px;
   clearfix();
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   +mobile() {
+    display: block;
     width: auto;
-    margin-bottom: 50px;
     padding: 10px;
   }
 }
