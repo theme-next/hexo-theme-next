@@ -37,14 +37,14 @@ cache:
 # Site Information Settings
 # ---------------------------------------------------------------
 
-# Default NexT favicons are placed in `hexo-site/themes/next/source/images/` directory.
-# You can replace them with your own favicons.
+# To get or check favicons visit: https://realfavicongenerator.net
+# Put your favicons into `hexo-site/source/` (recommend) or `hexo-site/themes/next/source/images/` directory.
 
-# For example, you can put your favicons in `hexo-site/source/images/` directory.
-# Then need to rename them and change the settings below, otherwise icons from Next will rewrite your custom icons in Hexo.
-# And if you want to place your icons in `hexo-site/source/` root directory, you must remove `/images` prefix from paths.
+# Default NexT favicons placed in `hexo-site/themes/next/source/images/` directory.
+# And if you want to place your icons in `hexo-site/source/` root directory, you must remove `/images` prefix from pathes.
 
-# You can generate custom favicons on this site: https://realfavicongenerator.net
+# For example, you put your favicons into `hexo-site/source/images` directory.
+# Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
   small: /images/favicon-16x16-next.png
   medium: /images/favicon-32x32-next.png
