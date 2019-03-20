@@ -37,14 +37,14 @@ cache:
 # Site Information Settings
 # ---------------------------------------------------------------
 
-# To get or check favicons visit: https://realfavicongenerator.net
-# Put your favicons into `hexo-site/source/` (recommend) or `hexo-site/themes/next/source/images/` directory.
+# Default NexT favicons are placed in `hexo-site/themes/next/source/images/` directory.
+# You can replace them with your own favicons.
 
-# Default NexT favicons placed in `hexo-site/themes/next/source/images/` directory.
-# And if you want to place your icons in `hexo-site/source/` root directory, you must remove `/images` prefix from pathes.
+# For example, you can put your favicons in `hexo-site/source/images/` directory.
+# Then need to rename them and change the settings below, otherwise icons from Next will rewrite your custom icons in Hexo.
+# And if you want to place your icons in `hexo-site/source/` root directory, you must remove `/images` prefix from paths.
 
-# For example, you put your favicons into `hexo-site/source/images` directory.
-# Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
+# You can generate custom favicons on this site: https://realfavicongenerator.net
 favicon:
   small: /images/favicon-16x16-next.png
   medium: /images/favicon-32x32-next.png
@@ -59,8 +59,7 @@ favicon:
 rss:
 
 footer:
-  # Specify the date when the site was setup.
-  # If not defined, current year will be used.
+  # Specify the date when the site was setup. If not defined, current year will be used.
   #since: 2015
 
   # Icon between year and copyright info.
@@ -139,19 +138,19 @@ index_with_subtitle: false
 # Automatically add external URL with BASE64 encrypt & decrypt.
 exturl: false
 
-# Google Webmaster tools verification setting
+# Google Webmaster tools verification
 # See: https://www.google.com/webmasters
 #google_site_verification:
 
-# Bing Webmaster tools verification setting
+# Bing Webmaster tools verification
 # See: https://www.bing.com/webmaster
 #bing_site_verification:
 
-# Yandex Webmaster tools verification setting
+# Yandex Webmaster tools verification
 # See: https://webmaster.yandex.ru
 #yandex_site_verification:
 
-# Baidu Webmaster tools verification setting
+# Baidu Webmaster tools verification
 # See: https://ziyuan.baidu.com/site
 #baidu_site_verification:
 
@@ -453,7 +452,7 @@ tagcloud:
 #   light, light italic, normal, normal italic, bold, bold italic
 # Be aware that setting too much fonts will cause site running slowly
 # ---------------------------------------------------------------
-# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `logo`):
+# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `title`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 
@@ -474,7 +473,7 @@ font:
     family: Lato
     size:
 
-  # Font settings for headlines (H1, H2, H3, H4, H5, H6).
+  # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
     family:
