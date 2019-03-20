@@ -1,4 +1,4 @@
-{% if theme.disqus.count %}
+{% if theme.comments.count.post or theme.comments.count.page %}
   <script id="dsq-count-scr" src="https://{{ theme.disqus.shortname }}.disqus.com/count.js" async></script>
 {% endif %}
 {% if page.comments %}
