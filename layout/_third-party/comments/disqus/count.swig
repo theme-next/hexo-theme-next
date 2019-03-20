@@ -1,7 +1,7 @@
 {% extends '../count.swig' %}
 
 {% block count %}
-  {% if theme.disqus.count %}
+  {% if theme.disqus.shortname %}
     <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
     <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>

@@ -139,9 +139,9 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if theme.comments_service %}
-              {% set comments_service_count_path = '../_third-party/comments/' + theme.comments_service|lower + '/count.swig' %}
-              {% include comments_service_count_path with { post: post } ignore missing %}
+            {% if theme.comments.type and ((is_post() and theme.comments.count.post) or (!is_post() and theme.comments.count.page)) %}
+              {% set comments_count_path = '../_third-party/comments/' + theme.comments.type|lower + '/count.swig' %}
+              {% include comments_count_path with { post: post } ignore missing %}
             {% endif %}
           {% endif %}
 

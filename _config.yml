@@ -590,15 +590,32 @@ quicklink:
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
 #growingio_analytics: #your projectId
 
-# Comments Service: Disqus Changyan Valine LiveRe Gitment Gitalk facebook_comments_plugin vkontakte disqusjs.
-# You can set one value to enable.
-# Example: comments_service: Disqus.
-comments_service:
+# Global settings for comments system.
+# You can set one type to enable.
+# And need to provide additional configurations are required for those types.
+# See doc: https://theme-next.org/docs/third-party-services/comments-and-widgets/
+# Example:
+#   comments:
+#     type: Disqus # enable disqus.
+#     count: 
+#       page: true
+#       post: true
+# Additional configurations:
+#   disqus:
+#     shortname: shartname
+#     lazyload: false
+comments:
+  # Type list:
+  # Disqus | Disqusjs | Changyan | Valine | LiveRe | Gitment | Gitalk | facebook_comments_plugin | vkontakte 
+  type:
+  # If comment system support, show comments count in meta area
+  count: 
+    page: true
+    post: true
 
 # Disqus
 disqus:
   shortname:
-  count: true
   lazyload: false
 
 # DisqusJS
@@ -635,7 +652,6 @@ valine:
   pageSize: 10 # pagination size
   language: # language, available values: en, zh-cn
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
-  comment_count: true # if false, comment count will only be displayed in post page, not in home page
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -645,7 +661,6 @@ valine:
 # Introduction: https://github.com/imsun/gitment
 gitment:
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
-  count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
