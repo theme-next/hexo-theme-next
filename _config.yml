@@ -11,7 +11,7 @@ override: false
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
-  enable: true
+  enable: false
 
 # Redefine custom file paths. Introduced in NexT v6.0.2.
 # If commented, will be used default custom file paths.
@@ -590,33 +590,6 @@ quicklink:
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
 #growingio_analytics: #your projectId
 
-# Disqus
-disqus:
-  enable: false
-  shortname:
-  count: true
-  lazyload: false
-
-# DisqusJS
-# Alternative Disqus - Render comment component using Disqus API
-# Demo: https://suka.js.org/DisqusJS/
-disqusjs:
-  enable: false
-  # API Endpoint of Disqus API (https://disqus.com/api/)
-  # leave api empty if you are able to connect to Disqus API
-  # otherwise you need a reverse proxy for Disqus API
-  # For example:
-  # api: https://disqus.skk.moe/disqus/
-  api:
-  apikey: # register new application from https://disqus.com/api/applications/
-  shortname: # See: https://disqus.com/admin/settings/general/
-
-# Changyan
-changyan:
-  enable: false
-  appid:
-  appkey:
-
 # Valine
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
@@ -669,11 +642,6 @@ gitalk:
   # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
   language:
 
-# Baidu Share
-# Available values: button | slide
-# Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
 
 # AddThis Share, See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
