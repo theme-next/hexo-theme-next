@@ -121,8 +121,8 @@ github_banner:
 # SEO Settings
 # ---------------------------------------------------------------
 
-# Disable Baidu tranformation on mobile devices.
-disable_baidu_tranformation: false
+# Disable Baidu transformation on mobile devices.
+disable_baidu_transformation: false
 
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
@@ -138,6 +138,25 @@ index_with_subtitle: false
 
 # Automatically add external URL with BASE64 encrypt & decrypt.
 exturl: false
+
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters
+#google_site_verification:
+
+# Bing Webmaster tools verification setting
+# See: https://www.bing.com/webmaster
+#bing_site_verification:
+
+# Yandex Webmaster tools verification setting
+# See: https://webmaster.yandex.ru
+#yandex_site_verification:
+
+# Baidu Webmaster tools verification setting
+# See: https://ziyuan.baidu.com/site
+#baidu_site_verification:
+
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
+baidu_push: false
 
 
 # ---------------------------------------------------------------
@@ -586,7 +605,7 @@ disqusjs:
   # API Endpoint of Disqus API (https://disqus.com/api/)
   # leave api empty if you are able to connect to Disqus API
   # otherwise you need a reverse proxy for Disqus API
-  # For example: 
+  # For example:
   # api: https://disqus.skk.moe/disqus/
   api:
   apikey: # register new application from https://disqus.com/api/applications/
@@ -684,8 +703,8 @@ likely:
 # boxForm: horizontal | vertical
 # position: top / middle / bottom + Left / Center / Right
 # networks:
-# Weibo,Wechat,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,
-# Slashdot,Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
+# Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin,Mailto,Reddit,Delicious,StumbleUpon,Pinterest,
+# GooglePlus,Tumblr,GoogleBookmarks,Newsvine,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
   enable: false
   postbottom:
@@ -703,26 +722,10 @@ needmoreshare2:
       position: middleRight
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
 
-# Google Webmaster tools verification setting
-# See: https://www.google.com/webmasters
-#google_site_verification:
-
 # Google Analytics
 #google_analytics:
 #  tracking_id:
 #  localhost_ignored: true
-
-# Bing Webmaster tools verification setting
-# See: https://www.bing.com/webmaster
-#bing_site_verification:
-
-# Yandex Webmaster tools verification setting
-# See: https://webmaster.yandex.ru
-#yandex_site_verification:
-
-# Baidu Webmaster tools verification setting
-# See: https://ziyuan.baidu.com/site
-#baidu_site_verification:
 
 # CNZZ count
 #cnzz_siteid:
@@ -800,9 +803,6 @@ busuanzi_count:
 
 # Tencent MTA ID
 #tencent_mta:
-
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
 
 # Google Calendar
 # Share your recent schedule to others via calendar page.
@@ -1022,7 +1022,7 @@ vendors:
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
   jquery:
 
-  # Internal version: 2.1.5 & 3.5.6
+  # Internal version: 2.1.5 & 3.5.7
   # See: https://fancyapps.com/fancybox
   # Example:
   # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
