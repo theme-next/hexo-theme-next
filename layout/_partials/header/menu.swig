@@ -22,13 +22,15 @@
         {%- endif -%}
       {%- endfor %}
 
-      {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.local_search.enable %}
+      {% set hasSearch = theme.local_search.enable || theme.algolia_search.enable || theme.swiftype_key %}
       {% if hasSearch %}
         <li class="menu-item menu-item-search">
-          {% if theme.swiftype_key %}
-            <a href="javascript:;" class="st-search-show-outputs">
-          {% elif theme.local_search.enable || theme.algolia_search.enable %}
+          {% if theme.local_search.enable || theme.algolia_search.enable %}
             <a href="javascript:;" class="popup-trigger">
+          {% else %}
+            {% if theme.swiftype_key %}
+              <a href="javascript:;" class="st-search-show-outputs">
+            {% endif %}
           {% endif %}
             {% if theme.menu_settings.icons %}
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>{#
@@ -40,7 +42,7 @@
     </ul>
   {% endif %}
 
-  {% if theme.scheme === 'Muse' || theme.scheme === 'Mist' %}
+  {% if theme.scheme === 'Mist' || theme.scheme === 'Muse' %}
     {% include 'sub-menu.swig' %}
   {% endif %}
 
