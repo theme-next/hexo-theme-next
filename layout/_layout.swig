@@ -109,7 +109,7 @@
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
   {% if theme.leancloud_visitors.enable %}
-    {{ leancloud_counter_script(page.layout) }}
+    {{ leancloud_counter_legacy_script(page.layout) }}
   {% endif %}
   {% include '_third-party/analytics/firestore.swig' %}
   {% include '_third-party/math/index.swig' %}
