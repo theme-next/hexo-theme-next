@@ -9,4 +9,4 @@
       <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
     </a>
   </span>
-{% endif %
+{% endif %}
