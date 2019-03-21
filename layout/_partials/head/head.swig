@@ -116,6 +116,13 @@
       indexName: '{{ theme.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},
       labels: {{ theme.algolia_search.labels | json_encode }}
+    },
+    dyfavicon: {
+      visibilitychange: {{theme.dyfavicon.visibilitychange}},
+      narmal: '{{theme.dyfavicon.narmal}}',
+      hidden: '{{theme.dyfavicon.hidden}}',
+      show_text: '{{theme.dyfavicon.show_text}}',
+      hide_text: '{{theme.dyfavicon.hide_text}}'
     }
   };
 </script>

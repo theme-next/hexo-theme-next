@@ -46,12 +46,19 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: /images/fi01.png
+  medium: /images/fi01.png
+  apple_touch_icon: /images/fi01.png
+  safari_pinned_tab: /images/fi01.png
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
+
+dyfavicon:
+  visibilitychange: true
+  narmal: /images/fi01.png
+  hidden: /images/fi02.png
+  show_text: (/≧▽≦/)咦！又好了!
+  hide_text: (●—●)喔哟，崩溃啦!
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
