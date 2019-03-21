@@ -10,7 +10,7 @@
         VK.Widgets.Like("vk_like", {type: "mini", height: 20});
       {% endif %}
 
-      {% if page.comments and theme.vkontakte_api.comments %}
+      {% if page.comments and theme.comments.type|lower === 'vkontakte' %}
         VK.Widgets.Comments("vk_comments", {limit: {{ theme.vkontakte_api.num_of_posts }}, attach: "*"});
       {% endif %}
     };

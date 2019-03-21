@@ -1,4 +1,4 @@
-{% if page.comments %}
+{% if page.comments and theme.livere_uid %}
 <script>
   window.livereOptions = {
     refer: '{{ page.path }}'
