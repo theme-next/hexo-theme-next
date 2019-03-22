@@ -12,16 +12,13 @@
   a, span.exturl {
     color: $grey-dark;
     border-bottom-color: $black-light;
-    &:hover { color: $gainsboro; }
-  }
-  span.exturl:hover {
-    border-bottom-color: $gainsboro;
+    &:hover {
+      color: $gainsboro;
+      border-bottom-color: $gainsboro;
+    }
   }
 
-  +tablet() {
-    hide() if not hexo-config('sidebar.onmobile');
-  }
-  +mobile() {
+  +tablet-mobile() {
     hide() if not hexo-config('sidebar.onmobile');
   }
 }
@@ -58,11 +55,10 @@
 
 @import "sidebar-toggle";
 @import "sidebar-author";
-@import "site-state";
-@import "sidebar-feed-link";
 @import "sidebar-author-links";
+@import "sidebar-button";
 @import "sidebar-blogroll";
 @import "sidebar-nav";
-@import "sidebar-toc";
+@import "site-state" if hexo-config('site_state');
+@import "sidebar-toc" if hexo-config('toc.enable');
 @import "sidebar-dimmer" if hexo-config('sidebar.dimmer');
-@import "sidebar-chat" if hexo-config('chat.enable');

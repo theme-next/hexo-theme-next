@@ -11,13 +11,15 @@
   a, span.exturl {
     color: $black-light;
 
-    &:hover { color: $black-deep; }
+    &:hover {
+      color: $black-deep;
+      border-bottom-color: $black-deep;
+    }
   }
-  span.exturl:hover { border-bottom-color: $black-deep; }
 }
 
 .sidebar-inner {
-//padding: 20px 10px 0;
+  //padding: 20px 10px 0;
   box-sizing: border-box;
   width: $sidebar-desktop;
   color: $text-color;
@@ -49,40 +51,13 @@
   padding: 0 10px;
 }
 
-.links-of-author-item {
-  a:before, span.exturl:before { display: none; }
-  a, span.exturl {
-    border-bottom: none;
-    text-decoration: underline;
-  }
-}
-
-.feed-link {
+.feed-link, .chat {
   border-top: 1px dotted $grey-light;
   border-bottom: 1px dotted $grey-light;
   text-align: center;
 }
 
-.feed-link a {
-  display: block;
-  color: $orange;
-  border: none;
-
-  &:hover {
-    background: none;
-    color: darken($orange, 20%);
-
-    i { color: darken($orange, 20%); }
-  }
-}
-
-.chat {
-  border-top: 1px dotted $grey-light;
-  border-bottom: 1px dotted $grey-light;
-  text-align: center;
-}
-
-.chat a {
+.feed-link a, .chat a {
   display: block;
   color: $orange;
   border: none;
@@ -105,8 +80,14 @@
     font-size: 13px;
   }
 }
+
 .links-of-author-item {
   sidebar-inline-links-item();
+  a:before, span.exturl:before { display: none; }
+  a, span.exturl {
+    border-bottom: none;
+    text-decoration: underline;
+  }
 
   a, span.exturl {
     display: block;
