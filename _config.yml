@@ -606,7 +606,7 @@ quicklink:
 #     lazyload: false
 comments:
   # Type list:
-  # Disqus | Disqusjs | Changyan | Valine | LiveRe | Gitment | Gitalk | facebook_comments_plugin | vkontakte 
+  # disqus | disqusjs | changyan | valine | livere | gitment | gitalk | facebook_comments_plugin | vkontakte 
   type:
   # If comment system support, show comments count in meta area
   count: 
