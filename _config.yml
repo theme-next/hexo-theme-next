@@ -35,16 +35,9 @@ cache:
 
 # ---------------------------------------------------------------
 # Site Information Settings
+# See: https://theme-next.org/docs/getting-started/
 # ---------------------------------------------------------------
 
-# To get or check favicons visit: https://realfavicongenerator.net
-# Put your favicons into `hexo-site/source/` (recommend) or `hexo-site/themes/next/source/images/` directory.
-
-# Default NexT favicons placed in `hexo-site/themes/next/source/images/` directory.
-# And if you want to place your icons in `hexo-site/source/` root directory, you must remove `/images` prefix from pathes.
-
-# For example, you put your favicons into `hexo-site/source/images` directory.
-# Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
   small: /images/favicon-16x16-next.png
   medium: /images/favicon-32x32-next.png
@@ -54,13 +47,12 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set rss to false to disable feed link.
-# Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
+# Leave rss as blank to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
 rss:
 
 footer:
-  # Specify the date when the site was setup.
-  # If not defined, current year will be used.
+  # Specify the date when the site was setup. If not defined, current year will be used.
   #since: 2015
 
   # Icon between year and copyright info.
@@ -110,7 +102,7 @@ creative_commons:
   post: false
   language:
 
-# Follow me on GitHub banner in right-top corner.
+# `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: false
   permalink: https://github.com/yourname
@@ -124,7 +116,7 @@ github_banner:
 # Disable Baidu tranformation on mobile devices.
 disable_baidu_tranformation: false
 
-# Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
+# Set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
 canonical: true
@@ -139,19 +131,19 @@ index_with_subtitle: false
 # Automatically add external URL with BASE64 encrypt & decrypt.
 exturl: false
 
-# Google Webmaster tools verification setting
+# Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
 #google_site_verification:
 
-# Bing Webmaster tools verification setting
+# Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
 #bing_site_verification:
 
-# Yandex Webmaster tools verification setting
+# Yandex Webmaster tools verification.
 # See: https://webmaster.yandex.ru
 #yandex_site_verification:
 
-# Baidu Webmaster tools verification setting
+# Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
 #baidu_site_verification:
 
@@ -179,7 +171,7 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
-# Enable/Disable menu icons / item badges.
+# Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
   badges: false
@@ -320,7 +312,7 @@ save_scroll: false
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
 
-# Automatically Excerpt. Not recommend.
+# Automatically Excerpt (Not recommend).
 # Use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: false
@@ -336,9 +328,6 @@ post_meta:
   created_at: true
   updated_at:
     enable: true
-    # If true, show updated date label only if `updated date` is different from `created date` (post edited in another day than was created).
-    # And if post was edited in same day as created, edited time will show in popup title under created time label.
-    # If false show anyway, but if post edited in same day, show only edited time.
     another_day: true
   categories: true
 
@@ -352,8 +341,7 @@ symbols_count_time:
   wpm: 275
 
 codeblock:
-  # Manual define the border radius in codeblock
-  # Leave it empty for the default 1
+  # Manual define the border radius in codeblock, leave it blank for the default value: 1
   border_radius:
   # Add copy button on codeblock
   copy_button:
@@ -910,7 +898,7 @@ tabs:
 # PDF tag, requires two plugins: pdfObject and pdf.js
 # pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
 # The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
-# So, YOU MUST install the dependency of pdf.js if you want to use pdf tag and make it work on all browsers.
+# So, you must install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
 # See: https://github.com/theme-next/theme-next-pdf
 pdf:
   enable: false
