@@ -59,7 +59,8 @@ favicon:
 rss:
 
 footer:
-  # Specify the date when the site was setup. If not defined, current year will be used.
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
   #since: 2015
 
   # Icon between year and copyright info.
@@ -138,19 +139,19 @@ index_with_subtitle: false
 # Automatically add external URL with BASE64 encrypt & decrypt.
 exturl: false
 
-# Google Webmaster tools verification
+# Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters
 #google_site_verification:
 
-# Bing Webmaster tools verification
+# Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster
 #bing_site_verification:
 
-# Yandex Webmaster tools verification
+# Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru
 #yandex_site_verification:
 
-# Baidu Webmaster tools verification
+# Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site
 #baidu_site_verification:
 
