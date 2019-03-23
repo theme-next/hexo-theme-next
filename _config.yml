@@ -13,12 +13,8 @@ override: false
 cache:
   enable: true
 
-# Redefine custom file paths. Introduced in NexT v6.0.2.
-# If commented, will be used default custom file paths.
-
-# For example, you want to put your custom styles file
-# outside theme directory in root `source/_data`, set
-# `styles: source/_data/styles.styl`
+# Redefine custom file paths. Introduced in NexT v6.0.2. If commented, will be used default custom file paths.
+# For example, you want to put your custom styles file outside theme directory in root `source/_data`, set `styles: source/_data/styles.styl`
 #custom_file_path:
   # Default paths: layout/_custom/*
   #head: source/_data/head.swig
@@ -67,7 +63,7 @@ footer:
 
   # If not defined, `author` from Hexo main config will be used.
   copyright:
-  # -------------------------------------------------------------
+
   powered:
     # Hexo link (Powered by Hexo).
     enable: true
@@ -79,14 +75,13 @@ footer:
     enable: true
     # Version info of NexT after scheme info (vX.X.X).
     version: true
-  # -------------------------------------------------------------
+
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
   beian:
     enable: false
     icp:
 
-  # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>
 
@@ -292,6 +287,7 @@ chat:
   icon: comment # icon in Font Awesome 4, set false to disable icon
   text: Chat # button text, change it as you wish
 
+
 # ---------------------------------------------------------------
 # Post Settings
 # See: https://theme-next.org/docs/theme-settings/posts/
@@ -425,7 +421,6 @@ cheers: true
 tagcloud:
   # If true, font size, font color and amount of tags can be customized
   enable: false
-
   # All values below are same as default, change them by yourself
   min: 12 # min font size in px
   max: 30 # max font size in px
@@ -568,15 +563,42 @@ quicklink:
   #   - (uri, el) => el.hasAttribute('noopener')
   ignores:
 
-# Swiftype Search API Key
-#swiftype_key:
+# Bookmark Support
+# Dependencies: https://github.com/theme-next/theme-next-bookmark
+bookmark:
+  enable: false
+  # If auto, save the reading position when closing the page or clicking the bookmark-icon.
+  # If manual, only save it by clicking the bookmark-icon.
+  save: auto
 
-# Baidu Analytics ID
-#baidu_analytics:
+# Reading progress bar
+# Dependencies: https://github.com/theme-next/theme-next-reading-progress
+reading_progress:
+  enable: false
+  color: "#37c6c0"
+  height: 2px
 
-# Growingio Analytics ID
-# Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
-#growingio_analytics: #your projectId
+# Google Calendar
+# Share your recent schedule to others via calendar page.
+# API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
+# To get api_key: https://console.developers.google.com
+# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
+calendar:
+  enable: false
+  calendar_id: <required> # Your Google account E-Mail
+  api_key: <required>
+  orderBy: startTime
+  offsetMax: 24 # Time Range
+  offsetMin: 4 # Time Range
+  showDeleted: false
+  singleEvents: true
+  maxResults: 250
+
+
+# ---------------------------------------------------------------
+# Comments and Widgets
+# See: https://theme-next.org/docs/third-party-services/comments-and-widgets/
+# ---------------------------------------------------------------
 
 # Disqus
 disqus:
@@ -657,6 +679,12 @@ gitalk:
   # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
   language:
 
+
+# ---------------------------------------------------------------
+# Content Sharing Services
+# See: https://theme-next.org/docs/third-party-services/content-sharing-services/
+# ---------------------------------------------------------------
+
 # Baidu Share
 # Available values: button | slide
 # Warning: Baidu Share does not support https.
@@ -709,6 +737,19 @@ needmoreshare2:
       boxForm: horizontal
       position: middleRight
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+
+
+# ---------------------------------------------------------------
+# Statistics and Analytics
+# See: https://theme-next.org/docs/third-party-services/statistics-and-analytics/
+# ---------------------------------------------------------------
+
+# Baidu Analytics ID
+#baidu_analytics:
+
+# Growingio Analytics ID
+# Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
+#growingio_analytics: #your projectId
 
 # Google Analytics
 #google_analytics:
@@ -797,21 +838,11 @@ busuanzi_count:
 # Tencent MTA ID
 #tencent_mta:
 
-# Google Calendar
-# Share your recent schedule to others via calendar page.
-# API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
-# To get api_key: https://console.developers.google.com
-# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
-calendar:
-  enable: false
-  calendar_id: <required> # Your Google account E-Mail
-  api_key: <required>
-  orderBy: startTime
-  offsetMax: 24 # Time Range
-  offsetMin: 4 # Time Range
-  showDeleted: false
-  singleEvents: true
-  maxResults: 250
+
+# ---------------------------------------------------------------
+# Search Services
+# See: https://theme-next.org/docs/third-party-services/search-services/
+# ---------------------------------------------------------------
 
 # Algolia Search
 # See: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ALGOLIA-SEARCH.md
@@ -837,20 +868,14 @@ local_search:
   # Unescape html strings to the readable one.
   unescape: false
 
-# Bookmark Support
-# Dependencies: https://github.com/theme-next/theme-next-bookmark
-bookmark:
-  enable: false
-  # If auto, save the reading position when closing the page or clicking the bookmark-icon.
-  # If manual, only save it by clicking the bookmark-icon.
-  save: auto
+# Swiftype Search API Key
+#swiftype_key:
 
-# Reading progress bar
-# Dependencies: https://github.com/theme-next/theme-next-reading-progress
-reading_progress:
-  enable: false
-  color: "#37c6c0"
-  height: 2px
+
+# ---------------------------------------------------------------
+# Chat Services
+# See: https://theme-next.org/docs/third-party-services/chat-services/
+# ---------------------------------------------------------------
 
 # Chatra Support
 # See: https://chatra.io
@@ -867,6 +892,7 @@ chatra:
 tidio:
   enable: false
   key: # Public Key, get it from Dashboard, See: https://www.tidiochat.com/panel/settings/developer
+
 
 # ---------------------------------------------------------------
 # Tags Settings
