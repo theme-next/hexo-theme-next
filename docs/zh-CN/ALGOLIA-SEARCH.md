@@ -80,5 +80,5 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
 
 1. 考虑到 Algolia 免费账户的限制，目前 [Hexo-Algolia](https://github.com/oncletom/hexo-algolia) 插件最新版本去掉了正文索引功能。
 1. [Hexo-Algoliasearch](https://github.com/LouisBarranqueiro/hexo-algoliasearch) 插件提供了正文索引功能，不过需要替换 NEXT 主题中的关键字。对于免费账户，`Record Too Big` 的问题同样存在。
-    - 替换 `source/js/src/algolia-search.js` 中所有的 `applicationID` 为 `appId`
+    - 替换 `source/js/algolia-search.js` 中所有的 `applicationID` 为 `appId`
     - 替换 `layout/_partials/head/head.swig` 中所有的 `applicationID` 为 `appId`
