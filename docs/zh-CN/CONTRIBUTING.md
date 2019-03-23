@@ -12,6 +12,7 @@
 
   * [你需要了解的](#before-submitting-an-issue)
   * [反馈 Bug](#reporting-bugs)
+    * [Reporting Security Bugs](#reporting-security-bugs)
   * [提交功能需求](#suggesting-enhancements)
   * [提交合并请求](#submitting-a-pull-request)
   * [发布版本](#creating-releases)
@@ -23,15 +24,21 @@
   * [标签规范](#labels-rules)
   * [提交信息规范](#commit-messages-rules)
 
+<a name="how-can-i-contribute"></a>
+
 ## 如何为 Next 做贡献
 
 目前 Next 主题已经从 [iissnan](https://github.com/iissnan/hexo-theme-next) 的个人仓库移动到了 [Theme-Next](https://github.com/theme-next) 组织仓库中，并升级到 V6 版本。在 V6+ 版本中，`next/source/lib` 目录下的第三方依赖库将独立放置在 [Theme-Next](https://github.com/theme-next) 组织仓库中。在大多数情况下，NexT V5 版本仍然能够正常运行，但是如果你想获得更多的功能和帮助，还是建议您[升级到 NexT V6+ 版本](https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md)，并移步 [Theme-Next](https://github.com/theme-next/hexo-theme-next) 仓库。
+
+<a name="before-submitting-an-issue"></a>
 
 ### 你需要了解的
 
 如果你在使用过程中遇到了问题，你可以查阅 FAQs（建设中） 或者 [NexT 帮助文档](https://theme-next.org/docs/)（建设中）。另外，你也可以通过[这里](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93)进行大致检索，有些问题已经得到解答，你可以自行解决。对于没有解决的 Issue，你也可以继续提问。
 
 如果你在使用过程中发现了 Bug，请再次确认 Bug 在[最新发布版本](https://github.com/theme-next/hexo-theme-next/releases/latest)中是否重现。如果 Bug 重现，欢迎你到我们的 [Theme-NexT 仓库](https://github.com/theme-next/hexo-theme-next)中[反馈 Bug ](#reporting-bugs) 和[提交功能需求](#suggesting-enhancements)，也更期待您[提交合并请求](#submitting-a-pull-request)
+
+<a name="reporting-bugs"></a>
 
 ### 反馈 Bug
 
@@ -51,11 +58,15 @@
 * 详细描述通过上述重现过程出现的问题。
 * 详细描述你期待的结果。
 
+<a name="reporting-security-bugs"></a>
+
 #### Reporting Security Bugs
 
 If you find a security issue, please act responsibly and report it not in the public issue tracker, but directly to us, so we can fix it before it can be exploited. Please send the related information to security@theme-next.com (desirable with using PGP for e-mail encryption).
 
 We will gladly give credit to anyone who reports a vulnerability so that we can fix it. If you want to remain anonymous or pseudonymous instead, please let us know that; we will gladly respect your wishes.
+
+<a name="suggesting-enhancements"></a>
 
 ### 提交功能需求
 
@@ -66,6 +77,8 @@ We will gladly give credit to anyone who reports a vulnerability so that we can 
 * 在标题中清晰准确地描述你的功能需求。
 * 详细描述目前所具有的功能和你所期待的功能，并解释为什么需要该功能。
 * 提供功能需求的样例，如图像文件、在线演示网址等等。
+
+<a name="submitting-a-pull-request"></a>
 
 ### 提交合并请求
 
@@ -96,6 +109,8 @@ We will gladly give credit to anyone who reports a vulnerability so that we can 
 * 按照[模板](../../.github/PULL_REQUEST_TEMPLATE.md)尽可能的详细填写相关信息。
 * 合并请求需要在所有主题样式中测试通过，并提供所表现功能的样例，如图像文件、在线演示网址等等。
 
+<a name="creating-releases"></a>
+
 ### 发布版本
 
 版本发布是将项目发布给用户的一种很好的方式。
@@ -111,15 +126,23 @@ We will gladly give credit to anyone who reports a vulnerability so that we can 
 5. 如果您希望随版本一起发布二进制文件（如编译的程序），请在上传二进制文件对话框中手动拖放或选择文件。
 6. 如果版本不稳定，请选择 **This is a pre-release**，以通知用户它尚未完全准备好。如果您准备公布您的版本，请点击 **Publish release**。否则，请单击 **Save draft** 以稍后处理。
 
+<a name="guides"></a>
+
 ## 规范
+
+<a name="coding-rules"></a>
 
 ### 行为规范
 
 为了保证本项目的顺利运作，所有参与人都需要遵守[行为规范](CODE_OF_CONDUCT.md)。
 
+<a name="coding-standards"></a>
+
 ### 编码规范
 
 未完待续。
+
+<a name="labels-rules"></a>
 
 ### 标签规范
 
@@ -180,6 +203,8 @@ Pull requests 的标签：
 - `Discussion`: 需要进行讨论的 Pull request
 - `v6.x`: NexT v6.x 旧版相关的修复和优化类型 Pull request
 - `v7.x`: NexT v7.x 旧版相关的修复和优化类型 Pull request
+
+<a name="commit-messages-rules"></a>
 
 ### 提交信息规范
 
