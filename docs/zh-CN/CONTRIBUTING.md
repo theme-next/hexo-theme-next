@@ -12,7 +12,7 @@
 
   * [你需要了解的](#before-submitting-an-issue)
   * [反馈 Bug](#reporting-bugs)
-    * [Reporting Security Bugs](#reporting-security-bugs)
+    * [提交漏洞](#reporting-security-bugs)
   * [提交功能需求](#suggesting-enhancements)
   * [提交合并请求](#submitting-a-pull-request)
   * [发布版本](#creating-releases)
@@ -60,11 +60,11 @@
 
 <a name="reporting-security-bugs"></a>
 
-#### Reporting Security Bugs
+#### 提交漏洞
 
-If you find a security issue, please act responsibly and report it not in the public issue tracker, but directly to us, so we can fix it before it can be exploited. Please send the related information to security@theme-next.com (desirable with using PGP for e-mail encryption).
+如果你发现安全问题，请以负责任的方式行事，即不要在公共 Issue 中提交而是直接向我们反馈，这样我们就可以在漏洞被利用之前对其进行修复。请将相关信息发送到 security@theme-next.com（可接受 PGP 加密邮件）。
 
-We will gladly give credit to anyone who reports a vulnerability so that we can fix it. If you want to remain anonymous or pseudonymous instead, please let us know that; we will gladly respect your wishes.
+我们很乐意对任何报告漏洞的人予以肯定以便我们修复它。如果你想保持匿名性或使用笔名替代，请告诉我们。我们将充分尊重你的意愿。
 
 <a name="suggesting-enhancements"></a>
 
