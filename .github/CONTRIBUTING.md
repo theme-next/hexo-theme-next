@@ -68,7 +68,7 @@ Following these guidelines helps maintainers and the community understand your r
 
 If you find a security issue, please act responsibly and report it not in the public issue tracker, but directly to us, so we can fix it before it can be exploited. Please send the related information to security@theme-next.com (desirable with using PGP for e-mail encryption).
 
-We will gladly give credit to anyone who reports a vulnerability so that we can fix it. If you want to remain anonymous or pseudonymous instead, please let us know that; we will gladly respect your wishes.
+We will gladly special thanks to anyone who reports a vulnerability so that we can fix it. If you want to remain anonymous or pseudonymous instead, please let us know that; we will gladly respect your wishes.
 
 <a name="suggesting-enhancements"></a>
 
