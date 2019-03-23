@@ -12,6 +12,7 @@
 
   * [你需要了解的](#before-submitting-an-issue)
   * [反馈 Bug](#reporting-bugs)
+    * [提交漏洞](#reporting-security-bugs)
   * [提交功能需求](#suggesting-enhancements)
   * [提交合并请求](#submitting-a-pull-request)
   * [发布版本](#creating-releases)
@@ -24,11 +25,13 @@
   * [提交信息规范](#commit-messages-rules)
 
 <a name="how-can-i-contribute"></a>
+
 ## 如何为 Next 做贡献
 
 目前 Next 主题已经从 [iissnan](https://github.com/iissnan/hexo-theme-next) 的个人仓库移动到了 [Theme-Next](https://github.com/theme-next) 组织仓库中，并升级到 V6 版本。在 V6+ 版本中，`next/source/lib` 目录下的第三方依赖库将独立放置在 [Theme-Next](https://github.com/theme-next) 组织仓库中。在大多数情况下，NexT V5 版本仍然能够正常运行，但是如果你想获得更多的功能和帮助，还是建议您[升级到 NexT V6+ 版本](https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md)，并移步 [Theme-Next](https://github.com/theme-next/hexo-theme-next) 仓库。
 
 <a name="before-submitting-an-issue"></a>
+
 ### 你需要了解的
 
 如果你在使用过程中遇到了问题，你可以查阅 FAQs（建设中） 或者 [NexT 帮助文档](https://theme-next.org/docs/)（建设中）。另外，你也可以通过[这里](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93)进行大致检索，有些问题已经得到解答，你可以自行解决。对于没有解决的 Issue，你也可以继续提问。
@@ -36,6 +39,7 @@
 如果你在使用过程中发现了 Bug，请再次确认 Bug 在[最新发布版本](https://github.com/theme-next/hexo-theme-next/releases/latest)中是否重现。如果 Bug 重现，欢迎你到我们的 [Theme-NexT 仓库](https://github.com/theme-next/hexo-theme-next)中[反馈 Bug ](#reporting-bugs) 和[提交功能需求](#suggesting-enhancements)，也更期待您[提交合并请求](#submitting-a-pull-request)
 
 <a name="reporting-bugs"></a>
+
 ### 反馈 Bug
 
 反馈 Bug 前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照[模板](../../.github/ISSUE_TEMPLATE.md)尽可能的详细填写相关信息。
@@ -54,7 +58,16 @@
 * 详细描述通过上述重现过程出现的问题。
 * 详细描述你期待的结果。
 
+<a name="reporting-security-bugs"></a>
+
+#### 提交漏洞
+
+如果你发现安全问题，请以负责任的方式行事，即不要在公共 Issue 中提交而是直接向我们反馈，这样我们就可以在漏洞被利用之前对其进行修复。请将相关信息发送到 security@theme-next.com（可接受 PGP 加密邮件）。
+
+我们很乐意对任何提交漏洞的人予以特别感谢以便我们修复它。如果你想保持匿名性或使用笔名替代，请告诉我们。我们将充分尊重你的意愿。
+
 <a name="suggesting-enhancements"></a>
+
 ### 提交功能需求
 
 提交功能需求前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照[模板](../../.github/ISSUE_TEMPLATE.md)尽可能的详细填写相关信息。
@@ -66,6 +79,7 @@
 * 提供功能需求的样例，如图像文件、在线演示网址等等。
 
 <a name="submitting-a-pull-request"></a>
+
 ### 提交合并请求
 
 提交合并请求前，请再次确认您已经查看了[你需要了解的](#before-submitting-an-issue)内容，避免提交重复的合并请求。确定相关仓库后，创建合并请求。更多详细操作过程可以查看[帮助文档](https://help.github.com/articles/creating-a-pull-request/)。
@@ -96,6 +110,7 @@
 * 合并请求需要在所有主题样式中测试通过，并提供所表现功能的样例，如图像文件、在线演示网址等等。
 
 <a name="creating-releases"></a>
+
 ### 发布版本
 
 版本发布是将项目发布给用户的一种很好的方式。
@@ -112,19 +127,23 @@
 6. 如果版本不稳定，请选择 **This is a pre-release**，以通知用户它尚未完全准备好。如果您准备公布您的版本，请点击 **Publish release**。否则，请单击 **Save draft** 以稍后处理。
 
 <a name="guides"></a>
+
 ## 规范
 
 <a name="coding-rules"></a>
+
 ### 行为规范
 
 为了保证本项目的顺利运作，所有参与人都需要遵守[行为规范](CODE_OF_CONDUCT.md)。
 
 <a name="coding-standards"></a>
+
 ### 编码规范
 
 未完待续。
 
 <a name="labels-rules"></a>
+
 ### 标签规范
 
 为了方便维护人员和用户能够快速找到他们想要查看的问题，我们使用“标签”功能对拉取请求和问题进行分类。
@@ -184,6 +203,8 @@ Pull requests 的标签：
 - `Discussion`: 需要进行讨论的 Pull request
 - `v6.x`: NexT v6.x 旧版相关的修复和优化类型 Pull request
 - `v7.x`: NexT v7.x 旧版相关的修复和优化类型 Pull request
+
+<a name="commit-messages-rules"></a>
 
 ### 提交信息规范
 
