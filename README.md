@@ -104,9 +104,8 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 * :triangular_flag_on_post: <a title="Hexo Markdown Editor" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
-[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
-[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
+[browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
+[browser-url]: https://www.browserstack.com
 
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
 [contributing-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
@@ -118,20 +117,19 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [t-chat-url]: https://t.me/theme_next
 [t-news-url]: https://t.me/theme_next_news
 
-<!--
-[browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
-[browser-url]: https://www.browserstack.com
-
-[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg
-[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg
-[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg
+<!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->
+<!--[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg-->
+<!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
 
 [download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
 [releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
-[releases-url]: https://github.com/theme-next/hexo-theme-next/releases
+<!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases-->
 [tags-url]: https://github.com/theme-next/hexo-theme-next/tags
 [commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master
--->
+
+[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
+[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
 
 ## Contributors
 
