@@ -7,6 +7,7 @@
 <p align="center">«NexT» — элегантная высококачественная тема под <a href="http://hexo.io">Hexo</a>. Сделана с нуля, с любовью.</p>
 
 <p align="center">
+  <a href="https://bestpractices.coreinfrastructure.org/projects/2625"><img src="https://bestpractices.coreinfrastructure.org/projects/2625/badge" title="Инициатива базовой инфраструктуры: передовой опыт"></a>
   <a href="https://www.codacy.com/app/theme-next/hexo-theme-next?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=theme-next/hexo-theme-next&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/72f7fe7609c2438a92069f448e5a341a" title="Оценка проекта"></a>
   <a href="https://travis-ci.org/theme-next/hexo-theme-next?branch=master"><img src="https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master" title="Travis CI [Linux]"></a>
   <a href="https://crwd.in/theme-next"><img src="https://d322cqt584bo4o.cloudfront.net/theme-next/localized.svg" title="Добавить или улучшить перевод за несколько секунд!"></a>
@@ -18,7 +19,7 @@
 ## Демо
 
 * :heart_decoration: Muse тема: [LEAFERx](https://leaferx.online) | [Alex LEE](http://saili.science) | [Miaia](https://11.tt)
-* :six_pointed_star: Mist тема: [Jeff](https://blog.zzbd.org) | [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
+* :six_pointed_star: Mist тема: [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
 * :pisces: Pisces тема: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Jiaxi He](http://jiaxi.io)
 * :gemini: Gemini тема: [Ivan.Nginx](https://almostover.ru) | [Raincal](https://raincal.com) | [Dandy](https://dandyxu.me)
 
@@ -92,11 +93,11 @@ $ git pull
 
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
 [contributing-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
-[feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc
+[feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
 [issues-url]: https://github.com/theme-next/hexo-theme-next/issues
 
 [gitter-url]: https://gitter.im/theme-next
-[riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
+[riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
 [t-chat-url]: https://t.me/theme_next
 [t-news-url]: https://t.me/theme_next_news
 

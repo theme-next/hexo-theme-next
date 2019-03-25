@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="{{ Han_uri }}"/>
 {% endif %}
 
-{% if theme.disable_baidu_tranformation %}
+{% if theme.disable_baidu_transformation %}
   <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
 {% endif %}
