@@ -656,10 +656,12 @@ comments:
 #   admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
 #   distraction_free_mode: true # Facebook-like distraction free mode
 #   language: # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
+# # facebook_comments_plugin need enable facebook_sdk
 # facebook_comments_plugin:
 #   num_of_posts: 10    # min posts num is 1
 #   width:        100%  # default width is 550px
 #   scheme:       light # default scheme is light (light or dark)
+# # vkontakte comments need enable vkontakte_api
 
 
 # ---------------------------------------------------------------
