@@ -614,6 +614,52 @@ comments:
   count: 
     page: true
     post: true
+# Additional Configurations.
+# disqus:
+#   shortname:
+#   lazyload: false
+# disqusjs:
+#   api:
+#   apikey: # register new application from https://disqus.com/api/applications/
+#   shortname: # See: https://disqus.com/admin/settings/general/
+# changyan:
+#   appid:
+#   appkey:
+# valine:
+#   appid:  # your leancloud application appid
+#   appkey:  # your leancloud application appkey
+#   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
+#   verify: false # Verification code
+#   placeholder: Just go go # comment box placeholder
+#   avatar: mm # gravatar style
+#   guest_info: nick,mail,link # custom comment header
+#   pageSize: 10 # pagination size
+#   language: # language, available values: en, zh-cn
+#   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+# livere_uid: your uid
+# gitment:
+#   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+#   lazy: false # Comments lazy loading with a button
+#   cleanly: false # Hide 'Powered by ...' on footer, and more
+#   language: # Force language, or auto switch by theme
+#   github_user: # MUST HAVE, Your Github Username
+#   github_repo: # MUST HAVE, The name of the repo you use to store Gitment comments
+#   client_id: # MUST HAVE, Github client id for the Gitment
+#   client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
+#   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
+#   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
+# gitalk:
+#   github_id:  # Github repo owner
+#   repo:  # Repository name to store issues
+#   client_id:  # Github Application Client ID
+#   client_secret:  # Github Application Client Secret
+#   admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+#   distraction_free_mode: true # Facebook-like distraction free mode
+#   language: # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
+# facebook_comments_plugin:
+#   num_of_posts: 10    # min posts num is 1
+#   width:        100%  # default width is 550px
+#   scheme:       light # default scheme is light (light or dark)
 
 
 # ---------------------------------------------------------------
