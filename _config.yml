@@ -598,11 +598,6 @@ calendar:
 # ---------------------------------------------------------------
 # Comments and Widgets
 # See: https://theme-next.org/docs/third-party-services/comments-and-widgets/
-# ---------------------------------------------------------------
-
-# ---------------------------------------------------------------
-# Comments
-# See: https://theme-next.org/docs/third-party-services/comments-and-widgets/
 # You can set one type to enable.
 # And need to provide additional configurations are required for those types.
 # ---------------------------------------------------------------
