@@ -26,14 +26,14 @@
       right: 15px;
       width: 6px;
       height: 6px;
-      border-radius: 50%;
       background-color: $grey;
+      circle();
     }
   }
 }
 
 .menu .menu-item {
-  display: block;
+  show();
   margin: 0;
 
   a, span.exturl {
@@ -82,6 +82,6 @@
   transform: translateY(-50%);
 
   +tablet() {
-    display: block;
+    show();
   }
 }
