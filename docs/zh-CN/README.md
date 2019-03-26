@@ -92,23 +92,23 @@ $ git pull
 
 我们欢迎你贡献出你的一份力量，你可以随时提交 issue 或 fork 本仓库。静候你的 pull request。
 
-## Feedback
+## 反馈
 
-* Ask a question on [Stack Overflow][stack-url].
-* Request a new feature on [GitHub][contributing-url].
-* Vote for [popular feature requests][feat-req-vote-url].
-* Report a bug in [GitHub Issues][issues-url].
-* Join to our [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] chats.
-* Follow us with [Telegram Channel][t-news-url] for latest news.
+* 在 [Stack Overflow][stack-url] 上提问。
+* 在 [GitHub][contributing-url] 请求新的功能。
+* 为 [popular feature requests][feat-req-vote-url] 投票。
+* 在 [GitHub Issues][issues-url] 报告Bug。
+* 加入我们的 [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] 聊天。
+* 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
 
-## 第三方應用程序
+## 第三方应用程序
 
 * :triangular_flag_on_post: <a title="Hexo Markdown 编辑器" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
-## Thanks
+## 鸣谢
 
 <p align="center">
-«NexT» 特别鸣谢这些支持我们核心基础设施的优质服务：
+«NexT» 特别感谢这些支持我们核心基础设施的优质服务：
 </p>
 
 <p align="center"><a href="https://github.com"><img align="center" width="100" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png"></a>
