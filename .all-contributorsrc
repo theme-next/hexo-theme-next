@@ -405,7 +405,8 @@
       "contributions": [
         "bug",
         "code",
-        "doc"
+        "doc",
+        "infra"
       ]
     },
     {
