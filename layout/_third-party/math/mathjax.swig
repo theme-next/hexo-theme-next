@@ -33,7 +33,11 @@
   MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
     for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+      parent = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      parent.classList.add('has-jax');
+      if (parent.tagName.toLowerCase() === 'li') {
+        parent.parentNode.classList.add('has-jax-list');
+      }
     }
   });
 </script>
