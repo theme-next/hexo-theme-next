@@ -429,7 +429,9 @@
       "contributions": [
         "bug",
         "code",
-        "doc"
+        "doc",
+        "review",
+        "translation"
       ]
     },
     {
