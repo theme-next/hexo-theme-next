@@ -143,7 +143,7 @@ exturl: false
 #baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+baidu_push: true
 
 
 # ---------------------------------------------------------------
@@ -602,10 +602,10 @@ calendar:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: YangAnLin
   count: true
-  lazyload: false
+  lazyload: true
 
 # DisqusJS
 # Alternative Disqus - Render comment component using Disqus API
@@ -752,9 +752,9 @@ baidu_analytics: e127b8fda3510a0e5eb3e574fc4a9a58
 #growingio_analytics: #your projectId
 
 # Google Analytics
-#google_analytics:
-#  tracking_id:
-#  localhost_ignored: true
+google_analytics:
+ tracking_id: UA-117143370-1
+ localhost_ignored: true
 
 # CNZZ count
 #cnzz_siteid:
