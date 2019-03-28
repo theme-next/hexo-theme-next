@@ -1,5 +1,5 @@
 /**
- * group-pictures.js | https://theme-next.org/docs/tag-plugins/group-pictures/
+ * group-pictures.js | https://theme-next.org/docs/tag-plugins/group-pictures
  */
 
 /* global hexo */

@@ -1,5 +1,5 @@
 /**
- * note.js | https://theme-next.org/docs/tag-plugins/note/
+ * note.js | https://theme-next.org/docs/tag-plugins/note
  */
 
 /* global hexo */
