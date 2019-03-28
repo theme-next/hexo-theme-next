@@ -201,7 +201,7 @@ Pull requests related:
 - `New Feature`: A Pull requests that provides a new feature
 - `Feature`: A Pull requests that provides an option or addition to existing feature
 - `Configurations`: A Pull requests related to configurations
-- `Optimization`: A Pull requests that optimizates the Next
+- `Improvement`: A Pull requests that improves the Next
 - `i18n`: A Pull requests that makes new languages translation
 - `Performance`: A Pull requests that improves the performance
 - `Discussion`: A Pull requests that needs to be discussed

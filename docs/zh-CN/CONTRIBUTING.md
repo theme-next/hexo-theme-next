@@ -197,7 +197,7 @@ Pull requests 的标签：
 - `New Feature`: 添加了新特性的 Pull request
 - `Feature`: 为已存在的特性添加了选项或功能的 Pull request
 - `Configurations`: 涉及主题 Next 配置的 Pull request
-- `Optimization`: 优化了主题 Next 的 Pull request
+- `Improvement`: 改进了主题 Next 的 Pull request
 - `i18n`: 更新了翻译的 Pull request
 - `Performance`: 提高了主题 Next 性能的 Pull request
 - `Discussion`: 需要进行讨论的 Pull request
