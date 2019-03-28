@@ -1,5 +1,5 @@
 /**
- * tabs.js | https://theme-next.org/docs/tag-plugins/tabs/
+ * tabs.js | https://theme-next.org/docs/tag-plugins/tabs
  */
 
 /* global hexo */
