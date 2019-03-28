@@ -14,9 +14,10 @@
   <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml"/>
 {% endif %}
 
-{# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}
 {% if theme.canonical %}
-  <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>
+  {% set without_index = url.replace('index.html', '') %}
+  {% set without_html = without_index.replace('.html', '') %}
+  <link rel="canonical" href="{{ without_html }}"/>
 {% endif %}
 
 {# Exports some front-matter variables to Front-End #}

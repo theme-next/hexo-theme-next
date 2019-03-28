@@ -1,5 +1,5 @@
 /**
- * pdf.js | https://theme-next.org/docs/tag-plugins/pdf/
+ * pdf.js | https://theme-next.org/docs/tag-plugins/pdf
  */
 
 /* global hexo */

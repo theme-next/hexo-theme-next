@@ -1,5 +1,5 @@
 /**
- * mermaid.js | https://theme-next.org/docs/tag-plugins/mermaid/
+ * mermaid.js | https://theme-next.org/docs/tag-plugins/mermaid
  */
 
 /* global hexo */
