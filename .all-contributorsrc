@@ -22,7 +22,10 @@
         "blog",
         "review",
         "test",
-        "translation"
+        "translation",
+        "design",
+        "infra",
+        "maintenance"
       ]
     },
     {
