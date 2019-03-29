@@ -132,7 +132,8 @@
         "code",
         "doc",
         "review",
-        "test"
+        "test",
+        "projectManagement"
       ]
     },
     {
