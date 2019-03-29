@@ -22,7 +22,10 @@
         "blog",
         "review",
         "test",
-        "translation"
+        "translation",
+        "design",
+        "infra",
+        "maintenance"
       ]
     },
     {
@@ -132,7 +135,8 @@
         "code",
         "doc",
         "review",
-        "test"
+        "test",
+        "projectManagement"
       ]
     },
     {
@@ -446,5 +450,5 @@
       ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 6
 }
