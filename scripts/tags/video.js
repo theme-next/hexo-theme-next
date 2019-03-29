@@ -1,5 +1,5 @@
 /**
- * video.js | https://theme-next.org/docs/tag-plugins/video/
+ * video.js | https://theme-next.org/docs/tag-plugins/video
  */
 
 /* global hexo */
