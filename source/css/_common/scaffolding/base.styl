@@ -11,8 +11,7 @@ body {
   color: $text-color;
   background: $body-bg-color;
 
-  +mobile() { padding-right: 0 !important; }
-  +tablet() { padding-right: 0 !important; }
+  +tablet-mobile() { padding-right: 0 !important; }
   +desktop-large() { font-size: $font-size-large; }
 }
 
@@ -64,13 +63,13 @@ a, span.exturl {
 
 video {
   max-width: 100%;
-  display: block;
+  show();
   margin-left: auto;
   margin-right: auto;
 }
 
 img {
-  display: block;
+  show();
   margin: auto;
   max-width: 100%;
   height: auto;

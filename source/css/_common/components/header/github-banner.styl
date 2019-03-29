@@ -7,18 +7,18 @@
     animation: octocat-wave 560ms ease-in-out;
   }
   @keyframes octocat-wave {
-    0%,100% {
+    0%, 100% {
       transform: rotate(0);
     }
-    20%,60% {
+    20%, 60% {
       transform: rotate(-25deg);
     }
-    40%,80% {
+    40%, 80% {
       transform: rotate(10deg);
     }
   }
   +tablet-mobile() {
-    >svg {
+    > svg {
       if (scheme == 'Pisces') || (scheme == 'Gemini') {
         fill: #fff !important;
         color: bg_color !important;
@@ -32,7 +32,7 @@
     }
   }
   +mobile() {
-    >svg {
+    > svg {
       if (scheme == 'Mist') {
         top: inherit !important;
         margin-top: -50px;

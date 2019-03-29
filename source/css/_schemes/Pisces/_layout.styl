@@ -9,10 +9,7 @@
   +desktop-largest() {
     width: $content-desktop-largest;
   }
-  +tablet() {
-    width: auto;
-  }
-  +mobile() {
+  +tablet-mobile() {
     width: auto;
   }
 }
@@ -30,12 +27,7 @@
   +desktop-large() {
     .container & { width: $sidebar-desktop; }
   }
-  +tablet() {
-    position: relative;
-    width: auto;
-    border-radius: initial;
-  }
-  +mobile() {
+  +tablet-mobile() {
     position: relative;
     width: auto;
     border-radius: initial;
@@ -48,10 +40,7 @@
 
 .container .main-inner {
 
-  +tablet() {
-    width: auto;
-  }
-  +mobile() {
+  +tablet-mobile() {
     width: auto;
   }
 }
@@ -87,11 +76,8 @@
   background: $body-bg-color;
   box-shadow: none;
 
-  +tablet() {
-    display: none;
-  }
-  +mobile() {
-    display: none;
+  +tablet-mobile() {
+    hide();
   }
 }
 
@@ -100,12 +86,7 @@
 .footer-inner {
   padding-left: 260px;
 
-  +tablet() {
-    width: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  +mobile() {
+  +tablet-mobile() {
     width: auto;
     padding-left: 0 !important;
     padding-right: 0 !important;
