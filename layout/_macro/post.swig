@@ -200,7 +200,15 @@
               {% if theme.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
               {% endif %}
-                <span class="leancloud-visitors-count"></span>
+                {% if theme.leancloud_visitors.enable %}
+                  {% if is_index %}
+                    {{ leancloud_counter({ url: url_for(post.path) }) }}
+                  {% else %}
+                    {{ leancloud_counter({ action: 'inc' }) }}
+                  {% endif %}
+                {% else %} {# valine counter #}
+                  <span class="leancloud-visitors-count"></span>
+                {% endif %}
             </span>
           {% endif %}
 
