@@ -800,9 +800,8 @@ rating:
 # ---------------------------------------------------------------
 
 # Show number of visitors to each article.
-# You can visit https://leancloud.cn to get AppID and AppKey.
-# Dependencies: https://github.com/LEAFERx/hexo-leancloud-counter/
-# Checkout https://github.com/LEAFERx/hexo-leancloud-counter/ for how to setup.
+# Dependencies: https://github.com/theme-next/hexo-leancloud-counter/
+# Checkout https://theme-next.org/docs/third-party-services/statistics-and-analytics#LeanCloud-China for how to setup.
 leancloud_visitors:
   enable: false
 
