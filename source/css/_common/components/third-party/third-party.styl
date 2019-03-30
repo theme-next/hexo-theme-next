@@ -6,4 +6,4 @@
 @import "needsharebutton" if hexo-config('needmoreshare2.enable');
 @import "related-posts" if hexo-config('related_posts.enable');
 @import "copy-code" if hexo-config('codeblock.copy_button.enable');
-@import "math" if hexo-config('math.enable');
+@import "math" if hexo-config('math.enable') and hexo-config('math.engine') == 'mathjax';

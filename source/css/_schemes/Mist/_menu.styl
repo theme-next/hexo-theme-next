@@ -34,7 +34,7 @@
   .menu-item {
     margin: 0;
     +mobile() {
-      display: block;
+      show();
       margin-top: 5px;
     }
 
@@ -75,7 +75,7 @@
   }
 
   a::before {
-    display: none;
+    hide();
     +mobile() { display: block; }
   }
 
