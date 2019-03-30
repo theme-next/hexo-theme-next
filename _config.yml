@@ -679,6 +679,14 @@ gitalk:
   # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
   language:
 
+# utteranc
+# Demo: https://utteranc.es/  http://trumandu.github.io/about/
+# theme: github-light,github-dark,github-dark-orange
+utteranc:
+  enable: false
+  repo:  #Github repo such as :TrumanDu/comments
+  pathname:  pathname
+  theme: github-light
 
 # ---------------------------------------------------------------
 # Content Sharing Services
