@@ -95,9 +95,9 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 ## Feedback
 
 * Ask a question on [Stack Overflow][stack-url].
-* Request a new feature on [GitHub][contributing-url].
+* Report a bug in [GitHub Issues][issues-bug-url].
+* Request a new feature on [GitHub][issues-feat-url].
 * Vote for [popular feature requests][feat-req-vote-url].
-* Report a bug in [GitHub Issues][issues-url].
 * Join to our [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] chats.
 * Follow us with [Telegram Channel][t-news-url] for latest news.
 
@@ -132,9 +132,9 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [browser-url]: https://www.browserstack.com
 
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
-[contributing-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
+[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
+[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
-[issues-url]: https://github.com/theme-next/hexo-theme-next/issues
 
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org

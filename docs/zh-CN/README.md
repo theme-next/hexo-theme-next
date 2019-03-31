@@ -95,9 +95,9 @@ $ git pull
 ## 反馈
 
 * 在 [Stack Overflow][stack-url] 上提问。
-* 在 [GitHub][contributing-url] 请求新的功能。
+* 在 [GitHub Issues][issues-bug-url] 报告Bug。
+* 在 [GitHub][issues-feat-url] 请求新的功能。
 * 为 [popular feature requests][feat-req-vote-url] 投票。
-* 在 [GitHub Issues][issues-url] 报告Bug。
 * 加入我们的 [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] 聊天。
 * 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
 
@@ -132,9 +132,9 @@ $ git pull
 [browser-url]: https://www.browserstack.com
 
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
-[contributing-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/CONTRIBUTING.md
+[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
+[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
-[issues-url]: https://github.com/theme-next/hexo-theme-next/issues
 
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
