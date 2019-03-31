@@ -156,6 +156,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Irrelevant`: 与 NexT 主题无关的 Issue
     - `Duplicate`: 已经存在同样 Issue
     - `Bug`: 提出了 Bug，等待确认
+    - `Improvement Need`: 需要进行改进的 Issue
     - `Feature Request`: 提出了特性需求的 Issue
     - `High Priority`: 检测到的高优先级错误或笔误 Issue
     - `Low Priority`: 检测到的低优先级错误或笔误 Issue
@@ -176,7 +177,6 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Configurations`: 与 NexT 主题设置相关的 Issue
     - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue
     - `Custom`: 与 NexT 主题个性化相关的 Issue
-    - `Optimization`: 需要进行优化的 Issue
 - 结果
     - `Wontfix`: 不能或不被修复的 Issue
     - `Need More Info`: 需要更多信息的 Issue
@@ -196,7 +196,6 @@ Pull requests 的标签：
 - `Docs`: 添加了文档说明的 Pull request
 - `New Feature`: 添加了新特性的 Pull request
 - `Feature`: 为已存在的特性添加了选项或功能的 Pull request
-- `Configurations`: 涉及 NexT 主题配置的 Pull request
 - `Improvement`: 改进了 NexT 主题的 Pull request
 - `i18n`: 更新了翻译的 Pull request
 - `Performance`: 提高了 NexT 主题性能的 Pull request
