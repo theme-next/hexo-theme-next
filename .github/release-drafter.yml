@@ -1,0 +1,22 @@
+name-template: v$NEXT_MINOR_VERSION
+tag-template: v$NEXT_MINOR_VERSION
+categories:
+  - title: 💥 Breaking Changes
+    label: Breaking Change
+  - title: 🌟 New Features
+    label: New Feature
+  - title: ⭐ Features
+    label: Feature
+  - title: 🛠 Improvements
+    label: Improvement
+  - title: 🐞 Bug Fixes
+    label: Bug Fix
+  - title: 🌍 Localization
+    label: i18n
+  - title: 📖 Documentation
+    label: Docs
+
+change-template: '- $TITLE (#$NUMBER)'
+no-changes-template: '- No changes'
+template: |
+  $CHANGES
