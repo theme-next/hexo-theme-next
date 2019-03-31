@@ -156,7 +156,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Irrelevant`: 与 NexT 主题无关的 Issue
     - `Duplicate`: 已经存在同样 Issue
     - `Bug`: 提出了 Bug，等待确认
-    - `Improvement Need`: An issue that needs to be improvement
+    - `Improvement Need`: 需要进行改进的 Issue
     - `Feature Request`: 提出了特性需求的 Issue
     - `High Priority`: 检测到的高优先级错误或笔误 Issue
     - `Low Priority`: 检测到的低优先级错误或笔误 Issue
