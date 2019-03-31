@@ -11,12 +11,16 @@ categories:
     label: Improvement
   - title: 🐞 Bug Fixes
     label: Bug Fix
-  - title: 🌍 Localization
-    label: i18n
   - title: 📖 Documentation
     label: Docs
+  - title: 🌍 Localization
+    label: i18n
 
 change-template: '- $TITLE (#$NUMBER)'
 no-changes-template: '- No changes'
 template: |
   $CHANGES
+
+***
+
+For full changes, see the [comparison between $PREVIOUS_TAG and $NEXT_MINOR_VERSION](https://github.com/theme-next/hexo-theme-next/compare/v$PREVIOUS_TAG...v$NEXT_MINOR_VERSION)
