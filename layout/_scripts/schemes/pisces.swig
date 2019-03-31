@@ -1,7 +1,7 @@
 {%
   set scripts = [
-    'src/affix.js',
-    'src/schemes/pisces.js'
+    'affix.js',
+    'schemes/pisces.js'
   ]
 %}
 
