@@ -160,6 +160,7 @@ Issues related: `types`+`contents`+`results`
     - `Irrelevant`: An irrelevant issue for Next
     - `Duplicate`: An issue which had been mentioned
     - `Bug`: A detected bug that needs to be confirmed
+    - `Improvement Need`: An issue that needs to be improvement
     - `Feature Request`: An issue that wants a new feature
     - `High Priority`: A detected bugs or misprints with high priority
     - `Low Priority`: A detected bugs or misprints with low priority
@@ -180,7 +181,6 @@ Issues related: `types`+`contents`+`results`
     - `Configurations`: An issue related to configurations
     - `CSS`: An issue related to CSS
     - `Custom`: An issue related to custom things
-    - `Optimization`: An issue that needs to be optimized
 - By results
     - `Wontfix`: An issue that will not to be fixed
     - `Need More Info`: Need more information for solving the issue
@@ -200,7 +200,6 @@ Pull requests related:
 - `Docs`: A Pull requests that Instruction document has been added
 - `New Feature`: A Pull requests that provides a new feature
 - `Feature`: A Pull requests that provides an option or addition to existing feature
-- `Configurations`: A Pull requests related to configurations
 - `Improvement`: A Pull requests that improves NexT
 - `i18n`: A Pull requests that makes new languages translation
 - `Performance`: A Pull requests that improves the performance
