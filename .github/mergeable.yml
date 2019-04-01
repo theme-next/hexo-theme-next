@@ -1,3 +1,5 @@
+# Configuration for Mergeable - https://github.com/jusx/mergeable
+
 version: 2
 mergeable:
   - when: pull_request.*
@@ -11,6 +13,8 @@ mergeable:
           regex: ^\[WIP\]
 
       - do: label
+        must_include:
+          regex: 'feat|imp|fix|doc|i18n'
         must_exclude:
           regex: 'wip|work in progress'
 
@@ -18,7 +22,7 @@ mergeable:
         no_empty:
           enabled: true
         must_include:
-          regex: 'feat|imp|fix|doc|chore'
+          regex: 'feat|imp|fix|doc|loc'
 
       - do: milestone
         no_empty:

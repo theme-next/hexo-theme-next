@@ -1,18 +1,26 @@
+# Configuration for Release Drafter - https://github.com/toolmantim/release-drafter
+
 name-template: v$NEXT_MINOR_VERSION
 tag-template: v$NEXT_MINOR_VERSION
 categories:
   - title: 💥 Breaking Changes
     label: Breaking Change
+
   - title: 🌟 New Features
     label: New Feature
+
   - title: ⭐ Features
     label: Feature
+
   - title: 🛠 Improvements
     label: Improvement
+
   - title: 🐞 Bug Fixes
     label: Bug Fix
+
   - title: 📖 Documentation
     label: Docs
+
   - title: 🌍 Localization
     label: i18n
 

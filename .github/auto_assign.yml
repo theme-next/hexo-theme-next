@@ -1,3 +1,5 @@
+# Configuration for Auto Assign - https://github.com/kentaro-m/auto-assign
+
 # Set to true to add reviewers to pull requests
 addReviewers: true
 
@@ -6,6 +8,15 @@ addAssignees: true
 
 # A list of reviewers to be added to pull requests (GitHub user name)
 reviewers:
+  - 1v9
+  - ivan-nginx
+  - JiangTJ
+  - liolok
+  - maple3142
+  - Raincal
+  - sli1989
+  - stevenjoezhang
+  - wafer-li
   - theme-next/next
 
 # A list of keywords to be skipped the process that add reviewers if pull requests include it
