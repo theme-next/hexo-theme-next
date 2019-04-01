@@ -12,7 +12,7 @@ exemptLabels:
   - backlog
 
 # Label to add before locking, such as `outdated`. Set to `false` to disable
-lockLabel: false
+lockLabel: 🔒 Locked
 
 # Comment to post before locking. Set to `false` to disable
 lockComment: >
