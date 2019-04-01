@@ -185,7 +185,7 @@ scheme: Muse
 
 # ---------------------------------------------------------------
 # Sidebar Settings
-# See: https://theme-next.org/docs/theme-settings/sidebar/
+# See: https://theme-next.org/docs/theme-settings/sidebar
 # ---------------------------------------------------------------
 
 # Posts / Categories / Tags in sidebar.
@@ -290,7 +290,7 @@ chat:
 
 # ---------------------------------------------------------------
 # Post Settings
-# See: https://theme-next.org/docs/theme-settings/posts/
+# See: https://theme-next.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
 
 # Set the text alignment in the posts.
@@ -436,7 +436,7 @@ tagcloud:
 #   light, light italic, normal, normal italic, bold, bold italic
 # Be aware that setting too much fonts will cause site running slowly
 # ---------------------------------------------------------------
-# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `logo`):
+# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `title`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 
@@ -457,22 +457,21 @@ font:
     family: Lato
     size:
 
-  # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
-  # Fallback to `global` font settings.
+  # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
     family:
     size:
 
   # Font settings for posts.
-  # Fallback to `global` font settings.
+  # Fallback to `global` font size settings.
   posts:
     external: true
     family:
+    size:
 
-  # Font settings for Logo.
-  # Fallback to `global` font settings.
-  logo:
+  # Font settings for site title.
+  title:
     external: true
     family:
     size:
@@ -481,7 +480,6 @@ font:
   codes:
     external: true
     family:
-    size:
 
 
 # ---------------------------------------------------------------
@@ -597,7 +595,7 @@ calendar:
 
 # ---------------------------------------------------------------
 # Comments and Widgets
-# See: https://theme-next.org/docs/third-party-services/comments-and-widgets/
+# See: https://theme-next.org/docs/third-party-services/comments-and-widgets
 # ---------------------------------------------------------------
 
 # Disqus
@@ -682,7 +680,7 @@ gitalk:
 
 # ---------------------------------------------------------------
 # Content Sharing Services
-# See: https://theme-next.org/docs/third-party-services/content-sharing-services/
+# See: https://theme-next.org/docs/third-party-services/content-sharing-services
 # ---------------------------------------------------------------
 
 # Baidu Share
@@ -741,7 +739,7 @@ needmoreshare2:
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
-# See: https://theme-next.org/docs/third-party-services/statistics-and-analytics/
+# See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
 # ---------------------------------------------------------------
 
 # Baidu Analytics ID
@@ -841,7 +839,7 @@ busuanzi_count:
 
 # ---------------------------------------------------------------
 # Search Services
-# See: https://theme-next.org/docs/third-party-services/search-services/
+# See: https://theme-next.org/docs/third-party-services/search-services
 # ---------------------------------------------------------------
 
 # Algolia Search
@@ -874,7 +872,7 @@ local_search:
 
 # ---------------------------------------------------------------
 # Chat Services
-# See: https://theme-next.org/docs/third-party-services/chat-services/
+# See: https://theme-next.org/docs/third-party-services/chat-services
 # ---------------------------------------------------------------
 
 # Chatra Support
@@ -1023,7 +1021,7 @@ canvas_ribbon:
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! See: https://theme-next.org/docs/advanced-settings/
+#! See: https://theme-next.org/docs/advanced-settings
 #! ---------------------------------------------------------------
 
 # Script Vendors. Set a CDN address for the vendor you want to customize.

@@ -25,6 +25,7 @@
       {% endif %}
       ta.blur(); // For iOS
       $(this).blur();
+      document.body.removeChild(ta);
     })).on('mouseleave', function(e) {
       var $b = $(this).find('.copy-btn');
       setTimeout(function() {

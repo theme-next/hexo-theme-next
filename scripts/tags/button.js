@@ -1,5 +1,5 @@
 /**
- * button.js | https://theme-next.org/docs/tag-plugins/button/
+ * button.js | https://theme-next.org/docs/tag-plugins/button
  */
 
 /* global hexo */

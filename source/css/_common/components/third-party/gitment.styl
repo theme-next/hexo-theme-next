@@ -3,7 +3,7 @@
   padding: 0 15px;
   color: #0a9caf;
   cursor: pointer;
-  font-size: 14px;
+  font-size: $font-size-base;
   border: 1px solid #0a9caf;
   border-radius: 4px;
 }
@@ -19,6 +19,6 @@
 
 if hexo-config('gitment.cleanly') {
   a.gitment-editor-footer-tip, .gitment-container.gitment-footer-container {
-    display: none;
+    hide();
   }
 }
