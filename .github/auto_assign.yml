@@ -10,13 +10,9 @@ addAssignees: false
 reviewers:
   - 1v9
   - ivan-nginx
-  - JiangTJ
-  - liolok
   - maple3142
-  - Raincal
   - sli1989
   - stevenjoezhang
-  - wafer-li
 
 # A number of reviewers added to the pull request
 # Set 0 to add all the reviewers (default: 0)
