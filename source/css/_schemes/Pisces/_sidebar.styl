@@ -55,18 +55,17 @@
   border-top: 1px dotted $grey-light;
   border-bottom: 1px dotted $grey-light;
   text-align: center;
-}
+  a {
+    show();
+    color: $orange;
+    border: none !important;
 
-.feed-link a, .chat a {
-  display: block;
-  color: $orange;
-  border: none;
+    &:hover {
+      background: none;
+      color: darken($orange, 20%);
 
-  &:hover {
-    background: none;
-    color: darken($orange, 20%);
-
-    i { color: darken($orange, 20%); }
+      i { color: darken($orange, 20%); }
+    }
   }
 }
 
@@ -90,7 +89,7 @@
   }
 
   a, span.exturl {
-    display: block;
+    show();
     text-decoration: none;
 
     &:hover {
