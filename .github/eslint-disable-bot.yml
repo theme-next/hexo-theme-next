@@ -1,3 +1,5 @@
+# Configuration for ESLint Disable Watcher - https://github.com/koddsson/eslint-disable-probot
+
 # Change this to set the number of comments the watcher should comment on a given PR.
 commentLimit: 10
 # The message the bot will post on any lines containing a eslint disable comment.
