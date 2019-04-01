@@ -56,3 +56,8 @@ lockThreads:
   setTimeInHours: 72
   replyComment: >
     This thread is being locked due to exceeding the toxicity minimums. cc/ @theme-next/next
+
+# =============================================================================================== #
+# Configuration for todo-bot - https://github.com/JasonEtco/todo
+todo:
+  label: ':spiral_notepad: To-Do'
