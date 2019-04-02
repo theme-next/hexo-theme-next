@@ -1,32 +1,32 @@
 ---
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
-  schedule: Schedule
+  archive: Archivo
+  category: Categoría
+  tag: Etiqueta
+  schedule: Calendario
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
-  sitemap: Sitemap
+  home: Inicio
+  archives: Archivo
+  categories: Categorías
+  tags: Etiquetas
+  about: Sobre mi
+  search: Buscar
+  schedule: Calendario
+  sitemap: Mapa del sitio
   commonweal: Commonweal 404
 sidebar:
   overview: Overview
-  toc: Table of Contents
+  toc: Tabla de contenidos
 post:
-  posted: Posted on
-  edited: Edited on
-  created: Created
-  modified: Modified
-  edit: Edit this post
-  in: In
-  more: more
-  read_more: Read more
-  untitled: Untitled
+  posted: Publicado el
+  edited: Editado el
+  created: Creado por
+  modified: Modificado por
+  edit: Editar esta entrada
+  in: en
+  more: más
+  read_more: Leer más
+  untitled: Sin título
   sticky: Sticky
   toc_empty: This post does not have a Table of Contents
   views: Views
