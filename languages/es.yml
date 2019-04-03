@@ -77,9 +77,9 @@ cheers:
   excellent: Excelente
 keep_on: Sigue posteando.
 symbol:
-  comma: ","
-  period: "."
-  colon: ":"
+  comma: ", "
+  period: ". "
+  colon: ": "
 reward:
   donate: Donar
   wechatpay: WeChat Pay
