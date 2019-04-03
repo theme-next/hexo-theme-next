@@ -1,4 +1,6 @@
 .site-state {
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   line-height: 1.4;
   white-space: nowrap;
@@ -7,7 +9,6 @@
 }
 
 .site-state-item {
-  display: inline-block;
   padding: 0 15px;
   border-left: 1px solid $site-state-item-border-color;
 
@@ -17,7 +18,7 @@
 }
 
 .site-state-item-count {
-  display: block;
+  show();
   text-align: center;
   color: $site-state-item-count-color;
   font-weight: $font-weight-bold;

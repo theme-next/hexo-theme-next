@@ -27,7 +27,7 @@
 
 .menu .menu-item {
   +mobile() {
-    display: block;
+    show();
     margin: 0 10px;
     vertical-align: top;
   }
@@ -67,5 +67,12 @@
       }
     }
   }
-  .fa { margin-right: 0; }
+  .fa {
+    +tablet() {
+      width: 100%;
+    }
+    +desktop() {
+      width: 100%;
+    }
+  }
 }

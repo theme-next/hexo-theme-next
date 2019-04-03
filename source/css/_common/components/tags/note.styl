@@ -1,6 +1,6 @@
 .post-body .note {
-  note_style = hexo-config('note.style');
   note_icons = hexo-config('note.icons');
+  note_style = hexo-config('note.style');
 
   position:             relative;
   padding:              15px;
@@ -9,6 +9,10 @@
   if note_style == 'simple' {
     border:             1px solid $gainsboro;
     border-left-width:  5px;
+  }
+  if note_style == 'modern' {
+    border:             1px solid transparent;
+    background-color:   $whitesmoke;
   }
   if note_style == 'flat' {
     border:             initial;
@@ -42,7 +46,7 @@
       padding-left:     45px;
       &:before {
         position:       absolute;
-        font-family:    'FontAwesome';
+        font-family:    $font-family-icons;
         font-size:      larger;
         top:            13px;
         left:           15px;
@@ -54,15 +58,34 @@
     if note_style == 'flat' {
       background-color: $note-default-bg;
     }
-    border-left-color:  $note-default-border;
-    h2, h3, h4, h5, h6 {
-      color:            $note-default-text;
+    if note_style == 'modern' {
+      background-color: $note-modern-default-bg;
+      border-color:     $note-modern-default-border;
+      color:            $note-modern-default-text;
+      a, span.exturl {
+        &:not(.btn) {
+          color:                     $note-modern-default-text;
+          border-bottom:   1px solid $note-modern-default-text;
+          &:hover {
+            color:                   $note-modern-default-hover;
+            border-bottom: 1px solid $note-modern-default-hover;
+          }
+        }
+      }
+    }
+    if not note_style == 'modern' {
+      border-left-color:   $note-default-border;
+      h2, h3, h4, h5, h6 {
+        color:             $note-default-text;
+      }
     }
     if note_icons {
       &:not(.no-icon) {
         &:before {
-          content:      $note-default-icon;
-          color :       $note-default-text;
+          content:         $note-default-icon;
+          if not note_style == 'modern' {
+            color:         $note-default-text;
+          }
         }
       }
     }
@@ -70,17 +93,36 @@
 
   &.primary {
     if note_style == 'flat' {
-      background-color: $note-primary-bg;
+      background-color:    $note-primary-bg;
     }
-    border-left-color:  $note-primary-border;
-    h2, h3, h4, h5, h6 {
-      color:            $note-primary-text;
+    if note_style == 'modern' {
+      background-color:    $note-modern-primary-bg;
+      border-color:        $note-modern-primary-border;
+      color:               $note-modern-primary-text;
+      a, span.exturl {
+        &:not(.btn) {
+          color:                     $note-modern-primary-text;
+          border-bottom:   1px solid $note-modern-primary-text;
+          &:hover {
+            color:                   $note-modern-primary-hover;
+            border-bottom: 1px solid $note-modern-primary-hover;
+          }
+        }
+      }
+    }
+    if not note_style == 'modern' {
+      border-left-color:   $note-primary-border;
+      h2, h3, h4, h5, h6 {
+        color:             $note-primary-text;
+      }
     }
     if note_icons {
       &:not(.no-icon) {
         &:before {
-          content:      $note-primary-icon;
-          color :       $note-primary-text;
+          content:         $note-primary-icon;
+          if not note_style == 'modern' {
+            color :        $note-primary-text;
+          }
         }
       }
     }
@@ -88,17 +130,36 @@
 
   &.info {
     if note_style == 'flat' {
-      background-color: $note-info-bg;
+      background-color:    $note-info-bg;
     }
-    border-left-color:  $note-info-border;
-    h2, h3, h4, h5, h6 {
-      color:            $note-info-text;
+    if note_style == 'modern' {
+      background-color:    $note-modern-info-bg;
+      border-color:        $note-modern-info-border;
+      color:               $note-modern-info-text;
+      a, span.exturl {
+        &:not(.btn) {
+          color:                     $note-modern-info-text;
+          border-bottom:   1px solid $note-modern-info-text;
+          &:hover {
+            color:                   $note-modern-info-hover;
+            border-bottom: 1px solid $note-modern-info-hover;
+          }
+        }
+      }
+    }
+    if not note_style == 'modern' {
+      border-left-color:   $note-info-border;
+      h2, h3, h4, h5, h6 {
+        color:             $note-info-text;
+      }
     }
     if note_icons {
       &:not(.no-icon) {
         &:before {
-          content:      $note-info-icon;
-          color :       $note-info-text;
+          content:         $note-info-icon;
+          if not note_style == 'modern' {
+            color :        $note-info-text;
+          }
         }
       }
     }
@@ -106,17 +167,36 @@
 
   &.success {
     if note_style == 'flat' {
-      background-color: $note-success-bg;
+      background-color:    $note-success-bg;
     }
-    border-left-color:  $note-success-border;
-    h2, h3, h4, h5, h6 {
-      color:            $note-success-text;
+    if note_style == 'modern' {
+      background-color:    $note-modern-success-bg;
+      border-color:        $note-modern-success-border;
+      color:               $note-modern-success-text;
+      a, span.exturl {
+        &:not(.btn) {
+          color:                     $note-modern-success-text;
+          border-bottom:   1px solid $note-modern-success-text;
+          &:hover {
+            color:                   $note-modern-success-hover;
+            border-bottom: 1px solid $note-modern-success-hover;
+          }
+        }
+      }
+    }
+    if not note_style == 'modern' {
+      border-left-color:   $note-success-border;
+      h2, h3, h4, h5, h6 {
+        color:             $note-success-text;
+      }
     }
     if note_icons {
       &:not(.no-icon) {
         &:before {
-          content:      $note-success-icon;
-          color :       $note-success-text;
+          content:         $note-success-icon;
+          if not note_style == 'modern' {
+            color :        $note-success-text;
+          }        
         }
       }
     }
@@ -124,17 +204,36 @@
 
   &.warning {
     if note_style == 'flat' {
-      background-color: $note-warning-bg;
+      background-color:    $note-warning-bg;
     }
-    border-left-color:  $note-warning-border;
-    h2, h3, h4, h5, h6 {
-      color:            $note-warning-text;
+    if note_style == 'modern' {
+      background-color:    $note-modern-warning-bg;
+      border-color:        $note-modern-warning-border;
+      color:               $note-modern-warning-text;
+      a, span.exturl {
+        &:not(.btn) {
+          color:                     $note-modern-warning-text;
+          border-bottom:   1px solid $note-modern-warning-text;
+          &:hover {
+            color:                   $note-modern-warning-hover;
+            border-bottom: 1px solid $note-modern-warning-hover;
+          }
+        }
+      }
+    }
+    if not note_style == 'modern' {
+      border-left-color:   $note-warning-border;
+      h2, h3, h4, h5, h6 {
+        color:             $note-warning-text;
+      }
     }
     if note_icons {
       &:not(.no-icon) {
         &:before {
-          content:      $note-warning-icon;
-          color :       $note-warning-text;
+          content:         $note-warning-icon;
+          if not note_style == 'modern' {
+            color :        $note-warning-text;
+          }
         }
       }
     }
@@ -142,17 +241,36 @@
 
   &.danger {
     if note_style == 'flat' {
-      background-color: $note-danger-bg;
+      background-color:    $note-danger-bg;
     }
-    border-left-color:  $note-danger-border;
-    h2, h3, h4, h5, h6 {
-      color:            $note-danger-text;
+    if note_style == 'modern' {
+      background-color:    $note-modern-danger-bg;
+      border-color:        $note-modern-danger-border;
+      color:               $note-modern-danger-text;
+      a, span.exturl {
+        &:not(.btn) {
+          color:                     $note-modern-danger-text;
+          border-bottom:   1px solid $note-modern-danger-text;
+          &:hover {
+            color:                   $note-modern-danger-hover;
+            border-bottom: 1px solid $note-modern-danger-hover;
+          }
+        }
+      }
+    }
+    if not note_style == 'modern' {
+      border-left-color:   $note-danger-border;
+      h2, h3, h4, h5, h6 {
+        color:             $note-danger-text;
+      }
     }
     if note_icons {
       &:not(.no-icon) {
         &:before {
-          content:      $note-danger-icon;
-          color :       $note-danger-text;
+          content:         $note-danger-icon;
+          if not note_style == 'modern' {
+            color :        $note-danger-text;
+          }
         }
       }
     }

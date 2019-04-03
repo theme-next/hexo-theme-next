@@ -22,7 +22,10 @@
         "blog",
         "review",
         "test",
-        "translation"
+        "translation",
+        "design",
+        "infra",
+        "maintenance"
       ]
     },
     {
@@ -132,7 +135,8 @@
         "code",
         "doc",
         "review",
-        "test"
+        "test",
+        "projectManagement"
       ]
     },
     {
@@ -405,7 +409,8 @@
       "contributions": [
         "bug",
         "code",
-        "doc"
+        "doc",
+        "infra"
       ]
     },
     {
@@ -416,7 +421,9 @@
       "contributions": [
         "bug",
         "code",
-        "doc"
+        "doc",
+        "translation",
+        "review"
       ]
     },
     {
@@ -427,8 +434,21 @@
       "contributions": [
         "bug",
         "code",
-        "doc"
+        "doc",
+        "review",
+        "translation"
+      ]
+    },
+    {
+      "login": "zq-97",
+      "name": "张强",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17429111?v=4",
+      "profile": "https://i-m.dev",
+      "contributions": [
+        "bug",
+        "code"
       ]
     }
-  ]
+  ],
+  "contributorsPerLine": 6
 }

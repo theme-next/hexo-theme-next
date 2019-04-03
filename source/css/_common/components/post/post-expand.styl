@@ -4,7 +4,7 @@
   padding-top: 40px;
 }
 
-@media (max-width: 767px) {
++mobile() {
   .posts-expand {
     margin: 0 20px;
   }
@@ -29,7 +29,10 @@
 
 .posts-expand .post-body {
   +desktop() {
-    text-align: justify;
+    text-align: unquote(hexo-config('text_align.desktop'));
+  }
+  +tablet-mobile() {
+    text-align: unquote(hexo-config('text_align.mobile'));
   }
 
   h2, h3, h4, h5, h6 {
@@ -50,10 +53,6 @@
     &:hover .header-anchor {
       visibility: visible;
     }
-  }
-
-  ul > li {
-    list-style: circle;
   }
 
   img {

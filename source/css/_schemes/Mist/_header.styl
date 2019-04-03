@@ -2,12 +2,15 @@
 // --------------------------------------------------
 .header { background: $whitesmoke; }
 .header-inner {
-  padding: 25px 0 20px;
   clearfix();
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   +mobile() {
+    show();
     width: auto;
-    margin-bottom: 50px;
     padding: 10px;
   }
 }
@@ -40,7 +43,7 @@
 
 .logo-line-before,
 .logo-line-after {
-  display: block;
+  show();
   overflow: hidden;
   margin: 0 auto;
   width: 75%;
@@ -49,7 +52,7 @@
 
   i {
     position: relative;
-    display: block;
+    show();
     height: 2px;
     background: $black-deep;
     +mobile() { height: 3px; }

@@ -7,10 +7,19 @@
   // Do NOT delete this line
   // or Affix (position: fixed) will not work in Google Chrome.
   -webkit-transform: none;
+
+  a, span.exturl {
+    color: $black-light;
+
+    &:hover {
+      color: $black-deep;
+      border-bottom-color: $black-deep;
+    }
+  }
 }
 
 .sidebar-inner {
-//padding: 20px 10px 0;
+  //padding: 20px 10px 0;
   box-sizing: border-box;
   width: $sidebar-desktop;
   color: $text-color;
@@ -38,41 +47,25 @@
   clearfix();
 }
 
-.sidebar a,
-.sidebar span.exturl {
-  color: $black-light;
-
-  &:hover { color: $black-deep; }
-}
-
 .site-state-item {
   padding: 0 10px;
 }
 
-.links-of-author-item {
-  a:before, span.exturl:before { display: none; }
-  a, span.exturl {
-    border-bottom: none;
-    text-decoration: underline;
-  }
-}
-
-.feed-link {
+.feed-link, .chat {
   border-top: 1px dotted $grey-light;
   border-bottom: 1px dotted $grey-light;
   text-align: center;
-}
+  a {
+    show();
+    color: $orange;
+    border: none !important;
 
-.feed-link a {
-  display: block;
-  color: $orange;
-  border: none;
+    &:hover {
+      background: none;
+      color: darken($orange, 20%);
 
-  &:hover {
-    background: none;
-    color: darken($orange, 20%);
-
-    i { color: darken($orange, 20%); }
+      i { color: darken($orange, 20%); }
+    }
   }
 }
 
@@ -86,11 +79,17 @@
     font-size: 13px;
   }
 }
+
 .links-of-author-item {
   sidebar-inline-links-item();
+  a:before, span.exturl:before { display: none; }
+  a, span.exturl {
+    border-bottom: none;
+    text-decoration: underline;
+  }
 
   a, span.exturl {
-    display: block;
+    show();
     text-decoration: none;
 
     &:hover {
@@ -108,10 +107,8 @@
 
 .links-of-blogroll {
   text-align: center;
-  margin-top: 5px;
   padding: 3px 0 0;
 }
-.links-of-blogroll-title { margin-top: 0; }
 .links-of-blogroll-item { padding: 0; }
 .links-of-blogroll-inline {
   clearfix();

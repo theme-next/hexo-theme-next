@@ -4,7 +4,6 @@
 @import "buttons";
 @import "pagination";
 @import "comments";
-@import "tag-cloud";
 @import (hexo-config('back2top.sidebar') ? "back-to-top-sidebar" : "back-to-top") if (hexo-config('back2top.enable'));
 
 @import "header";
@@ -14,3 +13,6 @@
 @import "third-party";
 
 @import "pages";
+
+@import "rainbow" if hexo-config('safari_rainbow');
+@import "scrollbar" if hexo-config('custom_scrollbar');

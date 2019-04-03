@@ -1,5 +1,5 @@
 .site-author-image {
-  display: block;
+  show();
   margin: 0 auto;
   padding: $site-author-image-padding;
   max-width: $site-author-image-width;
@@ -16,16 +16,10 @@ if hexo-config('avatar.rounded') {
 
 if hexo-config('avatar.rotated') {
   .site-author-image {
-    -webkit-transition: -webkit-transform 1.0s ease-out;
-    -moz-transition: -moz-transform 1.0s ease-out;
-    -ms-transition: -ms-transform 1.0s ease-out;
     transition: transform 1.0s ease-out;
   }
 
   .site-author-image:hover {
-    -webkit-transform: rotateZ(360deg);
-    -moz-transform: rotateZ(360deg);
-    -ms-transform: rotate(360deg);
     transform: rotateZ(360deg);
   }
 }
