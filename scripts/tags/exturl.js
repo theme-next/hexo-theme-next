@@ -1,5 +1,5 @@
 /**
- * exturl.js | https://theme-next.org/docs/tag-plugins/exturl/
+ * exturl.js | https://theme-next.org/docs/tag-plugins/exturl
  * Note: need to remove in NexT v7.0.0
  */
 
@@ -54,7 +54,7 @@ function extURL(args) {
     'data-url': url,
     title     : title
   };
-  hexo.log.warn('WARNING: `exturl` and `extlink` tag will not longer be supported.');
+  hexo.log.warn('WARNING: `exturl` and `extlink` tag will not longer be supported. More info here: https://theme-next.org/docs/theme-settings/seo#ExtURL');
   return htmlTag('span', attrs, text.join(' ') + '<i class="fa fa-external-link"></i>');
 }
 

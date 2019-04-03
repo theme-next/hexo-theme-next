@@ -1,5 +1,5 @@
 /**
- * full-image.js | https://theme-next.org/docs/tag-plugins/full-image/
+ * full-image.js | https://theme-next.org/docs/tag-plugins/full-image
  */
 
 /* global hexo */

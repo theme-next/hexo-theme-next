@@ -8,12 +8,12 @@ yaml = require('js-yaml')
 
 gulp.task 'lint', ->
   return gulp.src([
-    './source/js/src/utils.js',
-    './source/js/src/motion.js',
-    './source/js/src/algolia-search.js',
-    './source/js/src/bootstrap.js',
-    './source/js/src/post-details.js',
-    './source/js/src/schemes/pisces.js'
+    './source/js/utils.js',
+    './source/js/motion.js',
+    './source/js/algolia-search.js',
+    './source/js/bootstrap.js',
+    './source/js/post-details.js',
+    './source/js/schemes/pisces.js'
   ]).pipe jshint()
     .pipe jshint.reporter(stylish)
 
