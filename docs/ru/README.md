@@ -78,9 +78,9 @@ $ git pull
 ## Обратная связь
 
 * Задать вопрос на [Stack Overflow][stack-url].
-* Запросить новую возможность на [GitHub][contributing-url].
+* Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
+* Запросить новую возможность на [GitHub][issues-feat-url].
 * Голосовать за [популярные запросы возможностей][feat-req-vote-url].
-* Сообщить об ошибке в разделе [GitHub Issues][issues-url].
 * Вступить в наши [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] чаты.
 * Подписаться на новости через [канал Telegram'а][t-news-url].
 
@@ -88,13 +88,36 @@ $ git pull
 
 * :triangular_flag_on_post: <a title="Маркдаун Редактор под Hexo" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
+## Благодарности
+
+<p align="center">
+«NexT» выражает особую благодарность этим замечательным сервисам, которые спонсируют нашу основную инфраструктуру:
+</p>
+
+<p align="center"><a href="https://github.com"><img align="center" width="100" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png"></a>
+&nbsp;<a href="https://www.netlify.com"><img align="center" width="150" src="https://cdn.netlify.com/15ecf59b59c9d04b88097c6b5d2c7e8a7d1302d0/1b6d6/img/press/logos/full-logo-light.svg"></a></p>
+<p align="center">
+  <sub>GitHub позволяет нам хостить Git-репозиторий, Netlify позволяет нам деплоить документацию.</sub>
+</p>
+
+<p align="center"><a href="https://crowdin.com"><img align="center" width="180" src="https://support.crowdin.com/assets/logos/crowdin-logo1-small.png"></a></p>
+<p align="center">
+  <sub>Crowdin позволяет нам удобно переводить документацию.</sub>
+</p>
+
+<p align="center"><a href="https://codacy.com"><img align="center" width="155" src="https://user-images.githubusercontent.com/16944225/55026017-623f8f00-5002-11e9-88bf-0d6a5884c6c2.png"></a>
+&nbsp;<a href="https://www.browserstack.com"><img align="center" width="140" src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png"></a></p>
+<p align="center">
+  <sub>Codacy позволяет нам запускать набор тестов, BrowserStack позволяет нам тестировать в реальных браузерах.</sub>
+</p>
+
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
-[contributing-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
+[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
+[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
-[issues-url]: https://github.com/theme-next/hexo-theme-next/issues
 
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
