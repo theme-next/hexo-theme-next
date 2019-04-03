@@ -1,6 +1,6 @@
 .post-body .tabs {
   position: relative;
-  display: block;
+  show();
   margin-bottom: 20px;
   padding-top: 10px;
 
@@ -12,28 +12,26 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-bottom: -1px;
 
     +mobile-smallest() {
-      display: block;
+      show();
       margin-bottom: 5px;
     }
 
     li.tab {
       flex-grow: 1;
-      border-bottom: 1px solid #ddd;
       list-style-type: none;
       border-top: 3px solid transparent;
-      border-left: 1px solid transparent;
       border-right: 1px solid transparent;
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid transparent;
 
       +mobile-smallest() {
-        margin: initial;
         border-top: 1px solid transparent;
-        border-left: 3px solid transparent;
         border-right: 1px solid transparent;
         border-bottom: 1px solid transparent;
+        border-left: 3px solid transparent;
       }
 
       if tbr > 0 {
@@ -46,7 +44,7 @@
         text-align: center;
         outline: 0;
         border-bottom: initial;
-        display: block;
+        show();
         line-height: 1.8em;
         padding: .25em .75em;
         & i { width: (18em / 14); }
@@ -56,9 +54,8 @@
       &.active {
         border-top: 3px solid $orange;
         border-right: 1px solid $table-border-color;
-        border-bottom: initial;
+        border-bottom: 1px solid transparent;
         border-left: 1px solid $table-border-color;
-        background-color: #fff;
 
         +mobile-smallest() {
           border-top: 1px solid $table-border-color;
@@ -76,7 +73,6 @@
   }
 
   .tab-content {
-    background-color: #fff;
 
     .tab-pane {
       border: 1px solid $table-border-color;
