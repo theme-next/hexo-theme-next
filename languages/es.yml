@@ -6,7 +6,7 @@ title:
   schedule: Calendario
 menu:
   home: Inicio
-  archives: Archivo
+  archives: Archivos
   categories: Categorías
   tags: Etiquetas
   about: Sobre mi
@@ -23,7 +23,7 @@ post:
   created: Creado por
   modified: Modificado por
   edit: Editar esta entrada
-  in: en
+  in: En
   more: más
   read_more: Leer más
   untitled: Sin título
@@ -60,17 +60,17 @@ counter:
   archive_posts:
     zero: Sin entradas.
     one: 1 entrada.
-    other: "%d posts in total."
+    other: "%d entradas en total."
 state:
-  posts: posts
-  pages: pages
+  posts: entradas
+  pages: páginas
   tags: tags
-  categories: categories
+  categories: categorías
 search:
-  placeholder: Searching...
+  placeholder: Buscando...
 cheers:
   um: Um..
-  ok: OK
+  ok: Bueno
   nice: Guai
   good: Bien
   great: Genial
