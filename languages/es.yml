@@ -15,7 +15,7 @@ menu:
   sitemap: Mapa del sitio
   commonweal: Commonweal 404
 sidebar:
-  overview: Overview
+  overview: Inicio
   toc: Tabla de contenidos
 post:
   posted: Publicado el
@@ -28,38 +28,38 @@ post:
   read_more: Leer más
   untitled: Sin título
   sticky: Sticky
-  toc_empty: This post does not have a Table of Contents
-  views: Views
-  comments_count: Comments
-  related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
+  toc_empty: Esta entrada no tiene una tabla de contenidos
+  views: Visitas
+  comments_count: Comentarios
+  related_posts: Entradas relacionadas
+  copy_button: Copiar
+  copy_success: Copiado
+  copy_failure: Copiar falló
   copyright:
-    author: Post author
-    link: Post link
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    author: Autor de la entrada
+    link: Enlace a la entrada
+    license_title: Copyright
+    license_content: "Todos los artículos de este blog están licenciados bajo %s a no ser que se especifique una licencia adicional."
 page:
-  totally: Totally
-  tags: tags
+  totally: Totalidad
+  tags: etiquetas
 footer:
-  powered: "Powered by %s"
-  theme: Theme
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "Creado mediante %s"
+  theme: Tema
+  total_views: Visitas totales
+  total_visitors: Visitantes totales
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: Sin etiquetas
+    one: 1 etiqueta en total
+    other: "%d etiquetas en total"
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: Sin categorías
+    one: 1 categoría en total
+    other: "%d categorías en total"
   archive_posts:
-    zero: No posts.
-    one: 1 post.
+    zero: Sin entradas.
+    one: 1 entrada.
     other: "%d posts in total."
 state:
   posts: posts
@@ -71,28 +71,28 @@ search:
 cheers:
   um: Um..
   ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  nice: Guai
+  good: Bien
+  great: Genial
+  excellent: Excelente
+keep_on: Sigue posteando.
 symbol:
-  comma: ", "
-  period: ". "
-  colon: ": "
+  comma: ","
+  period: "."
+  colon: ":"
 reward:
-  donate: Donate
+  donate: Donar
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+gitmentbutton: Mostrar comentarios de Gitment
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: Cambiar a barra de navegación
+  prev_page: Página anterior
+  next_page: Página siguiente
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: Cantidad de caracteres en el articulo
+  count_total: Cantidad total de caracteres
+  time: Tiempo de lectura
+  time_total: Tiempo total de lectura
+  time_minutes: minutos.
