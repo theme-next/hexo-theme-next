@@ -20,7 +20,7 @@ mergeable:
 
       - do: project
         no_empty:
-          enabled: true
+          enabled: false
         #must_include:
         #  regex: 'feat|imp|fix|doc|loc'
 
