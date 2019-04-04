@@ -14,7 +14,7 @@
   cursor: pointer;
 
   +tablet-mobile() {
-    hexo-config('sidebar.onmobile') ? fixbutton() : hide();
+    hide() if not hexo-config('sidebar.onmobile');
   }
 }
 
