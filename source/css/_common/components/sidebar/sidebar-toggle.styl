@@ -1,7 +1,4 @@
 .sidebar-toggle {
-  &:hover .sidebar-toggle-line {
-    background: $sidebar-highlight;
-  }
   position: fixed;
   right: $b2t-position-right;
   bottom: 45px;
@@ -14,7 +11,9 @@
   cursor: pointer;
 
   +tablet-mobile() {
-    hexo-config('sidebar.onmobile') ? fixbutton() : hide();
+    opacity: $b2t-opacity-hover;
+    right: $b2t-position-right-mobile;
+    hide() if not hexo-config('sidebar.onmobile');
   }
 }
 
