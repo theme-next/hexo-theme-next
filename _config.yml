@@ -45,10 +45,14 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine them on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: https://st.razeen.me/static/img/avatar.png
-  medium: https://st.razeen.me/static/img/avatar.png
-  apple_touch_icon: https://st.razeen.me/static/img/avatar.png
-  safari_pinned_tab: https://st.razeen.me/static/img/avatar.png
+  small: https://st.razeen.cn/static/img/avatar.png
+  medium: https://st.razeen.cn/static/img/avatar.png
+  apple_touch_icon: https://st.razeen.cn/static/img/avatar.png
+  safari_pinned_tab: https://st.razeen.cn/static/img/avatar.png
+  # small: /images/avatar.png
+  # medium: /images/avatar.png
+  # apple_touch_icon: /images/avatar.png
+  # safari_pinned_tab: /images/avatar.png
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -90,7 +94,7 @@ footer:
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
   beian:
-    enable: true
+    enable: false
     icp: 皖 ICP 备16006623 号
 
   # -------------------------------------------------------------
@@ -158,8 +162,8 @@ menu_settings:
 
 # Schemes
 # scheme: Muse
-# scheme: Mist
-scheme: Pisces
+scheme: Mist
+# scheme: Pisces
 # scheme: Gemini
 
 
@@ -197,7 +201,8 @@ social_icons:
 # Usage: `permalink || title`
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the title and aria-label name.
-github_banner: https://github.com/razeencheng  || Follow me on GitHub
+# github_banner: https://github.com/razeencheng  || Follow me on GitHub
+github_banner:
 
 # Blog rolls
 links_icon: heart
@@ -215,7 +220,7 @@ avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: https://st.razeen.me/static/img/avatar.png
+  url: https://st.razeen.cn/static/img/avatar.png
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -236,13 +241,13 @@ toc:
 sidebar:
   # Sidebar Position, available values: left | right (only for Pisces | Gemini).
   # position: left
-  position: right
+  position: left
 
   # Manual define the sidebar width.
   # If commented, will be default for:
   # Muse | Mist: 320
   # Pisces | Gemini: 240
-  width: 180
+  # width: 240
 
   # Sidebar Display, available values (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
@@ -250,9 +255,9 @@ sidebar:
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
   display: post
-  #display: always
-  #display: hide
-  #display: remove
+  # display: always
+  # display: hide
+  # display: remove
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
@@ -289,7 +294,7 @@ read_more_btn: true
 
 # Post meta display settings
 post_meta:
-  item_text: true
+  item_text: false
   created_at: true
   updated_at:
     enabled: true
@@ -321,17 +326,17 @@ codeblock:
 # Wechat Subscriber
 wechat_subscriber:
   enabled: true
-  qcode: https://st.razeen.me/next/qrcode_for_gh_26c540711047_258.jpg
-  description: 关注微信公众好，推送最新博客哦～
+  qcode: https://st.razeen.cn/next/qrcode_for_gh_26c540711047_258.jpg
+  description: follow me on wechat.
 
 # Reward
 # If true, reward would be displayed in every article by default.
 # And you can show or hide one article specially through add page variable `reward: true/false`.
 reward:
-  enable: true
+  enable: false
   comment: 谢谢老板
   #wechatpay: /images/wechatpay.jpg
-  alipay: https://st.razeen.me/next/zhifubao.png
+  alipay: https://st.razeen.cn/next/zhifubao.png
   #bitcoin: /images/bitcoin.jpg
 
 # Related popular posts
@@ -363,7 +368,7 @@ post_edit:
 disable_baidu_tranformation: false
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
+mobile_layout_economy: true
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
@@ -380,7 +385,7 @@ custom_logo:
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night
+highlight_theme: night eighties
 
 # Enable "cheers" for archive page.
 cheers_enabled: true
@@ -793,7 +798,7 @@ note:
   light_bg_offset: 0
 
 # Label tag
-label: true
+label: ture
 
 # Tabs tag
 tabs:
@@ -902,16 +907,13 @@ vendors:
 
   # Internal version: 2.1.3
   # Example:
-  # jquery: //cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js
   # jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
   # jquery:  
 
   # Internal version: 2.1.5
   # See: https://fancyapps.com/fancybox
   # Example:
-  # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
   # fancybox: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js
-  # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
   # fancybox_css: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css
   # fancybox:  
   # fancybox_css:  
@@ -919,23 +921,19 @@ vendors:
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
   # Example:
-  # fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
   # fastclick: https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
   # fastclick:  
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
   # Example:
-  # lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
   # lazyload: https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
   # lazyload:  
 
   # Internal version: 1.2.1
   # See: http://velocityjs.org
   # Example:
-  # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
   # velocity: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
-  # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
   # velocity_ui: https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
   # velocity:  
   # velocity_ui:  
@@ -943,14 +941,12 @@ vendors:
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js
   # Example:
-  # ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0/src/ua-parser.min.js
   # ua_parser: https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.9/ua-parser.min.js
   # ua_parser: 
 
   # Internal version: 4.6.2
   # See: https://fontawesome.com
   # Example:
-  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
   # fontawesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
   # fontawesome: 
 
@@ -1001,14 +997,12 @@ vendors:
   # Internal version: 3.3.0
   # See: https://github.com/ethantw/Han
   # Example:
-  # han: //cdn.jsdelivr.net/npm/han-css@3/dist/han.min.css
   # han: https://cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
   # han: 
 
   # Internal version: 3.3.0
   # See: https://github.com/vinta/pangu.js
   # Example:
-  # pangu: //cdn.jsdelivr.net/npm/pangu@3/dist/browser/pangu.min.js
   # pangu: https://cdnjs.cloudflare.com/ajax/libs/pangu/3.3.0/pangu.min.js
   # pangu: 
 
@@ -1041,7 +1035,6 @@ vendors:
   # valine
   # See: https://github.com/xCss/Valine
   # Example:
-  # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
   # valine: https://cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
   # valine: 
 
@@ -1059,42 +1052,44 @@ vendors:
   # md5: https://cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
   # md5: 
 
-  jquery: https://st.razeen.me/next/libs/jquery/2.1.3/jquery.min.js"
-  fancybox: https://st.razeen.me/next/libs/fancybox/3.5.6/jquery.fancybox.min.js"
-  fancybox_css: https://st.razeen.me/next/libs/fancybox/3.5.6/jquery.fancybox.min.css"
-  fastclick: https://st.razeen.me/next/libs/fastclick/1.0.6/fastclick.min.js"
-  lazyload: https://st.razeen.me/next/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"
-  velocity: https://st.razeen.me/next/libs/velocity/1.2.1/velocity.min.js"
-  velocity_ui: https://st.razeen.me/next/libs/velocity/1.2.1/velocity.ui.min.js"
-  ua_parser: https://st.razeen.me/next/libs/UAParser.js/0.7.9/ua-parser.min.js"
-  fontawesome: https://st.razeen.me/next/libs/font-awesome/4.6.2/css/font-awesome.min.css"
-  algolia_instant_js: https://st.razeen.me/next/npm/instantsearch.js@2/dist/instantsearch.js"
-  algolia_instant_css: https://st.razeen.me/next/npm/instantsearch.js@2/dist/instantsearch.min.css"
-  pace: https://st.razeen.me/next/libs/pace/1.0.2/pace.min.js"
-  pace_css: https://st.razeen.me/next/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css"
-  canvas_nest: https://st.razeen.me/next/theme-next-canvas-nest@1/canvas-nest.min.js"
-  canvas_nest_nomobile: https://st.razeen.me/next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js"
-  three: https://st.razeen.me/next/theme-next-three@1/three.min.js"
-  three_waves: https://st.razeen.me/next/theme-next-three@1/three-waves.min.js"
-  canvas_lines: https://st.razeen.me/next/theme-next-three@1/canvas_lines.min.js
-  canvas_sphere: https://st.razeen.me/next/theme-next-three@1/canvas_sphere.min.js"
-  canvas_ribbon: https://st.razeen.me/next/theme-next-canvas-ribbon@1/canvas-ribbon.js"
-  han: https://st.razeen.me/next/libs/Han/3.3.0/han.min.css"
-  pangu: https://st.razeen.me/next/libs/pangu/3.3.0/pangu.min.js"
-  needmoreshare2_js: https://st.razeen.me/next/theme-next-needmoreshare2@1/needsharebutton.min.js"
-  needmoreshare2_css: https://st.razeen.me/next/theme-next-needmoreshare2@1/needsharebutton.min.css"
-  bookmark: https://st.razeen.me/next/theme-next-bookmark@1/bookmark.min.js"
-  reading_progress: https://st.razeen.me/next/theme-next-reading-progress@1/reading_progress.min.js"
-  leancloud: https://st.razeen.me/next/npm/leancloud-storage@3/dist/av-min.js"
-  valine: https://st.razeen.me/next/libs/valine/1.3.4/Valine.min.js"
-  gitalk_js: https://st.razeen.me/next/npm/gitalk@1/dist/gitalk.min.js"
-  gitalk_css: https://st.razeen.me/next/npm/gitalk@1/dist/gitalk.css"
-  md5: https://st.razeen.me/next/npm/js-md5@0/src/md5.min.js"
+  jquery: https://st.razeen.cn/next/libs/jquery/2.1.3/jquery.min.js"
+  fancybox: https://st.razeen.cn/next/libs/fancybox/3.5.6/jquery.fancybox.min.js"
+  fancybox_css: https://st.razeen.cn/next/libs/fancybox/3.5.6/jquery.fancybox.min.css"
+  fastclick: https://st.razeen.cn/next/libs/fastclick/1.0.6/fastclick.min.js"
+  lazyload: https://st.razeen.cn/next/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"
+  velocity: https://st.razeen.cn/next/libs/velocity/1.2.1/velocity.min.js"
+  velocity_ui: https://st.razeen.cn/next/libs/velocity/1.2.1/velocity.ui.min.js"
+  ua_parser: https://st.razeen.cn/next/libs/UAParser.js/0.7.9/ua-parser.min.js"
+  fontawesome: https://st.razeen.cn/next/libs/font-awesome/4.6.2/css/font-awesome.min.css"
+  algolia_instant_js: https://st.razeen.cn/next/npm/instantsearch.js@2/dist/instantsearch.js"
+  algolia_instant_css: https://st.razeen.cn/next/npm/instantsearch.js@2/dist/instantsearch.min.css"
+  pace: https://st.razeen.cn/next/libs/pace/1.0.2/pace.min.js"
+  pace_css: https://st.razeen.cn/next/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css"
+  canvas_nest: https://st.razeen.cn/next/theme-next-canvas-nest@1/canvas-nest.min.js"
+  canvas_nest_nomobile: https://st.razeen.cn/next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js"
+  three: https://st.razeen.cn/next/theme-next-three@1/three.min.js"
+  three_waves: https://st.razeen.cn/next/theme-next-three@1/three-waves.min.js"
+  canvas_lines: https://st.razeen.cn/next/theme-next-three@1/canvas_lines.min.js
+  canvas_sphere: https://st.razeen.cn/next/theme-next-three@1/canvas_sphere.min.js"
+  canvas_ribbon: https://st.razeen.cn/next/theme-next-canvas-ribbon@1/canvas-ribbon.js"
+  han: https://st.razeen.cn/next/libs/Han/3.3.0/han.min.css"
+  pangu: https://st.razeen.cn/next/libs/pangu/3.3.0/pangu.min.js"
+  needmoreshare2_js: https://st.razeen.cn/next/theme-next-needmoreshare2@1/needsharebutton.min.js"
+  needmoreshare2_css: https://st.razeen.cn/next/theme-next-needmoreshare2@1/needsharebutton.min.css"
+  bookmark: https://st.razeen.cn/next/theme-next-bookmark@1/bookmark.min.js"
+  reading_progress: https://st.razeen.cn/next/theme-next-reading-progress@1/reading_progress.min.js"
+  leancloud: https://st.razeen.cn/next/npm/leancloud-storage@3/dist/av-min.js"
+  valine: https://st.razeen.cn/next/libs/valine/1.3.4/Valine.min.js"
+  gitalk_js: https://st.razeen.cn/next/npm/gitalk@1/dist/gitalk.min.js"
+  gitalk_css: https://st.razeen.cn/next/npm/gitalk@1/dist/gitalk.css"
+  md5: https://st.razeen.cn/next/npm/js-md5@0/src/md5.min.js"
 
 # Assets
 css: css
-js: https://st.razeen.me/next/js
-images: https://st.razeen.me/next/images
+js: https://st.razeen.cn/next/js
+images: https://st.razeen.cn/next/images
+# js: js
+# images: images
 
 
 custom_css:

@@ -83,8 +83,8 @@ vendors:
 
 ```yml
 css: css
-js: https://st.razeen.me/next/js
-images: https://st.razeen.me/next/image
+js: https://st.razeen.cn/next/js
+images: https://st.razeen.cn/next/image
 ```
 
 
@@ -107,8 +107,8 @@ lazyload: true
 
 ```markdown
 # 懒加载
-{% fi https://st.razeen.me/next/zhifubao.png@lazy, Alt text, Title text, 75% %}
-{% fi https://st.razeen.me/next/zhifubao.png @lazy, Alt text, Title text, 75% %}
+{% fi https://st.razeen.cn/next/zhifubao.png@lazy, Alt text, Title text, 75% %}
+{% fi https://st.razeen.cn/next/zhifubao.png @lazy, Alt text, Title text, 75% %}
 ```
 
 
