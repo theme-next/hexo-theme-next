@@ -19,35 +19,35 @@ sidebar:
   toc: Table Des Matières
 post:
   posted: Posté le
-  edited: Edited on
+  edited: Éditer sur
   created: Post created
   modified: Updated at
-  edit: Edit this post
+  edit: Éditer cet article
   in: In
-  more: more
+  more: plus
   read_more: Lire la suite
   untitled: Non titré
-  sticky: Sticky
-  toc_empty: This post does not have a Table of Contents
-  views: Views
-  comments_count: Comments
-  related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
+  sticky: Épingler
+  toc_empty: Cet article n'a pas de table des matières
+  views: Vues
+  comments_count: Commentaires
+  related_posts: Articles similares
+  copy_button: Copie
+  copy_success: Copie réussie
+  copy_failure: Copie ratée
   copyright:
-    author: Post author
-    link: Post link
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    author: Auteur de l'article
+    link: Lien de l'article
+    license_title: Droit d'auteur
+    license_content: "Tous les articles de ce blog sont sous licence %s, sauf mention contraire."
 page:
   totally: Total
-  tags: tags
+  tags: mots clé
 footer:
-  powered: "Powered by %s"
+  powered: "Alimenté par %s"
   theme: Thème
-  total_views: Total Views
-  total_visitors: Total Visitors
+  total_views: Vues totales
+  total_visitors: Total visiteurs
 counter:
   tag_cloud:
     zero: Aucun tags
@@ -64,10 +64,10 @@ counter:
 state:
   posts: articles
   pages: pages
-  tags: tags
-  categories: categories
+  tags: mots clé
+  categories: catégories
 search:
-  placeholder: Searching...
+  placeholder: Recherche...
 cheers:
   um: Um..
   ok: OK
@@ -81,7 +81,7 @@ symbol:
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
+  donate: Donner
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
