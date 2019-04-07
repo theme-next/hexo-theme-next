@@ -2,16 +2,16 @@
 title:
   archive: Archive
   category: Catégorie
-  tag: Tag
-  schedule: Schedule
+  tag: Mots clés
+  schedule: Plannifier
 menu:
   home: Accueil
   archives: Archives
-  categories: Categories
-  tags: Tags
+  categories: Catégories
+  tags: Mots clés
   about: A propos
   search: recherche
-  schedule: Schedule
+  schedule: Plannifier
   sitemap: Sitemap
   commonweal: Commonweal 404
 sidebar:
