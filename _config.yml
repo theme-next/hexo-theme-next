@@ -600,6 +600,7 @@ calendar:
 # See: https://theme-next.org/docs/third-party-services/comments-and-widgets
 # You can set one type to enable.
 # And need to provide additional configurations are required for those types.
+# Note: facebook_comments_plugin and vkontakte have to enable SDK.
 # ---------------------------------------------------------------
 comments:
   # Type list:
