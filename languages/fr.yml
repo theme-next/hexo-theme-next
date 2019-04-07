@@ -55,8 +55,8 @@ counter:
     other: "%d tags au total"
   categories:
     zero: Aucun categories
-    one: 1 category au total
-    other: "%d categories au total"
+    one: 1 catégorie au total
+    other: "%d catégories au total"
   archive_posts:
     zero: Aucun article.
     one: 1 article.
@@ -75,7 +75,7 @@ cheers:
   good: Bien
   great: Super
   excellent: Excellent
-keep_on: Et ca ne fait que commencer.
+keep_on: Continue comme ça.
 symbol:
   comma: ", "
   period: ". "
