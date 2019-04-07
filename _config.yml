@@ -609,87 +609,77 @@ comments:
   count: 
     page: true
     post: true
-# Additional Configurations.
-# disqus:
-#   shortname:
-#   lazyload: false
-# disqusjs:
-#   api:
-#   apikey: # register new application from https://disqus.com/api/applications/
-#   shortname: # See: https://disqus.com/admin/settings/general/
-# changyan:
-#   appid:
-#   appkey:
-# valine:
-#   appid:  # your leancloud application appid
-#   appkey:  # your leancloud application appkey
-#   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
-#   verify: false # Verification code
-#   placeholder: Just go go # comment box placeholder
-#   avatar: mm # gravatar style
-#   guest_info: nick,mail,link # custom comment header
-#   pageSize: 10 # pagination size
-#   language: # language, available values: en, zh-cn
-#   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
-# livere_uid: your uid
-# gitment:
-#   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
-#   lazy: false # Comments lazy loading with a button
-#   cleanly: false # Hide 'Powered by ...' on footer, and more
-#   language: # Force language, or auto switch by theme
-#   github_user: # MUST HAVE, Your Github Username
-#   github_repo: # MUST HAVE, The name of the repo you use to store Gitment comments
-#   client_id: # MUST HAVE, Github client id for the Gitment
-#   client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
-#   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
-#   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
-# gitalk:
-#   github_id:  # Github repo owner
-#   repo:  # Repository name to store issues
-#   client_id:  # Github Application Client ID
-#   client_secret:  # Github Application Client Secret
-#   admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
-#   distraction_free_mode: true # Facebook-like distraction free mode
-#   language: # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
-# # facebook_comments_plugin need enable facebook_sdk
-# facebook_comments_plugin:
-#   num_of_posts: 10    # min posts num is 1
-#   width:        100%  # default width is 550px
-#   scheme:       light # default scheme is light (light or dark)
-# # vkontakte comments need enable vkontakte_api
 
+# Disqus
+disqus:
+  shortname:
+  lazyload: false
 
-# ---------------------------------------------------------------
-# Widgets: Likes
-# ---------------------------------------------------------------
+# DisqusJS
+# Alternative Disqus - Render comment component using Disqus API
+# Demo: https://suka.js.org/DisqusJS/
+disqusjs:
+  # API Endpoint of Disqus API (https://disqus.com/api/)
+  # leave api empty if you are able to connect to Disqus API
+  # otherwise you need a reverse proxy for Disqus API
+  # For example:
+  # api: https://disqus.skk.moe/disqus/
+  api:
+  apikey: # register new application from https://disqus.com/api/applications/
+  shortname: # See: https://disqus.com/admin/settings/general/
 
-# Facebook SDK Support
-facebook_sdk:
-  enable:       false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
+# Changyan
+changyan:
+  appid:
+  appkey:
 
-# VKontakte API Support
-# To get your AppID visit https://vk.com/editapp?act=create
-vkontakte_api:
-  enable:       false
-  app_id:       #<app_id>
-  like:         true
-  num_of_posts: 10
+# Valine
+# You can get your appid and appkey from https://leancloud.cn
+# More info available at https://valine.js.org
+# When comments.type is set to valine, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+valine:
+  appid:  # your leancloud application appid
+  appkey:  # your leancloud application appkey
+  notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: Just go go # comment box placeholder
+  avatar: mm # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
+  language: # language, available values: en, zh-cn
+  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
 
+# LiveRe comments system
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+#livere_uid: your uid
 
-# ---------------------------------------------------------------
-# Widgets: rating
-# ---------------------------------------------------------------
+# Gitment
+# Introduction: https://github.com/imsun/gitment
+gitment:
+  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+  lazy: false # Comments lazy loading with a button
+  cleanly: false # Hide 'Powered by ...' on footer, and more
+  language: # Force language, or auto switch by theme
+  github_user: # MUST HAVE, Your Github Username
+  github_repo: # MUST HAVE, The name of the repo you use to store Gitment comments
+  client_id: # MUST HAVE, Github client id for the Gitment
+  client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
+  redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
-# Star rating support to each article.
-# To get your ID visit https://widgetpack.com
-rating:
-  enable: false
-  id:     #<app_id>
-  color:  fc6423
+# Gitalk
+# Demo: https://gitalk.github.io
+gitalk:
+  github_id:  # Github repo owner
+  repo:  # Repository name to store issues
+  client_id:  # Github Application Client ID
+  client_secret:  # Github Application Client Secret
+  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  distraction_free_mode: true # Facebook-like distraction free mode
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
+  language:
 
 
 # ---------------------------------------------------------------
@@ -775,6 +765,38 @@ needmoreshare2:
 # See: https://azure.microsoft.com/en-us/services/application-insights
 #application_insights:
 
+# Post widgets & FB/VK comments settings.
+# ---------------------------------------------------------------
+# Facebook SDK Support
+facebook_sdk:
+  enable:       false
+  app_id:       #<app_id>
+  fb_admin:     #<user_id>
+  like_button:  #true
+  webmaster:    #true
+
+# Facebook comments plugin
+# This plugin depends on Facebook SDK.
+# If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
+facebook_comments_plugin:
+  num_of_posts: 10    # min posts num is 1
+  width:        100%  # default width is 550px
+  scheme:       light # default scheme is light (light or dark)
+
+# VKontakte API Support
+# To get your AppID visit https://vk.com/editapp?act=create
+vkontakte_api:
+  enable:       false
+  app_id:       #<app_id>
+  like:         true
+  num_of_posts: 10
+
+# Star rating support to each article.
+# To get your ID visit https://widgetpack.com
+rating:
+  enable: false
+  id:     #<app_id>
+  color:  fc6423
 # ---------------------------------------------------------------
 
 # Show number of visitors to each article.
