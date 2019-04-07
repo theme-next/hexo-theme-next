@@ -9,8 +9,8 @@ menu:
   archives: Archives
   categories: Catégories
   tags: Mots clés
-  about: A propos
-  search: recherche
+  about: À propos
+  search: Recherche
   schedule: Plannifier
   sitemap: Sitemap
   commonweal: Commonweal 404
@@ -20,8 +20,8 @@ sidebar:
 post:
   posted: Posté le
   edited: Éditer sur
-  created: Post created
-  modified: Updated at
+  created: Article créé le
+  modified: Mise à jour le
   edit: Éditer cet article
   in: In
   more: plus
@@ -50,7 +50,7 @@ footer:
   total_visitors: Total visiteurs
 counter:
   tag_cloud:
-    zero: Aucun tags
+    zero: Aucun mot clé
     one: 1 tag au total
     other: "%d tags au total"
   categories:
@@ -85,14 +85,14 @@ reward:
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+gitmentbutton: Montrer les commentaires de Gitment
 accessibility:
-  nav_toggle: Toggle navigation bar
+  nav_toggle: Basculer la barre de navigation
   prev_page: Page précédente
   next_page: Page suivante
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
+  time: Temps de lecture
+  time_total: Temps total de lecture
   time_minutes: mins.
