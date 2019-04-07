@@ -78,9 +78,9 @@ $ git pull
 ## Обратная связь
 
 * Задать вопрос на [Stack Overflow][stack-url].
-* Запросить новую возможность на [GitHub][contributing-url].
+* Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
+* Запросить новую возможность на [GitHub][issues-feat-url].
 * Голосовать за [популярные запросы возможностей][feat-req-vote-url].
-* Сообщить об ошибке в разделе [GitHub Issues][issues-url].
 * Вступить в наши [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] чаты.
 * Подписаться на новости через [канал Telegram'а][t-news-url].
 
@@ -115,9 +115,9 @@ $ git pull
 [browser-url]: https://www.browserstack.com
 
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
-[contributing-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
+[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
+[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
-[issues-url]: https://github.com/theme-next/hexo-theme-next/issues
 
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
