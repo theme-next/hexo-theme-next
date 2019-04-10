@@ -142,8 +142,8 @@
             {% set comments_count_post_enable = is_post() and theme.comments.count.post %}
             {% set comments_count_page_enable = not is_post() and theme.comments.count.page %}
             {% if theme.comments.type and (comments_count_post_enable or comments_count_page_enable) %}
-              {% set comments_count_path = '../_third-party/comments/' + theme.comments.type|lower + '/count.swig' %}
-              {% include comments_count_path with { post: post } ignore missing %}
+              {% set comments_count_path = '_third-party/comments/' + theme.comments.type|lower + '/count.swig' %}
+              {{ partial(comments_count_path,{ post: post }) }}
             {% endif %}
           {% endif %}
 
