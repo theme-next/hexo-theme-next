@@ -1205,6 +1205,10 @@ vendors:
   disqusjs_js:
   disqusjs_css:
 
+post_end_tag:
+  enabled: true
+  message: ----------本&nbsp;文&nbsp;结&nbsp;束&nbsp;<i class="fa fa-paw"></i>&nbsp;感&nbsp;谢&nbsp;您&nbsp;的&nbsp;阅&nbsp;读----------
+
 # Assets
 css: css
 js: js
