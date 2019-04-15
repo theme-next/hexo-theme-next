@@ -347,6 +347,12 @@ codeblock:
     # Style: only 'flat' is currently available, leave it blank if you prefer default theme
     style:
 
+# Add an end tag at the end of the post
+# if use, set `enabled` to true
+post_end_tag:
+  enabled: false
+  message: Thank you for reading
+
 # Wechat Subscriber
 wechat_subscriber:
   enable: false
@@ -1204,12 +1210,6 @@ vendors:
   # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
   disqusjs_js:
   disqusjs_css:
-
-# Add an end tag at the end of the post
-# if use, set `enabled` to true
-post_end_tag:
-  enabled: false
-  message: Thank you for reading
 
 # Assets
 css: css
