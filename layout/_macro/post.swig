@@ -340,7 +340,7 @@
 
     {% if not is_index %}
       <div>
-        {% include 'post-end-tag.swig' %}
+        {% include '../_partials/post/post-end-tag.swig' %}
       </div>
     {% endif %}
 
