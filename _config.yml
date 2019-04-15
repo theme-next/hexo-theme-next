@@ -348,7 +348,7 @@ codeblock:
     style:
 
 # Add an end tag at the end of the post
-# if use, set `enabled` to true
+# If use, set `enable` to true
 post_end_tag:
   enable: false
   message: Thank you for reading

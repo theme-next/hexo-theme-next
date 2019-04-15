@@ -338,10 +338,8 @@
     {### END POST BODY ###}
     {#####################}
 
-    {% if not is_index %}
-      <div>
-        {% include '../_partials/post/post-end-tag.swig' %}
-      </div>
+    {% if theme.post_end_tag.enable and theme.post_end_tag.message and not is_index %}
+      {% include '../_partials/post/post-end-tag.swig' %}
     {% endif %}
 
     {% if theme.wechat_subscriber.enable and not is_index %}
