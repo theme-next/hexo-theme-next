@@ -1205,9 +1205,11 @@ vendors:
   disqusjs_js:
   disqusjs_css:
 
+# Add an end tag at the end of the post
+# if use, set `enabled` to true
 post_end_tag:
   enabled: false
-  message: ----------本&nbsp;文&nbsp;结&nbsp;束&nbsp;<i class="fa fa-paw"></i>&nbsp;感&nbsp;谢&nbsp;您&nbsp;的&nbsp;阅&nbsp;读----------
+  message: Thank you for reading
 
 # Assets
 css: css
