@@ -84,25 +84,25 @@ $font-weight-bolder       = 700
 
 
 // Font size
-$font-size-base           = 14px
-$font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
-$font-size-smaller        = $font-size-base - 2px
-$font-size-small          = $font-size-base - 1px
-$font-size-large          = $font-size-base + 2px
-$font-size-larger         = $font-size-base + 4px
+$font-size-base           = 0.875em
+$font-size-base           = unit(hexo-config('font.global.size'), em) if hexo-config('font.global.size') is a 'unit'
+$font-size-smaller        = $font-size-base - 0.125em
+$font-size-small          = $font-size-base - 0.0625em
+$font-size-large          = $font-size-base + 0.125em
+$font-size-larger         = $font-size-base + 0.25em
 
 
 // Headings font size
-$font-size-headings-step    = 2px
-$font-size-headings-base    = 26px
-$font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
+$font-size-headings-step    = 0.125em
+$font-size-headings-base    = 1.5em
+$font-size-headings-base    = unit(hexo-config('font.headings.size'), em) if hexo-config('font.headings.size') is a 'unit'
 $font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
 $font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
 
 
 // Posts font size
 $font-size-posts            = $font-size-base
-$font-size-posts            = unit(hexo-config('font.posts.size'), px) if hexo-config('font.posts.size') is a 'unit'
+$font-size-posts            = unit(hexo-config('font.posts.size'), em) if hexo-config('font.posts.size') is a 'unit'
 
 
 // Global line height
@@ -124,7 +124,7 @@ $zindex-5       = 1050
 // --------------------------------------------------
 $table-width                    = 100%
 $table-border-color             = $gray-lighter
-$table-font-size                = $font-size-posts
+$table-font-size                = $font-size-small
 $table-content-alignment        = left
 $table-content-vertical         = middle
 $table-th-font-weight           = 700
@@ -203,8 +203,8 @@ $brand-color                    = white
 $brand-hover-color              = white
 $brand-bg                       = $black-deep
 
-$logo-font-size                 = 22px
-$logo-font-size                 = unit(hexo-config('font.title.size'), px) if hexo-config('font.title.size') is a 'unit'
+$logo-font-size                 = 1.375em
+$logo-font-size                 = unit(hexo-config('font.title.size'), em) if hexo-config('font.title.size') is a 'unit'
 
 $site-subtitle-color            = $grey-dark
 $subtitle-font-size             = $font-size-small
