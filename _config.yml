@@ -452,7 +452,7 @@ font:
   # `size: x.x`. Use `em` as unit. Default: 0.875 (14px)
   # For all other font sizes classes will be relative from global size.
   # //It's mean no need anymore to redefine sizes for each class,
-  # //but if you want it can be done with custom styles.
+  # //but if you want it can be done with custom variables.
 
   # Global font settings used for all elements inside <body>.
   global:

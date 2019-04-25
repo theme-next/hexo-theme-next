@@ -84,15 +84,24 @@ $font-weight-bolder       = 700
 
 
 // Font size
-$font-size-base           = 0.875rem // 14px
+//$font-size-base           = 0.875rem // 14px
+$font-size-base           = 1em // 16px
 $font-size-base           = unit(hexo-config('font.global.size'), rem) if hexo-config('font.global.size') is a 'unit'
 
-$font-size-smaller        = unit($font-size-base - 0.125, rem) //   0.750rem | 12px
-$font-size-small          = unit($font-size-base - 0.0625, rem) // 0.8125rem | 13px
-$font-size-large          = unit($font-size-base + 0.125, rem) //       1rem | 16px
-$font-size-larger         = unit($font-size-base + 0.25, rem) //    1.125rem | 18px
-$font-size-largest        = unit($font-size-base + 0.375, rem) //    1.25rem | 20px
-$font-size-largestX       = unit($font-size-base + 0.5, rem) //     1.375rem | 22px
+$font-size-smallest       = unit($font-size-base - 0.25, rem)   //  0.750rem | 12px
+$font-size-smaller        = unit($font-size-base - 0.1875, rem) // 0.8125rem | 13px
+$font-size-small          = unit($font-size-base - 0.125, rem)  //  0.875rem | 14px
+$font-size-medium         = unit($font-size-base, rem)          //      1rem | 16px
+$font-size-large          = unit($font-size-base + 0.125, rem)  //  1.125rem | 18px
+$font-size-larger         = unit($font-size-base + 0.25, rem)   //  1.250rem | 20px
+$font-size-largest        = unit($font-size-base + 0.375, rem)  //  1.375rem | 22px
+
+//$font-size-smaller        = unit($font-size-base - 0.125, rem) //   0.750rem | 12px
+//$font-size-small          = unit($font-size-base - 0.0625, rem) // 0.8125rem | 13px
+//$font-size-large          = unit($font-size-base + 0.125, rem) //       1rem | 16px
+//$font-size-larger         = unit($font-size-base + 0.25, rem) //    1.125rem | 18px
+//$font-size-largest        = unit($font-size-base + 0.375, rem) //    1.25rem | 20px
+//$font-size-largestX       = unit($font-size-base + 0.5, rem) //     1.375rem | 22px
 
 // Headings font size
 //$font-size-headings-title = 1.75em   // 28px
@@ -104,7 +113,7 @@ $font-size-largestX       = unit($font-size-base + 0.5, rem) //     1.375rem | 2
 //$font-size-headings-h6    = 1.0625em // 17px
 
 // My Gemini
-//$font-size-headings-title = 1.75em // 28px
+//$font-size-headings-title = 1.7em  // 27.2px
 //$font-size-headings-h1    = 1.6em  // 25.6px
 //$font-size-headings-h2    = 1.45em // 23.2px
 //$font-size-headings-h3    = 1.3em  // 20.8px
@@ -151,7 +160,7 @@ $zindex-5       = 1050
 // --------------------------------------------------
 $table-width                    = 100%
 $table-border-color             = $gray-lighter
-$table-font-size                = $font-size-small
+$table-font-size                = $font-size-smaller
 $table-content-alignment        = left
 $table-content-vertical         = middle
 $table-th-font-weight           = 700
@@ -177,7 +186,7 @@ $btn-font-weight                = normal
 $btn-default-radius             = 0
 $btn-default-bg                 = $black-deep
 $btn-default-color              = white
-$btn-default-font-size          = $font-size-base
+$btn-default-font-size          = $font-size-small
 $btn-default-border-width       = 2px
 $btn-default-border-color       = $black-deep
 $btn-default-hover-bg           = white
@@ -230,8 +239,8 @@ $brand-color                    = white
 $brand-hover-color              = white
 $brand-bg                       = $black-deep
 
-$title-font-size                = $font-size-largestX
-$subtitle-font-size             = $font-size-small
+$title-font-size                = $font-size-largest
+$subtitle-font-size             = $font-size-smaller
 $subtitle-color                 = $grey-dark
 $site-subtitle-color            = $grey-dark
 
