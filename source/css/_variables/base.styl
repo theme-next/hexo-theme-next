@@ -130,11 +130,11 @@ $font-size-headings-h4    = 1.1875em // 19px
 $font-size-headings-h5    = 1.0625em // 17px
 $font-size-headings-h6    = 1em      // 16px
 
-$font-size-headings-step    = 0.125em
-$font-size-headings-base    = 1.6875em
-$font-size-headings-base    = unit(hexo-config('font.headings.size'), em) if hexo-config('font.headings.size') is a 'unit'
-$font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
-$font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
+//$font-size-headings-step    = 0.125em
+//$font-size-headings-base    = 1.6875em
+//$font-size-headings-base    = unit(hexo-config('font.headings.size'), em) if hexo-config('font.headings.size') is a 'unit'
+//$font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
+//$font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
 
 // Posts font size
 //$font-size-posts            = $font-size-base
@@ -268,6 +268,8 @@ $post-copyright = {
 // --------------------------------------------------
 $posts-collapse-left            = 55px
 $posts-collapse-left-mobile     = 5px
+
+$posts-collapse-title-font-size = $font-size-headings-h3
 
 
 // Sidebar
