@@ -430,7 +430,9 @@ tagcloud:
 
 
 # ---------------------------------------------------------------
-# Font Settings. Introduced in NexT v5.0.1.
+# Font Settings
+# See: https://theme-next.org/docs/theme-settings/#Fonts-Customization
+# ---------------------------------------------------------------
 # Find fonts on Google Fonts (https://www.google.com/fonts)
 # All fonts set here will have the following styles:
 #   light, light italic, normal, normal italic, bold, bold italic
@@ -441,6 +443,8 @@ tagcloud:
 # ---------------------------------------------------------------
 
 font:
+  # Use custom fonts families or not.
+  # Depended options: `external` and `family`.
   enable: false
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
@@ -449,10 +453,8 @@ font:
   # Font options:
   # `external: true` will load this font family from `host` above.
   # `family: Times New Roman`. Without any quotes.
-  # `size: x.x`. Use `em` as unit. Default: 0.875 (14px)
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
   # For all other font sizes classes will be relative from global size.
-  # //It's mean no need anymore to redefine sizes for each class,
-  # //but if you want it can be done with custom variables.
 
   # Global font settings used for all elements inside <body>.
   global:

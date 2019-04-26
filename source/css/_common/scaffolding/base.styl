@@ -26,12 +26,20 @@ h1, h2, h3, h4, h5, h6 {
 h1.post-title,
 h2.post-title { font-size: $font-size-headings-title; }
 
-div.post-body h1 { font-size: $font-size-headings-h1; }
-div.post-body h2 { font-size: $font-size-headings-h2; }
-div.post-body h3 { font-size: $font-size-headings-h3; }
-div.post-body h4 { font-size: $font-size-headings-h4; }
-div.post-body h5 { font-size: $font-size-headings-h5; }
-div.post-body h6 { font-size: $font-size-headings-h6; }
+//div.post-body h1 { font-size: $font-size-headings-h1; }
+//div.post-body h2 { font-size: $font-size-headings-h2; }
+//div.post-body h3 { font-size: $font-size-headings-h3; }
+//div.post-body h4 { font-size: $font-size-headings-h4; }
+//div.post-body h5 { font-size: $font-size-headings-h5; }
+//div.post-body h6 { font-size: $font-size-headings-h6; }
+
+for headline in (1..6) {
+  .posts-expand div.post-body h{headline} {
+    font-size: $font-size-headings-h + headline;
+    //code { font-size: $font-size-small; }
+    code { font-size: inherit; }
+  }
+}
 
 //for headline in (1..6) {
 //  h{headline} {
@@ -39,12 +47,12 @@ div.post-body h6 { font-size: $font-size-headings-h6; }
 //  }
 //}
 
-div.post-body h1 code,
-div.post-body h2 code,
-div.post-body h3 code,
-div.post-body h4 code,
-div.post-body h5 code,
-div.post-body h6 code { font-size: inherit; }
+//div.post-body h1 code,
+//div.post-body h2 code,
+//div.post-body h3 code,
+//div.post-body h4 code,
+//div.post-body h5 code,
+//div.post-body h6 code { font-size: inherit; }
 
 p { margin: 0 0 20px 0; }
 
