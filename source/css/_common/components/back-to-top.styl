@@ -18,7 +18,8 @@
   &.back-to-top-on {
     bottom: $b2t-position-bottom-on;
   }
-  &:hover {
-    color: $sidebar-highlight;
+  +tablet-mobile() {
+    opacity: $b2t-opacity-hover;
+    right: $b2t-position-right-mobile;
   }
 }
