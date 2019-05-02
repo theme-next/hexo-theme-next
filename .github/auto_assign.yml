@@ -8,7 +8,6 @@ addAssignees: false
 
 # A list of reviewers to be added to pull requests (GitHub user name)
 reviewers:
-  - 1v9
   - ivan-nginx
   - maple3142
   - sli1989

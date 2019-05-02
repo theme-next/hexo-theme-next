@@ -31,4 +31,4 @@ template: |
 
   ***
 
-  For full changes, see the [comparison between v$PREVIOUS_TAG and v$NEXT_MINOR_VERSION](https://github.com/theme-next/hexo-theme-next/compare/v$PREVIOUS_TAG...v$NEXT_MINOR_VERSION)
+  For full changes, see the [comparison between $PREVIOUS_TAG and v$NEXT_MINOR_VERSION](https://github.com/theme-next/hexo-theme-next/compare/v$PREVIOUS_TAG...v$NEXT_MINOR_VERSION)
