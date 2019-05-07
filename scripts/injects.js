@@ -4,6 +4,8 @@
 
 const fs = require('fs');
 
+const injectType = ['head', 'header', 'sidebar'];
+
 class Inject {
   constructor() {
     this.raws = [];
@@ -16,22 +18,16 @@ class Inject {
     });
   }
   file(name, file, ...args) {
-    this.raws.push({
-      name,
-      raw: fs.readFileSync(file).toString(),
-      args
-    });
+    this.raw(name, fs.readFileSync(file).toString(), args);
   }
 }
-
-const injectType = ['head', 'header', 'sidebar'];
 
 const injects = {};
 injectType.forEach((item) => {
   injects[item] = new Inject();
 });
 
-hexo.on('generateBefore', function() {
+module.exports = function(hexo) {
 
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
@@ -48,4 +44,4 @@ hexo.on('generateBefore', function() {
     });
   });
 
-});
+}
