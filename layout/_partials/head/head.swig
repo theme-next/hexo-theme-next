@@ -120,9 +120,6 @@
   };
 </script>
 
-{% if theme.custom_file_path.head %}
-  {% set custom_head = '../../../../../' + theme.custom_file_path.head %}
-{% else %}
-  {% set custom_head = '../../_custom/head.swig' %}
-{% endif %}
-{% include custom_head %}
+{% for inject_name,inject_args in theme.injects.head %}
+  {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
+{% endfor %}
