@@ -2,17 +2,17 @@
 
 'use strict';
 
-hexo.extend.filter.register('theme_inject', function (injects) {
-  let custom_file_path = hexo.theme.config.custom_file_path;
-  if (custom_file_path) {
-    if (custom_file_path.head) {
-      injects.head.file('custom', custom_file_path.head);
+hexo.extend.filter.register('theme_inject', (injects) => {
+  let filePath = hexo.theme.config.custom_file_path;
+  if (filePath) {
+    if (filePath.head) {
+      injects.head.file('custom', filePath.head);
     }
-    if (custom_file_path.header) {
-      injects.header.file('custom', custom_file_path.header);
+    if (filePath.header) {
+      injects.header.file('custom', filePath.header);
     }
-    if (custom_file_path.sidebar) {
-      injects.sidebar.file('custom', custom_file_path.sidebar);
+    if (filePath.sidebar) {
+      injects.sidebar.file('custom', filePath.sidebar);
     }
   }
 });

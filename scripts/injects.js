@@ -1,5 +1,3 @@
-/* global hexo */
-
 'use strict';
 
 const fs = require('fs');
@@ -28,7 +26,6 @@ injectType.forEach((item) => {
 });
 
 module.exports = function(hexo) {
-
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
   injectType.forEach((type) => {
@@ -43,5 +40,4 @@ module.exports = function(hexo) {
       };
     });
   });
-
-}
+};
