@@ -4,7 +4,7 @@
       FB.init({
         appId  : '{{ theme.facebook_sdk.app_id }}',
         xfbml  : true,
-        version: 'v2.10'
+        version: 'v3.3'
       });
     };
     (function(d, s, id) {
