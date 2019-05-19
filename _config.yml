@@ -143,7 +143,7 @@ exturl: true
 #baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+baidu_push: true
 
 
 # ---------------------------------------------------------------
@@ -197,8 +197,8 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  #GitHub: https://github.com/yourname || github
-   邮箱 : mailto:panzhenglian@163.com || envelope
+  GitHub: https://github.com/panzhenglian || github
+  E-mail: mailto:panzhenglian@163.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -480,8 +480,8 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
-    size:
+    family: Courier New
+    size: 15
 
 
 # ---------------------------------------------------------------
@@ -824,7 +824,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: user
   total_views: true
