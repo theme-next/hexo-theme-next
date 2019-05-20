@@ -12,7 +12,8 @@
 - [ ] Tests for the changes was maked (for bug fixes / features).
    - [ ] Muse | Mist have been tested.
    - [ ] Pisces | Gemini have been tested.
-- [ ] Docs in [NexT website](https://theme-next.org/docs/) have been added / updated (for new features).
+- [ ] [Docs](https://github.com/theme-next/theme-next.org/tree/source/source/docs) in [NexT website](https://theme-next.org/docs/) have been added / updated (for features).
+<!-- For adding Docs edit needed file here: https://github.com/theme-next/theme-next.org/tree/source/source/docs and create PR with this changes here: https://github.com/theme-next/theme-next.org/pulls -->
 
 ## PR Type
 **What kind of change does this PR introduce?**
