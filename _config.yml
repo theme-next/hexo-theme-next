@@ -49,7 +49,7 @@ rss:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2016
 
   # Icon between year and copyright info.
   icon:
@@ -99,7 +99,7 @@ creative_commons:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: true
+  enable: false
   permalink: https://github.com/panzhenglian
   title: Follow me on GitHub
 
@@ -480,8 +480,8 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: Courier New
-    size: 15
+    family:
+    size: 
 
 
 # ---------------------------------------------------------------
