@@ -16,7 +16,7 @@ class Inject {
     });
   }
   file(name, file, ...args) {
-    this.raw(name, fs.readFileSync(file).toString(), args);
+    this.raw.apply(this, [name, fs.readFileSync(file).toString()].concat(args));
   }
 }
 
