@@ -196,6 +196,7 @@ Issues related: `types`+`contents`+`results`
 Pull requests related:
 
 - `Breaking Change`: A Pull requests that makes breaking change
+- `External Change`: A Pull request that makes update for external change
 - `Bug Fix`: A Pull requests that fixes the related bug
 - `Docs`: A Pull requests that Instruction document has been added
 - `New Feature`: A Pull requests that provides a new feature

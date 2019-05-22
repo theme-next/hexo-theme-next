@@ -192,6 +192,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
 Pull requests 的标签：
 
 - `Breaking Change`: 产生重大变动的 Pull request
+- `External Change`: 针对外部变动进行更新的 Pull request
 - `Bug Fix`: 修复 Bug 的 Pull request
 - `Docs`: 添加了文档说明的 Pull request
 - `New Feature`: 添加了新特性的 Pull request
