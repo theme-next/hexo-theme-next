@@ -4,28 +4,28 @@ name-template: v$NEXT_MINOR_VERSION
 tag-template: v$NEXT_MINOR_VERSION
 categories:
   - title: 💥 Breaking Changes
-    label: Breaking Change
+    label: 💥 Breaking Change
 
   - title: 🌀 External Changes
-    label: External Change
+    label: 🌀 External Change
 
   - title: 🌟 New Features
-    label: New Feature
+    label: 🌟 New Feature
 
   - title: ⭐ Features
-    label: Feature
+    label: ⭐ Feature
 
   - title: 🛠 Improvements
-    label: Improvement
+    label: 🛠 Improvement
 
   - title: 🐞 Bug Fixes
-    label: Bug Fix
+    label: 🐞 Bug Fix
 
   - title: 📖 Documentation
-    label: Docs
+    label: 📖 Docs
 
   - title: 🌍 Localization
-    label: i18n
+    label: 🌍 i18n
 
 change-template: '- $TITLE (#$NUMBER)'
 no-changes-template: '- No changes'
