@@ -196,7 +196,7 @@ Pull requests 的标签：
 - `Bug Fix`: 修复相关 Bug 的 Pull request
 - `Docs`: 添加了文档说明的 Pull request
 - `New Feature`: 添加了新功能的 Pull request
-- `Feature`: 为现有功能提供选项选项或加成的 Pull request
+- `Feature`: 为现有功能提供选项或加成的 Pull request
 - `Improvement`: 改进了 NexT 主题的 Pull request
 - `i18n`: 更新了翻译的 Pull request
 - `Performance`: 提高了 NexT 主题性能的 Pull request
