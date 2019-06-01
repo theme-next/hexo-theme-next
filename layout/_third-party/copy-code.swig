@@ -15,6 +15,8 @@
       ta.readOnly = true;
       ta.value = code;
       document.body.appendChild(ta);
+      const selection = document.getSelection();
+      const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
       ta.select();
       ta.setSelectionRange(0, code.length);
       ta.readOnly = false;
@@ -25,6 +27,10 @@
       {% endif %}
       ta.blur(); // For iOS
       $(this).blur();
+      if (selected) {
+        selection.removeAllRanges();
+        selection.addRange(selected);
+      }
     })).on('mouseleave', function(e) {
       var $b = $(this).find('.copy-btn');
       setTimeout(function() {
