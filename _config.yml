@@ -347,6 +347,9 @@ codeblock:
     # Style: only 'flat' is currently available, leave it blank if you prefer default theme
     style:
 
+# Use icon instead of the symblo # to indicate the tag at the bottom of the post
+tag_icon: false
+
 # Wechat Subscriber
 wechat_subscriber:
   enable: false
