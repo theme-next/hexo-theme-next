@@ -7,7 +7,7 @@
 </script>
 
 {% set js_vendors = {} %}
-{% set js_vendors.jquery = 'jquery/index.js?v=2.1.3' %}
+{% set js_vendors.jquery = 'jquery/index.js?v=3.4.1' %}
 
 {% if theme.fastclick %}
   {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
