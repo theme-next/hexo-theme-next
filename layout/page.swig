@@ -66,6 +66,11 @@
           </div>
         {% elif page.type === 'schedule' %}
           {% include 'schedule.swig' %}
+        {% elif theme.custom_file_path.page %}
+          {% set custom_page_url = '../../../' + theme.custom_file_path.page.url %}
+          {% if page.type === theme.custom_file_path.page.type %}
+            {% include custom_page_url %}
+          {% endif %}
         {% else %}
           {{ page.content }}
         {% endif %}
@@ -88,4 +93,8 @@
 
 {% block script_extra %}
   {% include '_scripts/pages/post-details.swig' %}
+  {% if theme.custom_file_path.page.script %}
+    {% set custom_page_script =  theme.custom_file_path.page.script %}
+    <script src="{{ custom_page_script }}?v={{ version }}"></script>
+  {% endif %}
 {% endblock %}
