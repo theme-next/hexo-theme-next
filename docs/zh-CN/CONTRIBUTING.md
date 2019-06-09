@@ -146,32 +146,32 @@
 
 ### 标签规范
 
-为了方便维护人员和用户能够快速找到他们想要查看的问题，我们使用“标签”功能对拉取请求和问题进行分类。
+为了方便维护人员和用户能够快速找到他们想要查看的问题，我们使用“标签”功能对 Pull requests 和 Issues 进行分类。
 
-如果您不确定某个标签的含义，或者不知道将哪些标签应用于拉取请求或问题，千万别错过这个。
+如果您不确定某个标签的含义，或者不知道将哪些标签应用于 PR 或 issue，千万别错过这个。
 
 Issues 的标签：使用`类型`+`内容`+`结果`的组合
 
 - 类型
     - `Irrelevant`: 与 NexT 主题无关的 Issue
-    - `Duplicate`: 已经存在同样 Issue
-    - `Bug`: 提出了 Bug，等待确认
-    - `Improvement Need`: 需要进行改进的 Issue
-    - `Feature Request`: 提出了特性需求的 Issue
-    - `High Priority`: 检测到的高优先级错误或笔误 Issue
-    - `Low Priority`: 检测到的低优先级错误或笔误 Issue
-    - `Non English`: 需要多语言维护者注意 Issue
-    - `Discussion`: 需要讨论的 Issue
-    - `Question`: 有关咨询的 Issue
+    - `Duplicate`: 重复提及的 Issue
+    - `Bug`: 检测到需要进行确认的 Bug
+    - `Improvement Need`: 需要改进的 Issue
+    - `Feature Request`: 提出了新功能请求的 Issue
+    - `High Priority`: 检测到具有高优先级的 Bug 或笔误的 Issue
+    - `Low Priority`: 检测到具有低优先级的 Bug 或笔误的 Issue
+    - `Non English`: 需要多语言维护者参与的 Issue
+    - `Discussion`: 需要进行讨论的 Issue
+    - `Question`: 提出疑问的 Issue
     - `Backlog`: 待解决的 Issue
-    - `Meta`: 表明使用条款变更 Issue
+    - `Meta`: 表明使用条款变更的 Issue
 - 内容
     - `Roadmap`: 与 NexT 主题发展相关的 Issue
     - `Hexo`: 与 Hexo 相关的 Issue
-    - `Scheme [1] - Mist`: 与 Mist 样式相关的 Issue
-    - `Scheme [2] - Muse`: 与 Muse 样式相关的 Issue
-    - `Scheme [3] - Pisces`: 与 Pisces 样式相关的 Issue
-    - `Scheme [4] - Gemini`: 与 Gemini 样式相关的 Issue
+    - `Scheme [1] - Mist`: 与 Mist 主题相关的 Issue
+    - `Scheme [2] - Muse`: 与 Muse 主题相关的 Issue
+    - `Scheme [3] - Pisces`: 与 Pisces 主题相关的 Issue
+    - `Scheme [4] - Gemini`: 与 Gemini 主题相关的 Issue
     - `3rd Party Service`: 与第三方服务相关的 Issue
     - `Docs`: 需要添加文档说明的 Issue
     - `Configurations`: 与 NexT 主题设置相关的 Issue
@@ -180,8 +180,8 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
 - 结果
     - `Wontfix`: 不能或不被修复的 Issue
     - `Need More Info`: 需要更多信息的 Issue
-    - `Need Verify`: 需要开发人员或用户确认的 Issue
-    - `Can't Reproduce`: 不能被重现的 Issue
+    - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
+    - `Can't Reproduce`: 无法复现的 Issue
     - `Verified`: 已经被确认的 Issue
     - `Help Wanted`: 需要帮助的 Issue
     - `Wait for Answer`: 需要开发人员或用户回复的 Issue
@@ -192,10 +192,11 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
 Pull requests 的标签：
 
 - `Breaking Change`: 产生重大变动的 Pull request
-- `Bug Fix`: 修复 Bug 的 Pull request
+- `External Change`: 针对外部变动进行更新的 Pull request
+- `Bug Fix`: 修复相关 Bug 的 Pull request
 - `Docs`: 添加了文档说明的 Pull request
-- `New Feature`: 添加了新特性的 Pull request
-- `Feature`: 为已存在的特性添加了选项或功能的 Pull request
+- `New Feature`: 添加了新功能的 Pull request
+- `Feature`: 为现有功能提供选项或加成的 Pull request
 - `Improvement`: 改进了 NexT 主题的 Pull request
 - `i18n`: 更新了翻译的 Pull request
 - `Performance`: 提高了 NexT 主题性能的 Pull request

@@ -361,9 +361,14 @@
 
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
+        {% if theme.tag_icon %}
+          {% set tag_indicate = '<i class="fa fa-tag"></i>' %}
+        {% else %}
+          {% set tag_indicate = '#' %}
+        {% endif %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}

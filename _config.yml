@@ -43,7 +43,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set rss to false to disable feed link.
-# Leave rss as blank to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
+# Leave rss as blank to use site's feed link, and install dependencies hexo-generator-feed by `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
 rss:
 
@@ -346,6 +346,9 @@ codeblock:
     show_result: false
     # Style: only 'flat' is currently available, leave it blank if you prefer default theme
     style:
+
+# Use icon instead of the symblo # to indicate the tag at the bottom of the post
+tag_icon: false
 
 # Wechat Subscriber
 wechat_subscriber:
@@ -1075,11 +1078,11 @@ vendors:
   velocity:
   velocity_ui:
 
-  # Internal version: 4.6.2
+  # Internal version: 4.7.0
   # See: https://fontawesome.com
   # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   fontawesome:
 
   # Internal version: 2.10.4
