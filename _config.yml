@@ -153,8 +153,8 @@ baidu_push: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # Usage: `Key: /link/ || icon`
 # Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.
-# Value before `||` delimeter is the target link.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
+# Value before `||` delimiter is the target link.
+# Value after `||` delimiter is the name of FontAwesome icon. If icon (with or without delimiter) is not specified, question icon will be loaded.
 # External url should start with http:// or https://
 menu:
   home: / || home
@@ -194,8 +194,8 @@ site_state: true
 # Social Links
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
-# Value before `||` delimeter is the target permalink.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
+# Value before `||` delimiter is the target permalink.
+# Value after `||` delimiter is the name of FontAwesome icon. If icon (with or without delimiter) is not specified, globe icon will be loaded.
 social:
   #GitHub: https://github.com/yourname || github
   #E-Mail: mailto:yourname@gmail.com || envelope
