@@ -103,7 +103,7 @@
             });
           };
           {% if page.layout === 'post' %}
-            const localhost = /http\:\/\/localhost|http\:\/\/127.0.0.1|http\:\/\/0.0.0.0/;
+            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
             if (localhost.test(document.URL)) {
               return;
             }
