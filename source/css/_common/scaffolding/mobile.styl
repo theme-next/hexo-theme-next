@@ -55,16 +55,17 @@
   .post-block {
     // Inside posts blocks content padding (default 40px).
     padding: $content-mobile-padding 0 !important;
+    margin-top: initial !important;
   }
 
   .post-body {
     // For headers narrow width.
-    h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6 {
       margin: 10px 18px 8px;
     }
     // Rewrite paddings & margins inside tags.
     .note, .tabs .tab-content .tab-pane {
-      h2, h3, h4, h5, h6 {
+      h1, h2, h3, h4, h5, h6 {
         margin: 0 5px;
       }
     }
@@ -87,6 +88,11 @@
 
     // For external links alignment.
     > span.exturl {
+      margin-left: 18px;
+    }
+
+    // For Mist more button alignment.
+    > div.post-button a {
       margin-left: 18px;
     }
 

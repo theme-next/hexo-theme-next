@@ -198,14 +198,14 @@ math:
   enable: false
 
   # Default(true) will load mathjax/katex script on demand
-  # That is it only render those page who has 'mathjax: true' in Front Matter.
+  # That is it only render those page who has 'mathjax: true' in Front-matter.
   # If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.
   per_page: true
 
   engine: mathjax
   #engine: katex
 
-  # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
+  # hexo-renderer-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
   mathjax:
     # For newMathJax CDN (cdnjs.cloudflare.com) with fallback to oldMathJax (cdn.mathjax.org).
     cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
@@ -235,7 +235,7 @@ This option is to control whether to render Math Equations every page.
 
 The behavior of default (`true`) is to render Math Equations **on demand**.
 
-It will only render those posts which have `mathjax: true` in their Front Matter.
+It will only render those posts which have `mathjax: true` in their Front-matter.
 
 For example:
 

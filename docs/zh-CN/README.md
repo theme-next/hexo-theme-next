@@ -138,7 +138,7 @@ $ git pull
 
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
-[t-chat-url]: https://t.me/theme_next
+[t-chat-url]: https://t.me/theme_next_chinese
 [t-news-url]: https://t.me/theme_next_news
 
 <!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->

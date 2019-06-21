@@ -1,6 +1,6 @@
 {
   "name": "theme-next",
-  "version": "7.1.0",
+  "version": "7.1.2",
   "homepage": "https://theme-next.org",
   "authors": [
     "NexT <support@theme-next.org> (https://theme-next.org)"
@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "font-awesome": "fontawesome#*",
-    "jquery": "http://code.jquery.com/jquery-2.1.3.min.js",
+    "jquery": "https://code.jquery.com/jquery-3.4.1.min.js",
     "velocity": "~1.2.1"
   }
 }

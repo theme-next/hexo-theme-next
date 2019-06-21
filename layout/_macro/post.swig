@@ -185,7 +185,7 @@
                   <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
                 {% endif %}
                 <span title="{{ __('symbols_count_time.count') }}">{#
-                #}{{ symbolsCount(post.content) }}{#
+                #}{{ symbolsCount(post) }}{#
               #}</span>
               {% endif %}
 
@@ -201,7 +201,7 @@
                   <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
                 {% endif %}
                 <span title="{{ __('symbols_count_time.time') }}">{#
-                #}{{ symbolsTime(post.content, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
+                #}{{ symbolsTime(post, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
               #}</span>
               {% endif %}
             </div>
@@ -220,7 +220,7 @@
     {#################}
     {### POST BODY ###}
     {#################}
-    <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
+    <div class="post-body{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
       {# Gallery support #}
       {% if post.photos and post.photos.length %}
@@ -318,9 +318,14 @@
 
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
+        {% if theme.tag_icon %}
+          {% set tag_indicate = '<i class="fa fa-tag"></i>' %}
+        {% else %}
+          {% set tag_indicate = '#' %}
+        {% endif %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}

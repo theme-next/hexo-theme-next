@@ -1,6 +1,15 @@
 {% if theme.disqus.shortname %}
 {% if theme.comments.count.post or theme.comments.count.page %}
-  <script id="dsq-count-scr" src="https://{{ theme.disqus.shortname }}.disqus.com/count.js" async></script>
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
 {% endif %}
 {% if page.comments %}
 <script>
@@ -23,7 +32,7 @@
       var offsetTop = $('#comments').offset().top - $(window).height();
       if (offsetTop <= 0) {
         // load directly when there's no a scrollbar
-        loadComments();
+        window.addEventListener('load', loadComments, false);
       } else {
         $(window).on('scroll.disqus_scroll', function() {
           // offsetTop may changes because of manually resizing browser window or lazy loading images.
@@ -39,7 +48,7 @@
       }
     });
   {% else %}
-    loadComments();
+    window.addEventListener('load', loadComments, false);
   {% endif %}
 </script>
 {% endif %}
