@@ -1,9 +1,3 @@
-{% set leancloud_uri = '//cdn1.lncld.net/static/js/3.11.1/av-min.js' %}
-{% if theme.vendors.leancloud %}
-  {% set leancloud_uri = theme.vendors.leancloud %}
-{% endif %}
-<script src="{{ leancloud_uri }}"></script>
-
 {% set valine_uri = '//unpkg.com/valine/dist/Valine.min.js' %}
 {% if theme.vendors.valine %}
   {% set valine_uri = theme.vendors.valine %}
