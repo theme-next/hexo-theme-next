@@ -1158,12 +1158,6 @@ vendors:
   # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
   reading_progress:
 
-  # leancloud-storage
-  # See: https://www.npmjs.com/package/leancloud-storage
-  # Example:
-  # leancloud: //cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js
-  leancloud:
-
   # valine
   # See: https://github.com/xCss/Valine
   # Example:
