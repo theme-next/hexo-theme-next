@@ -603,7 +603,7 @@ calendar:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: YangAnLin
   count: true
   lazyload: true
@@ -668,17 +668,17 @@ gitment:
 # Gitalk
 # Demo: https://gitalk.github.io
 gitalk:
-  enable: false
-  github_id:  # Github repo owner
-  repo:  # Repository name to store issues
-  client_id:  # Github Application Client ID
-  client_secret:  # Github Application Client Secret
-  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  enable: true
+  github_id: YangAnLin # Github repo owner
+  repo: blog-xiner # Repository name to store issues
+  client_id: d194f8d40f2bba073124  # Github Application Client ID
+  client_secret: e7d72a3551b9576691736ba7511f435808b5f59f # Github Application Client Secret
+  admin_user: YangAnLin # GitHub repo owner and collaborators, only these guys can initialize github issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en, es-ES, fr, ru, zh-CN, zh-TW
-  language:
+  language: zh-CN
 
 
 # ---------------------------------------------------------------
@@ -803,7 +803,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: Na2nuQ86LQmP9KUEVpnLxzst-gzGzoHsz
   app_key: z3YkhH8nNf3pHCao1tREnXq1
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
@@ -830,7 +830,7 @@ busuanzi_count:
   total_visitors_icon: user
   total_views: true
   total_views_icon: eye
-  post_views: true
+  post_views: false
   post_views_icon: eye
 
 # Tencent analytics ID
