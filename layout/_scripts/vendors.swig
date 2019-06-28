@@ -39,19 +39,21 @@
   <script color='{{ theme.canvas_nest.color }}' opacity='{{ theme.canvas_nest.opacity }}' zIndex='{{ theme.canvas_nest.zIndex }}' count='{{ theme.canvas_nest.count }}' src="{{ canvas_nest_uri }}"></script>
 {% endif %}
 
-{% if theme.three_waves %}
-  {% set js_vendors.three = 'three/three.min.js' %}
-  {% set js_vendors.three_waves = 'three/three-waves.min.js' %}
-{% endif %}
+{% if theme.three.enable and !theme.three.delay %}
+  {% if theme.three.three_waves %}
+    {% set js_vendors.three = 'three/three.min.js' %}
+    {% set js_vendors.three_waves = 'three/three-waves.min.js' %}
+  {% endif %}
 
-{% if theme.canvas_lines %}
-  {% set js_vendors.three = 'three/three.min.js' %}
-  {% set js_vendors.canvas_lines = 'three/canvas_lines.min.js' %}
-{% endif %}
+  {% if theme.three.canvas_lines %}
+    {% set js_vendors.three = 'three/three.min.js' %}
+    {% set js_vendors.canvas_lines = 'three/canvas_lines.min.js' %}
+  {% endif %}
 
-{% if theme.canvas_sphere %}
-  {% set js_vendors.three = 'three/three.min.js' %}
-  {% set js_vendors.canvas_sphere = 'three/canvas_sphere.min.js' %}
+  {% if theme.three.canvas_sphere %}
+    {% set js_vendors.three = 'three/three.min.js' %}
+    {% set js_vendors.canvas_sphere = 'three/canvas_sphere.min.js' %}
+  {% endif %}
 {% endif %}
 
 {% if theme.canvas_ribbon.enable %}
