@@ -167,13 +167,6 @@
                   <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
               {% endif %}
-            {% elif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                </a>
-              </span>
             {% elif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
               {{ comments() }}
                 <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
