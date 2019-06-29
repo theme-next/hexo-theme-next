@@ -186,7 +186,7 @@
 
           {# LeanCloud PageView #}
           {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
-            <span id="{{ url_for(post.path) }}" class="post-meta-item" leancloud_visitors" data-flag-title="{{ post.title }}">
+            <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
