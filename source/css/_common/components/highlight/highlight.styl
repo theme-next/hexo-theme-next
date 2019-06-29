@@ -6,7 +6,7 @@
 // Placeholder: $code-block
 $code-block {
   margin: 20px 0;
-  font-size $code-font-size;
+  font-size: $code-font-size;
   color: $highlight-foreground;
   background: $highlight-background;
   line-height: $line-height-code-block;
@@ -25,6 +25,7 @@ code {
 
 pre {
   @extend $code-block;
+  overflow: auto;
   padding: 10px;
   code {
     padding: 0;
