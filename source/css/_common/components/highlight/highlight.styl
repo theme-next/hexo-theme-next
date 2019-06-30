@@ -5,10 +5,8 @@
 
 // Placeholder: $code-block
 $code-block {
-  overflow: auto;
   margin: 20px 0;
-  padding: 0;
-  font-size $code-font-size;
+  font-size: $code-font-size;
   color: $highlight-foreground;
   background: $highlight-background;
   line-height: $line-height-code-block;
@@ -27,6 +25,7 @@ code {
 
 pre {
   @extend $code-block;
+  overflow: auto;
   padding: 10px;
   code {
     padding: 0;
@@ -64,7 +63,6 @@ pre {
     font-size: 1em;
     color: $highlight-foreground;
     line-height: 1em;
-    margin-bottom: 1em;
     margin: 0em;
     padding: 0.5em;
     background: $code-background;
@@ -89,7 +87,6 @@ pre {
   .code pre {
     width: 100%
     padding-left: 10px
-    padding-right: 10px
     background-color: $highlight-background
   }
 
