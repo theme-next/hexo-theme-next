@@ -739,6 +739,13 @@ needmoreshare2:
 #  tracking_id:
 #  localhost_ignored: true
 
+# Google AdSense
+## google_ad_client: # your client
+#google_adsense:
+#  enable: true
+#  google_ad_client_id: 
+#  enable_page_level_ads: true
+
 # CNZZ count
 #cnzz_siteid:
 

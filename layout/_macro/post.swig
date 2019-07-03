@@ -353,6 +353,15 @@
         </div>
       {% endif %}
 
+      <!--google_adsense-->
+      {% if theme.google_adsense.enable %}
+        <div class="post-widgets">
+          <i class="fa fa-google"></i> AdSense
+          {% include '../_third-party/analytics/google_adsense.swig' %}
+        </div>
+      {% endif %}
+      <!--/google_adsense-->
+
       {% if not is_index %}
       {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or (theme.baidushare and theme.baidushare.type === "button") %}
         <div class="post-widgets">

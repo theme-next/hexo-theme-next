@@ -197,6 +197,15 @@
       <!--/noindex-->
       {% endif %}
 
+      <!--google_adsense-->
+        {% if theme.google_adsense.enable %}
+          <div class="links-of-blogroll-title">
+            <i class="fa fa-google"></i> AdSense
+            {% include '../_third-party/analytics/google_adsense.swig' %}
+          </div>
+        {% endif %}
+      <!--/google_adsense-->
+
       {% if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
