@@ -33,7 +33,7 @@ class ViewInject {
 }
 
 // Init injects
-function initInject () {
+function initInject() {
   let injects = {};
   stylusTypes.forEach((item) => {
     injects[item] = new StylusInject();
@@ -45,7 +45,6 @@ function initInject () {
 }
 
 module.exports =  function(hexo) {
-
   // Exec theme_inject filter 
   let injects = initInject();
   hexo.execFilterSync('theme_inject', injects);
@@ -53,7 +52,7 @@ module.exports =  function(hexo) {
 
   // Inject stylus, and get relative path base on hexo dir.
   stylusTypes.forEach((type) => {
-    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir,item));
+    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir, item));
   });
 
   // Inject views
@@ -73,5 +72,4 @@ module.exports =  function(hexo) {
       };
     });
   });
-
 };
