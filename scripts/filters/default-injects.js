@@ -14,5 +14,14 @@ hexo.extend.filter.register('theme_inject', (injects) => {
     if (filePath.sidebar) {
       injects.sidebar.file('custom', filePath.sidebar);
     }
+    if (filePath.variables) {
+      injects.variable.push(filePath.variables);
+    }
+    if (filePath.mixins) {
+      injects.mixin.push(filePath.mixins);
+    }
+    if (filePath.styles) {
+      injects.style.push(filePath.styles);
+    }
   }
-});
+}, 99);
