@@ -354,7 +354,7 @@
       {% endif %}
 
       <!--google_adsense-->
-      {% if theme.google_adsense.enable %}
+      {% if theme.google_adsense.enable and not is_index %}
         <div class="post-widgets">
           <i class="fa fa-google"></i> AdSense
           {% include '../_third-party/analytics/google_adsense.swig' %}
