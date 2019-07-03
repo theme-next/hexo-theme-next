@@ -1136,10 +1136,10 @@ vendors:
   # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
   bookmark:
 
-  # Internal version: 1.1
+  # Internal version: 1.2.0
   # See: https://github.com/theme-next/theme-next-reading-progress
   # Example:
-  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
+  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.2.0/reading_progress.min.js
   reading_progress:
 
   # valine
