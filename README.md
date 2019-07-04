@@ -97,8 +97,8 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 ## Third party applications
 
 * :pencil2: <a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>: Markdown Editor for Hexo blog.
-* :triangular_flag_on_post: <a href="https://github.com/stevenjoezhang/hexo-generator-indexed" target="_blank">`hexo-generator-indexed`</a>: Index generator plugin with more user-defined options.
-* :tada: <a href="https://github.com/theme-next/hexo-filter-emoji" target="_blank">`hexo-filter-emoji`</a>: GitHub emojis for Hexo!
+* :triangular_flag_on_post: <a href="https://github.com/stevenjoezhang/hexo-generator-indexed" target="_blank">hexo-generator-indexed</a>: Index generator plugin with more user-defined options.
+* :tada: <a href="https://github.com/theme-next/hexo-filter-emoji" target="_blank">hexo-filter-emoji</a>: GitHub emojis for Hexo!
 
 ## Thanks
 
