@@ -81,13 +81,6 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 **If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].**
 
-## Known Bugs
-
-For those who also encounter **«[Error: Cannot find module 'hexo-util'](https://github.com/iissnan/hexo-theme-next/issues/1490)»**, please check your NPM version.
-
-* `> 3`: Still not work? Please remove `node_modules` directory and reinstall using `npm install`.
-* `< 3`: Please add `hexo-util` explicitly via `npm install --save-dev hexo-util` to you site package deps.
-
 ## Contributing
 
 Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
@@ -103,7 +96,9 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 ## Third party applications
 
-* :triangular_flag_on_post: <a title="Hexo Markdown Editor" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
+* :pencil2: <a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>: Markdown Editor for Hexo blog.
+* :triangular_flag_on_post: <a href="https://github.com/stevenjoezhang/hexo-generator-indexed" target="_blank">`hexo-generator-indexed`</a>: Index generator plugin with more user-defined options.
+* :tada: <a href="https://github.com/theme-next/hexo-filter-emoji" target="_blank">`hexo-filter-emoji`</a>: GitHub emojis for Hexo!
 
 ## Thanks
 
