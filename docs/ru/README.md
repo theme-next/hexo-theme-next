@@ -64,13 +64,6 @@ $ git pull
 
 **Если нужно обновиться с версии v5.1.x на v6.0.x, читаем [здесь][docs-update-5-1-x-url].**
 
-## Известные баги
-
-Для тех, кто столкнулся с ошибкой **«[Error: Cannot find module 'hexo-util'](https://github.com/iissnan/hexo-theme-next/issues/1490)»**, следует проверить версию NPM.
-
-* `> 3`: Всё равно не работает? Удалите директорию `node_modules` и переустановите с помощью `npm install`.
-* `< 3`: Добавьте `hexo-util` принудительно командой `npm install --save-dev hexo-util` к основным пакетам с Hexo.
-
 ## Содействие
 
 Приветсвуется любое содействие, не стесняйтесь сообщать «Баги», брать «Форки» и вливать «Пулы».
@@ -83,10 +76,6 @@ $ git pull
 * Голосовать за [популярные запросы возможностей][feat-req-vote-url].
 * Вступить в наши [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] чаты.
 * Подписаться на новости через [канал Telegram'а][t-news-url].
-
-## Сторонние приложения
-
-* :triangular_flag_on_post: <a title="Маркдаун Редактор под Hexo" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 ## Благодарности
 

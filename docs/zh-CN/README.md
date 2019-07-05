@@ -81,13 +81,6 @@ $ git pull
 
 **如果你想要从 v5.1.x 更新到 v6.0.x，阅读[这篇文档][docs-update-5-1-x-url]。**
 
-## 已知问题
-
-对于仍然遇到 **«[Error: Cannot find module 'hexo-util'](https://github.com/iissnan/hexo-theme-next/issues/1490)»** 这一错误的用户，请检查你的 NPM 版本。
-
-* `> 3`：仍然出现错误吗？请删除 `node_modules` 目录并通过 `npm install` 重新安装。
-* `< 3`：请通过 `npm install --save-dev hexo-util` 将 `hexo-util` 依赖手动添加至你的站点依赖包中。
-
 ## 贡献你的代码
 
 我们欢迎你贡献出你的一份力量，你可以随时提交 issue 或 fork 本仓库。静候你的 pull request。
@@ -100,10 +93,6 @@ $ git pull
 * 为 [popular feature requests][feat-req-vote-url] 投票。
 * 加入我们的 [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] 聊天。
 * 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
-
-## 第三方应用程序
-
-* :triangular_flag_on_post: <a title="Hexo Markdown 编辑器" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 ## 鸣谢
 
