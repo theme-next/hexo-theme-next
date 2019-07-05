@@ -1,8 +1,26 @@
 .posts-expand .post-title {
+  word-wrap();
   text-align: center;
-  word-break: break-word;
-  font-weight: $posts-expand-title-font-weight
+  font-weight: $posts-expand-title-font-weight;
+
+  if hexo-config('post_edit.enable') {
+    .post-edit-link {
+      color: #bbb;
+      display: inline-block;
+      float: right;
+      border-bottom: none;
+      the-transition-ease-in();
+      margin-left: -1.2em;
+      +mobile-small() {
+        margin-left: initial;
+      }
+      &:hover {
+        color: black;
+      }
+    }
+  }
 }
+
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
@@ -29,5 +47,8 @@
     transform: scaleX(1);
   }
 
-  .fa { font-size: 16px; }
+  .fa {
+    font-size: 20px;
+    margin-left: 5px;
+  }
 }

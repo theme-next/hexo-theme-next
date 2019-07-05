@@ -11,12 +11,12 @@
   margin: 0 10px;
   list-style: none;
 
-  @media screen and (max-width: 767px) {
+  +mobile() {
     margin-top: 10px;
   }
 
-  a {
-    display: block;
+  a, span.exturl {
+    show();
     font-size: 13px;
     line-height: inherit;
     border-bottom: 1px solid $menu-link-border;

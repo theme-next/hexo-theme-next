@@ -1,87 +1,97 @@
 ---
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
-  schedule: Schedule
-author: Author
+  archive: Архів
+  category: Категорія
+  tag: Тег
+  schedule: Календар
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
-  sitemap: Sitemap
-  commonweal: Commonweal 404
+  home: Головна
+  archives: Архів
+  categories: Категорії
+  tags: Теги
+  about: Про сайт
+  search: Пошук
+  schedule: Календар
+  sitemap: Карта сайту
+  commonweal: Сторінка 404
 sidebar:
-  overview: Overview
-  toc: Table of Contents
+  overview: Огляд
+  toc: Зміст
 post:
-  created: Post created
-  modified: Post modified
-  sticky: Sticky
-  posted: Posted on
-  in: In
+  posted: Опубліковано
+  edited: Змінено
+  created: Створено
+  modified: Змінено
+  edit: Редагувати запис
+  in: в категорії
   more: more
-  read_more: Read more
-  untitled: Untitled
-  toc_empty: This post does not have a Table of Contents
-  views: Views
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
-  related_posts: Related Posts
+  read_more: Читати повністю
+  untitled: Без імені
+  sticky: Посилання
+  toc_empty: Цей запис без змісту
+  views: Переглядів
+  comments_count: Коментарів
+  related_posts: Схожі записи
+  copy_button: Скопіювати
+  copy_success: Скопійовано!
+  copy_failure: Помилка копіювання!
   copyright:
-    author: Post author
-    link: Post link
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    author: Автор запису
+    link: Посилання на запис
+    license_title: Інформація про авторські права
+    license_content: "Всі записи на цьому сайті захищені ліцензією %s, якщо не вказано додатково."
 page:
-  totally: Totally
-  tags: tags
+  totally: Всього
+  tags: теги
 footer:
-  powered: "Powered by %s"
-  theme: Theme
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "Генератор — %s"
+  theme: Тема
+  total_views: Всього переглядів
+  total_visitors: Всього відвідувачів
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: Немає тегів.
+    one: 1 тег.
+    other: "%d тегів всього."
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: Немає категорій.
+    one: 1 категорія.
+    other: "%d категорій всього."
   archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
+    zero: Немає записів.
+    one: 1 запис.
+    other: "%d записів всього."
 state:
-  posts: posts
-  pages: pages
-  tags: tags
-  categories: categories
+  posts: Архів
+  pages: Сторінки
+  tags: Теги
+  categories: Категорії
 search:
-  placeholder: Searching...
+  placeholder: Пошук...
 cheers:
-  um: Um..
-  ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  um: Ем..
+  ok: ОК
+  nice: Не погано
+  good: Добре
+  great: Чудово
+  excellent: Прекрасно
+keep_on: Продовжую писати.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
-  donate: Donate
+  donate: Донат
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+accessibility:
+  nav_toggle: Показати/приховати меню
+  prev_page: Попередня сторінка
+  next_page: Наступна сторінка
+symbols_count_time:
+  count: К-сть символів в статті
+  count_total: Загальна к-сть символів
+  time: Час читання
+  time_total: Загальний час читання
+  time_minutes: хв.

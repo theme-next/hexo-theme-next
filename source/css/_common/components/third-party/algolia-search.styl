@@ -1,6 +1,9 @@
 // fix bug using algolia search's CDN
-svg path {
- display: none;
+.ais-search-box--magnifier svg {
+  display: none !important;
+}
+.ais-search-box--reset svg {
+  display: none !important;
 }
 
 .algolia-pop-overlay
@@ -12,7 +15,7 @@ svg path {
   z-index: 2080
   background-color: rgba(0, 0, 0, 0.3)
   +mobile()
-    display: none;
+    hide();
 
 .algolia-popup
   overflow: hidden
@@ -114,9 +117,10 @@ svg path {
 
 .algolia-pagination
   .pagination
-    margin-top: 40px
+    margin: 40px 0px
     border-top: none
     padding: 0
+    opacity: 1
   .pagination-item
     display: inline-block
   .page-number
@@ -129,4 +133,3 @@ svg path {
 
   .disabled-item
     visibility: hidden
-

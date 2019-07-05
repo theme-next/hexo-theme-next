@@ -1,21 +1,15 @@
 /**
- * include.js | global hexo script.
- *
- * Usage:
- *
- * {% include_raw '_data/path/to/file.html' %}
- *
- * Path is relative to your site source directory.
+ * include-raw.js | https://theme-next.org/docs/tag-plugins/
  */
+
+/* global hexo */
 
 'use strict';
 
 var pathFn = require('path');
-/*jshint camelcase: false */
 var fs = require('hexo-fs');
-/*jshint camelcase: true */
 
-function include_raw (args) {
+function includeRaw(args) {
   var path = pathFn.join(hexo.source_dir, args[0]);
 
   return fs.exists(path).then(function(exist) {
@@ -31,6 +25,6 @@ function include_raw (args) {
       return contents;
     });
   });
-};
+}
 
-hexo.extend.tag.register('include_raw', include_raw, {ends: false, async: true});
+hexo.extend.tag.register('include_raw', includeRaw, {ends: false, async: true});

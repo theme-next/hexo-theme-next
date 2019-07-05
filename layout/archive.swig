@@ -2,7 +2,7 @@
 {% import '_macro/post-collapse.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-{% block title %}{{ __('title.archive') }} | {{ config.title }}{% endblock %}
+{% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
 {% block page_class %}page-archive{% endblock %}
 
@@ -15,7 +15,7 @@
     <div id="posts" class="posts-collapse">
       <span class="archive-move-on"></span>
 
-      {% if theme.cheers_enabled %}
+      {% if theme.cheers %}
       <span class="archive-page-counter">
         {% set cheers %}
         {% set posts_length = site.posts.length %}

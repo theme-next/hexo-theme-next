@@ -1,11 +1,11 @@
 // TODO: Refactor.
 
-@media (max-width: 767px) {
++mobile() {
   .posts-collapse {
     margin: 0 20px;
 
     .post-title, .post-meta {
-      display: block;
+      show();
       width: auto;
       text-align: left;
     }
@@ -15,7 +15,7 @@
 .posts-collapse {
   position: relative;
   z-index: $zindex-1;
-  
+
   &::after {
     content: " ";
     position: absolute;
@@ -103,7 +103,7 @@
       opacity: 0.6;
     }
 
-    a {
+    a, span.exturl {
       color: $grey-dim;
       border-bottom: none;
     }

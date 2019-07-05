@@ -1,14 +1,21 @@
-table {
+.table-container {
   margin: 20px 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.highlight .table-container {
+  margin: 0px;
+}
+
+table {
   width: $table-width;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid $table-border-color;
   font-size: $table-font-size;
-  table-layout: fixed;
-  word-wrap: break-all;
 }
-table>tbody>tr {
+
+table > tbody > tr {
   &:nth-of-type(odd) { background-color: $table-row-odd-bg-color; }
   &:hover { background-color: $table-row-hover-bg-color; }
 }
@@ -21,8 +28,8 @@ caption, th, td {
 }
 
 th, td {
+  border: 1px solid $table-border-color;
   border-bottom: 3px solid $table-cell-border-bottom-color;
-  border-right: 1px solid $table-cell-border-right-color;
 }
 
 th {
@@ -30,4 +37,6 @@ th {
   font-weight: $table-th-font-weight;
 }
 
-td { border-bottom-width: 1px; }
+td {
+  border-bottom-width: 1px;
+}

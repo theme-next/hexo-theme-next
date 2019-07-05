@@ -7,11 +7,8 @@
   color: white;
   background: $black-deep;
 
-  +tablet() {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
-  }
-  +mobile() {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  +tablet-mobile() {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -19,7 +16,9 @@
   padding: 0;
   background: none;
 
-  &:hover { color: white; }
+  &:hover {
+   color: white;
+  }
 }
 
 .site-subtitle {
@@ -27,4 +26,13 @@
   font-weight: initial;
 }
 
-.site-search form { display: none; }
+.custom-logo-image {
+  margin-top: 20px;
+  +tablet-mobile() {
+    hide();
+  }
+}
+
+.site-search form {
+  hide();
+}
