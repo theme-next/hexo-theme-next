@@ -1,10 +1,27 @@
 .site-author-image {
-  display: block;
+  show();
   margin: 0 auto;
   padding: $site-author-image-padding;
   max-width: $site-author-image-width;
   height: $site-author-image-height;
   border: $site-author-image-border-width solid $site-author-image-border-color;
+  opacity: hexo-config('avatar.opacity') is a 'unit' ? hexo-config('avatar.opacity') : 1;
+}
+
+if hexo-config('avatar.rounded') {
+  .site-author-image {
+    border-radius: 100%;
+  }
+}
+
+if hexo-config('avatar.rotated') {
+  .site-author-image {
+    transition: transform 1.0s ease-out;
+  }
+
+  .site-author-image:hover {
+    transform: rotateZ(360deg);
+  }
 }
 
 .site-author-name {

@@ -2,56 +2,57 @@
 title:
   archive: Archiv
   category: Kategorie
-  tag: Tag
-  schedule: Schedule
-author: Author
+  tag: Schlagwort
+  schedule: Zeitplan
 menu:
   home: Startseite
   archives: Archiv
   categories: Kategorien
-  tags: Tags
+  tags: Schlagwörter
   about: Über
   search: Suche
-  schedule: Schedule
+  schedule: Zeitplan
   sitemap: Sitemap
   commonweal: Commonweal 404
 sidebar:
   overview: Übersicht
   toc: Inhaltsverzeichnis
 post:
-  created: Post created
-  modified: Updated at
-  sticky: Sticky
   posted: Veröffentlicht am
+  edited: Bearbeitet am
+  created: Erstellt
+  modified: Geändert am
+  edit: Diesen Beitrag bearbeiten
   in: in
-  more: more
+  more: mehr
   read_more: Weiterlesen
   untitled: Unbenannt
+  sticky: Angepinnt
   toc_empty: Dieser Artikel hat kein Inhaltsverzeichnis
-  views: Views
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
-  related_posts: Related Posts
+  views: Aufrufe
+  comments_count: Kommentare
+  related_posts: Ähnliche Beiträge
+  copy_button: Kopieren
+  copy_success: Kopiert
+  copy_failure: Kopieren fehlgeschlagen
   copyright:
-    author: Post author
-    link: Post link
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    author: Beitragsautor
+    link: Beitragslink
+    license_title: Urheberrechtshinweis
+    license_content: "Alle Artikel in diesem Blog sind unter %s lizenziert, außer es wird anders angegeben."
 page:
   totally: Gesamt
-  tags: tags
+  tags: schlagwörter
 footer:
   powered: "Erstellt mit  %s"
-  theme: Theme
-  total_views: Total Views
-  total_visitors: Total Visitors
+  theme: Design
+  total_views: Alle Aufrufe
+  total_visitors: Alle Besucher
 counter:
   tag_cloud:
-    zero: Keine Tags
-    one: Insgesamt ein Tag
-    other: "Insgesamt %d Tags"
+    zero: Keine Schlagworte
+    one: Insgesamt ein Schlagwort
+    other: "Insgesamt %d Schlagwörter"
   categories:
     zero: Keine Kategorien
     one: Insgesamt eine Kategorie
@@ -63,10 +64,10 @@ counter:
 state:
   posts: Artikel
   pages: Seiten
-  tags: Tags
+  tags: schlagwörter
   categories: Kategorien
 search:
-  placeholder: Searching...
+  placeholder: Suche...
 cheers:
   um: Öhm..
   ok: OK
@@ -78,10 +79,19 @@ keep_on: Bleib dran.
 symbol:
   comma: ". "
   period: ", "
-  colon: ":"
+  colon: ": "
 reward:
-  donate: Donate
-  wechatpay: WeChat Pay
+  donate: Spenden
+  wechatpay: WeChat Bezahlung
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+accessibility:
+  nav_toggle: Navigationsleiste an/ausschalten
+  prev_page: Vorherige Seite
+  next_page: Nächste Seite
+symbols_count_time:
+  count: Symbole im Artikel gezählt
+  count_total: Insgesamt gezählte Symbole
+  time: Lesezeit
+  time_total: Insgesamte Lesezeit
+  time_minutes: minuten.

@@ -34,6 +34,12 @@ mobile() {
   }
 }
 
+tablet-mobile() {
+  @media (max-width: 991px) {
+    {block}
+  }
+}
+
 tablet() {
   @media (min-width: 768px) and (max-width: 991px) {
     {block}
@@ -47,6 +53,12 @@ desktop() {
 }
 
 desktop-large() {
+  @media (min-width: 1200px) {
+    {block}
+  }
+}
+
+desktop-largest() {
   @media (min-width: 1600px) {
     {block}
   }
@@ -56,25 +68,12 @@ circle() {
   border-radius: 50%;
 }
 
-transform() {
-  -webkit-transform: arguments
-  -moz-transform: arguments
-  -ms-transform: arguments
-  -o-transform: arguments
-  transform: arguments
-}
-
 hide() {
-  display: none !important;
+  display: none;
 }
 
 show() {
-  display: block !important;
-}
-
-fixbutton() {
-  right: 20px;
-  opacity: 0.8;
+  display: block;
 }
 
 random-color($min, $max) {
@@ -89,4 +88,18 @@ clearfix() {
     display: table;
   }
   &:after { clear: both; }
+}
+
+word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+disable-touch-hover() {
+  // To prevent hover on external links with touch devices after click.
+  @media (hover:none) {
+    &:hover {
+      background: none;
+    }
+  }
 }

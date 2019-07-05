@@ -1,87 +1,97 @@
 ---
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
-  schedule: Schedule
-author: Author
+  archive: Archivo
+  category: Categoría
+  tag: Etiqueta
+  schedule: Calendario
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
-  sitemap: Sitemap
+  home: Inicio
+  archives: Archivo
+  categories: Categorías
+  tags: Etiquetas
+  about: Sobre mi
+  search: Buscar
+  schedule: Calendario
+  sitemap: Mapa del sitio
   commonweal: Commonweal 404
 sidebar:
-  overview: Overview
-  toc: Table of Contents
+  overview: Inicio
+  toc: Tabla de contenidos
 post:
-  created: Post created
-  modified: Post modified
+  posted: Publicado el
+  edited: Editado el
+  created: Creado por
+  modified: Modificado por
+  edit: Editar esta entrada
+  in: En
+  more: más
+  read_more: Leer más
+  untitled: Sin título
   sticky: Sticky
-  posted: Posted on
-  in: In
-  more: more
-  read_more: Read more
-  untitled: Untitled
-  toc_empty: This post does not have a Table of Contents
-  views: Views
-  symbols_count: Symbols count in article
-  symbols_time: Reading time
-  total_symbols: Symbols count total
-  total_time: Reading time total
-  related_posts: Related Posts
+  toc_empty: Esta entrada no tiene una tabla de contenidos
+  views: Visitas
+  comments_count: Comentarios
+  related_posts: Entradas relacionadas
+  copy_button: Copiar
+  copy_success: Copiado
+  copy_failure: Copiar falló
   copyright:
-    author: Post author
-    link: Post link
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    author: Autor de la entrada
+    link: Enlace a la entrada
+    license_title: Copyright
+    license_content: "Todos los artículos de este blog están licenciados bajo %s a no ser que se especifique una licencia adicional."
 page:
-  totally: Totally
-  tags: tags
+  totally: Totalidad
+  tags: etiquetas
 footer:
-  powered: "Powered by %s"
-  theme: Theme
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "Creado mediante %s"
+  theme: Tema
+  total_views: Visitas totales
+  total_visitors: Visitantes totales
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: Sin etiquetas
+    one: 1 etiqueta en total
+    other: "%d etiquetas en total"
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: Sin categorías
+    one: 1 categoría en total
+    other: "%d categorías en total"
   archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
+    zero: Sin entradas.
+    one: 1 entrada.
+    other: "%d entradas en total."
 state:
-  posts: posts
-  pages: pages
+  posts: entradas
+  pages: páginas
   tags: tags
-  categories: categories
+  categories: categorías
 search:
-  placeholder: Searching...
+  placeholder: Buscando...
 cheers:
   um: Um..
-  ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  ok: Bueno
+  nice: Guai
+  good: Bien
+  great: Genial
+  excellent: Excelente
+keep_on: Sigue posteando.
 symbol:
   comma: ", "
   period: ". "
-  colon: ":"
+  colon: ": "
 reward:
-  donate: Donate
+  donate: Donar
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+accessibility:
+  nav_toggle: Cambiar a barra de navegación
+  prev_page: Página anterior
+  next_page: Página siguiente
+symbols_count_time:
+  count: Cantidad de caracteres en el articulo
+  count_total: Cantidad total de caracteres
+  time: Tiempo de lectura
+  time_total: Tiempo total de lectura
+  time_minutes: minutos.

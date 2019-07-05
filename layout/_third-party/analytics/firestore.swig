@@ -64,11 +64,11 @@
       var db = firebase.firestore()
       var articles = db.collection('{{ theme.firestore.collection }}')
 
-      //https://hexo.io/zh-tw/docs/variables.html
+      //https://hexo.io/docs/variables.html
       var isPost = '{{ page.title }}'.length > 0
-      var isArchive = '{{ archive }}' === 'true'
-      var isCategory = '{{ category }}'.length > 0
-      var isTag = '{{ tag }}'.length > 0
+      var isArchive = '{{ page.archive }}' === 'true'
+      var isCategory = '{{ page.category }}'.length > 0
+      var isTag = '{{ page.tag }}'.length > 0
 
       if (isPost) { //is article page
         var title = '{{ page.title }}'

@@ -1,11 +1,3 @@
-{% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords }}" />
-{% elif page.tags and page.tags.length %}
-  <meta name="keywords" content="{% for tag in page.tags %}{{ tag.name }},{% endfor %}" />
-{% elif theme.keywords %}
-  <meta name="keywords" content="{{ theme.keywords }}" />
-{% endif %}
-
 {{
   open_graph({
     twitter_id: theme.twitter,
@@ -19,16 +11,17 @@
   {% set theme.rss = config.feed.path %}
 {% endif %}
 {% if theme.rss %}
-  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ config.title }}" type="application/atom+xml" />
+  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml"/>
 {% endif %}
 
-{# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}
 {% if theme.canonical %}
-  <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>
+  {% set without_index = url.replace('index.html', '') %}
+  {% set without_html = without_index.replace('.html', '') %}
+  <link rel="canonical" href="{{ without_html }}"/>
 {% endif %}
 
 {# Exports some front-matter variables to Front-End #}
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: {{ page.sidebar | json_encode }},
   };
