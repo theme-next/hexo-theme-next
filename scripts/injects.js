@@ -57,7 +57,7 @@ module.exports =  function(hexo) {
 
   // Inject views
   viewTypes.forEach((type) => {
-    hexo.theme.config.injects[type] = {};
+    hexo.theme.config.injects[type] = [];
     injects[type].raws.forEach((injectObj) => {
       // If there is no suffix, will add `.swig`
       if (injectObj.name.indexOf('.') < 0) {
@@ -65,11 +65,11 @@ module.exports =  function(hexo) {
       }
       let viewName = `inject/${type}/${injectObj.name}`;
       hexo.theme.setView(viewName, injectObj.raw);
-      hexo.theme.config.injects[type][injectObj.name] = {
+      hexo.theme.config.injects[type].push({
         layout: viewName,
         locals: injectObj.args[0],
         options: injectObj.args[1]
-      };
+      });
     });
   });
 };
