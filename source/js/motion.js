@@ -51,25 +51,51 @@ $(document).ready(function() {
     this.el.velocity('stop').velocity(this.status[status]);
   };
 
-  var sidebarToggleLine1st = new SidebarToggleLine({
+  var isRight = ((NexT.utils.isMist() || NexT.utils.isMuse()) && (CONFIG.sidebar.position != 'left'));
+
+  var sidebarToggleLine1st = isRight
+  ? new SidebarToggleLine({
     el    : '.sidebar-toggle-line-first',
     status: {
       arrow: {width: '50%', rotateZ: '-45deg', top: '2px'},
       close: {width: '100%', rotateZ: '-45deg', top: '5px'}
     }
+  })
+  : new SidebarToggleLine({
+    el: '.sidebar-toggle-line-first',
+    status: {
+      arrow: {width: '50%', rotateZ: '45deg', top: '2px', left: '50%'},
+      close: {width: '100%', rotateZ: '-45deg', top: '5px', left: '0px'}
+    }
   });
-  var sidebarToggleLine2nd = new SidebarToggleLine({
+  var sidebarToggleLine2nd = isRight
+  ? new SidebarToggleLine({
     el    : '.sidebar-toggle-line-middle',
     status: {
       arrow: {width: '90%'},
       close: {opacity: 0}
     }
+  })
+  : new SidebarToggleLine({
+    el     : '.sidebar-toggle-line-middle',
+    status : {
+      arrow: {width: '90%', left: '2px'},
+      close: {opacity: 0, left: '0px'}
+    }
   });
-  var sidebarToggleLine3rd = new SidebarToggleLine({
+  var sidebarToggleLine3rd = isRight
+  ? new SidebarToggleLine({
     el    : '.sidebar-toggle-line-last',
     status: {
       arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
       close: {width: '100%', rotateZ: '45deg', top: '-5px'}
+    }
+  })
+  : new SidebarToggleLine({
+    el    : '.sidebar-toggle-line-last',
+    status: {
+      arrow: {width: '50%', rotateZ: '-45deg', top: '-2px', left: '50%'},
+      close: {width: '100%', rotateZ: '45deg', top: '-5px', left: '0px'}
     }
   });
 
@@ -98,7 +124,7 @@ $(document).ready(function() {
       $(document)
         .on('sidebar.isShowing', function() {
           NexT.utils.isDesktop() && $('body').velocity('stop').velocity(
-            {paddingRight: SIDEBAR_WIDTH},
+            isRight ? {paddingRight: SIDEBAR_WIDTH} : {paddingLeft: SIDEBAR_WIDTH},
             SIDEBAR_DISPLAY_DURATION
           );
         })
@@ -169,7 +195,7 @@ $(document).ready(function() {
       this.sidebarEl.trigger('sidebar.isShowing');
     },
     hideSidebar: function() {
-      NexT.utils.isDesktop() && $('body').velocity('stop').velocity({paddingRight: 0});
+      NexT.utils.isDesktop() && $('body').velocity('stop').velocity(isRight ? {paddingRight: 0} : {paddingLeft: 0});
       this.sidebarEl.find('.motion-element').velocity('stop').css('display', 'none');
       this.sidebarEl.velocity('stop').velocity({width: 0}, {display: 'none'});
 

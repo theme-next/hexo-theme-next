@@ -248,7 +248,7 @@ toc:
   max_depth: 6
 
 sidebar:
-  # Sidebar Position, available values: left | right (only for Pisces | Gemini).
+  # Sidebar Position, available values: left | right.
   position: left
   #position: right
 
