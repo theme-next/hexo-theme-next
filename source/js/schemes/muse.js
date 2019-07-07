@@ -166,7 +166,7 @@ $(document).ready(function() {
         duration: SIDEBAR_DISPLAY_DURATION,
         begin   : function() {
           $('.sidebar .motion-element').not('.site-state').velocity(
-            'transition.slideRightIn', {
+            isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
               stagger : 50,
               drag    : true,
               complete: function() {
@@ -175,7 +175,7 @@ $(document).ready(function() {
             }
           );
           $('.site-state').velocity(
-            'transition.slideRightIn', {
+            isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
               stagger : 50,
               drag    : true,
               display : 'flex'
