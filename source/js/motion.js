@@ -51,53 +51,53 @@ $(document).ready(function() {
     this.el.velocity('stop').velocity(this.status[status]);
   };
 
-  var isRight = ((NexT.utils.isMist() || NexT.utils.isMuse()) && (CONFIG.sidebar.position != 'left'));
+  var isRight = ((NexT.utils.isMist() || NexT.utils.isMuse()) && (CONFIG.sidebar.position !== 'left'));
 
   var sidebarToggleLine1st = isRight
-  ? new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-first',
-    status: {
-      arrow: {width: '50%', rotateZ: '-45deg', top: '2px'},
-      close: {width: '100%', rotateZ: '-45deg', top: '5px'}
-    }
-  })
-  : new SidebarToggleLine({
-    el: '.sidebar-toggle-line-first',
-    status: {
-      arrow: {width: '50%', rotateZ: '45deg', top: '2px', left: '50%'},
-      close: {width: '100%', rotateZ: '-45deg', top: '5px', left: '0px'}
-    }
-  });
+    ? new SidebarToggleLine({
+      el    : '.sidebar-toggle-line-first',
+      status: {
+        arrow: {width: '50%', rotateZ: '-45deg', top: '2px'},
+        close: {width: '100%', rotateZ: '-45deg', top: '5px'}
+      }
+    })
+    : new SidebarToggleLine({
+      el: '.sidebar-toggle-line-first',
+      status: {
+        arrow: {width: '50%', rotateZ: '45deg', top: '2px', left: '50%'},
+        close: {width: '100%', rotateZ: '-45deg', top: '5px', left: '0px'}
+      }
+    });
   var sidebarToggleLine2nd = isRight
-  ? new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-middle',
-    status: {
-      arrow: {width: '90%'},
-      close: {opacity: 0}
-    }
-  })
-  : new SidebarToggleLine({
-    el     : '.sidebar-toggle-line-middle',
-    status : {
-      arrow: {width: '90%', left: '2px'},
-      close: {opacity: 0, left: '0px'}
-    }
-  });
+    ? new SidebarToggleLine({
+      el    : '.sidebar-toggle-line-middle',
+      status: {
+        arrow: {width: '90%'},
+        close: {opacity: 0}
+      }
+    })
+    : new SidebarToggleLine({
+      el     : '.sidebar-toggle-line-middle',
+      status : {
+        arrow: {width: '90%', left: '2px'},
+        close: {opacity: 0, left: '0px'}
+      }
+    });
   var sidebarToggleLine3rd = isRight
-  ? new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-last',
-    status: {
-      arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
-      close: {width: '100%', rotateZ: '45deg', top: '-5px'}
-    }
-  })
-  : new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-last',
-    status: {
-      arrow: {width: '50%', rotateZ: '-45deg', top: '-2px', left: '50%'},
-      close: {width: '100%', rotateZ: '45deg', top: '-5px', left: '0px'}
-    }
-  });
+    ? new SidebarToggleLine({
+      el    : '.sidebar-toggle-line-last',
+      status: {
+        arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
+        close: {width: '100%', rotateZ: '45deg', top: '-5px'}
+      }
+    })
+    : new SidebarToggleLine({
+      el    : '.sidebar-toggle-line-last',
+      status: {
+        arrow: {width: '50%', rotateZ: '-45deg', top: '-2px', left: '50%'},
+        close: {width: '100%', rotateZ: '45deg', top: '-5px', left: '0px'}
+      }
+    });
 
   sidebarToggleLines.push(sidebarToggleLine1st);
   sidebarToggleLines.push(sidebarToggleLine2nd);
