@@ -13,7 +13,11 @@
         {% set translation = name %}
       {% endif %}
       <div style="display: inline-block">
-        <img src="{{ url_for(image) }}" alt="{{ author }} {{ translation }}"/>
+        <picture>
+          <source srcset="{{ url_for(image) }}?imageView2/format/webp" type="image/webp">
+          <source srcset="{{ url_for(image) }}?imageView2/format/png" type="image/png">
+          <img src="{{ url_for(image) }}" alt="{{ author.text }} {{ translation }}"/>
+        </picture>
         <p>{{ translation }}</p>
       </div>
     {% endfor %}
