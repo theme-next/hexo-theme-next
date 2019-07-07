@@ -3,8 +3,12 @@ if (hexo-config('sidebar.position') == 'left') {
     right: auto;
     left: 0;
   }
-  .sidebar-toggle {
+  .sidebar-toggle, .back-to-top {
     right: auto;
-    left: 50px;
+    left: $b2t-position-right;
+
+    +tablet-mobile() {
+      left: $b2t-position-right-mobile;
+    }
   }
 }
