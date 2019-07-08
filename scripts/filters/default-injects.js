@@ -11,7 +11,7 @@ hexo.extend.filter.register('theme_inject', (injects) => {
     if (filePath[key]) {
       injects[key].file('custom', filePath[key]);
     }
-  })
+  });
 
   points.styles.forEach((key) => {
     if (filePath[key]) {
@@ -22,6 +22,6 @@ hexo.extend.filter.register('theme_inject', (injects) => {
     if (filePath[oldKey]) {
       injects[key].push(filePath[oldKey]);
     }
-  })
+  });
 
 }, 99);

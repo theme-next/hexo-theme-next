@@ -2,5 +2,5 @@
 
 module.exports = {
   views: ['head', 'header', 'bodyEnd', 'sidebar'],
-  styles: ['variable', 'mixin', 'style'],
-}
+  styles: ['variable', 'mixin', 'style']
+};
