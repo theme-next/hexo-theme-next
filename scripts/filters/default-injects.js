@@ -24,4 +24,11 @@ hexo.extend.filter.register('theme_inject', (injects) => {
     }
   });
 
+  // Compatible, but please use custom_file_path.
+  if (hexo.theme.config.footer.custom_text) {
+    injects.footer.raw('custom-text', `
+    <div class="footer-custom">{{ theme.footer.custom_text }}</div>
+    `, {}, {cache: true});
+  }
+
 }, 99);
