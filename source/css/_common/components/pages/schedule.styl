@@ -8,7 +8,7 @@
   hr {
     margin: 20px 0 45px 0 !important;
     background: #222;
-    &:after {
+    &::after {
       display: inline-block;
       content: 'NOW';
       background: #222;
@@ -26,7 +26,7 @@
     h2.event-summary {
       margin: 0;
       padding-bottom: 3px;
-      &:before {
+      &::before {
         display: inline-block;
         font-family: FontAwesome;
         font-size: 8px;
@@ -51,7 +51,7 @@
       padding-bottom: 6px;
       text-indent: -24px;
       line-height: 18px;
-      &:before {
+      &::before {
         text-indent: 0;
         display: inline-block;
         width: 14px;
@@ -60,10 +60,10 @@
         margin-right: 9px;
         color: #bbb;
       }
-      &.event-location:before {
+      &.event-location::before {
         content: '\f041';
       }
-      &.event-duration:before {
+      &.event-duration::before {
         content: '\f017';
       }
     }
@@ -76,7 +76,7 @@
     }
     h2.event-summary {
       color: #bbb;
-      &:before {
+      &::before {
         color: #DFDFDF;
       }
     }
@@ -86,7 +86,7 @@
     color: #FFF;
     padding: 15px 0 15px 10px;
     h2.event-summary {
-      &:before {
+      &::before {
         transform: scale(1.2);
         color: #FFF;
         animation: dot-flash 1s alternate infinite ease-in-out;
@@ -101,7 +101,7 @@
     color: #FFF;
     padding: 15px 0 15px 10px;
     h2.event-summary {
-      &:before {
+      &::before {
         transform: scale(1.2);
         color: #FFF;
         animation: dot-flash 1s alternate infinite ease-in-out;
