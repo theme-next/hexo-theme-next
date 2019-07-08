@@ -21,6 +21,7 @@ hexo.extend.filter.register('theme_inject', (injects) => {
     let oldKey = key + 's';
     if (filePath[oldKey]) {
       injects[key].push(filePath[oldKey]);
+      hexo.log.warn(`WARNING: Format. Please use 'custom_file_path.${key}' instead 'custom_file_path.${oldKey}'.`);
     }
   });
 
@@ -29,6 +30,7 @@ hexo.extend.filter.register('theme_inject', (injects) => {
     injects.footer.raw('custom-text', `
     <div class="footer-custom">{{ theme.footer.custom_text }}</div>
     `, {}, {cache: true});
+    hexo.log.warn(`WARNING: 'footer.custom_text' will not longer be supported. Please use 'custom_file_path.footer' instead`);
   }
 
 }, 99);
