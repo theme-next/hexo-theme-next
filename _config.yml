@@ -248,7 +248,7 @@ toc:
   max_depth: 6
 
 sidebar:
-  # Sidebar Position, available values: left | right.
+  # Sidebar Position.
   position: left
   #position: right
 
