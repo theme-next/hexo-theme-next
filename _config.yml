@@ -1002,7 +1002,7 @@ canvas_nest:
 # Dependencies: https://github.com/theme-next/theme-next-three
 three:
   enable: false
-  delay: false # Set `dealy: true` to avoid blocking render
+  delay: false # Set true to further delay loading
   three_waves: false
   canvas_lines: false
   canvas_sphere: false
