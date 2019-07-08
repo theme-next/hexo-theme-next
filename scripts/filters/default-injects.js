@@ -2,26 +2,26 @@
 
 'use strict';
 
+const points = require('./../injects-point');
+
 hexo.extend.filter.register('theme_inject', (injects) => {
   let filePath = hexo.theme.config.custom_file_path;
-  if (filePath) {
-    if (filePath.head) {
-      injects.head.file('custom', filePath.head);
+
+  points.views.forEach((key) => {
+    if (filePath[key]) {
+      injects[key].file('custom', filePath[key]);
     }
-    if (filePath.header) {
-      injects.header.file('custom', filePath.header);
+  })
+
+  points.styles.forEach((key) => {
+    if (filePath[key]) {
+      injects[key].push(filePath[key]);
     }
-    if (filePath.sidebar) {
-      injects.sidebar.file('custom', filePath.sidebar);
+    // Compatible, but like head header etc, it shouldn't add 's' suffix.
+    let oldKey = key + 's';
+    if (filePath[oldKey]) {
+      injects[key].push(filePath[oldKey]);
     }
-    if (filePath.variables) {
-      injects.variable.push(filePath.variables);
-    }
-    if (filePath.mixins) {
-      injects.mixin.push(filePath.mixins);
-    }
-    if (filePath.styles) {
-      injects.style.push(filePath.styles);
-    }
-  }
+  })
+
 }, 99);
