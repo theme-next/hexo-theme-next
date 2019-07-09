@@ -2,8 +2,8 @@
 
   {% set badges = {
     archives: site.posts.length,
-    categories: site.categories.length,
-    tags: site.tags.length }
+    categories: theme.visibleCategories,
+    tags: theme.visibleTags }
   %}
   {% for menu, count in badges %}
     {% if name == menu %}
