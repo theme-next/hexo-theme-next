@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: -1px;
 
     +mobile-smallest() {
@@ -19,18 +20,18 @@
     }
 
     li.tab {
-      list-style-type: none !important;
-      margin: 0 .25em 0 0;
+      flex-grow: 1;
+      list-style-type: none;
       border-top: 3px solid transparent;
-      border-left: 1px solid transparent;
       border-right: 1px solid transparent;
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid transparent;
 
       +mobile-smallest() {
-        margin: initial;
         border-top: 1px solid transparent;
-        border-left: 3px solid transparent;
         border-right: 1px solid transparent;
         border-bottom: 1px solid transparent;
+        border-left: 3px solid transparent;
       }
 
       if tbr > 0 {
@@ -40,6 +41,7 @@
       if hexo-config('tabs.transition.tabs') { the-transition-ease-out(); }
 
       & a {
+        text-align: center;
         outline: 0;
         border-bottom: initial;
         show();
@@ -51,15 +53,15 @@
 
       &.active {
         border-top: 3px solid $orange;
-        border-left: 1px solid $table-border-color;
         border-right: 1px solid $table-border-color;
-        background-color: #fff;
+        border-bottom: 1px solid transparent;
+        border-left: 1px solid $table-border-color;
 
         +mobile-smallest() {
           border-top: 1px solid $table-border-color;
-          border-left: 3px solid $orange;
           border-right: 1px solid $table-border-color;
           border-bottom: 1px solid $table-border-color;
+          border-left: 3px solid $orange;
         }
 
         & a {
@@ -71,7 +73,6 @@
   }
 
   .tab-content {
-    background-color: #fff;
 
     .tab-pane {
       border: 1px solid $table-border-color;

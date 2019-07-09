@@ -9,8 +9,6 @@
 {% if page.comments %}
   {% if theme.livere_uid %}
     {% include 'livere.swig' %}
-  {% elif theme.gitment.enable and theme.gitment.client_id %}
-    {% include 'gitment.swig' %}
   {% elif theme.gitalk.enable %}
     {% include 'gitalk.swig' %}
   {% elif theme.disqusjs.enable and theme.disqusjs.apikey and theme.disqusjs.shortname %}
