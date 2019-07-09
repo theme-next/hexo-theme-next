@@ -16,6 +16,10 @@
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-blue.svg"></a>
 </p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16272760/60769688-83397500-a105-11e9-9175-e8a1f3597a35.png">
+</p>
+
 ## Installation
 
 Simplest way to install is by cloning the entire repository:
@@ -78,6 +82,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 ## Feedback
 
+* Visit the [Awesome NexT][awesome-next-url] list.
 * Ask a question on [Stack Overflow][stack-url].
 * Report a bug in [GitHub Issues][issues-bug-url].
 * Request a new feature on [GitHub][issues-feat-url].
@@ -111,6 +116,11 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
+[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
+[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
+
+[awesome-next-url]: https://github.com/theme-next/awesome-next
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
@@ -125,12 +135,8 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 <!--[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg-->
 <!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
 
-[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
-[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
+<!--[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip-->
+<!--[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest-->
 <!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases-->
-[tags-url]: https://github.com/theme-next/hexo-theme-next/tags
-[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master
-
-[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
-[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
+<!--[tags-url]: https://github.com/theme-next/hexo-theme-next/tags-->
+<!--[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master-->
