@@ -121,16 +121,10 @@ $(document).ready(function() {
       this.isSidebarVisible = !this.isSidebarVisible;
     },
     mouseEnterHandler: function() {
-      if (this.isSidebarVisible) {
-        return;
-      }
-      sidebarToggleLines.arrow();
+      if (!this.isSidebarVisible) sidebarToggleLines.arrow();
     },
     mouseLeaveHandler: function() {
-      if (this.isSidebarVisible) {
-        return;
-      }
-      sidebarToggleLines.init();
+      if (!this.isSidebarVisible) sidebarToggleLines.init();
     },
     touchstartHandler: function(e) {
       xPos = e.originalEvent.touches[0].clientX;
