@@ -28,11 +28,11 @@ $(document).ready(function() {
     this.el = $(settings.el);
     this.status = $.extend({}, {
       init: {
-        width  : '100%',
-        opacity: 1,
-        left   : 0,
-        rotateZ: 0,
-        top    : 0
+        width    : '100%',
+        opacity  : 1,
+        transform: 'rotate(0deg)',
+        top      : 0,
+        left     : 0
       }
     }, settings.status);
     this.init = function() {
@@ -45,7 +45,7 @@ $(document).ready(function() {
       this.transform('close');
     };
     this.transform = function(status) {
-      this.el.stop().animate(this.status[status]);
+      this.el.css(this.status[status]);
     };
   }
 
@@ -55,12 +55,12 @@ $(document).ready(function() {
     el    : '.sidebar-toggle-line-first',
     status: isRight
       ? {
-        arrow: {width: '50%', deg: -45, top: '2px'},
-        close: {width: '100%', deg: -45, top: '5px'}
+        arrow: {width: '50%', transform: 'rotate(-45deg)', top: '2px'},
+        close: {width: '100%', transform: 'rotate(-45deg)', top: '5px'}
       }
       : {
-        arrow: {width: '50%', deg: 45, top: '2px', left: '50%'},
-        close: {width: '100%', deg: -45, top: '5px', left: '0px'}
+        arrow: {width: '50%', transform: 'rotate(45deg)', top: '2px', left: '50%'},
+        close: {width: '100%', transform: 'rotate(-45deg)', top: '5px', left: '0px'}
       }
   });
   var sidebarToggleLine2nd = new SidebarToggleLine({
@@ -79,12 +79,12 @@ $(document).ready(function() {
     el    : '.sidebar-toggle-line-last',
     status: isRight
       ? {
-        arrow: {width: '50%', deg: 45, top: '-2px'},
-        close: {width: '100%', deg: 45, top: '-5px'}
+        arrow: {width: '50%', transform: 'rotate(45deg)', top: '-2px'},
+        close: {width: '100%', transform: 'rotate(45deg)', top: '-5px'}
       }
       : {
-        arrow: {width: '50%', deg: -45, top: '-2px', left: '50%'},
-        close: {width: '100%', deg: 45, top: '-5px', left: '0px'}
+        arrow: {width: '50%', transform: 'rotate(-45deg)', top: '-2px', left: '50%'},
+        close: {width: '100%', transform: 'rotate(45deg)', top: '-5px', left: '0px'}
       }
   });
 
@@ -100,6 +100,8 @@ $(document).ready(function() {
     sidebarEl       : $('.sidebar'),
     isSidebarVisible: false,
     init            : function() {
+      sidebarToggleLines.init();
+
       this.toggleEl.on('click', this.clickHandler.bind(this));
       this.dimmerEl.on('click', this.clickHandler.bind(this));
       this.toggleEl.on('mouseenter', this.mouseEnterHandler.bind(this));
