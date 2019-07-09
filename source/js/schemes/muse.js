@@ -157,10 +157,7 @@ $(document).ready(function() {
           $('.sidebar .motion-element').not('.site-state').velocity(
             isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
               stagger : 50,
-              drag    : true,
-              complete: function() {
-                self.sidebarEl.trigger('sidebar.motion.complete');
-              }
+              drag    : true
             }
           );
           $('.site-state').velocity(
@@ -173,7 +170,6 @@ $(document).ready(function() {
         },
         complete: function() {
           self.sidebarEl.addClass('sidebar-active');
-          self.sidebarEl.trigger('sidebar.didShow');
         }
       });
 
@@ -187,7 +183,6 @@ $(document).ready(function() {
       sidebarToggleLines.init();
 
       this.sidebarEl.removeClass('sidebar-active');
-      this.sidebarEl.trigger('sidebar.isHiding');
 
       // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
       if ($('.post-toc-wrap')) {
