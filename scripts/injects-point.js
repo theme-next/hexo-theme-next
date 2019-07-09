@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = {
-  views: ['head', 'header', 'bodyEnd', 'sidebar', 'footer'],
+  views: ['head', 'header', 'sidebar', 'postMeta', 'postBodyEnd', 'footer', 'bodyEnd'],
   styles: ['variable', 'mixin', 'style']
 };
