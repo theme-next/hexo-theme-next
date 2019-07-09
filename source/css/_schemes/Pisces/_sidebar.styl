@@ -4,10 +4,6 @@
   right: auto;
   bottom: auto;
 
-  // Do NOT delete this line
-  // or Affix (position: fixed) will not work in Google Chrome.
-  -webkit-transform: none;
-
   a, span.exturl {
     color: $black-light;
 
@@ -82,15 +78,12 @@
 
 .links-of-author-item {
   sidebar-inline-links-item();
-  a:before, span.exturl:before { display: none; }
-  a, span.exturl {
-    border-bottom: none;
-    text-decoration: underline;
-  }
-
   a, span.exturl {
     show();
+    border-bottom: none;
     text-decoration: none;
+
+    &::before { display: none; }
 
     &:hover {
       border-radius: 4px;
