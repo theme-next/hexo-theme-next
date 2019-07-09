@@ -168,8 +168,7 @@ $(document).ready(function() {
             self.sidebarEl.addClass('sidebar-active');
           }
         });
-      }
-      else {
+      } else {
         $('.sidebar .motion-element').show();
         this.sidebarEl.stop().animate({
           width: SIDEBAR_WIDTH,
