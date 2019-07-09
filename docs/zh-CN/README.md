@@ -16,15 +16,6 @@
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-blue.svg"></a>
 </p>
 
-## 即时预览
-
-* :heart_decoration: Muse 主题: [LEAFERx](https://leaferx.online) | [Alex LEE](http://saili.science) | [Miaia](https://11.tt)
-* :six_pointed_star: Mist 主题: [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
-* :pisces: Pisces 主题: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Jiaxi He](http://jiaxi.io)
-* :gemini: Gemini 主题: [Ivan.Nginx](https://almostover.ru) | [Raincal](https://raincal.com) | [Dandy](https://dandyxu.me)
-
-更多 «NexT» 的例子参见[这里](https://github.com/iissnan/hexo-theme-next/issues/119)。
-
 ## 安装
 
 最简单的安装方式是直接克隆整个仓库：
