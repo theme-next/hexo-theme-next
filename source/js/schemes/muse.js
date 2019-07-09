@@ -174,11 +174,9 @@ $(document).ready(function() {
         this.sidebarEl.stop().animate({
           width: SIDEBAR_WIDTH,
           display: 'block'
-        }, SIDEBAR_DISPLAY_DURATION,
-          function() {
-            self.sidebarEl.addClass('sidebar-active');
-          }
-        );
+        }, SIDEBAR_DISPLAY_DURATION, function() {
+          self.sidebarEl.addClass('sidebar-active');
+        });
       }
 
       this.sidebarEl.trigger('sidebar.isShowing');
