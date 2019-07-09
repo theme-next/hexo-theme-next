@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   function SidebarToggleLine(settings) {
     this.el = $(settings.el);
-    this.status = $.extend({}, {
+    this.status = $.extend({
       init: {
         width    : '100%',
         opacity  : 1,
@@ -141,44 +141,54 @@ $(document).ready(function() {
     },
     showSidebar: function() {
       var self = this;
-
       sidebarToggleLines.close();
 
-      this.sidebarEl.stop().velocity({
-        width: SIDEBAR_WIDTH
-      }, {
-        display : 'block',
-        duration: SIDEBAR_DISPLAY_DURATION,
-        begin   : function() {
-          $('.sidebar .motion-element').not('.site-state').velocity(
-            isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-              stagger : 50,
-              drag    : true
-            }
-          );
-          $('.site-state').velocity(
-            isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-              stagger : 50,
-              drag    : true,
-              display : 'flex'
-            }
-          );
-        },
-        complete: function() {
-          self.sidebarEl.addClass('sidebar-active');
-        }
-      });
+      if ($.isFunction($('html').velocity)) {
+        this.sidebarEl.stop().velocity({
+          width: SIDEBAR_WIDTH
+        }, {
+          display : 'block',
+          duration: SIDEBAR_DISPLAY_DURATION,
+          begin   : function() {
+            $('.sidebar .motion-element').not('.site-state').velocity(
+              isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+                stagger : 50,
+                drag    : true
+              }
+            );
+            $('.site-state').velocity(
+              isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+                stagger : 50,
+                drag    : true,
+                display : 'flex'
+              }
+            );
+          },
+          complete: function() {
+            self.sidebarEl.addClass('sidebar-active');
+          }
+        });
+      }
+      else {
+        $('.sidebar .motion-element').show();
+        this.sidebarEl.stop().animate({
+          width: SIDEBAR_WIDTH,
+          display: 'block'
+        }, SIDEBAR_DISPLAY_DURATION,
+          function() {
+            self.sidebarEl.addClass('sidebar-active');
+          }
+        );
+      }
 
       this.sidebarEl.trigger('sidebar.isShowing');
     },
     hideSidebar: function() {
       NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': 0} : {'padding-left': 0});
-      this.sidebarEl.find('.motion-element').stop().css('display', 'none');
-      this.sidebarEl.stop().animate({width: 0, display: 'none'});
+      this.sidebarEl.find('.motion-element').hide();
+      this.sidebarEl.stop().animate({width: 0, display: 'none'}).removeClass('sidebar-active');
 
       sidebarToggleLines.init();
-
-      this.sidebarEl.removeClass('sidebar-active');
 
       // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
       if ($('.post-toc-wrap')) {
