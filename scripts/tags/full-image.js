@@ -8,14 +8,12 @@
 
 function fullImage(args) {
   args = args.join(' ').split(',');
-  var mixed = args[0].split('@');
-  var img   = mixed[0];
-  var src   = mixed[1] === 'lazy' ? '/images/loading.gif" data-original="' + img : img;
+  var src   = args[0];
   var alt   = args[1] || '';
   var title = args[2] || '';
   var width = args[3] || '';
 
-  if (!img) {
+  if (!src) {
     hexo.log.warn('Image src can NOT be empty');
   }
 

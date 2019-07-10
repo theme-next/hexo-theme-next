@@ -960,7 +960,7 @@ fancybox: false
 fastclick: false
 
 # Vanilla JavaScript plugin for lazyloading images.
-# Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
+# Dependencies: https://github.com/theme-next/theme-next-lazyload
 lazyload: false
 
 # Progress bar in the top during page loading.
@@ -1041,11 +1041,11 @@ vendors:
   # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
   fastclick:
 
-  # Internal version: 1.9.7
-  # See: https://github.com/tuupola/jquery_lazyload
+  # Internal version: 1.10.0
+  # See: https://github.com/ApoorvSaxena/lozad.js
   # Example:
-  # lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
-  # lazyload: //cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+  # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
+  # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
   lazyload:
 
   # Internal version: 1.2.1
@@ -1139,7 +1139,7 @@ vendors:
   # Internal version: 1.2.0
   # See: https://github.com/theme-next/theme-next-reading-progress
   # Example:
-  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.2.0/reading_progress.min.js
+  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
   reading_progress:
 
   # valine
