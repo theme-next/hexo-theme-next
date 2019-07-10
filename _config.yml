@@ -326,6 +326,8 @@ symbols_count_time:
   wpm: 275
 
 codeblock:
+  # Manual define the border radius in codeblock, leave it blank for the default value: 1
+  border_radius:
   # Add copy button on codeblock
   copy_button:
     enable: false
@@ -393,12 +395,14 @@ safari_rainbow: false
 # Optimize the display of scrollbars on webkit based browsers.
 custom_scrollbar: false
 
-# Custom Logo (Do not support scheme Mist)
-custom_logo: #/uploads/custom-logo.jpg
+# Custom Logo (Do not support Scheme Mist)
+custom_logo:
+  enable: false
+  image: #/uploads/custom-logo.jpg
 
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
-# See: https://github.com/chriskempson/tomorrow-theme
+# https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
 # Enable "cheers" for archive page.
@@ -976,11 +980,14 @@ three:
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
+# size: The width of the ribbon.
+# alpha: The transparency of the ribbon.
+# zIndex: The display level of the ribbon.
 canvas_ribbon:
   enable: false
-  size: 300 # The width of the ribbon
-  alpha: 0.6 # The transparency of the ribbon
-  zIndex: -1 # The display level of the ribbon
+  size: 300
+  alpha: 0.6
+  zIndex: -1
 
 
 #! ---------------------------------------------------------------

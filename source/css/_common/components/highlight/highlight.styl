@@ -37,7 +37,9 @@ pre {
 
 .highlight {
   @extend $code-block;
-  border-radius: 1px;
+  // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
+  hexo-config('codeblock.border_radius') is a 'unit' ? (cbradius = unit(hexo-config('codeblock.border_radius'), px)) : (cbradius = 1px)
+  border-radius: cbradius;
 
   pre {
     border: none;
