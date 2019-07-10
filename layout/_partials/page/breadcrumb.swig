@@ -7,7 +7,7 @@
     {% for path in paths %}
       {% set current += 1 %}
       {% if path != 'index.html' %}
-        {% if current == count - 1 %}
+        {% if current == count - 1 and paths[count - 1] == 'index.html' %}
           <li>{{ path | upper }}</li>
         {% else %}
           {% if link == '' %}
@@ -15,7 +15,11 @@
           {% else %}
             {% set link += '/' + path %}
           {% endif %}
-          <li><a href="{{ url_for(link) }}/">{{ path | upper }}</a></li>
+          {% if path.indexOf('.html') == -1 %}
+            <li><a href="{{ url_for(link) }}/">{{ path | upper }}</a></li>
+          {% else %}
+            <li>{{ path.replace('.html', '') | upper }}</li>
+          {% endif %}
         {% endif %}
       {% endif %}
     {% endfor %}

@@ -165,12 +165,9 @@
             </div>
           {% endif %}
 
-          {% if theme.custom_file_path.sidebar %}
-            {% set custom_sidebar = '../../../../' + theme.custom_file_path.sidebar %}
-          {% else %}
-            {% set custom_sidebar = '../_custom/sidebar.swig' %}
-          {% endif %}
-          {% include custom_sidebar %}
+          {% for inject_item in theme.injects.sidebar %}
+            {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+          {% endfor %}
         </div>
       </div>
 

@@ -28,7 +28,7 @@
       {#################}
       {### PAGE BODY ###}
       {#################}
-      <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
+      <div class="post-body{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
         {# tagcloud page support #}
         {% if page.type === 'tags' %}
           <div class="tag-cloud">

@@ -24,14 +24,6 @@
   <link rel="stylesheet" href="{{ pace_css_uri }}"/>
 {% endif %}
 
-{% if theme.han %}
-  {% set Han_uri = url_for(theme.vendors._internal + '/Han/dist/han.min.css?v=3.3') %}
-  {% if theme.vendors.han %}
-    {% set Han_uri = theme.vendors.han %}
-  {% endif %}
-  <link rel="stylesheet" href="{{ Han_uri }}"/>
-{% endif %}
-
 {% if theme.disable_baidu_transformation %}
   <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
@@ -63,7 +55,7 @@
 
 {% include "./external-fonts.swig" %}
 
-{% set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.6.2') %}
+{% set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.7.0') %}
 {% if theme.vendors.fontawesome %}
   {% set font_awesome_uri = theme.vendors.fontawesome %}
 {% endif %}
@@ -120,9 +112,6 @@
   };
 </script>
 
-{% if theme.custom_file_path.head %}
-  {% set custom_head = '../../../../../' + theme.custom_file_path.head %}
-{% else %}
-  {% set custom_head = '../../_custom/head.swig' %}
-{% endif %}
-{% include custom_head %}
+{% for inject_item in theme.injects.head %}
+  {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+{% endfor %}

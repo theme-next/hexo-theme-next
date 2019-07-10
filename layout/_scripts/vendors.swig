@@ -7,14 +7,14 @@
 </script>
 
 {% set js_vendors = {} %}
-{% set js_vendors.jquery = 'jquery/index.js?v=2.1.3' %}
+{% set js_vendors.jquery = 'jquery/index.js?v=3.4.1' %}
 
 {% if theme.fastclick %}
   {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
 {% endif %}
 
 {% if theme.lazyload %}
-  {% set js_vendors.lazyload = 'jquery_lazyload/jquery.lazyload.js?v=1.9.7' %}
+  {% set js_vendors.lazyload = 'lazyload/lozad.min.js?v=1.10.0' %}
 {% endif %}
 
 {% set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}

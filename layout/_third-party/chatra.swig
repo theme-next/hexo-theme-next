@@ -1,11 +1,11 @@
 {% if theme.chatra.enable %}
 	{% if theme.chatra.embed %}
-	<script>
-		window.ChatraSetup = {
-				mode: 'frame',
-				injectTo: '{{ theme.chatra.embed }}'
-		};
-	</script>
+    <script>
+      window.ChatraSetup = {
+        mode: 'frame',
+        injectTo: '{{ theme.chatra.embed }}'
+      };
+    </script>
 	{% endif %}
 	<script>
 		(function(d, w, c) {

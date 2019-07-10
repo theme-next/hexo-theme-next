@@ -7,14 +7,14 @@ NexT.utils = NexT.$u = {
    */
   wrapImageWithFancyBox: function() {
     $('.content img')
-      .not(':hidden')
+      .not('#qr img')
       .each(function() {
         var $image = $(this);
         var imageTitle = $image.attr('title') || $image.attr('alt');
         var $imageWrapLink = $image.parent('a');
 
         if ($imageWrapLink.length < 1) {
-          var imageLink = $image.attr('data-original') || $image.attr('src');
+          var imageLink = $image.attr('data-src') || $image.attr('src');
           $imageWrapLink = $image.wrap('<a class="fancybox fancybox.image" href="' + imageLink + '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>').parent('a');
           if ($image.is('.post-gallery img')) {
             $imageWrapLink.addClass('post-gallery-img');
@@ -46,11 +46,7 @@ NexT.utils = NexT.$u = {
   },
 
   lazyLoadPostsImages: function() {
-    $('#posts').find('img').lazyload({
-      //placeholder: '/images/loading.gif',
-      effect   : 'fadeIn',
-      threshold: 0
-    });
+    lozad('.content img').observe();
   },
 
   /**
@@ -298,7 +294,7 @@ NexT.utils = NexT.$u = {
 $(document).ready(function() {
 
   function wrapTable() {
-    $('table').not('figure table').wrap('<div class="table-container"></div>');
+    $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
 
   /**
