@@ -122,5 +122,10 @@
   {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
+
+  {% for inject_item in theme.injects.bodyEnd %}
+    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+  {% endfor %}
+
 </body>
 </html>

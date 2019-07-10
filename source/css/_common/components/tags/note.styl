@@ -44,7 +44,7 @@
   if note_icons {
     &:not(.no-icon) {
       padding-left:     45px;
-      &:before {
+      &::before {
         position:       absolute;
         font-family:    $font-family-icons;
         font-size:      larger;
@@ -81,7 +81,7 @@
     }
     if note_icons {
       &:not(.no-icon) {
-        &:before {
+        &::before {
           content:         $note-default-icon;
           if not note_style == 'modern' {
             color:         $note-default-text;
@@ -118,7 +118,7 @@
     }
     if note_icons {
       &:not(.no-icon) {
-        &:before {
+        &::before {
           content:         $note-primary-icon;
           if not note_style == 'modern' {
             color :        $note-primary-text;
@@ -155,7 +155,7 @@
     }
     if note_icons {
       &:not(.no-icon) {
-        &:before {
+        &::before {
           content:         $note-info-icon;
           if not note_style == 'modern' {
             color :        $note-info-text;
@@ -192,7 +192,7 @@
     }
     if note_icons {
       &:not(.no-icon) {
-        &:before {
+        &::before {
           content:         $note-success-icon;
           if not note_style == 'modern' {
             color :        $note-success-text;
@@ -229,7 +229,7 @@
     }
     if note_icons {
       &:not(.no-icon) {
-        &:before {
+        &::before {
           content:         $note-warning-icon;
           if not note_style == 'modern' {
             color :        $note-warning-text;
@@ -266,7 +266,7 @@
     }
     if note_icons {
       &:not(.no-icon) {
-        &:before {
+        &::before {
           content:         $note-danger-icon;
           if not note_style == 'modern' {
             color :        $note-danger-text;

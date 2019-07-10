@@ -42,6 +42,9 @@ hexo.on('generateBefore', function() {
       }
     }
   }
+  
+  // Add filter type `theme_inject`
+  require('./injects')(hexo);
 
   // Fix an issue about the categories/tags count.
   let visibleTags = 0;

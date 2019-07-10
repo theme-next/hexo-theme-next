@@ -201,6 +201,12 @@
             </span>
           {% endif %}
 
+          {% for inject_item in theme.injects.postMeta %}
+            <span class="post-meta-item">
+              {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+            </span>
+          {% endfor %}
+
           {% if theme.symbols_count_time.separated_meta %}<br/>{% endif %}
           {% if config.symbols_count_time.symbols %}
             <span class="post-meta-item">
@@ -312,6 +318,12 @@
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {% include '../_partials/post/post-related.swig' with { post: post } %}
+    {% endif %}
+
+    {% if not is_index %}
+      {% for inject_item in theme.injects.postBodyEnd %}
+        {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+      {% endfor %}
     {% endif %}
 
     {#####################}
