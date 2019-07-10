@@ -42,7 +42,7 @@ hexo.on('generateBefore', function() {
       }
     }
   }
-  
+
   // Add filter type `theme_inject`
   require('./injects')(hexo);
 
