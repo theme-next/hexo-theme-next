@@ -14,7 +14,7 @@
 {% endif %}
 
 {% if theme.lazyload %}
-  {% set js_vendors.lazyload = 'jquery_lazyload/jquery.lazyload.js?v=1.9.7' %}
+  {% set js_vendors.lazyload = 'lazyload/lozad.min.js?v=1.10.0' %}
 {% endif %}
 
 {% set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
