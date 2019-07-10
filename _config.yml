@@ -51,7 +51,7 @@ footer:
 
   # Icon between year and copyright info.
   icon:
-    # Icon name in Font Awesome, see: https://fontawesome.com/v4.7.0/icons/
+    # Icon name in Font Awesome. See: https://fontawesome.com/v4.7.0/icons/
     # `heart` is recommended with animation in red (#ff0000).
     name: user
     # If you want to animate the icon, set it to true.
@@ -59,7 +59,7 @@ footer:
     # Change the color of icon, using Hex Code.
     color: "#808080"
 
-  # If not defined, `author` from Hexo main config will be used.
+  # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
 
   powered:
@@ -74,14 +74,10 @@ footer:
     # Version info of NexT after scheme info (vX.X.X).
     version: true
 
-  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
-  # http://www.beian.miit.gov.cn
+  # Beian ICP information for Chinese users. See: http://www.beian.miit.gov.cn
   beian:
     enable: false
     icp:
-
-  # Any custom text can be defined here.
-  #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -110,14 +106,14 @@ disable_baidu_transformation: false
 
 # Set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
-# Remember to set up your URL in hexo `_config.yml` (e.g. url: http://yourdomain.com)
+# Remember to set up your URL in Hexo `_config.yml` (e.g. url: http://yourdomain.com)
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
 seo: false
 
 # If true, will add site-subtitle to index page.
-# Remember to set up your site-subtitle in hexo `_config.yml` (e.g. subtitle: Subtitle)
+# Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
 index_with_subtitle: false
 
 # Automatically add external URL with Base64 encrypt & decrypt.
@@ -629,7 +625,7 @@ valine:
   enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
   appid: # Your leancloud application appid
   appkey: # Your leancloud application appkey
-  notify: false # Mail notifier, See: https://github.com/xCss/Valine/wiki
+  notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # Comment box placeholder
   avatar: mm # Gravatar style
@@ -669,7 +665,7 @@ baidushare:
   #type: button
   #type: slide
 
-# AddThis Share, See: https://www.addthis.com
+# AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
 
@@ -862,14 +858,14 @@ chatra:
   enable: false
   async: true
   id: # Visit Dashboard to get your ChatraID
-  #embed: # unfinished experimental feature for developers, See: https://chatra.io/help/api/#injectto
+  #embed: # Unfinished experimental feature for developers. See: https://chatra.io/help/api/#injectto
 
 # Tidio Support
 # See: https://www.tidiochat.com
 # Dashboard: https://www.tidiochat.com/panel/dashboard
 tidio:
   enable: false
-  key: # Public Key, get it from Dashboard, See: https://www.tidiochat.com/panel/settings/developer
+  key: # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
 
 
 # ---------------------------------------------------------------
