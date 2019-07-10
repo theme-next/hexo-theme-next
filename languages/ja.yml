@@ -85,7 +85,6 @@ reward:
   wechatpay: WeChat 支払う
   alipay: Alipay
   bitcoin: ビットコイン
-gitmentbutton: Gitment からのコメントを表示
 accessibility:
   nav_toggle: ナビゲーションバーの切り替え
   prev_page: 前のページ

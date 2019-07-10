@@ -78,7 +78,7 @@
 
     // For lists narrow width.
     > ul {
-       margin-inline-end: 1em;
+      margin-inline-end: 1em;
     }
 
     // For blockquotes.
@@ -112,9 +112,9 @@
       if hexo-config('note.icons') {
         &:not(.no-icon) {
           padding-left: 35px !important;
-          &:before {
-            top:        8px !important;
-            left:       12px !important;
+          &::before {
+            top:       8px !important;
+            left:     12px !important;
           }
         }
       }
@@ -125,7 +125,6 @@
     }
   }
 
-  // Need to refactor into flex.
   .post-nav {
     padding-bottom: 2px;
     //padding: 2px 8px;

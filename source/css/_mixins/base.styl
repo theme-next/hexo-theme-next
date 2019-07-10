@@ -82,12 +82,12 @@ random-color($min, $max) {
 
 // Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
 clearfix() {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: " ";
     display: table;
   }
-  &:after { clear: both; }
+  &::after { clear: both; }
 }
 
 word-wrap() {

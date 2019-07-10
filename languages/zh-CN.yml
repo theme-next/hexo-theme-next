@@ -85,7 +85,6 @@ reward:
   wechatpay: 微信支付
   alipay: 支付宝
   bitcoin: 比特币
-gitmentbutton: 显示 Gitment 评论
 accessibility:
   nav_toggle: 切换导航栏
   prev_page: 上一页

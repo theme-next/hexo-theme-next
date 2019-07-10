@@ -13,20 +13,19 @@ override: false
 cache:
   enable: true
 
-# Redefine custom file paths. Introduced in NexT v6.0.2. If commented, will be used default custom file paths.
-# For example, you want to put your custom styles file outside theme directory in root `source/_data`, set `styles: source/_data/styles.styl`.
-#custom_file_path:
-  # Default paths: layout/_custom/*
+# Define custom file paths. If commented, will be used default custom file paths.
+# For example, you want to put your custom styles file outside theme directory in root `source/_data`, set `styles: source/_data/styles.styl`
+custom_file_path:
   #head: source/_data/head.swig
   #header: source/_data/header.swig
   #sidebar: source/_data/sidebar.swig
-
-  # Default path: source/css/_variables/custom.styl
-  #variables: source/_data/variables.styl
-  # Default path: source/css/_mixins/custom.styl
-  #mixins: source/_data/mixins.styl
-  # Default path: source/css/_custom/custom.styl
-  #styles: source/_data/styles.styl
+  #postMeta: source/_data/post-meta.swig
+  #postBodyEnd: source/_data/post-body-end.swig
+  #footer: source/_data/footer.swig
+  #bodyEnd: source/_data/body-end.swig
+  #variable: source/_data/variables.styl
+  #mixin: source/_data/mixins.styl
+  #style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -247,7 +246,7 @@ toc:
   max_depth: 6
 
 sidebar:
-  # Sidebar Position (only for Pisces | Gemini).
+  # Sidebar Position.
   position: left
   #position: right
 
@@ -957,7 +956,7 @@ fancybox: false
 fastclick: false
 
 # Vanilla JavaScript plugin for lazyloading images.
-# Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
+# Dependencies: https://github.com/theme-next/theme-next-lazyload
 lazyload: false
 
 # Progress bar in the top during page loading.
@@ -1036,11 +1035,11 @@ vendors:
   # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
   fastclick:
 
-  # Internal version: 1.9.7
-  # See: https://github.com/tuupola/jquery_lazyload
+  # Internal version: 1.10.0
+  # See: https://github.com/ApoorvSaxena/lozad.js
   # Example:
-  # lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
-  # lazyload: //cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+  # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
+  # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
   lazyload:
 
   # Internal version: 1.2.1
@@ -1131,7 +1130,7 @@ vendors:
   # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
   bookmark:
 
-  # Internal version: 1.1
+  # Internal version: 1.2.0
   # See: https://github.com/theme-next/theme-next-reading-progress
   # Example:
   # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
