@@ -983,12 +983,12 @@ canvas_nest:
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
-# three_waves
-three_waves: false
-# canvas_lines
-canvas_lines: false
-# canvas_sphere
-canvas_sphere: false
+three:
+  enable: false
+  delay: false # Set true to further delay loading
+  three_waves: false
+  canvas_lines: false
+  canvas_sphere: false
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
