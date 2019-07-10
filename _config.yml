@@ -512,6 +512,20 @@ math:
       copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
       copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
 
+# Fancybox. There is support for old version 2 and new version 3.
+# Choose only one variant, do not need to install both.
+# To install 2.x: https://github.com/theme-next/theme-next-fancybox
+# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
+fancybox: false
+
+# Polyfill to remove click delays on browsers with touch UIs.
+# Dependencies: https://github.com/theme-next/theme-next-fastclick
+fastclick: false
+
+# Vanilla JavaScript plugin for lazyloading images.
+# Dependencies: https://github.com/theme-next/theme-next-lazyload
+lazyload: false
+
 # Pangu Support
 # Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
@@ -931,20 +945,6 @@ motion:
     coll_header: slideLeftIn
     # Only for Pisces | Gemini.
     sidebar: slideUpIn
-
-# Fancybox. There is support for old version 2 and new version 3.
-# Choose only one variant, do not need to install both.
-# To install 2.x: https://github.com/theme-next/theme-next-fancybox
-# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
-fancybox: false
-
-# Polyfill to remove click delays on browsers with touch UIs.
-# Dependencies: https://github.com/theme-next/theme-next-fastclick
-fastclick: false
-
-# Vanilla JavaScript plugin for lazyloading images.
-# Dependencies: https://github.com/theme-next/theme-next-lazyload
-lazyload: false
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
