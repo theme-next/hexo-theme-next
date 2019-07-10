@@ -15,7 +15,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 
   $('img').each(function() {
     var $image = $(this);
-    $image.attr('data-original', $image.attr('src')).removeAttr('src');
+    $image.attr('data-src', $image.attr('src')).removeAttr('src');
   });
 
   data.content = $.html();
