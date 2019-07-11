@@ -92,7 +92,9 @@ $(document).ready(function() {
   sidebarToggleLines.push(sidebarToggleLine2nd);
   sidebarToggleLines.push(sidebarToggleLine3rd);
 
-  var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px', SIDEBAR_DISPLAY_DURATION = 200, xPos, yPos;
+  var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px';
+  var SIDEBAR_DISPLAY_DURATION = 200;
+  var mousePos = {}, touchPos = {};
 
   var sidebarToggleMotion = {
     sidebarEl       : $('.sidebar'),
@@ -100,7 +102,9 @@ $(document).ready(function() {
     init            : function() {
       sidebarToggleLines.init();
 
-      $('body').on('click', this.clickBodyHandler.bind(this));
+      $('body')
+        .on('mousedown', this.mousedownHandler.bind(this))
+        .on('mouseup', this.mouseupHandler.bind(this));
       $('#sidebar-dimmer').on('click', this.clickHandler.bind(this));
       $('.sidebar-toggle')
         .on('click', this.clickHandler.bind(this))
@@ -121,9 +125,17 @@ $(document).ready(function() {
           );
         });
     },
-    clickBodyHandler: function(e) {
-      if (this.isSidebarVisible && !$(e.target).closest('.sidebar, #sidebar-dimmer, .sidebar-toggle, .back-to-top').length) {
-        this.clickHandler();
+    mousedownHandler: function(e) {
+      mousePos.X = e.pageX;
+      mousePos.Y = e.pageY;
+    },
+    mouseupHandler: function(e) {
+      var deltaX = e.pageX - mousePos.X;
+      var deltaY = e.pageY - mousePos.Y;
+      if (this.isSidebarVisible && Math.sqrt(deltaX * deltaX + deltaY * deltaY) < 20) {
+        if (!$(e.target).closest('.sidebar, #sidebar-dimmer, .sidebar-toggle, .back-to-top').length) {
+          this.clickHandler();
+        }
       }
     },
     clickHandler: function() {
@@ -141,13 +153,13 @@ $(document).ready(function() {
       }
     },
     touchstartHandler: function(e) {
-      xPos = e.originalEvent.touches[0].clientX;
-      yPos = e.originalEvent.touches[0].clientY;
+      touchPos.X = e.originalEvent.touches[0].clientX;
+      touchPos.Y = e.originalEvent.touches[0].clientY;
     },
     touchendHandler: function(e) {
-      var _xPos = e.originalEvent.changedTouches[0].clientX;
-      var _yPos = e.originalEvent.changedTouches[0].clientY;
-      if (Math.abs(_yPos - yPos) < 20 && ((_xPos - xPos > 30 && isRight) || (_xPos - xPos < -30 && !isRight))) {
+      var deltaX = e.originalEvent.changedTouches[0].clientX - touchPos.X;
+      var deltaY = e.originalEvent.changedTouches[0].clientY - touchPos.Y;
+      if (Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight))) {
         this.clickHandler();
       }
     },
