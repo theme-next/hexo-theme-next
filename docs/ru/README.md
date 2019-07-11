@@ -26,7 +26,7 @@
 :heart_decoration: <a href="https://muse.theme-next.org">Muse</a> | :six_pointed_star: <a href="https://mist.theme-next.org">Mist</a> | :pisces: <a href="https://pisces.theme-next.org">Pisces</a> | :gemini: <a href="https://theme-next.org">Gemini</a>
 </p>
 
-<p align="center">Больше примеров «NexT» [здесь](https://github.com/iissnan/hexo-theme-next/issues/119).</p>
+<p align="center">Больше примеров «NexT» <a href="https://github.com/iissnan/hexo-theme-next/issues/119">здесь</a>.</p>
 
 ## Установка
 
