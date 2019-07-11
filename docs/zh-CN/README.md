@@ -20,6 +20,12 @@
   <img src="https://user-images.githubusercontent.com/16272760/60769688-83397500-a105-11e9-9175-e8a1f3597a35.png">
 </p>
 
+## 即时预览
+
+<p align="center">
+:heart_decoration: [Muse](https://muse.theme-next.org) | :six_pointed_star: [Mist](https://mist.theme-next.org) | :pisces: [Pisces](https://pisces.theme-next.org) | :gemini: [Gemini](https://theme-next.org)
+</p>
+
 ## 安装
 
 最简单的安装方式是直接克隆整个仓库：
