@@ -553,13 +553,7 @@ quicklink:
   priority: true
 
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
-  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns.
-  # Leave ignores as empty if you don't understand what it means.
-  # For example:
-  # ignores:
-  #   - /\/api\/?/
-  #   - uri => uri.includes('.xml')
-  #   - (uri, el) => el.hasAttribute('noopener')
+  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   ignores:
 
 # Bookmark Support
