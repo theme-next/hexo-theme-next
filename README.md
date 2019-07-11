@@ -26,6 +26,8 @@
 :heart_decoration: <a href="https://muse.theme-next.org">Muse</a> | :six_pointed_star: <a href="https://mist.theme-next.org">Mist</a> | :pisces: <a href="https://pisces.theme-next.org">Pisces</a> | :gemini: <a href="https://theme-next.org">Gemini</a>
 </p>
 
+<p align="center">More «NexT» examples [here](https://github.com/iissnan/hexo-theme-next/issues/119).</p>
+
 ## Installation
 
 Simplest way to install is by cloning the entire repository:
