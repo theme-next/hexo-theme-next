@@ -23,7 +23,7 @@
 ## 即时预览
 
 <p align="center">
-:heart_decoration: [Muse](https://muse.theme-next.org) | :six_pointed_star: [Mist](https://mist.theme-next.org) | :pisces: [Pisces](https://pisces.theme-next.org) | :gemini: [Gemini](https://theme-next.org)
+:heart_decoration: <a href="https://muse.theme-next.org">Muse</a> | :six_pointed_star: <a href="https://mist.theme-next.org">Mist</a> | :pisces: <a href="https://pisces.theme-next.org">Pisces</a> | :gemini: <a href="https://theme-next.org">Gemini</a>
 </p>
 
 ## 安装
