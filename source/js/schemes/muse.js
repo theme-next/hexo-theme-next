@@ -132,10 +132,8 @@ $(document).ready(function() {
     mouseupHandler: function(e) {
       var deltaX = e.pageX - mousePos.X;
       var deltaY = e.pageY - mousePos.Y;
-      if (this.isSidebarVisible && Math.sqrt(deltaX * deltaX + deltaY * deltaY) < 20) {
-        if (!$(e.target).closest('.sidebar, #sidebar-dimmer, .sidebar-toggle, .back-to-top').length) {
-          this.clickHandler();
-        }
+      if (this.isSidebarVisible && Math.sqrt(deltaX * deltaX + deltaY * deltaY) < 20 && $(e.target).is('.main')) {
+        this.clickHandler();
       }
     },
     clickHandler: function() {
