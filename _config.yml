@@ -399,7 +399,7 @@ codeblock:
     enable: false
     # Show text copy result.
     show_result: false
-    # Style: only `flat` is currently available, leave it blank if you prefer default theme.
+    # Available values: default | flat
     style:
 
 # Enable "cheers" for archive page.

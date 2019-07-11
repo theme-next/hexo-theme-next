@@ -40,6 +40,9 @@ pre {
 .highlight {
   @extend $code-block;
   border-radius: 1px;
+  *::selection {
+    background: $highlight-selection;
+  }
 
   pre {
     border: none;
