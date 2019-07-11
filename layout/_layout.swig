@@ -105,6 +105,7 @@
   {% include '_scripts/next-boot.swig' %}
   {% include '_scripts/scroll-cookie.swig' %}
   {% include '_scripts/exturl.swig' %}
+  {% include '_scripts/three.swig' %}
   {% include '_third-party/quicklink.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
