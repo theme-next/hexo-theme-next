@@ -1,4 +1,5 @@
-<div align="right">语言：<a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
+<div align="right">语言：
+<a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
 :cn:
 <a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a></div>
 
