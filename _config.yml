@@ -284,12 +284,6 @@ chat:
 # See: https://theme-next.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
 
-# Set the text alignment in the posts.
-text_align:
-  # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
-
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
 
@@ -373,6 +367,12 @@ post_edit:
 # ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
+
+# Set the text alignment in posts / pages.
+text_align:
+  # Available values: start | end | left | right | center | justify | justify-all | match-parent
+  desktop: justify
+  mobile: justify
 
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
