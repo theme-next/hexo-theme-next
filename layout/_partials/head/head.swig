@@ -109,6 +109,11 @@
       indexName: '{{ theme.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},
       labels: {{ theme.algolia_search.labels | json_encode }}
+    },
+    translation: {
+      copy_button: '{{__("post.copy_button")}}',
+      copy_success: '{{__("post.copy_success")}}',
+      copy_failure: '{{__("post.copy_failure")}}'
     }
   };
 </script>

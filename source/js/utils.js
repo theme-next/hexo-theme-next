@@ -55,13 +55,13 @@ NexT.utils = {
   registerCopyCode: function() {
     $('.highlight').not('.gist .highlight').each(function(i, e) {
       function initButton(button) {
-        if (CONFIG.copycode.style == 'mac') {
+        if (CONFIG.copycode.style === 'mac') {
           button.html('<i class="fa fa-clipboard"></i>');
         } else {
-          button.text('{{__("post.copy_button")}}');
+          button.text(CONFIG.translation.copy_button);
         }
       }
-      $button = $('<div>').addClass('copy-btn');
+      var $button = $('<div>').addClass('copy-btn');
       $button.on('click', function(e) {
         var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
           return $(e).text();
@@ -81,8 +81,7 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          if (result) $(this).text('{{__("post.copy_success")}}');
-          else $(this).text('{{__("post.copy_failure")}}');
+          $(this).text(result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure);
         }
         ta.blur(); // For iOS
         $(this).blur();
@@ -91,7 +90,7 @@ NexT.utils = {
           selection.addRange(selected);
         }
       });
-      $button.on('mouseleave', function(e) {
+      $button.on('mouseleave', function() {
         var $b = $(this).closest('.copy-btn');
         setTimeout(function() {
           initButton($b);
