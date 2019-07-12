@@ -97,6 +97,7 @@
     sidebar: {{ theme.sidebar | json_encode }},
     back2top: {{ theme.back2top.enable }},
     back2top_sidebar: {{ theme.back2top.sidebar }},
+    copycode: {{ theme.codeblock.copy_button | json_encode }},
     fancybox: {{ theme.fancybox }},
     fastclick: {{ theme.fastclick }},
     lazyload: {{ theme.lazyload }},
