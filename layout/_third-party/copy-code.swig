@@ -1,9 +1,15 @@
 {% if theme.codeblock.copy_button.enable %}
 <script>
   $('.highlight').not('.gist .highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('{{__("post.copy_button")}}').on('click', function(e) {
+    function initButton(button) {
+      {% if theme.codeblock.copy_button.style == 'mac' %}
+        button.html('<i class="fa fa-clipboard"></i>');
+      {% else %}
+        button.text('{{__("post.copy_button")}}');
+      {% endif %}
+    }
+    $button = $('<div>').addClass('copy-btn');
+    $button.on('click', function(e) {
       var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
         return $(e).text();
       }).toArray().join('\n');
@@ -31,12 +37,15 @@
         selection.removeAllRanges();
         selection.addRange(selected);
       }
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
+    });
+    $button.on('mouseleave', function(e) {
+      var $b = $(this).closest('.copy-btn');
       setTimeout(function() {
-        $b.text('{{__("post.copy_button")}}');
+        initButton($b);
       }, 300);
-    }).append(e);
-  })
+    });
+    initButton($button);
+    $(e).wrap($('<div>').addClass('highlight-wrap')).before($button);
+  });
 </script>
 {% endif %}
