@@ -658,11 +658,6 @@ gitalk:
 # See: https://theme-next.org/docs/third-party-services/content-sharing-services
 # ---------------------------------------------------------------
 
-# Baidu Share (does not support https).
-baidushare:
-  #type: button
-  #type: slide
-
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
