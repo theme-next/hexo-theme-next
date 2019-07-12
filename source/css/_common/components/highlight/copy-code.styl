@@ -45,21 +45,15 @@
 
 if hexo-config('codeblock.copy_button.style') == 'mac' {
   .highlight-wrap {
-    position: relative;
     background: #21252b;
     border-radius: 5px;
-    font: 15px/22px "Microsoft YaHei","Arial",Sans-Serif;
-    line-height: 1.6;
     margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    text-shadow: none;
-    color: #000;
     padding-top: 30px;
     box-shadow: 0 10px 30px 0px rgba(0,0,0,.4);
   }
   .highlight {
     margin: 0px !important;
+    border-radius: 0 0 5px 5px;
     &::before {
       content: " ";
       position: absolute;
@@ -70,7 +64,6 @@ if hexo-config('codeblock.copy_button.style') == 'mac' {
       left: 12px;
       margin-top: -20px;
       box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-      z-index: 2;
     }
   }
 }

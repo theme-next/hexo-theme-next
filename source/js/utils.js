@@ -62,7 +62,7 @@ NexT.utils = {
         }
       }
       var $button = $('<div>').addClass('copy-btn');
-      $button.on('click', function(e) {
+      $button.on('click', function() {
         var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
           return $(e).text();
         }).toArray().join('\n');
