@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   NexT.utils.registerESCKeyEvent();
 
-  CONFIG.back2top && NexT.utils.registerBackToTop();
+  CONFIG.back2top.enable && NexT.utils.registerBackToTop();
 
   // Mobile top menu bar.
   $('.site-nav-toggle button').on('click', function() {
@@ -27,6 +27,7 @@ $(document).ready(function() {
   });
 
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   CONFIG.tabs && NexT.utils.registerTabsTag();
 
   NexT.utils.embeddedVideoTransformer();

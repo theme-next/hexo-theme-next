@@ -17,7 +17,7 @@
 {% endif %}
 
 <div class="{{ likely_look }}">
-	{% for x in theme.likely.networks %}
- 	 	<div class="{{ loop.key }}">{{ x }}</div>
-	{% endfor %}
+  {% for x in theme.likely.networks %}
+    <div class="{{ loop.key }}">{{ x }}</div>
+  {% endfor %}
 </div>

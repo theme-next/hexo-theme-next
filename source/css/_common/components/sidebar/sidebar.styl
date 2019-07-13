@@ -53,12 +53,12 @@
   img { display: inline-block; }
 }
 
-@import "sidebar-toggle";
 @import "sidebar-author";
 @import "sidebar-author-links";
 @import "sidebar-button";
 @import "sidebar-blogroll";
+@import "sidebar-dimmer";
 @import "sidebar-nav";
-@import "site-state" if hexo-config('site_state');
+@import "sidebar-toggle";
 @import "sidebar-toc" if hexo-config('toc.enable');
-@import "sidebar-dimmer" if hexo-config('sidebar.dimmer');
+@import "site-state" if hexo-config('site_state');

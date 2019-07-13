@@ -92,23 +92,30 @@ $(document).ready(function() {
   sidebarToggleLines.push(sidebarToggleLine2nd);
   sidebarToggleLines.push(sidebarToggleLine3rd);
 
-  var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px', SIDEBAR_DISPLAY_DURATION = 200, xPos, yPos;
+  var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px';
+  var SIDEBAR_DISPLAY_DURATION = 200;
+  var mousePos = {}, touchPos = {};
 
   var sidebarToggleMotion = {
-    toggleEl        : $('.sidebar-toggle'),
-    dimmerEl        : $('#sidebar-dimmer'),
     sidebarEl       : $('.sidebar'),
     isSidebarVisible: false,
     init            : function() {
       sidebarToggleLines.init();
 
-      this.toggleEl.on('click', this.clickHandler.bind(this));
-      this.dimmerEl.on('click', this.clickHandler.bind(this));
-      this.toggleEl.on('mouseenter', this.mouseEnterHandler.bind(this));
-      this.toggleEl.on('mouseleave', this.mouseLeaveHandler.bind(this));
-      this.sidebarEl.on('touchstart', this.touchstartHandler.bind(this));
-      this.sidebarEl.on('touchend', this.touchendHandler.bind(this));
-      this.sidebarEl.on('touchmove', function(e) { e.preventDefault(); });
+      $('body')
+        .on('mousedown', this.mousedownHandler.bind(this))
+        .on('mouseup', this.mouseupHandler.bind(this));
+      $('#sidebar-dimmer').on('click', this.clickHandler.bind(this));
+      $('.sidebar-toggle')
+        .on('click', this.clickHandler.bind(this))
+        .on('mouseenter', this.mouseEnterHandler.bind(this))
+        .on('mouseleave', this.mouseLeaveHandler.bind(this));
+      this.sidebarEl
+        .on('touchstart', this.touchstartHandler.bind(this))
+        .on('touchend', this.touchendHandler.bind(this))
+        .on('touchmove', function(e) {
+          e.preventDefault();
+        });
 
       $(document)
         .on('sidebar.isShowing', function() {
@@ -118,24 +125,39 @@ $(document).ready(function() {
           );
         });
     },
+    mousedownHandler: function(e) {
+      mousePos.X = e.pageX;
+      mousePos.Y = e.pageY;
+    },
+    mouseupHandler: function(e) {
+      var deltaX = e.pageX - mousePos.X;
+      var deltaY = e.pageY - mousePos.Y;
+      if (this.isSidebarVisible && Math.sqrt(deltaX * deltaX + deltaY * deltaY) < 20 && $(e.target).is('.main')) {
+        this.clickHandler();
+      }
+    },
     clickHandler: function() {
       this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();
       this.isSidebarVisible = !this.isSidebarVisible;
     },
     mouseEnterHandler: function() {
-      if (!this.isSidebarVisible) sidebarToggleLines.arrow();
+      if (!this.isSidebarVisible) {
+        sidebarToggleLines.arrow();
+      }
     },
     mouseLeaveHandler: function() {
-      if (!this.isSidebarVisible) sidebarToggleLines.init();
+      if (!this.isSidebarVisible) {
+        sidebarToggleLines.init();
+      }
     },
     touchstartHandler: function(e) {
-      xPos = e.originalEvent.touches[0].clientX;
-      yPos = e.originalEvent.touches[0].clientY;
+      touchPos.X = e.originalEvent.touches[0].clientX;
+      touchPos.Y = e.originalEvent.touches[0].clientY;
     },
     touchendHandler: function(e) {
-      var _xPos = e.originalEvent.changedTouches[0].clientX;
-      var _yPos = e.originalEvent.changedTouches[0].clientY;
-      if (Math.abs(_yPos - yPos) < 20 && ((_xPos - xPos > 30 && isRight) || (_xPos - xPos < -30 && !isRight))) {
+      var deltaX = e.originalEvent.changedTouches[0].clientX - touchPos.X;
+      var deltaY = e.originalEvent.changedTouches[0].clientY - touchPos.Y;
+      if (Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight))) {
         this.clickHandler();
       }
     },
@@ -201,8 +223,11 @@ $(document).ready(function() {
 
   function updateFooterPosition() {
     var containerHeight = $('#footer').attr('position') ? $('.container').height() + $('#footer').outerHeight(true) : $('.container').height();
-    if (containerHeight < window.innerHeight) $('#footer').css({ 'position': 'fixed', 'bottom': 0, 'left': 0, 'right': 0 }).attr('position', 'fixed');
-    else $('#footer').removeAttr('style position');
+    if (containerHeight < window.innerHeight) {
+      $('#footer').css({ 'position': 'fixed', 'bottom': 0, 'left': 0, 'right': 0 }).attr('position', 'fixed');
+    } else {
+      $('#footer').removeAttr('style position');
+    }
   }
 
   updateFooterPosition();

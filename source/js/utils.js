@@ -50,6 +50,58 @@ NexT.utils = {
   },
 
   /**
+   * One-click copy code support.
+   */
+  registerCopyCode: function() {
+    $('.highlight').not('.gist .highlight').each(function(i, e) {
+      function initButton(button) {
+        if (CONFIG.copycode.style === 'mac') {
+          button.html('<i class="fa fa-clipboard"></i>');
+        } else {
+          button.text(CONFIG.translation.copy_button);
+        }
+      }
+      var $button = $('<div>').addClass('copy-btn');
+      $button.on('click', function() {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        const selection = document.getSelection();
+        const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        if (CONFIG.copycode.show_result) {
+          $(this).text(result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure);
+        }
+        ta.blur(); // For iOS
+        $(this).blur();
+        if (selected) {
+          selection.removeAllRanges();
+          selection.addRange(selected);
+        }
+      });
+      $button.on('mouseleave', function() {
+        var $b = $(this).closest('.copy-btn');
+        setTimeout(function() {
+          initButton($b);
+        }, 300);
+      });
+      initButton($button);
+      $(e).wrap($('<div>').addClass('highlight-wrap')).before($button);
+    });
+  },
+
+  /**
    * Tabs tag listener (without twitter bootstrap).
    */
   registerTabsTag: function() {
@@ -275,7 +327,7 @@ NexT.utils = {
   },
 
   getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = (CONFIG.back2top && CONFIG.back2top_sidebar) ? $('.back-to-top').height() : 0;
+    var sidebarb2tHeight = (CONFIG.back2top.enable && CONFIG.back2top.sidebar) ? $('.back-to-top').height() : 0;
     return sidebarb2tHeight;
   },
 

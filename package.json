@@ -27,13 +27,15 @@
   },
   "homepage": "https://theme-next.org",
   "devDependencies": {
-    "all-contributors-cli": "^5.4.0",
-    "coffee-script": "^1.10.0",
-    "gulp": "^3.9.0",
-    "gulp-jshint": "^1.12.0",
-    "gulp-shell": "^0.6.1",
-    "js-yaml": "^3.8.1",
-    "jshint-stylish": "^2.1.0",
+    "all-contributors-cli": "^6.7.0",
+    "coffeescript": "^2.4.1",
+    "eslint": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-shell": "^0.7.1",
+    "js-yaml": "^3.13.1",
+    "jshint": "^2.10.2",
+    "jshint-stylish": "^2.2.1",
     "stylint": "^1.5.9"
   }
 }

@@ -1,0 +1,69 @@
+.highlight-wrap {
+  position: relative;
+}
+
+.highlight-wrap:hover .copy-btn,
+.highlight-wrap .copy-btn:focus {
+  opacity: 1;
+}
+
+.copy-btn {
+  display: inline-block;
+  position: absolute;
+  padding: 2px 6px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #333;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  outline: 0;
+  transition: opacity .3s ease-in-out;
+  opacity: 0;
+  if hexo-config('codeblock.copy_button.style') == 'flat' {
+    background-color: #fff;
+    border: none;
+    right: 0px;
+    height: 42px;
+  }
+  else if hexo-config('codeblock.copy_button.style') == 'mac' {
+    color: #fff;
+    right: 0px;
+    top: 2px;
+  }
+  else {
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    right: 4px;
+    top: 8px;
+  }
+}
+
+if hexo-config('codeblock.copy_button.style') == 'mac' {
+  .highlight-wrap {
+    background: #21252b;
+    border-radius: 5px;
+    margin-bottom: 1.6em;
+    padding-top: 30px;
+    box-shadow: 0 10px 30px 0px rgba(0,0,0,.4);
+  }
+  .highlight {
+    margin: 0px !important;
+    border-radius: 0 0 5px 5px;
+    &::before {
+      content: " ";
+      position: absolute;
+      border-radius: 50%;
+      background: #fc625d;
+      width: 12px;
+      height: 12px;
+      left: 12px;
+      margin-top: -20px;
+      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    }
+  }
+}

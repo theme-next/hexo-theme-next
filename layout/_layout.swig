@@ -81,12 +81,6 @@
       </div>
     {% endif %}
 
-    {% if theme.baidushare and theme.baidushare.type === "slide" %}
-      <div>
-        {% include '_partials/share/baidushare.swig' %}
-      </div>
-    {% endif %}
-
     {% if theme.add_this_id %}
       <div>
         {% include '_partials/share/add-this.swig' %}
@@ -120,7 +114,6 @@
   {% include '_third-party/rating.swig' %}
   {% include '_third-party/pangu.swig' %}
   {% include '_third-party/bookmark.swig' %}
-  {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
 

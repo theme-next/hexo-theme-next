@@ -259,8 +259,6 @@ sidebar:
   offset: 12
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
-  # Click any blank part of the page to close sidebar (only for Muse | Mist).
-  dimmer: false
 
 back2top:
   enable: true
@@ -399,7 +397,7 @@ codeblock:
     enable: false
     # Show text copy result.
     show_result: false
-    # Available values: default | flat
+    # Available values: default | flat | mac
     style:
 
 # Enable "cheers" for archive page.
@@ -660,11 +658,6 @@ gitalk:
 # Content Sharing Services
 # See: https://theme-next.org/docs/third-party-services/content-sharing-services
 # ---------------------------------------------------------------
-
-# Baidu Share (does not support https).
-baidushare:
-  #type: button
-  #type: slide
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
