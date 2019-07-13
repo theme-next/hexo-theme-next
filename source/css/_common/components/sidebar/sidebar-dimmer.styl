@@ -1,18 +1,22 @@
-.sidebar-active + #sidebar-dimmer {
-  +mobile() {
+#sidebar-dimmer {
+  hide();
+}
++mobile() {
+  #sidebar-dimmer {
+    show();
+    position: fixed;
+    z-index: $zindex-2;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+  }
+  .sidebar-active + #sidebar-dimmer {
     opacity: .7;
     transition: opacity .5s;
+    transform: translateX(-100%);
   }
-  transform: translateX(-100%);
-}
 
-#sidebar-dimmer {
-  show();
-  position: fixed;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: 0;
 }

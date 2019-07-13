@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-NexT.utils = NexT.$u = {
+NexT.utils = {
 
   /**
    * Wrap images with fancybox support.
@@ -47,6 +47,58 @@ NexT.utils = NexT.$u = {
 
   lazyLoadPostsImages: function() {
     lozad('.content img').observe();
+  },
+
+  /**
+   * One-click copy code support.
+   */
+  registerCopyCode: function() {
+    $('.highlight').not('.gist .highlight').each(function(i, e) {
+      function initButton(button) {
+        if (CONFIG.copycode.style === 'mac') {
+          button.html('<i class="fa fa-clipboard"></i>');
+        } else {
+          button.text(CONFIG.translation.copy_button);
+        }
+      }
+      var $button = $('<div>').addClass('copy-btn');
+      $button.on('click', function() {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        const selection = document.getSelection();
+        const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        if (CONFIG.copycode.show_result) {
+          $(this).text(result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure);
+        }
+        ta.blur(); // For iOS
+        $(this).blur();
+        if (selected) {
+          selection.removeAllRanges();
+          selection.addRange(selected);
+        }
+      });
+      $button.on('mouseleave', function() {
+        var $b = $(this).closest('.copy-btn');
+        setTimeout(function() {
+          initButton($b);
+        }, 300);
+      });
+      initButton($button);
+      $(e).wrap($('<div>').addClass('highlight-wrap')).before($button);
+    });
   },
 
   /**
@@ -121,7 +173,7 @@ NexT.utils = NexT.$u = {
     });
 
     $top.on('click', function() {
-      $.isFunction($('html').velocity) ? $('body').velocity('scroll') : $('html, body').animate({ scrollTop: 0 });
+      $('html, body').animate({ scrollTop: 0 });
     });
   },
 
@@ -275,7 +327,7 @@ NexT.utils = NexT.$u = {
   },
 
   getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = (CONFIG.back2top && CONFIG.back2top_sidebar) ? $('.back-to-top').height() : 0;
+    var sidebarb2tHeight = (CONFIG.back2top.enable && CONFIG.back2top.sidebar) ? $('.back-to-top').height() : 0;
     return sidebarb2tHeight;
   },
 
@@ -290,47 +342,3 @@ NexT.utils = NexT.$u = {
     return sidebarSchemePadding;
   }
 };
-
-$(document).ready(function() {
-
-  function wrapTable() {
-    $('table').not('.gist table').wrap('<div class="table-container"></div>');
-  }
-
-  /**
-   * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
-   * Need for Sidebar/TOC inner scrolling if content taller then viewport.
-   */
-  function updateSidebarHeight(height) {
-    height = height || 'auto';
-    $('.site-overview, .post-toc').css('max-height', height);
-  }
-
-  function initSidebarDimension() {
-    var updateSidebarHeightTimer;
-
-    $(window).on('resize', function() {
-      updateSidebarHeightTimer && clearTimeout(updateSidebarHeightTimer);
-
-      updateSidebarHeightTimer = setTimeout(function() {
-        var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-
-        updateSidebarHeight(sidebarWrapperHeight);
-      }, 0);
-    });
-
-    // Initialize Sidebar & TOC Width.
-    var scrollbarWidth = NexT.utils.getScrollbarWidth();
-    if ($('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.site-overview').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
-    }
-    if ($('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
-    }
-
-    // Initialize Sidebar & TOC Height.
-    updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
-  }
-  initSidebarDimension();
-  wrapTable();
-});

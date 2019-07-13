@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="{{ needmoreshare2_css }}"/>
 {% endif %}
 
-{% if theme.pace %}
-  {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
+{% if theme.pace.enable %}
+  {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/pace-theme-'+ theme.pace.theme +'.min.css?v=1.0.2') %}
   {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
     {% if theme.vendors.pace %}
       {% set pace_js_uri = theme.vendors.pace %}
@@ -95,8 +95,8 @@
     scheme: '{{ theme.scheme }}',
     version: '{{ version }}',
     sidebar: {{ theme.sidebar | json_encode }},
-    back2top: {{ theme.back2top.enable }},
-    back2top_sidebar: {{ theme.back2top.sidebar }},
+    back2top: {{ theme.back2top | json_encode }},
+    copycode: {{ theme.codeblock.copy_button | json_encode }},
     fancybox: {{ theme.fancybox }},
     fastclick: {{ theme.fastclick }},
     lazyload: {{ theme.lazyload }},
@@ -108,6 +108,11 @@
       indexName: '{{ theme.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},
       labels: {{ theme.algolia_search.labels | json_encode }}
+    },
+    translation: {
+      copy_button: '{{__("post.copy_button")}}',
+      copy_success: '{{__("post.copy_success")}}',
+      copy_failure: '{{__("post.copy_failure")}}'
     }
   };
 </script>

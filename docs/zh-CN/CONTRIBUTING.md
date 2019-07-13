@@ -1,4 +1,5 @@
-<div align="right">语言：<a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
+<div align="right">语言：
+<a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
 :cn:
 <a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a></div>
 
@@ -168,10 +169,6 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
 - 内容
     - `Roadmap`: 与 NexT 主题发展相关的 Issue
     - `Hexo`: 与 Hexo 相关的 Issue
-    - `Scheme [1] - Mist`: 与 Mist 主题相关的 Issue
-    - `Scheme [2] - Muse`: 与 Muse 主题相关的 Issue
-    - `Scheme [3] - Pisces`: 与 Pisces 主题相关的 Issue
-    - `Scheme [4] - Gemini`: 与 Gemini 主题相关的 Issue
     - `3rd Party Service`: 与第三方服务相关的 Issue
     - `Docs`: 需要添加文档说明的 Issue
     - `Configurations`: 与 NexT 主题设置相关的 Issue
@@ -185,9 +182,10 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Verified`: 已经被确认的 Issue
     - `Help Wanted`: 需要帮助的 Issue
     - `Wait for Answer`: 需要开发人员或用户回复的 Issue
-    - `Resolved Maybe`: 可能已经解决的 Issue
+    - `Probably Solved`: 可能已经解决的 Issue
     - `Solved`: 已经解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
+    - `Locked`: 关闭后长期没有新动态的 Issue
 
 Pull requests 的标签：
 

@@ -1,25 +1,4 @@
-$highlight_theme = hexo-config("highlight_theme")
-
-
-if $highlight_theme == "normal"
-  $highlight-background   = #f7f7f7
-  $highlight-current-line = #efefef
-  $highlight-selection    = #d6d6d6
-  $highlight-foreground   = #4d4d4c
-  $highlight-comment      = #8e908c
-  $highlight-red          = #c82829
-  $highlight-orange       = #f5871f
-  $highlight-yellow       = #eab700
-  $highlight-green        = #718c00
-  $highlight-aqua         = #3e999f
-  $highlight-blue         = #4271ae
-  $highlight-purple       = #8959a8
-  $highlight-gutter       = {
-    color: #869194,
-    bg-color: #eff2f3
-  }
-
-if $highlight_theme == "night"
+if $highlight_theme == "night" {
   $highlight-background   = #1d1f21
   $highlight-current-line = #282a2e
   $highlight-selection    = #373b41
@@ -36,8 +15,8 @@ if $highlight_theme == "night"
     color: lighten($highlight-background, 50%),
     bg-color: darken($highlight-background, 100%)
   }
-
-if $highlight_theme == "night eighties"
+}
+else if $highlight_theme == "night eighties" {
   $highlight-background   = #2d2d2d
   $highlight-current-line = #393939
   $highlight-selection    = #515151
@@ -54,8 +33,8 @@ if $highlight_theme == "night eighties"
     color: $highlight-comment,
     bg-color: darken($highlight-background, 40%)
   }
-
-if $highlight_theme == "night blue"
+}
+else if $highlight_theme == "night blue" {
   $highlight-background   = #002451
   $highlight-current-line = #00346e
   $highlight-selection    = #003f8e
@@ -72,8 +51,8 @@ if $highlight_theme == "night blue"
     color: $highlight-comment,
     bg-color: darken($highlight-background, 60%)
   }
-
-if $highlight_theme == "night bright"
+}
+else if $highlight_theme == "night bright" {
   $highlight-background   = #000000
   $highlight-current-line = #2a2a2a
   $highlight-selection    = #424242
@@ -90,3 +69,22 @@ if $highlight_theme == "night bright"
     color: lighten($highlight-background, 40%),
     bg-color: lighten($highlight-background, 16%)
   }
+}
+else {
+  $highlight-background   = #f7f7f7
+  $highlight-current-line = #efefef
+  $highlight-selection    = #d6d6d6
+  $highlight-foreground   = #4d4d4c
+  $highlight-comment      = #8e908c
+  $highlight-red          = #c82829
+  $highlight-orange       = #f5871f
+  $highlight-yellow       = #eab700
+  $highlight-green        = #718c00
+  $highlight-aqua         = #3e999f
+  $highlight-blue         = #4271ae
+  $highlight-purple       = #8959a8
+  $highlight-gutter       = {
+    color: #869194,
+    bg-color: #eff2f3
+  }
+}
