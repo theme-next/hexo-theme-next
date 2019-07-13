@@ -335,7 +335,7 @@ codeblock:
     enable: false
     # Show text copy result
     show_result: false
-    # Style: only `flat` is currently available, leave it blank if you prefer default theme
+    # Available values: default | flat | mac
     style:
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
