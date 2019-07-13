@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   function SidebarToggleLine(settings) {
     this.el = $(settings.el);
-    this.status = $.extend({
+    this.status = $.extend({}, {
       init: {
         width    : '100%',
         opacity  : 1,
