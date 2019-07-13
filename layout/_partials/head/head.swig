@@ -96,6 +96,7 @@
     version: '{{ version }}',
     sidebar: {{ theme.sidebar | json_encode }},
     back2top: {{ theme.back2top | json_encode }},
+    copycode: {{ theme.codeblock.copy_button | json_encode }},
     fancybox: {{ theme.fancybox }},
     fastclick: {{ theme.fastclick }},
     lazyload: {{ theme.lazyload }},
