@@ -4,7 +4,7 @@ $highlight_theme = hexo-config("codeblock.highlight_theme");
 
 @import "theme";
 @import "diff";
-@import "copy-code";
+@import "copy-code" if hexo-config("codeblock.copy_button.enable");
 
 // Placeholder: $code-block
 $code-block {
