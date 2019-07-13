@@ -223,8 +223,6 @@ avatar:
   url: #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
   rounded: false
-  # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
-  opacity: 1
   # If true, the avatar would be rotated with the cursor.
   rotated: false
 
@@ -284,12 +282,6 @@ chat:
 # See: https://theme-next.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
 
-# Set the text alignment in the posts.
-text_align:
-  # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
-
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
 
@@ -326,17 +318,6 @@ symbols_count_time:
   item_text_total: false
   awl: 4
   wpm: 275
-
-codeblock:
-  # Manual define the border radius in codeblock, leave it blank for the default value: 1
-  border_radius:
-  # Add copy button on codeblock
-  copy_button:
-    enable: false
-    # Show text copy result
-    show_result: false
-    # Available values: default | flat | mac
-    style:
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -385,6 +366,12 @@ post_edit:
 # Misc Theme Settings
 # ---------------------------------------------------------------
 
+# Set the text alignment in posts / pages.
+text_align:
+  # Available values: start | end | left | right | center | justify | justify-all | match-parent
+  desktop: justify
+  mobile: justify
+
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
@@ -397,15 +384,21 @@ safari_rainbow: false
 # Optimize the display of scrollbars on webkit based browsers.
 custom_scrollbar: false
 
-# Custom Logo (Do not support Scheme Mist)
-custom_logo:
-  enable: false
-  image: #/uploads/custom-logo.jpg
+# Custom Logo (Do not support scheme Mist)
+custom_logo: #/uploads/custom-logo.jpg
 
-# Code Highlight theme
-# Available values: normal | night | night eighties | night blue | night bright
-# https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+codeblock:
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright
+  # See: https://github.com/chriskempson/tomorrow-theme
+  highlight_theme: normal
+  # Add copy button on codeblock
+  copy_button:
+    enable: false
+    # Show text copy result.
+    show_result: false
+    # Available values: default | flat | mac
+    style:
 
 # Enable "cheers" for archive page.
 cheers: true
@@ -518,6 +511,20 @@ math:
       copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
       copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
 
+# Fancybox. There is support for old version 2 and new version 3.
+# Choose only one variant, do not need to install both.
+# To install 2.x: https://github.com/theme-next/theme-next-fancybox
+# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
+fancybox: false
+
+# Polyfill to remove click delays on browsers with touch UIs.
+# Dependencies: https://github.com/theme-next/theme-next-fastclick
+fastclick: false
+
+# Vanilla JavaScript plugin for lazyloading images.
+# Dependencies: https://github.com/theme-next/theme-next-lazyload
+lazyload: false
+
 # Pangu Support
 # Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
@@ -543,13 +550,7 @@ quicklink:
   priority: true
 
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
-  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns.
-  # Leave ignores as empty if you don't understand what it means.
-  # For example:
-  # ignores:
-  #   - /\/api\/?/
-  #   - uri => uri.includes('.xml')
-  #   - (uri, el) => el.hasAttribute('noopener')
+  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   ignores:
 
 # Bookmark Support
@@ -933,28 +934,14 @@ motion:
     # Only for Pisces | Gemini.
     sidebar: slideUpIn
 
-# Fancybox. There is support for old version 2 and new version 3.
-# Choose only one variant, do not need to install both.
-# To install 2.x: https://github.com/theme-next/theme-next-fancybox
-# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
-fancybox: false
-
-# Polyfill to remove click delays on browsers with touch UIs.
-# Dependencies: https://github.com/theme-next/theme-next-fastclick
-fastclick: false
-
-# Vanilla JavaScript plugin for lazyloading images.
-# Dependencies: https://github.com/theme-next/theme-next-lazyload
-lazyload: false
-
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
-pace: false
-# Themes list:
-# pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
-# pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
-# pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
-pace_theme: pace-theme-minimal
+pace:
+  enable: false
+  # Themes list:
+  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
+  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
+  theme: minimal
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
@@ -977,14 +964,11 @@ three:
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
-# size: The width of the ribbon.
-# alpha: The transparency of the ribbon.
-# zIndex: The display level of the ribbon.
 canvas_ribbon:
   enable: false
-  size: 300
-  alpha: 0.6
-  zIndex: -1
+  size: 300 # The width of the ribbon
+  alpha: 0.6 # The transparency of the ribbon
+  zIndex: -1 # The display level of the ribbon
 
 
 #! ---------------------------------------------------------------

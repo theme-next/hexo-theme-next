@@ -1,8 +1,10 @@
 // https://github.com/chriskempson/tomorrow-theme
 
+$highlight_theme = hexo-config("codeblock.highlight_theme");
+
 @import "theme";
 @import "diff";
-@import "copy-code";
+@import "copy-code" if hexo-config("codeblock.copy_button.enable");
 
 // Placeholder: $code-block
 $code-block {
@@ -38,9 +40,10 @@ pre {
 
 .highlight {
   @extend $code-block;
-  // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
-  hexo-config('codeblock.border_radius') is a 'unit' ? (cbradius = unit(hexo-config('codeblock.border_radius'), px)) : (cbradius = 1px)
-  border-radius: cbradius;
+
+  *::selection {
+    background: $highlight-selection;
+  }
 
   pre {
     border: none;
