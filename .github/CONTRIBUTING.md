@@ -172,10 +172,6 @@ Issues related: `types`+`contents`+`results`
 - By contents
     - `Roadmap`: An issue about future development
     - `Hexo`: An issue related to Hexo
-    - `Scheme [1] - Mist`: An issue related to Scheme Mist
-    - `Scheme [2] - Muse`: An issue related to Scheme Muse
-    - `Scheme [3] - Pisces`: An issue related to Scheme Pisces
-    - `Scheme [4] - Gemini`: An issue related to Scheme Gemini
     - `3rd Party Service`: An issue related to 3rd party service
     - `Docs`: Need to add instruction document
     - `Configurations`: An issue related to configurations
@@ -189,9 +185,10 @@ Issues related: `types`+`contents`+`results`
     - `Verified`: An issue that has been verified
     - `Help Wanted`: An issue that needs help
     - `Wait for Answer`: An issue that needs to be answered by the developers or user
-    - `Resolved Maybe`: An issue that has been resolved maybe
+    - `Probably Solved`: An issue that has been resolved maybe
     - `Solved`: An issue that has been solved
     - `Stale`: This issue has been automatically marked as stale because lack of recent activity
+    - `Locked`: This issue has been automatically locked since there has not been any recent activity after it was closed
 
 Pull requests related:
 
