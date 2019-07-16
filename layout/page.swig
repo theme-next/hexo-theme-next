@@ -33,13 +33,7 @@
         {% if page.type === 'tags' %}
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              {% set visibleTags = 0 %}
-              {% for tag in site.tags %}
-                {% if tag.length %}
-                  {% set visibleTags += 1 %}
-                {% endif %}
-              {% endfor %}
-              {{ _p('counter.tag_cloud', visibleTags) }}
+              {{ _p('counter.tag_cloud', site.tags.length) }}
             </div>
             <div class="tag-cloud-tags">
               {% if not theme.tagcloud %}
@@ -52,13 +46,7 @@
         {% elif page.type === 'categories' %}
           <div class="category-all-page">
             <div class="category-all-title">
-              {% set visibleCategories = 0 %}
-              {% for cat in site.categories %}
-                {% if cat.length %}
-                  {% set visibleCategories += 1 %}
-                {% endif %}
-              {% endfor %}
-              {{ _p('counter.categories', visibleCategories) }}
+              {{ _p('counter.categories', site.categories.length) }}
             </div>
             <div class="category-all">
               {{ list_categories() }}
