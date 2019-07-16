@@ -63,6 +63,10 @@
 
 <link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}"/>
 
+{% if theme.live2d.enable %}
+  <link rel="stylesheet" href="{{ url_for(theme.vendors._internal + '/live2d/assets/waifu.css') }}"/>
+{% endif %}
+
 {% if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
 {% endif %}
