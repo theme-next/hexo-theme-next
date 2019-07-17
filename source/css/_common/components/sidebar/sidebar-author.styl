@@ -5,7 +5,7 @@
   max-width: $site-author-image-width;
   height: $site-author-image-height;
   border: $site-author-image-border-width solid $site-author-image-border-color;
-  border-radius: 100% if hexo-config('avatar.rounded');
+  circle() if hexo-config('avatar.rounded');
 }
 
 if hexo-config('avatar.rotated') {
