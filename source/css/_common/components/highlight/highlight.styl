@@ -98,10 +98,7 @@ pre {
 }
 
 .gutter {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  disable-user-select();
 }
 
 .gist table {
@@ -110,14 +107,24 @@ pre {
   td { border: none; }
 }
 
-// For diff highlight
-pre .deletion { background: $highlight-deletion; }
-pre .addition { background: $highlight-addition; }
-pre .meta     { color: $highlight-purple; }
-
 pre {
+  // For diff highlight
+  .deletion {
+    background: $highlight-deletion;
+  }
 
-  .comment { color: $highlight-comment; }
+  .addition {
+    background: $highlight-addition;
+  }
+
+  .meta {
+    color: $highlight-yellow;
+    disable-user-select();
+  }
+
+  .comment {
+    color: $highlight-comment;
+  }
 
   .variable
   .attribute
