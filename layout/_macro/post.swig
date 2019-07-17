@@ -347,9 +347,7 @@
 
     {% if not is_index %}
       {% for inject_item in theme.injects.postCopyright %}
-        <div>
-          {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-        </div>
+        {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
       {% endfor %}
     {% endif %}
 
