@@ -4,7 +4,6 @@
 
 const priority = hexo.config.inject_priority_reward || 120;
 
-// add to postBodyEnd
 hexo.extend.filter.register('theme_inject', function(injects) {
   injects.postBodyEnd.raw('reward', `
     {% if page.reward === undefined and theme.reward_settings.enable %}
@@ -17,5 +16,5 @@ hexo.extend.filter.register('theme_inject', function(injects) {
         {{ partial('_partials/post/reward.swig', {}, {cache: true}) }}
       </div>
     {% endif %}
-  `, {}, {cache: true});
+  `);
 }, priority);
