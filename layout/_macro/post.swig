@@ -330,27 +330,6 @@
     {### END POST BODY ###}
     {#####################}
 
-    {% if theme.wechat_subscriber.enable and not is_index %}
-      {% include '../_partials/post/wechat-subscriber.swig' %}
-    {% endif %}
-
-    {% if page.reward === undefined and theme.reward_settings.enable %}
-      {% set reward_able = true %}
-    {% else %}
-      {% set reward_able = page.reward %}
-    {% endif %}
-    {% if reward_able and not is_index %}
-      <div>
-        {% include '../_partials/post/reward.swig' %}
-      </div>
-    {% endif %}
-
-    {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
-      <div>
-        {% include '../_partials/post/post-copyright.swig' with { post: post } %}
-      </div>
-    {% endif %}
-
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
         {% if theme.tag_icon %}
