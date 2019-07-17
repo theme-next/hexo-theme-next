@@ -345,6 +345,14 @@
       </div>
     {% endif %}
 
+    {% if not is_index %}
+      {% for inject_item in theme.injects.postCopyright %}
+        <div>
+          {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
     {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
       <div>
         {% include '../_partials/post/post-copyright.swig' with { post: post } %}
