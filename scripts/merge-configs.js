@@ -2,7 +2,7 @@
 
 'use strict';
 
-var merge = require('./merge');
+var merge = require('lodash/merge');
 
 hexo.on('generateBefore', function() {
   if (hexo.locals.get) {
