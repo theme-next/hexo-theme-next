@@ -1,3 +1,5 @@
+<h1 align="center">Fix Leancloud Counter Plugin Security Vulnerability</h1>
+
 Before you make the config, please upgrade your NexT version to v6.0.6 or greater.
 
 Please note the difference between **site config file** and **theme config file**
