@@ -1,2 +1,2 @@
-{% include '_third-party/chatra.swig' %}
-{% include '_third-party/tidio.swig' %}
+{% include 'chatra.swig' %}
+{% include 'tidio.swig' %}
