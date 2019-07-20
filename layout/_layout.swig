@@ -111,6 +111,7 @@
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/pdf.swig' %}
   {% include '_third-party/mermaid.swig' %}
+  {% include '_third-party/caniuse.swig' %}
   {% include '_third-party/baidu-push.swig' %}
   {% include '_third-party/schedule.swig' %}
   {% include '_third-party/needsharebutton.swig' %}
