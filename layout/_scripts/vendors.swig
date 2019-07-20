@@ -27,6 +27,10 @@
   {% set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
 {% endif %}
 
+{% if theme.mediumzoom %}
+  {% set js_vendors.mediumzoom = 'mediumzoom/source/jquery.mediumzoom.pack.js' %}
+{% endif %}
+
 {% if theme.canvas_nest.enable %}
   {% if theme.canvas_nest.onmobile %}
     {% set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest.min.js') %}

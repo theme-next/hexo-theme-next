@@ -517,6 +517,10 @@ math:
 # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
 fancybox: false
 
+# A JavaScript library for zooming images like Medium.
+# Dependencies: https://github.com/theme-next/theme-next-mediumzoom
+mediumzoom: false
+
 # Polyfill to remove click delays on browsers with touch UIs.
 # Dependencies: https://github.com/theme-next/theme-next-fastclick
 fastclick: false
@@ -1004,6 +1008,12 @@ vendors:
   # fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css
   fancybox:
   fancybox_css:
+
+  # Internal version: 0.4.0
+  # See: https://github.com/francoischalifour/medium-zoom
+  # Example:
+  # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
+  mediumzoom:
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
