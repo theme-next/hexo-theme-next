@@ -3,10 +3,11 @@
 NexT.utils = {
 
   /**
-   * Wrap images with fancybox.
+   * Wrap images with fancybox support.
    */
   wrapImageWithFancyBox: function() {
-    $('.post-body img')
+    $('.content img')
+      .not('#qr img')
       .each(function() {
         var $image = $(this);
         var imageTitle = $image.attr('title') || $image.attr('alt');
@@ -42,14 +43,6 @@ NexT.utils = {
         }
       }
     });
-  },
-
-  registerMediumZoom: function() {
-    mediumZoom('.post-body img');
-  },
-
-  lazyLoadPostsImages: function() {
-    lozad('.post-body img').observe();
   },
 
   /**

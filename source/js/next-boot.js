@@ -7,7 +7,7 @@ $(document).ready(function() {
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
    */
   CONFIG.fastclick && NexT.utils.isMobile() && window.FastClick.attach(document.body);
-  CONFIG.lazyload && NexT.utils.lazyLoadPostsImages();
+  CONFIG.lazyload && window.lozad('.content img').observe();
 
   NexT.utils.registerESCKeyEvent();
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
   });
 
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.mediumzoom && NexT.utils.registerMediumZoom();
+  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   CONFIG.tabs && NexT.utils.registerTabsTag();
 
