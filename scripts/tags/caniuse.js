@@ -20,3 +20,4 @@ const caniUse = (args) => {
 };
 
 hexo.extend.tag.register('caniuse', caniUse, {async: true});
+hexo.extend.tag.register('can', caniUse, {async: true});
