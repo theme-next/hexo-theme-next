@@ -98,6 +98,7 @@
     back2top: {{ theme.back2top | json_encode }},
     copycode: {{ theme.codeblock.copy_button | json_encode }},
     fancybox: {{ theme.fancybox }},
+    mediumzoom: {{ theme.mediumzoom }},
     fastclick: {{ theme.fastclick }},
     lazyload: {{ theme.lazyload }},
     tabs: {{ theme.tabs.enable }},

@@ -28,7 +28,7 @@
 {% endif %}
 
 {% if theme.mediumzoom %}
-  {% set js_vendors.mediumzoom = 'mediumzoom/source/jquery.mediumzoom.pack.js' %}
+  {% set js_vendors.mediumzoom = 'mediumzoom/medium-zoom.min.js' %}
 {% endif %}
 
 {% if theme.canvas_nest.enable %}

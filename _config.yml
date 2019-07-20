@@ -1009,7 +1009,7 @@ vendors:
   fancybox:
   fancybox_css:
 
-  # Internal version: 0.4.0
+  # Internal version: 1.0.4
   # See: https://github.com/francoischalifour/medium-zoom
   # Example:
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
