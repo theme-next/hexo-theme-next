@@ -16,7 +16,7 @@ const caniUse = (args) => {
     return '';
   }
 
-  return `<p class="ciu_embed" data-feature="${feature}" data-periods="${periods}"><a href="http://caniuse.com/#feat=${feature}">Can I Use ${feature}?</a>Data on support for the ${feature} feature across the major browsers from caniuse.com.</p>`;
+  return `<p class="ciu_embed" data-feature="${feature}" data-periods="${periods}"><a id="non-ext" href="http://caniuse.com/#feat=${feature}">Can I Use ${feature}?</a>Data on support for the ${feature} feature across the major browsers from caniuse.com.</p>`;
 };
 
 hexo.extend.tag.register('caniuse', caniUse, {async: true});
