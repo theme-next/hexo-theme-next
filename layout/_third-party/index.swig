@@ -4,6 +4,7 @@
 {% include '_third-party/bookmark.swig' %}
 {% include '_third-party/schedule.swig' %}
 {% include '_third-party/comments/index.swig' %}
+{% include '_third-party/analytics/analytics-with-jquery.swig' %}
 {% include '_third-party/search/index.swig' %}
 {% include '_third-party/chat/index.swig' %}
 {% include '_third-party/tags/index.swig' %}
