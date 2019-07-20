@@ -1,2 +1,3 @@
-{% include '_third-party/pdf.swig' %}
-{% include '_third-party/mermaid.swig' %}
+{% include 'pdf.swig' %}
+{% include 'mermaid.swig' %}
+{% include 'caniuse.swig' %}

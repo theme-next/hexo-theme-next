@@ -910,6 +910,11 @@ mermaid:
   cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
   #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
 
+# Caniuse tag
+caniuse:
+  enable: false
+  cdn: //cdn.jsdelivr.net/gh/ireade/caniuse-embed@1/caniuse-embed.min.js
+
 
 # ---------------------------------------------------------------
 # Animation Settings
