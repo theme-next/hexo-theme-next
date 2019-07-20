@@ -103,22 +103,18 @@
   {% include '_scripts/scroll-cookie.swig' %}
   {% include '_scripts/exturl.swig' %}
   {% include '_scripts/three.swig' %}
+  {% include '_third-party/math/index.swig' %}
+  {% include '_third-party/pangu.swig' %}
   {% include '_third-party/quicklink.swig' %}
+  {% include '_third-party/bookmark.swig' %}
+  {% include '_third-party/schedule.swig' %}
   {% include '_third-party/comments/index.swig' %}
   {% include '_third-party/search/index.swig' %}
-  {% include '_third-party/analytics/lean-analytics.swig' %}
-  {% include '_third-party/analytics/firestore.swig' %}
-  {% include '_third-party/math/index.swig' %}
-  {% include '_third-party/pdf.swig' %}
-  {% include '_third-party/mermaid.swig' %}
+  {% include '_third-party/chat/index.swig' %}
+  {% include '_third-party/tags/index.swig' %}
   {% include '_third-party/baidu-push.swig' %}
-  {% include '_third-party/schedule.swig' %}
   {% include '_third-party/needsharebutton.swig' %}
   {% include '_third-party/rating.swig' %}
-  {% include '_third-party/pangu.swig' %}
-  {% include '_third-party/bookmark.swig' %}
-  {% include '_third-party/chatra.swig' %}
-  {% include '_third-party/tidio.swig' %}
 
   {% for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
