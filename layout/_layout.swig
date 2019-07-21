@@ -99,11 +99,12 @@
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/next-boot.swig' %}
   {% include '_scripts/scroll-cookie.swig' %}
   {% include '_scripts/exturl.swig' %}
   {% include '_scripts/three.swig' %}
+
   {% include '_third-party/index.swig' %}
+  {% include '_scripts/next-boot.swig' %}
 
   {% for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}

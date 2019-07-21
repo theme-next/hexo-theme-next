@@ -6,13 +6,16 @@ $(document).ready(function() {
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
    */
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
   CONFIG.fastclick && NexT.utils.isMobile() && window.FastClick.attach(document.body);
   CONFIG.lazyload && NexT.utils.lazyLoadPostsImages();
   CONFIG.pangu && window.pangu.spacingPage();
 
+  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
+  CONFIG.tabs && NexT.utils.registerTabsTag();
   NexT.utils.registerESCKeyEvent();
-
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
+  NexT.utils.embeddedVideoTransformer();
 
   // Mobile top menu bar.
   $('.site-nav-toggle button').on('click', function() {
@@ -26,20 +29,6 @@ $(document).ready(function() {
       $siteNav[animateCallback](ON_CLASS_NAME);
     });
   });
-
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
-
-  NexT.utils.embeddedVideoTransformer();
-
-  // Define Motion Sequence & Bootstrap Motion.
-  CONFIG.motion.enable && NexT.motion.integrator
-    .add(NexT.motion.middleWares.logo)
-    .add(NexT.motion.middleWares.menu)
-    .add(NexT.motion.middleWares.postList)
-    .add(NexT.motion.middleWares.sidebar)
-    .bootstrap();
 
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
@@ -81,4 +70,12 @@ $(document).ready(function() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
   wrapTable();
+
+  // Define Motion Sequence & Bootstrap Motion.
+  CONFIG.motion.enable && NexT.motion.integrator
+    .add(NexT.motion.middleWares.logo)
+    .add(NexT.motion.middleWares.menu)
+    .add(NexT.motion.middleWares.postList)
+    .add(NexT.motion.middleWares.sidebar)
+    .bootstrap();
 });
