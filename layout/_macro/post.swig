@@ -399,9 +399,7 @@
           {% endif %}
           <div class="social_share">
             {% if theme.likely.enable %}
-              <div>
-                {% include '../_partials/share/likely.swig' %}
-              </div>
+              {% include '../_partials/share/likely.swig' %}
             {% endif %}
             {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
               <div id="needsharebutton-postbottom">

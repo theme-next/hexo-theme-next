@@ -101,12 +101,13 @@
     mediumzoom: {{ theme.mediumzoom }},
     fastclick: {{ theme.fastclick }},
     lazyload: {{ theme.lazyload }},
+    pangu: {{ theme.pangu }},
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     algolia: {
-      applicationID: '{{ theme.algolia.applicationID }}',
-      apiKey: '{{ theme.algolia.apiKey }}',
-      indexName: '{{ theme.algolia.indexName }}',
+      applicationID: '{{ config.algolia.applicationID }}',
+      apiKey: '{{ config.algolia.apiKey }}',
+      indexName: '{{ config.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},
       labels: {{ theme.algolia_search.labels | json_encode }}
     },

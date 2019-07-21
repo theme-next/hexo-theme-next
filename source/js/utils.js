@@ -6,8 +6,7 @@ NexT.utils = {
    * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    $('.content img')
-      .not('#qr img')
+    $('.post-body img')
       .each(function() {
         var $image = $(this);
         var imageTitle = $image.attr('title') || $image.attr('alt');
@@ -156,8 +155,8 @@ NexT.utils = {
       var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
       var scrollPercent = scrollTop / contentVisibilityHeight;
       var scrollPercentRounded = Math.round(scrollPercent * 100);
-      var scrollPercentMaxed = scrollPercentRounded > 100 ? 100 : scrollPercentRounded;
-      $('#scrollpercent>span').html(scrollPercentMaxed);
+      var scrollPercentMaxed = Math.min(scrollPercentRounded, 100);
+      $('#scrollpercent > span').html(scrollPercentMaxed);
     }
 
     // For init back to top in sidebar if page was scrolled after page refresh.

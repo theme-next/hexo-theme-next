@@ -10,6 +10,14 @@
 {% set js_defer_vendors = {} %}
 {% set js_vendors.jquery = 'jquery/index.js?v=3.4.1' %}
 
+{% if theme.fancybox %}
+  {% set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
+{% endif %}
+
+{% if theme.mediumzoom %}
+  {% set js_vendors.mediumzoom = 'mediumzoom/medium-zoom.min.js' %}
+{% endif %}
+
 {% if theme.fastclick %}
   {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
 {% endif %}
@@ -18,17 +26,17 @@
   {% set js_vendors.lazyload = 'lazyload/lozad.min.js?v=1.10.0' %}
 {% endif %}
 
+{% if theme.pangu %}
+  {% set js_vendors.pangu = 'pangu/dist/pangu.min.js?v=4.0.7' %}
+{% endif %}
+
+{% if theme.reading_progress.enable %}
+  {% set js_vendors.reading_progress = 'reading_progress/reading_progress.js' %}
+{% endif %}
+
 {% if theme.motion.enable %}
   {% set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
   {% set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}
-{% endif %}
-
-{% if theme.fancybox %}
-  {% set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
-{% endif %}
-
-{% if theme.mediumzoom %}
-  {% set js_vendors.mediumzoom = 'mediumzoom/medium-zoom.min.js' %}
 {% endif %}
 
 {% if theme.canvas_nest.enable %}
@@ -67,10 +75,6 @@
     {% set canvas_ribbon_uri = theme.vendors.canvas_ribbon %}
   {% endif %}
   <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
-{% endif %}
-
-{% if theme.reading_progress.enable %}
-  {% set js_vendors.reading_progress = 'reading_progress/reading_progress.js' %}
 {% endif %}
 
 {% for name, internal in js_vendors %}
