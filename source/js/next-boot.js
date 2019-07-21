@@ -7,8 +7,9 @@ $(document).ready(function() {
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
    */
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
   CONFIG.fastclick && NexT.utils.isMobile() && window.FastClick.attach(document.body);
-  CONFIG.lazyload && NexT.utils.lazyLoadPostsImages();
+  CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();

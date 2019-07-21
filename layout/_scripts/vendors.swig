@@ -14,6 +14,10 @@
   {% set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
 {% endif %}
 
+{% if theme.mediumzoom %}
+  {% set js_vendors.mediumzoom = 'mediumzoom/medium-zoom.min.js' %}
+{% endif %}
+
 {% if theme.fastclick %}
   {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
 {% endif %}

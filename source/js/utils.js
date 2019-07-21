@@ -3,7 +3,7 @@
 NexT.utils = {
 
   /**
-   * Wrap images with fancybox support.
+   * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
     $('.content img')
@@ -43,10 +43,6 @@ NexT.utils = {
         }
       }
     });
-  },
-
-  lazyLoadPostsImages: function() {
-    lozad('.content img').observe();
   },
 
   /**

@@ -16,7 +16,8 @@ const caniUse = (args) => {
     return '';
   }
 
-  return `<p class="ciu_embed" data-feature="${feature}" data-periods="${periods}"><a href="http://caniuse.com/#feat=${feature}">Can I Use ${feature}?</a>Data on support for the ${feature} feature across the major browsers from caniuse.com.</p>`;
+  return `<iframe data-feature="${feature}" src="https://caniuse.bitsofco.de/embed/index.html?feat=${feature}&periods=${periods}&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>`;
 };
 
 hexo.extend.tag.register('caniuse', caniUse, {async: true});
+hexo.extend.tag.register('can', caniUse, {async: true});
