@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+$(function() {
 
   /**
    * Register JS handlers by condition option.
@@ -71,12 +71,4 @@ $(document).ready(function() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
   wrapTable();
-
-  // Define Motion Sequence & Bootstrap Motion.
-  CONFIG.motion.enable && NexT.motion.integrator
-    .add(NexT.motion.middleWares.logo)
-    .add(NexT.motion.middleWares.menu)
-    .add(NexT.motion.middleWares.postList)
-    .add(NexT.motion.middleWares.sidebar)
-    .bootstrap();
 });
