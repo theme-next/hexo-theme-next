@@ -518,6 +518,7 @@ math:
 fancybox: false
 
 # A JavaScript library for zooming images like Medium.
+# Do not enable both `fancybox` and `mediumzoom`.
 # Dependencies: https://github.com/theme-next/theme-next-mediumzoom
 mediumzoom: false
 

@@ -103,7 +103,20 @@
   {% include '_scripts/scroll-cookie.swig' %}
   {% include '_scripts/exturl.swig' %}
   {% include '_scripts/three.swig' %}
-  {% include '_third-party/index.swig' %}
+  {% include 'math/index.swig' %}
+  {% include 'pangu.swig' %}
+  {% include 'quicklink.swig' %}
+  {% include 'bookmark.swig' %}
+  {% include 'schedule.swig' %}
+  {% include 'comments/index.swig' %}
+  {% include 'analytics/analytics-with-jquery.swig' %}
+  {% include 'search/index.swig' %}
+  {% include 'chat/index.swig' %}
+  {% include 'tags/index.swig' %}
+  {% include 'baidu-push.swig' %}
+  {% include 'needsharebutton.swig' %}
+  {% include 'rating.swig' %}
+
 
   {% for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
