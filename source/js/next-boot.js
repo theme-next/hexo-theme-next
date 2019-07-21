@@ -8,6 +8,7 @@ $(document).ready(function() {
    */
   CONFIG.fastclick && NexT.utils.isMobile() && window.FastClick.attach(document.body);
   CONFIG.lazyload && NexT.utils.lazyLoadPostsImages();
+  CONFIG.pangu && window.pangu.spacingPage();
 
   NexT.utils.registerESCKeyEvent();
 

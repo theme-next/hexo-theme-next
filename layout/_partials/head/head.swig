@@ -100,6 +100,7 @@
     fancybox: {{ theme.fancybox }},
     fastclick: {{ theme.fastclick }},
     lazyload: {{ theme.lazyload }},
+    pangu: {{ theme.pangu }},
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     algolia: {

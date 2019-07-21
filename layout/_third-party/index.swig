@@ -1,5 +1,4 @@
 {% include 'math/index.swig' %}
-{% include 'pangu.swig' %}
 {% include 'quicklink.swig' %}
 {% include 'bookmark.swig' %}
 {% include 'schedule.swig' %}
