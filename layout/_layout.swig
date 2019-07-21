@@ -84,11 +84,8 @@
       </div>
     {% endif %}
 
-    {% if theme.add_this_id %}
-      <div>
-        {% include '_partials/share/add-this.swig' %}
-      </div>
-    {% endif %}
+    {% include '_partials/share/needsharebutton.swig' %}
+    {% include '_partials/share/add-this.swig' %}
   </div>
 
   {% include '_scripts/vendors.swig' %}

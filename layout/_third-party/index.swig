@@ -8,5 +8,4 @@
 {% include 'chat/index.swig' %}
 {% include 'tags/index.swig' %}
 {% include 'baidu-push.swig' %}
-{% include 'needsharebutton.swig' %}
 {% include 'rating.swig' %}
