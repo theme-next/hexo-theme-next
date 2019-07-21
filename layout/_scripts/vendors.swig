@@ -27,7 +27,7 @@
 {% endif %}
 
 {% if theme.pangu %}
-  {% set js_vendors.pangu = 'pangu/dist/pangu.min.js?v=3.3' %}
+  {% set js_vendors.pangu = 'pangu/dist/pangu.min.js?v=4.0.7' %}
 {% endif %}
 
 {% if theme.reading_progress.enable %}
