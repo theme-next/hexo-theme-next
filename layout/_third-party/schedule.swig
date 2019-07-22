@@ -2,28 +2,25 @@
 
 <script>
 // Initialization
-function _n(arg) {
-  if (arg) return arg;
-  else return void 0;
+var calendar = {
+  orderBy     : 'startTime',
+  showLocation: 'false',
+  offsetMax   : 72,
+  offsetMin   : 4,
+  showDeleted : 'false',
+  singleEvents: 'true',
+  maxResults  : '250'
 }
+
+// Read config form theme config file
+Object.assign(calendar, {{ theme.calendar | json_encode }});
 
 var now = new Date();
 var timeMax = new Date();
 var timeMin = new Date();
 
-// Read config form theme config file
-var calId        = _n('{{ theme.calendar.calendar_id  }}')               ;
-var apiKey       = _n('{{ theme.calendar.api_key      }}')               ;
-var orderBy      = _n('{{ theme.calendar.ordarBy      }}') || 'startTime';
-var showLocation = _n('{{ theme.calendar.showLocation }}') || 'false'    ;
-var offsetMax    = _n( {{ theme.calendar.offsetMax    }} ) || 72         ;
-var offsetMin    = _n( {{ theme.calendar.offsetMin    }} ) || 4          ;
-var showDeleted  = _n( {{ theme.calendar.showDeleted  }} ) || 'false'    ;
-var singleEvents = _n( {{ theme.calendar.singleEvents }} ) || 'true'     ;
-var maxResults   = _n( {{ theme.calendar.maxResults   }} ) || '250'      ;
-
-timeMax.setHours(now.getHours() + offsetMax);
-timeMin.setHours(now.getHours() - offsetMin);
+timeMax.setHours(now.getHours() + calendar.offsetMax);
+timeMin.setHours(now.getHours() - calendar.offsetMin);
 
 // Build URL
 BASE_URL           = 'https://www.googleapis.com/calendar/v3/calendars/';
@@ -38,14 +35,16 @@ FIELD_MAXRESULTS   = 'maxResults';
 timeMaxISO         = timeMax.toISOString();
 timeMinISO         = timeMin.toISOString();
 
-request_url = BASE_URL + calId + '/events?' +
-  FIELD_KEY          + '=' + apiKey       + '&' +
-  FIELD_ORDERBY      + '=' + orderBy      + '&' +
-  FIELD_TIMEMAX      + '=' + timeMaxISO   + '&' +
-  FIELD_TIMEMIN      + '=' + timeMinISO   + '&' +
-  FIELD_SHOWDELETED  + '=' + showDeleted  + '&' +
-  FIELD_SINGLEEVENTS + '=' + singleEvents + '&' +
-  FIELD_MAXRESULTS   + '=' + maxResults;
+with(calendar) {
+  request_url = BASE_URL + calendar_id + '/events?' +
+    FIELD_KEY          + '=' + api_key      + '&' +
+    FIELD_ORDERBY      + '=' + orderBy      + '&' +
+    FIELD_TIMEMAX      + '=' + timeMaxISO   + '&' +
+    FIELD_TIMEMIN      + '=' + timeMinISO   + '&' +
+    FIELD_SHOWDELETED  + '=' + showDeleted  + '&' +
+    FIELD_SINGLEEVENTS + '=' + singleEvents + '&' +
+    FIELD_MAXRESULTS   + '=' + maxResults;
+}
 
 fetchData();
 var queryLoop = setInterval(fetchData, 60000);
@@ -149,7 +148,7 @@ function buildEventDOM(tense, event) {
   h2Close = '</h2>';
 
   locationDOM     = '';
-  if (showLocation && event.location) {
+  if (calendar.showLocation && event.location) {
     locationDOM   = '<span class="event-location event-details">' + event.location + '</span>';
   }
   relativeTimeDOM = '<span class="event-relative-time">' + relativeTimeStr + '</span>';
