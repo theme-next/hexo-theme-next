@@ -1,5 +1,3 @@
-{% macro render(post, is_index, post_extra_class) %}
-
   {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
 
   {% set post_class = 'post post-type-' + post.type | default('normal') %}
@@ -406,5 +404,3 @@
   {### END POST BLOCK ###}
   {######################}
   </article>
-
-{% endmacro %}
