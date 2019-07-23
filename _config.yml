@@ -522,10 +522,6 @@ fancybox: false
 # Dependencies: https://github.com/theme-next/theme-next-mediumzoom
 mediumzoom: false
 
-# Polyfill to remove click delays on browsers with touch UIs.
-# Dependencies: https://github.com/theme-next/theme-next-fastclick
-fastclick: false
-
 # Vanilla JavaScript plugin for lazyloading images.
 # Dependencies: https://github.com/theme-next/theme-next-lazyload
 lazyload: false
@@ -1010,13 +1006,6 @@ vendors:
   # Example:
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
   mediumzoom:
-
-  # Internal version: 1.0.6
-  # See: https://github.com/ftlabs/fastclick
-  # Example:
-  # fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
-  # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
-  fastclick:
 
   # Internal version: 1.10.0
   # See: https://github.com/ApoorvSaxena/lozad.js

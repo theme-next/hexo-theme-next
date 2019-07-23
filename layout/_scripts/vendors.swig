@@ -18,10 +18,6 @@
   {% set js_vendors.mediumzoom = 'mediumzoom/medium-zoom.min.js' %}
 {% endif %}
 
-{% if theme.fastclick %}
-  {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
-{% endif %}
-
 {% if theme.lazyload %}
   {% set js_vendors.lazyload = 'lazyload/lozad.min.js?v=1.10.0' %}
 {% endif %}
