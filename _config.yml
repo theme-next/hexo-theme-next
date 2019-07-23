@@ -90,12 +90,6 @@ creative_commons:
   post: false
   language:
 
-# `Follow me on GitHub` banner in the top-right corner.
-github_banner:
-  enable: false
-  permalink: https://github.com/yourname
-  title: Follow me on GitHub
-
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -436,6 +430,12 @@ codeblock:
     # Available values: default | flat | mac
     style:
 
+# `Follow me on GitHub` banner in the top-right corner.
+github_banner:
+  enable: false
+  permalink: https://github.com/yourname
+  title: Follow me on GitHub
+
 
 # ---------------------------------------------------------------
 # Font Settings. Introduced in NexT v5.0.1.
@@ -493,7 +493,7 @@ font:
 
 
 # ---------------------------------------------------------------
-# Third Party Plugins Settings
+# Third Party Plugins & Services Settings
 # See: https://theme-next.org/docs/third-party-services/
 # You may need to install dependencies or set CDN URLs in `vendors`
 # There are two different CDN providers by default:
@@ -950,6 +950,15 @@ pace:
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
   theme: minimal
 
+# JavaScript 3D library.
+# Dependencies: https://github.com/theme-next/theme-next-three
+three:
+  enable: false
+  delay: false # Set true to further delay loading
+  three_waves: false
+  canvas_lines: false
+  canvas_sphere: false
+
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 canvas_nest:
@@ -959,15 +968,6 @@ canvas_nest:
   opacity: 0.5 # the opacity of line: 0~1
   zIndex: -1 # z-index property of the background
   count: 99 # the number of lines
-
-# JavaScript 3D library.
-# Dependencies: https://github.com/theme-next/theme-next-three
-three:
-  enable: false
-  delay: false # Set true to further delay loading
-  three_waves: false
-  canvas_lines: false
-  canvas_sphere: false
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
