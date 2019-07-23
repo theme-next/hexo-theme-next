@@ -1,3 +1,4 @@
+{% if page.comments %}
 {% set disqusjs_css_url = '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css' %}
 {% if theme.vendors.disqusjs_css %}
   {% set disqusjs_css_url = theme.vendors.disqusjs_css %}
@@ -30,3 +31,4 @@
   
   window.addEventListener('load', loadDsqJS, false);
 </script>
+{% endif %}

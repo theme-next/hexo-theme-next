@@ -133,50 +133,6 @@
             </span>
           {% endif %}
 
-          {% if post.comments %}
-            {% macro comments() %}
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            {% endmacro %}
-            {% if theme.facebook_comments_plugin.enable %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
-                </a>
-              </span>
-            {% elif theme.disqus.enable and theme.disqus.count %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
-              {{ comments() }}
-              {% if is_post() %}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
-                </a>
-              {% else %}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
-                </a>
-              {% endif %}
-            {% elif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% endif %}
-          {% endif %}
-
           {# LeanCloud PageView #}
           {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
             <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}">
@@ -202,9 +158,13 @@
           {% endif %}
 
           {% for inject_item in theme.injects.postMeta %}
-            <span class="post-meta-item">
+            {% if inject_item.locals.disableDefaultLayout %}
               {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-            </span>
+            {% else %}
+              <span class="post-meta-item">
+                {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+              </span>
+            {% endif %}
           {% endfor %}
 
           {% if theme.symbols_count_time.separated_meta %}<br/>{% endif %}
