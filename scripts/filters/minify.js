@@ -4,6 +4,7 @@
 
 hexo.extend.filter.register('after_generate', () => {
   const theme = hexo.theme.config;
+  const lists = hexo.route.list();
 
   let scheme = theme.scheme;
   if (scheme === 'Muse' || scheme === 'Mist') {
@@ -20,11 +21,8 @@ hexo.extend.filter.register('after_generate', () => {
   let motion = [
     theme.motion.enable.toString(),
     'js/motion.js',
-    'lib/velocity/velocity.js',
-    'lib/velocity/velocity.min.js',
-    'lib/velocity/velocity.ui.js',
-    'lib/velocity/velocity.ui.min.js'
   ];
+  motion = motion.concat(lists.filter(list => list.includes('lib/velocity')));
   let algolia = [
     theme.algolia_search.enable.toString(),
     'js/algolia-search.js'
@@ -34,21 +32,18 @@ hexo.extend.filter.register('after_generate', () => {
     'js/js.cookie.js',
     'js/scroll-cookie.js'
   ];
-  let jquery = [
-    theme.vendors.jquery.toString(),
-    'lib/jquery/index.js'
-  ];
-  let fontawesome = [
-    theme.vendors.fontawesome.toString(),
-    'lib/font-awesome/css/font-awesome.css',
-    'lib/font-awesome/css/font-awesome.css.map',
-    'lib/font-awesome/css/font-awesome.min.css',
-    'lib/font-awesome/fonts/fontawesome-webfont.eot',
-    'lib/font-awesome/fonts/fontawesome-webfont.woff',
-    'lib/font-awesome/fonts/fontawesome-webfont.woff2',
-    'lib/font-awesome/bower.json',
-    'lib/font-awesome/HELP-US-OUT.txt'
-  ];
+  let jquery;
+  if (theme.vendors.jquery) {
+    jquery = [theme.vendors.jquery.toString()].concat('lib/jquery/index.js')
+  } else {
+    jquery = 'true'
+  }
+  let fontawesome;
+  if (theme.vendors.fontawesome) {
+    fontawesome = [theme.vendors.fontawesome.toString()].concat(lists.filter(e => e.includes("lib/font-awesome")))
+  } else {
+    fontawesome = 'true'
+  }
 
   const filter = option => {
     if (option.includes('false') || option[0].includes('//')) {
