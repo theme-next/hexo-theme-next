@@ -1,1 +1,9 @@
-.comments { margin: 60px 20px 0; }
+.comments { 
+  margin: 60px 20px 0;
+  overflow: hidden;
+
+  +mobile() {
+    margin-top: 8px;
+    padding: 10px 12px;
+  }
+}
