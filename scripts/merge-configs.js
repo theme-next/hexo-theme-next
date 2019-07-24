@@ -46,6 +46,9 @@ hexo.on('generateBefore', function() {
   // Add filter type `theme_inject`
   require('./injects')(hexo);
 
+});
+
+hexo.on('generateAfter', function() {
   if (!hexo.theme.config.reminder) return;
   const https = require('https');
   const path = require('path');
@@ -72,12 +75,12 @@ hexo.on('generateBefore', function() {
         }
         if (isOutdated) {
           hexo.log.warn(`Your theme NexT is outdated. Current version: v${current.join('.')}, latest version: v${latest.join('.')}`);
-          hexo.log.warn(`Visit https://github.com/theme-next/hexo-theme-next/releases for more information.`);
+          hexo.log.warn('Visit https://github.com/theme-next/hexo-theme-next/releases for more information.');
         } else {
-          hexo.log.info(`Congratulations! Your are using the latest version of theme NexT.`);
+          hexo.log.info('Congratulations! Your are using the latest version of theme NexT.');
         }
       } catch (e) {
-        hexo.log.error(`Failed to detect version info. Error message:`);
+        hexo.log.error('Failed to detect version info. Error message:');
         hexo.log.error(e);
       }
     });
