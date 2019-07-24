@@ -46,9 +46,6 @@ hexo.on('generateBefore', function() {
   // Add filter type `theme_inject`
   require('./injects')(hexo);
 
-});
-
-hexo.on('generateBefore', function() {
   if (!hexo.theme.config.reminder) return;
   const https = require('https');
   const path = require('path');
