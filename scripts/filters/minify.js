@@ -20,7 +20,7 @@ hexo.extend.filter.register('after_generate', () => {
   ];
   let motion = [
     theme.motion.enable.toString(),
-    'js/motion.js',
+    'js/motion.js'
   ];
   motion = motion.concat(lists.filter(list => list.includes('lib/velocity')));
   let algolia = [
@@ -34,15 +34,15 @@ hexo.extend.filter.register('after_generate', () => {
   ];
   let jquery;
   if (theme.vendors.jquery) {
-    jquery = [theme.vendors.jquery.toString()].concat('lib/jquery/index.js')
+    jquery = [theme.vendors.jquery.toString()].concat('lib/jquery/index.js');
   } else {
-    jquery = 'true'
+    jquery = 'true';
   }
   let fontawesome;
   if (theme.vendors.fontawesome) {
-    fontawesome = [theme.vendors.fontawesome.toString()].concat(lists.filter(e => e.includes("lib/font-awesome")))
+    fontawesome = [theme.vendors.fontawesome.toString()].concat(lists.filter(list => list.includes("lib/font-awesome")));
   } else {
-    fontawesome = 'true'
+    fontawesome = 'true';
   }
 
   const filter = option => {
