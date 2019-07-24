@@ -10,8 +10,8 @@ const {iconText} = require('./common');
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.valine.enable || !theme.valine.appid || !theme.valine.appkey) return;
-  
-  injects.comment.raw('valine', `<div class="comments" id="comments"></div>`, {}, {cache: true});
+
+  injects.comment.raw('valine', '<div class="comments" id="comments"></div>', {}, {cache: true});
 
   injects.bodyEnd.file('valine', path.join(hexo.theme_dir, 'layout/_third-party/comments/valine.swig'));
 
@@ -21,7 +21,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.valine.enable || !theme.valine.appid || !theme.valine.appkey) return;
-  
+
   injects.postMeta.raw('valine', `
   {% if post.comments and (is_post() or theme.valine.comment_count) %}
   <span class="post-meta-item">

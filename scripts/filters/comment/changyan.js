@@ -10,7 +10,7 @@ const {iconText} = require('./common');
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) return;
-  
+
   injects.comment.raw('changyan', `
   <div class="comments" id="comments">
     <div id="SOHUCS"></div>
@@ -25,7 +25,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) return;
-  
+
   injects.postMeta.raw('changyan', `
   {% if post.comments %}
   <span class="post-meta-item">

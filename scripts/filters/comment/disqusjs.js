@@ -8,7 +8,7 @@ const path = require('path');
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.disqusjs.enable || !theme.disqusjs.shortname || !theme.disqusjs.apikey) return;
-  
+
   injects.comment.raw('disqusjs', `
   <div class="comments" id="comments">
     <div id="disqus_thread">

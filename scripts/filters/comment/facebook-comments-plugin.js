@@ -26,7 +26,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.facebook_sdk.enable || !theme.facebook_comments_plugin.enable) return;
-  
+
   injects.postMeta.raw('facebook-comments-plugin', `
   {% if post.comments %}
   <span class="post-meta-item">

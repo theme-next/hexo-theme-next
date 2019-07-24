@@ -10,7 +10,7 @@ const {iconText} = require('./common');
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.disqus.enable || !theme.disqus.shortname) return;
-  
+
   injects.comment.raw('disqus', `
   <div class="comments" id="comments">
     <div id="disqus_thread">
@@ -29,7 +29,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.disqus.enable || !theme.disqus.shortname || !theme.disqus.count) return;
-  
+
   injects.postMeta.raw('disqus', `
   {% if post.comments %}
   <span class="post-meta-item">
