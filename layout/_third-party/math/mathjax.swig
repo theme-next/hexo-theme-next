@@ -24,10 +24,10 @@
       if (data.display) {
         var next = data.script.nextSibling;
         while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling
+          next = next.nextSibling;
         }
         if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next)
+          next.parentNode.removeChild(next);
         }
       }
     });
@@ -37,8 +37,8 @@
     var all = MathJax.Hub.getAllJax(), i;
     for (i = 0; i < all.length; i += 1) {
       element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.tagName == 'LI') {
-        element = element.parentNode
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
       }
       element.classList.add('has-jax');
     }
