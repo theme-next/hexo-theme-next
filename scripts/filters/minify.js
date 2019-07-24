@@ -40,7 +40,7 @@ hexo.extend.filter.register('after_generate', () => {
   }
   let fontawesome;
   if (theme.vendors.fontawesome) {
-    fontawesome = [theme.vendors.fontawesome.toString()].concat(lists.filter(list => list.includes("lib/font-awesome")));
+    fontawesome = [theme.vendors.fontawesome.toString()].concat(lists.filter(list => list.includes('lib/font-awesome')));
   } else {
     fontawesome = 'true';
   }
