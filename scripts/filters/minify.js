@@ -27,7 +27,7 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/exturl.js');
   }
 
-  if (!theme.save_scroll){
+  if (!theme.save_scroll) {
     hexo.route.remove('js/js.cookie.js');
     hexo.route.remove('js/scroll-cookie.js');
   }
@@ -36,7 +36,7 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('lib/jquery/index.js');
   }
 
-  if (!theme.algolia_search.enable){
+  if (!theme.algolia_search.enable) {
     hexo.route.remove('js/algolia-search.js');
   }
 
