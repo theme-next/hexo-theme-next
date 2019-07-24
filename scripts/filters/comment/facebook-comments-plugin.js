@@ -8,7 +8,7 @@ const {iconText} = require('./common');
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.facebook_sdk.enable || !theme.facebook_comments_plugin.enable) return;
-  
+
   injects.comment.raw('facebook-comments-plugin', `
   <div class="comments" id="comments">
     <div class="fb-comments"
