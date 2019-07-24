@@ -6,13 +6,13 @@
 
 'use strict';
 
-const caniUse = (args) => {
+function caniUse(args) {
   args = args.join('').split('@');
-  let feature = args[0];
-  let periods = args[1] || 'current';
+  var feature = args[0];
+  var periods = args[1] || 'current';
 
   if (!feature) {
-    hexo.log.w('Caniuse feature can NOT be empty');
+    hexo.log.warn('Caniuse feature can NOT be empty.');
     return '';
   }
 
