@@ -101,8 +101,6 @@
     mediumzoom: {{ theme.mediumzoom }},
     lazyload: {{ theme.lazyload }},
     pangu: {{ theme.pangu }},
-    tabs: {{ theme.tabs.enable }},
-    motion: {{ theme.motion | json_encode }},
     algolia: {
       applicationID: '{{ config.algolia.applicationID }}',
       apiKey: '{{ config.algolia.apiKey }}',
@@ -110,6 +108,13 @@
       hits: {{ theme.algolia_search.hits | json_encode }},
       labels: {{ theme.algolia_search.labels | json_encode }}
     },
+    localsearch: {{ theme.local_search | json_encode }},
+    search: {
+      root: '{{ config.root }}',
+      path: '{{ config.search.path }}'
+    },
+    tabs: {{ theme.tabs.enable }},
+    motion: {{ theme.motion | json_encode }},
     translation: {
       copy_button: '{{__("post.copy_button")}}',
       copy_success: '{{__("post.copy_success")}}',
