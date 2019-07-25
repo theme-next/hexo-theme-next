@@ -1,15 +1,17 @@
+/* global CONFIG */
+
 $(function() {
   // Popup Window;
   var isfetched = false;
   var isXml = true;
   // Search DB path;
-  var search_path = CONFIG.search.path;
-  if (search_path.length === 0) {
-    search_path = "search.xml";
-  } else if (/json$/i.test(search_path)) {
+  var searchPath = CONFIG.search.path;
+  if (searchPath.length === 0) {
+    searchPath = 'search.xml';
+  } else if (/json$/i.test(searchPath)) {
     isXml = false;
   }
-  var path = CONFIG.search.root + search_path;
+  var path = CONFIG.search.root + searchPath;
   // monitor main search box;
 
   var onPopupClose = function (e) {
@@ -17,19 +19,19 @@ $(function() {
     $('#local-search-input').val('');
     $('.search-result-list').remove();
     $('#no-result').remove();
-    $(".local-search-pop-overlay").remove();
+    $('.local-search-pop-overlay').remove();
     $('body').css('overflow', '');
   }
 
   function proceedsearch() {
-    $("body")
+    $('body')
       .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
       .css('overflow', 'hidden');
     $('.search-popup-overlay').click(onPopupClose);
     $('.popup').toggle();
     var $localSearchInput = $('#local-search-input');
-    $localSearchInput.attr("autocapitalize", "none");
-    $localSearchInput.attr("autocorrect", "off");
+    $localSearchInput.attr('autocapitalize', 'none');
+    $localSearchInput.attr('autocorrect', 'off');
     $localSearchInput.focus();
   }
 
@@ -38,14 +40,14 @@ $(function() {
     'use strict';
 
     // start loading animation
-    $("body")
-      .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-        '<div id="search-loading-icon">' +
-        '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-        '</div>' +
-        '</div>')
+    $('body')
+      .append('<div class="search-popup-overlay local-search-pop-overlay">'
+        + '<div id="search-loading-icon">'
+        + '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>'
+        + '</div>'
+        + '</div>')
       .css('overflow', 'hidden');
-    $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+    $('#search-loading-icon').css('margin', '20% auto 0 auto').css('text-align', 'center');
 
     if (CONFIG.localsearch.unescape) {
       // ref: https://github.com/ForbesLindesay/unescape-html
@@ -55,7 +57,9 @@ $(function() {
           .replace(/&#39;/g, '\'')
           .replace(/&#x3A;/g, ':')
           // replace all the other &#x; chars
-          .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+          .replace(/&#(\d+);/g, function (m, p) {
+            return String.fromCharCode(p);
+          })
           .replace(/&lt;/g, '<')
           .replace(/&gt;/g, '>')
           .replace(/&amp;/g, '&');
@@ -64,17 +68,17 @@ $(function() {
 
     $.ajax({
       url: path,
-      dataType: isXml ? "xml" : "json",
+      dataType: isXml ? 'xml' : 'json',
       async: true,
       success: function(res) {
         // get the contents from search data
         isfetched = true;
         $('.popup').detach().appendTo('.header-inner');
-        var datas = isXml ? $("entry", res).map(function() {
+        var datas = isXml ? $('entry', res).map(function() {
           return {
-            title: $("title", this).text(),
-            content: $("content",this).text(),
-            url: $("url" , this).text()
+            title: $('title', this).text(),
+            content: $('content', this).text(),
+            url: $('url' , this).text()
           };
         }).get() : res;
         var input = document.getElementById(search_id);
@@ -94,7 +98,7 @@ $(function() {
               var searchTextCount = 0;
               var title = data.title.trim();
               var titleInLowerCase = title.toLowerCase();
-              var content = data.content.trim().replace(/<[^>]+>/g,"");
+              var content = data.content.trim().replace(/<[^>]+>/g, '');
               if (CONFIG.localsearch.unescape) {
                 content = unescapeHtml(content);
               }
@@ -103,7 +107,7 @@ $(function() {
               var indexOfTitle = [];
               var indexOfContent = [];
               // only match articles with not empty titles
-              if(title != '') {
+              if (title !== '') {
                 keywords.forEach(function(keyword) {
                   function getIndexByWord(word, text, caseSensitive) {
                     var wordLen = word.length;
@@ -154,7 +158,7 @@ $(function() {
                   var word = item.word;
                   var hits = [];
                   var searchTextCountInSlice = 0;
-                  while (position + word.length <= end && index.length != 0) {
+                  while (position + word.length <= end && index.length !== 0) {
                     if (word === searchText) {
                       searchTextCountInSlice++;
                     }
@@ -164,7 +168,7 @@ $(function() {
                     // move to next position of hit
 
                     index.pop();
-                    while (index.length != 0) {
+                    while (index.length !== 0) {
                       item = index[index.length - 1];
                       position = item.position;
                       word = item.word;
@@ -185,25 +189,25 @@ $(function() {
                 }
 
                 var slicesOfTitle = [];
-                if (indexOfTitle.length != 0) {
+                if (indexOfTitle.length !== 0) {
                   slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
                 }
 
                 var slicesOfContent = [];
-                while (indexOfContent.length != 0) {
+                while (indexOfContent.length !== 0) {
                   var item = indexOfContent[indexOfContent.length - 1];
                   var position = item.position;
                   var word = item.word;
                   // cut out 100 characters
                   var start = position - 20;
                   var end = position + 80;
-                  if(start < 0){
+                  if (start < 0) {
                     start = 0;
                   }
                   if (end < position + word.length) {
                     end = position + word.length;
                   }
-                  if(end > content.length){
+                  if (end > content.length) {
                     end = content.length;
                   }
                   slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
@@ -245,16 +249,16 @@ $(function() {
 
                 var resultItem = '';
 
-                if (slicesOfTitle.length != 0) {
-                  resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                if (slicesOfTitle.length !== 0) {
+                  resultItem += '<li><a href="' + articleUrl + '" class="search-result-title">' + highlightKeyword(title, slicesOfTitle[0]) + '</a>';
                 } else {
-                  resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  resultItem += '<li><a href="' + articleUrl + '" class="search-result-title">' + title + '</a>';
                 }
 
                 slicesOfContent.forEach(function (slice) {
-                  resultItem += "<a href='" + articleUrl + "'>" +
-                    "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                    "...</p>" + "</a>";
+                  resultItem += "<a href='" + articleUrl + "'>"
+                    + "<p class=\"search-result\">" + highlightKeyword(content, slice)
+                    + "...</p>" + "</a>";
                 });
 
                 resultItem += "</li>";
