@@ -133,29 +133,12 @@ use_seo = hexo-config('seo');
 .posts-expand .post-title-link {
   line-height: inherit;
 }
-.posts-expand .post-title {
-  font-size: 1.7em;
-}
+
 .post-body {
-  h1 {
-    font-size: 1.6em;
+  h1, h2 {
     border-bottom: 1px solid $body-bg-color;
-    code {
-      font-size: 1em;
-    }
-  }
-  h2 {
-    font-size: 1.45em;
-    border-bottom: 1px solid $body-bg-color;
-    code {
-      font-size: 1em;
-    }
   }
   h3 {
-    font-size: 1.3em;
-    code {
-      font-size: 1em;
-    }
     if use_seo {
       border-bottom: 1px solid $body-bg-color;
     } else {
@@ -163,24 +146,8 @@ use_seo = hexo-config('seo');
     }
   }
   h4 {
-    font-size: 1.2em;
-    code {
-      font-size: 1em;
-    }
     if use_seo {
       border-bottom: 1px dotted $body-bg-color;
-    }
-  }
-  h5 {
-    font-size: 1.07em;
-    code {
-      font-size: 1em;
-    }
-  }
-  h6 {
-    font-size: 1.03em;
-    code {
-      font-size: 1em;
     }
   }
 }

@@ -447,6 +447,25 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "howiezhao",
+      "name": "Howie Zhao",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16129206?v=4",
+      "profile": "http://www.howiezhao.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "lei2rock",
+      "name": "Donglei Zhang",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/19180725?v=4",
+      "profile": "http://dlzhang.com",
+      "contributions": [
+        "doc",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6
