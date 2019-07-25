@@ -10,7 +10,7 @@ hexo.extend.filter.register('after_generate', () => {
   const velocity = lists.filter(list => list.includes('lib/velocity'));
   const fontawesome = lists.filter(list => list.includes('lib/font-awesome'));
 
-  if (!theme.motion.enable) {
+  if (!theme.motion.enable || (theme.vendors.velocity && theme.vendors.velocity_ui)) {  
     hexo.route.remove('js/motion.js');
     velocity.forEach(path => {
       hexo.route.remove(path);
@@ -42,7 +42,7 @@ hexo.extend.filter.register('after_generate', () => {
 
   if (theme.scheme === 'Muse' || theme.scheme === 'Mist') {
     hexo.route.remove('js/affix.js');
-    hexo.route.remove('js/theme.schemes/pisces.js');
+    hexo.route.remove('js/schemes/pisces.js');
   } else if (theme.scheme === 'Pisces' || theme.scheme === 'Gemini') {
     hexo.route.remove('js/schemes/muse.js');
   }
