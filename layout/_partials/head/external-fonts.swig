@@ -26,12 +26,12 @@
     {% set font_families += font_config.posts.family + font_styles %}
   {% endif %}
 
-  {% if font_config.logo.family and font_config.logo.external %}
+  {% if font_config.title.family and font_config.title.external %}
     {% if font_found %}
       {% set font_families += '|' %}
     {% endif %}
 
-    {% set font_families += font_config.logo.family + font_styles %}
+    {% set font_families += font_config.title.family + font_styles %}
   {% endif %}
 
   {% if font_config.codes.family and font_config.codes.external %}
