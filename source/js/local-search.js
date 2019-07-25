@@ -77,7 +77,7 @@ $(document).ready(function() {
             title: $('title', this).text(),
             content: $('content', this).text(),
             url: $('url', this).text()
-          }
+          };
         }).get() : res;
         var input = document.getElementById(search_id);
         var resultContent = document.getElementById(content_id);
