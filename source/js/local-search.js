@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   // Merge hits into slices
-  function mergeIntoSlice(text, start, end, index) {
+  function mergeIntoSlice(text, start, end, index, searchText, searchTextCountInSlice) {
     var item = index[index.length - 1];
     var position = item.position;
     var word = item.word;
@@ -195,7 +195,7 @@ $(document).ready(function() {
 
                 var slicesOfTitle = [];
                 if (indexOfTitle.length !== 0) {
-                  slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle, searchText, searchTextCountInSlice));
                 }
 
                 var slicesOfContent = [];
@@ -215,7 +215,7 @@ $(document).ready(function() {
                   if (end > content.length) {
                     end = content.length;
                   }
-                  slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent, searchText, searchTextCountInSlice));
                 }
 
                 // Sort slices in content by search text's count and hits' count
@@ -263,7 +263,7 @@ $(document).ready(function() {
                 slicesOfContent.forEach(function(slice) {
                   resultItem += '<a href="' + articleUrl + '">'
                     + '<p class="search-result">' + highlightKeyword(content, slice)
-                    + '...</p>' + '</a>';
+                    + '...</p></a>';
                 });
 
                 resultItem += '</li>';
