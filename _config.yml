@@ -16,6 +16,9 @@ reminder: true
 cache:
   enable: true
 
+# Remove unnecessary files after hexo generate.
+minify: false
+
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
