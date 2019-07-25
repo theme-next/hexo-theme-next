@@ -29,7 +29,7 @@ $(document).ready(function() {
   var path = CONFIG.search.root + searchPath;
 
   // Monitor main search box
-  var onPopupClose = function(e) {
+  function onPopupClose() {
     $('.popup').hide();
     $('#local-search-input').val('');
     $('.search-result-list').remove();
@@ -81,7 +81,7 @@ $(document).ready(function() {
         }).get() : res;
         var input = document.getElementById(search_id);
         var resultContent = document.getElementById(content_id);
-        var inputEventFunction = function() {
+        function inputEventFunction() {
           var searchText = input.value.trim().toLowerCase();
           var keywords = searchText.split(/[\s\-]+/);
           if (keywords.length > 1) {
@@ -148,7 +148,7 @@ $(document).ready(function() {
                     }
                   });
                 });
-                
+
                 // Merge hits into slices
                 function mergeIntoSlice(text, start, end, index) {
                   var item = index[index.length - 1];
