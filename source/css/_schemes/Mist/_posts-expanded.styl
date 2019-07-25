@@ -20,10 +20,6 @@
 
   .post-title:hover::before { background: $black-deep; }
 
-  .post-body {
-    +mobile() { font-size: $font-size-small; }
-  }
-
   .post-tags {
     text-align: left;
     a {
@@ -48,9 +44,6 @@
     border: none;
     border-bottom: 2px solid $grey-dim;
     transition-property: border;
-
-    +mobile() { font-size: $font-size-smallest; }
-    +desktop-large() { font-size: $font-size-medium; }
 
     &:hover { border-bottom-color: $black-deep; }
   }
