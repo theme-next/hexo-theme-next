@@ -185,7 +185,7 @@ $(document).ready(function() {
                     start: start,
                     end: end,
                     searchTextCount: searchTextCountInSlice
-                  }
+                  };
                 }
                 var slicesOfTitle = [];
                 if (indexOfTitle.length !== 0) {
@@ -290,7 +290,7 @@ $(document).ready(function() {
           }
         }
 
-        if ('auto' === CONFIG.localsearch.trigger) {
+        if (CONFIG.localsearch.trigger === 'auto') {
           input.addEventListener('input', inputEventFunction);
         } else {
           $('.search-icon').click(inputEventFunction);
