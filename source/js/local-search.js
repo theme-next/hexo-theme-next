@@ -1,44 +1,19 @@
 /* global CONFIG */
 
 $(document).ready(function() {
-  // Merge hits into slices
-  function mergeIntoSlice(text, start, end, index, searchText, searchTextCountInSlice) {
-    var item = index[index.length - 1];
-    var position = item.position;
-    var word = item.word;
-    var hits = [];
-    var searchTextCountInSlice = 0;
-    while (position + word.length <= end && index.length !== 0) {
-      if (word === searchText) {
-        searchTextCountInSlice++;
-      }
-      hits.push({
-        position: position,
-        length: word.length
-      });
-      var wordEnd = position + word.length;
-
-      // Move to next position of hit
-
-      index.pop();
-      while (index.length !== 0) {
-        item = index[index.length - 1];
-        position = item.position;
-        word = item.word;
-        if (wordEnd > position) {
-          index.pop();
-        } else {
-          break;
-        }
-      }
-    }
-    searchTextCount += searchTextCountInSlice;
-    return {
-      hits: hits,
-      start: start,
-      end: end,
-      searchTextCount: searchTextCountInSlice
-    }
+  // Ref: https://github.com/ForbesLindesay/unescape-html
+  function unescapeHtml(html) {
+    return String(html)
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, '\'')
+      .replace(/&#x3A;/g, ':')
+      // Replace all the other &#x; chars
+      .replace(/&#(\d+);/g, function(m, p) {
+        return String.fromCharCode(p);
+      })
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&');
   }
 
   // Popup Window
@@ -52,8 +27,8 @@ $(document).ready(function() {
     isXml = false;
   }
   var path = CONFIG.search.root + searchPath;
-  // Monitor main search box
 
+  // Monitor main search box
   var onPopupClose = function(e) {
     $('.popup').hide();
     $('#local-search-input').val('');
@@ -76,7 +51,7 @@ $(document).ready(function() {
   }
 
   // Search function
-  var searchFunc = function(path, search_id, content_id) {
+  function searchFunc(path, search_id, content_id) {
     'use strict';
 
     // Start loading animation
@@ -88,23 +63,6 @@ $(document).ready(function() {
         + '</div>')
       .css('overflow', 'hidden');
     $('#search-loading-icon').css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-    if (CONFIG.localsearch.unescape) {
-      // Ref: https://github.com/ForbesLindesay/unescape-html
-      var unescapeHtml = function(html) {
-        return String(html)
-          .replace(/&quot;/g, '"')
-          .replace(/&#39;/g, '\'')
-          .replace(/&#x3A;/g, ':')
-          // Replace all the other &#x; chars
-          .replace(/&#(\d+);/g, function(m, p) {
-            return String.fromCharCode(p);
-          })
-          .replace(/&lt;/g, '<')
-          .replace(/&gt;/g, '>')
-          .replace(/&amp;/g, '&');
-      }
-    }
 
     $.ajax({
       url: path,
@@ -179,10 +137,8 @@ $(document).ready(function() {
               }
 
               // Show search results
-
               if (isMatch) {
                 // Sort index by position of keyword
-
                 [indexOfTitle, indexOfContent].forEach(function(index) {
                   index.sort(function(itemLeft, itemRight) {
                     if (itemRight.position !== itemLeft.position) {
@@ -192,10 +148,48 @@ $(document).ready(function() {
                     }
                   });
                 });
+                
+                // Merge hits into slices
+                function mergeIntoSlice(text, start, end, index) {
+                  var item = index[index.length - 1];
+                  var position = item.position;
+                  var word = item.word;
+                  var hits = [];
+                  var searchTextCountInSlice = 0;
+                  while (position + word.length <= end && index.length !== 0) {
+                    if (word === searchText) {
+                      searchTextCountInSlice++;
+                    }
+                    hits.push({
+                      position: position,
+                      length: word.length
+                    });
+                    var wordEnd = position + word.length;
 
+                    // Move to next position of hit
+                    index.pop();
+                    while (index.length !== 0) {
+                      item = index[index.length - 1];
+                      position = item.position;
+                      word = item.word;
+                      if (wordEnd > position) {
+                        index.pop();
+                      } else {
+                        break;
+                      }
+                    }
+                  }
+                  searchTextCount += searchTextCountInSlice;
+                  return {
+                    hits: hits,
+                    start: start,
+                    end: end,
+                    searchTextCount: searchTextCountInSlice
+                  }
+                }
                 var slicesOfTitle = [];
                 if (indexOfTitle.length !== 0) {
-                  slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle, searchText, searchTextCountInSlice));
+                  slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
                 }
 
                 var slicesOfContent = [];
@@ -215,11 +209,10 @@ $(document).ready(function() {
                   if (end > content.length) {
                     end = content.length;
                   }
-                  slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent, searchText, searchTextCountInSlice));
+                  slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
                 }
 
                 // Sort slices in content by search text's count and hits' count
-
                 slicesOfContent.sort(function(sliceLeft, sliceRight) {
                   if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
                     return sliceRight.searchTextCount - sliceLeft.searchTextCount;
@@ -231,14 +224,12 @@ $(document).ready(function() {
                 });
 
                 // Select top N slices in content
-
                 var upperBound = parseInt(CONFIG.localsearch.top_n_per_article);
                 if (upperBound >= 0) {
                   slicesOfContent = slicesOfContent.slice(0, upperBound);
                 }
 
                 // Highlight title and content
-
                 function highlightKeyword(text, slice) {
                   var result = '';
                   var prevEnd = slice.start;
@@ -274,7 +265,7 @@ $(document).ready(function() {
                   id: resultItems.length
                 });
               }
-            })
+            });
           }
           if (keywords.length === 1 && keywords[0] === '') {
             resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>';
@@ -334,8 +325,7 @@ $(document).ready(function() {
     e.stopPropagation();
   });
   $(document).on('keyup', function(event) {
-    var shouldDismissSearchPopup = event.which === 27 &&
-      $('.search-popup').is(':visible');
+    var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }
