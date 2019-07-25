@@ -48,7 +48,10 @@
         margin-left: 20px;
       }
 
-      small { color: $grey; margin-left: 5px; }
+      small {
+        color: $grey;
+        margin-left: 5px;
+      }
 
       &::before {
         content: " ";
@@ -64,7 +67,9 @@
       }
     }
 
-    .post { margin: 30px 0; }
+    .post {
+      margin: 30px 0;
+    }
 
     .post-header {
       position: relative;
@@ -91,7 +96,9 @@
     .post-header:hover {
       border-bottom-color: $grey-dim;
 
-      &::before { background: $black-deep; }
+      &::before {
+        background: $black-deep;
+      }
     }
 
     .post-meta {
@@ -101,10 +108,9 @@
       top: 5px;
     }
 
-    .post-comments-count { display: none; }
-
     .post-title {
       margin-left: $font-size-smallest * 5;
+      font-size: $font-size-medium;
       font-weight: normal;
       line-height: inherit;
 
