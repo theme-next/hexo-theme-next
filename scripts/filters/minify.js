@@ -10,7 +10,7 @@ hexo.extend.filter.register('after_generate', () => {
   const velocity = lists.filter(list => list.includes('lib/velocity'));
   const fontawesome = lists.filter(list => list.includes('lib/font-awesome'));
 
-  if (!theme.motion.enable || (theme.vendors.velocity && theme.vendors.velocity_ui)) {  
+  if (!theme.motion.enable || (theme.vendors.velocity && theme.vendors.velocity_ui)) {
     hexo.route.remove('js/motion.js');
     velocity.forEach(path => {
       hexo.route.remove(path);
