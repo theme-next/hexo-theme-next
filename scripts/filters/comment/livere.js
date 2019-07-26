@@ -3,6 +3,7 @@
 'use strict';
 
 const path = require('path');
+const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', function(injects) {
@@ -17,4 +18,4 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
   injects.bodyEnd.file('livere', path.join(hexo.theme_dir, 'layout/_third-party/comments/livere.swig'));
 
-}, hexo.config.inject_priority_livere);
+}, priority.livere);

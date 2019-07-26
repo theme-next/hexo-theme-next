@@ -3,6 +3,7 @@
 'use strict';
 
 const {iconText} = require('./common');
+const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', function(injects) {
@@ -20,7 +21,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
   </div>
   `);
 
-}, hexo.config.inject_priority_facebook_comments_plugin);
+}, priority.facebook_comments_plugin);
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', function(injects) {
@@ -36,8 +37,6 @@ hexo.extend.filter.register('theme_inject', function(injects) {
     </a>
   </span>
   {% endif %}
-  `, {
-    disableDefaultLayout: true
-  });
+  `);
 
-}, hexo.config.inject_priority_facebook_comments_plugin_post_meta);
+}, priority.facebook_comments_plugin_post_meta);

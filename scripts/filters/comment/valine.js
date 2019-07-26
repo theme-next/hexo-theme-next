@@ -3,8 +3,8 @@
 'use strict';
 
 const path = require('path');
-
 const {iconText} = require('./common');
+const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', function(injects) {
@@ -15,7 +15,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
   injects.bodyEnd.file('valine', path.join(hexo.theme_dir, 'layout/_third-party/comments/valine.swig'));
 
-}, hexo.config.inject_priority_valine);
+}, priority.valine);
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', function(injects) {
@@ -31,8 +31,6 @@ hexo.extend.filter.register('theme_inject', function(injects) {
     </a>
   </span>
   {% endif %}
-  `, {
-    disableDefaultLayout: true
-  });
+  `);
 
-}, hexo.config.inject_priority_valine_post_meta);
+}, priority.valine_post_meta);

@@ -3,8 +3,8 @@
 'use strict';
 
 const path = require('path');
-
 const {iconText} = require('./common');
+const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', function(injects) {
@@ -19,7 +19,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
   injects.bodyEnd.file('changyan', path.join(hexo.theme_dir, 'layout/_third-party/comments/changyan.swig'));
 
-}, hexo.config.inject_priority_changyan);
+}, priority.changyan);
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', function(injects) {
@@ -41,8 +41,6 @@ hexo.extend.filter.register('theme_inject', function(injects) {
     {% endif %}
   </span>
   {% endif %}
-  `, {
-    disableDefaultLayout: true
-  });
+  `);
 
-}, hexo.config.inject_priority_changyan_post_meta);
+}, priority.changyan_post_meta);
