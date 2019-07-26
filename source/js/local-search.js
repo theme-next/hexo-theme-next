@@ -89,6 +89,20 @@ $(document).ready(function() {
       searchTextCount: searchTextCountInSlice
     };
   }
+
+  // Highlight title and content
+  function highlightKeyword(text, slice) {
+    var result = '';
+    var prevEnd = slice.start;
+    slice.hits.forEach(function(hit) {
+      result += text.substring(prevEnd, hit.position);
+      var end = hit.position + hit.length;
+      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+      prevEnd = end;
+    });
+    result += text.substring(prevEnd, slice.end);
+    return result;
+  }
   function inputEventFunction() {
     var searchText = input.value.trim().toLowerCase();
     var keywords = searchText.split(/[-\s]+/);
@@ -177,20 +191,6 @@ $(document).ready(function() {
           var upperBound = parseInt(CONFIG.localsearch.top_n_per_article, 10);
           if (upperBound >= 0) {
             slicesOfContent = slicesOfContent.slice(0, upperBound);
-          }
-
-          // Highlight title and content
-          function highlightKeyword(text, slice) {
-            var result = '';
-            var prevEnd = slice.start;
-            slice.hits.forEach(function(hit) {
-              result += text.substring(prevEnd, hit.position);
-              var end = hit.position + hit.length;
-              result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-              prevEnd = end;
-            });
-            result += text.substring(prevEnd, slice.end);
-            return result;
           }
 
           var resultItem = '';
