@@ -6,13 +6,13 @@
 body {
   position: relative; // Required by scrollspy
   font-family: $font-family-base;
-  font-size: $font-size-base;
+  font-size: $font-size-small;
   line-height: $line-height-base;
   color: $text-color;
   background: $body-bg-color;
 
   +tablet-mobile() { padding-right: 0 !important; }
-  +desktop-large() { font-size: $font-size-large; }
+  +desktop-large() { font-size: $font-size-medium; }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,18 +26,6 @@ h1, h2, h3, h4, h5, h6 {
 for headline in (1..6) {
   h{headline} {
     font-size: $font-size-headings-base - $font-size-headings-step * headline;
-    code {
-      font-size: 1em;
-    }
-  }
-
-  +mobile() {
-    h{headline} {
-      font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
-      code {
-        font-size: 1em;
-      }
-    }
   }
 }
 
