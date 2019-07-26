@@ -456,6 +456,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "lei2rock",
+      "name": "Donglei Zhang",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/19180725?v=4",
+      "profile": "http://dlzhang.com",
+      "contributions": [
+        "doc",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6

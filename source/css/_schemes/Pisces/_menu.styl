@@ -1,3 +1,14 @@
+.site-nav-toggle {
+  left: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  +tablet() {
+    show();
+  }
+}
+
 .site-nav {
   border-top: none;
 
@@ -73,15 +84,4 @@
 
 .btn-bar {
   background-color: white;
-}
-
-.site-nav-toggle {
-  left: 20px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  +tablet() {
-    show();
-  }
 }

@@ -1,8 +1,6 @@
 .site-nav {
   +mobile() {
-    position: absolute;
     left: 0;
-    top: 77px;
     margin: 0;
     width: 100%;
     padding: 0;
@@ -10,6 +8,10 @@
     border-bottom: 1px solid $gray-lighter;
     z-index: $zindex-3;
   }
+}
+
+.site-nav-toggle {
+  top: 50px;
 }
 
 .menu {
@@ -48,7 +50,9 @@
   }
 
   br {
-    +mobile() { display: none; }
+    +mobile() {
+      display: none;
+    }
   }
 
   a, span.exturl {
