@@ -143,6 +143,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
   <tr>
     <td align="center"><a href="https://i-m.dev"><img src="https://avatars2.githubusercontent.com/u/17429111?v=4" width="100px;" alt="张强"/><br /><sub><b>张强</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/issues?q=author%3Azq-97" title="Bug reports">🐛</a> <a href="https://github.com/theme-next/hexo-theme-next/commits?author=zq-97" title="Code">💻</a></td>
     <td align="center"><a href="http://www.howiezhao.com"><img src="https://avatars2.githubusercontent.com/u/16129206?v=4" width="100px;" alt="Howie Zhao"/><br /><sub><b>Howie Zhao</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=howiezhao" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://dlzhang.com"><img src="https://avatars1.githubusercontent.com/u/19180725?v=4" width="100px;" alt="Donglei Zhang"/><br /><sub><b>Donglei Zhang</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=lei2rock" title="Documentation">📖</a> <a href="https://github.com/theme-next/hexo-theme-next/issues?q=author%3Alei2rock" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

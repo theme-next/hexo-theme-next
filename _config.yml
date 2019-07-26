@@ -9,9 +9,15 @@
 # Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
 override: false
 
+# Console reminder if new version released.
+reminder: false
+
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
   enable: true
+
+# Remove unnecessary files after hexo generate.
+minify: false
 
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
@@ -89,12 +95,6 @@ creative_commons:
   sidebar: false
   post: false
   language:
-
-# `Follow me on GitHub` banner in the top-right corner.
-github_banner:
-  enable: false
-  permalink: https://github.com/yourname
-  title: Follow me on GitHub
 
 
 # ---------------------------------------------------------------
@@ -363,6 +363,42 @@ post_edit:
 
 
 # ---------------------------------------------------------------
+# Custom Page Settings
+# See: https://theme-next.org/docs/theme-settings/custom-pages
+# ---------------------------------------------------------------
+
+# Enable "cheers" for archive page.
+cheers: true
+
+# TagCloud settings for tags page.
+tagcloud:
+  # If true, font size, font color and amount of tags can be customized
+  enable: false
+  # All values below are same as default, change them by yourself
+  min: 12 # Minimun font size in px
+  max: 30 # Maxium font size in px
+  start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
+  end: "#111" # End color (hex, rgba, hsla or color keywords)
+  amount: 200 # Amount of tags, change it if you have more than 200 tags
+
+# Google Calendar
+# Share your recent schedule to others via calendar page.
+# API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
+# To get api_key: https://console.developers.google.com
+# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
+calendar:
+  enable: false
+  calendar_id: <required> # Your Google account E-Mail
+  api_key: <required>
+  orderBy: startTime
+  offsetMax: 24 # Time Range
+  offsetMin: 4 # Time Range
+  showDeleted: false
+  singleEvents: true
+  maxResults: 250
+
+
+# ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
 
@@ -400,33 +436,29 @@ codeblock:
     # Available values: default | flat | mac
     style:
 
-# Enable "cheers" for archive page.
-cheers: true
-
-# TagCloud settings for tags page.
-tagcloud:
-  # If true, font size, font color and amount of tags can be customized
+# `Follow me on GitHub` banner in the top-right corner.
+github_banner:
   enable: false
-  # All values below are same as default, change them by yourself
-  min: 12 # Minimun font size in px
-  max: 30 # Maxium font size in px
-  start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
-  end: "#111" # End color (hex, rgba, hsla or color keywords)
-  amount: 200 # Amount of tags, change it if you have more than 200 tags
+  permalink: https://github.com/yourname
+  title: Follow me on GitHub
 
 
 # ---------------------------------------------------------------
-# Font Settings. Introduced in NexT v5.0.1.
+# Font Settings
+# See: https://theme-next.org/docs/theme-settings/#Fonts-Customization
+# ---------------------------------------------------------------
 # Find fonts on Google Fonts (https://www.google.com/fonts)
 # All fonts set here will have the following styles:
 #   light | light italic | normal | normal italic | bold | bold italic
 # Be aware that setting too much fonts will cause site running slowly
 # ---------------------------------------------------------------
-# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `logo`):
+# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `title`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 
 font:
+  # Use custom fonts families or not.
+  # Depended options: `external` and `family`.
   enable: false
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
@@ -435,43 +467,39 @@ font:
   # Font options:
   # `external: true` will load this font family from `host` above.
   # `family: Times New Roman`. Without any quotes.
-  # `size: xx`. Use `px` as unit.
+  # `size: x.x`. Use `px` as unit. Default: 16
 
-  # Global font settings used for all elements in <body>.
+  # Global font settings used for all elements inside <body>.
   global:
     external: true
     family: Lato
     size:
 
-  # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
-  # Fallback to `global` font settings.
+  # Font settings for site title (.site-title).
+  title:
+    external: true
+    family:
+    size:
+
+  # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
     family:
     size:
 
-  # Font settings for posts.
-  # Fallback to `global` font settings.
+  # Font settings for posts (.post-body).
   posts:
     external: true
     family:
-
-  # Font settings for Logo.
-  # Fallback to `global` font settings.
-  logo:
-    external: true
-    family:
-    size:
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
     family:
-    size:
 
 
 # ---------------------------------------------------------------
-# Third Party Services Settings
+# Third Party Plugins & Services Settings
 # See: https://theme-next.org/docs/third-party-services/
 # You may need to install dependencies or set CDN URLs in `vendors`
 # There are two different CDN providers by default:
@@ -568,22 +596,6 @@ reading_progress:
   enable: false
   color: "#37c6c0"
   height: 2px
-
-# Google Calendar
-# Share your recent schedule to others via calendar page.
-# API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
-# To get api_key: https://console.developers.google.com
-# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
-calendar:
-  enable: false
-  calendar_id: <required> # Your Google account E-Mail
-  api_key: <required>
-  orderBy: startTime
-  offsetMax: 24 # Time Range
-  offsetMin: 4 # Time Range
-  showDeleted: false
-  singleEvents: true
-  maxResults: 250
 
 
 # ---------------------------------------------------------------
@@ -944,6 +956,15 @@ pace:
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
   theme: minimal
 
+# JavaScript 3D library.
+# Dependencies: https://github.com/theme-next/theme-next-three
+three:
+  enable: false
+  delay: false # Set true to further delay loading
+  three_waves: false
+  canvas_lines: false
+  canvas_sphere: false
+
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 canvas_nest:
@@ -953,15 +974,6 @@ canvas_nest:
   opacity: 0.5 # the opacity of line: 0~1
   zIndex: -1 # z-index property of the background
   count: 99 # the number of lines
-
-# JavaScript 3D library.
-# Dependencies: https://github.com/theme-next/theme-next-three
-three:
-  enable: false
-  delay: false # Set true to further delay loading
-  three_waves: false
-  canvas_lines: false
-  canvas_sphere: false
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
@@ -990,6 +1002,13 @@ vendors:
   # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
   jquery:
+
+  # Internal version: 4.7.0
+  # See: https://fontawesome.com
+  # Example:
+  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  fontawesome:
 
   # Internal version: 2.1.5 & 3.5.7
   # See: https://fancyapps.com/fancybox
@@ -1023,13 +1042,6 @@ vendors:
   # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
   velocity:
   velocity_ui:
-
-  # Internal version: 4.7.0
-  # See: https://fontawesome.com
-  # Example:
-  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-  fontawesome:
 
   # Internal version: 2.10.4
   # See: https://www.algolia.com
