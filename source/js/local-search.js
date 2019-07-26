@@ -15,6 +15,25 @@ $(document).ready(function() {
       .replace(/&gt;/g, '>')
       .replace(/&amp;/g, '&');
   }
+  function getIndexByWord(word, text, caseSensitive) {
+    var wordLen = word.length;
+    if (wordLen === 0) {
+      return [];
+    }
+    var startPosition = 0, position = [], index = [];
+    if (!caseSensitive) {
+      text = text.toLowerCase();
+      word = word.toLowerCase();
+    }
+    while ((position = text.indexOf(word, startPosition)) > -1) {
+      index.push({
+        position: position,
+        word: word
+      });
+      startPosition = position + wordLen;
+    }
+    return index;
+  }
 
   // Popup Window
   var isfetched = false;
@@ -94,53 +113,29 @@ $(document).ready(function() {
           if (searchText.length > 0) {
             // Perform local searching
             datas.forEach(function(data) {
-              var isMatch = false;
-              var hitCount = 0;
-              var searchTextCount = 0;
               // Only match articles with not empty titles
-              if (data.title && data.content) {
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g, '');
-                if (CONFIG.localsearch.unescape) {
-                  content = unescapeHtml(content);
-                }
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                keywords.forEach(function(keyword) {
-                  function getIndexByWord(word, text, caseSensitive) {
-                    var wordLen = word.length;
-                    if (wordLen === 0) {
-                      return [];
-                    }
-                    var startPosition = 0, position = [], index = [];
-                    if (!caseSensitive) {
-                      text = text.toLowerCase();
-                      word = word.toLowerCase();
-                    }
-                    while ((position = text.indexOf(word, startPosition)) > -1) {
-                      index.push({
-                        position: position,
-                        word: word
-                      });
-                      startPosition = position + wordLen;
-                    }
-                    return index;
-                  }
-
-                  indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                  indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                });
-                if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                  isMatch = true;
-                  hitCount = indexOfTitle.length + indexOfContent.length;
-                }
+              if (!data.title) {
+                return;
               }
+              var searchTextCount = 0;
+              var title = data.title.trim();
+              var titleInLowerCase = title.toLowerCase();
+              var content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+              if (CONFIG.localsearch.unescape) {
+                content = unescapeHtml(content);
+              }
+              var contentInLowerCase = content.toLowerCase();
+              var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+              var indexOfTitle = [];
+              var indexOfContent = [];
+              keywords.forEach(function(keyword) {
+                indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+              });
 
               // Show search results
-              if (isMatch) {
+              if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                var hitCount = indexOfTitle.length + indexOfContent.length;
                 // Sort index by position of keyword
                 [indexOfTitle, indexOfContent].forEach(function(index) {
                   index.sort(function(itemLeft, itemRight) {
