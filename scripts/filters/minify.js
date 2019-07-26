@@ -46,6 +46,10 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/algolia-search.js');
   }
 
+  if (!theme.local_search.enable) {
+    hexo.route.remove('js/local-search.js');
+  }
+
   if (theme.scheme === 'Muse' || theme.scheme === 'Mist') {
     hexo.route.remove('js/affix.js');
     hexo.route.remove('js/schemes/pisces.js');
