@@ -13,7 +13,6 @@ $(document).ready(function() {
 
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   CONFIG.tabs && NexT.utils.registerTabsTag();
-  NexT.utils.registerESCKeyEvent();
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
   NexT.utils.embeddedVideoTransformer();
 
