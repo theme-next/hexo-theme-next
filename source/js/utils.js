@@ -132,18 +132,6 @@ NexT.utils = {
     });
   },
 
-  registerESCKeyEvent: function() {
-    $(document).on('keyup', function(event) {
-      var shouldDismissSearchPopup = event.which === 27
-          && $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        $('.search-popup').hide();
-        $('.search-popup-overlay').remove();
-        $('body').css('overflow', '');
-      }
-    });
-  },
-
   registerBackToTop: function() {
     var THRESHOLD = 50;
     var $top = $('.back-to-top');

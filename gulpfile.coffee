@@ -8,11 +8,17 @@ yaml = require('js-yaml')
 
 gulp.task 'lint', ->
   return gulp.src([
-    './source/js/utils.js',
-    './source/js/motion.js',
+    './source/js/affix.js',
     './source/js/algolia-search.js',
+    './source/js/exturl.js',
+    './source/js/js.cookie.js',
+    './source/js/local-search.js',
+    './source/js/motion.js',
     './source/js/next-boot.js',
     './source/js/post-details.js',
+    './source/js/scroll-cookie.js',
+    './source/js/scrollspy.js',
+    './source/js/utils.js',
     './source/js/schemes/muse.js',
     './source/js/schemes/pisces.js'
   ]).pipe jshint()
