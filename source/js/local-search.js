@@ -51,7 +51,7 @@ $(document).ready(function() {
   }
 
   // Search function
-  function searchFunc(path, search_id, content_id) {
+  function searchFunc(path, searchId, contentId) {
     'use strict';
 
     // Start loading animation
@@ -62,7 +62,10 @@ $(document).ready(function() {
         + '</div>'
         + '</div>')
       .css('overflow', 'hidden');
-    $('#search-loading-icon').css('margin', '20% auto 0 auto').css('text-align', 'center');
+    $('#search-loading-icon').css({
+      margin: '20% auto 0 auto',
+      'text-align': 'center'
+    });
 
     $.ajax({
       url: path,
@@ -79,11 +82,11 @@ $(document).ready(function() {
             url: $('url', this).text()
           };
         }).get() : res;
-        var input = document.getElementById(search_id);
-        var resultContent = document.getElementById(content_id);
+        var input = document.getElementById(searchId);
+        var resultContent = document.getElementById(contentId);
         function inputEventFunction() {
           var searchText = input.value.trim().toLowerCase();
-          var keywords = searchText.split(/[\s\-]+/);
+          var keywords = searchText.split(/[-\s]+/);
           if (keywords.length > 1) {
             keywords.push(searchText);
           }
@@ -94,18 +97,18 @@ $(document).ready(function() {
               var isMatch = false;
               var hitCount = 0;
               var searchTextCount = 0;
-              var title = data.title.trim();
-              var titleInLowerCase = title.toLowerCase();
-              var content = data.content.trim().replace(/<[^>]+>/g, '');
-              if (CONFIG.localsearch.unescape) {
-                content = unescapeHtml(content);
-              }
-              var contentInLowerCase = content.toLowerCase();
-              var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-              var indexOfTitle = [];
-              var indexOfContent = [];
               // Only match articles with not empty titles
-              if (title !== '') {
+              if (data.title && data.content) {
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g, '');
+                if (CONFIG.localsearch.unescape) {
+                  content = unescapeHtml(content);
+                }
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
                 keywords.forEach(function(keyword) {
                   function getIndexByWord(word, text, caseSensitive) {
                     var wordLen = word.length;
@@ -224,7 +227,7 @@ $(document).ready(function() {
                 });
 
                 // Select top N slices in content
-                var upperBound = parseInt(CONFIG.localsearch.top_n_per_article);
+                var upperBound = parseInt(CONFIG.localsearch.top_n_per_article, 10);
                 if (upperBound >= 0) {
                   slicesOfContent = slicesOfContent.slice(0, upperBound);
                 }
