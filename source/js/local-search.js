@@ -292,11 +292,11 @@ $(document).ready(function() {
   function searchFunc() {
     // Start loading animation
     $('body')
-      .append('<div class="search-popup-overlay local-search-pop-overlay">'
-        + '<div id="search-loading-icon">'
-        + '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>'
-        + '</div>'
-        + '</div>')
+      .append(`<div class="search-popup-overlay local-search-pop-overlay">
+          <div id="search-loading-icon">
+            <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+          </div>
+        </div>`)
       .css('overflow', 'hidden');
     $('#search-loading-icon').css({
       margin: '20% auto 0 auto',
