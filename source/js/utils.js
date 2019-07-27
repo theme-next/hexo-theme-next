@@ -14,7 +14,7 @@ NexT.utils = {
 
         if ($imageWrapLink.length < 1) {
           var imageLink = $image.attr('data-src') || $image.attr('src');
-          $imageWrapLink = $image.wrap('<a class="fancybox fancybox.image" href="' + imageLink + '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>').parent('a');
+          $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
           if ($image.is('.post-gallery img')) {
             $imageWrapLink.addClass('post-gallery-img');
             $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
@@ -28,7 +28,7 @@ NexT.utils = {
         }
 
         if (imageTitle) {
-          $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
+          $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
           // Make sure img title tag will show correctly in fancybox
           $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
         }
@@ -108,7 +108,7 @@ NexT.utils = {
       $(window).bind('hashchange', function() {
         var tHash = location.hash;
         if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-          $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
+          $(`${tNav}li:has(a[href="${tHash}"])`).addClass('active').siblings().removeClass('active');
           $(tHash).addClass('active').siblings().removeClass('active');
         }
       }).trigger('hashchange');
@@ -295,7 +295,7 @@ NexT.utils = {
   },
 
   getScrollbarWidth: function() {
-    var $div = $('<div />').addClass('scrollbar-measure').prependTo('body');
+    var $div = $('<div/>').addClass('scrollbar-measure').prependTo('body');
     var div = $div[0];
     var scrollbarWidth = div.offsetWidth - div.clientWidth;
     $div.remove();

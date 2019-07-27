@@ -97,7 +97,7 @@ $(document).ready(function() {
     slice.hits.forEach(function(hit) {
       result += text.substring(prevEnd, hit.position);
       var end = hit.position + hit.length;
-      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+      result += `<b class="search-keyword">${text.substring(hit.position, end)}</b>`;
       prevEnd = end;
     });
     result += text.substring(prevEnd, slice.end);
@@ -196,15 +196,13 @@ $(document).ready(function() {
           var resultItem = '';
 
           if (slicesOfTitle.length !== 0) {
-            resultItem += '<li><a href="' + articleUrl + '" class="search-result-title">' + highlightKeyword(title, slicesOfTitle[0]) + '</a>';
+            resultItem += `<li><a href="${articleUrl}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
           } else {
-            resultItem += '<li><a href="' + articleUrl + '" class="search-result-title">' + title + '</a>';
+            resultItem += `<li><a href="${articleUrl}" class="search-result-title">${title}</a>`;
           }
 
           slicesOfContent.forEach(function(slice) {
-            resultItem += '<a href="' + articleUrl + '">'
-              + '<p class="search-result">' + highlightKeyword(content, slice)
-              + '...</p></a>';
+            resultItem += `<a href="${articleUrl}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
           });
 
           resultItem += '</li>';
