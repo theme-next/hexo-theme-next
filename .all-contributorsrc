@@ -466,6 +466,16 @@
         "doc",
         "bug"
       ]
+    },
+    {
+      "login": "hsiangfeng",
+      "name": "Ray",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19990752?v=4",
+      "profile": "https://hsiangfeng.github.io/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6
