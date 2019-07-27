@@ -1,11 +1,3 @@
-{# Reset `window.Promise` when it was not a function. #}
-{# IE refers the element whose id is `Promise` as `window.Promise`, this causes Velocity throwing an exception #}
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
 {% set js_vendors = {} %}
 {% set js_defer_vendors = {} %}
 {% set js_vendors.jquery = 'jquery/index.js?v=3.4.1' %}
