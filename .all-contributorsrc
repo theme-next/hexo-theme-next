@@ -466,6 +466,16 @@
         "doc",
         "bug"
       ]
+    },
+    {
+      "login": "Maples7",
+      "name": "Maples7",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9960982?v=4",
+      "profile": "http://maples7.com/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6
