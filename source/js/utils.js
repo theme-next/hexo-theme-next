@@ -97,6 +97,35 @@ NexT.utils = {
     });
   },
 
+  registerBackToTop: function() {
+    var THRESHOLD = 50;
+    var $top = $('.back-to-top');
+
+    function initBackToTop() {
+      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
+
+      var scrollTop = $(window).scrollTop();
+      var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
+      var scrollPercent = scrollTop / contentVisibilityHeight;
+      var scrollPercentRounded = Math.round(scrollPercent * 100);
+      var scrollPercentMaxed = Math.min(scrollPercentRounded, 100);
+      $('#scrollpercent > span').html(scrollPercentMaxed);
+    }
+
+    // For init back to top in sidebar if page was scrolled after page refresh.
+    $(window).on('load', function() {
+      initBackToTop();
+    });
+
+    $(window).on('scroll', function() {
+      initBackToTop();
+    });
+
+    $top.on('click', function() {
+      $('html, body').animate({ scrollTop: 0 });
+    });
+  },
+
   /**
    * Tabs tag listener (without twitter bootstrap).
    */
@@ -132,33 +161,16 @@ NexT.utils = {
     });
   },
 
-  registerBackToTop: function() {
-    var THRESHOLD = 50;
-    var $top = $('.back-to-top');
-
-    function initBackToTop() {
-      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
-
-      var scrollTop = $(window).scrollTop();
-      var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
-      var scrollPercent = scrollTop / contentVisibilityHeight;
-      var scrollPercentRounded = Math.round(scrollPercent * 100);
-      var scrollPercentMaxed = Math.min(scrollPercentRounded, 100);
-      $('#scrollpercent > span').html(scrollPercentMaxed);
-    }
-
-    // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load', function() {
-      initBackToTop();
-    });
-
-    $(window).on('scroll', function() {
-      initBackToTop();
-    });
-
-    $top.on('click', function() {
-      $('html, body').animate({ scrollTop: 0 });
-    });
+  registerCanIUseTag: function() {
+    // GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+    window.addEventListener('message', function(e) {
+      var data = e.data;
+      if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+        var featureID = data.split(':')[1];
+        var height = data.split(':')[2];
+        $(`iframe[data-feature=${featureID}]`).height(parseInt(height, 10) + 30);
+      }
+    }, false);
   },
 
   /**

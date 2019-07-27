@@ -12,8 +12,9 @@ $(document).ready(function() {
   CONFIG.pangu && window.pangu.spacingPage();
 
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
+  CONFIG.tabs && NexT.utils.registerTabsTag();
+  NexT.utils.registerCanIUseTag();
   NexT.utils.embeddedVideoTransformer();
 
   // Mobile top menu bar.
