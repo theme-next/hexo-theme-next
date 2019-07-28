@@ -593,6 +593,60 @@ calendar:
   singleEvents: true
   maxResults: 250
 
+# Live2d Support
+# repo: https://github.com/edsion1107/theme-next-live2d
+live2d:
+  enable: true
+
+  # 后端接口
+  modelAPI: //live2d.fghrsh.net/api/    # 看板娘 API 地址，自建 API 修改这里
+  tipsMessage: waifu-tips.json          # 提示语读取路径，同目录下可省略路径
+  hitokotoAPI: lwl12.com                # 一言 API 接口，可选 'lwl12.com'，'hitokoto.cn'，'jinrishici.com' (古诗词)
+
+  # 默认模型
+  modelId: 1                            # 默认模型(分组) ID，可在 Demo 页 [F12] 呼出 控制台(Console) 找到
+  modelTexturesId: 53                   # 默认材质(模型) ID，可在 Demo 页 [F12] 呼出 控制台(Console) 找到
+
+  # 工具栏设置
+  showToolMenu: true                    # 显示工具栏， true | false
+  canCloseLive2d: true                  # 关闭看板娘 按钮，true | false
+  canSwitchModel: true                  # 切换模型 按钮， true | false
+  canSwitchTextures: true               # 切换材质 按钮， true | false
+  canSwitchHitokoto: true               # 切换一言 按钮， true | false
+  canTakeScreenshot: true               # 看板娘截图 按钮，true | false
+  canTurnToHomePage: true               # 返回首页 按钮
+  canTurnToAboutPage: true              # 跳转关于页 按钮，true | false
+
+  # 模型切换模式
+  modelStorage: true                    # 记录 ID (刷新后恢复)，true | false
+  modelRandMode: 'switch'               # 模型切换，可选 'rand' (随机) | 'switch' (顺序)
+  modelTexturesRandMode: 'rand'         # 材质切换，可选 'rand' | 'switch'
+
+  # 提示消息选项
+  showHitokoto: true                    # 空闲时一言，true | false
+  showF12Status: true                   # 控制台显示加载状态，true | false
+  showF12Message: false                 # 提示消息输出到控制台，true | false
+  showF12OpenMsg: true                  # 控制台被打开触发提醒，true | false
+  showCopyMessage: true                 # 内容被复制触发提醒，true | false
+  showWelcomeMessage: true              # 进入面页时显示欢迎语，true | false
+
+  # 看板娘样式设置
+  waifuSize: '280x250'                  # 看板娘大小，例如 '280x250'，'600x535'
+  waifuTipsSize: '250x70'               # 提示框大小，例如 '250x70'，'570x150'
+  waifuFontSize: '12px'                 # 提示框字体大小，例如 '12px'，'30px'
+  waifuToolLine: '20px'                 # 工具栏行高，例如 '20px'，'36px'
+  waifuToolFont: '14px'                 # 工具栏字体大小，例如 '12px'，'30px'
+  waifuToolTop: '0px'                   # 工具栏顶部边距，例如 '0px', '-60px'
+  waifuMinWidth: '768px'                # 面页小于 指定宽度 隐藏看板娘，例如 'disable' (停用)，'768px'
+  waifuEdgeSide: 'right:30'             # 看板娘贴边方向，例如 'left:0' (靠左 0px)，'right:30' (靠右 30px)
+  waifuDraggable: 'disable'             # 拖拽样式，可选 'disable' (禁用)，'axis-x' (只能水平拖拽)，'unlimited' (自由拖拽)
+  waifuDraggableRevert: true            # 松开鼠标还原拖拽位置，true | false
+
+  # 其他杂项设置
+  homePageUrl: 'auto'                   # 首页地址，可选 'auto' (自动)，'{URL 网址}'
+  aboutPageUrl: 'https://github.com/edsion1107/theme-next-live2d' # 关于页地址，'{URL 网址}'
+  screenshotCaptureName: 'live2d.png'   # 看板娘截图文件名，例如 'live2d.png'
+
 
 # ---------------------------------------------------------------
 # Comments and Widgets
