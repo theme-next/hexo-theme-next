@@ -3,7 +3,7 @@
     {%- if theme.custom_logo and theme.scheme === 'Muse' %}
       <div class="site-meta-headline">
         <a>
-          <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}"/>
+          <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
         </a>
       </div>
     {%- endif %}
@@ -24,7 +24,7 @@
     {%- endif %}
     {%- if theme.custom_logo and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
       <a>
-        <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}"/>
+        <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
       </a>
     {%- endif %}
   </div>

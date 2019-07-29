@@ -1,27 +1,28 @@
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="{{ theme.android_chrome_color }}"/>
+<meta charset="UTF-8">
+<meta name="generator" content="Hexo {{ hexo_env('version') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="{{ theme.android_chrome_color }}">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {%- if theme.disable_baidu_transformation %}
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 {%- endif %}
 
 {%- if theme.google_site_verification %}
-  <meta name="google-site-verification" content="{{ theme.google_site_verification }}"/>
+  <meta name="google-site-verification" content="{{ theme.google_site_verification }}">
 {%- endif %}
 
 {%- if theme.bing_site_verification %}
-  <meta name="msvalidate.01" content="{{ theme.bing_site_verification }}"/>
+  <meta name="msvalidate.01" content="{{ theme.bing_site_verification }}">
 {%- endif %}
 
 {%- if theme.yandex_site_verification %}
-  <meta name="yandex-verification" content="{{ theme.yandex_site_verification }}"/>
+  <meta name="yandex-verification" content="{{ theme.yandex_site_verification }}">
 {%- endif %}
 
 {%- if theme.baidu_site_verification %}
-  <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}"/>
+  <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}">
 {%- endif %}
 
 {%- if theme.favicon.apple_touch_icon %}
@@ -40,15 +41,15 @@
   <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
 {%- endif %}
 {%- if theme.favicon.ms_browserconfig %}
-  <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}"/>
+  <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}">
 {%- endif %}
 
 {%- if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}
-  <meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}"/>
-  <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}"/>
+  <meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}">
+  <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}">
 {%- endif %}
 
-<link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}"/>
+<link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}">
 
 {{ next_font() }}
 
@@ -56,14 +57,14 @@
 {%- if theme.vendors.fontawesome %}
   {%- set font_awesome_uri = theme.vendors.fontawesome %}
 {%- endif %}
-<link rel="stylesheet" href="{{ font_awesome_uri }}"/>
+<link rel="stylesheet" href="{{ font_awesome_uri }}">
 
 {%- if theme.fancybox %}
   {%- set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css') %}
   {%- if theme.vendors.fancybox_css %}
     {%- set fancybox_css_uri = theme.vendors.fancybox_css %}
   {%- endif %}
-  <link rel="stylesheet" href="{{ fancybox_css_uri }}"/>
+  <link rel="stylesheet" href="{{ fancybox_css_uri }}">
 {%- endif %}
 
 {%- if theme.likely.enable %}
@@ -79,7 +80,7 @@
   {%- if theme.vendors.needmoreshare2_css %}
     {%- set needmoreshare2_css = theme.vendors.needmoreshare2_css %}
   {%- endif %}
-  <link rel="stylesheet" href="{{ needmoreshare2_css }}"/>
+  <link rel="stylesheet" href="{{ needmoreshare2_css }}">
 {%- endif %}
 
 {%- if theme.pace.enable %}
@@ -92,7 +93,7 @@
       {%- set pace_css_uri = theme.vendors.pace_css %}
     {%- endif %}
   <script src="{{ pace_js_uri }}"></script>
-  <link rel="stylesheet" href="{{ pace_css_uri }}"/>
+  <link rel="stylesheet" href="{{ pace_css_uri }}">
 {%- endif %}
 
 {# Export some HEXO Configurations to Front-End #}

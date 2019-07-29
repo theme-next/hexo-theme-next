@@ -17,16 +17,16 @@
   {### POST BLOCK ###}
   {##################}
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}"/>
+    <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="{{ author }}"/>
-      <meta itemprop="description" content="{{ description }}"/>
-      <meta itemprop="image" content="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"/>
+      <meta itemprop="name" content="{{ author }}">
+      <meta itemprop="description" content="{{ description }}">
+      <meta itemprop="image" content="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{{ title }}"/>
+      <meta itemprop="name" content="{{ title }}">
     </span>
 
     {%- if not headlessPost %}
@@ -209,7 +209,7 @@
           {%- set COLUMN_NUMBER = 3 %}
           {%- for photo in post.photos %}
             {%- if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{%- endif %}
-              <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
+              <img src="{{ url_for(photo) }}" itemprop="contentUrl">
             {%- if loop.index0 % COLUMN_NUMBER === 2 %}</div>{%- endif %}
           {%- endfor %}
 
