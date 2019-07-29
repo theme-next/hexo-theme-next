@@ -1,4 +1,4 @@
-{% if theme.calendar.enable && page.type === 'schedule' %}
+{%- if theme.calendar.enable && page.type === 'schedule' %}
 
 <script>
 // Initialization
@@ -167,4 +167,4 @@ function buildEventDOM(tense, event) {
 }
 </script>
 
-{% endif %}
+{%- endif %}

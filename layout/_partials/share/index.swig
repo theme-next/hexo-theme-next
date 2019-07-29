@@ -1,6 +1,6 @@
-{% if theme.add_this_id %}
+{%- if theme.add_this_id %}
   {% include 'add-this.swig' %}
-{% endif %}
-{% if theme.needmoreshare2.enable %}
+{%- endif %}
+{%- if theme.needmoreshare2.enable %}
   {% include 'needsharebutton.swig' %}
-{% endif %}
+{%- endif %}

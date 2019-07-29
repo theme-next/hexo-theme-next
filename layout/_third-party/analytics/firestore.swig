@@ -1,9 +1,9 @@
-{% if theme.firestore.enable %}
+{%- if theme.firestore.enable %}
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-  {% if theme.firestore.bluebird %}
+  {%- if theme.firestore.bluebird %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
-  {% endif %}
+  {%- endif %}
   <script>
     (function () {
 
@@ -81,7 +81,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = '{% for post in page.posts %}titles.push("{{ post.title }}");{% endfor %}' //if you have a better way to get titles of posts, please change it
+        var postsstr = '{%- for post in page.posts %}titles.push("{{ post.title }}");{%- endfor %}' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
@@ -98,4 +98,4 @@
       }
     })()
   </script>
-{% endif %}
+{%- endif %}

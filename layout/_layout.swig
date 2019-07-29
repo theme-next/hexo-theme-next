@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 
 {# NexT version #}
-{% set version = next_env('version') %}
+{%- set version = next_env('version') %}
 
 {# Language & Config #}
-{% set title = __('title') !== 'title' && __('title') || config.title %}
-{% set subtitle = __('subtitle') !== 'subtitle' && __('subtitle') || config.subtitle %}
-{% set author = __('author') !== 'author' && __('author') || config.author %}
-{% set description = __('description') !== 'description' && __('description') || config.description %}
+{%- set title = __('title') !== 'title' && __('title') || config.title %}
+{%- set subtitle = __('subtitle') !== 'subtitle' && __('subtitle') || config.subtitle %}
+{%- set author = __('author') !== 'author' && __('author') || config.author %}
+{%- set description = __('description') !== 'description' && __('description') || config.description %}
 
-{% set html_class = 'theme-next ' + theme.scheme %}
-{% if theme.motion.enable %}
-  {% set html_class = html_class + ' use-motion' %}
-{% endif %}
+{%- set html_class = 'theme-next ' + theme.scheme %}
+{%- if theme.motion.enable %}
+  {%- set html_class = html_class + ' use-motion' %}
+{%- endif %}
 
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
-  {% for inject_item in theme.injects.head %}
+  {%- for inject_item in theme.injects.head %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {% endfor %}
+  {%- endfor %}
   <title>{% block title %}{% endblock %}</title>
   {% include '_third-party/analytics/index.swig' %}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
@@ -28,10 +28,10 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
-  {% set container_class = 'container' %}
-  {% if theme.sidebar.position %}
-    {% set container_class = container_class + ' sidebar-position-' + theme.sidebar.position %}
-  {% endif %}
+  {%- set container_class = 'container' %}
+  {%- if theme.sidebar.position %}
+    {%- set container_class = container_class + ' sidebar-position-' + theme.sidebar.position %}
+  {%- endif %}
 
   <div class="{{ container_class }} {% block page_class %}{% endblock %}">
     <div class="headband"></div>
@@ -45,17 +45,17 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          {% if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
+          {%- if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
-          {% endif %}
+          {%- endif %}
           <div id="content" class="content">
             {% block content %}{% endblock %}
           </div>
           {% include '_partials/comments.swig' %}
         </div>
-        {% if theme.sidebar.display !== 'remove' %}
+        {%- if theme.sidebar.display !== 'remove' %}
           {% block sidebar %}{% endblock %}
-        {% endif %}
+        {%- endif %}
       </div>
     </main>
 
@@ -67,14 +67,14 @@
       </div>
     </footer>
 
-    {% if theme.back2top.enable and not theme.back2top.sidebar %}
+    {%- if theme.back2top.enable and not theme.back2top.sidebar %}
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        {% if theme.back2top.scrollpercent %}
+        {%- if theme.back2top.scrollpercent %}
           <span id="scrollpercent"><span>0</span>%</span>
-        {% endif %}
+        {%- endif %}
       </div>
-    {% endif %}
+    {%- endif %}
 
     {% include '_partials/share/index.swig' %}
   </div>
@@ -82,7 +82,7 @@
   {% include '_scripts/vendors.swig' %}
   {% include '_scripts/commons.swig' %}
 
-  {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
+  {%- set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
   {% include scheme_script %}
 
   {% block script_extra %}{% endblock %}
@@ -94,9 +94,9 @@
 
   {% include '_third-party/index.swig' %}
 
-  {% for inject_item in theme.injects.bodyEnd %}
+  {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {% endfor %}
+  {%- endfor %}
 
 </body>
 </html>

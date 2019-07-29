@@ -1,4 +1,4 @@
-{% if theme.baidu_push %}
+{%- if theme.baidu_push %}
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -8,4 +8,4 @@
       s.parentNode.insertBefore(bp, s);
     })();
   </script>
-{% endif %}
+{%- endif %}
