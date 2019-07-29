@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('ready', function() {
 
   // Create Base64 Object
   /* eslint-disable */

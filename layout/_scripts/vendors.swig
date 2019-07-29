@@ -2,6 +2,10 @@
 {%- set js_defer_vendors = {} %}
 {%- set js_vendors.jquery = 'jquery/index.js?v=3.4.1' %}
 
+{%- if theme.pjax %}
+  {%- set js_vendors.pjax = 'pjax/pjax.min.js?v=0.2.8' %}
+{%- endif %}
+
 {%- if theme.fancybox %}
   {%- set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
 {%- endif %}

@@ -33,7 +33,7 @@
     {%- set container_class = container_class + ' sidebar-position-' + theme.sidebar.position %}
   {%- endif %}
 
-  <div class="{{ container_class }} {% block page_class %}{% endblock %}">
+  <div class="{{ container_class }}">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -48,7 +48,7 @@
           {%- if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
           {%- endif %}
-          <div id="content" class="content">
+          <div id="content" class="content {% block page_class %}{% endblock %}">
             {% block content %}{% endblock %}
           </div>
           {% include '_partials/comments.swig' %}
@@ -62,7 +62,13 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
+        {%- if theme.pjax %}
+          <div id="reboot-analytics">
+        {%- endif %}
         {% include '_partials/analytics/index.swig' %}
+        {%- if theme.pjax %}
+          </div>
+        {%- endif %}
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -92,11 +98,37 @@
   {% include '_scripts/exturl.swig' %}
   {% include '_scripts/three.swig' %}
 
+  {%- if theme.pjax %}
+    <div id="reboot-services">
+  {%- endif %}
   {% include '_third-party/index.swig' %}
 
   {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {%- endfor %}
 
+  {%- if theme.pjax %}
+    </div>
+    <script>
+    var pjax = new Pjax({
+      selectors: [
+        'title',
+        'meta[name=description]',
+        '#main'
+      ]
+    });
+    $(document).on('pjax:success', function() {
+      $('#reboot-analytics script').remove().appendTo('#reboot-analytics');
+      $('#reboot-services script').remove().appendTo('#reboot-services');
+      $(document).trigger('ready');
+      // Define Motion Sequence & Bootstrap Motion.
+      CONFIG.motion.enable && NexT.motion.integrator
+        .init()
+        .add(NexT.motion.middleWares.postList)
+        .add(NexT.motion.middleWares.sidebar)
+        .bootstrap();
+    });
+    </script>
+  {%- endif %}
 </body>
 </html>
