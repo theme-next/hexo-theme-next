@@ -50,7 +50,7 @@
 
 <link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}"/>
 
-{% include "./external-fonts.swig" %}
+{{ next_font() }}
 
 {% set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.7.0') %}
 {% if theme.vendors.fontawesome %}
