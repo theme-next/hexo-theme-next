@@ -2,9 +2,9 @@
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
   {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + title %}{#
+  #}{%- set page_title_suffix = ' | ' + title %}{#
 
-  #}{% if page.type === 'categories' and not page.title %}{#
+  #}{%- if page.type === 'categories' and not page.title %}{#
     #}{{ __('title.category') + page_title_suffix }}{#
   #}{% elif page.type === 'tags' and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
@@ -12,7 +12,7 @@
     #}{{ __('title.schedule') + page_title_suffix }}{#
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
-  #}{% endif %}{#
+  #}{%- endif %}{#
 #}{% endblock %}
 
 {% block page_class %}page-post-detail{% endblock %}
@@ -28,19 +28,19 @@
       {#################}
       {### PAGE BODY ###}
       {#################}
-      <div class="post-body{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
+      <div class="post-body{%- if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
         {# tagcloud page support #}
-        {% if page.type === 'tags' %}
+        {%- if page.type === 'tags' %}
           <div class="tag-cloud">
             <div class="tag-cloud-title">
               {{ _p('counter.tag_cloud', site.tags.length) }}
             </div>
             <div class="tag-cloud-tags">
-              {% if not theme.tagcloud %}
+              {%- if not theme.tagcloud %}
                 {{ tagcloud({min_font: 12, max_font: 30, amount: 200, color: true, start_color: '#ccc', end_color: '#111'}) }}
               {% else %}
                 {{ tagcloud({min_font: theme.tagcloud.min, max_font: theme.tagcloud.max, amount: theme.tagcloud.amount, color: true, start_color: theme.tagcloud.start, end_color: theme.tagcloud.end}) }}
-              {% endif %}
+              {%- endif %}
             </div>
           </div>
         {% elif page.type === 'categories' %}
@@ -56,7 +56,7 @@
           {% include 'schedule.swig' %}
         {% else %}
           {{ page.content }}
-        {% endif %}
+        {%- endif %}
       </div>
       {#####################}
       {### END PAGE BODY ###}

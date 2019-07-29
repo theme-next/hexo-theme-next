@@ -3,11 +3,10 @@
 NexT.utils = {
 
   /**
-   * Wrap images with fancybox support.
+   * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    $('.content img')
-      .not('#qr img')
+    $('.post-body img')
       .each(function() {
         var $image = $(this);
         var imageTitle = $image.attr('title') || $image.attr('alt');
@@ -15,38 +14,32 @@ NexT.utils = {
 
         if ($imageWrapLink.length < 1) {
           var imageLink = $image.attr('data-src') || $image.attr('src');
-          $imageWrapLink = $image.wrap('<a class="fancybox fancybox.image" href="' + imageLink + '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>').parent('a');
+          $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
           if ($image.is('.post-gallery img')) {
             $imageWrapLink.addClass('post-gallery-img');
             $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-          }
-          else if ($image.is('.group-picture img')) {
+          } else if ($image.is('.group-picture img')) {
             $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-          }
-          else {
+          } else {
             $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
           }
         }
 
         if (imageTitle) {
-          $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
+          $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
           // Make sure img title tag will show correctly in fancybox
           $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
         }
       });
 
     $('.fancybox').fancybox({
-      loop: true,
+      loop   : true,
       helpers: {
         overlay: {
           locked: false
         }
       }
     });
-  },
-
-  lazyLoadPostsImages: function() {
-    lozad('.content img').observe();
   },
 
   /**
@@ -102,6 +95,35 @@ NexT.utils = {
     });
   },
 
+  registerBackToTop: function() {
+    var THRESHOLD = 50;
+    var $top = $('.back-to-top');
+
+    function initBackToTop() {
+      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
+
+      var scrollTop = $(window).scrollTop();
+      var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
+      var scrollPercent = scrollTop / contentVisibilityHeight;
+      var scrollPercentRounded = Math.round(scrollPercent * 100);
+      var scrollPercentMaxed = Math.min(scrollPercentRounded, 100);
+      $('#scrollpercent > span').html(scrollPercentMaxed);
+    }
+
+    // For init back to top in sidebar if page was scrolled after page refresh.
+    $(window).on('load', function() {
+      initBackToTop();
+    });
+
+    $(window).on('scroll', function() {
+      initBackToTop();
+    });
+
+    $top.on('click', function() {
+      $('html, body').animate({ scrollTop: 0 });
+    });
+  },
+
   /**
    * Tabs tag listener (without twitter bootstrap).
    */
@@ -113,7 +135,7 @@ NexT.utils = {
       $(window).bind('hashchange', function() {
         var tHash = location.hash;
         if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-          $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
+          $(`${tNav}li:has(a[href="${tHash}"])`).addClass('active').siblings().removeClass('active');
           $(tHash).addClass('active').siblings().removeClass('active');
         }
       }).trigger('hashchange');
@@ -137,45 +159,16 @@ NexT.utils = {
     });
   },
 
-  registerESCKeyEvent: function() {
-    $(document).on('keyup', function(event) {
-      var shouldDismissSearchPopup = event.which === 27
-          && $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        $('.search-popup').hide();
-        $('.search-popup-overlay').remove();
-        $('body').css('overflow', '');
+  registerCanIUseTag: function() {
+    // GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+    window.addEventListener('message', function(e) {
+      var data = e.data;
+      if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+        var featureID = data.split(':')[1];
+        var height = data.split(':')[2];
+        $(`iframe[data-feature=${featureID}]`).height(parseInt(height, 10) + 30);
       }
-    });
-  },
-
-  registerBackToTop: function() {
-    var THRESHOLD = 50;
-    var $top = $('.back-to-top');
-
-    function initBackToTop() {
-      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
-
-      var scrollTop = $(window).scrollTop();
-      var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
-      var scrollPercent = scrollTop / contentVisibilityHeight;
-      var scrollPercentRounded = Math.round(scrollPercent * 100);
-      var scrollPercentMaxed = scrollPercentRounded > 100 ? 100 : scrollPercentRounded;
-      $('#scrollpercent>span').html(scrollPercentMaxed);
-    }
-
-    // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load', function() {
-      initBackToTop();
-    });
-
-    $(window).on('scroll', function() {
-      initBackToTop();
-    });
-
-    $top.on('click', function() {
-      $('html, body').animate({ scrollTop: 0 });
-    });
+    }, false);
   },
 
   /**
@@ -312,7 +305,7 @@ NexT.utils = {
   },
 
   getScrollbarWidth: function() {
-    var $div = $('<div />').addClass('scrollbar-measure').prependTo('body');
+    var $div = $('<div/>').addClass('scrollbar-measure').prependTo('body');
     var div = $div[0];
     var scrollbarWidth = div.offsetWidth - div.clientWidth;
     $div.remove();
@@ -328,7 +321,7 @@ NexT.utils = {
   },
 
   getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = (CONFIG.back2top.enable && CONFIG.back2top.sidebar) ? $('.back-to-top').height() : 0;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? $('.back-to-top').height() : 0;
     return sidebarb2tHeight;
   },
 

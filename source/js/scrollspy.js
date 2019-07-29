@@ -119,9 +119,7 @@
 
     this.clear();
 
-    var selector = this.selector
-      + '[data-target="' + target + '"],'
-      + this.selector + '[href="' + target + '"]';
+    var selector = `${this.selector}[data-target="${target}"],${this.selector}[href="${target}"]`;
 
     var active = $(selector)
       .parents('li')

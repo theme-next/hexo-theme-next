@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var sidebarToggleLines = {
     lines: [],
-    push: function(line) {
+    push : function(line) {
       this.lines.push(line);
     },
     init: function() {
@@ -94,7 +94,7 @@ $(document).ready(function() {
 
   var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px';
   var SIDEBAR_DISPLAY_DURATION = 200;
-  var mousePos = {}, touchPos = {};
+  var mousePos = {}; var touchPos = {};
 
   var sidebarToggleMotion = {
     sidebarEl       : $('.sidebar'),
@@ -132,7 +132,7 @@ $(document).ready(function() {
     mouseupHandler: function(e) {
       var deltaX = e.pageX - mousePos.X;
       var deltaY = e.pageY - mousePos.Y;
-      if (this.isSidebarVisible && Math.sqrt(deltaX * deltaX + deltaY * deltaY) < 20 && $(e.target).is('.main')) {
+      if (this.isSidebarVisible && Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(e.target).is('.main')) {
         this.clickHandler();
       }
     },
@@ -174,15 +174,15 @@ $(document).ready(function() {
           begin   : function() {
             $('.sidebar .motion-element').not('.site-state').velocity(
               isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-                stagger : 50,
-                drag    : true
+                stagger: 50,
+                drag   : true
               }
             );
             $('.site-state').velocity(
               isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-                stagger : 50,
-                drag    : true,
-                display : 'flex'
+                stagger: 50,
+                drag   : true,
+                display: 'flex'
               }
             );
           },
@@ -193,7 +193,7 @@ $(document).ready(function() {
       } else {
         $('.sidebar .motion-element').show();
         this.sidebarEl.stop().animate({
-          width: SIDEBAR_WIDTH,
+          width  : SIDEBAR_WIDTH,
           display: 'block'
         }, SIDEBAR_DISPLAY_DURATION, function() {
           self.sidebarEl.addClass('sidebar-active');

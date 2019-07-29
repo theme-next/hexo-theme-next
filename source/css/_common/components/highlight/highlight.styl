@@ -9,7 +9,7 @@ $highlight_theme = hexo-config("codeblock.highlight_theme");
 // Placeholder: $code-block
 $code-block {
   margin: 20px 0;
-  font-size: $code-font-size;
+  font-size: $font-size-small;
   color: $highlight-foreground;
   background: $highlight-background;
   line-height: $line-height-code-block;
@@ -23,7 +23,6 @@ code {
   color: $code-foreground;
   background: $code-background;
   border-radius: $code-border-radius;
-  font-size: $code-font-size;
 }
 
 pre {
@@ -98,10 +97,7 @@ pre {
 }
 
 .gutter {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  disable-user-select();
 }
 
 .gist table {
@@ -110,14 +106,24 @@ pre {
   td { border: none; }
 }
 
-// For diff highlight
-pre .deletion { background: $highlight-deletion; }
-pre .addition { background: $highlight-addition; }
-pre .meta     { color: $highlight-purple; }
-
 pre {
+  // For diff highlight
+  .deletion {
+    background: $highlight-deletion;
+  }
 
-  .comment { color: $highlight-comment; }
+  .addition {
+    background: $highlight-addition;
+  }
+
+  .meta {
+    color: $highlight-yellow;
+    disable-user-select();
+  }
+
+  .comment {
+    color: $highlight-comment;
+  }
 
   .variable
   .attribute

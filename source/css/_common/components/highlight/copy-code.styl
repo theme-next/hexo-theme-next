@@ -11,17 +11,18 @@
   display: inline-block;
   position: absolute;
   padding: 2px 6px;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 20px;
+  font-size: $font-size-smaller;
+  font-weight: $font-weight-bolder;
+  line-height: 1.6;
   color: #333;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  user-select: none;
   outline: 0;
   transition: opacity .3s ease-in-out;
   opacity: 0;
+  disable-user-select();
+
   if hexo-config('codeblock.copy_button.style') == 'flat' {
     background-color: #fff;
     border: none;

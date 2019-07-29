@@ -6,12 +6,16 @@ $(document).ready(function() {
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
    */
-  CONFIG.fastclick && NexT.utils.isMobile() && window.FastClick.attach(document.body);
-  CONFIG.lazyload && NexT.utils.lazyLoadPostsImages();
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
+  CONFIG.lazyload && window.lozad('.post-body img').observe();
+  CONFIG.pangu && window.pangu.spacingPage();
 
-  NexT.utils.registerESCKeyEvent();
-
+  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
+  CONFIG.tabs && NexT.utils.registerTabsTag();
+  NexT.utils.registerCanIUseTag();
+  NexT.utils.embeddedVideoTransformer();
 
   // Mobile top menu bar.
   $('.site-nav-toggle button').on('click', function() {
@@ -25,20 +29,6 @@ $(document).ready(function() {
       $siteNav[animateCallback](ON_CLASS_NAME);
     });
   });
-
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
-
-  NexT.utils.embeddedVideoTransformer();
-
-  // Define Motion Sequence & Bootstrap Motion.
-  CONFIG.motion.enable && NexT.motion.integrator
-    .add(NexT.motion.middleWares.logo)
-    .add(NexT.motion.middleWares.menu)
-    .add(NexT.motion.middleWares.postList)
-    .add(NexT.motion.middleWares.sidebar)
-    .bootstrap();
 
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
@@ -65,10 +55,10 @@ $(document).ready(function() {
     // Initialize Sidebar & TOC Width.
     var scrollbarWidth = NexT.utils.getScrollbarWidth();
     if ($('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.site-overview').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
+      $('.site-overview').css('width', `calc(100% + ${scrollbarWidth}px)`);
     }
     if ($('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
+      $('.post-toc').css('width', `calc(100% + ${scrollbarWidth}px)`);
     }
 
     // Initialize Sidebar & TOC Height.
@@ -80,4 +70,12 @@ $(document).ready(function() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
   wrapTable();
+
+  // Define Motion Sequence & Bootstrap Motion.
+  CONFIG.motion.enable && NexT.motion.integrator
+    .add(NexT.motion.middleWares.logo)
+    .add(NexT.motion.middleWares.menu)
+    .add(NexT.motion.middleWares.postList)
+    .add(NexT.motion.middleWares.sidebar)
+    .bootstrap();
 });

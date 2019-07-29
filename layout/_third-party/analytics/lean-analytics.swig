@@ -1,7 +1,7 @@
-{% if theme.leancloud_visitors.enable and !theme.valine.visitor %}
+{%- if theme.leancloud_visitors.enable and !theme.valine.visitor %}
   {# custom analytics part create by xiamo; edited by LEAFERx #}
   <script>
-    {% if page.layout === 'post' %}
+    {%- if page.layout === 'post' %}
     function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
       var url = $visitors.attr('id').trim();
@@ -11,22 +11,22 @@
         .done(function({ results }) {
           if (results.length > 0) {
             var counter = results[0];
-            {% if theme.leancloud_visitors.betterPerformance %}
+            {%- if theme.leancloud_visitors.betterPerformance %}
               var $element = $(document.getElementById(url));
               $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            {% endif %}
+            {%- endif %}
             Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            {% if not theme.leancloud_visitors.betterPerformance %}
+            {%- if not theme.leancloud_visitors.betterPerformance %}
               .done(function() {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(counter.time + 1);
               })
-            {% endif %}
+            {%- endif %}
               .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+                console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
               })
           } else {
-            {% if theme.leancloud_visitors.security %}
+            {%- if theme.leancloud_visitors.security %}
               var $element = $(document.getElementById(url));
               $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
               console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
@@ -39,11 +39,11 @@
                 .fail(function() {
                   console.log('Failed to create');
                 });
-            {% endif %}
+            {%- endif %}
           }
         })
         .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
         });
     }
     {% else %}
@@ -82,10 +82,10 @@
           }
         })
         .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
         });
     }
-    {% endif %}
+    {%- endif %}
 
     $(function() {
       $.get('https://app-router.leancloud.cn/2/route?appId=' + '{{ theme.leancloud_visitors.app_id }}')
@@ -93,7 +93,7 @@
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
-              url: 'https://' + api_server + '/1.1' + url,
+              url: `https://${api_server}/1.1${url}`,
               headers: {
                 'X-LC-Id': '{{ theme.leancloud_visitors.app_id }}',
                 'X-LC-Key': '{{ theme.leancloud_visitors.app_key }}',
@@ -102,7 +102,7 @@
               data: data
             });
           };
-          {% if page.layout === 'post' %}
+          {%- if page.layout === 'post' %}
             const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
             if (localhost.test(document.URL)) return;
             addCount(Counter);
@@ -110,9 +110,9 @@
             if ($('.post-title-link').length >= 1) {
               showTime(Counter);
             }
-          {% endif %}
+          {%- endif %}
         });
     });
   </script>
 
-{% endif %}
+{%- endif %}

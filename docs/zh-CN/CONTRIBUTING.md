@@ -85,8 +85,8 @@
 
 提交合并请求前，请再次确认您已经查看了 [你需要了解的](#before-submitting-an-issue) 内容，避免提交重复的合并请求。确定相关仓库后，创建合并请求。更多详细操作过程可以查看 [帮助文档](https://help.github.com/articles/creating-a-pull-request/)。
 
-1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击`Fork`。
-2. 进入到已经`Fork`的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
+1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击 `Fork`。
+2. 进入到已经 `Fork` 的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
     ```bash
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
@@ -151,7 +151,7 @@
 
 如果您不确定某个标签的含义，或者不知道将哪些标签应用于 PR 或 issue，千万别错过这个。
 
-Issues 的标签：使用`类型`+`内容`+`结果`的组合
+Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
 
 - 类型
     - `Irrelevant`: 与 NexT 主题无关的 Issue

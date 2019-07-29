@@ -447,6 +447,54 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "howiezhao",
+      "name": "Howie Zhao",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16129206?v=4",
+      "profile": "http://www.howiezhao.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "lei2rock",
+      "name": "Donglei Zhang",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/19180725?v=4",
+      "profile": "http://dlzhang.com",
+      "contributions": [
+        "doc",
+        "bug"
+      ]
+    },
+    {
+      "login": "hsiangfeng",
+      "name": "Ray",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19990752?v=4",
+      "profile": "https://hsiangfeng.github.io/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "xyyuchn",
+      "name": "xyyuchn",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46118157?v=4",
+      "profile": "https://xyyuchn.github.io/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Maples7",
+      "name": "Maples7",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9960982?v=4",
+      "profile": "http://maples7.com/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6

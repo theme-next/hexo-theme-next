@@ -1,4 +1,4 @@
-{% if theme.tencent_mta %}
+{%- if theme.tencent_mta %}
   <script>
     var _mtac = {};
     (function() {
@@ -10,4 +10,4 @@
       s.parentNode.insertBefore(mta, s);
     })();
   </script>
-{% endif %}
+{%- endif %}
