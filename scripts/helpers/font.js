@@ -15,20 +15,20 @@ hexo.extend.helper.register('next_font', function(type) {
   var fontHost = fontConfig.host || '//fonts.googleapis.com';
 
   //Get a font list from fontConfig
-  var font_families = ['global', 'title', 'headings', 'posts', 'codes'].map(function(item) {
+  var fontFamilies = ['global', 'title', 'headings', 'posts', 'codes'].map(function(item) {
     if (fontConfig[item].family && fontConfig[item].external) {
       return fontConfig[item].family + fontStyles;
     }
     return '';
   });
 
-  font_families = font_families.filter(function(item) {
+  fontFamilies = fontFamilies.filter(function(item) {
     return item !== '';
   });
 
-  font_families = Array.from(new Set(font_families));
-  font_families = font_families.join('|');
+  fontFamilies = Array.from(new Set(fontFamilies));
+  fontFamilies = fontFamilies.join('|');
 
   // Merge extra parameters to the final processed font string
-  return font_families ? `<link rel="stylesheet" href="${fontHost}/css?family=${font_families.concat(fontDisplay, fontSubset)}"/>` : '';
+  return fontFamilies ? `<link rel="stylesheet" href="${fontHost}/css?family=${fontFamilies.concat(fontDisplay, fontSubset)}"/>` : '';
 });
