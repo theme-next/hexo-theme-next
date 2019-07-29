@@ -327,9 +327,6 @@
         {% endif %}
 
         {% if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-          {% if theme.rating.enable %}
-            <span class="post-meta-divider">|</span>
-          {% endif %}
           <div class="social-like">
             {% if theme.vkontakte_api.enable and theme.vkontakte_api.like %}
               <div class="vk_like">
@@ -346,10 +343,7 @@
         {% endif %}
 
         {% if theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
-          {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-            <span class="post-meta-divider">|</span>
-          {% endif %}
-          <div class="social_share">
+          <div class="social-share">
             {% if theme.likely.enable %}
               {% include '../_partials/share/likely.swig' %}
             {% endif %}

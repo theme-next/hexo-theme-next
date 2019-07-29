@@ -58,6 +58,22 @@
 {% endif %}
 <link rel="stylesheet" href="{{ font_awesome_uri }}"/>
 
+{% if theme.fancybox %}
+  {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css') %}
+  {% if theme.vendors.fancybox_css %}
+    {% set fancybox_css_uri = theme.vendors.fancybox_css %}
+  {% endif %}
+  <link rel="stylesheet" href="{{ fancybox_css_uri }}"/>
+{% endif %}
+
+{% if theme.likely.enable %}
+  {% set likely_css_url = '//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css' %}
+  {% if theme.vendors.likely_css %}
+    {% set likely_css_url = theme.vendors.likely_css %}
+  {% endif %}
+  <link rel="stylesheet" href="{{ likely_css_url }}">
+{% endif %}
+
 {% if theme.needmoreshare2.enable %}
   {% set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
   {% if theme.vendors.needmoreshare2_css %}
@@ -77,14 +93,6 @@
     {% endif %}
   <script src="{{ pace_js_uri }}"></script>
   <link rel="stylesheet" href="{{ pace_css_uri }}"/>
-{% endif %}
-
-{% if theme.fancybox %}
-  {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css') %}
-  {% if theme.vendors.fancybox_css %}
-    {% set fancybox_css_uri = theme.vendors.fancybox_css %}
-  {% endif %}
-  <link rel="stylesheet" href="{{ fancybox_css_uri }}"/>
 {% endif %}
 
 {# Export some HEXO Configurations to Front-End #}

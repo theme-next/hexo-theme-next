@@ -50,14 +50,16 @@
       function appendCountTo(el) {
         return function (count) {
           $(el).append(
-            $('<span>').addClass('post-visitors-count').append(
-              $('<span>').addClass('post-meta-divider').text('|')
-            ).append(
-              $('<span>').addClass('post-meta-item-icon').append(
-                $('<i>').addClass('fa fa-users')
+            $('<span>').addClass('post-meta-item')
+              .append(
+                $('<span>').addClass('post-meta-item-icon').append(
+                  $('<i>').addClass('fa fa-users')
+                )
               )
-              ).append($('<span>').text('{{ __("post.views")}} ' + count))
-          )
+              .append(
+                $('<span>').text('{{ __("post.views")}} ' + count)
+              )
+          );
         }
       }
 

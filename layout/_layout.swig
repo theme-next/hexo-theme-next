@@ -62,7 +62,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {% include '_third-party/analytics/analytics-with-widget.swig' %}
+        {% include '_partials/analytics/index.swig' %}
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -76,16 +76,7 @@
       </div>
     {% endif %}
 
-    {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    {% endif %}
-
-    {% include '_partials/share/needsharebutton.swig' %}
-    {% include '_partials/share/add-this.swig' %}
+    {% include '_partials/share/index.swig' %}
   </div>
 
   {% include '_scripts/vendors.swig' %}
