@@ -2,7 +2,7 @@
 
 'use strict';
 
-hexo.extend.helper.register('next_font', function(type) {
+hexo.extend.helper.register('next_font', function() {
   var fontConfig = hexo.theme.config.font;
 
   if (!fontConfig || !fontConfig.enable) {
