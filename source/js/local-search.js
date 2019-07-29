@@ -37,7 +37,7 @@ $(document).ready(function() {
     if (wordLen === 0) {
       return [];
     }
-    var startPosition = 0, position = [], index = [];
+    var startPosition = 0; var position = []; var index = [];
     if (!caseSensitive) {
       text = text.toLowerCase();
       word = word.toLowerCase();
@@ -45,7 +45,7 @@ $(document).ready(function() {
     while ((position = text.indexOf(word, startPosition)) > -1) {
       index.push({
         position: position,
-        word: word
+        word    : word
       });
       startPosition = position + wordLen;
     }
@@ -65,7 +65,7 @@ $(document).ready(function() {
       }
       hits.push({
         position: position,
-        length: word.length
+        length  : word.length
       });
       var wordEnd = position + word.length;
 
@@ -83,9 +83,9 @@ $(document).ready(function() {
       }
     }
     return {
-      hits: hits,
-      start: start,
-      end: end,
+      hits           : hits,
+      start          : start,
+      end            : end,
       searchTextCount: searchTextCountInSlice
     };
   }
@@ -141,9 +141,8 @@ $(document).ready(function() {
             index.sort(function(itemLeft, itemRight) {
               if (itemRight.position !== itemLeft.position) {
                 return itemRight.position - itemLeft.position;
-              } else {
-                return itemLeft.word.length - itemRight.word.length;
               }
+              return itemLeft.word.length - itemRight.word.length;
             });
           });
 
@@ -171,7 +170,7 @@ $(document).ready(function() {
             if (end > content.length) {
               end = content.length;
             }
-            var tmp = mergeIntoSlice(content, start, end, indexOfContent, searchText);
+            let tmp = mergeIntoSlice(content, start, end, indexOfContent, searchText);
             searchTextCount += tmp.searchTextCountInSlice;
             slicesOfContent.push(tmp);
           }
@@ -182,9 +181,8 @@ $(document).ready(function() {
               return sliceRight.searchTextCount - sliceLeft.searchTextCount;
             } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
               return sliceRight.hits.length - sliceLeft.hits.length;
-            } else {
-              return sliceLeft.start - sliceRight.start;
             }
+            return sliceLeft.start - sliceRight.start;
           });
 
           // Select top N slices in content
@@ -209,10 +207,10 @@ $(document).ready(function() {
 
           resultItem += '</li>';
           resultItems.push({
-            item: resultItem,
+            item           : resultItem,
             searchTextCount: searchTextCount,
-            hitCount: hitCount,
-            id: resultItems.length
+            hitCount       : hitCount,
+            id             : resultItems.length
           });
         }
       });
@@ -227,9 +225,8 @@ $(document).ready(function() {
           return resultRight.searchTextCount - resultLeft.searchTextCount;
         } else if (resultLeft.hitCount !== resultRight.hitCount) {
           return resultRight.hitCount - resultLeft.hitCount;
-        } else {
-          return resultRight.id - resultLeft.id;
         }
+        return resultRight.id - resultLeft.id;
       });
       var searchResultList = '<ul class="search-result-list">';
       resultItems.forEach(function(result) {
@@ -241,16 +238,16 @@ $(document).ready(function() {
   }
   function fetchData(callback) {
     $.ajax({
-      url: path,
+      url     : path,
       dataType: isXml ? 'xml' : 'json',
-      success: function(res) {
+      success : function(res) {
         // Get the contents from search data
         isfetched = true;
         datas = isXml ? $('entry', res).map(function() {
           return {
-            title: $('title', this).text(),
+            title  : $('title', this).text(),
             content: $('content', this).text(),
-            url: $('url', this).text()
+            url    : $('url', this).text()
           };
         }).get() : res;
 
@@ -301,7 +298,7 @@ $(document).ready(function() {
         + '</div>')
       .css('overflow', 'hidden');
     $('#search-loading-icon').css({
-      margin: '20% auto 0 auto',
+      margin      : '20% auto 0 auto',
       'text-align': 'center'
     });
     fetchData(proceedSearch);

@@ -55,10 +55,10 @@ hexo.on('generateAfter', function() {
   const env = require(path.normalize('../package.json'));
   https.get({
     hostname: 'api.github.com',
-    port: 443,
-    path: '/repos/theme-next/hexo-theme-next/releases/latest',
-    method: 'GET',
-    headers: {
+    port    : 443,
+    path    : '/repos/theme-next/hexo-theme-next/releases/latest',
+    method  : 'GET',
+    headers : {
       'User-Agent': 'Theme NexT Client'
     }
   }, res => {
