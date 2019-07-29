@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+$(document).on('ready', function() {
 
   /**
    * Register JS handlers by condition option.
@@ -70,6 +70,10 @@ $(document).ready(function() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
   wrapTable();
+});
+
+$(document).ready(function() {
+  $(document).trigger('ready');
 
   // Define Motion Sequence & Bootstrap Motion.
   CONFIG.motion.enable && NexT.motion.integrator

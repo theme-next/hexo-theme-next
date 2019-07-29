@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+$(document).on('ready', function() {
 
   var sidebarToggleLines = {
     lines: [],

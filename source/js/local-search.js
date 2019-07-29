@@ -2,7 +2,7 @@
 
 'use strict';
 
-$(document).ready(function() {
+$(document).on('ready', function() {
   // Popup Window
   var isfetched = false;
   var datas;
