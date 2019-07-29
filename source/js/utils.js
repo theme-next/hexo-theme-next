@@ -18,11 +18,9 @@ NexT.utils = {
           if ($image.is('.post-gallery img')) {
             $imageWrapLink.addClass('post-gallery-img');
             $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-          }
-          else if ($image.is('.group-picture img')) {
+          } else if ($image.is('.group-picture img')) {
             $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-          }
-          else {
+          } else {
             $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
           }
         }
@@ -35,7 +33,7 @@ NexT.utils = {
       });
 
     $('.fancybox').fancybox({
-      loop: true,
+      loop   : true,
       helpers: {
         overlay: {
           locked: false
@@ -323,7 +321,7 @@ NexT.utils = {
   },
 
   getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = (CONFIG.back2top.enable && CONFIG.back2top.sidebar) ? $('.back-to-top').height() : 0;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? $('.back-to-top').height() : 0;
     return sidebarb2tHeight;
   },
 
