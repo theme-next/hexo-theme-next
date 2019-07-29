@@ -16,7 +16,7 @@ hexo.extend.helper.register('next_font', function() {
 
   //Get a font list from fontConfig
   var fontFamilies = ['global', 'title', 'headings', 'posts', 'codes'].map(function(item) {
-    if (fontConfig[item].family && fontConfig[item].external) {
+    if (fontConfig[item] && fontConfig[item].family && fontConfig[item].external) {
       return fontConfig[item].family + fontStyles;
     }
     return '';
