@@ -1,4 +1,4 @@
-{% if theme.google_analytics.tracking_id %}
+{%- if theme.google_analytics.tracking_id %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics.tracking_id }}"></script>
   <script>
     var host = window.location.hostname;
@@ -9,4 +9,4 @@
       gtag('config', '{{ theme.google_analytics.tracking_id }}');
     }
   </script>
-{% endif %}
+{%- endif %}

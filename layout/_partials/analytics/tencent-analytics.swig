@@ -1,4 +1,4 @@
-{% if theme.tencent_analytics %}
+{%- if theme.tencent_analytics %}
   <script>
     (function() {
       var hm = document.createElement("script");
@@ -7,4 +7,4 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
-{% endif %}
+{%- endif %}
