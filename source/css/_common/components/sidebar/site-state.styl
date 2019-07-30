@@ -1,16 +1,16 @@
 .site-state {
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  line-height: 1.4;
   margin-top: 10px;
+  overflow: hidden;
   text-align: $site-state-align;
   white-space: nowrap;
-  line-height: 1.4;
 }
 
 .site-state-item {
-  padding: 0 15px;
   border-left: 1px solid $site-state-item-border-color;
+  padding: 0 15px;
 
   &:first-child {
     border-left: none;
@@ -22,11 +22,11 @@
 }
 
 .site-state-item-count {
-  display: block;
   color: $site-state-item-count-color;
-  text-align: center;
-  font-weight: $font-weight-bold;
+  display: block;
   font-size: $site-state-item-count-font-size;
+  font-weight: $font-weight-bold;
+  text-align: center;
 }
 
 .site-state-item-name {

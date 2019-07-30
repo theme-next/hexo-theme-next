@@ -8,13 +8,13 @@
 }
 
 .brand {
-  position: relative;
-  display: inline-block;
-  padding: 0 40px;
-  border-bottom: none;
   background: $brand-bg;
+  border-bottom: none;
   color: $brand-color;
+  display: inline-block;
   line-height: $title-font-size;
+  padding: 0 40px;
+  position: relative;
 
   &:hover {
     color: $brand-hover-color;
@@ -23,24 +23,24 @@
 
 .logo {
   display: inline-block;
+  line-height: 36px;
   margin-right: 5px;
   vertical-align: top;
-  line-height: 36px;
 }
 
 .site-title {
   display: inline-block;
-  vertical-align: top;
-  font-weight: normal;
-  font-size: $title-font-size;
   font-family: $font-family-logo;
+  font-size: $title-font-size;
+  font-weight: normal;
   line-height: 1.5;
+  vertical-align: top;
 }
 
 .site-subtitle {
-  margin-top: 10px;
   color: $subtitle-color;
   font-size: $subtitle-font-size;
+  margin-top: 10px;
 }
 
 .use-motion {
@@ -49,8 +49,8 @@
   }
 
   .logo, .site-title, .site-subtitle, .custom-logo-image {
+    opacity: 0;
     position: relative;
     top: -10px;
-    opacity: 0;
   }
 }

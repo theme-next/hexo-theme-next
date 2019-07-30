@@ -1,20 +1,20 @@
 .btn {
-  display: inline-block;
-  padding: 0 20px;
-  font-size: $btn-default-font-size;
-  color: $btn-default-color;
   background: $btn-default-bg;
   border: $btn-default-border-width solid $btn-default-border-color;
-  text-decoration: none;
   border-radius: $btn-default-radius;
+  color: $btn-default-color;
+  display: inline-block;
+  font-size: $btn-default-font-size;
+  padding: 0 20px;
+  text-decoration: none;
   transition-property: background-color;
   the-transition();
   line-height: 2;
 
   &:hover {
+    background: $btn-default-hover-bg;
     border-color: $btn-default-hover-border-color;
     color: $btn-default-hover-color;
-    background: $btn-default-hover-bg;
   }
 
   +.btn {
@@ -22,17 +22,19 @@
   }
 
   .fa-fw {
-    width: (18em / 14);
     text-align: left;
+    width: (18em / 14);
   }
 }
 
 .btn-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
   background: $text-color;
   border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
 
-  &+.btn-bar { margin-top: 4px; }
+  &+.btn-bar {
+    margin-top: 4px;
+  }
 }

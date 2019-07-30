@@ -1,34 +1,34 @@
 // Blockquote with all children centered.
 .blockquote-center {
-  position: relative;
+  border-left: none;
   margin: 40px 0;
   padding: 0;
-  border-left: none;
+  position: relative;
   text-align: center;
 
   &::before, &::after {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 24px;
     background-position: 0 -6px;
-    background-size: 22px 22px;
     background-repeat: no-repeat;
+    background-size: 22px 22px;
     content: ' ';
+    display: block;
+    height: 24px;
     opacity: 0.2;
+    position: absolute;
+    width: 100%;
   }
 
   &::before {
-    top: -20px;
-    border-top: 1px solid $grey-light;
     background-image: url($center-quote-left);
+    border-top: 1px solid $grey-light;
+    top: -20px;
   }
 
   &::after {
-    bottom: -20px;
-    border-bottom: 1px solid $grey-light;
     background-image: url($center-quote-right);
     background-position: 100% 8px;
+    border-bottom: 1px solid $grey-light;
+    bottom: -20px;
   }
 
   p, div {

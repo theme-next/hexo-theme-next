@@ -3,8 +3,8 @@
 }
 
 .sidebar {
-  right: auto;
   bottom: auto;
+  right: auto;
 
   a, span.exturl {
     color: $black-light;
@@ -17,13 +17,13 @@
 }
 
 .sidebar-inner {
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
   // padding: 20px 10px 0;
   box-sizing: border-box;
-  width: $sidebar-desktop;
-  border-radius: $border-radius;
-  background: white;
-  box-shadow: $box-shadow;
   color: $text-color;
+  width: $sidebar-desktop;
 
   if (hexo-config('motion.enable') && hexo-config('motion.transition.sidebar')) {
     opacity: 0;
@@ -53,14 +53,14 @@
 }
 
 .feed-link, .chat {
-  border-top: 1px dotted $grey-light;
   border-bottom: 1px dotted $grey-light;
+  border-top: 1px dotted $grey-light;
   text-align: center;
 
   a {
-    display: block;
     border: none !important;
     color: $orange;
+    display: block;
 
     &:hover {
       background: none;
@@ -84,8 +84,8 @@
   sidebar-inline-links-item();
 
   a, span.exturl {
-    display: block;
     border-bottom: none;
+    display: block;
     text-decoration: none;
 
     &::before {
@@ -93,8 +93,8 @@
     }
 
     &:hover {
-      border-radius: 4px;
       background: $gainsboro;
+      border-radius: 4px;
     }
   }
 

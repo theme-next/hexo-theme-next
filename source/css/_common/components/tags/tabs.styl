@@ -1,8 +1,8 @@
 .post-body .tabs {
-  position: relative;
   display: block;
   margin-bottom: 20px;
   padding-top: 10px;
+  position: relative;
   // Read tabs border_radius from NexT config and set in "tbr px" to use it as string variable in this CSS section.
   hexo-config('tabs.border_radius') is a 'unit' ? (tbr = unit(hexo-config('tabs.border_radius'), px)) : (tbr = 0);
 
@@ -19,19 +19,19 @@
     }
 
     li.tab {
-      flex-grow: 1;
-      border-top: 3px solid transparent;
-      border-right: 1px solid transparent;
+      background-color: #fff;
       border-bottom: 1px solid #ddd;
       border-left: 1px solid transparent;
-      background-color: #fff;
+      border-right: 1px solid transparent;
+      border-top: 3px solid transparent;
+      flex-grow: 1;
       list-style-type: none;
 
       +mobile-smallest() {
-        border-top: 1px solid transparent;
-        border-right: 1px solid transparent;
         border-bottom: 1px solid transparent;
         border-left: 3px solid transparent;
+        border-right: 1px solid transparent;
+        border-top: 1px solid transparent;
       }
 
       if (tbr > 0) {
@@ -47,12 +47,12 @@
       }
 
       & a {
-        display: block;
-        padding: 0.25em 0.75em;
-        outline: 0;
         border-bottom: initial;
-        text-align: center;
+        display: block;
         line-height: 1.8em;
+        outline: 0;
+        padding: 0.25em 0.75em;
+        text-align: center;
 
         & i {
           width: (18em / 14);
@@ -64,16 +64,16 @@
       }
 
       &.active {
-        border-top: 3px solid $orange;
-        border-right: 1px solid $table-border-color;
         border-bottom: 1px solid transparent;
         border-left: 1px solid $table-border-color;
+        border-right: 1px solid $table-border-color;
+        border-top: 3px solid $orange;
 
         +mobile-smallest() {
-          border-top: 1px solid $table-border-color;
-          border-right: 1px solid $table-border-color;
           border-bottom: 1px solid $table-border-color;
           border-left: 3px solid $orange;
+          border-right: 1px solid $table-border-color;
+          border-top: 1px solid $table-border-color;
         }
 
         & a {
@@ -86,8 +86,8 @@
 
   .tab-content {
     .tab-pane {
-      padding: 20px 20px 0 20px;
       border: 1px solid $table-border-color;
+      padding: 20px 20px 0 20px;
 
       if (tbr > 0) {
         border-radius: tbr;

@@ -14,66 +14,66 @@
   padding-left: 30px;
 
   hr {
-    margin: 20px 0 45px 0 !important;
     background: #222;
+    margin: 20px 0 45px 0 !important;
 
     &::after {
-      display: inline-block;
-      padding: 0 5px;
       background: #222;
       color: #FFF;
       content: 'NOW';
-      text-align: right;
+      display: inline-block;
       font-weight: bold;
+      padding: 0 5px;
+      text-align: right;
     }
   }
 
   li.event {
-    margin: 20px 0px;
-    padding-left: 10px;
-    min-height: 40px;
     background: #F9F9F9;
+    margin: 20px 0px;
+    min-height: 40px;
+    padding-left: 10px;
 
     h2.event-summary {
       margin: 0;
       padding-bottom: 3px;
 
       &::before {
-        display: inline-block;
-        margin-right: 25px;
         color: #bbb;
         content: '\f111';
-        vertical-align: middle;
-        font-size: 8px;
+        display: inline-block;
         font-family: FontAwesome;
+        font-size: 8px;
+        margin-right: 25px;
+        vertical-align: middle;
       }
     }
 
     span.event-relative-time {
-      display: inline-block;
-      padding-left: 12px;
       color: #bbb;
-      font-weight: $font-weight-normal;
+      display: inline-block;
       font-size: 12px;
+      font-weight: $font-weight-normal;
+      padding-left: 12px;
     }
 
     span.event-details {
-      display: block;
-      margin-left: 56px;
-      padding-top: 3px;
-      padding-bottom: 6px;
       color: #bbb;
-      text-indent: -24px;
+      display: block;
       line-height: 18px;
+      margin-left: 56px;
+      padding-bottom: 6px;
+      padding-top: 3px;
+      text-indent: -24px;
 
       &::before {
-        display: inline-block;
-        margin-right: 9px;
-        width: 14px;
         color: #bbb;
+        display: inline-block;
+        font-family: FontAwesome;
+        margin-right: 9px;
         text-align: center;
         text-indent: 0;
-        font-family: FontAwesome;
+        width: 14px;
       }
 
       &.event-location::before {
@@ -87,8 +87,8 @@
   }
 
   li.event-past {
-    padding: 15px 0 15px 10px;
     background: #FCFCFC;
+    padding: 15px 0 15px 10px;
 
     & > * {
       opacity: 0.9;
@@ -104,15 +104,15 @@
   }
 
   li.event-now {
-    padding: 15px 0 15px 10px;
     background: #222;
     color: #FFF;
+    padding: 15px 0 15px 10px;
 
     h2.event-summary {
       &::before {
+        animation: dot-flash 1s alternate infinite ease-in-out;
         color: #FFF;
         transform: scale(1.2);
-        animation: dot-flash 1s alternate infinite ease-in-out;
       }
     }
 
@@ -122,15 +122,15 @@
   }
 
   li.event-future {
-    padding: 15px 0 15px 10px;
     background: #222;
     color: #FFF;
+    padding: 15px 0 15px 10px;
 
     h2.event-summary {
       &::before {
+        animation: dot-flash 1s alternate infinite ease-in-out;
         color: #FFF;
         transform: scale(1.2);
-        animation: dot-flash 1s alternate infinite ease-in-out;
       }
     }
 

@@ -1,9 +1,9 @@
 .post-body .note {
   note_icons = hexo-config('note.icons');
   note_style = hexo-config('note.style');
-  position: relative;
   margin-bottom: 20px;
   padding: 15px;
+  position: relative;
 
   if (note_style == 'simple') {
     border: 1px solid $gainsboro;
@@ -11,18 +11,19 @@
   }
 
   if (note_style == 'modern') {
-    border: 1px solid transparent;
     background-color: $whitesmoke;
+    border: 1px solid transparent;
   }
 
   if (note_style == 'flat') {
+    background-color: lighten($gainsboro, 65%);
     border: initial;
     border-left: 3px solid $gainsboro;
-    background-color: lighten($gainsboro, 65%);
   }
 
+  if (hexo-config('note.border_radius') is a 'unit') {
     border-radius: unit(hexo-config('note.border_radius'), px);
- if (hexo-config('note.border_radius') is a 'unit');
+  }
 
   h2, h3, h4, h5, h6 {
     if (note_icons) {
@@ -31,9 +32,9 @@
       margin-top: 0;
     }
 
+    border-bottom: initial;
     margin-bottom: 0;
     padding-top: 0 !important;
-    border-bottom: initial;
   }
 
   p, ul, ol, table, pre, blockquote, img {
@@ -51,11 +52,11 @@
       padding-left: 45px;
 
       &::before {
+        font-family: $font-family-icons;
+        font-size: larger;
+        left: 15px;
         position: absolute;
         top: 13px;
-        left: 15px;
-        font-size: larger;
-        font-family: $font-family-icons;
       }
     }
   }
@@ -66,8 +67,8 @@
     }
 
     if (note_style == 'modern') {
-      border-color: $note-modern-default-border;
       background-color: $note-modern-default-bg;
+      border-color: $note-modern-default-border;
       color: $note-modern-default-text;
 
       a, span.exturl {
@@ -110,8 +111,8 @@
     }
 
     if (note_style == 'modern') {
-      border-color: $note-modern-primary-border;
       background-color: $note-modern-primary-bg;
+      border-color: $note-modern-primary-border;
       color: $note-modern-primary-text;
 
       a, span.exturl {
@@ -154,8 +155,8 @@
     }
 
     if (note_style == 'modern') {
-      border-color: $note-modern-info-border;
       background-color: $note-modern-info-bg;
+      border-color: $note-modern-info-border;
       color: $note-modern-info-text;
 
       a, span.exturl {
@@ -198,8 +199,8 @@
     }
 
     if (note_style == 'modern') {
-      border-color: $note-modern-success-border;
       background-color: $note-modern-success-bg;
+      border-color: $note-modern-success-border;
       color: $note-modern-success-text;
 
       a, span.exturl {
@@ -242,8 +243,8 @@
     }
 
     if (note_style == 'modern') {
-      border-color: $note-modern-warning-border;
       background-color: $note-modern-warning-bg;
+      border-color: $note-modern-warning-border;
       color: $note-modern-warning-text;
 
       a, span.exturl {
@@ -286,8 +287,8 @@
     }
 
     if (note_style == 'modern') {
-      border-color: $note-modern-danger-border;
       background-color: $note-modern-danger-bg;
+      border-color: $note-modern-danger-border;
       color: $note-modern-danger-text;
 
       a, span.exturl {

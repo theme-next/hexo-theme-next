@@ -6,9 +6,9 @@
 
 .header-inner {
   clearfix();
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 20px 0;
 
   +mobile() {
@@ -20,16 +20,16 @@
 
 .site-meta {
   float: left;
-  margin-left: -20px;
   line-height: normal;
+  margin-left: -20px;
 
   +mobile() {
     margin-left: 10px;
   }
 
   .brand {
-    padding: 2px 1px;
     background: none;
+    padding: 2px 1px;
 
     +mobile() {
       display: block;
@@ -47,8 +47,8 @@
 
 .logo-line-before, .logo-line-after {
   display: block;
-  overflow: hidden;
   margin: 0 auto;
+  overflow: hidden;
   width: 75%;
 
   +mobile() {
@@ -56,10 +56,10 @@
   }
 
   i {
-    position: relative;
+    background: $black-deep;
     display: block;
     height: 2px;
-    background: $black-deep;
+    position: relative;
 
     +mobile() {
       height: 3px;

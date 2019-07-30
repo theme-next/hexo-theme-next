@@ -1,19 +1,19 @@
 the-transition() {
   transition-delay: 0s;
-  transition-timing-function: ease-in-out;
   transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 the-transition-ease-in() {
   transition-delay: 0s;
-  transition-timing-function: ease-in;
   transition-duration: 0.2s;
+  transition-timing-function: ease-in;
 }
 
 the-transition-ease-out() {
   transition-delay: 0s;
-  transition-timing-function: ease-out;
   transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 }
 
 mobile-smallest() {
@@ -83,8 +83,8 @@ random-color($min, $max) {
 // Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
 clearfix() {
   &::before, &::after {
-    display: table;
     content: ' ';
+    display: table;
   }
 
   &::after {
@@ -93,8 +93,8 @@ clearfix() {
 }
 
 word-wrap() {
-  word-wrap: break-word;
   overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 disable-touch-hover() {
@@ -108,7 +108,7 @@ disable-touch-hover() {
 
 disable-user-select() {
   user-select: none;
-  -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  -webkit-user-select: none;
 }

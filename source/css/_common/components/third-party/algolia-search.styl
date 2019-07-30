@@ -8,13 +8,13 @@
 }
 
 .algolia-pop-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 2080;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2080;
 
   +mobile() {
     display: none;
@@ -22,41 +22,41 @@
 }
 
 .algolia-popup {
+  background: #fff;
+  border-radius: 5px;
+  color: #333;
+  display: none;
+  height: 80%;
+  left: 50%;
+  margin-left: -350px;
+  overflow: hidden;
+  padding: 0;
   position: fixed;
   top: 10%;
-  left: 50%;
-  z-index: 9999;
-  display: none;
-  overflow: hidden;
-  margin-left: -350px;
-  padding: 0;
   width: 700px;
-  height: 80%;
-  border-radius: 5px;
-  background: #fff;
-  color: #333;
+  z-index: 9999;
 
   +mobile() {
-    top: 0;
+    border-radius: 0;
+    height: 100%;
     left: 0;
     margin: 0;
     padding: 0;
+    top: 0;
     width: 100%;
-    height: 100%;
-    border-radius: 0;
   }
 
   .popup-btn-close {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    padding-left: 15px;
     border-left: 1px solid #eee;
     color: #4EBD79;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 15px;
+    position: absolute;
+    right: 14px;
+    text-transform: uppercase;
+    top: 10px;
 
     .fa {
       color: $grey-dark;
@@ -70,12 +70,12 @@
 }
 
 .algolia-search {
-  padding: 10px 15px 5px;
-  max-height: 50px;
+  background: $whitesmoke;
   border-bottom: 1px solid #ccc;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: $whitesmoke;
+  max-height: 50px;
+  padding: 10px 15px 5px;
 }
 
 .algolia-search-input-icon {
@@ -92,11 +92,11 @@
   width: calc(90% - 20px);
 
   input {
+    background: transparent;
+    border: none;
+    outline: none;
     padding: 5px 0;
     width: 100%;
-    outline: none;
-    border: none;
-    background: transparent;
   }
 }
 
@@ -111,21 +111,21 @@
 }
 
 .algolia-results {
-  position: relative;
+  height: calc(100% - 50px);
   overflow: auto;
   padding: 10px 30px;
-  height: calc(100% - 50px);
+  position: relative;
 
   hr {
     margin: 10px 0;
   }
 
   .highlight {
+    color: red;
+    font-size: inherit;
+    font-style: normal;
     margin: 0;
     padding: 0 2px;
-    color: red;
-    font-style: normal;
-    font-size: inherit;
   }
 }
 
@@ -138,17 +138,17 @@
 }
 
 .algolia-hit-item-link {
-  display: block;
   border-bottom: 1px dashed #ccc;
+  display: block;
   the-transition();
 }
 
 .algolia-pagination {
   .pagination {
-    margin: 40px 0px;
-    padding: 0;
     border-top: none;
+    margin: 40px 0px;
     opacity: 1;
+    padding: 0;
   }
 
   .pagination-item {

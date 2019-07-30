@@ -8,10 +8,10 @@ $highlight_theme = hexo-config('codeblock.highlight_theme');
 
 // Placeholder: $code-block
 $code-block {
-  margin: 20px 0;
   background: $highlight-background;
   color: $highlight-foreground;
   line-height: $line-height-code-block;
+  margin: 20px 0;
 }
 
 pre, code {
@@ -20,10 +20,10 @@ pre, code {
 
 code {
   word-wrap();
-  padding: 2px 4px;
-  border-radius: $code-border-radius;
   background: $code-background;
+  border-radius: $code-border-radius;
   color: $code-foreground;
+  padding: 2px 4px;
 }
 
 pre {
@@ -32,9 +32,9 @@ pre {
   padding: 10px;
 
   code {
-    padding: 0;
     background: none;
     color: $highlight-foreground;
+    padding: 0;
     text-shadow: none;
   }
 }
@@ -47,34 +47,34 @@ pre {
   }
 
   pre {
+    border: none;
     margin: 0;
     padding: 10px 0;
-    border: none;
   }
 
   table {
+    border: none;
     margin: 0;
     width: auto;
-    border: none;
   }
 
   td {
-    padding: 0;
     border: none;
+    padding: 0;
   }
 
   figcaption {
     clearfix();
-    margin: 0em;
-    padding: 0.5em;
-    border-bottom: 1px solid #e9e9e9;
     background: $code-background;
+    border-bottom: 1px solid #e9e9e9;
     color: $highlight-foreground;
     line-height: 1em;
+    margin: 0em;
+    padding: 0.5em;
 
     a {
-      float: right;
       color: $highlight-foreground;
+      float: right;
 
       &:hover {
         border-bottom-color: $highlight-foreground;
@@ -83,17 +83,17 @@ pre {
   }
 
   .gutter pre {
-    padding-right: 10px;
-    padding-left: 10px;
     background-color: $highlight-gutter.bg-color;
     color: $highlight-gutter.color;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: right;
   }
 
   .code pre {
+    background-color: $highlight-background;
     padding-left: 10px;
     width: 100%;
-    background-color: $highlight-background;
   }
 }
 

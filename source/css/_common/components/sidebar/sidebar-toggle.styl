@@ -1,18 +1,18 @@
 .sidebar-toggle {
+  background: $black-deep;
+  bottom: 45px;
+  cursor: pointer;
+  height: 14px;
+  line-height: 0;
+  padding: 5px;
   position: fixed;
   right: $b2t-position-right;
-  bottom: 45px;
-  z-index: $zindex-5;
-  padding: 5px;
   width: 14px;
-  height: 14px;
-  background: $black-deep;
-  line-height: 0;
-  cursor: pointer;
+  z-index: $zindex-5;
 
   +tablet-mobile() {
-    right: $b2t-position-right-mobile;
     opacity: $b2t-opacity-hover;
+    right: $b2t-position-right-mobile;
 
     if (!hexo-config('sidebar.onmobile')) {
       display: none;
@@ -21,14 +21,14 @@
 }
 
 .sidebar-toggle-line {
-  position: relative;
-  display: inline-block;
-  margin-top: 3px;
-  width: 100%;
-  height: 2px;
   background: white;
-  vertical-align: top;
+  display: inline-block;
+  height: 2px;
+  margin-top: 3px;
+  position: relative;
   transition: all 0.4s;
+  vertical-align: top;
+  width: 100%;
 
   &:first-child {
     margin-top: 0;

@@ -5,9 +5,9 @@
 }
 
 .site-nav-toggle {
+  float: right;
   position: static;
   top: 10px;
-  float: right;
 }
 
 .site-nav {
@@ -44,17 +44,17 @@
     }
 
     .badge {
+      background-color: #fff;
+      border-radius: 10px;
+      color: $black-light;
       display: inline-block;
+      font-weight: $font-weight-bolder;
+      line-height: 1;
       margin-left: 5px;
       padding: 1px 4px;
-      border-radius: 10px;
-      background-color: #fff;
-      color: $black-light;
       text-align: center;
       text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
       white-space: nowrap;
-      font-weight: $font-weight-bolder;
-      line-height: 1;
 
       +mobile() {
         float: right;
@@ -63,9 +63,9 @@
     }
 
     a, span.exturl {
-      padding: 0 10px;
       border: none;
       border-radius: 2px;
+      padding: 0 10px;
       transition-property: background;
 
       +mobile() {

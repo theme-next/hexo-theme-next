@@ -1,12 +1,12 @@
 .site-nav {
   +mobile() {
+    background: white;
+    border-bottom: 1px solid $gray-lighter;
     left: 0;
-    z-index: $zindex-3;
     margin: 0;
     padding: 0;
     width: 100%;
-    border-bottom: 1px solid $gray-lighter;
-    background: white;
+    z-index: $zindex-3;
   }
 }
 
@@ -37,14 +37,14 @@
   }
 
   .badge {
-    display: inline-block;
-    margin-left: 5px;
-    padding: 1px 4px;
     background-color: $gainsboro;
-    text-align: center;
-    white-space: nowrap;
+    display: inline-block;
     font-weight: $font-weight-bolder;
     line-height: 1;
+    margin-left: 5px;
+    padding: 1px 4px;
+    text-align: center;
+    white-space: nowrap;
 
     +mobile() {
       float: right;

@@ -1,6 +1,6 @@
 .site-nav-toggle {
-  top: 50%;
   left: 20px;
+  top: 50%;
   transform: translateY(-50%);
 
   +tablet() {
@@ -23,21 +23,21 @@
 }
 
 .menu-item-active a {
-  border-bottom-color: white;
   background: #f9f9f9;
+  border-bottom-color: white;
   badges = hexo-config('menu_settings.badges');
 
   if (!badges) {
     &::after {
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      margin-top: -3px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
       background-color: $grey;
+      border-radius: 50%;
       content: ' ';
+      height: 6px;
+      margin-top: -3px;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 6px;
     }
   }
 }
@@ -47,11 +47,11 @@
   margin: 0;
 
   a, span.exturl {
-    position: relative;
     box-sizing: border-box;
-    padding: 5px 20px;
-    text-align: left;
     line-height: inherit;
+    padding: 5px 20px;
+    position: relative;
+    text-align: left;
     transition-property: background-color;
     the-transition();
 
@@ -63,19 +63,19 @@
   }
 
   .badge {
+    background-color: $grey-light;
+    border-radius: 10px;
+    color: #fff;
     display: inline-block;
     float: right;
-    margin: 0.35em 0 0 0;
-    padding: 2px 5px;
-    border-radius: 10px;
-    background-color: $grey-light;
-    color: #fff;
-    vertical-align: middle;
-    text-align: center;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
     font-weight: $font-weight-bolder;
     line-height: 1;
+    margin: 0.35em 0 0 0;
+    padding: 2px 5px;
+    text-align: center;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+    white-space: nowrap;
   }
 
   br {
