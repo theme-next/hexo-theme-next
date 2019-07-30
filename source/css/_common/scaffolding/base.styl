@@ -6,13 +6,14 @@
 body {
   position: relative; // Required by scrollspy
   font-family: $font-family-base;
-  font-size: $font-size-small;
+  font-size: $font-size-base;
   line-height: $line-height-base;
   color: $text-color;
   background: $body-bg-color;
 
-  +tablet-mobile() { padding-right: 0 !important; }
-  +desktop-large() { font-size: $font-size-medium; }
+  +tablet-mobile() {
+    padding-right: 0 !important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,13 +52,13 @@ a, span.exturl {
 
 video {
   max-width: 100%;
-  show();
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 img {
-  show();
+  display: block;
   margin: auto;
   max-width: 100%;
   height: auto;

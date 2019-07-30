@@ -1,7 +1,5 @@
 /* global CONFIG */
 
-'use strict';
-
 $(document).on('ready', function() {
   // Popup Window
   var isfetched = false;

@@ -1,30 +1,139 @@
-.page-archive {
+.page-archive .posts-collapse {
+
+  position: relative;
+  z-index: $zindex-1;
+  margin-left: $posts-collapse-left;
+
+  +mobile() {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    .post-title, .post-meta {
+      display: block;
+      width: auto;
+      text-align: left;
+    }
+  }
+
+  .archive-move-on {
+    position: absolute;
+    top: 1em;
+    left: 0;
+    margin-left: -6px;
+    width: 10px;
+    height: 10px;
+    background: $grey-dark;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
 
   .archive-page-counter {
     position: relative;
     top: 3px;
     left: 20px;
+    font-size: $font-size-large;
 
     +mobile() {
       top: 5px;
     }
   }
 
-  .posts-collapse {
+  .collection-title {
+    position: relative;
+    margin: 60px 0;
 
-    .archive-move-on {
-      position: absolute;
-      top: 11px;
-      left: 0;
-      margin-left: -6px;
-      width: 10px;
-      height: 10px;
-      opacity: 0.5;
-      background: $black-light;
-      border: 1px solid white;
-
-      circle();
+    h1, h2 {
+      margin-left: 20px;
     }
+
+    small {
+      color: $grey;
+      margin-left: 5px;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-left: -4px;
+      margin-top: -4px;
+      width: 8px;
+      height: 8px;
+      background: $grey;
+      border-radius: 50%;
+    }
+  }
+
+  .post {
+    margin: 30px 0;
+  }
+
+  .post-header {
+    position: relative;
+    the-transition();
+    transition-property: border;
+    border-bottom: 1px dashed $grey-light;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: $font-size-smallest;
+      width: 6px;
+      height: 6px;
+      margin-left: -4px;
+      background: $grey;
+      border-radius: 50%;
+      border: 1px solid white;
+      the-transition();
+      transition-property: background;
+    }
+
+    &:hover {
+      border-bottom-color: $grey-dim;
+
+      &::before {
+        background: $black-deep;
+      }
+    }
+  }
+
+  .post-title {
+    margin-left: $font-size-smallest * 5;
+    font-size: $font-size-medium;
+    font-weight: normal;
+    line-height: inherit;
+    margin-bottom: 0px;
+
+    &::after {
+      margin-left: 3px;
+      opacity: 0.6;
+    }
+
+    a, span.exturl {
+      color: $grey-dim;
+      border-bottom: none;
+    }
+  }
+
+  .post-meta {
+    position: absolute;
+    font-size: $font-size-smallest;
+    left: 20px;
+    top: 5px;
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 1.25em;
+    left: 0;
+    margin-left: -2px;
+    width: 4px;
+    height: 100%;
+    background: $whitesmoke;
+    z-index: $zindex-bottom;
   }
 
   .fa-external-link {
