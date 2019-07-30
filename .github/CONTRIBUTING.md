@@ -157,19 +157,16 @@ If you are unsure what a label is about or which labels you should apply to a PR
 Issues related: `types`+`contents`+`results`
 
 - By types
-    - `Irrelevant`: An irrelevant issue for Next
-    - `Duplicate`: An issue which had been mentioned
     - `Bug`: A detected bug that needs to be confirmed
     - `Improvement Need`: An issue that needs improvement
     - `Feature Request`: An issue that wants a new feature
-    - `High Priority`: A detected bug or misprint with high priority
-    - `Low Priority`: A detected bug or misprint with low priority
     - `Non English`: Requires the attention of a multi-lingual maintainer
     - `Discussion`: An issue that needs to be discussed
     - `Question`: An issue about questions
-    - `Backlog`: An issue that is to be completed and later compensated
     - `Meta`: Denoting a change of usage conditions
     - `Polls`: An issue that initiated a poll
+    - `High Priority`: A detected bug or misprint with high priority
+    - `Low Priority`: A detected bug or misprint with low priority
 - By contents
     - `Roadmap`: An issue about future development
     - `Hexo`: An issue related to Hexo
@@ -177,7 +174,10 @@ Issues related: `types`+`contents`+`results`
     - `Docs`: Need to add instruction document
     - `Configurations`: An issue related to configurations
     - `CSS`: An issue related to CSS
+    - `Duplicate`: An issue which had been mentioned
+    - `Irrelevant`: An irrelevant issue for Next
     - `Custom`: An issue related to custom things
+    - `Support`: An issue labeled as support requests
 - By results
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue
@@ -205,7 +205,6 @@ Pull requests related:
 - `Work in Progress`: A pull request that is still working in progress
 - `Skip Release`: A pull request that should be excluded from release note
 - `v6.x`: A pull request that bug fixes and some improvements, related to old NexT version 6
-- `v7.x`: A pull request that bug fixes and some improvements, related to old NexT version 7
 
 <a name="commit-messages-rules"></a>
 
