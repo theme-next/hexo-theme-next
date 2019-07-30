@@ -1,16 +1,14 @@
 .post-body {
   word-wrap();
   font-family: $font-family-posts;
-}
 
-.post-body span.exturl {
-  .fa {
+  span.exturl .fa {
     font-size: $font-size-small;
     margin-left: 4px;
   }
 }
 
-.post-body .image-caption, .post-body .figure .caption {
+.post-body, .post-body .image-caption, .post-body .figure .caption {
   color: $grey-dark;
   font-size: $font-size-small;
   font-weight: bold;
@@ -59,13 +57,12 @@
 @import 'post-nav';
 @import 'post-eof';
 @import 'post-gallery';
+@import 'post-rtl';
 
 @import 'post-reward' if (hexo-config('reward_settings.enable'));
 
 @import 'post-copyright' if (hexo-config('creative_commons.post'));
 
 @import 'post-widgets' if ((hexo-config('facebook_sdk.enable') && hexo-config('facebook_sdk.like_button')) || (hexo-config('vkontakte_api.enable') && hexo-config('vkontakte_api.like')) || hexo-config('rating.enable') || hexo-config('likely.enable') || (hexo-config('needmoreshare2.enable') && hexo-config('needmoreshare2.postbottom.enable')));
-
-@import 'post-rtl';
 
 @import 'post-reading_progress' if (hexo-config('reading_progress.enable'));

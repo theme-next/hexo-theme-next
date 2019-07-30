@@ -2,34 +2,36 @@
 .sidebar-nav {
   margin: 0 0 20px;
   padding-left: 0;
-}
 
-.sidebar-nav li {
-  border-bottom: 1px solid transparent;
-  color: $sidebar-nav-color;
-  cursor: pointer;
-  display: inline-block;
-  font-size: $font-size-small;
+  li {
+    border-bottom: 1px solid transparent;
+    color: $sidebar-nav-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $font-size-small;
 
-  &:hover {
-    color: $sidebar-nav-hover-color;
+    &:hover {
+      color: $sidebar-nav-hover-color;
+    }
+  }
+
+  .sidebar-nav-active {
+    border-bottom-color: $sidebar-highlight;
+    color: $sidebar-highlight;
+
+    &:hover {
+      color: $sidebar-highlight;
+    }
   }
 }
 
-.page-post-detail .sidebar-nav-toc {
-  padding: 0 5px;
-}
+.page-post-detail {
+  .sidebar-nav-toc {
+    padding: 0 5px;
+  }
 
-.page-post-detail .sidebar-nav-overview {
-  margin-left: 10px;
-}
-
-.sidebar-nav .sidebar-nav-active {
-  border-bottom-color: $sidebar-highlight;
-  color: $sidebar-highlight;
-
-  &:hover {
-    color: $sidebar-highlight;
+  .sidebar-nav-overview {
+    margin-left: 10px;
   }
 }
 
