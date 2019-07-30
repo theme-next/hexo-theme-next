@@ -17,16 +17,22 @@
 
   a, span.exturl {
     display: block;
+    border-bottom: 1px solid $menu-link-border;
     font-size: $font-size-smaller;
     line-height: inherit;
-    border-bottom: 1px solid $menu-link-border;
     transition-property: border-color;
     the-transition();
 
-    &:hover { border-bottom-color: $menu-link-hover-border; }
+    &:hover {
+      border-bottom-color: $menu-link-hover-border;
+    }
   }
 
-  .fa { margin-right: 5px; }
+  .fa {
+    margin-right: 5px;
+  }
 }
 
-.use-motion .menu-item { opacity: 0; }
+.use-motion .menu-item {
+  opacity: 0;
+}

@@ -2,71 +2,70 @@
   position: relative;
 }
 
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
+.highlight-wrap:hover .copy-btn, .highlight-wrap .copy-btn:focus {
   opacity: 1;
 }
 
 .copy-btn {
-  display: inline-block;
   position: absolute;
+  display: inline-block;
   padding: 2px 6px;
+  outline: 0;
+  color: #333;
+  vertical-align: middle;
+  white-space: nowrap;
   font-weight: $font-weight-bolder;
   line-height: 1.6;
-  color: #333;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  outline: 0;
-  transition: opacity .3s ease-in-out;
   opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
   disable-user-select();
 
-  if hexo-config('codeblock.copy_button.style') == 'flat' {
-    font-size: $font-size-smaller;
-    background-color: #fff;
-    border: none;
-    right: 0px;
+  if (hexo-config('codeblock.copy_button.style') == 'flat') {
     top: 0px;
-  }
-  else if hexo-config('codeblock.copy_button.style') == 'mac' {
-    font-size: 14px;
-    color: #fff;
     right: 0px;
-    top: 2px;
-  }
-  else {
+    border: none;
+    background-color: #fff;
     font-size: $font-size-smaller;
-    background-color: #eee;
-    background-image: linear-gradient(#fcfcfc, #eee);
+  } else if (hexo-config('codeblock.copy_button.style') == 'mac') {
+    top: 2px;
+    right: 0px;
+    color: #fff;
+    font-size: 14px;
+  } else {
+    top: 8px;
+    right: 4px;
     border: 1px solid #d5d5d5;
     border-radius: 3px;
-    right: 4px;
-    top: 8px;
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    font-size: $font-size-smaller;
   }
 }
 
-if hexo-config('codeblock.copy_button.style') == 'mac' {
+if (hexo-config('codeblock.copy_button.style') == 'mac') {
   .highlight-wrap {
-    background: #21252b;
-    border-radius: 5px;
     margin-bottom: 1.6em;
     padding-top: 30px;
-    box-shadow: 0 10px 30px 0px rgba(0,0,0,.4);
+    border-radius: 5px;
+    background: #21252b;
+    box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.4);
   }
+
   .highlight {
     margin: 0px !important;
     border-radius: 0 0 5px 5px;
+
     &::before {
-      content: " ";
       position: absolute;
-      border-radius: 50%;
-      background: #fc625d;
-      width: 12px;
-      height: 12px;
       left: 12px;
       margin-top: -20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fc625d;
       box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+      content: ' ';
     }
   }
 }

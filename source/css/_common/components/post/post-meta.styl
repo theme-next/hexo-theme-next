@@ -1,12 +1,12 @@
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: $grey-dark;
-  font-family: $font-family-posts;
   text-align: center;
+  font-family: $font-family-posts;
 
   .post-description {
-    font-size: $font-size-small;
     margin-top: 2px;
+    font-size: $font-size-small;
   }
 
   time {
@@ -16,8 +16,8 @@
 }
 
 .post-meta .post-meta-item + .post-meta-item::before {
-  content: "|";
-  margin: 0 .5em;
+  margin: 0 0.5em;
+  content: '|';
 }
 
 .post-meta .post-meta-item {
@@ -25,11 +25,12 @@
 }
 
 .post-meta-divider {
-  margin: 0 .5em;
+  margin: 0 0.5em;
 }
 
 .post-meta-item-icon {
   margin-right: 3px;
+
   +tablet-mobile() {
     display: inline-block;
   }

@@ -1,12 +1,11 @@
 .page-archive .posts-collapse {
-
   position: relative;
   z-index: $zindex-1;
   margin-left: $posts-collapse-left;
 
   +mobile() {
-    margin-left: 20px;
     margin-right: 20px;
+    margin-left: 20px;
 
     .post-title, .post-meta {
       display: block;
@@ -22,9 +21,9 @@
     margin-left: -6px;
     width: 10px;
     height: 10px;
-    background: $grey-dark;
     border: 1px solid white;
     border-radius: 50%;
+    background: $grey-dark;
   }
 
   .archive-page-counter {
@@ -47,21 +46,21 @@
     }
 
     small {
-      color: $grey;
       margin-left: 5px;
+      color: $grey;
     }
 
     &::before {
-      content: " ";
       position: absolute;
-      left: 0;
       top: 50%;
-      margin-left: -4px;
+      left: 0;
       margin-top: -4px;
+      margin-left: -4px;
       width: 8px;
       height: 8px;
-      background: $grey;
       border-radius: 50%;
+      background: $grey;
+      content: ' ';
     }
   }
 
@@ -72,20 +71,20 @@
   .post-header {
     position: relative;
     the-transition();
-    transition-property: border;
     border-bottom: 1px dashed $grey-light;
+    transition-property: border;
 
     &::before {
-      content: " ";
       position: absolute;
-      left: 0;
       top: $font-size-smallest;
+      left: 0;
+      margin-left: -4px;
       width: 6px;
       height: 6px;
-      margin-left: -4px;
-      background: $grey;
-      border-radius: 50%;
       border: 1px solid white;
+      border-radius: 50%;
+      background: $grey;
+      content: ' ';
       the-transition();
       transition-property: background;
     }
@@ -100,11 +99,11 @@
   }
 
   .post-title {
-    margin-left: $font-size-smallest * 5;
-    font-size: $font-size-medium;
-    font-weight: normal;
-    line-height: inherit;
     margin-bottom: 0px;
+    margin-left: $font-size-smallest * 5;
+    font-weight: normal;
+    font-size: $font-size-medium;
+    line-height: inherit;
 
     &::after {
       margin-left: 3px;
@@ -112,32 +111,32 @@
     }
 
     a, span.exturl {
-      color: $grey-dim;
       border-bottom: none;
+      color: $grey-dim;
     }
   }
 
   .post-meta {
     position: absolute;
-    font-size: $font-size-smallest;
-    left: 20px;
     top: 5px;
+    left: 20px;
+    font-size: $font-size-smallest;
   }
 
   &::after {
-    content: " ";
     position: absolute;
     top: 1.25em;
     left: 0;
+    z-index: $zindex-bottom;
     margin-left: -2px;
     width: 4px;
     height: 100%;
     background: $whitesmoke;
-    z-index: $zindex-bottom;
+    content: ' ';
   }
 
   .fa-external-link {
-    font-size: $font-size-small;
     margin-left: 5px;
+    font-size: $font-size-small;
   }
 }

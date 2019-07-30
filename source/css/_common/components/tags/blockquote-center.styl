@@ -8,26 +8,30 @@
 
   &::before, &::after {
     position: absolute;
-    content: ' ';
     display: block;
     width: 100%;
     height: 24px;
-    opacity: 0.2;
-    background-repeat: no-repeat;
     background-position: 0 -6px;
     background-size: 22px 22px;
+    background-repeat: no-repeat;
+    content: ' ';
+    opacity: 0.2;
   }
+
   &::before {
     top: -20px;
-    background-image: url($center-quote-left);
     border-top: 1px solid $grey-light;
+    background-image: url($center-quote-left);
   }
+
   &::after {
     bottom: -20px;
-    background-image: url($center-quote-right);
     border-bottom: 1px solid $grey-light;
+    background-image: url($center-quote-right);
     background-position: 100% 8px;
   }
 
-  p, div { text-align: center; }
+  p, div {
+    text-align: center;
+  }
 }

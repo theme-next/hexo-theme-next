@@ -1,9 +1,9 @@
 .post .post-body .group-picture {
   img {
     box-sizing: border-box;
+    margin: 0 auto;
     padding: 0 3px;
     border: none;
-    margin: 0 auto;
   }
 }
 
@@ -18,10 +18,16 @@
 }
 
 .page-archive {
-  .group-picture-container { overflow: hidden; }
+  .group-picture-container {
+    overflow: hidden;
+  }
+
   .group-picture-row {
     float: left;
-    &:first-child { margin-top: 6px; }
+
+    &:first-child {
+      margin-top: 6px;
+    }
   }
 
   .group-picture-column {

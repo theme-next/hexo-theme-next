@@ -1,9 +1,14 @@
-.header { background: $head-bg; }
+.header {
+  background: $head-bg;
+}
 
-.header-inner { position: relative; }
+.header-inner {
+  position: relative;
+}
 
-@import "headerband";
-@import "site-meta";
-@import "site-nav";
-@import "menu";
-@import "github-banner" if hexo-config('github_banner.enable');
+@import 'headerband';
+@import 'site-meta';
+@import 'site-nav';
+@import 'menu';
+
+@import 'github-banner' if (hexo-config('github_banner.enable'));

@@ -3,16 +3,15 @@
   display: block;
   margin-bottom: 20px;
   padding-top: 10px;
-
   // Read tabs border_radius from NexT config and set in "tbr px" to use it as string variable in this CSS section.
-  hexo-config('tabs.border_radius') is a 'unit' ? (tbr = unit(hexo-config('tabs.border_radius'), px)) : (tbr = 0)
+  hexo-config('tabs.border_radius') is a 'unit' ? (tbr = unit(hexo-config('tabs.border_radius'), px)) : (tbr = 0);
 
   ul.nav-tabs {
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
     margin-bottom: -1px;
+    padding: 0;
 
     +mobile-smallest() {
       display: block;
@@ -21,12 +20,12 @@
 
     li.tab {
       flex-grow: 1;
-      list-style-type: none;
-      background-color: #fff;
       border-top: 3px solid transparent;
       border-right: 1px solid transparent;
       border-bottom: 1px solid #ddd;
       border-left: 1px solid transparent;
+      background-color: #fff;
+      list-style-type: none;
 
       +mobile-smallest() {
         border-top: 1px solid transparent;
@@ -35,21 +34,33 @@
         border-left: 3px solid transparent;
       }
 
-      if tbr > 0 {
+      if (tbr > 0) {
         border-radius: tbr tbr 0 0;
-        +mobile-smallest() { border-radius: tbr; }
+
+        +mobile-smallest() {
+          border-radius: tbr;
+        }
       }
-      if hexo-config('tabs.transition.tabs') { the-transition-ease-out(); }
+
+      if (hexo-config('tabs.transition.tabs')) {
+        the-transition-ease-out();
+      }
 
       & a {
-        text-align: center;
+        display: block;
+        padding: 0.25em 0.75em;
         outline: 0;
         border-bottom: initial;
-        display: block;
+        text-align: center;
         line-height: 1.8em;
-        padding: .25em .75em;
-        & i { width: (18em / 14); }
-        if hexo-config('tabs.transition.labels') { the-transition-ease-out(); }
+
+        & i {
+          width: (18em / 14);
+        }
+
+        if (hexo-config('tabs.transition.labels')) {
+          the-transition-ease-out();
+        }
       }
 
       &.active {
@@ -66,29 +77,36 @@
         }
 
         & a {
-          cursor: default;
           color: $link-color;
+          cursor: default;
         }
       }
     }
   }
 
   .tab-content {
-
     .tab-pane {
-      border: 1px solid $table-border-color;
       padding: 20px 20px 0 20px;
-      if tbr > 0 { border-radius: tbr; }
+      border: 1px solid $table-border-color;
+
+      if (tbr > 0) {
+        border-radius: tbr;
+      }
 
       &:not(.active) {
         display: none;
       }
+
       &.active {
         display: block;
-        if tbr > 0 {
+
+        if (tbr > 0) {
           &:nth-of-type(1) {
             border-radius: 0 tbr tbr tbr;
-            +mobile-smallest() { border-radius: tbr; }
+
+            +mobile-smallest() {
+              border-radius: tbr;
+            }
           }
         }
       }

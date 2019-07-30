@@ -2,30 +2,34 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
-  line-height: 1.4;
-  white-space: nowrap;
-  text-align: $site-state-align;
   margin-top: 10px;
+  text-align: $site-state-align;
+  white-space: nowrap;
+  line-height: 1.4;
 }
 
 .site-state-item {
   padding: 0 15px;
   border-left: 1px solid $site-state-item-border-color;
 
-  &:first-child { border-left: none; }
+  &:first-child {
+    border-left: none;
+  }
 
-  a { border-bottom: none; }
+  a {
+    border-bottom: none;
+  }
 }
 
 .site-state-item-count {
   display: block;
-  text-align: center;
   color: $site-state-item-count-color;
+  text-align: center;
   font-weight: $font-weight-bold;
   font-size: $site-state-item-count-font-size;
 }
 
 .site-state-item-name {
-  font-size: $site-state-item-name-font-size;
   color: $site-state-item-name-color;
+  font-size: $site-state-item-name-font-size;
 }

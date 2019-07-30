@@ -1,7 +1,8 @@
 .site-nav-toggle {
-  display: none;
   position: absolute;
   left: 10px;
+  display: none;
+
   +mobile() {
     display: block;
   }
@@ -9,19 +10,25 @@
   button {
     margin-top: 2px;
     padding: 9px 10px;
-    background: transparent;
     border: none;
+    background: transparent;
   }
 }
 
 .site-nav {
   +mobile() {
     display: none;
+    clear: both;
     margin: 0 -10px;
     padding: 0 10px;
-    clear: both;
     border-top: 1px solid $gray-lighter;
   }
-  +tablet() { display: block !important; }
-  +desktop() { display: block !important; }
+
+  +tablet() {
+    display: block !important;
+  }
+
+  +desktop() {
+    display: block !important;
+  }
 }

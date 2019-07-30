@@ -19,33 +19,41 @@
   a {
     position: relative;
     display: block;
-    line-height: 1.6;
-    font-size: $font-size-small;
-    color: $link-color;
     border-bottom: none;
+    color: $link-color;
+    font-size: $font-size-small;
+    line-height: 1.6;
 
     &:hover {
-      color: $link-hover-color;
       border-bottom: none;
+      color: $link-hover-color;
     }
 
-    &:active { top: 2px; }
+    &:active {
+      top: 2px;
+    }
   }
 
   .fa {
-    font-size: $font-size-smallest;
     margin-right: 5px;
+    font-size: $font-size-smallest;
   }
 }
 
 .post-nav-next {
-  a { padding-left: 5px; }
+  a {
+    padding-left: 5px;
+  }
 }
 
 .post-nav-prev {
   text-align: right;
 
-  a { padding-right: 5px; }
+  a {
+    padding-right: 5px;
+  }
 
-  .fa { margin-left: 5px; }
+  .fa {
+    margin-left: 5px;
+  }
 }

@@ -9,8 +9,8 @@
 
   .post-body {
     .highlight {
-      margin-left: 0px;
       margin-right: 0px;
+      margin-left: 0px;
       padding: 0;
     }
   }
@@ -20,6 +20,7 @@
   +desktop() {
     text-align: unquote(hexo-config('text_align.desktop'));
   }
+
   +tablet-mobile() {
     text-align: unquote(hexo-config('text_align.mobile'));
   }
@@ -28,11 +29,11 @@
     padding-top: 10px;
 
     .header-anchor {
+      visibility: hidden;
       float: right;
       margin-left: 10px;
-      color: $grey-light;
       border-bottom-style: none;
-      visibility: hidden;
+      color: $grey-light;
 
       &:hover {
         color: inherit;

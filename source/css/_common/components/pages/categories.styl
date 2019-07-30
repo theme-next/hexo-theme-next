@@ -1,7 +1,11 @@
 .category-all-page {
-  .category-all-title { text-align: center; }
+  .category-all-title {
+    text-align: center;
+  }
 
-  .category-all { margin-top: 20px; }
+  .category-all {
+    margin-top: 20px;
+  }
 
   .category-list {
     margin: 0;
@@ -9,19 +13,25 @@
     list-style: none;
   }
 
-  .category-list-item { margin: 5px 10px; }
+  .category-list-item {
+    margin: 5px 10px;
+  }
 
   .category-list-count {
     color: $grey;
+
     &::before {
       display: inline;
-      content: " ("
+      content: ' (';
     }
+
     &::after {
       display: inline;
-      content: ") "
+      content: ') ';
     }
   }
 
-  .category-list-child { padding-left: 10px; }
+  .category-list-child {
+    padding-left: 10px;
+  }
 }

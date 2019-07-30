@@ -1,7 +1,7 @@
 ul.breadcrumb {
-  list-style: none;
   margin: 1em 0;
   padding: 0 2em;
+  list-style: none;
   text-align: center;
   font-size: $font-size-smallest;
 
@@ -11,8 +11,8 @@ ul.breadcrumb {
 
   & li+li::before {
     padding: 0.5em;
+    content: '/\00a0';
     font-weight: normal;
-    content: "/\00a0";
   }
 
   & li+li:last-child {
