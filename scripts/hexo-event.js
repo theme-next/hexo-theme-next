@@ -29,7 +29,7 @@ hexo.on('generateBefore', () => {
       var lang = this.config.language;
       var i18n = this.theme.i18n;
 
-      function mergeLang(lang) {
+      var mergeLang = lang => {
         i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
       }
 
