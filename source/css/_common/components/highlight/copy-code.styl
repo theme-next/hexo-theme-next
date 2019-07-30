@@ -11,7 +11,6 @@
   display: inline-block;
   position: absolute;
   padding: 2px 6px;
-  font-size: $font-size-smaller;
   font-weight: $font-weight-bolder;
   line-height: 1.6;
   color: #333;
@@ -24,17 +23,20 @@
   disable-user-select();
 
   if hexo-config('codeblock.copy_button.style') == 'flat' {
+    font-size: $font-size-smaller;
     background-color: #fff;
     border: none;
     right: 0px;
-    height: 42px;
+    top: 0px;
   }
   else if hexo-config('codeblock.copy_button.style') == 'mac' {
+    font-size: 14px;
     color: #fff;
     right: 0px;
     top: 2px;
   }
   else {
+    font-size: $font-size-smaller;
     background-color: #eee;
     background-image: linear-gradient(#fcfcfc, #eee);
     border: 1px solid #d5d5d5;

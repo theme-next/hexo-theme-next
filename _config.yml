@@ -467,7 +467,7 @@ font:
   # Font options:
   # `external: true` will load this font family from `host` above.
   # `family: Times New Roman`. Without any quotes.
-  # `size: x.x`. Use `px` as unit. Default: 16
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
 
   # Global font settings used for all elements inside <body>.
   global:
