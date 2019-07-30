@@ -2,17 +2,15 @@
 
 'use strict';
 
-hexo.extend.helper.register('hexo_env', type => {
-  return this.env[type];
-});
+hexo.extend.helper.register('hexo_env', type => hexo.env[type]);
 
 hexo.extend.helper.register('next_env', type => {
-  var path = require('path');
-  var env = require(path.normalize('../../package.json'));
+  const path = require('path');
+  const env = require(path.normalize('../../package.json'));
   return env[type];
 });
 
-hexo.extend.helper.register('item_active', (path, className) => {
+hexo.extend.helper.register('item_active', function(path, className) {
   var canonical = this.page.canonical_path;
   var current = this.url_for(canonical).replace('index.html', '', 'g');
   var result = '';

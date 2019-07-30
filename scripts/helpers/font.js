@@ -22,10 +22,7 @@ hexo.extend.helper.register('next_font', () => {
     return '';
   });
 
-  fontFamilies = fontFamilies.filter(item => {
-    return item !== '';
-  });
-
+  fontFamilies = fontFamilies.filter(item => item !== '');
   fontFamilies = Array.from(new Set(fontFamilies));
   fontFamilies = fontFamilies.join('|');
 
