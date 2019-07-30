@@ -161,7 +161,7 @@ NexT.utils = {
 
   registerCanIUseTag: function() {
     // GET RESPONSIVE HEIGHT PASSED FROM IFRAME
-    window.addEventListener('message', function(e) {
+    window.addEventListener('message', e => {
       var data = e.data;
       if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
         var featureID = data.split(':')[1];
