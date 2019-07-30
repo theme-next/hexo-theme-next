@@ -21,7 +21,7 @@
 // So, it will 12px in Desktop, 10px in Tablets and 8px in Mobiles for all possible paddings.
 // =================================================
 // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
-$use_seo = hexo-config('seo');
+$use-seo = hexo-config('seo');
 
 // =================================================
 // Desktop layout styles.
@@ -140,7 +140,7 @@ $use_seo = hexo-config('seo');
   }
 
   h3 {
-    if ($use_seo) {
+    if ($use-seo) {
       border-bottom: 1px solid $body-bg-color;
     } else {
       border-bottom: 1px dotted $body-bg-color;
@@ -148,7 +148,7 @@ $use_seo = hexo-config('seo');
   }
 
   h4 {
-    if ($use_seo) {
+    if ($use-seo) {
       border-bottom: 1px dotted $body-bg-color;
     }
   }
