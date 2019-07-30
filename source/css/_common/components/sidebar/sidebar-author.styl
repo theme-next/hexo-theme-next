@@ -1,11 +1,11 @@
 .site-author-image {
-  show();
+  display: block;
   margin: 0 auto;
   padding: $site-author-image-padding;
   max-width: $site-author-image-width;
   height: $site-author-image-height;
   border: $site-author-image-border-width solid $site-author-image-border-color;
-  circle() if hexo-config('avatar.rounded');
+  border-radius: 50% if hexo-config('avatar.rounded');
 }
 
 if hexo-config('avatar.rotated') {
