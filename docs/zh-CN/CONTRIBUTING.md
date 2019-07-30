@@ -166,6 +166,7 @@ Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
     - `Question`: 提出疑问的 Issue
     - `Backlog`: 待解决的 Issue
     - `Meta`: 表明使用条款变更的 Issue
+    - `Polls`: 发起投票的 Issue
 - 内容
     - `Roadmap`: 与 NexT 主题发展相关的 Issue
     - `Hexo`: 与 Hexo 相关的 Issue
@@ -175,13 +176,12 @@ Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
     - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue
     - `Custom`: 与 NexT 主题个性化相关的 Issue
 - 结果
-    - `Wontfix`: 不能或不被修复的 Issue
+    - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
     - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
     - `Can't Reproduce`: 无法复现的 Issue
     - `Verified`: 已经被确认的 Issue
     - `Help Wanted`: 需要帮助的 Issue
-    - `Wait for Answer`: 需要开发人员或用户回复的 Issue
     - `Probably Solved`: 可能已经解决的 Issue
     - `Solved`: 已经解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
@@ -199,6 +199,8 @@ Pull requests 的标签：
 - `i18n`: 更新了翻译的 Pull request
 - `Performance`: 提高了 NexT 主题性能的 Pull request
 - `Discussion`: 需要进行讨论的 Pull request
+- `Work in Progress`: 仍在进行改动和完善的 Pull request
+- `Skip Release`: 无需在 Release Note 中展现的 Pull request
 - `v6.x`: 与 NexT v6.x 旧版相关的用于修复和改进的 Pull request
 - `v7.x`: 与 NexT v7.x 旧版相关的用于修复和改进的 Pull request
 
