@@ -543,15 +543,18 @@ math:
 # Choose only one variant, do not need to install both.
 # To install 2.x: https://github.com/theme-next/theme-next-fancybox
 # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
+# For more information: https://fancyapps.com/fancybox
 fancybox: false
 
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.
 # Dependencies: https://github.com/theme-next/theme-next-mediumzoom
+# For more information: https://github.com/francoischalifour/medium-zoom
 mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
 # Dependencies: https://github.com/theme-next/theme-next-lazyload
+# For more information: https://github.com/ApoorvSaxena/lozad.js
 lazyload: false
 
 # Pangu Support
@@ -561,7 +564,7 @@ pangu: false
 
 # Quicklink Support
 # Dependencies: https://github.com/theme-next/theme-next-quicklink
-# Visit https://github.com/GoogleChromeLabs/quicklink for details.
+# For more information: https://github.com/GoogleChromeLabs/quicklink
 quicklink:
   enable: false
 
@@ -613,6 +616,7 @@ disqus:
 # DisqusJS
 # Alternative Disqus - Render comment component using Disqus API.
 # Demo: https://suka.js.org/DisqusJS/
+# For more information: https://github.com/SukkaW/DisqusJS
 disqusjs:
   enable: false
   # API Endpoint of Disqus API (https://disqus.com/api/).
@@ -632,7 +636,7 @@ changyan:
 
 # Valine
 # You can get your appid and appkey from https://leancloud.cn
-# More info available at https://valine.js.org
+# For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
   enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
   appid: # Your leancloud application appid
@@ -653,6 +657,7 @@ livere_uid: # <your_uid>
 
 # Gitalk
 # Demo: https://gitalk.github.io
+# For more information: https://github.com/gitalk/gitalk, https://github.com/emn178/js-md5
 gitalk:
   enable: false
   github_id: # GitHub repo owner
@@ -677,7 +682,7 @@ gitalk:
 add_this_id:
 
 # Likely Share
-# See: https://ilyabirman.net/projects/likely/
+# For more information: https://ilyabirman.net/projects/likely/, https://github.com/ilyabirman/Likely
 # Likely supports four looks, nine social networks, any button text.
 # You are free to modify the text value and order of any network.
 likely:
@@ -696,6 +701,7 @@ likely:
 
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
+# For more information: https://github.com/revir/need-more-share2
 # iconStyle: default | box
 # boxForm: horizontal | vertical
 # position: top / middle / bottom + Left / Center / Right
@@ -826,8 +832,8 @@ tencent_mta: # <app_id>
 # ---------------------------------------------------------------
 
 # Algolia Search
-# See: https://theme-next.org/docs/third-party-services/search-services#Algolia-Search
 # Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
+# For more information: https://www.algolia.com
 algolia_search:
   enable: false
   hits:
@@ -931,6 +937,7 @@ mermaid:
 # ---------------------------------------------------------------
 
 # Use velocity to animate everything.
+# For more information: http://velocityjs.org
 motion:
   enable: true
   async: false
@@ -951,6 +958,7 @@ motion:
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
+# For more information: https://github.com/HubSpot/pace
 pace:
   enable: false
   # Themes list:
@@ -969,6 +977,7 @@ three:
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
+# For more information: https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
   onmobile: true # display on mobile or not
@@ -979,6 +988,7 @@ canvas_nest:
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
+# For more information: https://github.com/zproo/canvas-ribbon
 canvas_ribbon:
   enable: false
   size: 300 # The width of the ribbon
@@ -1006,14 +1016,12 @@ vendors:
   jquery:
 
   # Internal version: 4.7.0
-  # See: https://fontawesome.com
   # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   fontawesome:
 
   # Internal version: 2.1.5 & 3.5.7
-  # See: https://fancyapps.com/fancybox
   # Example:
   # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
   # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js
@@ -1023,20 +1031,81 @@ vendors:
   fancybox_css:
 
   # Internal version: 1.0.4
-  # See: https://github.com/francoischalifour/medium-zoom
   # Example:
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
   mediumzoom:
 
   # Internal version: 1.10.0
-  # See: https://github.com/ApoorvSaxena/lozad.js
   # Example:
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
   lazyload:
 
+  # Internal version: 4.0.7
+  # Example:
+  # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
+  # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
+  pangu:
+
+  # Internal version: 1.0.0
+  # Example:
+  # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
+  quicklink:
+
+  # Internal version: 1.0.0
+  # Example:
+  # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
+  bookmark:
+
+  # Internal version: 1.2.0
+  # Example:
+  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
+  reading_progress:
+
+  # DisqusJS
+  # Example:
+  # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
+  # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
+  disqusjs_js:
+  disqusjs_css:
+
+  # valine
+  # Example:
+  # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
+  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
+  valine:
+
+  # gitalk & js-md5
+  # Example:
+  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+  # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
+  gitalk_js:
+  gitalk_css:
+  md5:
+
+  # likely
+  # Example:
+  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js
+  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
+  likely_js:
+  likely_css:
+
+  # Internal version: 1.0.0
+  # Example:
+  # needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
+  # needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
+  needmoreshare2_js:
+  needmoreshare2_css:
+
+  # Internal version: 2.10.4
+  # Example:
+  # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js
+  # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
+  algolia_instant_js:
+  algolia_instant_css:
+
   # Internal version: 1.2.1
-  # See: http://velocityjs.org
   # Example:
   # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
   # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
@@ -1045,16 +1114,7 @@ vendors:
   velocity:
   velocity_ui:
 
-  # Internal version: 2.10.4
-  # See: https://www.algolia.com
-  # Example:
-  # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js
-  # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
-  algolia_instant_js:
-  algolia_instant_css:
-
   # Internal version: 1.0.2
-  # See: https://github.com/HubSpot/pace
   # Example:
   # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
@@ -1064,15 +1124,6 @@ vendors:
   pace_css:
 
   # Internal version: 1.0.0
-  # See: https://github.com/theme-next/theme-next-canvas-nest
-  # Example:
-  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
-  # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
-  canvas_nest:
-  canvas_nest_nomobile:
-
-  # Internal version: 1.0.0
-  # See: https://github.com/theme-next/theme-next-three
   # Example:
   # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
   # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
@@ -1084,76 +1135,16 @@ vendors:
   canvas_sphere:
 
   # Internal version: 1.0.0
-  # See: https://github.com/zproo/canvas-ribbon
+  # Example:
+  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
+  # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
+  canvas_nest:
+  canvas_nest_nomobile:
+
+  # Internal version: 1.0.0
   # Example:
   # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
   canvas_ribbon:
-
-  # Internal version: 4.0.7
-  # See: https://github.com/vinta/pangu.js
-  # Example:
-  # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
-  # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
-  pangu:
-
-  # Internal version: 1.0.0
-  # See: https://github.com/GoogleChromeLabs/quicklink
-  # Example:
-  # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
-  quicklink:
-
-  # Internal version: 1.0.0
-  # See: https://github.com/revir/need-more-share2
-  # Example:
-  # needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
-  # needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
-  needmoreshare2_js:
-  needmoreshare2_css:
-
-  # Internal version: 1.0.0
-  # See: https://github.com/theme-next/theme-next-bookmark
-  # Example:
-  # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
-  bookmark:
-
-  # Internal version: 1.2.0
-  # See: https://github.com/theme-next/theme-next-reading-progress
-  # Example:
-  # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
-  reading_progress:
-
-  # valine
-  # See: https://github.com/xCss/Valine
-  # Example:
-  # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
-  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
-  valine:
-
-  # gitalk & js-md5
-  # See: https://github.com/gitalk/gitalk, https://github.com/emn178/js-md5
-  # Example:
-  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
-  # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
-  gitalk_js:
-  gitalk_css:
-  md5:
-
-  # likely
-  # See: https://github.com/ilyabirman/Likely
-  # Example:
-  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js
-  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
-  likely_js:
-  likely_css:
-
-  # DisqusJS
-  # See: https://github.com/SukkaW/DisqusJS
-  # Example:
-  # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
-  # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
-  disqusjs_js:
-  disqusjs_css:
 
 # Assets
 css: css

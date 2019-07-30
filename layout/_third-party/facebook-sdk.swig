@@ -1,4 +1,4 @@
-{% if theme.facebook_sdk.enable %}
+{%- if theme.facebook_sdk.enable %}
   <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -15,4 +15,4 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
-{% endif %}
+{%- endif %}

@@ -65,8 +65,8 @@ module.exports = function(hexo) {
       let viewName = `inject/${type}/${injectObj.name}`;
       hexo.theme.setView(viewName, injectObj.raw);
       hexo.theme.config.injects[type].push({
-        layout: viewName,
-        locals: injectObj.args[0],
+        layout : viewName,
+        locals : injectObj.args[0],
         options: injectObj.args[1]
       });
     });

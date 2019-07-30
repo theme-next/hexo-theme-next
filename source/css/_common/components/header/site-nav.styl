@@ -1,9 +1,9 @@
 .site-nav-toggle {
-  hide();
+  display: none;
   position: absolute;
   left: 10px;
   +mobile() {
-    show();
+    display: block;
   }
 
   button {
@@ -16,7 +16,7 @@
 
 .site-nav {
   +mobile() {
-    hide();
+    display: none;
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;

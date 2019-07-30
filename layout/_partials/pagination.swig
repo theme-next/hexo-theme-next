@@ -1,4 +1,4 @@
-{% if page.prev or page.next %}
+{%- if page.prev or page.next %}
   <nav class="pagination">
     {{
       paginator({
@@ -8,4 +8,4 @@
       })
     }}
   </nav>
-{% endif %}
+{%- endif %}
