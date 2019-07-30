@@ -14,8 +14,9 @@
     right: $b2t-position-right-mobile;
     opacity: $b2t-opacity-hover;
 
-        display: none;
- if (!hexo-config('sidebar.onmobile'));
+    if (!hexo-config('sidebar.onmobile')) {
+      display: none;
+    }
   }
 }
 

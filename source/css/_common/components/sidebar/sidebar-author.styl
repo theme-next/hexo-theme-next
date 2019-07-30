@@ -6,8 +6,9 @@
   height: $site-author-image-height;
   border: $site-author-image-border-width solid $site-author-image-border-color;
 
+  if (hexo-config('avatar.rounded')) {
     border-radius: 50%;
- if (hexo-config('avatar.rounded'));
+  }
 }
 
 if (hexo-config('avatar.rotated')) {

@@ -19,8 +19,9 @@
   }
 
   +tablet-mobile() {
-        display: none;
- if (!hexo-config('sidebar.onmobile'));
+    if (!hexo-config('sidebar.onmobile')) {
+      display: none;
+    }
   }
 }
 

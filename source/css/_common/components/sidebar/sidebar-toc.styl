@@ -40,8 +40,10 @@
   text-overflow: ellipsis;
 
   // text-align: justify;
+
+  if (!hexo-config('toc.wrap')) {
     white-space: nowrap;
- if (!hexo-config('toc.wrap'));
+  }
 
   line-height: 1.8;
 }
