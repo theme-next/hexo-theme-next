@@ -6,12 +6,13 @@
 
 .site-nav-toggle {
   position: static;
-  float: right;
   top: 10px;
+  float: right;
 }
 
 .site-nav {
   flex-grow: 1;
+
   +mobile() {
     transform: translateY(10px);
   }
@@ -22,7 +23,7 @@
 }
 
 .menu {
-  //float: right;
+  // float: right;
   margin: 0;
 
   +mobile() {
@@ -30,10 +31,13 @@
     padding: 0;
   }
 
-  br { display: none; }
+  br {
+    display: none;
+  }
 
   .menu-item {
     margin: 0;
+
     +mobile() {
       display: block;
       margin-top: 5px;
@@ -41,16 +45,17 @@
 
     .badge {
       display: inline-block;
-      padding: 1px 4px;
       margin-left: 5px;
-      font-weight: $font-weight-bolder;
-      line-height: 1;
+      padding: 1px 4px;
+      border-radius: 10px;
+      background-color: #fff;
       color: $black-light;
       text-align: center;
-      white-space: nowrap;
-      background-color: #fff;
-      border-radius: 10px;
       text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+      font-weight: $font-weight-bolder;
+      line-height: 1;
+
       +mobile() {
         float: right;
         margin: 0.35em 0 0 0;
@@ -77,8 +82,13 @@
 
   a::before {
     display: none;
-    +mobile() { display: block; }
+
+    +mobile() {
+      display: block;
+    }
   }
 
-  +mobile() { float: none; }
+  +mobile() {
+    float: none;
+  }
 }

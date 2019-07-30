@@ -1,8 +1,8 @@
-@import "../Pisces/_layout";
-@import "../Pisces/_brand";
-@import "../Pisces/_menu";
-@import "../Pisces/_sub-menu";
-@import "../Pisces/_sidebar";
+@import '../Pisces/_layout';
+@import '../Pisces/_brand';
+@import '../Pisces/_menu';
+@import '../Pisces/_sub-menu';
+@import '../Pisces/_sidebar';
 
 // =================================================
 // Rewrite _layout.styl
@@ -29,37 +29,37 @@ use_seo = hexo-config('seo');
 // Post blocks.
 .content-wrap {
   padding: initial;
+  border-radius: initial;
   background: initial;
   box-shadow: initial;
-  border-radius: initial;
 }
 
 // Post & Comments blocks.
 .post-block {
   padding: $content-desktop-padding;
+  border-radius: $border-radius-inner;
   background: white;
   box-shadow: $box-shadow-inner;
-  border-radius: $border-radius-inner;
 }
 
 // When blocks are siblings (homepage).
 #posts > article + article {
   .post-block {
     margin-top: $sidebar-offset;
+    border-radius: $border-radius;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
-    border-radius: $border-radius;
   }
 }
 
 // Comments blocks.
 .comments {
-  padding: $content-desktop-padding;
   margin: auto;
   margin-top: $sidebar-offset;
+  padding: $content-desktop-padding;
+  border-radius: $border-radius;
   background: white;
   box-shadow: $box-shadow;
-  border-radius: $border-radius;
 }
 
 // Top main padding from header to posts (default 40px).
@@ -71,6 +71,7 @@ use_seo = hexo-config('seo');
 .post-nav-divider {
   width: 4%;
 }
+
 .post-nav-item {
   width: 48%;
 }
@@ -83,21 +84,23 @@ use_seo = hexo-config('seo');
 // Pagination.
 .pagination {
   .prev, .next, .page-number {
-    margin-bottom: initial;
     top: initial;
+    margin-bottom: initial;
   }
+
   margin: $sidebar-offset 0 0;
+  padding: 10px 0 10px;
   border-top: initial;
+  border-radius: $border-radius;
   background: white;
   box-shadow: $box-shadow;
-  border-radius: $border-radius;
-  padding: 10px 0 10px;
 }
 
 // Footer alignment.
 .main {
   padding-bottom: initial;
 }
+
 .footer {
   bottom: auto;
 }
@@ -106,14 +109,17 @@ use_seo = hexo-config('seo');
 .sub-menu {
   border-bottom: initial !important;
   box-shadow: $box-shadow-inner;
+
   // Adapt submenu(s) with post-blocks.
   &+ #content > #posts {
     .post-block {
-      box-shadow: $box-shadow;
       margin-top: $sidebar-offset;
+      box-shadow: $box-shadow;
+
       +tablet() {
         margin-top: $content-tablet-padding;
       }
+
       +mobile() {
         margin-top: $content-mobile-padding;
       }
@@ -132,15 +138,17 @@ use_seo = hexo-config('seo');
   h1, h2 {
     border-bottom: 1px solid $body-bg-color;
   }
+
   h3 {
-    if use_seo {
+    if (use_seo) {
       border-bottom: 1px solid $body-bg-color;
     } else {
       border-bottom: 1px dotted $body-bg-color;
     }
   }
+
   h4 {
-    if use_seo {
+    if (use_seo) {
       border-bottom: 1px dotted $body-bg-color;
     }
   }
@@ -150,11 +158,11 @@ use_seo = hexo-config('seo');
 // > 768px & < 991px
 // =================================================
 +tablet() {
-
   // Posts in blocks.
   .content-wrap {
     padding: $content-tablet-padding;
   }
+
   .posts-expand {
     margin: initial;
 
@@ -167,9 +175,9 @@ use_seo = hexo-config('seo');
   .post-block {
     // Inside posts blocks content padding (default 40px).
     padding: ($content-tablet-padding * 2);
+    border-radius: $border-radius;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
-    border-radius: $border-radius;
   }
 
   // Only if blocks are siblings need bottom margin (homepage).
@@ -182,24 +190,24 @@ use_seo = hexo-config('seo');
   .comments {
     margin-top: $content-tablet-padding;
     padding: $content-tablet-padding ($content-tablet-padding * 2);
-    //padding: initial;
-    //padding-top: $content-tablet-padding;
+    // padding: initial;
+    // padding-top: $content-tablet-padding;
   }
 
   .pagination {
     margin: $content-tablet-padding 0 0;
   }
-
 }
+
 // =================================================
 // < 767px
 // =================================================
 +mobile() {
-
   // Posts in blocks.
   .content-wrap {
     padding: $content-mobile-padding;
   }
+
   .posts-expand {
     margin: initial;
 
@@ -207,6 +215,7 @@ use_seo = hexo-config('seo');
     .post-button {
       margin: $sidebar-offset 0px;
     }
+
     img {
       padding: initial !important;
     }
@@ -216,9 +225,9 @@ use_seo = hexo-config('seo');
     // Inside posts blocks content padding (default 40px).
     padding: $sidebar-offset;
     min-height: auto;
+    border-radius: $border-radius;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
-    border-radius: $border-radius;
   }
 
   // Only if blocks are siblings need bottom margin (homepage).

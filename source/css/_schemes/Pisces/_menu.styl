@@ -1,7 +1,6 @@
 .site-nav-toggle {
-  left: 20px;
   top: 50%;
-
+  left: 20px;
   transform: translateY(-50%);
 
   +tablet() {
@@ -24,21 +23,21 @@
 }
 
 .menu-item-active a {
-  background: #f9f9f9;
   border-bottom-color: white;
-
+  background: #f9f9f9;
   badges = hexo-config('menu_settings.badges');
-  if not badges {
+
+  if (!badges) {
     &::after {
-      content: " ";
       position: absolute;
       top: 50%;
-      margin-top: -3px;
       right: 15px;
+      margin-top: -3px;
       width: 6px;
       height: 6px;
-      background-color: $grey;
       border-radius: 50%;
+      background-color: $grey;
+      content: ' ';
     }
   }
 }
@@ -65,21 +64,23 @@
 
   .badge {
     display: inline-block;
-    padding: 2px 5px;
-    font-weight: $font-weight-bolder;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    background-color: $grey-light;
-    border-radius: 10px;
     float: right;
     margin: 0.35em 0 0 0;
+    padding: 2px 5px;
+    border-radius: 10px;
+    background-color: $grey-light;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    font-weight: $font-weight-bolder;
+    line-height: 1;
   }
 
-  br { display: none; }
+  br {
+    display: none;
+  }
 }
 
 .btn-bar {

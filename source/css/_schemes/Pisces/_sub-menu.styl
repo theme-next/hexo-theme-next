@@ -1,16 +1,16 @@
 .sub-menu {
   margin: 0;
   padding: 6px 0;
-  background: #fff !important;
   border-bottom: 1px solid $table-border-color;
+  background: #fff !important;
 }
 
 .sub-menu .menu-item {
   display: inline-block !important;
 
   & a, span.exturl {
-    padding: initial !important;
     margin: 5px 10px;
+    padding: initial !important;
   }
 
   & a:hover, span.exturl:hover {
@@ -20,17 +20,18 @@
 }
 
 .sub-menu .menu-item-active a {
+  border-bottom-color: $sidebar-highlight;
   background: #fff !important;
   color: $sidebar-highlight;
-  border-bottom-color: $sidebar-highlight;
 
   &:hover {
-    background: #fff !important;
     border-bottom-color: $sidebar-highlight;
+    background: #fff !important;
   }
 
   badges = hexo-config('menu_settings.badges');
-  if not badges {
+
+  if (!badges) {
     &::after {
       content: initial;
     }
