@@ -6,7 +6,7 @@
 
 'use strict';
 
-hexo.extend.helper.register('next_url', function(path, text, options) {
+hexo.extend.helper.register('next_url', (path, text, options) => {
   var htmlTag = require('hexo-util').htmlTag;
   var config = this.config;
   var url = require('url');

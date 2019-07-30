@@ -2,22 +2,22 @@
 
 'use strict';
 
-const points = require('./../injects-point');
+const points = require('../injects-point');
 
-hexo.extend.filter.register('theme_inject', (injects) => {
+hexo.extend.filter.register('theme_inject', injects => {
   let filePath = hexo.theme.config.custom_file_path;
 
   if (!filePath) {
     return;
   }
 
-  points.views.forEach((key) => {
+  points.views.forEach(key => {
     if (filePath[key]) {
       injects[key].file('custom', filePath[key]);
     }
   });
 
-  points.styles.forEach((key) => {
+  points.styles.forEach(key => {
     if (filePath[key]) {
       injects[key].push(filePath[key]);
     }
