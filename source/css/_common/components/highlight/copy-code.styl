@@ -25,12 +25,12 @@
     background-color: #fff;
     border: none;
     font-size: $font-size-smaller;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
   } else if (hexo-config('codeblock.copy_button.style') == 'mac') {
     color: #fff;
     font-size: 14px;
-    right: 0px;
+    right: 0;
     top: 2px;
   } else {
     background-color: #eee;
@@ -47,14 +47,14 @@ if (hexo-config('codeblock.copy_button.style') == 'mac') {
   .highlight-wrap {
     background: #21252b;
     border-radius: 5px;
-    box-shadow: 0 10px 30px 0px rgba(0, 0, 0, .4);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
     margin-bottom: 1.6em;
     padding-top: 30px;
   }
 
   .highlight {
     border-radius: 0 0 5px 5px;
-    margin: 0px !important;
+    margin: 0 !important;
 
     &::before {
       background: #fc625d;
