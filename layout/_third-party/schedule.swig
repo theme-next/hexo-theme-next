@@ -59,7 +59,7 @@ function fetchData() {
 
       // clean the event list
       $eventList.html('');
-      var prevEnd = 0; // used to decide where to insert an <hr/>
+      var prevEnd = 0; // used to decide where to insert an <hr>
 
       data.items.forEach((event) => {
 
@@ -70,7 +70,7 @@ function fetchData() {
 
         tense = judgeTense(now, start, end); // 0:now 1:future -1:past
 
-        if (tense == 1 && prevEnd < now) $eventList.append('<hr/>');
+        if (tense == 1 && prevEnd < now) $eventList.append('<hr>');
 
         eventDOM = buildEventDOM(tense, event);
         $eventList.append(eventDOM);
