@@ -3,8 +3,8 @@
   margin-bottom: 20px;
   padding-top: 10px;
   position: relative;
-  // Read tabs border_radius from NexT config and set in "tbr px" to use it as string variable in this CSS section.
-  hexo-config('tabs.border_radius') is a 'unit' ? (tbr = unit(hexo-config('tabs.border_radius'), px)) : (tbr = 0);
+  // Read tabs border_radius from NexT config and set in "$tbr px" to use it as string variable in this CSS section.
+  hexo-config('tabs.border_radius') is a 'unit' ? ($tbr = unit(hexo-config('tabs.border_radius'), px)) : ($tbr = 0);
 
   ul.nav-tabs {
     display: flex;
@@ -34,11 +34,11 @@
         border-top: 1px solid transparent;
       }
 
-      if (tbr > 0) {
-        border-radius: tbr tbr 0 0;
+      if ($tbr > 0) {
+        border-radius: $tbr $tbr 0 0;
 
         +mobile-smallest() {
-          border-radius: tbr;
+          border-radius: $tbr;
         }
       }
 
@@ -89,8 +89,8 @@
       border: 1px solid $table-border-color;
       padding: 20px 20px 0 20px;
 
-      if (tbr > 0) {
-        border-radius: tbr;
+      if ($tbr > 0) {
+        border-radius: $tbr;
       }
 
       &:not(.active) {
@@ -100,12 +100,12 @@
       &.active {
         display: block;
 
-        if (tbr > 0) {
+        if ($tbr > 0) {
           &:nth-of-type(1) {
-            border-radius: 0 tbr tbr tbr;
+            border-radius: 0 $tbr $tbr $tbr;
 
             +mobile-smallest() {
-              border-radius: tbr;
+              border-radius: $tbr;
             }
           }
         }

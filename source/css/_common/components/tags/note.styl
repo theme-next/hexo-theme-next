@@ -1,21 +1,21 @@
 .post-body .note {
-  note_icons = hexo-config('note.icons');
-  note_style = hexo-config('note.style');
+  $note_icons = hexo-config('note.icons');
+  $note_style = hexo-config('note.style');
   margin-bottom: 20px;
   padding: 15px;
   position: relative;
 
-  if (note_style == 'simple') {
+  if ($note_style == 'simple') {
     border: 1px solid $gainsboro;
     border-left-width: 5px;
   }
 
-  if (note_style == 'modern') {
+  if ($note_style == 'modern') {
     background-color: $whitesmoke;
     border: 1px solid transparent;
   }
 
-  if (note_style == 'flat') {
+  if ($note_style == 'flat') {
     background-color: lighten($gainsboro, 65%);
     border: initial;
     border-left: 3px solid $gainsboro;
@@ -26,7 +26,7 @@
   }
 
   h2, h3, h4, h5, h6 {
-    if (note_icons) {
+    if ($note_icons) {
       margin-top: 3px;
     } else {
       margin-top: 0;
@@ -47,7 +47,7 @@
     }
   }
 
-  if (note_icons) {
+  if ($note_icons) {
     &:not(.no-icon) {
       padding-left: 45px;
 
@@ -62,11 +62,11 @@
   }
 
   &.default {
-    if (note_style == 'flat') {
+    if ($note_style == 'flat') {
       background-color: $note-default-bg;
     }
 
-    if (note_style == 'modern') {
+    if ($note_style == 'modern') {
       background-color: $note-modern-default-bg;
       border-color: $note-modern-default-border;
       color: $note-modern-default-text;
@@ -84,7 +84,7 @@
       }
     }
 
-    if (!(note_style == 'modern')) {
+    if (!($note_style == 'modern')) {
       border-left-color: $note-default-border;
 
       h2, h3, h4, h5, h6 {
@@ -92,12 +92,12 @@
       }
     }
 
-    if (note_icons) {
+    if ($note_icons) {
       &:not(.no-icon) {
         &::before {
           content: $note-default-icon;
 
-          if (!(note_style == 'modern')) {
+          if (!($note_style == 'modern')) {
             color: $note-default-text;
           }
         }
@@ -106,11 +106,11 @@
   }
 
   &.primary {
-    if (note_style == 'flat') {
+    if ($note_style == 'flat') {
       background-color: $note-primary-bg;
     }
 
-    if (note_style == 'modern') {
+    if ($note_style == 'modern') {
       background-color: $note-modern-primary-bg;
       border-color: $note-modern-primary-border;
       color: $note-modern-primary-text;
@@ -128,7 +128,7 @@
       }
     }
 
-    if (!(note_style == 'modern')) {
+    if (!($note_style == 'modern')) {
       border-left-color: $note-primary-border;
 
       h2, h3, h4, h5, h6 {
@@ -136,12 +136,12 @@
       }
     }
 
-    if (note_icons) {
+    if ($note_icons) {
       &:not(.no-icon) {
         &::before {
           content: $note-primary-icon;
 
-          if (!(note_style == 'modern')) {
+          if (!($note_style == 'modern')) {
             color: $note-primary-text;
           }
         }
@@ -150,11 +150,11 @@
   }
 
   &.info {
-    if (note_style == 'flat') {
+    if ($note_style == 'flat') {
       background-color: $note-info-bg;
     }
 
-    if (note_style == 'modern') {
+    if ($note_style == 'modern') {
       background-color: $note-modern-info-bg;
       border-color: $note-modern-info-border;
       color: $note-modern-info-text;
@@ -172,7 +172,7 @@
       }
     }
 
-    if (!(note_style == 'modern')) {
+    if (!($note_style == 'modern')) {
       border-left-color: $note-info-border;
 
       h2, h3, h4, h5, h6 {
@@ -180,12 +180,12 @@
       }
     }
 
-    if (note_icons) {
+    if ($note_icons) {
       &:not(.no-icon) {
         &::before {
           content: $note-info-icon;
 
-          if (!(note_style == 'modern')) {
+          if (!($note_style == 'modern')) {
             color: $note-info-text;
           }
         }
@@ -194,11 +194,11 @@
   }
 
   &.success {
-    if (note_style == 'flat') {
+    if ($note_style == 'flat') {
       background-color: $note-success-bg;
     }
 
-    if (note_style == 'modern') {
+    if ($note_style == 'modern') {
       background-color: $note-modern-success-bg;
       border-color: $note-modern-success-border;
       color: $note-modern-success-text;
@@ -216,7 +216,7 @@
       }
     }
 
-    if (!(note_style == 'modern')) {
+    if (!($note_style == 'modern')) {
       border-left-color: $note-success-border;
 
       h2, h3, h4, h5, h6 {
@@ -224,12 +224,12 @@
       }
     }
 
-    if (note_icons) {
+    if ($note_icons) {
       &:not(.no-icon) {
         &::before {
           content: $note-success-icon;
 
-          if (!(note_style == 'modern')) {
+          if (!($note_style == 'modern')) {
             color: $note-success-text;
           }
         }
@@ -238,11 +238,11 @@
   }
 
   &.warning {
-    if (note_style == 'flat') {
+    if ($note_style == 'flat') {
       background-color: $note-warning-bg;
     }
 
-    if (note_style == 'modern') {
+    if ($note_style == 'modern') {
       background-color: $note-modern-warning-bg;
       border-color: $note-modern-warning-border;
       color: $note-modern-warning-text;
@@ -260,7 +260,7 @@
       }
     }
 
-    if (!(note_style == 'modern')) {
+    if (!($note_style == 'modern')) {
       border-left-color: $note-warning-border;
 
       h2, h3, h4, h5, h6 {
@@ -268,12 +268,12 @@
       }
     }
 
-    if (note_icons) {
+    if ($note_icons) {
       &:not(.no-icon) {
         &::before {
           content: $note-warning-icon;
 
-          if (!(note_style == 'modern')) {
+          if (!($note_style == 'modern')) {
             color: $note-warning-text;
           }
         }
@@ -282,11 +282,11 @@
   }
 
   &.danger {
-    if (note_style == 'flat') {
+    if ($note_style == 'flat') {
       background-color: $note-danger-bg;
     }
 
-    if (note_style == 'modern') {
+    if ($note_style == 'modern') {
       background-color: $note-modern-danger-bg;
       border-color: $note-modern-danger-border;
       color: $note-modern-danger-text;
@@ -304,7 +304,7 @@
       }
     }
 
-    if (!(note_style == 'modern')) {
+    if (!($note_style == 'modern')) {
       border-left-color: $note-danger-border;
 
       h2, h3, h4, h5, h6 {
@@ -312,12 +312,12 @@
       }
     }
 
-    if (note_icons) {
+    if ($note_icons) {
       &:not(.no-icon) {
         &::before {
           content: $note-danger-icon;
 
-          if (!(note_style == 'modern')) {
+          if (!($note_style == 'modern')) {
             color: $note-danger-text;
           }
         }

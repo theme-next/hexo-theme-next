@@ -25,9 +25,9 @@
 .menu-item-active a {
   background: #f9f9f9;
   border-bottom-color: white;
-  badges = hexo-config('menu_settings.badges');
+  $badges = hexo-config('menu_settings.badges');
 
-  if (!badges) {
+  if (!$badges) {
     &::after {
       background-color: $grey;
       border-radius: 50%;

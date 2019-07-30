@@ -13,9 +13,9 @@
 }
 
 .github-corner {
-  scheme = hexo-config('scheme');
-  bg_color = unquote(hexo-config('android_chrome_color'));
-  mobile_layout_economy = hexo-config('mobile_layout_economy');
+  $scheme = hexo-config('scheme');
+  $bg_color = unquote(hexo-config('android_chrome_color'));
+  $mobile_layout_economy = hexo-config('mobile_layout_economy');
 
   :hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
@@ -24,7 +24,7 @@
   > svg {
     border: 0;
     color: #fff;
-    fill: bg_color;
+    fill: $bg_color;
     position: absolute;
     right: 0;
     top: 0;
@@ -32,8 +32,8 @@
 
   +tablet-mobile() {
     > svg {
-      if ((scheme == 'Pisces') || (scheme == 'Gemini')) {
-        color: bg_color;
+      if (($scheme == 'Pisces') || ($scheme == 'Gemini')) {
+        color: $bg_color;
         fill: #fff;
       }
     }
@@ -49,10 +49,10 @@
 
   +mobile() {
     > svg {
-      if (scheme == 'Mist') {
+      if ($scheme == 'Mist') {
         top: inherit;
 
-        if (mobile_layout_economy) {
+        if ($mobile_layout_economy) {
           +mobile-small() {
             margin-top: initial;
           }
