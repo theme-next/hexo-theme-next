@@ -4,7 +4,7 @@
 
 const merge = require('lodash/merge');
 
-hexo.on('generateBefore', function() {
+hexo.on('generateBefore', () => {
   if (hexo.locals.get) {
     var data = hexo.locals.get('data');
 
@@ -29,9 +29,9 @@ hexo.on('generateBefore', function() {
       var lang = this.config.language;
       var i18n = this.theme.i18n;
 
-      var mergeLang = function(lang) {
+      function mergeLang(lang) {
         i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
-      };
+      }
 
       if (Array.isArray(lang)) {
         for (var i = 0; i < lang.length; i++) {
@@ -48,7 +48,7 @@ hexo.on('generateBefore', function() {
 
 });
 
-hexo.on('generateAfter', function() {
+hexo.on('generateAfter', () => {
   if (!hexo.theme.config.reminder) return;
   const https = require('https');
   const path = require('path');

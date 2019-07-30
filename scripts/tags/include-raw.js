@@ -12,12 +12,12 @@ var fs = require('hexo-fs');
 function includeRaw(args) {
   var path = pathFn.join(hexo.source_dir, args[0]);
 
-  return fs.exists(path).then(function(exist) {
+  return fs.exists(path).then(exist => {
     if (!exist) {
       hexo.log.error('Include file not found!');
       return;
     }
-    return fs.readFile(path).then(function(contents) {
+    return fs.readFile(path).then(contents => {
       if (!contents) {
         hexo.log.warn('Include file empty.');
         return;
