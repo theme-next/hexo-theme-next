@@ -7,7 +7,7 @@
     margin-right: 10px;
     margin-bottom: 10px;
     border-bottom-color: $black-light;
-    font-size: 13px;
+    font-size: $font-size-smaller;
     if hexo-config('social_icons.transition') { the-transition(); }
 
     &::before {
@@ -17,7 +17,7 @@
       content: " ";
       width: 4px;
       height: 4px;
-      circle();
+      border-radius: 50%;
       background: rgb(random-color(0, 255) - 50%, random-color(0, 255) - 50%, random-color(0, 255) - 50%);
     }
   }

@@ -61,7 +61,7 @@ $font-family-base         = $font-family-chinese, sans-serif
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
 
 $font-family-logo         = $font-family-base
-$font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
+$font-family-logo         = get_font_family('title'), $font-family-base if get_font_family('title')
 
 $font-family-headings     = $font-family-base
 $font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings')
@@ -84,22 +84,22 @@ $font-weight-bolder       = 700
 
 
 // Font size
-$font-size-base           = 14px
+$font-size-base           = 16px
 $font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
+$font-size-smallest       = $font-size-base - 4px
+$font-size-smaller        = $font-size-base - 3px
 $font-size-small          = $font-size-base - 2px
-$font-size-smaller        = $font-size-base - 4px
+$font-size-medium         = $font-size-base
 $font-size-large          = $font-size-base + 2px
 $font-size-larger         = $font-size-base + 4px
+$font-size-largest        = $font-size-base + 6px
 
 
 // Headings font size
 $font-size-headings-step    = 2px
 $font-size-headings-base    = 24px
 $font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
-$font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
-$font-size-headings-smaller = $font-size-headings-small - $font-size-headings-step
-$font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
-$font-size-headings-larger  = $font-size-headings-large + $font-size-headings-step
+
 
 // Global line height
 $line-height-base           = 2
@@ -120,7 +120,7 @@ $zindex-5       = 1050
 // --------------------------------------------------
 $table-width                    = 100%
 $table-border-color             = $gray-lighter
-$table-font-size                = 14px
+$table-font-size                = $font-size-small
 $table-content-alignment        = left
 $table-content-vertical         = middle
 $table-th-font-weight           = 700
@@ -134,8 +134,6 @@ $table-row-hover-bg-color       = $whitesmoke
 // Code & Code Blocks
 // --------------------------------------------------
 $code-font-family               = $font-family-monospace
-$code-font-size                 = 14px
-$code-font-size                 = unit(hexo-config('font.codes.size'), px) if hexo-config('font.codes.size') is a 'unit'
 $code-border-radius             = 3px
 $code-foreground                = $black-light
 $code-background                = $gainsboro
@@ -148,7 +146,7 @@ $btn-font-weight                = normal
 $btn-default-radius             = 0
 $btn-default-bg                 = $black-deep
 $btn-default-color              = white
-$btn-default-font-size          = 14px
+$btn-default-font-size          = $font-size-small
 $btn-default-border-width       = 2px
 $btn-default-border-color       = $black-deep
 $btn-default-hover-bg           = white
@@ -201,12 +199,11 @@ $brand-color                    = white
 $brand-hover-color              = white
 $brand-bg                       = $black-deep
 
-$logo-font-size                 = 20px
-$logo-font-size                 = unit(hexo-config('font.logo.size'), px) if hexo-config('font.logo.size') is a 'unit'
-
-$site-subtitle-color            = $grey-dark
-$subtitle-font-size             = 13px
+$title-font-size                = $font-size-largest
+$title-font-size                = unit(hexo-config('font.title.size'), px) if hexo-config('font.title.size') is a 'unit'
+$subtitle-font-size             = $font-size-smaller
 $subtitle-color                 = $grey-dark
+$site-subtitle-color            = $grey-dark
 
 // Menu
 $menu-link-border               = transparent
@@ -253,15 +250,15 @@ $site-author-name-color               = $whitesmoke
 $site-author-name-align               = center
 $site-author-name-weight              = normal
 
-$site-description-font-size           = 14px
+$site-description-font-size           = $font-size-medium
 $site-description-color               = $grey-dark
 $site-description-margin-top          = 5px
 $site-description-align               = center
 
 $site-state-align                     = center
-$site-state-item-count-font-size      = 18px
+$site-state-item-count-font-size      = $font-size-larger
 $site-state-item-count-color          = inherit
-$site-state-item-name-font-size       = 13px
+$site-state-item-name-font-size       = $font-size-small
 $site-state-item-name-color           = inherit
 $site-state-item-border-color         = $black-dim
 

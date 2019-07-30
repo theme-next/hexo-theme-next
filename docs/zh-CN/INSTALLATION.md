@@ -2,7 +2,7 @@
 
 <h2 align="center">步骤 1 &rarr; 进入 Hexo 目录</h2>
 
-进入 **hexo 根**目录。这一目录中应当有 `node_modules`、`source`、`themes` 等若干子目录：
+进入 **Hexo 根**目录。这一目录中应当有 `node_modules`、`source`、`themes` 等若干子目录：
    ```sh
    $ cd hexo
    $ ls
@@ -100,7 +100,7 @@
 
 <h2 align="center">步骤 3 &rarr; 完成配置</h2>
 
-在 **hexo 根配置**文件 `_config.yml` 中设置你的主题：
+在 **Hexo 站点配置文件**（`/_config.yml`）中设置你的主题：
 
 ```yml
 theme: next

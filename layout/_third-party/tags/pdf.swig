@@ -1,4 +1,4 @@
-{% if theme.pdf.enable %}
+{%- if theme.pdf.enable %}
 <script>
 if ($('body').find('div.pdf').length) {
   $.ajax({
@@ -24,4 +24,4 @@ if ($('body').find('div.pdf').length) {
   });
 }
 </script>
-{% endif %}
+{%- endif %}

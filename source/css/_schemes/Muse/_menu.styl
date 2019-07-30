@@ -1,8 +1,6 @@
 .site-nav {
   +mobile() {
-    position: absolute;
     left: 0;
-    top: 52px;
     margin: 0;
     width: 100%;
     padding: 0;
@@ -10,6 +8,10 @@
     border-bottom: 1px solid $gray-lighter;
     z-index: $zindex-3;
   }
+}
+
+.site-nav-toggle {
+  top: 50px;
 }
 
 .menu {
@@ -27,7 +29,7 @@
 
 .menu .menu-item {
   +mobile() {
-    show();
+    display: block;
     margin: 0 10px;
     vertical-align: top;
   }
@@ -36,7 +38,7 @@
     display: inline-block;
     padding: 1px 4px;
     margin-left: 5px;
-    font-weight: 700;
+    font-weight: $font-weight-bolder;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
@@ -48,7 +50,9 @@
   }
 
   br {
-    +mobile() { display: none; }
+    +mobile() {
+      display: none;
+    }
   }
 
   a, span.exturl {

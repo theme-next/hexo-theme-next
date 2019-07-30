@@ -1,4 +1,4 @@
-{% if is_home() %}
+{%- if is_home() %}
   <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ theme.changyan.appid }}"></script>
 {% elif page.comments %}
   <script>
@@ -15,4 +15,4 @@
   })();
   </script>
   <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-{% endif %}
+{%- endif %}

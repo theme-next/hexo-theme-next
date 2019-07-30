@@ -5,18 +5,18 @@
   </button>
   <div id="qr" style="display: none;">
 
-    {% for name, image in theme.reward %}
-      {% set builtin = ['wechatpay', 'alipay', 'bitcoin'] %}
-      {% if builtin.indexOf(name) !== -1 %}
-        {% set translation = __('reward.' + name) %}
+    {%- for name, image in theme.reward %}
+      {%- set builtin = ['wechatpay', 'alipay', 'bitcoin'] %}
+      {%- if builtin.indexOf(name) !== -1 %}
+        {%- set translation = __('reward.' + name) %}
       {% else %}
-        {% set translation = name %}
-      {% endif %}
+        {%- set translation = name %}
+      {%- endif %}
       <div style="display: inline-block">
-        <img src="{{ url_for(image) }}" alt="{{ author }} {{ translation }}"/>
+        <img src="{{ url_for(image) }}" alt="{{ author }} {{ translation }}">
         <p>{{ translation }}</p>
       </div>
-    {% endfor %}
+    {%- endfor %}
 
   </div>
 </div>

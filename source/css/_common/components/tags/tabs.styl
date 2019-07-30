@@ -1,6 +1,6 @@
 .post-body .tabs {
   position: relative;
-  show();
+  display: block;
   margin-bottom: 20px;
   padding-top: 10px;
 
@@ -15,7 +15,7 @@
     margin-bottom: -1px;
 
     +mobile-smallest() {
-      show();
+      display: block;
       margin-bottom: 5px;
     }
 
@@ -45,7 +45,7 @@
         text-align: center;
         outline: 0;
         border-bottom: initial;
-        show();
+        display: block;
         line-height: 1.8em;
         padding: .25em .75em;
         & i { width: (18em / 14); }
@@ -81,10 +81,10 @@
       if tbr > 0 { border-radius: tbr; }
 
       &:not(.active) {
-        hide();
+        display: none;
       }
       &.active {
-        show();
+        display: block;
         if tbr > 0 {
           &:nth-of-type(1) {
             border-radius: 0 tbr tbr tbr;

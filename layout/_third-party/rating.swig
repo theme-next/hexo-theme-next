@@ -1,4 +1,4 @@
-{% if theme.rating.enable and (not is_home() and is_post()) %}
+{%- if theme.rating.enable and (not is_home() and is_post()) %}
   <script>
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -17,4 +17,4 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
     })();
   </script>
-{% endif %}
+{%- endif %}

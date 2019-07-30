@@ -1,12 +1,12 @@
-{% if theme.chatra.enable %}
-  {% if theme.chatra.embed %}
+{%- if theme.chatra.enable %}
+  {%- if theme.chatra.embed %}
   <script>
     window.ChatraSetup = {
       mode: 'frame',
       injectTo: '{{ theme.chatra.embed }}'
     };
   </script>
-  {% endif %}
+  {%- endif %}
   <script>
     (function(d, w, c) {
       w.ChatraID = '{{ theme.chatra.id }}';
@@ -19,4 +19,4 @@
       if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
   </script>
-{% endif %}
+{%- endif %}

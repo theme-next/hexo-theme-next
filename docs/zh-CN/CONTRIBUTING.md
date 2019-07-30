@@ -85,8 +85,8 @@
 
 提交合并请求前，请再次确认您已经查看了 [你需要了解的](#before-submitting-an-issue) 内容，避免提交重复的合并请求。确定相关仓库后，创建合并请求。更多详细操作过程可以查看 [帮助文档](https://help.github.com/articles/creating-a-pull-request/)。
 
-1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击`Fork`。
-2. 进入到已经`Fork`的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
+1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击 `Fork`。
+2. 进入到已经 `Fork` 的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
     ```bash
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
@@ -151,7 +151,7 @@
 
 如果您不确定某个标签的含义，或者不知道将哪些标签应用于 PR 或 issue，千万别错过这个。
 
-Issues 的标签：使用`类型`+`内容`+`结果`的组合
+Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
 
 - 类型
     - `Irrelevant`: 与 NexT 主题无关的 Issue
@@ -166,6 +166,7 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `Question`: 提出疑问的 Issue
     - `Backlog`: 待解决的 Issue
     - `Meta`: 表明使用条款变更的 Issue
+    - `Polls`: 发起投票的 Issue
 - 内容
     - `Roadmap`: 与 NexT 主题发展相关的 Issue
     - `Hexo`: 与 Hexo 相关的 Issue
@@ -175,13 +176,12 @@ Issues 的标签：使用`类型`+`内容`+`结果`的组合
     - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue
     - `Custom`: 与 NexT 主题个性化相关的 Issue
 - 结果
-    - `Wontfix`: 不能或不被修复的 Issue
+    - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
     - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
     - `Can't Reproduce`: 无法复现的 Issue
     - `Verified`: 已经被确认的 Issue
     - `Help Wanted`: 需要帮助的 Issue
-    - `Wait for Answer`: 需要开发人员或用户回复的 Issue
     - `Probably Solved`: 可能已经解决的 Issue
     - `Solved`: 已经解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
@@ -199,6 +199,8 @@ Pull requests 的标签：
 - `i18n`: 更新了翻译的 Pull request
 - `Performance`: 提高了 NexT 主题性能的 Pull request
 - `Discussion`: 需要进行讨论的 Pull request
+- `Work in Progress`: 仍在进行改动和完善的 Pull request
+- `Skip Release`: 无需在 Release Note 中展现的 Pull request
 - `v6.x`: 与 NexT v6.x 旧版相关的用于修复和改进的 Pull request
 - `v7.x`: 与 NexT v7.x 旧版相关的用于修复和改进的 Pull request
 

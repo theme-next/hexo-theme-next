@@ -52,7 +52,7 @@
   border-bottom: 1px dotted $grey-light;
   text-align: center;
   a {
-    show();
+    display: block;
     color: $orange;
     border: none !important;
 
@@ -70,16 +70,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  span.exturl {
-    font-size: 13px;
-  }
 }
 
 .links-of-author-item {
   sidebar-inline-links-item();
   a, span.exturl {
-    show();
+    display: block;
     border-bottom: none;
     text-decoration: none;
 
@@ -93,9 +89,8 @@
 
   .fa {
     margin-right: 2px;
-    font-size: 16px;
+    font-size: $font-size-medium;
   }
-  .fa-globe { font-size: 15px; }
 }
 
 .links-of-blogroll {

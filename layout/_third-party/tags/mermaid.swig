@@ -1,4 +1,4 @@
-{% if theme.mermaid.enable %}
+{%- if theme.mermaid.enable %}
 <script>
 if ($('body').find('pre.mermaid').length) {
   $.ajax({
@@ -18,4 +18,4 @@ if ($('body').find('pre.mermaid').length) {
   });
 }
 </script>
-{% endif %}
+{%- endif %}
