@@ -31,7 +31,7 @@ hexo.on('generateBefore', () => {
 
       var mergeLang = lang => {
         i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
-      }
+      };
 
       if (Array.isArray(lang)) {
         for (var i = 0; i < lang.length; i++) {

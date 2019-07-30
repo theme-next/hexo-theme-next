@@ -43,7 +43,7 @@ function initInject() {
   return injects;
 }
 
-module.exports = function(hexo) {
+module.exports = hexo => {
   // Exec theme_inject filter
   let injects = initInject();
   hexo.execFilterSync('theme_inject', injects);
