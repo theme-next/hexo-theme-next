@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 $(document).on('DOMContentLoaded', function() {
   // Create Base64 Object
   /* jshint ignore:start*/
