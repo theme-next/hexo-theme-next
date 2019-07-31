@@ -1,9 +1,8 @@
 fs = require('fs')
 path = require('path')
 gulp = require('gulp')
-jshint = require('gulp-jshint')
-stylish = require('jshint-stylish')
-shell   = require('gulp-shell')
+eslint = require('gulp-eslint')
+shell = require('gulp-shell')
 yaml = require('js-yaml')
 
 gulp.task 'lint', ->
@@ -21,8 +20,8 @@ gulp.task 'lint', ->
     './source/js/utils.js',
     './source/js/schemes/muse.js',
     './source/js/schemes/pisces.js'
-  ]).pipe jshint()
-    .pipe jshint.reporter(stylish)
+  ]).pipe eslint()
+    .pipe eslint.format()
 
 gulp.task 'lint:stylus', shell.task [
   '"./node_modules/.bin/stylint" ./source/css/'
@@ -57,4 +56,4 @@ gulp.task 'validate:languages', (cb) ->
     cb(errors)
 
 
-gulp.task 'default', gulp.parallel('lint', 'validate:config', 'validate:languages')
+gulp.task 'default', gulp.series('lint', 'validate:config', 'validate:languages')
