@@ -176,8 +176,7 @@ NexT.utils = {
       var target = $(this).find('a[href]')[0];
       if (target.hostname === location.hostname && (target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '', 'g'))) {
         $(this).addClass('menu-item-active');
-      }
-      else {
+      } else {
         $(this).removeClass('menu-item-active');
       }
     });
