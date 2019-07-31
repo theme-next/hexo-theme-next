@@ -13,9 +13,12 @@ hexo.extend.filter.register('after_post_render', data => {
 
   const $ = cheerio.load(data.content, {decodeEntities: false});
 
-  $('img').each(() => {
-    var $image = $(this);
-    $image.attr('data-src', $image.attr('src')).removeAttr('src');
+  const images = $('img');
+  if (!images.length) return data;
+
+  Array.from(images).forEach(img => {
+    let src = $(img).attr('src');
+    $(img).attr('data-src', src).removeAttr('src');
   });
 
   data.content = $.html();
