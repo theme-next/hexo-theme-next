@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+$(document).on('DOMContentLoaded', function() {
 
   function initScrollSpy() {
     var tocSelector = '.post-toc';
@@ -30,7 +30,7 @@ $(document).ready(function() {
   initScrollSpy();
 });
 
-$(document).ready(function() {
+$(document).on('DOMContentLoaded pjax:success', function() {
   var TAB_ANIMATE_DURATION = 200;
 
   $('.sidebar-nav li').on('click', function() {

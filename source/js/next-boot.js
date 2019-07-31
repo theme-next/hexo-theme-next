@@ -1,21 +1,9 @@
 /* global NexT, CONFIG */
 
-$(document).on('ready', function() {
+$(document).on('DOMContentLoaded', function() {
 
-  /**
-   * Register JS handlers by condition option.
-   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
-   */
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
-  CONFIG.lazyload && window.lozad('.post-body img').observe();
-  CONFIG.pangu && window.pangu.spacingPage();
-
-  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
   NexT.utils.registerCanIUseTag();
-  NexT.utils.embeddedVideoTransformer();
 
   // Mobile top menu bar.
   $('.site-nav-toggle button').on('click', function() {
@@ -29,6 +17,31 @@ $(document).on('ready', function() {
       $siteNav[animateCallback](ON_CLASS_NAME);
     });
   });
+
+  // Define Motion Sequence & Bootstrap Motion.
+  CONFIG.motion.enable && NexT.motion.integrator
+    .add(NexT.motion.middleWares.logo)
+    .add(NexT.motion.middleWares.menu)
+    .add(NexT.motion.middleWares.postList)
+    .add(NexT.motion.middleWares.sidebar)
+    .bootstrap();
+});
+
+$(document).on('DOMContentLoaded pjax:success', function() {
+
+  /**
+   * Register JS handlers by condition option.
+   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
+   */
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
+  CONFIG.lazyload && window.lozad('.post-body img').observe();
+  CONFIG.pangu && window.pangu.spacingPage();
+
+  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
+  CONFIG.tabs && NexT.utils.registerTabsTag();
+  NexT.utils.registerActiveMenuItem();
+  NexT.utils.embeddedVideoTransformer();
 
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
@@ -70,16 +83,4 @@ $(document).on('ready', function() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
   wrapTable();
-});
-
-$(document).ready(function() {
-  $(document).trigger('ready');
-
-  // Define Motion Sequence & Bootstrap Motion.
-  CONFIG.motion.enable && NexT.motion.integrator
-    .add(NexT.motion.middleWares.logo)
-    .add(NexT.motion.middleWares.menu)
-    .add(NexT.motion.middleWares.postList)
-    .add(NexT.motion.middleWares.sidebar)
-    .bootstrap();
 });

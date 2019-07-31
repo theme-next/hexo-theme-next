@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('ready', function() {
+$(document).on('DOMContentLoaded pjax:success', function() {
 
   var sidebarInner = $('.sidebar-inner');
   var sidebarOffset = CONFIG.sidebar.offset || 12;

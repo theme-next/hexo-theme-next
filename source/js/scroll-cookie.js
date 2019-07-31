@@ -1,4 +1,4 @@
-$(document).on('ready', function() {
+$(document).on('DOMContentLoaded', function() {
 
   /* global Cookies */
 
@@ -21,5 +21,4 @@ $(document).on('ready', function() {
       $(window).scrollTop(cvalues[0]);
     }
   }
-
 });

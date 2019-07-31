@@ -62,13 +62,9 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {%- if theme.pjax %}
-          <div id="reboot-analytics">
-        {%- endif %}
-        {% include '_partials/analytics/index.swig' %}
-        {%- if theme.pjax %}
-          </div>
-        {%- endif %}
+        <div class="reboot">
+          {% include '_partials/analytics/index.swig' %}
+        </div>
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -98,17 +94,15 @@
   {% include '_scripts/exturl.swig' %}
   {% include '_scripts/three.swig' %}
 
-  {%- if theme.pjax %}
-    <div id="reboot-services">
-  {%- endif %}
+  <div class="reboot">
   {% include '_third-party/index.swig' %}
 
   {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {%- endfor %}
+  </div>
 
   {%- if theme.pjax %}
-    </div>
     <script>
     var pjax = new Pjax({
       selectors: [
@@ -118,9 +112,10 @@
       ]
     });
     $(document).on('pjax:success', function() {
-      $('#reboot-analytics script').remove().appendTo('#reboot-analytics');
-      $('#reboot-services script').remove().appendTo('#reboot-services');
-      $(document).trigger('ready');
+      $('.menu-item').css("opacity", 1);
+      $('.reboot').each(function() {
+        $(this).find('script').remove().appendTo($(this));
+      });
       // Define Motion Sequence & Bootstrap Motion.
       CONFIG.motion.enable && NexT.motion.integrator
         .init()

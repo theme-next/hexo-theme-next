@@ -131,7 +131,7 @@ NexT.utils = {
     var tNav = '.tabs ul.nav-tabs ';
 
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    $(function() {
+    $(document).on('DOMContentLoaded pjax:success', function() {
       $(window).bind('hashchange', function() {
         var tHash = location.hash;
         if (tHash !== '' && !tHash.match(/%\S{2}/)) {
@@ -169,6 +169,18 @@ NexT.utils = {
         $(`iframe[data-feature=${featureID}]`).height(parseInt(height, 10) + 30);
       }
     }, false);
+  },
+
+  registerActiveMenuItem: function() {
+    $('.menu-item').each(function() {
+      var target = $(this).find('a[href]')[0];
+      if (target.hostname === location.hostname && (target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '', 'g'))) {
+        $(this).addClass('menu-item-active');
+      }
+      else {
+        $(this).removeClass('menu-item-active');
+      }
+    });
   },
 
   /**
@@ -248,7 +260,6 @@ NexT.utils = {
         }
       }
     });
-
   },
 
   hasMobileUA: function() {

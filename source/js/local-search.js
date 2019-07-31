@@ -1,6 +1,6 @@
 /* global CONFIG */
 
-$(document).on('ready', function() {
+$(document).on('DOMContentLoaded', function() {
   // Popup Window
   var isfetched = false;
   var datas;
@@ -273,21 +273,21 @@ $(document).on('ready', function() {
 
   function proceedSearch() {
     $('body')
-      .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+      .append('<div class="local-search-pop-overlay"></div>')
       .css('overflow', 'hidden');
-    $('.search-popup-overlay').click(onPopupClose);
-    $('.popup').toggle();
-    var $localSearchInput = $('#local-search-input');
-    $localSearchInput.attr('autocapitalize', 'none');
-    $localSearchInput.attr('autocorrect', 'off');
-    $localSearchInput.focus();
+    $('.local-search-pop-overlay').click(onPopupClose);
+    $('.popup').show();
+    $('#local-search-input')
+      .attr('autocapitalize', 'none')
+      .attr('autocorrect', 'off')
+      .focus();
   }
 
   // Search function
   function searchFunc() {
     // Start loading animation
     $('body')
-      .append(`<div class="search-popup-overlay local-search-pop-overlay">
+      .append(`<div class="local-search-pop-overlay">
           <div id="search-loading-icon">
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
           </div>
