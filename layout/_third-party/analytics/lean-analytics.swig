@@ -1,7 +1,7 @@
 {%- if theme.leancloud_visitors.enable and !theme.valine.visitor %}
   {# custom analytics part create by xiamo; edited by LEAFERx #}
   <script reboot>
-    {%- if page.layout === 'post' %}
+  if (CONFIG.page.isPost) {
     function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
       var url = $visitors.attr('id').trim();
@@ -46,7 +46,7 @@
           console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
         });
     }
-    {% else %}
+  } else {
     function showTime(Counter) {
       var entries = [];
       var $visitors = $('.leancloud_visitors');
@@ -85,7 +85,7 @@
           console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
         });
     }
-    {%- endif %}
+  }
 
     $(function() {
       $.get('https://app-router.leancloud.cn/2/route?appId=' + '{{ theme.leancloud_visitors.app_id }}')
@@ -102,15 +102,15 @@
               data: data
             });
           };
-          {%- if page.layout === 'post' %}
+          if (CONFIG.page.isPost) {
             const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
             if (localhost.test(document.URL)) return;
             addCount(Counter);
-          {% else %}
+          } else {
             if ($('.post-title-link').length >= 1) {
               showTime(Counter);
             }
-          {%- endif %}
+          }
         });
     });
   </script>

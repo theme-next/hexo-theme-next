@@ -93,7 +93,7 @@
 {%- endif %}
 
 {# Export some HEXO Configurations to Front-End #}
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '{{ theme.root }}',

@@ -66,19 +66,13 @@
       var db = firebase.firestore()
       var articles = db.collection('{{ theme.firestore.collection }}')
 
-      //https://hexo.io/docs/variables.html
-      var isPost = '{{ page.title }}'.length > 0
-      var isArchive = '{{ page.archive }}' === 'true'
-      var isCategory = '{{ page.category }}'.length > 0
-      var isTag = '{{ page.tag }}'.length > 0
-
-      if (isPost) { //is article page
+      if (CONFIG.page.isPost) { //is article page
         var title = '{{ page.title }}'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
       }
-      else if (!isArchive && !isCategory && !isTag) { //is index page
+      else if (CONFIG.page.isHome) { //is index page
         var titles = [] //array to titles
 
         var postsstr = '{%- for post in page.posts %}titles.push("{{ post.title }}");{%- endfor %}' //if you have a better way to get titles of posts, please change it

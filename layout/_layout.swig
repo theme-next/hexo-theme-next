@@ -104,6 +104,7 @@
       selectors: [
         'title',
         'meta[name=description]',
+        '#page-configurations',
         '#main'
       ]
     });
