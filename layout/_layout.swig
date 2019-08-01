@@ -94,11 +94,16 @@
 
   {% include '_third-party/index.swig' %}
 
+  {%- if theme.pjax %}
+  <div id="bodyend">
+  {%- endif %}
+
   {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {%- endfor %}
 
   {%- if theme.pjax %}
+  </div>
     <script>
     var pjax = new Pjax({
       selectors: [
@@ -113,6 +118,7 @@
       $('script[reboot]').each(function(i, o) {
         $(o).parent().append($(o).remove());
       });
+      $('#bodyend script').remove().appendTo($('#bodyend'));
       // Define Motion Sequence & Bootstrap Motion.
       CONFIG.motion.enable && NexT.motion.integrator
         .init()

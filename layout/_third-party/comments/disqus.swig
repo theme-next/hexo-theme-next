@@ -1,5 +1,5 @@
 {%- if theme.disqus.count %}
-<script reboot>
+<script>
   function loadCount() {
     var d = document, s = d.createElement('script');
     s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/count.js';
@@ -11,7 +11,7 @@
 </script>
 {%- endif %}
 {%- if page.comments %}
-<script reboot>
+<script>
   var disqus_config = function() {
     this.page.url = {{ page.permalink | json }};
     this.page.identifier = {{ page.path | json }};

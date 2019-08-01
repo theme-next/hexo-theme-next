@@ -10,7 +10,7 @@
   {%- set disqusjs_js_url = theme.vendors.disqusjs_js %}
 {%- endif %}
 
-<script reboot>
+<script>
   function initialDsq() {
     window.dsqjs = new DisqusJS({
       api: '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',

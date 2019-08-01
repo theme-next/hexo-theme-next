@@ -6,13 +6,13 @@ $(document).on('DOMContentLoaded', function() {
   var datas;
   var isXml = true;
   // Search DB path
-  var searchPath = CONFIG.search.path;
+  var searchPath = CONFIG.path;
   if (searchPath.length === 0) {
     searchPath = 'search.xml';
   } else if (/json$/i.test(searchPath)) {
     isXml = false;
   }
-  var path = CONFIG.search.root + searchPath;
+  var path = CONFIG.root + searchPath;
   var input = document.getElementById('local-search-input');
   var resultContent = document.getElementById('local-search-result');
 
