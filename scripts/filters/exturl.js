@@ -15,7 +15,7 @@ hexo.extend.filter.register('after_post_render', data => {
 
   const $ = cheerio.load(data.content, {decodeEntities: false});
   const links = $('a');
-  if (!links.length) return data;
+  if (!links.length) return;
 
   var config = hexo.config;
   var siteHost = url.parse(config.url).hostname || config.url;

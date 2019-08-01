@@ -13,7 +13,7 @@ hexo.extend.filter.register('after_post_render', data => {
 
   const $ = cheerio.load(data.content, {decodeEntities: false});
   const images = $('img');
-  if (!images.length) return data;
+  if (!images.length) return;
 
   images.each((i, o) => {
     let src = $(o).attr('src');
