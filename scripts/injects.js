@@ -34,30 +34,30 @@ class ViewInject {
 // Init injects
 function initInject() {
   let injects = {};
-  points.styles.forEach((item) => {
+  points.styles.forEach(item => {
     injects[item] = new StylusInject();
   });
-  points.views.forEach((item) => {
+  points.views.forEach(item => {
     injects[item] = new ViewInject();
   });
   return injects;
 }
 
-module.exports = function(hexo) {
+module.exports = hexo => {
   // Exec theme_inject filter
   let injects = initInject();
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
 
   // Inject stylus, and get relative path base on hexo dir.
-  points.styles.forEach((type) => {
+  points.styles.forEach(type => {
     hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir, item));
   });
 
   // Inject views
-  points.views.forEach((type) => {
+  points.views.forEach(type => {
     hexo.theme.config.injects[type] = [];
-    injects[type].raws.forEach((injectObj) => {
+    injects[type].raws.forEach(injectObj => {
       // If there is no suffix, will add `.swig`
       if (injectObj.name.indexOf('.') < 0) {
         injectObj.name += '.swig';

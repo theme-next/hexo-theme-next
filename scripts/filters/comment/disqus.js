@@ -7,7 +7,7 @@ const {iconText} = require('./common');
 const priority = hexo.config.inject_priority || {};
 
 // Add comment
-hexo.extend.filter.register('theme_inject', function(injects) {
+hexo.extend.filter.register('theme_inject', injects => {
   let theme = hexo.theme.config;
   if (!theme.disqus.enable || !theme.disqus.shortname) return;
 
@@ -26,7 +26,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 }, priority.disqus);
 
 // Add post_meta
-hexo.extend.filter.register('theme_inject', function(injects) {
+hexo.extend.filter.register('theme_inject', injects => {
   let theme = hexo.theme.config;
   if (!theme.disqus.enable || !theme.disqus.shortname || !theme.disqus.count) return;
 
