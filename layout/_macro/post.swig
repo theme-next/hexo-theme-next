@@ -286,10 +286,10 @@
       {% include '../_partials/post/wechat-subscriber.swig' %}
     {%- endif %}
 
-    {%- if page.reward === undefined and theme.reward_settings.enable %}
+    {%- if post.reward === undefined and theme.reward_settings.enable %}
       {%- set reward_able = true %}
     {% else %}
-      {%- set reward_able = page.reward %}
+      {%- set reward_able = post.reward %}
     {%- endif %}
     {%- if reward_able and not is_index %}
       <div>
@@ -382,7 +382,7 @@
         </div>
       {%- endif %}
 
-      {%- set isLast = loop.index % page.per_page === 0 %}
+      {%- set isLast = loop.index % post.per_page === 0 %}
       {%- if is_index and not isLast %}
         <div class="post-eof"></div>
       {%- endif %}
