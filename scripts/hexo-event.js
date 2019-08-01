@@ -26,8 +26,8 @@ hexo.on('generateBefore', () => {
 
     // Custom languages support. Introduced in NexT v6.3.0.
     if (data && data.languages) {
-      var lang = this.config.language;
-      var i18n = this.theme.i18n;
+      var lang = hexo.config.language;
+      var i18n = hexo.theme.i18n;
 
       var mergeLang = lang => {
         i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));

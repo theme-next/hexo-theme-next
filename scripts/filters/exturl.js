@@ -14,12 +14,14 @@ hexo.extend.filter.register('after_post_render', data => {
   if (!cheerio) cheerio = require('cheerio');
 
   const $ = cheerio.load(data.content, {decodeEntities: false});
+  const links = $('a');
+  if (!links.length) return data;
 
-  var config = this.config;
+  var config = hexo.config;
   var siteHost = url.parse(config.url).hostname || config.url;
 
-  $('a').each(() => {
-    var href = $(this).attr('href');
+  links.each((i, o) => {
+    var href = $(o).attr('href');
     // Exit if the href attribute doesn't exists.
     if (!href) return;
 
@@ -32,12 +34,12 @@ hexo.extend.filter.register('after_post_render', data => {
     if (data.hostname === siteHost) return;
 
     // If title atribute filled, set it as title; if not, set url as title.
-    var title = $(this).attr('title') || href;
+    var title = $(o).attr('title') || href;
 
     var encoded = Buffer.from(href).toString('base64');
 
-    $(this).replaceWith(() => {
-      return $(`<span class="exturl" data-url="${encoded}" title="${title}">${$(this).html()}<i class="fa fa-external-link"></i></span>`);
+    $(o).replaceWith(() => {
+      return $(`<span class="exturl" data-url="${encoded}" title="${title}">${$(o).html()}<i class="fa fa-external-link"></i></span>`);
     });
 
   });
