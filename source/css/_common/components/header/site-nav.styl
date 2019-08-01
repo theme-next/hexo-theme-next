@@ -1,27 +1,34 @@
 .site-nav-toggle {
   display: none;
-  position: absolute;
   left: 10px;
+  position: absolute;
+
   +mobile() {
     display: block;
   }
 
   button {
-    margin-top: 2px;
-    padding: 9px 10px;
     background: transparent;
     border: none;
+    margin-top: 2px;
+    padding: 9px 10px;
   }
 }
 
 .site-nav {
   +mobile() {
+    border-top: 1px solid $gray-lighter;
+    clear: both;
     display: none;
     margin: 0 -10px;
     padding: 0 10px;
-    clear: both;
-    border-top: 1px solid $gray-lighter;
   }
-  +tablet() { display: block !important; }
-  +desktop() { display: block !important; }
+
+  +tablet() {
+    display: block !important;
+  }
+
+  +desktop() {
+    display: block !important;
+  }
 }

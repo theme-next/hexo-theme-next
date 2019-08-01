@@ -1,18 +1,12 @@
 body {
   overscroll-behavior: none;
 }
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   body::before {
-    right: 0;
-    top: 0;
-    left: 0;
-    height: 100px;
-    z-index: 2147483647;
-    position: fixed;
-    content: "";
-    display: block;
-    transform: translateY(-99.99px);
-    background: linear-gradient(124deg,
+    animation: rainbow 15s ease infinite;
+    background: linear-gradient(
+      124deg,
       #FF0000,
       #FF7F00,
       #FFFF00,
@@ -25,19 +19,31 @@ body {
       #7F00FF,
       #FF00FF,
       #FF007F,
-      #FF0000);
-    animation: rainbow 15s ease infinite;
+      #FF0000
+    );
     background-size: 1000% 1000%;
+    content: '';
+    display: block;
+    height: 100px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateY(-99.99px);
+    z-index: 2147483647;
   }
 }
+
 @keyframes rainbow {
   0% {
-    background-position: 0% 80%;
+    background-position: 0 80%;
   }
+
   50% {
     background-position: 100% 20%;
   }
+
   100% {
-    background-position: 0% 80%;
+    background-position: 0 80%;
   }
 }

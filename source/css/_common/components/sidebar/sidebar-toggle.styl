@@ -1,31 +1,35 @@
 .sidebar-toggle {
+  background: $black-deep;
+  bottom: 45px;
+  cursor: pointer;
+  height: 14px;
+  line-height: 0;
+  padding: 5px;
   position: fixed;
   right: $b2t-position-right;
-  bottom: 45px;
   width: 14px;
-  height: 14px;
-  padding: 5px;
-  background: $black-deep;
-  line-height: 0;
   z-index: $zindex-5;
-  cursor: pointer;
 
   +tablet-mobile() {
     opacity: $b2t-opacity-hover;
     right: $b2t-position-right-mobile;
-    display: none if not hexo-config('sidebar.onmobile');
+
+    if (!hexo-config('sidebar.onmobile')) {
+      display: none;
+    }
   }
 }
 
 .sidebar-toggle-line {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  height: 2px;
-  width: 100%;
   background: white;
+  display: inline-block;
+  height: 2px;
   margin-top: 3px;
-  transition: all 0.4s;
+  position: relative;
+  transition: all .4s;
+  vertical-align: top;
+  width: 100%;
+
   &:first-child {
     margin-top: 0;
   }

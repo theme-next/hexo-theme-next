@@ -1,8 +1,8 @@
-@import "../Pisces/_layout";
-@import "../Pisces/_brand";
-@import "../Pisces/_menu";
-@import "../Pisces/_sub-menu";
-@import "../Pisces/_sidebar";
+@import '../Pisces/_layout';
+@import '../Pisces/_brand';
+@import '../Pisces/_menu';
+@import '../Pisces/_sub-menu';
+@import '../Pisces/_sidebar';
 
 // =================================================
 // Rewrite _layout.styl
@@ -21,56 +21,61 @@
 // So, it will 12px in Desktop, 10px in Tablets and 8px in Mobiles for all possible paddings.
 // =================================================
 // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
-use_seo = hexo-config('seo');
+$use-seo = hexo-config('seo');
 
 // =================================================
 // Desktop layout styles.
 // =================================================
 // Post blocks.
 .content-wrap {
-  padding: initial;
   background: initial;
-  box-shadow: initial;
   border-radius: initial;
+  box-shadow: initial;
+  padding: initial;
 }
 
 // Post & Comments blocks.
 .post-block {
-  padding: $content-desktop-padding;
   background: white;
-  box-shadow: $box-shadow-inner;
   border-radius: $border-radius-inner;
+  box-shadow: $box-shadow-inner;
+  padding: $content-desktop-padding;
 }
 
 // When blocks are siblings (homepage).
 #posts > article + article {
   .post-block {
-    margin-top: $sidebar-offset;
+    border-radius: $border-radius;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
-    border-radius: $border-radius;
+    margin-top: $sidebar-offset;
   }
 }
 
 // Comments blocks.
 .comments {
-  padding: $content-desktop-padding;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
   margin: auto;
   margin-top: $sidebar-offset;
-  background: white;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
+  padding: $content-desktop-padding;
 }
 
 // Top main padding from header to posts (default 40px).
 .posts-expand {
   padding-top: initial;
+
+  .post-title-link {
+    line-height: inherit;
+  }
 }
 
 // Post navigation items.
 .post-nav-divider {
   width: 4%;
 }
+
 .post-nav-item {
   width: 48%;
 }
@@ -86,11 +91,12 @@ use_seo = hexo-config('seo');
     margin-bottom: initial;
     top: initial;
   }
-  margin: $sidebar-offset 0 0;
-  border-top: initial;
+
   background: white;
-  box-shadow: $box-shadow;
   border-radius: $border-radius;
+  border-top: initial;
+  box-shadow: $box-shadow;
+  margin: $sidebar-offset 0 0;
   padding: 10px 0 10px;
 }
 
@@ -98,6 +104,7 @@ use_seo = hexo-config('seo');
 .main {
   padding-bottom: initial;
 }
+
 .footer {
   bottom: auto;
 }
@@ -106,14 +113,17 @@ use_seo = hexo-config('seo');
 .sub-menu {
   border-bottom: initial !important;
   box-shadow: $box-shadow-inner;
+
   // Adapt submenu(s) with post-blocks.
   &+ #content > #posts {
     .post-block {
       box-shadow: $box-shadow;
       margin-top: $sidebar-offset;
+
       +tablet() {
         margin-top: $content-tablet-padding;
       }
+
       +mobile() {
         margin-top: $content-mobile-padding;
       }
@@ -124,23 +134,21 @@ use_seo = hexo-config('seo');
 // =================================================
 // Headers.
 // =================================================
-.posts-expand .post-title-link {
-  line-height: inherit;
-}
-
 .post-body {
   h1, h2 {
     border-bottom: 1px solid $body-bg-color;
   }
+
   h3 {
-    if use_seo {
+    if ($use-seo) {
       border-bottom: 1px solid $body-bg-color;
     } else {
       border-bottom: 1px dotted $body-bg-color;
     }
   }
+
   h4 {
-    if use_seo {
+    if ($use-seo) {
       border-bottom: 1px dotted $body-bg-color;
     }
   }
@@ -150,11 +158,11 @@ use_seo = hexo-config('seo');
 // > 768px & < 991px
 // =================================================
 +tablet() {
-
   // Posts in blocks.
   .content-wrap {
     padding: $content-tablet-padding;
   }
+
   .posts-expand {
     margin: initial;
 
@@ -165,11 +173,11 @@ use_seo = hexo-config('seo');
   }
 
   .post-block {
-    // Inside posts blocks content padding (default 40px).
-    padding: ($content-tablet-padding * 2);
+    border-radius: $border-radius;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
-    border-radius: $border-radius;
+    // Inside posts blocks content padding (default 40px).
+    padding: ($content-tablet-padding * 2);
   }
 
   // Only if blocks are siblings need bottom margin (homepage).
@@ -182,43 +190,44 @@ use_seo = hexo-config('seo');
   .comments {
     margin-top: $content-tablet-padding;
     padding: $content-tablet-padding ($content-tablet-padding * 2);
-    //padding: initial;
-    //padding-top: $content-tablet-padding;
+    // padding: initial;
+    // padding-top: $content-tablet-padding;
   }
 
   .pagination {
     margin: $content-tablet-padding 0 0;
   }
-
 }
+
 // =================================================
 // < 767px
 // =================================================
 +mobile() {
-
   // Posts in blocks.
   .content-wrap {
     padding: $content-mobile-padding;
   }
+
   .posts-expand {
     margin: initial;
 
     // Components inside Posts.
     .post-button {
-      margin: $sidebar-offset 0px;
+      margin: $sidebar-offset 0;
     }
+
     img {
       padding: initial !important;
     }
   }
 
   .post-block {
-    // Inside posts blocks content padding (default 40px).
-    padding: $sidebar-offset;
-    min-height: auto;
+    border-radius: $border-radius;
     // Rewrite shadows & borders because all blocks have offsets.
     box-shadow: $box-shadow;
-    border-radius: $border-radius;
+    min-height: auto;
+    // Inside posts blocks content padding (default 40px).
+    padding: $sidebar-offset;
   }
 
   // Only if blocks are siblings need bottom margin (homepage).

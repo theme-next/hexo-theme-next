@@ -1,11 +1,12 @@
 if (hexo-config('sidebar.position') == 'left') {
   .sidebar {
-    right: auto;
     left: 0;
-  }
-  .sidebar-toggle, .back-to-top {
     right: auto;
+  }
+
+  .sidebar-toggle, .back-to-top {
     left: $b2t-position-right;
+    right: auto;
 
     +tablet-mobile() {
       left: $b2t-position-right-mobile;

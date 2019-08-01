@@ -1,21 +1,40 @@
-//
+// 
 // Helpers
 // =================================================
 
-
 // Alignment
-.text-left    { text-align: left; }
-.text-center  { text-align: center; }
-.text-right   { text-align: right; }
-.text-justify { text-align: justify; }
-.text-nowrap  { white-space: nowrap; }
+.text-left {
+  text-align: left;
+}
 
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
 
 // Transformation
-.text-lowercase  { text-transform: lowercase; }
-.text-uppercase  { text-transform: uppercase; }
-.text-capitalize { text-transform: capitalize; }
+.text-lowercase {
+  text-transform: lowercase;
+}
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
 
 // Center-align a block level element.
 .center-block {
@@ -23,7 +42,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 
 // Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix {
@@ -51,18 +69,20 @@
 }
 
 .translation {
-  margin-top: -20px;
-  font-size: $font-size-small;
   color: $grey-dark;
+  font-size: $font-size-small;
+  margin-top: -20px;
 }
 
 // https://davidwalsh.name/detect-scrollbar-width
 .scrollbar-measure {
-  width: 100px;
   height: 100px;
   overflow: scroll;
   position: absolute;
   top: -9999px;
+  width: 100px;
 }
 
-.use-motion .motion-element { opacity: 0; }
+.use-motion .motion-element {
+  opacity: 0;
+}

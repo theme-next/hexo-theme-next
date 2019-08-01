@@ -1,28 +1,33 @@
-.use-motion .sidebar .motion-element { opacity: 1; }
+.use-motion .sidebar .motion-element {
+  opacity: 1;
+}
 
 .sidebar {
-  right: auto;
   bottom: auto;
+  right: auto;
 
   a, span.exturl {
     color: $black-light;
 
     &:hover {
-      color: $black-deep;
       border-bottom-color: $black-deep;
+      color: $black-deep;
     }
   }
 }
 
 .sidebar-inner {
-  //padding: 20px 10px 0;
-  box-sizing: border-box;
-  width: $sidebar-desktop;
-  color: $text-color;
   background: white;
-  box-shadow: $box-shadow;
   border-radius: $border-radius;
-  if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) { opacity: 0; }
+  box-shadow: $box-shadow;
+  // padding: 20px 10px 0;
+  box-sizing: border-box;
+  color: $text-color;
+  width: $sidebar-desktop;
+
+  if (hexo-config('motion.enable') && hexo-config('motion.transition.sidebar')) {
+    opacity: 0;
+  }
 
   &.affix {
     position: fixed;
@@ -35,7 +40,7 @@
 }
 
 .site-overview {
-  //margin: 0 2px;
+  // margin: 0 2px;
   text-align: left;
 }
 
@@ -48,25 +53,28 @@
 }
 
 .feed-link, .chat {
-  border-top: 1px dotted $grey-light;
   border-bottom: 1px dotted $grey-light;
+  border-top: 1px dotted $grey-light;
   text-align: center;
+
   a {
-    display: block;
-    color: $orange;
     border: none !important;
+    color: $orange;
+    display: block;
 
     &:hover {
       background: none;
       color: darken($orange, 20%);
 
-      i { color: darken($orange, 20%); }
+      i {
+        color: darken($orange, 20%);
+      }
     }
   }
 }
 
 .links-of-author {
-  //clearfix();
+  // clearfix();
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -74,16 +82,19 @@
 
 .links-of-author-item {
   sidebar-inline-links-item();
+
   a, span.exturl {
-    display: block;
     border-bottom: none;
+    display: block;
     text-decoration: none;
 
-    &::before { display: none; }
+    &::before {
+      display: none;
+    }
 
     &:hover {
-      border-radius: 4px;
       background: $gainsboro;
+      border-radius: 4px;
     }
   }
 
@@ -93,16 +104,23 @@
 }
 
 .links-of-blogroll {
-  text-align: center;
   padding: 3px 0 0;
+  text-align: center;
 }
-.links-of-blogroll-item { padding: 0; }
+
+.links-of-blogroll-item {
+  padding: 0;
+}
+
 .links-of-blogroll-inline {
   clearfix();
 
   .links-of-blogroll-item {
     sidebar-inline-links-item();
     display: inline-block;
-    if !hexo-config('social_icons.icons_only') { width: unset; }
+
+    if (!hexo-config('social_icons.icons_only')) {
+      width: unset;
+    }
   }
 }
