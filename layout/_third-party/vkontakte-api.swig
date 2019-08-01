@@ -6,8 +6,10 @@
         apiId: {{ theme.vkontakte_api.app_id }}
       });
 
-      {%- if not is_home() and (is_post() and theme.vkontakte_api.like) %}
-        VK.Widgets.Like("vk_like", {type: "mini", height: 20});
+      {%- if theme.vkontakte_api.like %}
+        if (CONFIG.page.isPost) {
+          VK.Widgets.Like("vk_like", {type: "mini", height: 20});
+        }
       {%- endif %}
 
       {%- if page.comments and theme.vkontakte_api.comments %}

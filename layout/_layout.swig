@@ -98,6 +98,9 @@
   <div id="bodyend">
   {%- endif %}
 
+  {% include '_third-party/math/index.swig' %}
+  {% include '_third-party/quicklink.swig' %}
+
   {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {%- endfor %}
