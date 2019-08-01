@@ -95,7 +95,7 @@
   {% include '_third-party/index.swig' %}
 
   {%- if theme.pjax %}
-  <div id="bodyend">
+    <div id="bodyend">
   {%- endif %}
 
   {% include '_third-party/math/index.swig' %}
@@ -106,7 +106,7 @@
   {%- endfor %}
 
   {%- if theme.pjax %}
-  </div>
+    </div>
     <script>
     var pjax = new Pjax({
       selectors: [
