@@ -1,41 +1,49 @@
-//
+// 
 // Mist scheme
 // =================================================
-
-@import "_base";
-@import "outline/outline";
-@import "_header";
-@import "_logo";
-@import "_menu";
-@import "_posts-expanded";
-@import "../Muse/sidebar/_sidebar";
-@import "../Muse/sidebar/sidebar-blogroll";
+@import '_base';
+@import 'outline/outline';
+@import '_header';
+@import '_logo';
+@import '_menu';
+@import '_posts-expanded';
+@import '../Muse/sidebar/_sidebar';
+@import '../Muse/sidebar/sidebar-blogroll';
 
 // Components
 // --------------------------------------------------
 .btn {
-  padding: 0 10px;
-  border-width: 2px;
   border-radius: 0;
+  border-width: 2px;
+  padding: 0 10px;
 }
 
-.headband { display: none; }
+.headband {
+  display: none;
+}
 
 // Page - Container
 // --------------------------------------------------
 .container .main-inner {
-  +mobile() { width: auto; }
+  +mobile() {
+    width: auto;
+  }
 }
 
 // Page - Post details
 // --------------------------------------------------
 .page-post-detail {
-  .post-title,
-  .post-meta { text-align: center; }
+  .post-title, .post-meta {
+    text-align: center;
+  }
 
-  .post-title::before { display: none; }
+  .post-title::before {
+    display: none;
+  }
 
-  .post-meta { margin-bottom: 60px; }
+  .post-meta {
+    margin-bottom: 60px;
+  }
 }
 
 // Pagination
@@ -53,17 +61,18 @@
 // Footer
 // --------------------------------------------------
 .footer {
-  margin-top: 80px;
-  padding: 10px 0;
   background: $whitesmoke;
   color: $grey-dim;
+  margin-top: 80px;
+  padding: 10px 0;
 }
+
 .footer-inner {
   margin: 0 auto;
   text-align: left;
 
   +mobile() {
-    width: auto;
     text-align: center;
+    width: auto;
   }
 }

@@ -159,7 +159,7 @@
             {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
           {%- endfor %}
 
-          {%- if theme.symbols_count_time.separated_meta %}<br/>{%- endif %}
+          {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
           {%- if config.symbols_count_time.symbols %}
             <span class="post-meta-item">
               <span class="post-meta-item-icon">

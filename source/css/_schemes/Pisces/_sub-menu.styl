@@ -1,38 +1,39 @@
 .sub-menu {
-  margin: 0;
-  padding: 6px 0;
   background: #fff !important;
   border-bottom: 1px solid $table-border-color;
-}
+  margin: 0;
+  padding: 6px 0;
 
-.sub-menu .menu-item {
-  display: inline-block !important;
+  .menu-item {
+    display: inline-block !important;
 
-  & a, span.exturl {
-    padding: initial !important;
-    margin: 5px 10px;
+    & a, span.exturl {
+      margin: 5px 10px;
+      padding: initial !important;
+    }
+
+    & a:hover, span.exturl:hover {
+      background: initial !important;
+      color: $sidebar-highlight;
+    }
   }
 
-  & a:hover, span.exturl:hover {
-    background: initial !important;
-    color: $sidebar-highlight;
-  }
-}
-
-.sub-menu .menu-item-active a {
-  background: #fff !important;
-  color: $sidebar-highlight;
-  border-bottom-color: $sidebar-highlight;
-
-  &:hover {
+  .menu-item-active a {
     background: #fff !important;
     border-bottom-color: $sidebar-highlight;
-  }
+    color: $sidebar-highlight;
 
-  badges = hexo-config('menu_settings.badges');
-  if not badges {
-    &::after {
-      content: initial;
+    &:hover {
+      background: #fff !important;
+      border-bottom-color: $sidebar-highlight;
+    }
+
+    $badges = hexo-config('menu_settings.badges');
+
+    if (!$badges) {
+      &::after {
+        content: initial;
+      }
     }
   }
 }

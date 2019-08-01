@@ -14,7 +14,7 @@ function fullImage(args) {
   var width = args[3] || '';
 
   if (!src) {
-    hexo.log.warn('Image src can NOT be empty');
+    hexo.log.warn('Image src can NOT be empty.');
   }
 
   var image = [`<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="${src}" class="full-image"`];

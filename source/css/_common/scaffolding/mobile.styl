@@ -19,14 +19,12 @@
 
 }
 */
-
-// < 567px
 +mobile-small() {
-
   // For Muse & Mist schemes only vertical economy.
   .header-inner {
     margin-bottom: initial !important;
   }
+
   .main-inner {
     margin-top: initial !important;
   }
@@ -38,9 +36,9 @@
 
   // For all schemes wider width.
   .posts-expand {
-    padding-top: $content-mobile-padding !important;
     // For Muse & Mist & Pisces schemes only wider width.
     margin: initial !important;
+    padding-top: $content-mobile-padding !important;
 
     .post-header {
       padding: 0 18px;
@@ -49,13 +47,12 @@
     .post-meta {
       margin: 3px 0 10px 0 !important;
     }
-
   }
 
   .post-block {
+    margin-top: initial !important;
     // Inside posts blocks content padding (default 40px).
     padding: $content-mobile-padding 0 !important;
-    margin-top: initial !important;
   }
 
   .post-body {
@@ -63,6 +60,7 @@
     h1, h2, h3, h4, h5, h6 {
       margin: 10px 18px 8px;
     }
+
     // Rewrite paddings & margins inside tags.
     .note, .tabs .tab-content .tab-pane {
       h1, h2, h3, h4, h5, h6 {
@@ -102,19 +100,20 @@
     }
 
     .video-container .fluid-vids {
-      margin-bottom:  10px !important;
+      margin-bottom: 10px !important;
     }
 
     .note {
-      padding:        10px !important;
-      margin-bottom:  10px !important;
+      margin-bottom: 10px !important;
+      padding: 10px !important;
 
-      if hexo-config('note.icons') {
+      if (hexo-config('note.icons')) {
         &:not(.no-icon) {
           padding-left: 35px !important;
+
           &::before {
-            top:       8px !important;
-            left:     12px !important;
+            left: 12px !important;
+            top: 8px !important;
           }
         }
       }
@@ -127,9 +126,8 @@
 
   .post-nav {
     padding-bottom: 2px;
-    //padding: 2px 8px;
+    // padding: 2px 8px;
   }
-
 }
 
 /*

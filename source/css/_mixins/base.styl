@@ -1,66 +1,66 @@
 the-transition() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
   transition-delay: 0s;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
 }
 
 the-transition-ease-in() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in;
   transition-delay: 0s;
+  transition-duration: .2s;
+  transition-timing-function: ease-in;
 }
 
 the-transition-ease-out() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
   transition-delay: 0s;
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
 }
 
 mobile-smallest() {
   @media (max-width: 413px) {
-    {block}
+    {block};
   }
 }
 
 mobile-small() {
   @media (max-width: 567px) {
-    {block}
+    {block};
   }
 }
 
 mobile() {
   @media (max-width: 767px) {
-    {block}
+    {block};
   }
 }
 
 tablet-mobile() {
   @media (max-width: 991px) {
-    {block}
+    {block};
   }
 }
 
 tablet() {
   @media (min-width: 768px) and (max-width: 991px) {
-    {block}
+    {block};
   }
 }
 
 desktop() {
   @media (min-width: 992px) {
-    {block}
+    {block};
   }
 }
 
 desktop-large() {
   @media (min-width: 1200px) {
-    {block}
+    {block};
   }
 }
 
 desktop-largest() {
   @media (min-width: 1600px) {
-    {block}
+    {block};
   }
 }
 
@@ -82,12 +82,14 @@ random-color($min, $max) {
 
 // Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
 clearfix() {
-  &::before,
-  &::after {
-    content: " ";
+  &::before, &::after {
+    content: ' ';
     display: table;
   }
-  &::after { clear: both; }
+
+  &::after {
+    clear: both;
+  }
 }
 
 word-wrap() {
@@ -97,7 +99,7 @@ word-wrap() {
 
 disable-touch-hover() {
   // To prevent hover on external links with touch devices after click.
-  @media (hover:none) {
+  @media (hover: none) {
     &:hover {
       background: none;
     }
@@ -105,8 +107,8 @@ disable-touch-hover() {
 }
 
 disable-user-select() {
-  -webkit-user-select: none;
+  user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+  -webkit-user-select: none;
 }
