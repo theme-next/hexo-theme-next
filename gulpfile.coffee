@@ -5,7 +5,7 @@ eslint = require('gulp-eslint')
 shell = require('gulp-shell')
 yaml = require('js-yaml')
 
-gulp.task 'lint', ->
+gulp.task 'lint', =>
   return gulp.src([
     './source/js/affix.js',
     './source/js/algolia-search.js',
@@ -27,7 +27,7 @@ gulp.task 'lint:stylus', shell.task [
   '"./node_modules/.bin/stylint" ./source/css/'
 ]
 
-gulp.task 'validate:config', (cb) ->
+gulp.task 'validate:config', (cb) =>
   themeConfig = fs.readFileSync path.join(__dirname, '_config.yml')
 
   try
@@ -36,7 +36,7 @@ gulp.task 'validate:config', (cb) ->
   catch error
     cb new Error(error)
 
-gulp.task 'validate:languages', (cb) ->
+gulp.task 'validate:languages', (cb) =>
   languagesPath = path.join __dirname, 'languages'
   languages = fs.readdirSync languagesPath
   errors = []
