@@ -49,9 +49,9 @@ module.exports = hexo => {
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
 
-  // Inject stylus, and get relative path base on hexo dir.
+  // Inject stylus, and get absolute path base on hexo dir.
   points.styles.forEach(type => {
-    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir, item));
+    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.resolve(hexo.base_dir, item));
   });
 
   // Inject views
