@@ -17,7 +17,7 @@
 {%- endif %}
 <script src="{{ md5_url }}"></script>
 
-<script>
+<script reboot>
   var gitalk = new Gitalk({
     clientID: '{{ theme.gitalk.client_id }}',
     clientSecret: '{{ theme.gitalk.client_secret }}',

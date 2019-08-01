@@ -1,5 +1,5 @@
 {%- if theme.baidu_analytics %}
-  <script>
+  <script reboot>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");

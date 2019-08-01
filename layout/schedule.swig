@@ -8,6 +8,7 @@
       </ul>
     </div>
   </div>
+  {% include '_third-party/schedule.swig' %}
   {##########################}
   {### END SCHEDULE BLOCK ###}
   {##########################}

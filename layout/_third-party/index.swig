@@ -1,5 +1,4 @@
 {% include 'baidu-push.swig' %}
-{% include 'schedule.swig' %}
 {% include 'math/index.swig' %}
 {% include 'quicklink.swig' %}
 {% include 'bookmark.swig' %}

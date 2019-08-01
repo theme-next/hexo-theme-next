@@ -18,7 +18,7 @@
   
   {%- if loadQL or (page.quicklink or post.quicklink) %}
     <script src="{{ quicklink_uri }}"></script>
-    <script>
+    <script reboot>
       {%- if theme.quicklink.delay %}
         window.addEventListener('load', () => {
       {%- endif %}

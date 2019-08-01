@@ -387,7 +387,6 @@ tagcloud:
 # To get api_key: https://console.developers.google.com
 # Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
 calendar:
-  enable: false
   calendar_id: <required> # Your Google account E-Mail
   api_key: <required>
   orderBy: startTime

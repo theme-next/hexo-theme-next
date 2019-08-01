@@ -1,5 +1,5 @@
 {%- if theme.rating.enable and (not is_home() and is_post()) %}
-  <script>
+  <script reboot>
     wpac_init = window.wpac_init || [];
     wpac_init.push({
       widget: 'Rating',

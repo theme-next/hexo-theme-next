@@ -62,9 +62,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        <div class="reboot">
-          {% include '_partials/analytics/index.swig' %}
-        </div>
+        {% include '_partials/analytics/index.swig' %}
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -94,13 +92,11 @@
   {% include '_scripts/exturl.swig' %}
   {% include '_scripts/three.swig' %}
 
-  <div class="reboot">
   {% include '_third-party/index.swig' %}
 
   {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {%- endfor %}
-  </div>
 
   {%- if theme.pjax %}
     <script>
@@ -113,8 +109,8 @@
     });
     $(document).on('pjax:success', function() {
       $('.menu-item').css("opacity", 1);
-      $('.reboot').each(function() {
-        $(this).find('script').remove().appendTo($(this));
+      $('script[reboot]').each(function(i, o) {
+        $(o).parent().append($(o).remove());
       });
       // Define Motion Sequence & Bootstrap Motion.
       CONFIG.motion.enable && NexT.motion.integrator

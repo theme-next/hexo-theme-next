@@ -4,7 +4,7 @@
   {%- set liveRefer = page.path.replace('index.html', '') %}
 {%- endif %}
 
-<script>
+<script reboot>
   window.livereOptions = {
     refer: '{{ liveRefer }}'
   };

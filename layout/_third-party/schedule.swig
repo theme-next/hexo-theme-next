@@ -1,5 +1,3 @@
-{%- if theme.calendar.enable && page.type === 'schedule' %}
-
 <script>
 // Initialization
 var calendar = {
@@ -166,5 +164,3 @@ function buildEventDOM(tense, event) {
   return eventContent;
 }
 </script>
-
-{%- endif %}

@@ -44,4 +44,4 @@
     }
   });
 </script>
-<script src="{{ theme.math.mathjax.cdn }}"></script>
+<script reboot src="{{ theme.math.mathjax.cdn }}"></script>

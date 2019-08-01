@@ -1,6 +1,6 @@
 {%- if theme.busuanzi_count.enable %}
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script reboot async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   {%- if theme.busuanzi_count.total_visitors %}
     <span class="post-meta-item-icon">
