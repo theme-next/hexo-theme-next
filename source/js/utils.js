@@ -291,7 +291,10 @@ NexT.utils = {
     return selector.replace(/[!"$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, '\\$&');
   },
 
-  isSidebarCouldDisplay: function() {
+  toggleSidebar: function() {
+    if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
+      return;
+    }
     // Expand sidebar on post detail page by default, when post has a toc.
     var $tocContent = $('.post-toc-content');
     var display = CONFIG.page.sidebar;
@@ -301,14 +304,9 @@ NexT.utils = {
       var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
       display = sidebarCouldDisplay && hasTOC;
     }
-    return display;
-  },
-
-  toggleSidebar: function() {
-    if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
-      return;
+    if (display) {
+      $('.sidebar-toggle').trigger('click');
     }
-    $('.sidebar-toggle').trigger('click');
   },
 
   isMuse: function() {

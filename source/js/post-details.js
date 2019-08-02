@@ -68,7 +68,7 @@
     }, 500);
   });
 
-  if (!CONFIG.motion.enable && NexT.utils.isSidebarCouldDisplay()) {
+  if (!CONFIG.motion.enable) {
     NexT.utils.toggleSidebar();
   }
 })();
