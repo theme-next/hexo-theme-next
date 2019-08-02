@@ -1,6 +1,6 @@
 {%- if theme.leancloud_visitors.enable and !theme.valine.visitor %}
   {# custom analytics part create by xiamo; edited by LEAFERx #}
-  <script reboot>
+  <script{{ pjax }}>
   if (CONFIG.page.isPost) {
     function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');

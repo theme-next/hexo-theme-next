@@ -1,5 +1,5 @@
 {%- if theme.rating.enable %}
-  <script reboot>
+  <script{{ pjax }}>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({

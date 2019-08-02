@@ -1,5 +1,5 @@
 {%- if theme.mermaid.enable %}
-<script reboot>
+<script{{ pjax }}>
 function embedMermaid() {
   mermaid.initialize({
     theme: '{{ theme.mermaid.theme }}',

@@ -4,7 +4,7 @@
   {%- if theme.firestore.bluebird %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
   {%- endif %}
-  <script reboot>
+  <script{{ pjax }}>
     (function () {
 
       firebase.initializeApp({

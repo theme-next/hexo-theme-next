@@ -1,5 +1,5 @@
 {%- if theme.pdf.enable %}
-<script reboot>
+<script{{ pjax }}>
 function embedPDF() {
   $('body').find('div.pdf').each(function(i, o) {
     PDFObject.embed($(o).attr('target'), $(o), {

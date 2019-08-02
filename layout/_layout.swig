@@ -9,6 +9,10 @@
 {%- set author = __('author') !== 'author' && __('author') || config.author %}
 {%- set description = __('description') !== 'description' && __('description') || config.description %}
 
+{%- if theme.pjax %}
+  {%- set pjax = ' pjax' %}
+{%- endif %}
+
 {%- set html_class = 'theme-next ' + theme.scheme %}
 {%- if theme.motion.enable %}
   {%- set html_class = html_class + ' use-motion' %}
@@ -93,7 +97,7 @@
   {% include '_third-party/index.swig' %}
 
   {%- if theme.pjax %}
-    <div id="bodyend">
+    <div id="bodyend-pjax">
   {%- endif %}
 
   {% include '_third-party/math/index.swig' %}
@@ -113,15 +117,18 @@
         'title',
         'meta[name=description]',
         '#page-configurations',
-        '#main'
-      ]
+        '#main',
+        '#bodyend-pjax'
+      ],
+      cacheBust: false,
+      analytics: false
     });
     $(document).on('pjax:success', function() {
       $('.menu-item').css("opacity", 1);
-      $('script[reboot]').each(function(i, o) {
+      $('script[pjax]').each(function(i, o) {
         $(o).parent().append($(o).remove());
       });
-      $('#bodyend script').remove().appendTo($('#bodyend'));
+      //$('#bodyend script').remove().appendTo($('#bodyend'));
       // Define Motion Sequence & Bootstrap Motion.
       CONFIG.motion.enable && NexT.motion.integrator
         .init()

@@ -4,7 +4,7 @@
     {%- set bookmark_uri = theme.vendors.bookmark %}
   {%- endif %}
   <script src="{{ bookmark_uri }}"></script>
-  <script reboot>
+  <script{{ pjax }}>
   if (CONFIG.page.isPost) {
     bookmark.scrollToMark('{{ theme.bookmark.save }}', "#{{ __('post.more') }}");
   } else {
