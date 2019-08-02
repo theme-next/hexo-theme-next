@@ -111,38 +111,7 @@
 
   {%- if theme.pjax %}
     </div>
-    <script>
-    var pjax = new Pjax({
-      selectors: [
-        'title',
-        'meta[name=description]',
-        '#page-configurations',
-        '#bodyend-pjax'
-      ],
-      switches: {
-        '.content-wrap': Pjax.switches.innerHTML,
-        '.sidebar-inner': Pjax.switches.innerHTML
-      },
-      cacheBust: false,
-      analytics: false
-    });
-    $(document).on('pjax:send', function() {
-      $('.sidebar-inner').fadeOut();
-    });
-    $(document).on('pjax:success', function() {
-      $('.motion-element').css("opacity", 1);
-      $('.sidebar-inner').stop().fadeIn();
-      $('script[pjax]').each(function(i, o) {
-        $(o).parent().append($(o).remove());
-      });
-      // Define Motion Sequence & Bootstrap Motion.
-      CONFIG.motion.enable && NexT.motion.integrator
-        .init()
-        .add(NexT.motion.middleWares.postList)
-        .add(NexT.motion.middleWares.sidebar)
-        .bootstrap();
-    });
-    </script>
+    {% include '_partials/pjax.swig' %}
   {%- endif %}
 </body>
 </html>
