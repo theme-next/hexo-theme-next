@@ -85,8 +85,6 @@
   {%- set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
   {% include scheme_script %}
 
-  {% block script_extra %}{% endblock %}
-
   {% include '_scripts/next-boot.swig' %}
   {% include '_scripts/scroll-cookie.swig' %}
   {% include '_scripts/exturl.swig' %}
@@ -100,6 +98,8 @@
 
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/quicklink.swig' %}
+
+  {% block script_extra %}{% endblock %}
 
   {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
