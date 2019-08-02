@@ -117,7 +117,8 @@
         'title',
         'meta[name=description]',
         '#page-configurations',
-        '#main',
+        '.content-wrap',
+        '.sidebar-inner',
         '#bodyend-pjax'
       ],
       cacheBust: false,
@@ -139,6 +140,15 @@
         .add(NexT.motion.middleWares.postList)
         .add(NexT.motion.middleWares.sidebar)
         .bootstrap();
+    });
+    $(document).on('DOMContentLoaded', function() {
+      console.log('DOMContentLoaded')
+    });
+    $(document).ready(function() {
+      console.log('Ready')
+    });
+    $(document).on('pjax:success', function() {
+      console.log('PJAX')
     });
     </script>
   {%- endif %}

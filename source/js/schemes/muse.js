@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded pjax:success', function() {
+$(document).on('DOMContentLoaded', function() {
 
   var sidebarToggleLines = {
     lines: [],
