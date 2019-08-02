@@ -12,14 +12,14 @@ $mixins    = base $scheme;
 for $variable in $variables
   @import "_variables/" + $variable;
 for $inject_variable in hexo-config('injects.variable')
-  @import "../../../../" + $inject_variable;
+  @import $inject_variable;
 
 // Mixins Layer
 // --------------------------------------------------
 for $mixin in $mixins
   @import "_mixins/" + $mixin;
 for $inject_mixin in hexo-config('injects.mixin')
-  @import "../../../../" + $inject_mixin;
+  @import $inject_mixin;
 
 // Common Layer
 // --------------------------------------------------
@@ -42,4 +42,4 @@ for $inject_mixin in hexo-config('injects.mixin')
 // Custom Layer
 // --------------------------------------------------
 for $inject_style in hexo-config('injects.style')
-  @import "../../../../" + $inject_style;
+  @import $inject_style;
