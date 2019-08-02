@@ -117,20 +117,21 @@
         'title',
         'meta[name=description]',
         '#page-configurations',
-        '.content-wrap',
-        '.sidebar-inner',
         '#bodyend-pjax'
       ],
+      switches: {
+        '.content-wrap': Pjax.switches.innerHTML,
+        '.sidebar-inner': Pjax.switches.innerHTML
+      },
       cacheBust: false,
       analytics: false
     });
     $(document).on('pjax:send', function() {
-      if ($('.sidebar-active').length > 0) {
-        NexT.utils.toggleSidebar();
-      }
-    })
+      $('.sidebar-inner').fadeOut();
+    });
     $(document).on('pjax:success', function() {
-      $('.menu-item').css("opacity", 1);
+      $('.motion-element').css("opacity", 1);
+      $('.sidebar-inner').stop().fadeIn();
       $('script[pjax]').each(function(i, o) {
         $(o).parent().append($(o).remove());
       });
@@ -140,15 +141,6 @@
         .add(NexT.motion.middleWares.postList)
         .add(NexT.motion.middleWares.sidebar)
         .bootstrap();
-    });
-    $(document).on('DOMContentLoaded', function() {
-      console.log('DOMContentLoaded')
-    });
-    $(document).ready(function() {
-      console.log('Ready')
-    });
-    $(document).on('pjax:success', function() {
-      console.log('PJAX')
     });
     </script>
   {%- endif %}
