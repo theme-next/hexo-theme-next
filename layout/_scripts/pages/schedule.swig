@@ -1,5 +1,3 @@
-{%- if theme.calendar.enable && page.type === 'schedule' %}
-
 <script>
 // Initialization
 var calendar = {
@@ -21,63 +19,59 @@ var timeMin = new Date();
 
 timeMax.setHours(now.getHours() + calendar.offsetMax);
 timeMin.setHours(now.getHours() - calendar.offsetMin);
+calendar.timeMaxISO      = timeMax.toISOString();
+calendar.timeMinISO      = timeMin.toISOString();
 
 // Build URL
-BASE_URL           = 'https://www.googleapis.com/calendar/v3/calendars/';
-FIELD_KEY          = 'key';
-FIELD_ORDERBY      = 'orderBy';
-FIELD_TIMEMAX      = 'timeMax';
-FIELD_TIMEMIN      = 'timeMin';
-FIELD_SHOWDELETED  = 'showDeleted';
-FIELD_SINGLEEVENTS = 'singleEvents';
-FIELD_MAXRESULTS   = 'maxResults';
+const BASE_URL           = 'https://www.googleapis.com/calendar/v3/calendars/';
+const FIELD_KEY          = 'key';
+const FIELD_ORDERBY      = 'orderBy';
+const FIELD_TIMEMAX      = 'timeMax';
+const FIELD_TIMEMIN      = 'timeMin';
+const FIELD_SHOWDELETED  = 'showDeleted';
+const FIELD_SINGLEEVENTS = 'singleEvents';
+const FIELD_MAXRESULTS   = 'maxResults';
 
-timeMaxISO         = timeMax.toISOString();
-timeMinISO         = timeMin.toISOString();
+var request_url = BASE_URL + calendar.calendar_id  + '/events?' +
+  FIELD_KEY          + '=' + calendar.api_key      + '&' +
+  FIELD_ORDERBY      + '=' + calendar.orderBy      + '&' +
+  FIELD_TIMEMAX      + '=' + calendar.timeMaxISO   + '&' +
+  FIELD_TIMEMIN      + '=' + calendar.timeMinISO   + '&' +
+  FIELD_SHOWDELETED  + '=' + calendar.showDeleted  + '&' +
+  FIELD_SINGLEEVENTS + '=' + calendar.singleEvents + '&' +
+  FIELD_MAXRESULTS   + '=' + calendar.maxResults;
 
-with(calendar) {
-  request_url = BASE_URL + calendar_id + '/events?' +
-    FIELD_KEY          + '=' + api_key      + '&' +
-    FIELD_ORDERBY      + '=' + orderBy      + '&' +
-    FIELD_TIMEMAX      + '=' + timeMaxISO   + '&' +
-    FIELD_TIMEMIN      + '=' + timeMinISO   + '&' +
-    FIELD_SHOWDELETED  + '=' + showDeleted  + '&' +
-    FIELD_SINGLEEVENTS + '=' + singleEvents + '&' +
-    FIELD_MAXRESULTS   + '=' + maxResults;
-}
 
 fetchData();
 var queryLoop = setInterval(fetchData, 60000);
 
 function fetchData() {
-  $.ajax({
-    dataType: 'json',
-    url: request_url,
-    success: function(data) {
+  fetch(request_url).then(response => {
+    return response.json();
+  }).then(data => {
+    $eventList = document.getElementById('event-list');
 
-      $eventList = $('#schedule #event-list');
+    // Clean the event list
+    $eventList.innerHTML = '';
+    var prevEnd = 0; // used to decide where to insert an <hr>
 
-      // clean the event list
-      $eventList.html('');
-      var prevEnd = 0; // used to decide where to insert an <hr>
+    data.items.forEach(event => {
+      // Parse data
+      var utc   = new Date().getTimezoneOffset() * 60000;
+      var start = event.start.dateTime = new Date(event.start.dateTime || (new Date(event.start.date).getTime() + utc));
+      var end   = event.end.dateTime = new Date(event.end.dateTime || (new Date(event.end.date).getTime() + utc));
 
-      data.items.forEach((event) => {
+      tense = judgeTense(now, start, end); // 0:now 1:future -1:past
 
-        // parse data
-        var utc   = new Date().getTimezoneOffset() * 60000;
-        var start = event.start.dateTime = new Date(event.start.dateTime || (new Date(event.start.date).getTime() + utc));
-        var end   = event.end.dateTime = new Date(event.end.dateTime || (new Date(event.end.date).getTime() + utc));
+      if (tense == 1 && prevEnd < now) {
+        $eventList.innerHTML += '<hr>';
+      }
 
-        tense = judgeTense(now, start, end); // 0:now 1:future -1:past
+      eventDOM = buildEventDOM(tense, event);
+      $eventList.innerHTML += eventDOM;
 
-        if (tense == 1 && prevEnd < now) $eventList.append('<hr>');
-
-        eventDOM = buildEventDOM(tense, event);
-        $eventList.append(eventDOM);
-
-        prevEnd = end;
-      });
-    }
+      prevEnd = end;
+    });
   });
 }
 
@@ -166,5 +160,3 @@ function buildEventDOM(tense, event) {
   return eventContent;
 }
 </script>
-
-{%- endif %}

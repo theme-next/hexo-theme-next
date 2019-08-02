@@ -65,7 +65,8 @@
             </div>
           </div>
         {% elif page.type === 'schedule' %}
-          {% include 'schedule.swig' %}
+          <ul id="event-list">
+          </ul>
         {% else %}
           {{ page.content }}
         {%- endif %}
@@ -83,9 +84,13 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ sidebar_template.render(false) }}
+  {{ sidebar_template.render(true) }}
 {% endblock %}
 
 {% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
+  {%- if page.type === 'schedule' %}
+    {% include '_scripts/pages/schedule.swig' %}
+  {% else %}
+    {% include '_scripts/pages/post-details.swig' %}
+  {%- endif %}
 {% endblock %}
