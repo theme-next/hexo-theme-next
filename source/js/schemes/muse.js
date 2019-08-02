@@ -132,7 +132,8 @@ $(document).on('DOMContentLoaded pjax:success', function() {
     mouseupHandler: function(e) {
       var deltaX = e.pageX - mousePos.X;
       var deltaY = e.pageY - mousePos.Y;
-      if (this.isSidebarVisible && Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(e.target).is('.main')) {
+      var clickBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(e.target).is('.main');
+      if (this.isSidebarVisible && (clickBlankPart || $(e.target).is('img.medium-zoom-image, .fancybox img'))) {
         this.clickHandler();
       }
     },

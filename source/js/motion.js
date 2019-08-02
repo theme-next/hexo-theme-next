@@ -179,8 +179,8 @@ NexT.motion.middleWares = {
   },
 
   sidebar: function(integrator) {
-    if (CONFIG.sidebar.display === 'always') {
-      NexT.utils.displaySidebar();
+    if (NexT.utils.isSidebarCouldDisplay()) {
+      NexT.utils.toggleSidebar();
     }
     integrator.next();
   }

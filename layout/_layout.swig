@@ -123,12 +123,16 @@
       cacheBust: false,
       analytics: false
     });
+    $(document).on('pjax:send', function() {
+      if ($('.sidebar-active').length > 0) {
+        NexT.utils.toggleSidebar();
+      }
+    })
     $(document).on('pjax:success', function() {
       $('.menu-item').css("opacity", 1);
       $('script[pjax]').each(function(i, o) {
         $(o).parent().append($(o).remove());
       });
-      //$('#bodyend script').remove().appendTo($('#bodyend'));
       // Define Motion Sequence & Bootstrap Motion.
       CONFIG.motion.enable && NexT.motion.integrator
         .init()

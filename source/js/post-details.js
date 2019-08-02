@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+(function() {
 
   function initScrollSpy() {
     var tocSelector = '.post-toc';
@@ -28,9 +28,7 @@ $(document).on('DOMContentLoaded', function() {
   }
 
   initScrollSpy();
-});
 
-$(document).on('DOMContentLoaded pjax:success', function() {
   var TAB_ANIMATE_DURATION = 200;
 
   $('.sidebar-nav li').on('click', function() {
@@ -70,21 +68,7 @@ $(document).on('DOMContentLoaded pjax:success', function() {
     }, 500);
   });
 
-  // Expand sidebar on post detail page by default, when post has a toc.
-  var $tocContent = $('.post-toc-content');
-  var display = CONFIG.page.sidebar;
-  if (typeof display !== 'boolean') {
-    // There's no definition sidebar in the page front-matter
-    var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post'
-     || CONFIG.sidebar.display === 'always';
-    var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
-    display = isSidebarCouldDisplay && hasTOC;
+  if (!CONFIG.motion.enable && NexT.utils.isSidebarCouldDisplay()) {
+    NexT.utils.toggleSidebar();
   }
-  if (display) {
-    CONFIG.motion.enable
-      ? NexT.motion.middleWares.sidebar = function() {
-        NexT.utils.displaySidebar();
-      }
-      : NexT.utils.displaySidebar();
-  }
-});
+})();

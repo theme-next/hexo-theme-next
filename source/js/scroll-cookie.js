@@ -1,6 +1,6 @@
-$(document).on('DOMContentLoaded', function() {
+/* global Cookies */
 
-  /* global Cookies */
+$(document).on('DOMContentLoaded', function() {
 
   // Set relative link path (without domain)
   var rpath = window.location.href.replace(window.location.origin, '');
