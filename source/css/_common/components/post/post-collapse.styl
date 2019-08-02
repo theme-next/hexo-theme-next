@@ -1,0 +1,119 @@
+.posts-collapse {
+  margin-left: $posts-collapse-left;
+  position: relative;
+  z-index: $zindex-1;
+
+  +mobile() {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    .post-title, .post-meta {
+      display: block;
+      text-align: left;
+      width: auto;
+    }
+  }
+
+  .collection-title {
+    margin: 60px 0;
+    position: relative;
+
+    h1, h2 {
+      margin-left: 20px;
+    }
+
+    small {
+      color: $grey;
+      margin-left: 5px;
+    }
+
+    &::before {
+      background: $grey;
+      border-radius: 50%;
+      content: ' ';
+      height: 8px;
+      left: 0;
+      margin-left: -4px;
+      margin-top: -4px;
+      position: absolute;
+      top: 50%;
+      width: 8px;
+    }
+  }
+
+  .post {
+    margin: 30px 0;
+  }
+
+  .post-header {
+    position: relative;
+    the-transition();
+    border-bottom: 1px dashed $grey-light;
+    transition-property: border;
+
+    &::before {
+      background: $grey;
+      border: 1px solid white;
+      border-radius: 50%;
+      content: ' ';
+      height: 6px;
+      left: 0;
+      margin-left: -4px;
+      position: absolute;
+      top: $font-size-smallest;
+      width: 6px;
+      the-transition();
+      transition-property: background;
+    }
+
+    &:hover {
+      border-bottom-color: $grey-dim;
+
+      &::before {
+        background: $black-deep;
+      }
+    }
+  }
+
+  .post-title {
+    font-size: $font-size-medium;
+    font-weight: normal;
+    line-height: inherit;
+    margin-bottom: 0;
+    margin-left: $font-size-smallest * 5;
+
+    &::after {
+      margin-left: 3px;
+      opacity: .6;
+    }
+
+    a, span.exturl {
+      border-bottom: none;
+      color: $grey-dim;
+    }
+  }
+
+  .post-meta {
+    font-size: $font-size-smallest;
+    left: 20px;
+    position: absolute;
+    top: 5px;
+  }
+
+  &::after {
+    background: $whitesmoke;
+    content: ' ';
+    height: 100%;
+    left: 0;
+    margin-left: -2px;
+    position: absolute;
+    top: 1.25em;
+    width: 4px;
+    z-index: $zindex-bottom;
+  }
+
+  .fa-external-link {
+    font-size: $font-size-small;
+    margin-left: 5px;
+  }
+}
