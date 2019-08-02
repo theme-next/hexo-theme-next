@@ -21,10 +21,17 @@
     {% endif -%}
   };
   function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
+    if (!window.DISQUS) {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    } else {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    }
   }
   {%- if theme.disqus.lazyload %}
     $(function() {
