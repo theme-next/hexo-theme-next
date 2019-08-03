@@ -19,12 +19,16 @@ $(document).on('DOMContentLoaded', function() {
   });
 
   // Define Motion Sequence & Bootstrap Motion.
-  CONFIG.motion.enable && NexT.motion.integrator
-    .add(NexT.motion.middleWares.logo)
-    .add(NexT.motion.middleWares.menu)
-    .add(NexT.motion.middleWares.postList)
-    .add(NexT.motion.middleWares.sidebar)
-    .bootstrap();
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .add(NexT.motion.middleWares.logo)
+      .add(NexT.motion.middleWares.menu)
+      .add(NexT.motion.middleWares.postList)
+      .add(NexT.motion.middleWares.sidebar)
+      .bootstrap();
+  } else {
+    NexT.utils.updateSidebarPosition();
+  }
 });
 
 $(document).on('DOMContentLoaded pjax:success', function() {
@@ -93,8 +97,4 @@ $(document).on('DOMContentLoaded pjax:success', function() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
   wrapTable();
-
-  if (!CONFIG.motion.enable) {
-    NexT.utils.updateSidebarPosition();
-  }
 });

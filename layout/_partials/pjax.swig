@@ -15,12 +15,10 @@ var pjax = new Pjax({
   scrollTo: !CONFIG.save_scroll
 });
 $(document).on('pjax:send', function() {
-  $('.sidebar-inner').stop().fadeTo('slow', 0);
+  $('.sidebar-inner').stop().fadeTo('fast', 0);
   CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
 });
 $(document).on('pjax:success', function() {
-  $('.sidebar-inner .motion-element').css('opacity', 1);
-  $('.sidebar-inner').stop().fadeTo('slow', 1);
   $('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
     $(o).parent().append($(o).remove());
   });
@@ -31,5 +29,8 @@ $(document).on('pjax:success', function() {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  $('.sidebar-inner .motion-element').css('opacity', 1);
+  $('.sidebar-inner').fadeTo('fast', 1);
+  NexT.utils.updateSidebarPosition();
 });
 </script>
