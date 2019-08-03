@@ -179,7 +179,7 @@ NexT.motion.middleWares = {
   },
 
   sidebar: function(integrator) {
-    NexT.utils.toggleSidebar();
+    NexT.utils.updateSidebarPosition();
     integrator.next();
   }
 };

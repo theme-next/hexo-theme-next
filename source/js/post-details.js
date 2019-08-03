@@ -69,6 +69,6 @@
   });
 
   if (!CONFIG.motion.enable) {
-    NexT.utils.toggleSidebar();
+    NexT.utils.updateSidebarPosition();
   }
 })();

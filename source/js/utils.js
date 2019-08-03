@@ -291,7 +291,7 @@ NexT.utils = {
     return selector.replace(/[!"$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, '\\$&');
   },
 
-  toggleSidebar: function() {
+  updateSidebarPosition: function() {
     if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
       return;
     }
@@ -305,7 +305,7 @@ NexT.utils = {
       display = sidebarCouldDisplay && hasTOC;
     }
     if (display) {
-      $('.sidebar-toggle').trigger('click');
+      $(document).trigger('sidebar:show');
     }
   },
 

@@ -2,7 +2,6 @@
 var pjax = new Pjax({
   selectors: [
     'title',
-    'meta[name=description]',
     '#page-configurations',
     '.content-wrap',
     '.sidebar-inner',
@@ -15,10 +14,9 @@ var pjax = new Pjax({
   analytics: false
 });
 $(document).on('pjax:send', function() {
-  $('.sidebar-inner').fadeOut();
+  $('.sidebar-inner').stop().fadeOut();
 });
 $(document).on('pjax:success', function() {
-  $('.motion-element').css("opacity", 1);
   $('.sidebar-inner').stop().fadeIn();
   $('script[pjax], script#page-configurations, #pjax script').each(function(i, o) {
     $(o).parent().append($(o).remove());
