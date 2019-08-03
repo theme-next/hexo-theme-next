@@ -1,4 +1,4 @@
-/* global NexT, CONFIG */
+/* global NexT */
 
 (function() {
 
@@ -67,4 +67,4 @@
       scrollTop: offset
     }, 500);
   });
-})();
+}());
