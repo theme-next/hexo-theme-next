@@ -42,6 +42,28 @@ NexT.utils = {
     });
   },
 
+  saveScroll: function() {
+    // Set relative link path (without domain)
+    var rpath = window.location.href.replace(window.location.origin, '');
+
+    // Write position in cookie
+    var timeout;
+    $(window).on('scroll', function() {
+      clearTimeout(timeout);
+      timeout = setTimeout(function() {
+        localStorage.setItem('scroll-cookie', $(window).scrollTop() + '|' + rpath);
+      }, 250);
+    });
+
+    // Read position from cookie
+    if (localStorage.getItem('scroll-cookie') !== null) {
+      var cvalues = localStorage.getItem('scroll-cookie').split('|');
+      if (cvalues[1] === rpath) {
+        $(window).scrollTop(cvalues[0]);
+      }
+    }
+  },
+
   /**
    * One-click copy code support.
    */
