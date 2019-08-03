@@ -66,7 +66,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {% include '_partials/analytics/index.swig' %}
+        {{ partial('_partials/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -80,20 +80,11 @@
       </div>
     {%- endif %}
 
-    {% include '_partials/share/index.swig' %}
+    {{ partial('_partials/share/index.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
-  {% include '_scripts/vendors.swig' %}
-  {% include '_scripts/commons.swig' %}
-
-  {%- set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
-  {% include scheme_script %}
-
-  {% include '_scripts/next-boot.swig' %}
-  {% include '_scripts/exturl.swig' %}
-  {% include '_scripts/three.swig' %}
-
-  {% include '_third-party/index.swig' %}
+  {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/index.swig', {}, {cache: theme.cache.enable}) }}
 
   {%- if theme.pjax %}
     <div id="pjax">
