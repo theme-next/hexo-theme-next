@@ -19,7 +19,9 @@ hexo.extend.filter.register('theme_inject', injects => {
        data-colorscheme="{{ theme.facebook_comments_plugin.scheme }}">
     </div>
   </div>
-  `);
+  `, {
+    button: '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook comments'
+  });
 
 }, priority.facebook_comments_plugin);
 

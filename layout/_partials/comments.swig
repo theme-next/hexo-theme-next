@@ -5,7 +5,7 @@
   {%- else %}
     <div class='comment-button-group'>
       {%- for inject_item in theme.injects.comment %}
-        <a class='btn comment-button {{inject_item.locals.class}}'>{{inject_item.locals.class}}</a>
+        <a class='btn comment-button {{inject_item.locals.class}}'>{{inject_item.locals.button}}</a>
       {%- endfor %}
     </div>
     {%- for inject_item in theme.injects.comment %}
