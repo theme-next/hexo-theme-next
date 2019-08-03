@@ -97,7 +97,7 @@
   {% include '_third-party/index.swig' %}
 
   {%- if theme.pjax %}
-    <div id="bodyend-pjax">
+    <div id="pjax">
   {%- endif %}
 
   {% include '_third-party/math/index.swig' %}
