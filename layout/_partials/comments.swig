@@ -25,7 +25,10 @@
         })
       })
       {%- if theme.comments.active %}
-        document.querySelector('.comment-button.{{theme.comments.active}}').click();
+        let activeButton = document.querySelector('.comment-button.{{theme.comments.active}}');
+        if (activeButton) {
+          activeButton.click();
+        }
       {%- endif %}
     </script>
   {%- endif %}
