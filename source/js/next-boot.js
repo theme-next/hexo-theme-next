@@ -3,6 +3,7 @@
 $(document).on('DOMContentLoaded', function() {
 
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
+  CONFIG.tabs && NexT.utils.registerTabsTag();
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
@@ -40,7 +41,6 @@ $(document).on('DOMContentLoaded pjax:success', function() {
 
   CONFIG.save_scroll && NexT.utils.saveScroll();
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.embeddedVideoTransformer();
 

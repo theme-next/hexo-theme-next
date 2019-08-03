@@ -119,7 +119,8 @@ NexT.utils = {
     var THRESHOLD = 50;
     var $top = $('.back-to-top');
 
-    function initBackToTop() {
+    // For init back to top in sidebar if page was scrolled after page refresh.
+    $(window).on('load scroll', function() {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
       var scrollTop = $(window).scrollTop();
@@ -128,15 +129,6 @@ NexT.utils = {
       var scrollPercentRounded = Math.round(scrollPercent * 100);
       var scrollPercentMaxed = Math.min(scrollPercentRounded, 100);
       $('#scrollpercent > span').html(scrollPercentMaxed);
-    }
-
-    // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load', function() {
-      initBackToTop();
-    });
-
-    $(window).on('scroll', function() {
-      initBackToTop();
     });
 
     $top.on('click', function() {
@@ -151,15 +143,13 @@ NexT.utils = {
     var tNav = '.tabs ul.nav-tabs ';
 
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    $(document).on('DOMContentLoaded pjax:success', function() {
-      $(window).bind('hashchange', function() {
-        var tHash = location.hash;
-        if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-          $(`${tNav}li:has(a[href="${tHash}"])`).addClass('active').siblings().removeClass('active');
-          $(tHash).addClass('active').siblings().removeClass('active');
-        }
-      }).trigger('hashchange');
-    });
+    $(window).bind('hashchange', function() {
+      var tHash = location.hash;
+      if (tHash !== '' && !tHash.match(/%\S{2}/)) {
+        $(`${tNav}li:has(a[href="${tHash}"])`).addClass('active').siblings().removeClass('active');
+        $(tHash).addClass('active').siblings().removeClass('active');
+      }
+    }).trigger('hashchange');
 
     $(tNav + '.tab').on('click', function(href) {
       href.preventDefault();
