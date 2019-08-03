@@ -22,14 +22,16 @@
           item.classList.add('active');
           document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
           document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+          localStorage.comments_active = commentClass;
         })
       })
-      {%- if theme.comments.active %}
-        let activeButton = document.querySelector('.comment-button.{{theme.comments.active}}');
+      let activeClass = localStorage.comments_active || '{{theme.comments.active}}';
+      if (activeClass) {
+        let activeButton = document.querySelector(`.comment-button.${activeClass}`);
         if (activeButton) {
           activeButton.click();
         }
-      {%- endif %}
+      }
     </script>
   {%- endif %}
 {%- endif %}
