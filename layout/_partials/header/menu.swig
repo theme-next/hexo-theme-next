@@ -21,7 +21,6 @@
       {%- endif -%}
     {%- endfor %}
 
-    {%- set hasSearch = theme.algolia_search.enable || theme.local_search.enable %}
     {%- if hasSearch %}
       <li class="menu-item menu-item-search">
         <a href="javascript:;" class="popup-trigger">
