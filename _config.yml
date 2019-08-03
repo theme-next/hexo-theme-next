@@ -606,7 +606,7 @@ reading_progress:
 # ---------------------------------------------------------------
 # Comments system setting
 comments:
-  # If you have mutli-comment-system, active this comment when page loaded.
+  # If you want to enable mutli-comment-system, you can active one comment when page loaded.
   active:
 
 # Disqus
