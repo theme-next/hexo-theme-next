@@ -300,9 +300,8 @@ NexT.utils = {
     var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter
-      var sidebarCouldDisplay = CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always';
       var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
-      display = sidebarCouldDisplay && hasTOC;
+      display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
     }
     if (display) {
       $(document).trigger('sidebar:show');
