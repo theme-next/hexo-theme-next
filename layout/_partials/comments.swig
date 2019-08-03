@@ -5,7 +5,7 @@
   {%- else %}
     <div class='comment-button-group'>
       {%- for inject_item in theme.injects.comment %}
-        <button class='comment-button {{inject_item.locals.class}}'>{{inject_item.locals.class}}</button>
+        <a class='btn comment-button {{inject_item.locals.class}}'>{{inject_item.locals.class}}</a>
       {%- endfor %}
     </div>
     {%- for inject_item in theme.injects.comment %}
@@ -17,7 +17,7 @@
       let commentButton = document.querySelectorAll('.comment-button');
       commentButton.forEach(item => {
         console.log(item);
-        let commentClass = item.classList[1];
+        let commentClass = item.classList[2];
         console.log(commentClass);
         item.addEventListener("click", () => {
           commentButton.forEach(rmActive => rmActive.classList.remove('active'));
