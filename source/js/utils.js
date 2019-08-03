@@ -44,24 +44,22 @@ NexT.utils = {
 
   saveScroll: function() {
     // Set relative link path (without domain)
-    var rpath = window.location.href.replace(window.location.origin, '');
+    var rpath = window.location.pathname;
 
-    // Write position in cookie
+    // Read position from cookie
+    if (localStorage.getItem('scroll-cookie' + rpath) !== null) {
+      var cvalues = localStorage.getItem('scroll-cookie' + rpath);
+      $(window).scrollTop(cvalues);
+    }
+
+    // Write position in localStorage
     var timeout;
     $(window).on('scroll', function() {
       clearTimeout(timeout);
       timeout = setTimeout(function() {
-        localStorage.setItem('scroll-cookie', $(window).scrollTop() + '|' + rpath);
+        localStorage.setItem('scroll-cookie' + rpath, $(window).scrollTop());
       }, 250);
     });
-
-    // Read position from cookie
-    if (localStorage.getItem('scroll-cookie') !== null) {
-      var cvalues = localStorage.getItem('scroll-cookie').split('|');
-      if (cvalues[1] === rpath) {
-        $(window).scrollTop(cvalues[0]);
-      }
-    }
   },
 
   /**
