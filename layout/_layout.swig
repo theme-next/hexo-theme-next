@@ -102,6 +102,7 @@
 
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/quicklink.swig' %}
+  {% include '_third-party/vkontakte-api.swig' %}
 
   {% block script_extra %}{% endblock %}
 

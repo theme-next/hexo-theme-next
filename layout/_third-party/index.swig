@@ -3,7 +3,6 @@
 
 {% include 'analytics/analytics-with-jquery.swig' %}
 {% include 'facebook-sdk.swig' %}
-{% include 'vkontakte-api.swig' %}
 {% include 'rating.swig' %}
 
 {% include 'search/index.swig' %}
