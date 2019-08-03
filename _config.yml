@@ -1027,7 +1027,7 @@ vendors:
 
   # Internal version: 0.2.8
   # Example:
-  # pjax: //cdn.jsdelivr.net/npm/pjax@0/pjax.min.js
+  # pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
   pjax:
 
   # Internal version: 2.1.5 & 3.5.7
