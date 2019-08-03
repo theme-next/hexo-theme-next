@@ -607,6 +607,7 @@ reading_progress:
 # Comments system setting
 comments:
   # If you want to enable mutli-comment-system, you can active one comment when page loaded.
+  # active list: changyan | disqus | disqusjs | facebook-comments-plugin | gitalk | livere | valine | vkontakte-comments  
   active:
 
 # Disqus
