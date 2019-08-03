@@ -16,35 +16,33 @@
         //increaseCount will be false when not in article page
 
         return doc.get().then(function (d) {
-          var count
+          var count;
           if (!d.exists) { //has no data, initialize count
             if (increaseCount) {
               doc.set({
                 count: 1
-              })
-              count = 1
+              });
+              count = 1;
+            } else {
+              count = 0;
             }
-            else {
-              count = 0
-            }
-          }
-          else { //has data
-            count = d.data().count
+          } else { //has data
+            count = d.data().count;
             if (increaseCount) {
               if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
                 doc.set({ //increase count
                   count: count + 1
-                })
-                count++
+                });
+                count++;
               }
             }
           }
           if (window.localStorage && increaseCount) { //mark as visited
-            localStorage.setItem(title, true)
+            localStorage.setItem(title, true);
           }
 
-          return count
-        })
+          return count;
+        });
       }
 
       function appendCountTo(el) {
@@ -63,33 +61,32 @@
         }
       }
 
-      var db = firebase.firestore()
-      var articles = db.collection('{{ theme.firestore.collection }}')
+      var db = firebase.firestore();
+      var articles = db.collection('{{ theme.firestore.collection }}');
 
       if (CONFIG.page.isPost) { //is article page
-        var title = '{{ page.title }}'
-        var doc = articles.doc(title)
+        var title = '{{ page.title }}';
+        var doc = articles.doc(title);
 
-        getCount(doc, true).then(appendCountTo($('.post-meta')))
-      }
-      else if (CONFIG.page.isHome) { //is index page
-        var titles = [] //array to titles
+        getCount(doc, true).then(appendCountTo($('.post-meta')));
+      } else if (CONFIG.page.isHome) { //is index page
+        var titles = []; //array to titles
 
         var postsstr = '{%- for post in page.posts %}titles.push("{{ post.title }}");{%- endfor %}' //if you have a better way to get titles of posts, please change it
-        eval(postsstr)
+        eval(postsstr);
 
         var promises = titles.map(function (title) {
-          return articles.doc(title)
+          return articles.doc(title);
         }).map(function (doc) {
-          return getCount(doc)
-        })
+          return getCount(doc);
+        });
         Promise.all(promises).then(function (counts) {
           var metas = $('.post-meta')
           counts.forEach(function (val, idx) {
             appendCountTo(metas[idx])(val)
-          })
-        })
+          });
+        });
       }
-    })()
+    })();
   </script>
 {%- endif %}

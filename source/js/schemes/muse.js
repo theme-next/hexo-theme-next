@@ -159,7 +159,7 @@ $(document).on('DOMContentLoaded', function() {
       }
     },
     showSidebar: function() {
-      this.isSidebarVisible = !this.isSidebarVisible;
+      this.isSidebarVisible = true;
       var self = this;
 
       if ($.isFunction($('html').velocity)) {
@@ -201,7 +201,7 @@ $(document).on('DOMContentLoaded', function() {
       NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': SIDEBAR_WIDTH} : {'padding-left': SIDEBAR_WIDTH}, SIDEBAR_DISPLAY_DURATION);
     },
     hideSidebar: function() {
-      this.isSidebarVisible = !this.isSidebarVisible;
+      this.isSidebarVisible = false;
       this.sidebarEl.find('.motion-element').hide();
       this.sidebarEl.stop().animate({width: 0, display: 'none'}).removeClass('sidebar-active');
 
