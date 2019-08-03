@@ -46,9 +46,9 @@ NexT.utils = {
     // Set relative link path (without domain)
     var rpath = window.location.pathname;
 
-    // Read position from cookie
-    if (localStorage.getItem('scroll-cookie' + rpath) !== null) {
-      var cvalues = localStorage.getItem('scroll-cookie' + rpath);
+    // Read position from localStorage
+    if (localStorage.getItem('scroll' + rpath) !== null) {
+      var cvalues = localStorage.getItem('scroll' + rpath);
       $(window).scrollTop(cvalues);
     }
 
@@ -57,7 +57,7 @@ NexT.utils = {
     $(window).on('scroll', function() {
       clearTimeout(timeout);
       timeout = setTimeout(function() {
-        localStorage.setItem('scroll-cookie' + rpath, $(window).scrollTop());
+        localStorage.setItem('scroll' + rpath, $(window).scrollTop());
       }, 250);
     });
   },
