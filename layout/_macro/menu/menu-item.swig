@@ -5,7 +5,7 @@
   {%- if itemURL.indexOf('http') != 0 %}
     {%- set itemURL = itemURL | replace('//', '/', 'g') %}
   {%- endif %}
-  <li class="menu-item menu-item-{{ itemName | replace(' ', '-', 'g') }}{{ item_active(itemURL, 'menu-item-active') }}">
+  <li class="menu-item menu-item-{{ itemName | replace(' ', '-', 'g') }}">
 
     {%- set menuText = __('menu.' + name) | replace('menu.', '') %}
     {%- if theme.menu_settings.icons %}

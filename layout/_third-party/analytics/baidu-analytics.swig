@@ -1,5 +1,5 @@
 {%- if theme.baidu_analytics %}
-  <script>
+  <script{{ pjax }}>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");

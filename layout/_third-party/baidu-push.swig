@@ -1,5 +1,5 @@
 {%- if theme.baidu_push %}
-  <script>
+  <script{{ pjax }}>
     (function(){
       var bp = document.createElement('script');
       var curProtocol = window.location.protocol.split(':')[0];

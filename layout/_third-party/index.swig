@@ -1,11 +1,8 @@
 {% include 'baidu-push.swig' %}
-{% include 'math/index.swig' %}
-{% include 'quicklink.swig' %}
 {% include 'bookmark.swig' %}
 
 {% include 'analytics/analytics-with-jquery.swig' %}
 {% include 'facebook-sdk.swig' %}
-{% include 'vkontakte-api.swig' %}
 {% include 'rating.swig' %}
 
 {% include 'search/index.swig' %}
