@@ -3,7 +3,6 @@
 $(document).on('DOMContentLoaded', function() {
 
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
@@ -30,6 +29,16 @@ $(document).on('DOMContentLoaded', function() {
 
 $(document).on('DOMContentLoaded pjax:success', function() {
 
+  if (CONFIG.save_scroll) {
+    // Read position from localStorage
+    var value = localStorage.getItem('scroll' + location.pathname);
+    $('html, body').animate({ scrollTop: value || 0 });
+    // Write position in localStorage
+    NexT.utils.saveScrollTimer = setInterval(function() {
+      localStorage.setItem('scroll' + location.pathname, $(window).scrollTop());
+    }, 1000);
+  }
+
   /**
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
@@ -39,8 +48,8 @@ $(document).on('DOMContentLoaded pjax:success', function() {
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
-  CONFIG.save_scroll && NexT.utils.saveScroll();
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
+  CONFIG.tabs && NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.embeddedVideoTransformer();
 
@@ -84,4 +93,8 @@ $(document).on('DOMContentLoaded pjax:success', function() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');
   }
   wrapTable();
+
+  if (!CONFIG.motion.enable) {
+    NexT.utils.updateSidebarPosition();
+  }
 });

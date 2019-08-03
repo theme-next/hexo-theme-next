@@ -67,8 +67,4 @@
       scrollTop: offset
     }, 500);
   });
-
-  if (!CONFIG.motion.enable) {
-    NexT.utils.updateSidebarPosition();
-  }
 })();

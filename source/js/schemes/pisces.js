@@ -27,7 +27,6 @@ $(document).on('DOMContentLoaded', function() {
         bottom: footerOffset
       }
     });
-    sidebarInner.affix('checkPosition');
 
     $('#sidebar').css({ 'margin-top': headerOffset, 'margin-left': 'auto' });
   }
