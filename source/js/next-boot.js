@@ -11,6 +11,7 @@ $(document).ready(function() {
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
+  CONFIG.save_scroll && NexT.utils.saveScroll();
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
   CONFIG.tabs && NexT.utils.registerTabsTag();

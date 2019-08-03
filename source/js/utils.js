@@ -42,6 +42,26 @@ NexT.utils = {
     });
   },
 
+  saveScroll: function() {
+    // Set relative link path (without domain)
+    var rpath = window.location.pathname;
+
+    // Read position from localStorage
+    if (localStorage.getItem('scroll' + rpath) !== null) {
+      var cvalues = localStorage.getItem('scroll' + rpath);
+      $(window).scrollTop(cvalues);
+    }
+
+    // Write position in localStorage
+    var timeout;
+    $(window).on('scroll', function() {
+      clearTimeout(timeout);
+      timeout = setTimeout(function() {
+        localStorage.setItem('scroll' + rpath, $(window).scrollTop());
+      }, 250);
+    });
+  },
+
   /**
    * One-click copy code support.
    */
