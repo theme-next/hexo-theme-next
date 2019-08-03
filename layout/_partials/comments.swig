@@ -2,8 +2,33 @@
   {%- if theme.injects.comment.length == 1 %}
     {%- set inject_item = theme.injects.comment[0] %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+  {%- else %}
+    <div class='comment-button-group'>
+      {%- for inject_item in theme.injects.comment %}
+        <button class='comment-button {{inject_item.locals.class}}'>{{inject_item.locals.class}}</button>
+      {%- endfor %}
+    </div>
+    {%- for inject_item in theme.injects.comment %}
+      <div class='comment-position {{inject_item.locals.class}}'>
+        {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+      </div>
+    {%- endfor %}
+    <script>
+      let commentButton = document.querySelectorAll('.comment-button');
+      commentButton.forEach(item => {
+        console.log(item);
+        let commentClass = item.classList[1];
+        console.log(commentClass);
+        item.addEventListener("click", () => {
+          commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+          item.classList.add('active');
+          document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+          document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+        })
+      })
+      {%- if theme.comments.active %}
+        document.querySelector('.comment-button.{{theme.comments.active}}').click();
+      {%- endif %}
+    </script>
   {%- endif %}
-{# {%- for inject_item in theme.injects.comment %}
-  {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-{%- endfor %} #}
 {%- endif %}

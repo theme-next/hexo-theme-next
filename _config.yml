@@ -604,6 +604,10 @@ reading_progress:
 # Comments and Widgets
 # See: https://theme-next.org/docs/third-party-services/comments-and-widgets
 # ---------------------------------------------------------------
+# Comments system setting
+comments:
+  # If you have mutli-comment-system, active this comment when page loaded.
+  active:
 
 # Disqus
 disqus:

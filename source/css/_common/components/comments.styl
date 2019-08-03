@@ -2,3 +2,30 @@
   margin: 60px 20px 0;
   overflow: hidden;
 }
+
+.comment-button-group {
+  margin: 2rem 0 1rem;
+  display: flex;
+  justify-content: center;
+
+  .comment-button {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.2rem;
+    border-radius: 0.5rem;
+  }
+
+  .comment-button.active {
+    background-color: #ddd;
+  }
+
+}
+
+.comment-position {
+  display: none;
+}
+.comment-position.active {
+  display: block;
+}
