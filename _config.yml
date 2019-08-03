@@ -610,7 +610,7 @@ comments:
   # active list: changyan | disqus | disqusjs | facebook-comments-plugin | gitalk | livere | valine | vkontakte-comments  
   active:
   # If true, storage user selected comment, and active this when page loaded.
-  storage: false
+  storage: true
 
 # Disqus
 disqus:
