@@ -16,9 +16,7 @@
     <script>
       let commentButton = document.querySelectorAll('.comment-button');
       commentButton.forEach(item => {
-        console.log(item);
         let commentClass = item.classList[2];
-        console.log(commentClass);
         item.addEventListener("click", () => {
           commentButton.forEach(rmActive => rmActive.classList.remove('active'));
           item.classList.add('active');
