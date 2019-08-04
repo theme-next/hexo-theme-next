@@ -46,19 +46,17 @@
               {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
               {%- set postText = post.title or post.link %}
               {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
-            {% else %}{#
-            #}{%- if is_index %}
-                {%- if post.sticky > 0 %}
-                  <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
-                    <i class="fa fa-thumb-tack"></i>
-                  </span>
-                {%- endif %}
-                {# Need to delete maybe? #}
-                {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
-              {% else -%}
-                {{- post.title -}}
-                {% include '../_partials/post-edit.swig' %}
+            {% elif is_index %}
+              {%- if post.sticky > 0 %}
+                <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+                  <i class="fa fa-thumb-tack"></i>
+                </span>
               {%- endif %}
+              {# Need to delete maybe? #}
+              {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
+            {% else -%}
+              {{- post.title -}}
+              {% include '../_partials/post-edit.swig' %}
             {%- endif %}
           </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
         {%- endif %}
@@ -70,13 +68,11 @@
           {%- set datetime_diff = date_diff or time_diff %}
 
           {%- if theme.post_meta.created_at %}
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="{{ __('post.posted') }}">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              {%- if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.posted') }}</span>
-              {%- endif %}
+              <span class="post-meta-item-text">{{ __('post.posted') }}</span>
 
               {%- if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
@@ -94,13 +90,11 @@
             {%- set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
             {%- if display_updated or !theme.post_meta.created_at %}
-              <span class="post-meta-item">
+              <span class="post-meta-item" title="{{ __('post.edited') }}">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                {%- if theme.post_meta.item_text %}
-                  <span class="post-meta-item-text">{{ __('post.edited') }}</span>
-                {%- endif %}
+                <span class="post-meta-item-text">{{ __('post.edited') }}</span>
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
                 #}{{ date(post.updated) -}}
                 </time>
@@ -109,13 +103,11 @@
           {%- endif %}
 
           {%- if post.categories and post.categories.length and theme.post_meta.categories %}
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="{{ __('post.in') }}">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              {%- if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.in') }}</span>
-              {%- endif %}
+              <span class="post-meta-item-text">{{ __('post.in') }}</span>
               {%- for cat in post.categories %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
                 #}<a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">{#
@@ -133,25 +125,32 @@
 
           {# LeanCloud PageView #}
           {%- if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
-            <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}">
+            <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}" title="{{ __('post.views') }}">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              {%- if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              {%- endif %}
-                <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          {%- endif %}
+
+          {%- if theme.firestore.enable %}
+            <span class="post-meta-item" title="{{ __('post.views') }}">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
+              <span class="firestore-visitors-count"></span>
             </span>
           {%- endif %}
 
           {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon"
-              {%- if not theme.post_meta.item_text %} title="{{ __('post.views') }}" {%- endif %}>
+            <span class="post-meta-item" title="{{ __('post.views') }}">
+              <span class="post-meta-item-icon">
                 <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
-                {%- if theme.post_meta.item_text %} {{ __('post.views') + __('symbol.colon') }} {%- endif %}
-                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
               </span>
+              <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           {%- endif %}
 
@@ -159,32 +158,28 @@
             {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
           {%- endfor %}
 
-          {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
           {%- if config.symbols_count_time.symbols %}
-            <span class="post-meta-item">
+          {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
+            <span class="post-meta-item" title="{{ __('symbols_count_time.count') }}">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
               {%- if theme.symbols_count_time.item_text_post %}
                 <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
               {%- endif %}
-              <span title="{{ __('symbols_count_time.count') }}">{#
-              #}{{ symbolsCount(post) }}{#
-            #}</span>
+              <span>{{ symbolsCount(post) }}</span>
             </span>
           {%- endif %}
 
           {%- if config.symbols_count_time.time %}
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="{{ __('symbols_count_time.time') }}">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
               {%- if theme.symbols_count_time.item_text_post %}
                 <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
               {%- endif %}
-              <span title="{{ __('symbols_count_time.time') }}">{#
-              #}{{ symbolsTime(post, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
-            #}</span>
+              <span>{{ symbolsTime(post, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
             </span>
           {%- endif %}
 

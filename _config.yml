@@ -810,7 +810,6 @@ firestore:
   collection: articles # Required, a string collection name to access firestore database
   apiKey: # Required
   projectId: # Required
-  bluebird: false # Enable this if you want to include bluebird 3.5.1 (core version) Promise polyfill
 
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
