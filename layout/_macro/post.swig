@@ -38,7 +38,6 @@
           #}{# Link posts #}{#
           #}{%- if post.link %}
               {%- if post.sticky > 0 %}
-                {{ post.sticky }}
                 <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
                   <i class="fa fa-thumb-tack"></i>
                 </span>
@@ -52,7 +51,6 @@
                   <i class="fa fa-thumb-tack"></i>
                 </span>
               {%- endif %}
-              {# Need to delete maybe? #}
               {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
             {% else -%}
               {{- post.title -}}
