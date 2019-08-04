@@ -20,7 +20,7 @@ hexo.extend.filter.register('theme_inject', injects => {
     </div>
   </div>
   `, {
-    button: '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook comments'
+    button: '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook'
   });
 
 }, priority.facebook_comments_plugin);
