@@ -41,7 +41,7 @@
     }
   </script>
   <script{{ pjax }}>
-    //(function() {
+    (function() {
       var db = firebase.firestore();
       var articles = db.collection('{{ theme.firestore.collection }}');
 
@@ -69,6 +69,6 @@
           });
         });
       }
-    //})();
+    })();
   </script>
 {%- endif %}
