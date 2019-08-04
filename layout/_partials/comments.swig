@@ -13,7 +13,7 @@
         {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
       </div>
     {%- endfor %}
-    <script>
+    <script{{ pjax }}>
       let commentButton = document.querySelectorAll('.comment-button');
       commentButton.forEach(item => {
         let commentClass = item.classList[2];
