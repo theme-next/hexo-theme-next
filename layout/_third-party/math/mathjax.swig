@@ -44,4 +44,18 @@
     }
   });
 </script>
-<script src="{{ theme.math.mathjax.cdn }}"></script>
+<script>
+if (window.MathJax) {
+  MathJax.Hub.Typeset();
+} else {
+  $.ajax({
+    type: 'GET',
+    url: '{{ theme.math.mathjax.cdn }}',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      MathJax.Hub.Typeset();
+    }
+  });
+}
+</script>
