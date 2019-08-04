@@ -14,8 +14,13 @@
 {%- endif %}
 
 {# Exports some front-matter variables to Front-End #}
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: {{ page.sidebar | json_encode }},
+    isHome: {{ is_home() }},
+    isPost: {{ is_post() }},
+    isPage: {{ is_page() }},
+    isArchive: {{ is_archive() }}
   };
 </script>

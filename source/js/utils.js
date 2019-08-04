@@ -99,7 +99,8 @@ NexT.utils = {
     var THRESHOLD = 50;
     var $top = $('.back-to-top');
 
-    function initBackToTop() {
+    // For init back to top in sidebar if page was scrolled after page refresh.
+    $(window).on('load scroll', function() {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
       var scrollTop = $(window).scrollTop();
@@ -108,15 +109,6 @@ NexT.utils = {
       var scrollPercentRounded = Math.round(scrollPercent * 100);
       var scrollPercentMaxed = Math.min(scrollPercentRounded, 100);
       $('#scrollpercent > span').html(scrollPercentMaxed);
-    }
-
-    // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load', function() {
-      initBackToTop();
-    });
-
-    $(window).on('scroll', function() {
-      initBackToTop();
     });
 
     $top.on('click', function() {
@@ -128,33 +120,15 @@ NexT.utils = {
    * Tabs tag listener (without twitter bootstrap).
    */
   registerTabsTag: function() {
-    var tNav = '.tabs ul.nav-tabs ';
-
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    $(function() {
-      $(window).bind('hashchange', function() {
-        var tHash = location.hash;
-        if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-          $(`${tNav}li:has(a[href="${tHash}"])`).addClass('active').siblings().removeClass('active');
-          $(tHash).addClass('active').siblings().removeClass('active');
-        }
-      }).trigger('hashchange');
-    });
-
-    $(tNav + '.tab').on('click', function(href) {
+    $('.tabs ul.nav-tabs .tab').on('click', function(href) {
       href.preventDefault();
       // Prevent selected tab to select again.
       if (!$(this).hasClass('active')) {
-
         // Add & Remove active class on `nav-tabs` & `tab-content`.
         $(this).addClass('active').siblings().removeClass('active');
         var tActive = $(this).find('a').attr('href');
         $(tActive).addClass('active').siblings().removeClass('active');
-
-        // Clear location hash in browser if #permalink exists.
-        if (location.hash !== '') {
-          history.pushState('', document.title, window.location.pathname + window.location.search);
-        }
       }
     });
   },
@@ -169,6 +143,17 @@ NexT.utils = {
         $(`iframe[data-feature=${featureID}]`).height(parseInt(height, 10) + 30);
       }
     }, false);
+  },
+
+  registerActiveMenuItem: function() {
+    $('.menu-item').each(function() {
+      var target = $(this).find('a[href]')[0];
+      if (target.hostname === location.hostname && (target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '', 'g'))) {
+        $(this).addClass('menu-item-active');
+      } else {
+        $(this).removeClass('menu-item-active');
+      }
+    });
   },
 
   /**
@@ -248,7 +233,6 @@ NexT.utils = {
         }
       }
     });
-
   },
 
   hasMobileUA: function() {
@@ -281,11 +265,21 @@ NexT.utils = {
     return selector.replace(/[!"$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, '\\$&');
   },
 
-  displaySidebar: function() {
+  updateSidebarPosition: function() {
     if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
       return;
     }
-    $('.sidebar-toggle').trigger('click');
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    var display = CONFIG.page.sidebar;
+    if (typeof display !== 'boolean') {
+      // There's no definition sidebar in the page front-matter
+      var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
+      display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
+    }
+    if (display) {
+      $(document).trigger('sidebar:show');
+    }
   },
 
   isMuse: function() {

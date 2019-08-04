@@ -1,9 +1,3 @@
-{%- set valine_uri = '//unpkg.com/valine/dist/Valine.min.js' %}
-{%- if theme.vendors.valine %}
-  {%- set valine_uri = theme.vendors.valine %}
-{%- endif %}
-<script src="{{ valine_uri }}"></script>
-
 <script>
   var GUEST = ['nick', 'mail', 'link'];
   var guest = '{{ theme.valine.guest_info }}';
@@ -21,6 +15,7 @@
     meta: guest,
     pageSize: '{{ theme.valine.pageSize }}' || 10,
     visitor: {{ theme.valine.visitor }},
-    lang: '{{ theme.valine.language }}' || 'zh-cn'
+    lang: '{{ theme.valine.language }}' || 'zh-cn',
+    path: location.pathname
   });
 </script>

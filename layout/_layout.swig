@@ -9,6 +9,10 @@
 {%- set author = __('author') !== 'author' && __('author') || config.author %}
 {%- set description = __('description') !== 'description' && __('description') || config.description %}
 
+{%- if theme.pjax %}
+  {%- set pjax = ' pjax' %}
+{%- endif %}
+
 {%- set html_class = 'theme-next ' + theme.scheme %}
 {%- if theme.motion.enable %}
   {%- set html_class = html_class + ' use-motion' %}
@@ -33,7 +37,7 @@
     {%- set container_class = container_class + ' sidebar-position-' + theme.sidebar.position %}
   {%- endif %}
 
-  <div class="{{ container_class }} {% block page_class %}{% endblock %}">
+  <div class="{{ container_class }}">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -48,7 +52,7 @@
           {%- if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
           {%- endif %}
-          <div id="content" class="content">
+          <div id="content" class="content {% block page_class %}{% endblock %}">
             {% block content %}{% endblock %}
           </div>
           {% include '_partials/comments.swig' %}
@@ -62,7 +66,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {% include '_partials/analytics/index.swig' %}
+        {{ partial('_partials/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -76,27 +80,29 @@
       </div>
     {%- endif %}
 
-    {% include '_partials/share/index.swig' %}
+    {{ partial('_partials/share/index.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
-  {% include '_scripts/vendors.swig' %}
-  {% include '_scripts/commons.swig' %}
+  {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/index.swig', {}, {cache: theme.cache.enable}) }}
 
-  {%- set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
-  {% include scheme_script %}
+  {%- if theme.pjax %}
+    <div id="pjax">
+  {%- endif %}
+
+  {% include '_third-party/math/index.swig' %}
+  {% include '_third-party/quicklink.swig' %}
+  {% include '_third-party/vkontakte-api.swig' %}
 
   {% block script_extra %}{% endblock %}
-
-  {% include '_scripts/next-boot.swig' %}
-  {% include '_scripts/scroll-cookie.swig' %}
-  {% include '_scripts/exturl.swig' %}
-  {% include '_scripts/three.swig' %}
-
-  {% include '_third-party/index.swig' %}
 
   {%- for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {%- endfor %}
 
+  {%- if theme.pjax %}
+    </div>
+    {% include '_partials/pjax.swig' %}
+  {%- endif %}
 </body>
 </html>

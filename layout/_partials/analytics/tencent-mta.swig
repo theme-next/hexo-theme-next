@@ -1,5 +1,5 @@
 {%- if theme.tencent_mta %}
-  <script>
+  <script{{ pjax }}>
     var _mtac = {};
     (function() {
       var mta = document.createElement("script");

@@ -1,6 +1,6 @@
 /* global instantsearch, CONFIG */
 
-$(document).ready(function() {
+$(document).on('DOMContentLoaded', function() {
   var algoliaSettings = CONFIG.algolia;
   var isAlgoliaSettingsValid = algoliaSettings.applicationID
                             && algoliaSettings.apiKey
@@ -91,7 +91,7 @@ $(document).ready(function() {
   $('.popup-trigger').on('click', function(e) {
     e.stopPropagation();
     $('body')
-      .append('<div class="search-popup-overlay algolia-pop-overlay"></div>')
+      .append('<div class="algolia-pop-overlay"></div>')
       .css('overflow', 'hidden');
     $('.popup').toggle();
     $('#algolia-search-input').find('input').focus();

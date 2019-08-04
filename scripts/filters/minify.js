@@ -33,11 +33,6 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/exturl.js');
   }
 
-  if (!theme.save_scroll) {
-    hexo.route.remove('js/js.cookie.js');
-    hexo.route.remove('js/scroll-cookie.js');
-  }
-
   if (theme.vendors.jquery) {
     hexo.route.remove('lib/jquery/index.js');
   }

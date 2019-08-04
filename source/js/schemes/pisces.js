@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+$(document).on('DOMContentLoaded', function() {
 
   var sidebarInner = $('.sidebar-inner');
   var sidebarOffset = CONFIG.sidebar.offset || 12;
@@ -27,7 +27,6 @@ $(document).ready(function() {
         bottom: footerOffset
       }
     });
-    sidebarInner.affix('checkPosition');
 
     $('#sidebar').css({ 'margin-top': headerOffset, 'margin-left': 'auto' });
   }
