@@ -45,7 +45,7 @@
   });
 </script>
 <script>
-  NexT.utils.getScript('{{ theme.math.mathjax.cdn }}, function() {
+  NexT.utils.getScript('{{ theme.math.mathjax.cdn }}', function() {
     MathJax.Hub.Typeset();
   }, window.MathJax);
 </script>
