@@ -28,18 +28,6 @@
     });
     gitalk.render('gitalk-container');
   }
-  $(function() {
-    if (window.Gitalk) {
-      initGitalk();
-    } else {
-      $.ajax({
-        type: 'GET',
-        url: '{{ gitalk_js_url }}',
-        dataType: 'script',
-        cache: true,
-        success: initGitalk
-      });
-    }
-  });
+  NexT.utils.getScript('{{ gitalk_js_url }}', initGitalk, window.Gitalk);
 </script>
 {%- endif %}

@@ -45,17 +45,7 @@
   });
 </script>
 <script>
-if (window.MathJax) {
-  MathJax.Hub.Typeset();
-} else {
-  $.ajax({
-    type: 'GET',
-    url: '{{ theme.math.mathjax.cdn }}',
-    dataType: 'script',
-    cache: true,
-    success: function() {
-      MathJax.Hub.Typeset();
-    }
-  });
-}
+  NexT.utils.getScript('{{ theme.math.mathjax.cdn }}, function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
 </script>

@@ -21,15 +21,6 @@
       title: '{{ page.title | addslashes }}',
     });
   }
-  $(function() {
-    if (window.DisqusJS) {
-      initialDsq();
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = '{{ disqusjs_js_url }}';
-      s.onload = initialDsq;
-      (d.head || d.body).appendChild(s);
-    }
-  });
+  NexT.utils.getScript('{{ disqusjs_js_url }}', initialDsq, window.DisqusJS);
 </script>
 {%- endif %}
