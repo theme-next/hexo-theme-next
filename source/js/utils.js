@@ -328,5 +328,19 @@ NexT.utils = {
       ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + this.getSidebarb2tHeight()
       : (sidebarPadding * 2) + (sidebarNavHeight / 2);
     return sidebarSchemePadding;
+  },
+
+  getScript: function(url, callback, condition) {
+    if (condition) {
+      callback();
+    } else {
+      $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: 'script',
+        cache: true,
+        success: callback
+      });
+    }
   }
 };
