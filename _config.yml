@@ -605,12 +605,17 @@ reading_progress:
 # See: https://theme-next.org/docs/third-party-services/comments-and-widgets
 # ---------------------------------------------------------------
 # Comments system setting
+# Types: changyan | disqus | disqusjs | facebook-comments-plugin | gitalk | livere | valine | vkontakte-comments
 comments:
-  # If you want to enable mutli-comment-system, you can active one comment when page loaded.
-  # active list: changyan | disqus | disqusjs | facebook-comments-plugin | gitalk | livere | valine | vkontakte-comments  
+  # If you enable mutli comments, you can active one comment type, it will display as default when page loaded.
   active:
   # If true, storage user selected comment, and active this when page loaded.
   storage: true
+  # Set button style over the default. Configurate as following.
+  button:
+    #disqus: disqus
+    #[facebook-comments-plugin]: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
+    #gitalk: Load Gitalk
 
 # Disqus
 disqus:
