@@ -85,7 +85,7 @@ $font-weight-bolder       = 700;
 
 // Font size
 $font-size-base           = 1em;
-$font-size-base           = unit(hexo-config('font.global.size'), em) if hexo-config('font.global.size') is a 'unit';
+$font-size-base           = unit(hexo-config('font.global.size'), em) if hexo-config('font.enable') and hexo-config('font.global.size') is a 'unit';
 $font-size-smallest       = .75em;
 $font-size-smaller        = .8125em;
 $font-size-small          = .875em;
@@ -98,7 +98,7 @@ $font-size-largest        = 1.375em;
 // Headings font size
 $font-size-headings-step  = .125em;
 $font-size-headings-base  = 1.875em;
-$font-size-headings-base  = unit(hexo-config('font.headings.size'), em) if hexo-config('font.headings.size') is a 'unit';
+$font-size-headings-base  = unit(hexo-config('font.headings.size'), em) if hexo-config('font.enable') and hexo-config('font.headings.size') is a 'unit';
 
 
 // Global line height
@@ -200,7 +200,7 @@ $brand-hover-color              = white;
 $brand-bg                       = $black-deep;
 
 $title-font-size                = $font-size-largest;
-$title-font-size                = unit(hexo-config('font.title.size'), em) if hexo-config('font.title.size') is a 'unit';
+$title-font-size                = unit(hexo-config('font.title.size'), em) if hexo-config('font.enable') and hexo-config('font.title.size') is a 'unit';
 $subtitle-font-size             = $font-size-smaller;
 $subtitle-color                 = $grey-dark;
 $site-subtitle-color            = $grey-dark;
