@@ -14,6 +14,7 @@
       </div>
     {%- endfor %}
     <script{{ pjax }}>
+    (function() {
       let commentButton = document.querySelectorAll('.comment-button');
       commentButton.forEach(item => {
         let commentClass = item.classList[2];
@@ -37,6 +38,7 @@
           activeButton.click();
         }
       }
+    })();
     </script>
   {%- endif %}
 {%- endif %}
