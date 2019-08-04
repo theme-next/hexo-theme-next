@@ -10,17 +10,7 @@ function embedMermaid() {
   });
 }
 if ($('body').find('pre.mermaid').length) {
-  if (mermaid) {
-    embedMermaid();
-  } else {
-    $.ajax({
-      type: 'GET',
-      url: '{{ theme.mermaid.cdn }}',
-      dataType: 'script',
-      cache: true,
-      success: embedMermaid
-    });
-  }
+  NexT.utils.getScript('{{ theme.mermaid.cdn }}', embedMermaid, window.mermaid);
 }
 </script>
 {%- endif %}
