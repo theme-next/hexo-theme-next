@@ -11,29 +11,23 @@
       // IncreaseCount will be false when not in article page
 
       return doc.get().then(d => {
-        var count;
+        var count = 0;
         if (!d.exists) { // Has no data, initialize count
           if (increaseCount) {
             doc.set({
               count: 1
             });
             count = 1;
-          } else {
-            count = 0;
           }
         } else { // Has data
           count = d.data().count;
           if (increaseCount) {
-            if (!(window.localStorage && window.localStorage.getItem(title))) { // If first view this article
-              doc.set({ // Increase count
-                count: count + 1
-              });
-              count++;
-            }
+            // If first view this article
+            doc.set({ // Increase count
+              count: count + 1
+            });
+            count++;
           }
-        }
-        if (window.localStorage && increaseCount) { // Mark as visited
-          localStorage.setItem(title, true);
         }
 
         return count;
@@ -45,28 +39,36 @@
         $(el).text(count);
       }
     }
-
-    var db = firebase.firestore();
-    var articles = db.collection('{{ theme.firestore.collection }}');
   </script>
   <script{{ pjax }}>
-    if (CONFIG.page.isPost) { // Is article page
-      var title = $('.post-title').text().trim();
-      var doc = articles.doc(title);
+    //(function() {
+      var db = firebase.firestore();
+      var articles = db.collection('{{ theme.firestore.collection }}');
 
-      getCount(doc, true).then(appendCountTo($('.firestore-visitors-count')));
-    } else if (CONFIG.page.isHome) { // Is index page
-      var promises = $('.post-title').map((i, o) => {
-        var title = $(o).text().trim();
+      if (CONFIG.page.isPost) { // Is article page
+        var title = $('.post-title').text().trim();
         var doc = articles.doc(title);
-        return getCount(doc);
-      });
-      Promise.all(promises).then(counts => {
-        var metas = $('.firestore-visitors-count');
-        counts.forEach((val, idx) => {
-          appendCountTo(metas[idx])(val);
+        var increaseCount = true;
+        if (localStorage.getItem(title)) {
+          increaseCount = false;
+        } else {
+          // Mark as visited
+          localStorage.setItem(title, true);
+        }
+        getCount(doc, increaseCount).then(appendCountTo($('.firestore-visitors-count')));
+      } else if (CONFIG.page.isHome) { // Is index page
+        var promises = $('.post-title').map((i, o) => {
+          var title = $(o).text().trim();
+          var doc = articles.doc(title);
+          return getCount(doc);
         });
-      });
-    }
+        Promise.all(promises).then(counts => {
+          var metas = $('.firestore-visitors-count');
+          counts.forEach((val, idx) => {
+            appendCountTo(metas[idx])(val);
+          });
+        });
+      }
+    //})();
   </script>
 {%- endif %}
