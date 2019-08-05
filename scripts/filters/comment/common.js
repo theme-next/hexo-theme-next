@@ -20,6 +20,6 @@ module.exports = {
         {%- endif %}
         <span class="post-meta-item-text">{{ post_meta_comment + __('symbol.colon') }}</span>
       {%- endif %}
-    `
+    `;
   }
 };
