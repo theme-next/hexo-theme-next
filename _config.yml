@@ -612,12 +612,15 @@ reading_progress:
 # Comments system setting
 # Types: changyan | disqus | disqusjs | facebook-comments-plugin | gitalk | livere | valine | vkontakte-comments
 comments:
+  # You can choose `buttons` or `tabs`
+  style: tabs
   # If you enable mutli comments, you can active one comment type, it will display as default when page loaded.
   active:
   # If true, storage user selected comment, and active this when page loaded.
+  # Only support style is `buttons`.
   storage: true
-  # Set button style over the default. Configurate as following.
-  button:
+  # Modify button or tabs style over the default. Configurate as following.
+  nav:
     #disqus: disqus
     #[facebook-comments-plugin]: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
     #gitalk: Load Gitalk

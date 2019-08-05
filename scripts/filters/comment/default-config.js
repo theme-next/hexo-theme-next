@@ -14,8 +14,9 @@ hexo.extend.filter.register('theme_inject', injects => {
     }, element.args[0]);
     // Set custom button content
     let locals = element.args[0];
-    if (hexo.theme.config.comments.button) {
-      let customButton = hexo.theme.config.comments.button[locals.class];
+    let nav = hexo.theme.config.comments.nav;
+    if (nav) {
+      let customButton = nav[locals.class];
       if (customButton) {
         locals.button = customButton;
       }
