@@ -13,13 +13,11 @@ module.exports = {
       <span class="post-meta-item-icon">
         <i class="fa fa-${icon}"></i>
       </span>
-      {%- if theme.post_meta.item_text %}
-        {%- set post_meta_comment = __('post.comments.${key}') %}
-        {%- if post_meta_comment == 'post.comments.${key}' %}
-          {%- set post_meta_comment = '${defaultValue}' %}
-        {%- endif %}
-        <span class="post-meta-item-text">{{ post_meta_comment + __('symbol.colon') }}</span>
+      {%- set post_meta_comment = __('post.comments.${key}') %}
+      {%- if post_meta_comment == 'post.comments.${key}' %}
+        {%- set post_meta_comment = '${defaultValue}' %}
       {%- endif %}
+      <span class="post-meta-item-text">{{ post_meta_comment + __('symbol.colon') }}</span>
     `;
   }
 };

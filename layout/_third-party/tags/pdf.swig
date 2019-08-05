@@ -16,17 +16,7 @@ function embedPDF() {
   });
 }
 if ($('body').find('div.pdf').length) {
-  if (PDFObject) {
-    embedPDF();
-  } else {
-    $.ajax({
-      type: 'GET',
-      url: '{{ theme.pdf.pdfobject.cdn }}',
-      dataType: 'script',
-      cache: true,
-      success: embedPDF
-    });
-  }
+  NexT.utils.getScript('{{ theme.pdf.pdfobject.cdn }}', embedPDF, window.PDFObject);
 }
 </script>
 {%- endif %}
