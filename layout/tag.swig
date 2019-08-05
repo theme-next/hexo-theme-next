@@ -20,7 +20,21 @@
       </div>
 
       {%- for post in page.posts %}
+
+        {# Show year #}
+        {%- set year %}
+        {%- set post.year = date(post.date, 'YYYY') %}
+
+        {%- if post.year !== year %}
+          {%- set year = post.year %}
+          <div class="collection-title">
+            <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
+          </div>
+        {%- endif %}
+        {# endshow #}
+
         {{ post_template.render(post) }}
+
       {%- endfor %}
     </div>
 
