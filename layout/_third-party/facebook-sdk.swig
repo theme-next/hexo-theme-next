@@ -11,7 +11,7 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/{{ config.language|replace('-', '_') }}/sdk.js";
+      js.src = "//connect.facebook.net/{{ config.language | replace('-', '_') }}/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>

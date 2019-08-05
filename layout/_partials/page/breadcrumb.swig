@@ -18,7 +18,7 @@
           {%- if path.indexOf('.html') == -1 %}
             <li><a href="{{ url_for(link) }}/">{{ path | upper }}</a></li>
           {% else %}
-            <li>{{ path.replace('.html', '') | upper }}</li>
+            <li>{{ path | replace('.html', '') | upper }}</li>
           {%- endif %}
         {%- endif %}
       {%- endif %}
