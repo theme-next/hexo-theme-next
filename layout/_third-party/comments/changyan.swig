@@ -5,7 +5,7 @@
   (function() {
     var appid = '{{ theme.changyan.appid }}';
     var conf = '{{ theme.changyan.appkey }}';
-    var width = window.innerWidth || document.documentElement.clientWidth;
+    var width = window.innerWidth or document.documentElement.clientWidth;
     if (width < 960) {
       window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
     } else {
