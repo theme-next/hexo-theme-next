@@ -26,10 +26,6 @@
   {%- set js_vendors.reading_progress = 'reading_progress/reading_progress.js' %}
 {%- endif %}
 
-{%- if theme.valine.enable %}
-  {%- set js_vendors.valine = '//unpkg.com/valine/dist/Valine.min.js' %}
-{%- endif %}
-
 {%- if theme.motion.enable %}
   {%- set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
   {%- set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}

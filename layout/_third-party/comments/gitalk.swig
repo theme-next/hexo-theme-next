@@ -11,7 +11,7 @@
 {%- endif %}
 
 <script>
-  function initGitalk() {
+  NexT.utils.getScript('{{ gitalk_js_url }}', function() {
     var gitalk = new Gitalk({
       clientID: '{{ theme.gitalk.client_id }}',
       clientSecret: '{{ theme.gitalk.client_secret }}',
@@ -27,7 +27,6 @@
       distractionFreeMode: '{{ theme.gitalk.distraction_free_mode }}'
     });
     gitalk.render('gitalk-container');
-  }
-  NexT.utils.getScript('{{ gitalk_js_url }}', initGitalk, window.Gitalk);
+  }, window.Gitalk);
 </script>
 {%- endif %}
