@@ -33,7 +33,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   injects.postMeta.raw('facebook-comments-plugin', `
   {% if post.comments %}
   <span class="post-meta-item">
-    ${iconText}
+    ${iconText('comment-o', 'facebook')}
     <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
       <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
     </a>
