@@ -18,7 +18,7 @@ module.exports = {
         {%- if post_meta_comment == 'post.comments.${key}' %}
           {%- set post_meta_comment = '${defaultValue}' %}
         {%- endif %}
-        <span class="post-meta-item-text">{{ (post_meta_comment|default('${defaultValue}')) + __('symbol.colon') }}</span>
+        <span class="post-meta-item-text">{{ post_meta_comment + __('symbol.colon') }}</span>
       {%- endif %}
     `
   }
