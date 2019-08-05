@@ -19,9 +19,7 @@
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
       </div>
 
-      {%- for post in page.posts %}
-        {{ post_template.render(post) }}
-      {%- endfor %}
+      {{ post_template.render(page.posts) }}
     </div>
 
   </div>
