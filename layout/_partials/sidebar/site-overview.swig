@@ -36,7 +36,7 @@
         {%- endif %}
         {%- set visibleCategories = 0 %}
         {%- for cat in site.categories %}
-          {%- if cat.length %}{%- set visibleCategories += 1 %}{%- endif %}
+          {%- if cat.length %}{%- set visibleCategories = visibleCategories + 1 %}{%- endif %}
         {%- endfor %}
         <span class="site-state-item-count">{{ visibleCategories }}</span>
         <span class="site-state-item-name">{{ __('state.categories') }}</span>
@@ -57,7 +57,7 @@
         {%- endif %}
         {%- set visibleTags = 0 %}
         {%- for tag in site.tags %}
-          {%- if tag.length %}{%- set visibleTags += 1 %}{%- endif %}
+          {%- if tag.length %}{%- set visibleTags = visibleTags + 1 %}{%- endif %}
         {%- endfor %}
         <span class="site-state-item-count">{{ visibleTags }}</span>
         <span class="site-state-item-name">{{ __('state.tags') }}</span>

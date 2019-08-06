@@ -36,7 +36,7 @@
               {%- set visibleTags = 0 %}
               {%- for tag in site.tags %}
                 {%- if tag.length %}
-                  {%- set visibleTags += 1 %}
+                  {%- set visibleTags = visibleTags + 1 %}
                 {%- endif %}
               {%- endfor %}
               {{ _p('counter.tag_cloud', visibleTags) }}
@@ -55,7 +55,7 @@
               {%- set visibleCategories = 0 %}
               {%- for cat in site.categories %}
                 {%- if cat.length %}
-                  {%- set visibleCategories += 1 %}
+                  {%- set visibleCategories = visibleCategories + 1 %}
                 {%- endif %}
               {%- endfor %}
               {{ _p('counter.categories', visibleCategories) }}
