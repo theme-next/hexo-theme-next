@@ -1,8 +1,8 @@
 'use strict';
 
-const merge = require('lodash/merge');
-
 module.exports = hexo => {
+  const merge = require(hexo.base_dir + 'node_modules/lodash/merge');
+
   if (hexo.locals.get) {
     var data = hexo.locals.get('data');
 
