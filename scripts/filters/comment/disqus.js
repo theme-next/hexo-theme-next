@@ -33,8 +33,8 @@ hexo.extend.filter.register('theme_inject', injects => {
   injects.postMeta.raw('disqus', `
   {% if post.comments %}
   <span class="post-meta-item">
-    ${iconText}
-    <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+    ${iconText('comment-o', 'disqus')}
+    <a title="disqus" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
     </a>
   </span>

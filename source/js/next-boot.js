@@ -53,7 +53,7 @@ $(document).on('DOMContentLoaded pjax:success', function() {
   CONFIG.pangu && window.pangu.spacingPage();
 
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
+  NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.embeddedVideoTransformer();
 
