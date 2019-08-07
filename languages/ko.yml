@@ -30,7 +30,6 @@ post:
   sticky: 고정
   toc_empty: 목차 없음
   views: Views
-  comments_count: 댓글
   related_posts: Related Posts
   copy_button: 복사
   copy_success: Copied
@@ -85,6 +84,7 @@ reward:
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Show comments from Gitment
 accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: 이전 페이지
