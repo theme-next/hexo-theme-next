@@ -116,7 +116,6 @@
     },
     localsearch: {{ theme.local_search | json_encode }},
     path: '{{ config.search.path }}',
-    tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     translation: {
       copy_button: '{{__("post.copy_button")}}',

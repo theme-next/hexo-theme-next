@@ -129,11 +129,14 @@ NexT.utils = {
         $(this).addClass('active').siblings().removeClass('active');
         var tActive = $(this).find('a').attr('href');
         $(tActive).addClass('active').siblings().removeClass('active');
+        // Trigger event
+        document.querySelector(tActive).dispatchEvent(new Event('tabs:click', {
+          bubbles: true
+        }));
       }
     });
 
-    window.dispatchEvent(new Event('tabs:registered'));
-
+    window.dispatchEvent(new Event('tabs:register'));
   },
 
   registerCanIUseTag: function() {

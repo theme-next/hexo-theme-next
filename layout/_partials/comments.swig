@@ -50,15 +50,14 @@
         </ul>
         <div class="tab-content">
           {%- for inject_item in theme.injects.comment %}
-            <div class="tab-pane" id="comment-{{ inject_item.locals.class }}">
+            <div class="tab-pane {{ inject_item.locals.class }}" id="comment-{{ inject_item.locals.class }}">
               {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
             </div>
           {%- endfor %}
         </div>
       </div>
-      <script{{ pjax }}>
-        window.addEventListener('tabs:registered', function() {
-          let commentTab = document.querySelectorAll('.tabs-comment a');
+      <script>
+        window.addEventListener('tabs:register', function() {
           let activeClass = '{{ theme.comments.activeClass }}';
           {%- if theme.comments.storage %}
             activeClass = localStorage.getItem('comments_active') || activeClass;
@@ -70,6 +69,12 @@
             }
           }
         });
+        {%- if theme.comments.storage %}
+        window.addEventListener('tabs:click', function(e) {
+          let commentClass = e.target.classList[1];
+          localStorage.setItem('comments_active', commentClass);
+        });
+        {%- endif %}
       </script>
     {%- endif %}
   {%- endif %}
