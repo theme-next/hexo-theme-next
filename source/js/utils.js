@@ -131,6 +131,9 @@ NexT.utils = {
         $(tActive).addClass('active').siblings().removeClass('active');
       }
     });
+
+    window.dispatchEvent(new Event('tabs:registered'));
+
   },
 
   registerCanIUseTag: function() {

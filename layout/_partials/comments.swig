@@ -57,7 +57,7 @@
         </div>
       </div>
       <script{{ pjax }}>
-        (function() {
+        window.addEventListener('tabs:registered', function() {
           let commentTab = document.querySelectorAll('.tabs-comment a');
           let activeClass = '{{ theme.comments.activeClass }}';
           {%- if theme.comments.storage %}
@@ -69,7 +69,7 @@
               activeTab.click();
             }
           }
-        })();
+        });
       </script>
     {%- endif %}
   {%- endif %}
