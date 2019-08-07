@@ -9,14 +9,20 @@ hexo.extend.filter.register('theme_inject', injects => {
     // Set default button content
     let injectName = path.basename(element.name, path.extname(element.name));
     element.args[0] = Object.assign({
+      configKey: injectName,
       class: injectName,
       button: injectName
     }, element.args[0]);
-    // Set custom button content
+    // Get locals and config
     let locals = element.args[0];
-    let nav = hexo.theme.config.comments.nav;
-    if (nav) {
-      let customButton = nav[locals.class];
+    let config = hexo.theme.config.comments;
+    // Set activeClass
+    if (config.active === locals.configKey) {
+      config.activeClass = locals.class;
+    }
+    // Set custom button content
+    if (config.nav) {
+      let customButton = config.nav[locals.configKey];
       if (customButton) {
         locals.button = customButton;
       }

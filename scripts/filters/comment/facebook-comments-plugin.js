@@ -20,6 +20,7 @@ hexo.extend.filter.register('theme_inject', injects => {
     </div>
   </div>
   `, {
+    configKey: 'facebook_comments_plugin',
     button: '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook'
   });
 

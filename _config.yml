@@ -610,7 +610,7 @@ reading_progress:
 # See: https://theme-next.org/docs/third-party-services/comments-and-widgets
 # ---------------------------------------------------------------
 # Comments system setting
-# Types: changyan | disqus | disqusjs | facebook-comments-plugin | gitalk | livere | valine | vkontakte-comments
+# Types: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
 comments:
   # You can choose `buttons` or `tabs`
   style: tabs
@@ -622,7 +622,7 @@ comments:
   # Modify button or tabs style over the default. Configurate as following.
   nav:
     #disqus: disqus
-    #[facebook-comments-plugin]: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
+    #facebook_comments_plugin: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
     #gitalk: Load Gitalk
 
 # Disqus
