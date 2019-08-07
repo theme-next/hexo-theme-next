@@ -27,8 +27,8 @@
               {%- if theme.comments.storage %}
                 localStorage.setItem('comments_active', commentClass);
               {%- endif %}
-            })
-          })
+            });
+          });
           let activeClass = '{{ theme.comments.activeClass }}';
           {%- if theme.comments.storage %}
             activeClass = localStorage.getItem('comments_active') || activeClass;
@@ -45,17 +45,32 @@
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
           {%- for inject_item in theme.injects.comment %}
-            <li class="tab {%- if theme.comments.activeClass == inject_item.locals.class %}active{%- endif %}"><a href="#comment-{{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a></li>
+            <li class="tab"><a href="#comment-{{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a></li>
           {%- endfor %}
         </ul>
         <div class="tab-content">
           {%- for inject_item in theme.injects.comment %}
-            <div class="tab-pane {%- if theme.comments.activeClass == inject_item.locals.class %}active{%- endif %}" id="comment-{{ inject_item.locals.class }}">
+            <div class="tab-pane" id="comment-{{ inject_item.locals.class }}">
               {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
             </div>
           {%- endfor %}
         </div>
       </div>
+      <script{{ pjax }}>
+        (function() {
+          let commentTab = document.querySelectorAll('.tabs-comment a');
+          let activeClass = '{{ theme.comments.activeClass }}';
+          {%- if theme.comments.storage %}
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          {%- endif %}
+          if (activeClass) {
+            let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+            if (activeTab) {
+              activeTab.click();
+            }
+          }
+        })();
+      </script>
     {%- endif %}
   {%- endif %}
 {%- endif %}
