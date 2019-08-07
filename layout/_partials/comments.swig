@@ -4,13 +4,13 @@
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {%- elif theme.injects.comment.length > 1 %}
     {%- if theme.comments.style == 'buttons' %}
-      <div class='comment-button-group'>
+      <div class="comment-button-group">
         {%- for inject_item in theme.injects.comment %}
-          <a class='btn comment-button {{ inject_item.locals.class }}'>{{ inject_item.locals.button }}</a>
+          <a class="btn comment-button {{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a>
         {%- endfor %}
       </div>
       {%- for inject_item in theme.injects.comment %}
-        <div class='comment-position {{ inject_item.locals.class }}'>
+        <div class="comment-position {{ inject_item.locals.class }}">
           {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
         </div>
       {%- endfor %}
@@ -42,13 +42,13 @@
         })();
       </script>
     {%- elif theme.comments.style == 'tabs' %}
-      <div class='tabs tabs-comment'>
-        <ul class='nav-tabs'>
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
           {%- for inject_item in theme.injects.comment %}
-            <li class='tab {%- if theme.comments.activeClass == inject_item.locals.class %}active{%- endif %}'><a href="#comment-{{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a></li>
+            <li class="tab {%- if theme.comments.activeClass == inject_item.locals.class %}active{%- endif %}"><a href="#comment-{{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a></li>
           {%- endfor %}
         </ul>
-        <div class='tab-content'>
+        <div class="tab-content">
           {%- for inject_item in theme.injects.comment %}
             <div class="tab-pane {%- if theme.comments.activeClass == inject_item.locals.class %}active{%- endif %}" id="comment-{{ inject_item.locals.class }}">
               {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
