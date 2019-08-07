@@ -30,7 +30,6 @@ post:
   sticky: 置顶
   toc_empty: 此文章未包含目录
   views: 阅读次数
-  comments_count: 评论数
   related_posts: 相关文章
   copy_button: 复制
   copy_success: 复制成功
@@ -85,6 +84,7 @@ reward:
   wechatpay: 微信支付
   alipay: 支付宝
   bitcoin: 比特币
+gitmentbutton: Show comments from Gitment
 accessibility:
   nav_toggle: 切换导航栏
   prev_page: 上一页
