@@ -261,6 +261,10 @@
       {%- endif %}
     </div>
 
+    {#####################}
+    {### END POST BODY ###}
+    {#####################}
+
     {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {% include '../_partials/post/post-related.swig' with { post: post } %}
     {%- endif %}
@@ -269,117 +273,70 @@
       {%- for inject_item in theme.injects.postBodyEnd %}
         {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
       {%- endfor %}
-    {%- endif %}
 
-    {#####################}
-    {### END POST BODY ###}
-    {#####################}
+      {%- if theme.wechat_subscriber.enable %}
+        {{ partial('../_partials/post/wechat-subscriber.swig', {}, {cache: theme.cache.enable}) }}
+      {%- endif %}
 
-    {%- if theme.wechat_subscriber.enable and not is_index %}
-      {% include '../_partials/post/wechat-subscriber.swig' %}
-    {%- endif %}
+      {%- if post.reward === undefined and theme.reward_settings.enable %}
+        {%- set reward_able = true %}
+      {% else %}
+        {%- set reward_able = post.reward %}
+      {%- endif %}
+      {%- if reward_able %}
+        {{ partial('../_partials/post/post-reward.swig', {}, {cache: theme.cache.enable}) }}
+      {%- endif %}
 
-    {%- if post.reward === undefined and theme.reward_settings.enable %}
-      {%- set reward_able = true %}
-    {% else %}
-      {%- set reward_able = post.reward %}
-    {%- endif %}
-    {%- if reward_able and not is_index %}
-      <div>
-        {% include '../_partials/post/reward.swig' %}
-      </div>
-    {%- endif %}
-
-    {%- if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
-      <div>
+      {%- if theme.creative_commons.license and theme.creative_commons.post %}
         {% include '../_partials/post/post-copyright.swig' with { post: post } %}
-      </div>
+      {%- endif %}
+
+      <footer class="post-footer">
+        {%- if post.tags and post.tags.length %}
+          {%- if theme.tag_icon %}
+            {%- set tag_indicate = '<i class="fa fa-tag"></i>' %}
+          {% else %}
+            {%- set tag_indicate = '#' %}
+          {%- endif %}
+          <div class="post-tags">
+            {%- for tag in post.tags %}
+              <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
+            {%- endfor %}
+          </div>
+        {%- endif %}
+
+        {{ partial('../_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
+
+        {%- if post.prev or post.next %}
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              {%- if post.next %}
+                <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
+                  <i class="fa fa-chevron-left"></i> {{ post.next.title }}
+                </a>
+              {%- endif %}
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              {%- if post.prev %}
+                <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
+                  {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
+                </a>
+              {%- endif %}
+            </div>
+          </div>
+        {%- endif %}
+      </footer>
+    {% else %}
+      <footer class="post-footer">
+        {%- set isLast = loop.index % post.per_page === 0 %}
+        {%- if not isLast %}
+          <div class="post-eof"></div>
+        {%- endif %}
+      </footer>
     {%- endif %}
-
-    <footer class="post-footer">
-      {%- if post.tags and post.tags.length and not is_index %}
-        {%- if theme.tag_icon %}
-          {%- set tag_indicate = '<i class="fa fa-tag"></i>' %}
-        {% else %}
-          {%- set tag_indicate = '#' %}
-        {%- endif %}
-        <div class="post-tags">
-          {%- for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
-          {%- endfor %}
-        </div>
-      {%- endif %}
-
-      {%- if not is_index %}
-      {%- if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
-        <div class="post-widgets">
-        {%- if theme.rating.enable %}
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        {%- endif %}
-
-        {%- if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-          <div class="social-like">
-            {%- if theme.vkontakte_api.enable and theme.vkontakte_api.like %}
-              <div class="vk_like">
-                <span id="vk_like"></span>
-              </div>
-            {%- endif %}
-
-            {%- if theme.facebook_sdk.enable and theme.facebook_sdk.like_button %}
-              <div class="fb_like">
-                <div class="fb-like" data-layout="button_count" data-share="true"></div>
-              </div>
-            {%- endif %}
-          </div>
-        {%- endif %}
-
-        {%- if theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
-          <div class="social-share">
-            {%- if theme.likely.enable %}
-              {% include '../_partials/share/likely.swig' %}
-            {%- endif %}
-            {%- if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
-              <div id="needsharebutton-postbottom">
-                <span class="btn">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i>
-                </span>
-              </div>
-            {%- endif %}
-          </div>
-        {%- endif %}
-        </div>
-      {%- endif %}
-      {%- endif %}
-
-      {%- if not is_index and (post.prev or post.next) %}
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            {%- if post.next %}
-              <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ post.next.title }}
-              </a>
-            {%- endif %}
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            {%- if post.prev %}
-              <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-                {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
-              </a>
-            {%- endif %}
-          </div>
-        </div>
-      {%- endif %}
-
-      {%- set isLast = loop.index % post.per_page === 0 %}
-      {%- if is_index and not isLast %}
-        <div class="post-eof"></div>
-      {%- endif %}
-    </footer>
   </div>
   {######################}
   {### END POST BLOCK ###}
