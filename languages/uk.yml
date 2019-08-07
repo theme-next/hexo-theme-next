@@ -30,7 +30,6 @@ post:
   sticky: Посилання
   toc_empty: Цей запис без змісту
   views: Переглядів
-  comments_count: Коментарів
   related_posts: Схожі записи
   copy_button: Скопіювати
   copy_success: Скопійовано!
@@ -85,6 +84,7 @@ reward:
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Show comments from Gitment
 accessibility:
   nav_toggle: Показати/приховати меню
   prev_page: Попередня сторінка
