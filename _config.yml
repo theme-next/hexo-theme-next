@@ -609,21 +609,23 @@ reading_progress:
 # Comments and Widgets
 # See: https://theme-next.org/docs/third-party-services/comments-and-widgets
 # ---------------------------------------------------------------
-# Comments system setting
-# Types: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
+
+# Multiple Comment System Support
 comments:
-  # You can choose `buttons` or `tabs`
-  style: tabs
-  # If you enable mutli comments, you can active one comment type, it will display as default when page loaded.
+  # Available values: tabs | buttons
+  style:
+  # Choose a comment system to be displayed by default
+  # Supported values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
   active:
-  # If true, storage user selected comment, and active this when page loaded.
-  # Only support style is `buttons`.
+  # This option is only for `style: buttons` now
+  # Setting `true` means remembering the comment system selected by the visitor
   storage: true
-  # Modify button or tabs style over the default. Configurate as following.
+  # Modify icons and texts for any style, here are some examples
   nav:
     #disqus: disqus
     #facebook_comments_plugin: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
     #gitalk: Load Gitalk
+    #vkontakte: vkontakte
 
 # Disqus
 disqus:
