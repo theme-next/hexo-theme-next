@@ -615,9 +615,8 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default
-  # Supported values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
+  # Available values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
   active:
-  # This option is only for `style: buttons` now
   # Setting `true` means remembering the comment system selected by the visitor
   storage: true
   # Modify icons and texts for any style, here are some examples
@@ -625,7 +624,6 @@ comments:
     #disqus: disqus
     #facebook_comments_plugin: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
     #gitalk: Load Gitalk
-    #vkontakte: vkontakte
 
 # Disqus
 disqus:
