@@ -6,11 +6,11 @@
     {%- if theme.comments.style == 'buttons' %}
       <div class='comment-button-group'>
         {%- for inject_item in theme.injects.comment %}
-          <a class='btn comment-button {{inject_item.locals.class}}'>{{inject_item.locals.button}}</a>
+          <a class='btn comment-button {{ inject_item.locals.class }}'>{{ inject_item.locals.button }}</a>
         {%- endfor %}
       </div>
       {%- for inject_item in theme.injects.comment %}
-        <div class='comment-position {{inject_item.locals.class}}'>
+        <div class='comment-position {{ inject_item.locals.class }}'>
           {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
         </div>
       {%- endfor %}
@@ -29,7 +29,7 @@
               {%- endif %}
             })
           })
-          let activeClass = '{{theme.comments.active}}';
+          let activeClass = '{{ theme.comments.active }}';
           {%- if theme.comments.storage %}
             activeClass = localStorage.getItem('comments_active') || activeClass;
           {%- endif %}
@@ -45,12 +45,12 @@
       <div class='tabs tabs-comment'>
         <ul class='nav-tabs'>
           {%- for inject_item in theme.injects.comment %}
-            <li class='tab {%- if theme.comments.active == inject_item.locals.class %}active{%- endif %}'><a href="#comment-{{inject_item.locals.class}}">{{inject_item.locals.button}}</a></li>
+            <li class='tab {%- if theme.comments.active == inject_item.locals.class %}active{%- endif %}'><a href="#comment-{{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a></li>
           {%- endfor %}
         </ul>
         <div class='tab-content'>
           {%- for inject_item in theme.injects.comment %}
-            <div class="tab-pane {%- if theme.comments.active == inject_item.locals.class %}active{%- endif %}" id="comment-{{inject_item.locals.class}}">
+            <div class="tab-pane {%- if theme.comments.active == inject_item.locals.class %}active{%- endif %}" id="comment-{{ inject_item.locals.class }}">
               {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
             </div>
           {%- endfor %}
