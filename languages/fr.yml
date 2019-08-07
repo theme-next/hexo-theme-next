@@ -84,7 +84,6 @@ reward:
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
 accessibility:
   nav_toggle: Basculer la barre de navigation
   prev_page: Page précédente
