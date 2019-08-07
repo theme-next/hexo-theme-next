@@ -30,7 +30,6 @@ post:
   sticky: Sticky
   toc_empty: Esta entrada no tiene una tabla de contenidos
   views: Visitas
-  comments_count: Comentarios
   related_posts: Entradas relacionadas
   copy_button: Copiar
   copy_success: Copiado
@@ -85,6 +84,7 @@ reward:
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+gitmentbutton: Show comments from Gitment
 accessibility:
   nav_toggle: Cambiar a barra de navegación
   prev_page: Página anterior
