@@ -613,7 +613,7 @@ reading_progress:
 # Multiple Comment System Support
 comments:
   # Available values: tabs | buttons
-  style:
+  style: tabs
   # Choose a comment system to be displayed by default
   # Supported values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
   active:
