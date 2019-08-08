@@ -99,6 +99,7 @@
     root: '{{ config.root }}',
     scheme: '{{ theme.scheme }}',
     version: '{{ version }}',
+    exturl: {{ theme.exturl }},
     sidebar: {{ theme.sidebar | json_encode }},
     back2top: {{ theme.back2top | json_encode }},
     save_scroll: {{ theme.save_scroll }},
