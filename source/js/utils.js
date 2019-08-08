@@ -42,6 +42,15 @@ NexT.utils = {
     });
   },
 
+  registerExtURL: function() {
+    $('.exturl').on('click', function() {
+      var $exturl = $(this).attr('data-url');
+      var $decurl = decodeURIComponent(escape(window.atob($exturl)));
+      window.open($decurl, '_blank', 'noopener');
+      return false;
+    });
+  },
+
   /**
    * One-click copy code support.
    */
