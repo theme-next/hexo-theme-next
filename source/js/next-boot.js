@@ -52,6 +52,7 @@ $(document).on('DOMContentLoaded pjax:success', function() {
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
+  CONFIG.exturl && NexT.utils.registerExtURL();
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
