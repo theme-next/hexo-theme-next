@@ -163,7 +163,9 @@ NexT.utils = {
   registerActiveMenuItem: function() {
     $('.menu-item').each(function() {
       var target = $(this).find('a[href]')[0];
-      if (target.hostname === location.hostname && (target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '', 'g'))) {
+      var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
+      var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
+      if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
         $(this).addClass('menu-item-active');
       } else {
         $(this).removeClass('menu-item-active');
