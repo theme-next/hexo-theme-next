@@ -8,13 +8,13 @@
   {%- if theme.scheme === 'Muse' || theme.scheme === 'Mist' %}
     {% include 'sub-menu.swig' %}
   {%- endif %}
-
-  {%- if hasSearch %}
-    <div class="site-search">
-      {{ partial('_partials/search/index.swig', {}, {cache: theme.cache.enable}) }}
-    </div>
-  {%- endif %}
 </nav>
+
+{%- if hasSearch %}
+  <div class="site-search">
+    {{ partial('_partials/search/index.swig', {}, {cache: theme.cache.enable}) }}
+  </div>
+{%- endif %}
 
 {%- for inject_item in theme.injects.header %}
   {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
