@@ -48,24 +48,15 @@
 
 {%- if theme.canvas_nest.enable %}
   {%- if theme.canvas_nest.onmobile %}
-    {%- set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest.min.js') %}
-    {%- if theme.vendors.canvas_nest %}
-      {%- set canvas_nest_uri = theme.vendors.canvas_nest %}
-    {%- endif %}
+    {%- set canvas_nest_uri = theme.vendors.canvas_nest | default(url_for(theme.vendors._internal + '/canvas-nest/canvas-nest.min.js')) %}
   {% else %}
-    {%- set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest-nomobile.min.js') %}
-    {%- if theme.vendors.canvas_nest_nomobile %}
-      {%- set canvas_nest_uri = theme.vendors.canvas_nest_nomobile %}
-    {%- endif %}
+    {%- set canvas_nest_uri = theme.vendors.canvas_nest_nomobile | default(url_for(theme.vendors._internal + '/canvas-nest/canvas-nest-nomobile.min.js')) %}
   {%- endif %}
   <script color='{{ theme.canvas_nest.color }}' opacity='{{ theme.canvas_nest.opacity }}' zIndex='{{ theme.canvas_nest.zIndex }}' count='{{ theme.canvas_nest.count }}' src="{{ canvas_nest_uri }}"></script>
 {%- endif %}
 
 {%- if theme.canvas_ribbon.enable %}
-  {%- set canvas_ribbon_uri = url_for(theme.vendors._internal + '/canvas-ribbon/canvas-ribbon.js') %}
-  {%- if theme.vendors.canvas_ribbon %}
-    {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon %}
-  {%- endif %}
+  {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon | default(url_for(theme.vendors._internal + '/canvas-ribbon/canvas-ribbon.js')) %}
   <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
 {%- endif %}
 

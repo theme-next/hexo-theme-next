@@ -6,11 +6,8 @@
   </div>
 {%- endif %}
 
-{%- set needmoreshare2_js = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.js') %}
-{%- if theme.vendors.needmoreshare2_js %}
-  {%- set needmoreshare2_js = theme.vendors.needmoreshare2_js %}
-{%- endif %}
-<script src="{{ needmoreshare2_js }}"></script>
+{%- set needmoreshare2_js_uri = theme.vendors.needmoreshare2_js | default(url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.js')) %}
+<script src="{{ needmoreshare2_js_uri }}"></script>
 <script>
   {%- if theme.needmoreshare2.postbottom.enable %}
     pbOptions = {};
