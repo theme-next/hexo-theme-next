@@ -68,7 +68,7 @@
 {%- endif %}
 
 {%- if theme.pace.enable %}
-  {%- set pace_css_uri = theme.vendors.pace_css | default(url_for(theme.vendors._internal + '/pace/pace-theme-'+ theme.pace.theme +'.min.css?v=1.0.2')) %}
+  {%- set pace_css_uri = theme.vendors.pace_css | default(url_for(theme.vendors._internal + '/pace/pace-theme-' + theme.pace.theme + '.min.css?v=1.0.2')) %}
   {%- set pace_js_uri = theme.vendors.pace | default(url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2')) %}
   <link rel="stylesheet" href="{{ pace_css_uri }}">
   <script src="{{ pace_js_uri }}"></script>
