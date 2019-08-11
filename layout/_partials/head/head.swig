@@ -49,47 +49,29 @@
 
 {{ next_font() }}
 
-{%- set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.7.0') %}
-{%- if theme.vendors.fontawesome %}
-  {%- set font_awesome_uri = theme.vendors.fontawesome %}
-{%- endif %}
+{%- set font_awesome_uri = theme.vendors.fontawesome | default(url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.7.0')) %}
 <link rel="stylesheet" href="{{ font_awesome_uri }}">
 
 {%- if theme.fancybox %}
-  {%- set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css') %}
-  {%- if theme.vendors.fancybox_css %}
-    {%- set fancybox_css_uri = theme.vendors.fancybox_css %}
-  {%- endif %}
+  {%- set fancybox_css_uri = theme.vendors.fancybox_css | default(url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css')) %}
   <link rel="stylesheet" href="{{ fancybox_css_uri }}">
 {%- endif %}
 
 {%- if theme.likely.enable %}
-  {%- set likely_css_url = '//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css' %}
-  {%- if theme.vendors.likely_css %}
-    {%- set likely_css_url = theme.vendors.likely_css %}
-  {%- endif %}
-  <link rel="stylesheet" href="{{ likely_css_url }}">
+  {%- set likely_css_uri = theme.vendors.likely_css | default('//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css') %}
+  <link rel="stylesheet" href="{{ likely_css_uri }}">
 {%- endif %}
 
 {%- if theme.needmoreshare2.enable %}
-  {%- set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
-  {%- if theme.vendors.needmoreshare2_css %}
-    {%- set needmoreshare2_css = theme.vendors.needmoreshare2_css %}
-  {%- endif %}
-  <link rel="stylesheet" href="{{ needmoreshare2_css }}">
+  {%- set needmoreshare2_css_uri = theme.vendors.needmoreshare2_css | default(url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css')) %}
+  <link rel="stylesheet" href="{{ needmoreshare2_css_uri }}">
 {%- endif %}
 
 {%- if theme.pace.enable %}
-  {%- set pace_css_uri = url_for(theme.vendors._internal + '/pace/pace-theme-'+ theme.pace.theme +'.min.css?v=1.0.2') %}
-  {%- set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
-    {%- if theme.vendors.pace %}
-      {%- set pace_js_uri = theme.vendors.pace %}
-    {%- endif %}
-    {%- if theme.vendors.pace_css %}
-      {%- set pace_css_uri = theme.vendors.pace_css %}
-    {%- endif %}
-  <script src="{{ pace_js_uri }}"></script>
+  {%- set pace_css_uri = theme.vendors.pace_css | default(url_for(theme.vendors._internal + '/pace/pace-theme-' + theme.pace.theme + '.min.css?v=1.0.2')) %}
+  {%- set pace_js_uri = theme.vendors.pace | default(url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2')) %}
   <link rel="stylesheet" href="{{ pace_css_uri }}">
+  <script src="{{ pace_js_uri }}"></script>
 {%- endif %}
 
 {# Export some HEXO Configurations to Front-End #}

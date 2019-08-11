@@ -506,7 +506,7 @@ font:
 #   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare
 # ---------------------------------------------------------------
 
-# Math Equations Render Support
+# Math Formulas Render Support
 math:
   enable: false
 
@@ -515,28 +515,17 @@ math:
   # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
   per_page: true
 
-  engine: mathjax
-  #engine: katex
-
   # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
   mathjax:
-    cdn: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
-
+    enable: false
     # See: https://mhchem.github.io/MathJax-mhchem/
-    #mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3
-    #mhchem: //cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.0
+    mhchem: false
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
   katex:
-    cdn: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
-
-    copy_tex:
-      # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-      enable: false
-      copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
-      copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
+    enable: false
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+    copy_tex: false
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
@@ -936,17 +925,12 @@ pdf:
   enable: false
   # Default height
   height: 500px
-  pdfobject:
-    cdn: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
 
 # Mermaid tag
 mermaid:
   enable: false
   # Available themes: default | dark | forest | neutral
   theme: forest
-  cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
-  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
 
 
 # ---------------------------------------------------------------
@@ -1038,6 +1022,25 @@ vendors:
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   fontawesome:
 
+  # MathJax
+  # Example:
+  # mathjax: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  # mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
+  # mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3
+  # mhchem: //cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.0
+  mathjax:
+  mhchem:
+
+  # KaTeX
+  # Example:
+  # katex: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
+  # katex: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
+  # copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
+  # copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
+  katex:
+  copy_tex_js:
+  copy_tex_css:
+
   # Internal version: 0.2.8
   # Example:
   # pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
@@ -1124,6 +1127,18 @@ vendors:
   # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
   algolia_instant_js:
   algolia_instant_css:
+
+  # PDF
+  # Example:
+  # pdfobject: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
+  # pdfobject: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
+  pdfobject:
+
+  # Mermaid
+  # Example:
+  # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
+  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
+  mermaid:
 
   # Internal version: 1.2.1
   # Example:

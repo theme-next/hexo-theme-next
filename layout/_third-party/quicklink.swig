@@ -1,8 +1,5 @@
 {%- if theme.quicklink.enable %}
-  {%- set quicklink_uri = url_for(theme.vendors._internal + '/quicklink/quicklink.umd.js') %}
-  {%- if theme.vendors.quicklink %}
-    {%- set quicklink_uri = theme.vendors.quicklink %}
-  {%- endif %}
+  {%- set quicklink_uri = theme.vendors.quicklink | default(url_for(theme.vendors._internal + '/quicklink/quicklink.umd.js')) %}
 
   {%- if is_home() %}
     {%- if theme.quicklink.home %}
