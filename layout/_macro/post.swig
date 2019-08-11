@@ -234,21 +234,6 @@
             </div>
           {%- endif %}
           <!--/noindex-->
-        {% elif theme.auto_excerpt.enable %}
-          {%- set content = post.content | replace('<td class="gutter">.*?</td>', "", "g") | striptags %}
-            <p>
-              {{ content.substring(0, theme.auto_excerpt.length) }}
-              {%- if content.length > theme.auto_excerpt.length %}...{%- endif %}
-            </p>
-          <!--noindex-->
-          {%- if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}{%- if theme.scroll_to_more %}#more{%- endif %}" rel="contents">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
-          {%- endif %}
-          <!--/noindex-->
         {% else %}
           {%- if post.type === 'picture' %}
             <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
