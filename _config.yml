@@ -290,6 +290,12 @@ save_scroll: false
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
+ 
+# Automatically excerpt (Not recommend).
+# Use <!-- more --> in the post to control excerpt accurately.
+auto_excerpt:
+  enable: false
+  length: 150
 
 # Read more button
 # If true, the read more button would be displayed in excerpt section.
