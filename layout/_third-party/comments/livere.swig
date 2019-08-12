@@ -1,4 +1,4 @@
-{%- if page.comments %}
+{% if page.comments %}
 <script>
   window.livereOptions = {
     refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
@@ -12,7 +12,7 @@
     e.parentNode.insertBefore(j, e);
   })(document, 'script');
 </script>
-{% if is_post() %}
+{% elseif is_post() %}
 <script>
   window.livereOptions = {
     refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
