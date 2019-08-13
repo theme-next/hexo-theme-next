@@ -20,7 +20,7 @@ window.addEventListener('pjax:send', function() {
 });
 window.addEventListener('pjax:success', function() {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    $(element).parent().append($(o).remove());
+    $(element).parent().append($(element).remove());
   });
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
