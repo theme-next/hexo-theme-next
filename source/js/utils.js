@@ -201,9 +201,8 @@ NexT.utils = {
       return height / width * 100;
     }
 
-    document.querySelectorAll('iframe').forEach(o => {
-      var iframe = o;
-      var $iframe = $(o);
+    document.querySelectorAll('iframe').forEach(iframe => {
+      var $iframe = $(iframe);
       var oldDimension = getDimension($iframe);
       var newDimension;
 
@@ -238,7 +237,7 @@ NexT.utils = {
         wrap.appendChild(iframe);
 
         // Additional adjustments for 163 Music
-        if (this.src.search('music.163.com') > 0) {
+        if (iframe.src.search('music.163.com') > 0) {
           newDimension = getDimension($iframe);
           var shouldRecalculateAspect = newDimension.width > oldDimension.width
                                      || newDimension.height < oldDimension.height;
