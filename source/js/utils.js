@@ -7,7 +7,7 @@ NexT.utils = {
    */
   wrapImageWithFancyBox: function() {
     document.querySelectorAll('.post-body img')
-      .forEach(function(o) {
+      .forEach(o => {
         var $image = $(o);
         var imageTitle = $image.attr('title') || $image.attr('alt');
         var $imageWrapLink = $image.parent('a');
@@ -43,7 +43,7 @@ NexT.utils = {
   },
 
   registerExtURL: function() {
-    document.querySelectorAll('.exturl').forEach(function(o) {
+    document.querySelectorAll('.exturl').forEach(o => {
       o.addEventListener('click', function() {
         var $exturl = this.getAttribute('data-url');
         var $decurl = decodeURIComponent(escape(window.atob($exturl)));
@@ -163,7 +163,7 @@ NexT.utils = {
   },
 
   registerActiveMenuItem: function() {
-    document.querySelectorAll('.menu-item').forEach(function(o) {
+    document.querySelectorAll('.menu-item').forEach(o => {
       var target = o.querySelector('a[href]');
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
@@ -201,7 +201,7 @@ NexT.utils = {
       return height / width * 100;
     }
 
-    document.querySelectorAll('iframe').forEach(function(o) {
+    document.querySelectorAll('iframe').forEach(o => {
       var iframe = o;
       var $iframe = $(o);
       var oldDimension = getDimension($iframe);

@@ -3,7 +3,7 @@
 <script{{ pjax }}>
 if (document.querySelectorAll('div.pdf').length) {
   NexT.utils.getScript('{{ pdfobject_uri }}', function() {
-    document.querySelectorAll('div.pdf').forEach(function(o) {
+    document.querySelectorAll('div.pdf').forEach(o => {
       PDFObject.embed(o.getAttribute('target'), o, {
         pdfOpenParams: {
           navpanes: 0,

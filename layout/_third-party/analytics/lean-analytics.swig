@@ -47,16 +47,16 @@
       var entries = [];
       var $visitors = document.querySelectorAll('.leancloud_visitors');
 
-      $visitors.forEach(function(o) {
+      $visitors.forEach(o => {
         entries.push(o.getAttribute('id').trim());
       });
 
       Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
+        .done(results => {
           var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
           if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(function(o) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(o => {
               o.innerText = 0;
             });
             return;
@@ -76,15 +76,16 @@
             }
           }
         })
-        .fail(function ({ responseJSON }) {
+        .fail(responseJSON => {
           console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
         });
     }
   }
 
-  $.get('https://app-router.leancloud.cn/2/route?appId=' + '{{ theme.leancloud_visitors.app_id }}')
-    .done(function({ api_server }) {
-      var Counter = function(method, url, data) {
+  fetch('https://app-router.leancloud.cn/2/route?appId=' + '{{ theme.leancloud_visitors.app_id }}')
+    .then(response => response.text())
+    .then(api_server => {
+      var Counter = (method, url, data) => {
         return $.ajax({
           method: method,
           url: `https://${api_server}/1.1${url}`,
