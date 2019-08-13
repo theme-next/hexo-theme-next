@@ -54,7 +54,7 @@ If there are any new options in new releases, you just need to copy those option
   2. Copy **all** NexT theme options from theme's `/themes/next/_config.yml` into `/source/_data/next.yml`.
 
 3. Then, in main site's `/_config.yml` need to define `theme: next` option (and if needed, `source_dir: source`).
-4. Use standart parameters to start server, generate or deploy (`hexo clean && hexo g -d && hexo s`).
+4. Use standard parameters to start server, generate or deploy (`hexo clean && hexo g -d && hexo s`).
 
 ### Useful links
 

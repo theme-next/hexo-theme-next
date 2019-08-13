@@ -603,12 +603,12 @@ reading_progress:
 comments:
   # Available values: tabs | buttons
   style: tabs
-  # Choose a comment system to be displayed by default
+  # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
   active:
-  # Setting `true` means remembering the comment system selected by the visitor
+  # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
-  # Modify icons and texts for any style, here are some examples
+  # Modify icons and texts for any style, here are some examples.
   nav:
     #disqus: disqus
     #facebook_comments_plugin: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
@@ -981,11 +981,11 @@ three:
 # For more information: https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
-  onmobile: true # display on mobile or not
+  onmobile: true # Display on mobile or not
   color: "0,0,255" # RGB values, use `,` to separate
-  opacity: 0.5 # the opacity of line: 0~1
+  opacity: 0.5 # The opacity of line: 0~1
   zIndex: -1 # z-index property of the background
-  count: 99 # the number of lines
+  count: 99 # The number of lines
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
