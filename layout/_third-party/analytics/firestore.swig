@@ -35,7 +35,7 @@
     }
 
     function appendCountTo(el) {
-      return function(count) {
+      return count => {
         el.innerText = count;
       }
     }
@@ -57,7 +57,7 @@
         }
         getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
       } else if (CONFIG.page.isHome) { // Is index page
-        var promises = document.querySelectorAll('.post-title').forEach(element => {
+        var promises = [...document.querySelectorAll('.post-title')].map(element => {
           var title = element.innerText.trim();
           var doc = articles.doc(title);
           return getCount(doc);
