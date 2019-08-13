@@ -3,8 +3,8 @@
 <script{{ pjax }}>
 if (document.querySelectorAll('div.pdf').length) {
   NexT.utils.getScript('{{ pdfobject_uri }}', function() {
-    document.querySelectorAll('div.pdf').forEach(o => {
-      PDFObject.embed(o.getAttribute('target'), o, {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
         pdfOpenParams: {
           navpanes: 0,
           toolbar: 0,
@@ -13,7 +13,7 @@ if (document.querySelectorAll('div.pdf').length) {
           view: 'FitH'
         },
         PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: o.getAttribute('height') || '{{ theme.pdf.height }}'
+        height: element.getAttribute('height') || '{{ theme.pdf.height }}'
       });
     });
   }, window.PDFObject);

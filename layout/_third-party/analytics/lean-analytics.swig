@@ -47,8 +47,8 @@
       var entries = [];
       var $visitors = document.querySelectorAll('.leancloud_visitors');
 
-      $visitors.forEach(o => {
-        entries.push(o.getAttribute('id').trim());
+      $visitors.forEach(element => {
+        entries.push(element.getAttribute('id').trim());
       });
 
       Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
@@ -56,8 +56,8 @@
           var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
           if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(o => {
-              o.innerText = 0;
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
             });
             return;
           }

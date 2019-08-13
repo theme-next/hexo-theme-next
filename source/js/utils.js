@@ -7,8 +7,8 @@ NexT.utils = {
    */
   wrapImageWithFancyBox: function() {
     document.querySelectorAll('.post-body img')
-      .forEach(o => {
-        var $image = $(o);
+      .forEach(element => {
+        var $image = $(element);
         var imageTitle = $image.attr('title') || $image.attr('alt');
         var $imageWrapLink = $image.parent('a');
 
@@ -43,8 +43,8 @@ NexT.utils = {
   },
 
   registerExtURL: function() {
-    document.querySelectorAll('.exturl').forEach(o => {
-      o.addEventListener('click', function() {
+    document.querySelectorAll('.exturl').forEach(element => {
+      element.addEventListener('click', function() {
         var $exturl = this.getAttribute('data-url');
         var $decurl = decodeURIComponent(escape(window.atob($exturl)));
         window.open($decurl, '_blank', 'noopener');
@@ -163,14 +163,14 @@ NexT.utils = {
   },
 
   registerActiveMenuItem: function() {
-    document.querySelectorAll('.menu-item').forEach(o => {
-      var target = o.querySelector('a[href]');
+    document.querySelectorAll('.menu-item').forEach(element => {
+      var target = element.querySelector('a[href]');
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
       if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
-        o.classList.add('menu-item-active');
+        element.classList.add('menu-item-active');
       } else {
-        o.classList.remove('menu-item-active');
+        element.classList.remove('menu-item-active');
       }
     });
   },

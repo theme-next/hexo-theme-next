@@ -57,8 +57,8 @@
         }
         getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
       } else if (CONFIG.page.isHome) { // Is index page
-        var promises = document.querySelectorAll('.post-title').forEach(o => {
-          var title = o.innerText.trim();
+        var promises = document.querySelectorAll('.post-title').forEach(element => {
+          var title = element.innerText.trim();
           var doc = articles.doc(title);
           return getCount(doc);
         });

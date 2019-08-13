@@ -19,8 +19,8 @@ window.addEventListener('pjax:send', function() {
   CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
 });
 window.addEventListener('pjax:success', function() {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(o => {
-    $(o).parent().append($(o).remove());
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    $(element).parent().append($(o).remove());
   });
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
