@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
   NexT.utils.registerCanIUseTag();
@@ -70,7 +70,7 @@ $(document).on('DOMContentLoaded pjax:success', function() {
   function initSidebarDimension() {
     var updateSidebarHeightTimer;
 
-    $(window).on('resize', function() {
+    window.addEventListener('resize', function() {
       updateSidebarHeightTimer && clearTimeout(updateSidebarHeightTimer);
 
       updateSidebarHeightTimer = setTimeout(function() {

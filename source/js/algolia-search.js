@@ -1,6 +1,6 @@
 /* global instantsearch, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
   var algoliaSettings = CONFIG.algolia;
   var isAlgoliaSettingsValid = algoliaSettings.applicationID
                             && algoliaSettings.apiKey

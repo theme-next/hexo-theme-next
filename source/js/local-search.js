@@ -1,6 +1,6 @@
 /* global CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
   // Popup Window
   var isfetched = false;
   var datas;
@@ -325,7 +325,7 @@ $(document).on('DOMContentLoaded', function() {
   $('.popup').click(function(e) {
     e.stopPropagation();
   });
-  $(document).on('keyup', function(event) {
+  window.addEventListener('keyup', function(event) {
     var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
     if (shouldDismissSearchPopup) {
       onPopupClose();

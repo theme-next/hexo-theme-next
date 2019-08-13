@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
   var sidebarToggleLines = {
     lines: [],

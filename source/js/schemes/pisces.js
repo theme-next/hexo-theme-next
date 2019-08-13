@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
   var sidebarInner = $('.sidebar-inner');
   var sidebarOffset = CONFIG.sidebar.offset || 12;
