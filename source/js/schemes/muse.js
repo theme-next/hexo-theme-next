@@ -102,11 +102,11 @@ window.addEventListener('DOMContentLoaded', function() {
     init            : function() {
       sidebarToggleLines.init();
 
-      document.querySelector('body').addEventListener('mousedown', this.mousedownHandler.bind(this))
-      document.querySelector('body').addEventListener('mouseup', this.mouseupHandler.bind(this));
+      window.addEventListener('mousedown', this.mousedownHandler.bind(this));
+      window.addEventListener('mouseup', this.mouseupHandler.bind(this));
       document.querySelector('#sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
-      document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this))
-      document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this))
+      document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
+      document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
       this.sidebarEl
         .on('touchstart', this.touchstartHandler.bind(this))
@@ -114,8 +114,8 @@ window.addEventListener('DOMContentLoaded', function() {
         .on('touchmove', function(e) {
           e.preventDefault();
         });
-      document.querySelector(document).addEventListener('sidebar:show', this.showSidebar.bind(this))
-      document.querySelector(document).addEventListener('sidebar:hide', this.hideSidebar.bind(this));
+      window.addEventListener('sidebar:show', this.showSidebar.bind(this));
+      window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
     },
     mousedownHandler: function(e) {
       mousePos.X = e.pageX;
