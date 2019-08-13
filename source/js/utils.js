@@ -294,7 +294,7 @@ NexT.utils = {
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
     }
     if (display) {
-      $(document).trigger('sidebar:show');
+      window.dispatchEvent(new Event('sidebar:show'));
     }
   },
 
