@@ -233,27 +233,23 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   }
   function fetchData(callback) {
-    $.ajax({
-      url     : path,
-      dataType: isXml ? 'xml' : 'json',
-      success : function(res) {
-        // Get the contents from search data
-        isfetched = true;
-        datas = isXml ? $('entry', res).map(function() {
-          return {
-            title  : $('title', this).text(),
-            content: $('content', this).text(),
-            url    : $('url', this).text()
-          };
-        }).get() : res;
+    fetch(path).then(response => response.text()).then(res => {
+      // Get the contents from search data
+      isfetched = true;
+      datas = isXml ? $('entry', res).map(function() {
+        return {
+          title  : $('title', this).text(),
+          content: $('content', this).text(),
+          url    : $('url', this).text()
+        };
+      }).get() : JSON.parse(res);
 
-        // Remove loading animation
-        $('.local-search-pop-overlay').remove();
-        $('body').css('overflow', '');
+      // Remove loading animation
+      $('.local-search-pop-overlay').remove();
+      $('body').css('overflow', '');
 
-        if (callback) {
-          callback();
-        }
+      if (callback) {
+        callback();
       }
     });
   }
