@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             && algoliaSettings.indexName;
 
   if (!isAlgoliaSettingsValid) {
-    window.console.error('Algolia Settings are invalid.');
+    console.error('Algolia Settings are invalid.');
     return;
   }
 
@@ -16,9 +16,9 @@ window.addEventListener('DOMContentLoaded', function() {
     apiKey        : algoliaSettings.apiKey,
     indexName     : algoliaSettings.indexName,
     searchFunction: function(helper) {
-      var searchInput = $('#algolia-search-input').find('input');
+      var searchInput = document.querySelector('#algolia-search-input input');
 
-      if (searchInput.val()) {
+      if (searchInput.value {
         helper.search();
       }
     }
@@ -88,7 +88,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   search.start();
 
-  $('.popup-trigger').on('click', function(e) {
+  document.querySelector('.popup-trigger').addEventListener('click', function(e) {
     e.stopPropagation();
     $('body')
       .append('<div class="algolia-pop-overlay"></div>')
@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
   $('.popup-btn-close').click(onPopupClose);
 
-  $(document).on('keyup', function(event) {
+  window.addEventListener('keyup', function(event) {
     var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
     if (shouldDismissSearchPopup) {
       onPopupClose();

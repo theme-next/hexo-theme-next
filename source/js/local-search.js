@@ -264,7 +264,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // Monitor main search box
   function onPopupClose() {
     $('.popup').hide();
-    $('#local-search-input').val('');
+    document.querySelector('#local-search-input').value = '';
     $('.search-result-list').remove();
     $('#no-result').remove();
     $('.local-search-pop-overlay').remove();
@@ -303,7 +303,7 @@ window.addEventListener('DOMContentLoaded', function() {
   if (CONFIG.localsearch.trigger === 'auto') {
     input.addEventListener('input', inputEventFunction);
   } else {
-    $('.search-icon').click(inputEventFunction);
+    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
     input.addEventListener('keypress', function(event) {
       if (event.keyCode === 13) {
         inputEventFunction();
@@ -312,7 +312,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   // Handle and trigger popup window
-  $('.popup-trigger').click(function(e) {
+  document.querySelector('.popup-trigger').addEventListener('click', function(e) {
     e.stopPropagation();
     if (isfetched === false) {
       searchFunc();
@@ -321,8 +321,8 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  $('.popup-btn-close').click(onPopupClose);
-  $('.popup').click(function(e) {
+  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  document.querySelector('.popup').addEventListener('click', function(e) {
     e.stopPropagation();
   });
   window.addEventListener('keyup', function(event) {

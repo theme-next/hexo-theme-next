@@ -39,7 +39,7 @@ $(document).on('DOMContentLoaded pjax:success', function() {
     $('html, body').animate({ scrollTop: value || 0 });
     // Write position in localStorage
     NexT.utils.saveScrollTimer = setInterval(function() {
-      localStorage.setItem('scroll' + location.pathname, $(window).scrollTop());
+      localStorage.setItem('scroll' + location.pathname, window.scrollY);
     }, 1000);
   }
 

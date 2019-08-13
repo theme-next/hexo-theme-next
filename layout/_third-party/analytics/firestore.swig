@@ -36,7 +36,7 @@
 
     function appendCountTo(el) {
       return function(count) {
-        $(el).text(count);
+        el.innerText = count;
       }
     }
   </script>
@@ -46,7 +46,7 @@
       var articles = db.collection('{{ theme.firestore.collection }}');
 
       if (CONFIG.page.isPost) { // Is article page
-        var title = $('.post-title').text().trim();
+        var title = document.querySelector('.post-title').innerText.trim();
         var doc = articles.doc(title);
         var increaseCount = true;
         if (localStorage.getItem(title)) {
@@ -55,15 +55,15 @@
           // Mark as visited
           localStorage.setItem(title, true);
         }
-        getCount(doc, increaseCount).then(appendCountTo($('.firestore-visitors-count')));
+        getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
       } else if (CONFIG.page.isHome) { // Is index page
-        var promises = $('.post-title').map((i, o) => {
-          var title = $(o).text().trim();
+        var promises = document.querySelectorAll('.post-title').forEach(o => {
+          var title = o.innerText.trim();
           var doc = articles.doc(title);
           return getCount(doc);
         });
         Promise.all(promises).then(counts => {
-          var metas = $('.firestore-visitors-count');
+          var metas = document.querySelectorAll('.firestore-visitors-count');
           counts.forEach((val, idx) => {
             appendCountTo(metas[idx])(val);
           });
