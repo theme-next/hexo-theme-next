@@ -44,7 +44,7 @@ NexT.utils = {
 
   registerExtURL: function() {
     document.querySelectorAll('.exturl').forEach(element => {
-      element.addEventListener('click', () => {
+      element.addEventListener('click', event => {
         var $exturl = event.currentTarget.getAttribute('data-url');
         var $decurl = decodeURIComponent(escape(window.atob($exturl)));
         window.open($decurl, '_blank', 'noopener');
@@ -96,9 +96,8 @@ NexT.utils = {
         document.body.removeChild(ta);
       });
       $button.on('mouseleave', event => {
-        var $b = $(event.currentTarget).closest('.copy-btn');
         setTimeout(() => {
-          initButton($b);
+          initButton($(event.currentTarget));
         }, 300);
       });
       initButton($button);
