@@ -282,7 +282,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const proceedSearch = () => {
     document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
     document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
-    //document.querySelector('.popup').style.display = 'block';
     let el = document.querySelector('.popup');
     if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
       el.style.display = 'block';
