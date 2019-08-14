@@ -1,10 +1,10 @@
 {%- if theme.pdf.enable %}
 {%- set pdfobject_uri = theme.vendors.pdfobject | default('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js') %}
 <script{{ pjax }}>
-if ($('body').find('div.pdf').length) {
+if (document.querySelectorAll('div.pdf').length) {
   NexT.utils.getScript('{{ pdfobject_uri }}', function() {
-    $('body').find('div.pdf').each(function(i, o) {
-      PDFObject.embed($(o).attr('target'), $(o), {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
         pdfOpenParams: {
           navpanes: 0,
           toolbar: 0,
@@ -13,7 +13,7 @@ if ($('body').find('div.pdf').length) {
           view: 'FitH'
         },
         PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: $(o).attr('height') || '{{ theme.pdf.height }}'
+        height: element.getAttribute('height') || '{{ theme.pdf.height }}'
       });
     });
   }, window.PDFObject);

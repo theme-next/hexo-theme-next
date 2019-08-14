@@ -6,9 +6,9 @@ NexT.utils = {
    * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    $('.post-body img')
-      .each(function() {
-        var $image = $(this);
+    document.querySelectorAll('.post-body img')
+      .forEach(element => {
+        var $image = $(element);
         var imageTitle = $image.attr('title') || $image.attr('alt');
         var $imageWrapLink = $image.parent('a');
 
@@ -43,11 +43,13 @@ NexT.utils = {
   },
 
   registerExtURL: function() {
-    $('.exturl').on('click', function() {
-      var $exturl = $(this).attr('data-url');
-      var $decurl = decodeURIComponent(escape(window.atob($exturl)));
-      window.open($decurl, '_blank', 'noopener');
-      return false;
+    document.querySelectorAll('.exturl').forEach(element => {
+      element.addEventListener('click', function() {
+        var $exturl = this.getAttribute('data-url');
+        var $decurl = decodeURIComponent(escape(window.atob($exturl)));
+        window.open($decurl, '_blank', 'noopener');
+        return false;
+      });
     });
   },
 
@@ -66,7 +68,7 @@ NexT.utils = {
       var $button = $('<div>').addClass('copy-btn');
       $button.on('click', function() {
         var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-          return $(e).text();
+          return e.innerText;
         }).toArray().join('\n');
         var ta = document.createElement('textarea');
         var yPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -83,7 +85,7 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          $(this).text(result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure);
+          this.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
         }
         ta.blur(); // For iOS
         $(this).blur();
@@ -112,7 +114,7 @@ NexT.utils = {
     $(window).on('load scroll', function() {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
-      var scrollTop = $(window).scrollTop();
+      var scrollTop = window.scrollY;
       var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
       var scrollPercent = scrollTop / contentVisibilityHeight;
       var scrollPercentRounded = Math.round(scrollPercent * 100);
@@ -161,14 +163,14 @@ NexT.utils = {
   },
 
   registerActiveMenuItem: function() {
-    $('.menu-item').each(function() {
-      var target = $(this).find('a[href]')[0];
+    document.querySelectorAll('.menu-item').forEach(element => {
+      var target = element.querySelector('a[href]');
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
       if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
-        $(this).addClass('menu-item-active');
+        element.classList.add('menu-item-active');
       } else {
-        $(this).removeClass('menu-item-active');
+        element.classList.remove('menu-item-active');
       }
     });
   },
@@ -178,8 +180,6 @@ NexT.utils = {
    * @see http://toddmotto.com/fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js/
    */
   embeddedVideoTransformer: function() {
-    var $iframes = $('iframe');
-
     // Supported Players. Extend this if you need more players.
     var SUPPORTED_PLAYERS = [
       'www.youtube.com',
@@ -201,13 +201,12 @@ NexT.utils = {
       return height / width * 100;
     }
 
-    $iframes.each(function() {
-      var iframe = this;
-      var $iframe = $(this);
+    document.querySelectorAll('iframe').forEach(iframe => {
+      var $iframe = $(iframe);
       var oldDimension = getDimension($iframe);
       var newDimension;
 
-      if (this.src.search(pattern) > 0) {
+      if (iframe.src.search(pattern) > 0) {
 
         // Calculate the video ratio based on the iframe's w/h dimensions
         var videoRatio = getAspectRadio(oldDimension.width, oldDimension.height);
@@ -238,7 +237,7 @@ NexT.utils = {
         wrap.appendChild(iframe);
 
         // Additional adjustments for 163 Music
-        if (this.src.search('music.163.com') > 0) {
+        if (iframe.src.search('music.163.com') > 0) {
           newDimension = getDimension($iframe);
           var shouldRecalculateAspect = newDimension.width > oldDimension.width
                                      || newDimension.height < oldDimension.height;
@@ -295,7 +294,7 @@ NexT.utils = {
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
     }
     if (display) {
-      $(document).trigger('sidebar:show');
+      window.dispatchEvent(new Event('sidebar:show'));
     }
   },
 
@@ -316,7 +315,7 @@ NexT.utils = {
   },
 
   getScrollbarWidth: function() {
-    var $div = $('<div/>').addClass('scrollbar-measure').prependTo('body');
+    var $div = $('<div>').addClass('scrollbar-measure').prependTo('body');
     var div = $div[0];
     var scrollbarWidth = div.offsetWidth - div.clientWidth;
     $div.remove();
@@ -326,8 +325,8 @@ NexT.utils = {
 
   getContentVisibilityHeight: function() {
     var docHeight = $('.container').height();
-    var winHeight = $(window).height();
-    var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : $(document).height() - winHeight;
+    var winHeight = window.innerHeight;
+    var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
     return contentVisibilityHeight;
   },
 

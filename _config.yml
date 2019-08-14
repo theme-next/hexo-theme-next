@@ -851,7 +851,7 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms"
 
 # Local search
-# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+# Dependencies: https://github.com/wzpan/hexo-generator-search
 local_search:
   enable: false
   # If auto, trigger search by changing input.

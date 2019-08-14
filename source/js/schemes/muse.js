@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
   var sidebarToggleLines = {
     lines: [],
@@ -102,24 +102,20 @@ $(document).on('DOMContentLoaded', function() {
     init            : function() {
       sidebarToggleLines.init();
 
-      $('body')
-        .on('mousedown', this.mousedownHandler.bind(this))
-        .on('mouseup', this.mouseupHandler.bind(this));
-      $('#sidebar-dimmer')
-        .on('click', this.clickHandler.bind(this));
-      $('.sidebar-toggle')
-        .on('click', this.clickHandler.bind(this))
-        .on('mouseenter', this.mouseEnterHandler.bind(this))
-        .on('mouseleave', this.mouseLeaveHandler.bind(this));
+      window.addEventListener('mousedown', this.mousedownHandler.bind(this));
+      window.addEventListener('mouseup', this.mouseupHandler.bind(this));
+      document.querySelector('#sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
+      document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
+      document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
+      document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
       this.sidebarEl
         .on('touchstart', this.touchstartHandler.bind(this))
         .on('touchend', this.touchendHandler.bind(this))
         .on('touchmove', function(e) {
           e.preventDefault();
         });
-      $(document)
-        .on('sidebar:show', this.showSidebar.bind(this))
-        .on('sidebar:hide', this.hideSidebar.bind(this));
+      window.addEventListener('sidebar:show', this.showSidebar.bind(this));
+      window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
     },
     mousedownHandler: function(e) {
       mousePos.X = e.pageX;
@@ -209,11 +205,12 @@ $(document).on('DOMContentLoaded', function() {
       NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': 0} : {'padding-left': 0});
 
       // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-      if ($('.post-toc-wrap')) {
+      var tocWrap = document.querySelector('.post-toc-wrap');
+      if (tocWrap) {
         if ($('.site-overview-wrap').css('display') === 'block') {
-          $('.post-toc-wrap').removeClass('motion-element');
+          tocWrap.classList.remove('motion-element');
         } else {
-          $('.post-toc-wrap').addClass('motion-element');
+          tocWrap.classList.add('motion-element');
         }
       }
     }
@@ -230,5 +227,6 @@ $(document).on('DOMContentLoaded', function() {
   }
 
   updateFooterPosition();
-  $(window).on('resize scroll', updateFooterPosition);
+  window.addEventListener('resize', updateFooterPosition);
+  window.addEventListener('scroll', updateFooterPosition);
 });

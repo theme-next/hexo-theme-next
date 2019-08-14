@@ -1,8 +1,7 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
-  var sidebarInner = $('.sidebar-inner');
   var sidebarOffset = CONFIG.sidebar.offset || 12;
 
   function getHeaderOffset() {
@@ -21,7 +20,7 @@ $(document).on('DOMContentLoaded', function() {
     var headerOffset = getHeaderOffset();
     var footerOffset = getFooterOffset();
 
-    sidebarInner.affix({
+    $('.sidebar-inner').affix({
       offset: {
         top   : headerOffset - sidebarOffset,
         bottom: footerOffset
@@ -33,7 +32,7 @@ $(document).on('DOMContentLoaded', function() {
 
   function recalculateAffixPosition() {
     $(window).off('.affix');
-    sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
+    $('.sidebar-inner').removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     initAffix();
   }
 
