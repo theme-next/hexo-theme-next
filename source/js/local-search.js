@@ -289,9 +289,9 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       el.style.display = 'none';
     }
-    document.querySelector('#search-input').setAttribute('autocorrect', 'off');
-    document.querySelector('#search-input').setAttribute('autocapitalize', 'none');
-    document.querySelector('#search-input').focus();
+    document.getElementById('search-input').setAttribute('autocorrect', 'off');
+    document.getElementById('search-input').setAttribute('autocapitalize', 'none');
+    document.getElementById('search-input').focus();
   };
 
   // Search function
