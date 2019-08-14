@@ -1,10 +1,10 @@
 /* global instantsearch, CONFIG */
 
 window.addEventListener('DOMContentLoaded', () => {
-  var algoliaSettings = CONFIG.algolia;
-  var isAlgoliaSettingsValid = algoliaSettings.applicationID
-                            && algoliaSettings.apiKey
-                            && algoliaSettings.indexName;
+  const algoliaSettings = CONFIG.algolia;
+  let isAlgoliaSettingsValid = algoliaSettings.applicationID
+    && algoliaSettings.apiKey
+    && algoliaSettings.indexName;
 
   if (!isAlgoliaSettingsValid) {
     // eslint-disable-next-line no-console
@@ -12,12 +12,12 @@ window.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  var search = instantsearch({
+  let search = instantsearch({
     appId         : algoliaSettings.applicationID,
     apiKey        : algoliaSettings.apiKey,
     indexName     : algoliaSettings.indexName,
-    searchFunction: function(helper) {
-      var searchInput = document.querySelector('#algolia-search-input input');
+    searchFunction: helper => {
+      let searchInput = document.querySelector('#algolia-search-input input');
 
       if (searchInput.value) {
         helper.search();
@@ -36,11 +36,11 @@ window.addEventListener('DOMContentLoaded', () => {
       container  : '#algolia-hits',
       hitsPerPage: algoliaSettings.hits.per_page || 10,
       templates  : {
-        item: function(data) {
-          var link = data.permalink ? data.permalink : CONFIG.root + data.path;
+        item: data => {
+          let link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
         },
-        empty: function(data) {
+        empty: data => {
           return `<div id="algolia-hits-empty">
               ${algoliaSettings.labels.hits_empty.replace(/\$\{query}/, data.query)}
             </div>`;
@@ -54,8 +54,8 @@ window.addEventListener('DOMContentLoaded', () => {
     instantsearch.widgets.stats({
       container: '#algolia-stats',
       templates: {
-        body: function(data) {
-          var stats = algoliaSettings.labels.hits_stats
+        body: data => {
+          let stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
           return `${stats}
@@ -91,22 +91,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.popup-trigger').addEventListener('click', event => {
     event.stopPropagation();
-    $('body')
-      .append('<div class="algolia-pop-overlay"></div>')
-      .css('overflow', 'hidden');
-    $('.popup').toggle();
-    $('#algolia-search-input').find('input').focus();
+    document.body.insertAdjacentHTML('beforeend', '<div class="algolia-pop-overlay"></div>');
+    document.querySelector('.algolia-pop-overlay').style.overflow = 'hidden';
+    let el = document.querySelector('.popup');
+    if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+    document.querySelector('#algolia-search-input').querySelectorAll('input').focus();
   });
 
-  function onPopupClose() {
-    $('.popup').hide();
-    $('.algolia-pop-overlay').remove();
-    $('body').css('overflow', '');
-  }
-  $('.popup-btn-close').click(onPopupClose);
+  const onPopupClose = () => {
+    document.querySelector('.popup').style.display = 'none';
+    document.querySelector('.algolia-pop-overlay').remove();
+    document.body.style.overflow = '';
+  };
+  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
 
   window.addEventListener('keyup', event => {
-    var shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.search-popup')).display !== 'none';
+    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.search-popup')).display !== 'none';
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }
