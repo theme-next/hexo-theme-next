@@ -2,9 +2,8 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  var sidebarOffset = CONFIG.sidebar.offset || 12;
-
-  //const getHeaderOffset = () => $('.header-inner').height() + sidebarOffset;
+  const sidebarOffset = CONFIG.sidebar.offset || 12;
+  const sidebarInner = document.querySelector('.sidebar-inner');
   const getHeaderOffset = () => parseFloat(getComputedStyle(document.querySelector('.header-inner'), null).height.replace('px', '')) + sidebarOffset;
   const getFooterOffset = () => {
     let footer = document.querySelector('#footer');
@@ -25,17 +24,18 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    document.querySelector('#sidebar').setAttribute('style', 'margin-top: headerOffset; margin-left: auto');
+    document.querySelector('#sidebar').setAttribute('style', `margin-top: ${headerOffset}px; margin-left: auto`);
   };
 
   const recalculateAffixPosition = () => {
-    $(window).off('.affix');
-    $('.sidebar-inner').removeData('bs.affix').removeClass('affix affix-top affix-bottom');
+    window.removeEventListener('.affix', () => {});
+    sidebarInner.removeAttribute('bs.affix');
+    sidebarInner.classList.remove('affix affix-top affix-bottom');
     initAffix();
   };
 
   const resizeListener = () => {
-    var mql = window.matchMedia('(min-width: 992px)');
+    let mql = window.matchMedia('(min-width: 992px)');
     mql.addListener(event => {
       if (event.matches) {
         recalculateAffixPosition();
