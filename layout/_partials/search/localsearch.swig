@@ -1,4 +1,4 @@
-<div class="popup search-popup local-search-popup">
+<div class="popup local-search-popup">
   <div class="local-search-header clearfix">
     <span class="search-icon">
       <i class="fa fa-search"></i>

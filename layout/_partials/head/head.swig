@@ -91,7 +91,7 @@
     lazyload: {{ theme.lazyload }},
     pangu: {{ theme.pangu }},
     algolia: {
-      applicationID: '{{ config.algolia.applicationID }}',
+      appID: '{{ config.algolia.applicationID }}',
       apiKey: '{{ config.algolia.apiKey }}',
       indexName: '{{ config.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},

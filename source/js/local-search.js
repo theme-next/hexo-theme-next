@@ -334,7 +334,7 @@ window.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
   });
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.search-popup')).display !== 'none';
+    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.popup')).display !== 'none';
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }

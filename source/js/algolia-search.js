@@ -2,7 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   const algoliaSettings = CONFIG.algolia;
-  let isAlgoliaSettingsValid = algoliaSettings.applicationID
+  let isAlgoliaSettingsValid = algoliaSettings.appID
     && algoliaSettings.apiKey
     && algoliaSettings.indexName;
 
@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   let search = instantsearch({
-    appId         : algoliaSettings.applicationID,
+    appId         : algoliaSettings.appID,
     apiKey        : algoliaSettings.apiKey,
     indexName     : algoliaSettings.indexName,
     searchFunction: helper => {
@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
 
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.search-popup')).display !== 'none';
+    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.popup')).display !== 'none';
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }
