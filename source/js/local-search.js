@@ -240,7 +240,7 @@ window.addEventListener('DOMContentLoaded', () => {
     fetch(path)
       .then(response => response.text())
       .then(res => {
-      // Get the contents from search data
+        // Get the contents from search data
         isfetched = true;
         datas = isXml ? $('entry', res).map((i, e) => {
           return {
