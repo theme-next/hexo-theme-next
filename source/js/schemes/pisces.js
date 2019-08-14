@@ -1,24 +1,22 @@
-/* global NexT, CONFIG */
+/* global CONFIG */
 
 window.addEventListener('DOMContentLoaded', () => {
 
   var sidebarOffset = CONFIG.sidebar.offset || 12;
 
-  function getHeaderOffset() {
-    return $('.header-inner').height() + sidebarOffset;
-  }
-
-  function getFooterOffset() {
-    var footer = $('#footer');
-    var footerInner = $('.footer-inner');
-    var footerMargin = footer.outerHeight() - footerInner.outerHeight();
-    var footerOffset = footer.outerHeight() + footerMargin;
+  //const getHeaderOffset = () => $('.header-inner').height() + sidebarOffset;
+  const getHeaderOffset = () => parseFloat(getComputedStyle(document.querySelector('.header-inner'), null).height.replace('px', '')) + sidebarOffset;
+  const getFooterOffset = () => {
+    let footer = document.querySelector('#footer');
+    let footerInner = document.querySelector('.footer-inner');
+    let footerMargin = footer.offsetHeight - footerInner.offsetHeight;
+    let footerOffset = footer.offsetHeight + footerMargin;
     return footerOffset;
-  }
+  };
 
-  function initAffix() {
-    var headerOffset = getHeaderOffset();
-    var footerOffset = getFooterOffset();
+  const initAffix = () => {
+    let headerOffset = getHeaderOffset();
+    let footerOffset = getFooterOffset();
 
     $('.sidebar-inner').affix({
       offset: {
@@ -27,23 +25,23 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    $('#sidebar').css({ 'margin-top': headerOffset, 'margin-left': 'auto' });
-  }
+    document.querySelector('#sidebar').setAttribute('style', 'margin-top: headerOffset; margin-left: auto');
+  };
 
-  function recalculateAffixPosition() {
+  const recalculateAffixPosition = () => {
     $(window).off('.affix');
     $('.sidebar-inner').removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     initAffix();
-  }
+  };
 
-  function resizeListener() {
+  const resizeListener = () => {
     var mql = window.matchMedia('(min-width: 992px)');
     mql.addListener(event => {
       if (event.matches) {
         recalculateAffixPosition();
       }
     });
-  }
+  };
 
   initAffix();
   resizeListener();

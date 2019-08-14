@@ -10,7 +10,7 @@ NexT.motion.integrator = {
     this.cursor = -1;
     return this;
   },
-  add   : function(fn) {
+  add: function(fn) {
     this.queue.push(fn);
     return this;
   },
