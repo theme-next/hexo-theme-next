@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
                             && algoliaSettings.indexName;
 
   if (!isAlgoliaSettingsValid) {
+    // eslint-disable-next-line no-console
     console.error('Algolia Settings are invalid.');
     return;
   }
@@ -18,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
     searchFunction: function(helper) {
       var searchInput = document.querySelector('#algolia-search-input input');
 
-      if (searchInput.value {
+      if (searchInput.value) {
         helper.search();
       }
     }
