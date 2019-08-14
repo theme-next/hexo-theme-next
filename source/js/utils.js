@@ -350,12 +350,10 @@ NexT.utils = {
       callback();
     } else {
       $.ajax({
-        type: 'GET',
-        url: url,
+        url     : url,
         dataType: 'script',
-        cache: true,
-        success: callback
-      });
+        cache   : true
+      }).then(callback);
     }
   }
 };
