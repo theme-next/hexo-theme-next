@@ -244,11 +244,11 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(res => {
       // Get the contents from search data
         isfetched = true;
-        datas = isXml ? $('entry', res).map(function() {
+        datas = isXml ? $('entry', res).map((i, e) => {
           return {
-            title  : $('title', this).text(),
-            content: $('content', this).text(),
-            url    : $('url', this).text()
+            title  : $('title', e).text(),
+            content: $('content', e).text(),
+            url    : $('url', e).text()
           };
         }).get() : JSON.parse(res);
 
