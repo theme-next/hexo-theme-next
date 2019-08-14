@@ -57,7 +57,7 @@
         </div>
       </div>
       <script>
-        window.addEventListener('tabs:register', function() {
+        window.addEventListener('tabs:register', () => {
           let activeClass = '{{ theme.comments.activeClass }}';
           {%- if theme.comments.storage %}
             activeClass = localStorage.getItem('comments_active') || activeClass;
@@ -70,8 +70,8 @@
           }
         });
         {%- if theme.comments.storage %}
-        window.addEventListener('tabs:click', function(e) {
-          let commentClass = e.target.classList[1];
+        window.addEventListener('tabs:click', event => {
+          let commentClass = event.target.classList[1];
           localStorage.setItem('comments_active', commentClass);
         });
         {%- endif %}

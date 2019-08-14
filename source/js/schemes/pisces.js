@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
 
   var sidebarOffset = CONFIG.sidebar.offset || 12;
 
@@ -38,8 +38,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function resizeListener() {
     var mql = window.matchMedia('(min-width: 992px)');
-    mql.addListener(function(e) {
-      if (e.matches) {
+    mql.addListener(event => {
+      if (event.matches) {
         recalculateAffixPosition();
       }
     });

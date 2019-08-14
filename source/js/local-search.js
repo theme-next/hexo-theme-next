@@ -1,6 +1,6 @@
 /* global CONFIG */
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
   // Popup Window
   let isfetched = false;
   let datas;
@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function() {
       .replace(/&#39;/g, '\'')
       .replace(/&#x3A;/g, ':')
       // Replace all the other &#x; chars
-      .replace(/&#(\d+);/g, function(m, p) {
+      .replace(/&#(\d+);/g, (m, p) => {
         return String.fromCharCode(p);
       })
       .replace(/&lt;/g, '<')
@@ -116,7 +116,7 @@ window.addEventListener('DOMContentLoaded', function() {
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
-      datas.forEach(function(data) {
+      datas.forEach(data => {
         // Only match articles with not empty titles
         if (!data.title) {
           return;
@@ -141,8 +141,8 @@ window.addEventListener('DOMContentLoaded', function() {
         if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
           let hitCount = indexOfTitle.length + indexOfContent.length;
           // Sort index by position of keyword
-          [indexOfTitle, indexOfContent].forEach(function(index) {
-            index.sort(function(itemLeft, itemRight) {
+          [indexOfTitle, indexOfContent].forEach(index => {
+            index.sort((itemLeft, itemRight) => {
               if (itemRight.position !== itemLeft.position) {
                 return itemRight.position - itemLeft.position;
               }

@@ -1,19 +1,19 @@
 /* global NexT, CONFIG */
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
 
   CONFIG.back2top.enable && NexT.utils.registerBackToTop();
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
-  $('.site-nav-toggle button').on('click', function() {
+  $('.site-nav-toggle button').on('click', () => {
     var $siteNav = $('.site-nav');
     var ON_CLASS_NAME = 'site-nav-on';
     var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
     var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
     var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
 
-    $siteNav.stop()[animateAction]('fast', function() {
+    $siteNav.stop()[animateAction]('fast', () => {
       $siteNav[animateCallback](ON_CLASS_NAME);
     });
   });
@@ -31,14 +31,14 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-$(document).on('DOMContentLoaded pjax:success', function() {
+$(document).on('DOMContentLoaded pjax:success', () => {
 
   if (CONFIG.save_scroll) {
     // Read position from localStorage
     var value = localStorage.getItem('scroll' + location.pathname);
     $('html, body').animate({ scrollTop: value || 0 });
     // Write position in localStorage
-    NexT.utils.saveScrollTimer = setInterval(function() {
+    NexT.utils.saveScrollTimer = setInterval(() => {
       localStorage.setItem('scroll' + location.pathname, window.scrollY);
     }, 1000);
   }
@@ -70,10 +70,10 @@ $(document).on('DOMContentLoaded pjax:success', function() {
   function initSidebarDimension() {
     var updateSidebarHeightTimer;
 
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', () => {
       updateSidebarHeightTimer && clearTimeout(updateSidebarHeightTimer);
 
-      updateSidebarHeightTimer = setTimeout(function() {
+      updateSidebarHeightTimer = setTimeout(() => {
         var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
 
         updateSidebarHeight(sidebarWrapperHeight);

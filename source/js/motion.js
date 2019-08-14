@@ -47,7 +47,7 @@ NexT.motion.middleWares = {
      */
     function hasElement($elements) {
       $elements = Array.isArray($elements) ? $elements : [$elements];
-      return $elements.every(function($element) {
+      return $elements.every($element => {
         return $element.length > 0;
       });
     }
