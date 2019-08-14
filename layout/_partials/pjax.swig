@@ -14,11 +14,11 @@ var pjax = new Pjax({
   cacheBust: false,
   scrollTo: !CONFIG.save_scroll
 });
-window.addEventListener('pjax:send', function() {
+window.addEventListener('pjax:send', () => {
   $('.sidebar-inner').stop().fadeTo('fast', 0);
   CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
 });
-window.addEventListener('pjax:success', function() {
+window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
     $(element).parent().append($(element).remove());
   });

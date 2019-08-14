@@ -2,7 +2,7 @@
 {%- set pdfobject_uri = theme.vendors.pdfobject | default('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js') %}
 <script{{ pjax }}>
 if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('{{ pdfobject_uri }}', function() {
+  NexT.utils.getScript('{{ pdfobject_uri }}', () => {
     document.querySelectorAll('div.pdf').forEach(element => {
       PDFObject.embed(element.getAttribute('target'), element, {
         pdfOpenParams: {

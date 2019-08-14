@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
 
   var sidebarToggleLines = {
     lines: [],
@@ -8,17 +8,17 @@ window.addEventListener('DOMContentLoaded', function() {
       this.lines.push(line);
     },
     init: function() {
-      this.lines.forEach(function(line) {
+      this.lines.forEach(line => {
         line.init();
       });
     },
     arrow: function() {
-      this.lines.forEach(function(line) {
+      this.lines.forEach(line => {
         line.arrow();
       });
     },
     close: function() {
-      this.lines.forEach(function(line) {
+      this.lines.forEach(line => {
         line.close();
       });
     }
@@ -111,21 +111,21 @@ window.addEventListener('DOMContentLoaded', function() {
       this.sidebarEl
         .on('touchstart', this.touchstartHandler.bind(this))
         .on('touchend', this.touchendHandler.bind(this))
-        .on('touchmove', function(e) {
-          e.preventDefault();
+        .on('touchmove', event => {
+          event.preventDefault();
         });
       window.addEventListener('sidebar:show', this.showSidebar.bind(this));
       window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
     },
-    mousedownHandler: function(e) {
-      mousePos.X = e.pageX;
-      mousePos.Y = e.pageY;
+    mousedownHandler: function(event) {
+      mousePos.X = event.pageX;
+      mousePos.Y = event.pageY;
     },
-    mouseupHandler: function(e) {
-      var deltaX = e.pageX - mousePos.X;
-      var deltaY = e.pageY - mousePos.Y;
-      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(e.target).is('.main');
-      if (this.isSidebarVisible && (clickingBlankPart || $(e.target).is('img.medium-zoom-image, .fancybox img'))) {
+    mouseupHandler: function(event) {
+      var deltaX = event.pageX - mousePos.X;
+      var deltaY = event.pageY - mousePos.Y;
+      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(event.target).is('.main');
+      if (this.isSidebarVisible && (clickingBlankPart || $(event.target).is('img.medium-zoom-image, .fancybox img'))) {
         this.hideSidebar();
       }
     },
@@ -142,13 +142,13 @@ window.addEventListener('DOMContentLoaded', function() {
         sidebarToggleLines.init();
       }
     },
-    touchstartHandler: function(e) {
-      touchPos.X = e.originalEvent.touches[0].clientX;
-      touchPos.Y = e.originalEvent.touches[0].clientY;
+    touchstartHandler: function(event) {
+      touchPos.X = event.originalEvent.touches[0].clientX;
+      touchPos.Y = event.originalEvent.touches[0].clientY;
     },
-    touchendHandler: function(e) {
-      var deltaX = e.originalEvent.changedTouches[0].clientX - touchPos.X;
-      var deltaY = e.originalEvent.changedTouches[0].clientY - touchPos.Y;
+    touchendHandler: function(event) {
+      var deltaX = event.originalEvent.changedTouches[0].clientX - touchPos.X;
+      var deltaY = event.originalEvent.changedTouches[0].clientY - touchPos.Y;
       var effectiveSliding = Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight));
       if (this.isSidebarVisible && effectiveSliding) {
         this.hideSidebar();
@@ -188,7 +188,7 @@ window.addEventListener('DOMContentLoaded', function() {
         this.sidebarEl.stop().animate({
           width  : SIDEBAR_WIDTH,
           display: 'block'
-        }, SIDEBAR_DISPLAY_DURATION, function() {
+        }, SIDEBAR_DISPLAY_DURATION, () => {
           self.sidebarEl.addClass('sidebar-active');
         });
       }

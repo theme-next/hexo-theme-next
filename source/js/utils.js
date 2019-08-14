@@ -44,8 +44,8 @@ NexT.utils = {
 
   registerExtURL: function() {
     document.querySelectorAll('.exturl').forEach(element => {
-      element.addEventListener('click', function() {
-        var $exturl = this.getAttribute('data-url');
+      element.addEventListener('click', event => {
+        var $exturl = event.currentTarget.getAttribute('data-url');
         var $decurl = decodeURIComponent(escape(window.atob($exturl)));
         window.open($decurl, '_blank', 'noopener');
         return false;
@@ -57,7 +57,7 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    $('.highlight').not('.gist .highlight').each(function(i, e) {
+    $('.highlight').not('.gist .highlight').each((i, e) => {
       function initButton(button) {
         if (CONFIG.copycode.style === 'mac') {
           button.html('<i class="fa fa-clipboard"></i>');
@@ -66,8 +66,8 @@ NexT.utils = {
         }
       }
       var $button = $('<div>').addClass('copy-btn');
-      $button.on('click', function() {
-        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+      $button.on('click', event => {
+        var code = $(event.currentTarget).parent().find('.code').find('.line').map((i, e) => {
           return e.innerText;
         }).toArray().join('\n');
         var ta = document.createElement('textarea');
@@ -85,20 +85,19 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          this.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
+          event.currentTarget.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
         }
         ta.blur(); // For iOS
-        $(this).blur();
+        $(event.currentTarget).blur();
         if (selected) {
           selection.removeAllRanges();
           selection.addRange(selected);
         }
         document.body.removeChild(ta);
       });
-      $button.on('mouseleave', function() {
-        var $b = $(this).closest('.copy-btn');
-        setTimeout(function() {
-          initButton($b);
+      $button.on('mouseleave', event => {
+        setTimeout(() => {
+          initButton($(event.currentTarget));
         }, 300);
       });
       initButton($button);
@@ -111,7 +110,7 @@ NexT.utils = {
     var $top = $('.back-to-top');
 
     // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load scroll', function() {
+    $(window).on('load scroll', () => {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
       var scrollTop = window.scrollY;
@@ -122,7 +121,7 @@ NexT.utils = {
       $('#scrollpercent > span').html(scrollPercentMaxed);
     });
 
-    $top.on('click', function() {
+    $top.on('click', () => {
       $('html, body').animate({ scrollTop: 0 });
     });
   },
@@ -132,13 +131,13 @@ NexT.utils = {
    */
   registerTabsTag: function() {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    $('.tabs ul.nav-tabs .tab').on('click', function(href) {
-      href.preventDefault();
+    $('.tabs ul.nav-tabs .tab').on('click', event => {
+      event.preventDefault();
       // Prevent selected tab to select again.
-      if (!$(this).hasClass('active')) {
+      if (!$(event.currentTarget).hasClass('active')) {
         // Add & Remove active class on `nav-tabs` & `tab-content`.
-        $(this).addClass('active').siblings().removeClass('active');
-        var tActive = $(this).find('a').attr('href');
+        $(event.currentTarget).addClass('active').siblings().removeClass('active');
+        var tActive = $(event.currentTarget).find('a').attr('href');
         $(tActive).addClass('active').siblings().removeClass('active');
         // Trigger event
         document.querySelector(tActive).dispatchEvent(new Event('tabs:click', {

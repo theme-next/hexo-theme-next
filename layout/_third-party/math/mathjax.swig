@@ -47,7 +47,7 @@
 </script>
 {%- set mathjax_uri = theme.vendors.mathjax | default('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML') %}
 <script>
-  NexT.utils.getScript('{{ mathjax_uri }}', function() {
+  NexT.utils.getScript('{{ mathjax_uri }}', () => {
     MathJax.Hub.Typeset();
   }, window.MathJax);
 </script>

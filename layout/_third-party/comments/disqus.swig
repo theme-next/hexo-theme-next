@@ -12,7 +12,7 @@
 {%- endif %}
 {%- if page.comments %}
 <script>
-  var disqus_config = function() {
+  function disqus_config() {
     this.page.url = {{ page.permalink | json }};
     this.page.identifier = {{ page.path | json }};
     this.page.title = '{{ page.title | addslashes }}';
@@ -40,7 +40,7 @@
         // load directly when there's no a scrollbar
         window.addEventListener('load', loadComments, false);
       } else {
-        $(window).on('scroll.disqus_scroll', function() {
+        $(window).on('scroll.disqus_scroll', () => {
           // offsetTop may changes because of manually resizing browser window or lazy loading images.
           var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
           var scrollTop = window.scrollY;

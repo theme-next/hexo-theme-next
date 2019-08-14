@@ -5,7 +5,7 @@
 {%- set gitalk_js_uri = theme.vendors.gitalk_js | default('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js') %}
 
 <script>
-  NexT.utils.getScript('{{ gitalk_js_uri }}', function() {
+  NexT.utils.getScript('{{ gitalk_js_uri }}', () => {
     var gitalk = new Gitalk({
       clientID: '{{ theme.gitalk.client_id }}',
       clientSecret: '{{ theme.gitalk.client_secret }}',

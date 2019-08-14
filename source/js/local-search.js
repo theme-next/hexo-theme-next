@@ -1,6 +1,6 @@
 /* global CONFIG */
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
   // Popup Window
   let isfetched = false;
   let datas;
@@ -15,11 +15,9 @@ window.addEventListener('DOMContentLoaded', function() {
   const path = CONFIG.root + searchPath;
   const input = document.getElementById('local-search-input');
   const resultContent = document.getElementById('local-search-result');
-  function localsearchSelector(selector, parent) {
-    return (parent || document).querySelector(selector);
-  }
+
   function removeElement(element) {
-    let el = localsearchSelector(element);
+    let el = document.querySelector(element);
     if (el) el.remove();
   }
   // Ref: https://github.com/ForbesLindesay/unescape-html
@@ -29,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function() {
       .replace(/&#39;/g, '\'')
       .replace(/&#x3A;/g, ':')
       // Replace all the other &#x; chars
-      .replace(/&#(\d+);/g, function(m, p) {
+      .replace(/&#(\d+);/g, (m, p) => {
         return String.fromCharCode(p);
       })
       .replace(/&lt;/g, '<')
@@ -116,7 +114,7 @@ window.addEventListener('DOMContentLoaded', function() {
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
-      datas.forEach(function(data) {
+      datas.forEach(data => {
         // Only match articles with not empty titles
         if (!data.title) {
           return;
@@ -141,8 +139,8 @@ window.addEventListener('DOMContentLoaded', function() {
         if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
           let hitCount = indexOfTitle.length + indexOfContent.length;
           // Sort index by position of keyword
-          [indexOfTitle, indexOfContent].forEach(function(index) {
-            index.sort(function(itemLeft, itemRight) {
+          [indexOfTitle, indexOfContent].forEach(index => {
+            index.sort((itemLeft, itemRight) => {
               if (itemRight.position !== itemLeft.position) {
                 return itemRight.position - itemLeft.position;
               }
@@ -244,11 +242,11 @@ window.addEventListener('DOMContentLoaded', function() {
       .then(res => {
       // Get the contents from search data
         isfetched = true;
-        datas = isXml ? $('entry', res).map(function() {
+        datas = isXml ? $('entry', res).map((i, e) => {
           return {
-            title  : $('title', this).text(),
-            content: $('content', this).text(),
-            url    : $('url', this).text()
+            title  : $('title', e).text(),
+            content: $('content', e).text(),
+            url    : $('url', e).text()
           };
         }).get() : JSON.parse(res);
 
@@ -268,8 +266,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // Monitor main search box
   function onPopupClose() {
-    localsearchSelector('.popup').style.display = 'none';
-    localsearchSelector('#local-search-input').value = '';
+    document.querySelector('.popup').style.display = 'none';
+    document.querySelector('#local-search-input').value = '';
     removeElement('.search-result-list');
     removeElement('#no-result');
     removeElement('.local-search-pop-overlay');
@@ -278,12 +276,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function proceedSearch() {
     document.body.insertAdjacentHTML('beforeend', '<div class="local-search-pop-overlay"></div>');
-    localsearchSelector('.local-search-pop-overlay').style.overflow = 'hidden';
-    localsearchSelector('.local-search-pop-overlay').addEventListener('click', onPopupClose);
-    localsearchSelector('.popup').style.display = 'block';
-    localsearchSelector('#local-search-input').setAttribute('autocorrect', 'off');
-    localsearchSelector('#local-search-input').setAttribute('autocapitalize', 'none');
-    localsearchSelector('#local-search-input').focus();
+    document.querySelector('.local-search-pop-overlay').style.overflow = 'hidden';
+    document.querySelector('.local-search-pop-overlay').addEventListener('click', onPopupClose);
+    document.querySelector('.popup').style.display = 'block';
+    document.querySelector('#local-search-input').setAttribute('autocorrect', 'off');
+    document.querySelector('#local-search-input').setAttribute('autocapitalize', 'none');
+    document.querySelector('#local-search-input').focus();
   }
 
   // Search function
@@ -296,14 +294,14 @@ window.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>`)
       .style.overflow = 'hidden';
-    localsearchSelector('#search-loading-icon').setAttribute('style', 'margin: 20% auto 0 auto; text-align: center');
+    document.querySelector('#search-loading-icon').setAttribute('style', 'margin: 20% auto 0 auto; text-align: center');
     fetchData(proceedSearch);
   }
 
   if (CONFIG.localsearch.trigger === 'auto') {
     input.addEventListener('input', inputEventFunction);
   } else {
-    localsearchSelector('.search-icon').addEventListener('click', inputEventFunction);
+    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
     input.addEventListener('keypress', event => {
       if (event.keyCode === 13) {
         inputEventFunction();
@@ -312,7 +310,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   // Handle and trigger popup window
-  localsearchSelector('.popup-trigger').addEventListener('click', event => {
+  document.querySelector('.popup-trigger').addEventListener('click', event => {
     event.stopPropagation();
     if (isfetched === false) {
       searchFunc();
@@ -321,12 +319,12 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  localsearchSelector('.popup-btn-close').addEventListener('click', onPopupClose);
-  localsearchSelector('.popup').addEventListener('click', event => {
+  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  document.querySelector('.popup').addEventListener('click', event => {
     event.stopPropagation();
   });
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(localsearchSelector('.search-popup')).display !== 'none';
+    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.search-popup')).display !== 'none';
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }

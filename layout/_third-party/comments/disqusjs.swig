@@ -5,7 +5,7 @@
 {%- set disqusjs_js_uri = theme.vendors.disqusjs_js | default('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js') %}
 
 <script>
-  NexT.utils.getScript('{{ disqusjs_js_uri }}', function() {
+  NexT.utils.getScript('{{ disqusjs_js_uri }}', () => {
     window.dsqjs = new DisqusJS({
       api: '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',
       apikey: '{{ theme.disqusjs.apikey }}',
