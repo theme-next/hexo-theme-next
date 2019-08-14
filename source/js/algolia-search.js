@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     apiKey        : algoliaSettings.apiKey,
     indexName     : algoliaSettings.indexName,
     searchFunction: helper => {
-      let searchInput = document.querySelector('#algolia-search-input input');
+      let searchInput = document.querySelector('#search-input input');
 
       if (searchInput.value) {
         helper.search();
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Registering Widgets
   [
     instantsearch.widgets.searchBox({
-      container  : '#algolia-search-input',
+      container  : '#search-input',
       placeholder: algoliaSettings.labels.input_placeholder
     }),
 
@@ -91,20 +91,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.popup-trigger').addEventListener('click', event => {
     event.stopPropagation();
-    document.body.insertAdjacentHTML('beforeend', '<div class="algolia-pop-overlay"></div>');
-    document.querySelector('.algolia-pop-overlay').style.overflow = 'hidden';
+    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
     let el = document.querySelector('.popup');
     if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
       el.style.display = 'block';
     } else {
       el.style.display = 'none';
     }
-    document.querySelector('#algolia-search-input').querySelectorAll('input').focus();
+    document.querySelector('#search-input input').focus();
   });
 
   const onPopupClose = () => {
     document.querySelector('.popup').style.display = 'none';
-    document.querySelector('.algolia-pop-overlay').remove();
+    document.querySelector('.search-pop-overlay').remove();
     document.body.style.overflow = '';
   };
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);

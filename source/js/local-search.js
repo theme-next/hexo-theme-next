@@ -13,8 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
     isXml = false;
   }
   const path = CONFIG.root + searchPath;
-  const input = document.getElementById('local-search-input');
-  const resultContent = document.getElementById('local-search-result');
+  const input = document.getElementById('search-input');
+  const resultContent = document.getElementById('search-result');
 
   const removeElement = element => {
     let el = document.querySelector(element);
@@ -256,7 +256,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }).get() : JSON.parse(res);
 
         // Remove loading animation
-        removeElement('.local-search-pop-overlay');
+        removeElement('.search-pop-overlay');
         document.body.style.overflow = '';
 
         if (callback) {
@@ -272,17 +272,16 @@ window.addEventListener('DOMContentLoaded', () => {
   // Monitor main search box
   const onPopupClose = () => {
     document.querySelector('.popup').style.display = 'none';
-    document.querySelector('#local-search-input').value = '';
+    document.querySelector('#search-input').value = '';
     removeElement('.search-result-list');
     removeElement('#no-result');
-    removeElement('.local-search-pop-overlay');
+    removeElement('.search-pop-overlay');
     document.body.style.overflow = '';
   };
 
   const proceedSearch = () => {
-    document.body.insertAdjacentHTML('beforeend', '<div class="local-search-pop-overlay"></div>');
-    document.querySelector('.local-search-pop-overlay').style.overflow = 'hidden';
-    document.querySelector('.local-search-pop-overlay').addEventListener('click', onPopupClose);
+    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
+    document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
     //document.querySelector('.popup').style.display = 'block';
     let el = document.querySelector('.popup');
     if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
@@ -290,20 +289,19 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       el.style.display = 'none';
     }
-    document.querySelector('#local-search-input').setAttribute('autocorrect', 'off');
-    document.querySelector('#local-search-input').setAttribute('autocapitalize', 'none');
-    document.querySelector('#local-search-input').focus();
+    document.querySelector('#search-input').setAttribute('autocorrect', 'off');
+    document.querySelector('#search-input').setAttribute('autocapitalize', 'none');
+    document.querySelector('#search-input').focus();
   };
 
   // Search function
   const searchFunc = () => {
     document.body
-      .appendChild(`<div class="local-search-pop-overlay">
+      .appendChild(`<div class="search-pop-overlay">
           <div id="search-loading-icon">
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
           </div>
-        </div>`)
-      .style.overflow = 'hidden';
+        </div>`);
     document.querySelector('#search-loading-icon').setAttribute('style', 'margin: 20% auto 0 auto; text-align: center');
     fetchData(proceedSearch);
   };
