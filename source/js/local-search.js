@@ -15,11 +15,11 @@ window.addEventListener('DOMContentLoaded', function() {
   const path = CONFIG.root + searchPath;
   const input = document.getElementById('local-search-input');
   const resultContent = document.getElementById('local-search-result');
-  const ___ = (selector, parent) => {
-    return (parent ? parent : document).querySelector(selector);
-  };
+  function localsearchSelector(selector, parent) {
+    return (parent || document).querySelector(selector);
+  }
   function removeElement(element) {
-    let el = ___(element);
+    let el = localsearchSelector(element);
     if (el) el.remove();
   }
   // Ref: https://github.com/ForbesLindesay/unescape-html
@@ -180,7 +180,7 @@ window.addEventListener('DOMContentLoaded', function() {
           }
 
           // Sort slices in content by search text's count and hits' count
-          slicesOfContent.sort(function(sliceLeft, sliceRight) {
+          slicesOfContent.sort((sliceLeft, sliceRight) => {
             if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
               return sliceRight.searchTextCount - sliceLeft.searchTextCount;
             } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
@@ -203,7 +203,7 @@ window.addEventListener('DOMContentLoaded', function() {
             resultItem += `<li><a href="${articleUrl}" class="search-result-title">${title}</a>`;
           }
 
-          slicesOfContent.forEach(function(slice) {
+          slicesOfContent.forEach(slice => {
             resultItem += `<a href="${articleUrl}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
           });
 
@@ -268,8 +268,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // Monitor main search box
   function onPopupClose() {
-    ___('.popup').style.display = 'none';
-    ___('#local-search-input').value = '';
+    localsearchSelector('.popup').style.display = 'none';
+    localsearchSelector('#local-search-input').value = '';
     removeElement('.search-result-list');
     removeElement('#no-result');
     removeElement('.local-search-pop-overlay');
@@ -278,12 +278,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function proceedSearch() {
     document.body.insertAdjacentHTML('beforeend', '<div class="local-search-pop-overlay"></div>');
-    ___('.local-search-pop-overlay').style.overflow = 'hidden';
-    ___('.local-search-pop-overlay').addEventListener('click', onPopupClose);
-    ___('.popup').style.display = 'block';
-    ___('#local-search-input').setAttribute('autocorrect', 'off');
-    ___('#local-search-input').setAttribute('autocapitalize', 'none');
-    ___('#local-search-input').focus();
+    localsearchSelector('.local-search-pop-overlay').style.overflow = 'hidden';
+    localsearchSelector('.local-search-pop-overlay').addEventListener('click', onPopupClose);
+    localsearchSelector('.popup').style.display = 'block';
+    localsearchSelector('#local-search-input').setAttribute('autocorrect', 'off');
+    localsearchSelector('#local-search-input').setAttribute('autocapitalize', 'none');
+    localsearchSelector('#local-search-input').focus();
   }
 
   // Search function
@@ -296,14 +296,14 @@ window.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>`)
       .style.overflow = 'hidden';
-    ___('#search-loading-icon').setAttribute('style', 'margin: 20% auto 0 auto; text-align: center');
+    localsearchSelector('#search-loading-icon').setAttribute('style', 'margin: 20% auto 0 auto; text-align: center');
     fetchData(proceedSearch);
   }
 
   if (CONFIG.localsearch.trigger === 'auto') {
     input.addEventListener('input', inputEventFunction);
   } else {
-    ___('.search-icon').addEventListener('click', inputEventFunction);
+    localsearchSelector('.search-icon').addEventListener('click', inputEventFunction);
     input.addEventListener('keypress', event => {
       if (event.keyCode === 13) {
         inputEventFunction();
@@ -312,8 +312,8 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   // Handle and trigger popup window
-  ___('.popup-trigger').addEventListener('click', e => {
-    e.stopPropagation();
+  localsearchSelector('.popup-trigger').addEventListener('click', event => {
+    event.stopPropagation();
     if (isfetched === false) {
       searchFunc();
     } else {
@@ -321,12 +321,12 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  ___('.popup-btn-close').addEventListener('click', onPopupClose);
-  ___('.popup').addEventListener('click', e => {
-    e.stopPropagation();
+  localsearchSelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  localsearchSelector('.popup').addEventListener('click', event => {
+    event.stopPropagation();
   });
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && ___('.search-popup').offsetParent === null;
+    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(localsearchSelector('.search-popup')).display !== 'none';
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }

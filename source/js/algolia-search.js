@@ -88,8 +88,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   search.start();
 
-  document.querySelector('.popup-trigger').addEventListener('click', function(e) {
-    e.stopPropagation();
+  document.querySelector('.popup-trigger').addEventListener('click', event => {
+    event.stopPropagation();
     $('body')
       .append('<div class="algolia-pop-overlay"></div>')
       .css('overflow', 'hidden');
@@ -104,8 +104,8 @@ window.addEventListener('DOMContentLoaded', function() {
   }
   $('.popup-btn-close').click(onPopupClose);
 
-  window.addEventListener('keyup', function(event) {
-    var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+  window.addEventListener('keyup', event => {
+    var shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.search-popup')).display !== 'none';
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }

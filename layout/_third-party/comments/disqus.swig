@@ -35,14 +35,14 @@
   }
   {%- if theme.disqus.lazyload %}
     (function() {
-      var offsetTop = $('#comments').offset().top - window.innerHeight;
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
       if (offsetTop <= 0) {
         // load directly when there's no a scrollbar
         window.addEventListener('load', loadComments, false);
       } else {
         $(window).on('scroll.disqus_scroll', function() {
           // offsetTop may changes because of manually resizing browser window or lazy loading images.
-          var offsetTop = $('#comments').offset().top - window.innerHeight;
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
           var scrollTop = window.scrollY;
 
           // pre-load comments a bit? (margin or anything else)
