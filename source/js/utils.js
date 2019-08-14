@@ -67,9 +67,9 @@ NexT.utils = {
       }
       var $button = $('<div>').addClass('copy-btn');
       $button.on('click', event => {
-        var code = $(event.currentTarget).parent().find('.code').find('.line').map((i, e) => {
-          return e.innerText;
-        }).toArray().join('\n');
+        var code = [...event.currentTarget.parentNode.querySelectorAll('.code .line')].map(element => {
+          return element.innerText;
+        }).join('\n');
         var ta = document.createElement('textarea');
         var yPosition = window.pageYOffset || document.documentElement.scrollTop;
         ta.style.top = yPosition + 'px'; // Prevent page scroll
@@ -350,12 +350,10 @@ NexT.utils = {
       callback();
     } else {
       $.ajax({
-        type: 'GET',
-        url: url,
+        url     : url,
         dataType: 'script',
-        cache: true,
-        success: callback
-      });
+        cache   : true
+      }).then(callback);
     }
   }
 };
