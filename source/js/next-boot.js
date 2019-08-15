@@ -68,18 +68,11 @@ $(document).on('DOMContentLoaded pjax:success', () => {
   }
 
   function initSidebarDimension() {
-    var updateSidebarHeightTimer;
 
     window.addEventListener('resize', () => {
-      updateSidebarHeightTimer && clearTimeout(updateSidebarHeightTimer);
-
-      updateSidebarHeightTimer = setTimeout(() => {
         var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-
         updateSidebarHeight(sidebarWrapperHeight);
-      }, 0);
     });
-
     // Initialize Sidebar & TOC Height.
     updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
   }

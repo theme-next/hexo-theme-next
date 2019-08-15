@@ -116,19 +116,15 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#sidebar').setAttribute('style', `margin-top: ${headerOffset}px; margin-left: auto`);
   };
 
-  const recalculateAffixPosition = () => {
-    // eslint-disable-next-line no-undef
-    window.removeEventListener('.affix', Affix); // works but Uncaught ReferenceError: Affix is not defined
-    sidebarInner.removeAttribute('bs.affix');
-    sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
-    initAffix();
-  };
-
   const resizeListener = () => {
     let mql = window.matchMedia('(min-width: 992px)');
     mql.addListener(event => {
       if (event.matches) {
-        recalculateAffixPosition();
+        // eslint-disable-next-line no-undef
+        window.removeEventListener('.affix', Affix);
+        sidebarInner.removeAttribute('bs.affix');
+        sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
+        initAffix();
       }
     });
   };
