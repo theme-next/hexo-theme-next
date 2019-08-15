@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
     document.querySelector('#sidebar').css({
-      'margin-top': `${headerOffset}px`,
+      'margin-top' : `${headerOffset}px`,
       'margin-left': 'auto'
     });
   };
