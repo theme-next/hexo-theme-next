@@ -20,20 +20,20 @@
       let scrollTop = this.$target.scrollTop();
       let position = this.$element.offset();
       let targetHeight = this.$target.height();
-      if (offsetTop != null && this.affixed === 'top') { return scrollTop < offsetTop ? 'top' : false; }
+      if (offsetTop != null && this.affixed === 'top') return scrollTop < offsetTop ? 'top' : false;
       if (this.affixed === 'bottom') {
-        if (offsetTop != null) { return scrollTop + this.unpin <= position.top ? false : 'bottom'; }
+        if (offsetTop != null) return scrollTop + this.unpin <= position.top ? false : 'bottom';
         return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
       }
       let initializing = this.affixed == null;
       let colliderTop = initializing ? scrollTop : position.top;
       let colliderHeight = initializing ? targetHeight : height;
-      if (offsetTop != null && scrollTop <= offsetTop) { return 'top'; }
-      if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) { return 'bottom'; }
+      if (offsetTop != null && scrollTop <= offsetTop) return 'top';
+      if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom';
       return false;
     }
     getPinnedOffset() {
-      if (this.pinnedOffset) { return this.pinnedOffset; }
+      if (this.pinnedOffset) return this.pinnedOffset;
       this.$element.removeClass(Affix.RESET).addClass('affix');
       let scrollTop = this.$target.scrollTop();
       let position = this.$element.offset();
@@ -43,22 +43,22 @@
       setTimeout(this.checkPosition.bind(this), 1);
     }
     checkPosition() {
-      if (!this.$element.is(':visible')) { return; }
+      if (!this.$element.is(':visible')) return;
       let height = this.$element.height();
       let offset = this.options.offset;
       let offsetTop = offset.top;
       let offsetBottom = offset.bottom;
       let scrollHeight = Math.max($(document).height(), $(document.body).height());
-      if (typeof offset !== 'object') { offsetBottom = offsetTop = offset; }
-      if (typeof offsetTop === 'function') { offsetTop = offset.top(this.$element); }
-      if (typeof offsetBottom === 'function') { offsetBottom = offset.bottom(this.$element); }
+      if (typeof offset !== 'object') offsetBottom = offsetTop = offset;
+      if (typeof offsetTop === 'function') offsetTop = offset.top(this.$element);
+      if (typeof offsetBottom === 'function') offsetBottom = offset.bottom(this.$element);
       let affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
       if (this.affixed !== affix) {
-        if (this.unpin != null) { this.$element.css('top', ''); }
+        if (this.unpin != null) this.$element.css('top', '');
         let affixType = 'affix' + (affix ? '-' + affix : '');
         let e = new $.Event(affixType + '.bs.affix');
         this.$element.trigger(e);
-        if (e.isDefaultPrevented()) { return; }
+        if (e.isDefaultPrevented()) return;
         this.affixed = affix;
         this.unpin = affix === 'bottom' ? this.getPinnedOffset() : null;
         this.$element
