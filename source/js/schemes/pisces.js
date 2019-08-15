@@ -113,16 +113,17 @@ window.addEventListener('DOMContentLoaded', () => {
         bottom: footerOffset
       }
     });
-    document.querySelector('#sidebar').setAttribute('style', `margin-top: ${headerOffset}px; margin-left: auto`);
+    document.querySelector('#sidebar').css({
+      'margin-top': `${headerOffset}px`,
+      'margin-left': 'auto'
+    });
   };
 
   const resizeListener = () => {
-    let mql = window.matchMedia('(min-width: 992px)');
-    mql.addListener(event => {
+    window.matchMedia('(min-width: 992px)').addListener(event => {
       if (event.matches) {
-        // eslint-disable-next-line no-undef
-        window.removeEventListener('.affix', Affix);
-        sidebarInner.removeAttribute('bs.affix');
+        $(window).off('.affix');
+        $('.sidebar-inner').removeData('bs.affix');
         sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
         initAffix();
       }
