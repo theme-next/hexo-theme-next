@@ -45,9 +45,7 @@
         </div>
       {%- endif %}
       {%- if theme.sharejs.enable %}
-        <div>
-          {% include '../share/sharejs.swig' %}
-        </div>
+        {% include '../share/sharejs.swig' %}
       {%- endif %}
     </div>
   {%- endif %}
