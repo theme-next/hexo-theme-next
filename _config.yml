@@ -733,6 +733,15 @@ needmoreshare2:
       position: middleRight
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
 
+# share.js
+# See: https://github.com/overtrue/share.js
+# networks: weibo,qq,wechat,tencent,douban,qzone,linkedin,diandian,facebook,twitter,google
+sharejs:
+  enable: true
+  #networks: weibo,qq,wechat,tencent,douban,qzone,linkedin,diandian,facebook,twitter,google
+  wechat_qrcode:
+    title: share.title
+    prompt: share.prompt
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
@@ -1180,6 +1189,14 @@ vendors:
   # Example:
   # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
   canvas_ribbon:
+
+  # share.js
+  # See: https://github.com/overtrue/share.js
+  # Example:
+  # sharejs_js: //cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js
+  # sharejs_css: //cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css
+  sharejs_js:
+  sharejs_css:
 
 # Assets
 css: css
