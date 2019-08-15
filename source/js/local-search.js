@@ -281,6 +281,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const proceedSearch = () => {
     document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
+    document.body.style.overflow = 'hidden';
     document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
     let el = document.querySelector('.popup');
     if (el.isVisible()) {
@@ -288,8 +289,6 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       el.style.display = 'block';
     }
-    document.getElementById('search-input').setAttribute('autocorrect', 'off');
-    document.getElementById('search-input').setAttribute('autocapitalize', 'none');
     document.getElementById('search-input').focus();
   };
 

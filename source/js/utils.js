@@ -12,17 +12,9 @@ HTMLElement.prototype.height = function() {
   return parseFloat(window.getComputedStyle(this).height);
 };
 
-HTMLElement.prototype.css = function(key, value) {
-  if (typeof key === 'object') {
-    for (var k in key) {
-      this.style[k] = key[k];
-    }
-  } else {
-    if (value) {
-      this.style[key] = value;
-    } else {
-      return this.style[key];
-    }
+HTMLElement.prototype.css = function(dict) {
+  for (var key in dict) {
+    this.style[key] = dict[key];
   }
   return this;
 };

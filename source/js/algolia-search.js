@@ -92,6 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.popup-trigger').addEventListener('click', event => {
     event.stopPropagation();
     document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
+    document.body.style.overflow = 'hidden';
     let el = document.querySelector('.popup');
     if (el.isVisible()) {
       el.style.display = 'none';
