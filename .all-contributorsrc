@@ -495,6 +495,15 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "littleylv",
+      "name": "Siuwing Leoi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16814596?v=4",
+      "profile": "https://littleylv.github.io/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6
