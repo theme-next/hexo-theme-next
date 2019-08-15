@@ -1,4 +1,4 @@
-{%- if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
+{%- if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or theme.sharejs.enable %}
   <div class="post-widgets">
   {%- if theme.rating.enable %}
     <div class="wp_rating">
@@ -7,7 +7,7 @@
   {%- endif %}
 
   {%- if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-    <div class="social-like">
+    <div class="post-social-like">
       {%- if theme.vkontakte_api.enable and theme.vkontakte_api.like %}
         <div class="vk_like">
           <span id="vk_like"></span>
@@ -22,8 +22,8 @@
     </div>
   {%- endif %}
 
-  {%- if theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
-    <div class="social-share">
+  {%- if theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) or theme.sharejs.enable %}
+    <div class="post-social-share">
       {%- if theme.likely.enable %}
         {%- if theme.likely.look == 'normal' %}
           {%- set likely_look = 'likely' %}
@@ -42,6 +42,11 @@
           <span class="btn">
             <i class="fa fa-share-alt" aria-hidden="true"></i>
           </span>
+        </div>
+      {%- endif %}
+      {%- if theme.sharejs.enable %}
+        <div>
+          {% include '../share/sharejs.swig' %}
         </div>
       {%- endif %}
     </div>
