@@ -80,15 +80,6 @@ $(document).on('DOMContentLoaded pjax:success', () => {
       }, 0);
     });
 
-    // Initialize Sidebar & TOC Width.
-    var scrollbarWidth = NexT.utils.getScrollbarWidth();
-    if (document.querySelector('.site-overview-wrap') && document.querySelector('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      document.querySelector('.site-overview').style.width = `calc(100% + ${scrollbarWidth}px)`;
-    }
-    if (document.querySelector('.post-toc-wrap') && document.querySelector('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      document.querySelector('.post-toc').style.width = `calc(100% + ${scrollbarWidth}px)`;
-    }
-
     // Initialize Sidebar & TOC Height.
     updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
   }

@@ -331,15 +331,6 @@ NexT.utils = {
     return CONFIG.scheme === 'Gemini';
   },
 
-  getScrollbarWidth: function() {
-    var $div = $('<div>').addClass('scrollbar-measure').prependTo('body');
-    var div = $div[0];
-    var scrollbarWidth = div.offsetWidth - div.clientWidth;
-    $div.remove();
-
-    return scrollbarWidth;
-  },
-
   getContentVisibilityHeight: function() {
     var docHeight = document.querySelector('.container').height();
     var winHeight = window.innerHeight;
