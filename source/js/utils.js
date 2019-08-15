@@ -12,6 +12,21 @@ HTMLElement.prototype.height = function() {
   return parseFloat(window.getComputedStyle(this).height);
 };
 
+HTMLElement.prototype.css = function(key, value) {
+  if (typeof key === 'object') {
+    for (var k in key) {
+      this.style[k] = key[k];
+    }
+  } else {
+    if (value) {
+      this.style[key] = value;
+    } else {
+      return this.style[key];
+    }
+  }
+  return this;
+};
+
 NexT.utils = {
   /**
    * Wrap images with fancybox.
@@ -99,7 +114,7 @@ NexT.utils = {
           event.currentTarget.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
         }
         ta.blur(); // For iOS
-        $(event.currentTarget).blur();
+        event.currentTarget.blur();
         if (selected) {
           selection.removeAllRanges();
           selection.addRange(selected);
@@ -222,12 +237,13 @@ NexT.utils = {
 
         // Replace the iframe's dimensions and position the iframe absolute
         // This is the trick to emulate the video ratio
-        $(iframe).width('100%').height('100%')
-          .css({
-            position: 'absolute',
-            top     : '0',
-            left    : '0'
-          });
+        iframe.css({
+          width   : '100%',
+          height  : '100%',
+          position: 'absolute',
+          top     : '0',
+          left    : '0'
+        });
 
         // Wrap the iframe in a new <div> which uses a dynamically fetched padding-top property
         // based on the video's w/h dimensions

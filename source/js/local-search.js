@@ -301,7 +301,10 @@ window.addEventListener('DOMContentLoaded', () => {
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
           </div>
         </div>`);
-    document.querySelector('#search-loading-icon').setAttribute('style', 'margin: 20% auto 0 auto; text-align: center');
+    document.querySelector('#search-loading-icon').css({
+      margin: '20% auto 0 auto',
+      'text-align': 'center'
+    });
     fetchData(proceedSearch);
   };
 
