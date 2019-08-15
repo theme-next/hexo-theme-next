@@ -361,3 +361,11 @@ NexT.utils = {
 HTMLElement.prototype.isVisible = function() {
   return window.getComputedStyle(this).display !== 'none';
 }
+
+HTMLElement.prototype.width = function () {
+  return parseFloat(window.getComputedStyle(this).width);
+}
+
+HTMLElement.prototype.height = function () {
+  return parseFloat(window.getComputedStyle(this).height);
+}

@@ -118,7 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const sidebarOffset = CONFIG.sidebar.offset || 12;
   const sidebarInner = document.querySelector('.sidebar-inner');
-  const getHeaderOffset = () => parseFloat(getComputedStyle(document.querySelector('.header-inner'), null).height.replace('px', '')) + sidebarOffset;
+  const getHeaderOffset = () => document.querySelector('.header-inner').height() + sidebarOffset;
   const getFooterOffset = () => {
     let footer = document.querySelector('#footer');
     let footerInner = document.querySelector('.footer-inner');
