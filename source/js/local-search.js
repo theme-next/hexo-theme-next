@@ -281,15 +281,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const proceedSearch = () => {
     document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
+    document.body.style.overflow = 'hidden';
     document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
     let el = document.querySelector('.popup');
-    if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
-      el.style.display = 'block';
-    } else {
+    if (el.isVisible()) {
       el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
     }
-    document.getElementById('search-input').setAttribute('autocorrect', 'off');
-    document.getElementById('search-input').setAttribute('autocapitalize', 'none');
     document.getElementById('search-input').focus();
   };
 
@@ -301,7 +300,10 @@ window.addEventListener('DOMContentLoaded', () => {
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
           </div>
         </div>`);
-    document.querySelector('#search-loading-icon').setAttribute('style', 'margin: 20% auto 0 auto; text-align: center');
+    document.querySelector('#search-loading-icon').css({
+      margin: '20% auto 0 auto',
+      'text-align': 'center'
+    });
     fetchData(proceedSearch);
   };
 
@@ -331,7 +333,7 @@ window.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
   });
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.popup')).display !== 'none';
+    let shouldDismissSearchPopup = event.which === 27 && document.querySelector('.popup').isVisible();
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }
