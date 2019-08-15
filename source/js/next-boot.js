@@ -82,10 +82,10 @@ $(document).on('DOMContentLoaded pjax:success', () => {
 
     // Initialize Sidebar & TOC Width.
     var scrollbarWidth = NexT.utils.getScrollbarWidth();
-    if (document.querySelector('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
+    if (document.querySelector('.site-overview-wrap') && document.querySelector('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
       $('.site-overview').css('width', `calc(100% + ${scrollbarWidth}px)`);
     }
-    if (document.querySelector('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
+    if (document.querySelector('.post-toc-wrap') && document.querySelector('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
       $('.post-toc').css('width', `calc(100% + ${scrollbarWidth}px)`);
     }
 
