@@ -142,9 +142,9 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   const recalculateAffixPosition = () => {
-    window.removeEventListener('.affix', () => {});
+    window.removeEventListener('.affix', window.Affix.RESET);
     sidebarInner.removeAttribute('bs.affix');
-    sidebarInner.classList.remove('affix affix-top affix-bottom');
+    sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
     initAffix();
   };
 
