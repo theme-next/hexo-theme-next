@@ -218,7 +218,7 @@ window.addEventListener('DOMContentLoaded', () => {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    var containerHeight = $('#footer').attr('position') ? $('.container').height() + $('#footer').outerHeight(true) : $('.container').height();
+    var containerHeight = $('#footer').attr('position') ? document.querySelector('.container').height() + $('#footer').outerHeight(true) : document.querySelector('.container').height();
     if (containerHeight < window.innerHeight) {
       $('#footer').css({ 'position': 'fixed', 'bottom': 0, 'left': 0, 'right': 0 }).attr('position', 'fixed');
     } else {

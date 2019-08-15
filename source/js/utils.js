@@ -1,7 +1,18 @@
 /* global NexT, CONFIG */
 
-NexT.utils = {
+HTMLElement.prototype.isVisible = function() {
+  return window.getComputedStyle(this).display !== 'none';
+};
 
+HTMLElement.prototype.width = function() {
+  return parseFloat(window.getComputedStyle(this).width);
+};
+
+HTMLElement.prototype.height = function() {
+  return parseFloat(window.getComputedStyle(this).height);
+};
+
+NexT.utils = {
   /**
    * Wrap images with fancybox.
    */
@@ -189,10 +200,10 @@ NexT.utils = {
     ];
     var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
 
-    function getDimension($element) {
+    function getDimension(element) {
       return {
-        width : $element.width(),
-        height: $element.height()
+        width : element.width(),
+        height: element.height()
       };
     }
 
@@ -201,8 +212,7 @@ NexT.utils = {
     }
 
     document.querySelectorAll('iframe').forEach(iframe => {
-      var $iframe = $(iframe);
-      var oldDimension = getDimension($iframe);
+      var oldDimension = getDimension(iframe);
       var newDimension;
 
       if (iframe.src.search(pattern) > 0) {
@@ -212,7 +222,7 @@ NexT.utils = {
 
         // Replace the iframe's dimensions and position the iframe absolute
         // This is the trick to emulate the video ratio
-        $iframe.width('100%').height('100%')
+        $(iframe).width('100%').height('100%')
           .css({
             position: 'absolute',
             top     : '0',
@@ -237,7 +247,7 @@ NexT.utils = {
 
         // Additional adjustments for 163 Music
         if (iframe.src.search('music.163.com') > 0) {
-          newDimension = getDimension($iframe);
+          newDimension = getDimension(iframe);
           var shouldRecalculateAspect = newDimension.width > oldDimension.width
                                      || newDimension.height < oldDimension.height;
 
@@ -323,14 +333,14 @@ NexT.utils = {
   },
 
   getContentVisibilityHeight: function() {
-    var docHeight = $('.container').height();
+    var docHeight = document.querySelector('.container').height();
     var winHeight = window.innerHeight;
     var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
     return contentVisibilityHeight;
   },
 
   getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? $('.back-to-top').height() : 0;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : 0;
     return sidebarb2tHeight;
   },
 
@@ -357,15 +367,3 @@ NexT.utils = {
     }
   }
 };
-
-HTMLElement.prototype.isVisible = function() {
-  return window.getComputedStyle(this).display !== 'none';
-}
-
-HTMLElement.prototype.width = function () {
-  return parseFloat(window.getComputedStyle(this).width);
-}
-
-HTMLElement.prototype.height = function () {
-  return parseFloat(window.getComputedStyle(this).height);
-}
