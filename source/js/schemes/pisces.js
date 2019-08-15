@@ -1,13 +1,13 @@
 /* global CONFIG */
 
-(function ($) {
+(function($) {
   'use strict';
 
-  // AFFIX CLASS DEFINITION
-  // ======================
-
-  var Affix = function (element, options) {
-    this.options = $.extend({}, Affix.DEFAULTS, options);
+  var Affix = function(element, options) {
+    this.options = $.extend({
+      offset: 0,
+      target: window
+    }, options);
 
     this.$target = $(this.options.target)
       .on('scroll.bs.affix.data-api', this.checkPosition.bind(this))
@@ -21,16 +21,9 @@
     this.checkPosition();
   };
 
-  Affix.VERSION = '3.3.5';
-
   Affix.RESET = 'affix affix-top affix-bottom';
 
-  Affix.DEFAULTS = {
-    offset: 0,
-    target: window
-  };
-
-  Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
+  Affix.prototype.getState = function(scrollHeight, height, offsetTop, offsetBottom) {
     var scrollTop = this.$target.scrollTop();
     var position = this.$element.offset();
     var targetHeight = this.$target.height();
@@ -52,7 +45,7 @@
     return false;
   };
 
-  Affix.prototype.getPinnedOffset = function () {
+  Affix.prototype.getPinnedOffset = function() {
     if (this.pinnedOffset) return this.pinnedOffset;
     this.$element.removeClass(Affix.RESET).addClass('affix');
     var scrollTop = this.$target.scrollTop();
@@ -60,11 +53,11 @@
     return (this.pinnedOffset = position.top - scrollTop);
   };
 
-  Affix.prototype.checkPositionWithEventLoop = function () {
+  Affix.prototype.checkPositionWithEventLoop = function() {
     setTimeout(this.checkPosition.bind(this), 1);
   };
 
-  Affix.prototype.checkPosition = function () {
+  Affix.prototype.checkPosition = function() {
     if (!this.$element.is(':visible')) return;
 
     var height = this.$element.height();
@@ -73,11 +66,9 @@
     var offsetBottom = offset.bottom;
     var scrollHeight = Math.max($(document).height(), $(document.body).height());
 
-    /* eslint-disable */
     if (typeof offset !== 'object') offsetBottom = offsetTop = offset;
     if (typeof offsetTop === 'function') offsetTop = offset.top(this.$element);
     if (typeof offsetBottom === 'function') offsetBottom = offset.bottom(this.$element);
-    /* eslint-enable */
 
     var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
 
@@ -107,11 +98,8 @@
     }
   };
 
-  // AFFIX PLUGIN DEFINITION
-  // =======================
-
   function Plugin(option) {
-    return this.each(function () {
+    return this.each(function() {
       var $this = $(this);
       var data = $this.data('bs.affix');
       var options = typeof option === 'object' && option;
