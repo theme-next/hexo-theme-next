@@ -10,7 +10,7 @@
       var url = visitors.getAttribute('id').trim();
       var title = visitors.getAttribute('data-flag-title').trim();
 
-      Counter('get', `/classes/Counter?${JSON.stringify({ where: url })}`)
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
