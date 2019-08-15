@@ -283,10 +283,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
     document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
     let el = document.querySelector('.popup');
-    if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
-      el.style.display = 'block';
-    } else {
+    if (el.isVisible()) {
       el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
     }
     document.getElementById('search-input').setAttribute('autocorrect', 'off');
     document.getElementById('search-input').setAttribute('autocapitalize', 'none');
@@ -331,7 +331,7 @@ window.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
   });
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.popup')).display !== 'none';
+    let shouldDismissSearchPopup = event.which === 27 && document.querySelector('.popup').isVisible();
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }

@@ -357,3 +357,7 @@ NexT.utils = {
     }
   }
 };
+
+HTMLElement.prototype.isVisible = function() {
+  return window.getComputedStyle(this).display !== 'none';
+}

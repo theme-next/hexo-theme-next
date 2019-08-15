@@ -93,10 +93,10 @@ window.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
     document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
     let el = document.querySelector('.popup');
-    if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
-      el.style.display = 'block';
-    } else {
+    if (el.isVisible()) {
       el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
     }
     document.querySelector('#search-input input').focus();
   });
@@ -109,7 +109,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
 
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && window.getComputedStyle(document.querySelector('.popup')).display !== 'none';
+    let shouldDismissSearchPopup = event.which === 27 && document.querySelector('.popup').isVisible();
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }
