@@ -22,9 +22,7 @@
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
-  {%- for inject_item in theme.injects.head %}
-    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {%- endfor %}
+  {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
   {% include '_third-party/analytics/index.swig' %}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
@@ -96,9 +94,7 @@
 
   {% block script_extra %}{% endblock %}
 
-  {%- for inject_item in theme.injects.bodyEnd %}
-    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {%- endfor %}
+  {{- next_inject('bodyEnd') }}
 
   {%- if theme.pjax %}
     </div>
