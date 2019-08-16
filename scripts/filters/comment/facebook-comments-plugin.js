@@ -21,7 +21,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   </div>
   `, {
     configKey: 'facebook_comments_plugin',
-    button: '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook'
+    button   : '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook'
   });
 
 }, priority.facebook_comments_plugin);
@@ -35,9 +35,9 @@ hexo.extend.filter.register('theme_inject', injects => {
   {% if post.comments %}
   <span class="post-meta-item">
     ${iconText('comment-o', 'facebook')}
-    <a title="facebook comments" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-      <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
-    </a>
+    <a title="facebook comments" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">{#
+      #}<span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>{#
+    #}</a>
   </span>
   {% endif %}
   `);
