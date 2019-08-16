@@ -597,7 +597,7 @@ bookmark:
 
 # ---------------------------------------------------------------
 # Comments Settings
-# See: https://theme-next.org/docs/third-party-services/comments-and-widgets
+# See: https://theme-next.org/docs/third-party-services/comments
 # ---------------------------------------------------------------
 
 # Multiple Comment System Support
@@ -683,7 +683,7 @@ gitalk:
 
 # ---------------------------------------------------------------
 # Post Widgets / Content Sharing Services
-# See: https://theme-next.org/docs/third-party-services/content-sharing-services
+# See: https://theme-next.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
 
 # Facebook SDK Support
