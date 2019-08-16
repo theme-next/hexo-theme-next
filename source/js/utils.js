@@ -136,7 +136,7 @@ NexT.utils = {
       }
       if (backToTop) {
         $(backToTop).toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
-        document.querySelector('#scrollpercent span').innerHTML = `${scrollPercent}`;
+        document.querySelector('#scrollpercent span').innerText = scrollPercent;
       }
       if (readingProgressBar) {
         readingProgressBar.style.width = scrollPercent + '%';
