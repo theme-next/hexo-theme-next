@@ -152,9 +152,7 @@
             </span>
           {%- endif %}
 
-          {%- for inject_item in theme.injects.postMeta %}
-            {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-          {%- endfor %}
+          {{- next_inject('postMeta') }}
 
           {%- if config.symbols_count_time.symbols %}
           {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
@@ -255,9 +253,7 @@
     {%- endif %}
 
     {%- if not is_index %}
-      {%- for inject_item in theme.injects.postBodyEnd %}
-        {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-      {%- endfor %}
+      {{- next_inject('postBodyEnd') }}
 
       {%- if theme.wechat_subscriber.enable %}
         {{ partial('../_partials/post/wechat-subscriber.swig', {}, {cache: theme.cache.enable}) }}
