@@ -70,8 +70,8 @@ $(document).on('DOMContentLoaded pjax:success', () => {
   function initSidebarDimension() {
 
     window.addEventListener('resize', () => {
-        var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-        updateSidebarHeight(sidebarWrapperHeight);
+      var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
+      updateSidebarHeight(sidebarWrapperHeight);
     });
     // Initialize Sidebar & TOC Height.
     updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
