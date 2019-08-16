@@ -82,7 +82,7 @@
       <div class="reading-progress-bar"></div>
     {%- endif %}
 
-    {{ partial('_partials/share/index.swig', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/share.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
   {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}
