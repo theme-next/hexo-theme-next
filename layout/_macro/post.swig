@@ -1,9 +1,4 @@
-  {%- set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
-
-  {%- set post_class = 'post post-type-' + post.type | default('normal') %}
-  {%- if post_extra_class > 0 %}
-    {%- set post_class = post_class + ' ' + post_extra_class | default('') %}
-  {%- endif %}
+  {%- set post_class = 'post' %}
   {%- if post.sticky > 0 %}
     {%- set post_class = post_class + ' post-sticky' %}
   {%- endif %}
@@ -29,35 +24,31 @@
       <meta itemprop="name" content="{{ title }}">
     </span>
 
-    {%- if not headlessPost %}
+    {%- if post.header !== false %}
       <header class="post-header">
-
-        {# Not to show title for quote posts that do not have a title #}
-        {%- if not (is_index and post.type === 'quote' and not post.title) %}
-          <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">{#
-          #}{# Link posts #}{#
-          #}{%- if post.link %}
-              {%- if post.sticky > 0 %}
-                <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
-                  <i class="fa fa-thumb-tack"></i>
-                </span>
-              {%- endif %}
-              {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
-              {%- set postText = post.title or post.link %}
-              {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
-            {% elif is_index %}
-              {%- if post.sticky > 0 %}
-                <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
-                  <i class="fa fa-thumb-tack"></i>
-                </span>
-              {%- endif %}
-              {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
-            {% else -%}
-              {{- post.title -}}
-              {% include '../_partials/post-edit.swig' %}
+        <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction &&post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">{#
+        #}{# Link posts #}{#
+        #}{%- if post.link %}
+            {%- if post.sticky > 0 %}
+              <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+                <i class="fa fa-thumb-tack"></i>
+              </span>
             {%- endif %}
-          </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
-        {%- endif %}
+            {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
+            {%- set postText = post.title or post.link %}
+            {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
+          {% elif is_index %}
+            {%- if post.sticky > 0 %}
+              <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+                <i class="fa fa-thumb-tack"></i>
+              </span>
+            {%- endif %}
+            {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
+          {% else -%}
+            {{- post.title -}}
+            {% include '../_partials/post-edit.swig' %}
+          {%- endif %}
+        </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
         <div class="post-meta">
 
@@ -233,11 +224,7 @@
           {%- endif %}
           <!--/noindex-->
         {% else %}
-          {%- if post.type === 'picture' %}
-            <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
-          {% else %}
-            {{ post.content }}
-          {%- endif %}
+          {{ post.content }}
         {%- endif %}
       {% else %}
         {{ post.content }}
