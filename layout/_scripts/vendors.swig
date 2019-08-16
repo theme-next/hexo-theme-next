@@ -22,10 +22,6 @@
   {%- set js_vendors.pangu = 'pangu/dist/pangu.min.js?v=4.0.7' %}
 {%- endif %}
 
-{%- if theme.reading_progress.enable %}
-  {%- set js_vendors.reading_progress = 'reading_progress/reading_progress.js' %}
-{%- endif %}
-
 {%- if theme.motion.enable %}
   {%- set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
   {%- set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}

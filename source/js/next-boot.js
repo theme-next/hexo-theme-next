@@ -2,7 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  CONFIG.back2top.enable && NexT.utils.registerBackToTop();
+  NexT.utils.registerScrollPercent();
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.

@@ -301,7 +301,7 @@ window.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>`);
     document.querySelector('#search-loading-icon').css({
-      margin: '20% auto 0 auto',
+      margin      : '20% auto 0 auto',
       'text-align': 'center'
     });
     fetchData(proceedSearch);
