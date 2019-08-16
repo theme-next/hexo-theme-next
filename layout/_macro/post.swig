@@ -24,7 +24,7 @@
       <meta itemprop="name" content="{{ title }}">
     </span>
 
-    {%- if post.header !== 'none' and not (is_index and post.header === 'post') %}
+    {%- if post.header !== false %}
       <header class="post-header">
         <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction &&post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">{#
         #}{# Link posts #}{#
