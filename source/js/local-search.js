@@ -294,12 +294,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Search function
   const searchFunc = () => {
-    document.body
-      .appendChild(`<div class="search-pop-overlay">
-          <div id="search-loading-icon">
-            <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-          </div>
-        </div>`);
+    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"><div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div>');
     document.querySelector('#search-loading-icon').css({
       margin      : '20% auto 0 auto',
       'text-align': 'center'
