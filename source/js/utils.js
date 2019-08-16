@@ -20,6 +20,7 @@ HTMLElement.prototype.css = function(dict) {
 };
 
 NexT.utils = {
+
   /**
    * Wrap images with fancybox.
    */
