@@ -1,1 +1,1 @@
-<script src="{{ url_for(theme.js) }}/schemes/pisces.js?v={{ version }}"></script>
+{{- next_js('schemes/pisces.js') }}

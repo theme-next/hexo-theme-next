@@ -3,4 +3,4 @@
 <link rel="stylesheet" href="{{ algolia_instant_css_uri }}">
 <script src="{{ algolia_instant_js_uri }}"></script>
 
-<script src="{{ url_for(theme.js) }}/algolia-search.js?v={{ version }}"></script>
+{{- next_js('algolia-search.js') }}
