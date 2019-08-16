@@ -80,6 +80,10 @@
       </div>
     {%- endif %}
 
+    {%- if theme.reading_progress.enable %}
+      <div class="reading-progress-bar"></div>
+    {%- endif %}
+
     {{ partial('_partials/share/index.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 

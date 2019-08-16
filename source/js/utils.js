@@ -123,23 +123,26 @@ NexT.utils = {
     });
   },
 
-  registerBackToTop: function() {
+  registerScrollPercent: function() {
     var THRESHOLD = 50;
-    var $top = $('.back-to-top');
-
+    var backToTop = document.querySelector('.back-to-top');
+    var readingProgressBar = document.querySelector('.reading-progress-bar');
     // For init back to top in sidebar if page was scrolled after page refresh.
     $(window).on('load scroll', () => {
-      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
-
-      var scrollTop = window.scrollY;
-      var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
-      var scrollPercent = scrollTop / contentVisibilityHeight;
-      var scrollPercentRounded = Math.round(scrollPercent * 100);
-      var scrollPercentMaxed = Math.min(scrollPercentRounded, 100);
-      $('#scrollpercent > span').html(scrollPercentMaxed);
+      var scrollPercent;
+      if (backToTop || readingProgressBar) {
+        scrollPercent = NexT.utils.getScrollPercent();
+      }
+      if (backToTop) {
+        $(backToTop).toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
+        document.querySelector('#scrollpercent span').innerHTML = scrollPercent;
+      }
+      if (readingProgressBar) {
+        readingProgressBar.style.width = scrollPercent + '%';
+      }
     });
 
-    $top.on('click', () => {
+    backToTop && backToTop.addEventListener('click', () => {
       $('html, body').animate({ scrollTop: 0 });
     });
   },
@@ -352,6 +355,14 @@ NexT.utils = {
       ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + this.getSidebarb2tHeight()
       : (sidebarPadding * 2) + (sidebarNavHeight / 2);
     return sidebarSchemePadding;
+  },
+
+  getScrollPercent: function() {
+    var scrollTop = window.scrollY;
+    var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
+    var scrollPercent = scrollTop / contentVisibilityHeight;
+    var scrollPercentRounded = Math.round(scrollPercent * 100);
+    return Math.min(scrollPercentRounded, 100);
   },
 
   getScript: function(url, callback, condition) {
