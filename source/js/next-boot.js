@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
-  $('.site-nav-toggle button').on('click', () => {
+  document.querySelector('.site-nav-toggle button').addEventListener('click', () => {
     var $siteNav = $('.site-nav');
     var ON_CLASS_NAME = 'site-nav-on';
     var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
@@ -62,21 +62,13 @@ $(document).on('DOMContentLoaded pjax:success', () => {
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
-  function updateSidebarHeight(height) {
-    height = height || 'auto';
-    $('.site-overview, .post-toc').css('max-height', height);
-  }
-
   function initSidebarDimension() {
-
-    window.addEventListener('resize', () => {
-      var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-      updateSidebarHeight(sidebarWrapperHeight);
-    });
     // Initialize Sidebar & TOC Height.
-    updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
+    var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
+    $('.site-overview, .post-toc').css('max-height', sidebarWrapperHeight);
   }
   initSidebarDimension();
+  window.addEventListener('resize', initSidebarDimension);
 
   function wrapTable() {
     $('table').not('.gist table').wrap('<div class="table-container"></div>');

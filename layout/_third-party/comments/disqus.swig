@@ -40,17 +40,18 @@
         // load directly when there's no a scrollbar
         window.addEventListener('load', loadComments, false);
       } else {
-        $(window).on('scroll.disqus_scroll', () => {
+        var disqus_scroll = () => {
           // offsetTop may changes because of manually resizing browser window or lazy loading images.
           var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
           var scrollTop = window.scrollY;
 
           // pre-load comments a bit? (margin or anything else)
           if (offsetTop - scrollTop < 60) {
-            $(window).off('.disqus_scroll');
+            window.removeEventListener('scroll', disqus_scroll);
             loadComments();
           }
-        });
+        };
+        window.addEventListener('scroll', disqus_scroll);
       }
     })();
   {% else %}

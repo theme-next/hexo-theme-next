@@ -218,11 +218,19 @@ window.addEventListener('DOMContentLoaded', () => {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    var containerHeight = $('#footer').attr('position') ? document.querySelector('.container').height() + $('#footer').outerHeight(true) : document.querySelector('.container').height();
+    var containerHeight = document.querySelector('.container').height();
+    var footer = document.getElementById('footer');
+    if (footer.getAttribute('position')) containerHeight += footer.outerHeight(true);
     if (containerHeight < window.innerHeight) {
-      $('#footer').css({ 'position': 'fixed', 'bottom': 0, 'left': 0, 'right': 0 }).attr('position', 'fixed');
+      footer.css({
+        'position': 'fixed',
+        'bottom': 0,
+        'left': 0,
+        'right': 0
+      }).setAttribute('position', 'fixed');
     } else {
-      $('#footer').removeAttr('style position');
+      footer.removeAttribute('position');
+      footer.style.cssText = '';
     }
   }
 
