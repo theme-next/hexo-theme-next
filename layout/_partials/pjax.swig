@@ -11,7 +11,8 @@ var pjax = new Pjax({
     '.sidebar-inner': Pjax.switches.innerHTML
   },
   analytics: false,
-  cacheBust: false
+  cacheBust: false,
+  scrollTo: !CONFIG.bookmark.enable
 });
 window.addEventListener('pjax:send', () => {
   $('.sidebar-inner').stop().fadeTo('fast', 0);

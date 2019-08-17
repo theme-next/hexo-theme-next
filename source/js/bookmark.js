@@ -1,14 +1,31 @@
+/* global CONFIG */
+
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   var link;
+
+  var doSaveScroll = () => {
+    localStorage.setItem('lastpage', location.pathname);
+    localStorage.setItem('bookmark' + location.pathname, window.scrollY);
+  };
+
+  var scrollToMark = () => {
+    var top = localStorage.getItem('bookmark' + location.pathname);
+    top = parseInt(top, 10);
+    // If the page opens with a specific hash, just jump out
+    if (!isNaN(top) && location.hash !== '') {
+      // Auto scroll to the position
+      $(document.documentElement).animate({ 'scrollTop': top }, 'fast');
+    }
+  };
   // Register everything
   var init = function(trigger) {
     // Create a link element
     link = document.querySelector('.book-mark-link');
     // Scroll event
     window.addEventListener('scroll', () => {
-      window.scrollY == 0 ? link.classList.add('book-mark-link-fixed') : link.classList.remove('book-mark-link-fixed');
+      window.scrollY === 0 ? link.classList.add('book-mark-link-fixed') : link.classList.remove('book-mark-link-fixed');
     });
     // Register beforeunload event when the trigger is auto
     if (trigger === 'auto') {
@@ -34,21 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     scrollToMark();
     window.addEventListener('pjax:success', scrollToMark);
-  };
-
-  var doSaveScroll = () => {
-    localStorage.setItem('lastpage', location.pathname);
-    localStorage.setItem('bookmark' + location.pathname, window.scrollY);
-  };
-
-  var scrollToMark = function() {
-    var top = localStorage.getItem('bookmark' + location.pathname);
-    top = parseInt(top);
-    // If the page opens with a specific hash, just jump out
-    if (!isNaN(top) && location.hash !== '') {
-      // Auto scroll to the position
-      $(document.documentElement).animate({ 'scrollTop': top }, 'fast');
-    }
   };
 
   init(CONFIG.bookmark.save);
