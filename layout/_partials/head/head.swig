@@ -84,7 +84,6 @@
     exturl: {{ theme.exturl }},
     sidebar: {{ theme.sidebar | json_encode }},
     back2top: {{ theme.back2top | json_encode }},
-    save_scroll: {{ theme.save_scroll }},
     copycode: {{ theme.codeblock.copy_button | json_encode }},
     fancybox: {{ theme.fancybox }},
     mediumzoom: {{ theme.mediumzoom }},

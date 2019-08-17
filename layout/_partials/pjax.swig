@@ -11,12 +11,10 @@ var pjax = new Pjax({
     '.sidebar-inner': Pjax.switches.innerHTML
   },
   analytics: false,
-  cacheBust: false,
-  scrollTo: !CONFIG.save_scroll
+  cacheBust: false
 });
 window.addEventListener('pjax:send', () => {
   $('.sidebar-inner').stop().fadeTo('fast', 0);
-  CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
 });
 window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {

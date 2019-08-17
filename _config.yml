@@ -278,9 +278,6 @@ chat:
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
 
-# Automatically saving scroll position of each page in the browser.
-save_scroll: false
-
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
 
@@ -585,14 +582,6 @@ quicklink:
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   ignores:
-
-# Bookmark Support
-# Dependencies: https://github.com/theme-next/theme-next-bookmark
-bookmark:
-  enable: false
-  # If auto, save the reading position when closing the page or clicking the bookmark-icon.
-  # If manual, only save it by clicking the bookmark-icon.
-  save: auto
 
 
 # ---------------------------------------------------------------
@@ -1077,11 +1066,6 @@ vendors:
   # Example:
   # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
   quicklink:
-
-  # Internal version: 1.0.0
-  # Example:
-  # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
-  bookmark:
 
   # DisqusJS
   # Example:
