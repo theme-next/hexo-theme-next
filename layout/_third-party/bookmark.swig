@@ -1,5 +1,5 @@
 {%- if theme.bookmark.enable %}
-  {%- set bookmark_uri = theme.vendors.bookmark | default(url_for(theme.vendors._internal + '/bookmark/bookmark.min.js?v=1.0')) %}
+  {%- set bookmark_uri = theme.vendors.bookmark | default(next_vendors('bookmark/bookmark.min.js?v=1.0')) %}
   <script src="{{ bookmark_uri }}"></script>
   <script{{ pjax }}>
   if (CONFIG.page.isPost) {
