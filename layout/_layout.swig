@@ -42,6 +42,10 @@
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
 
+    {%- if theme.bookmark.enable %}
+      <a class="book-mark-link book-mark-link-fixed fa fa-bookmark" href="#"></a>
+    {%- endif %}
+
     {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
 
     <main id="main" class="main">

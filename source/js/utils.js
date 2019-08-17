@@ -131,7 +131,7 @@ NexT.utils = {
     // For init back to top in sidebar if page was scrolled after page refresh.
     $(window).on('load scroll', () => {
       var scrollPercent;
-      if (backToTop || readingProgressBar) {
+      if (backToTop || readingProgressBar ) {
         scrollPercent = NexT.utils.getScrollPercent();
       }
       if (backToTop) {
