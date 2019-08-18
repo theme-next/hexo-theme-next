@@ -65,9 +65,8 @@
 @import 'post-rtl';
 @import 'post-tags';
 @import 'post-title';
+@import 'post-widgets';
 
 @import 'post-reward' if (hexo-config('reward_settings.enable'));
 
 @import 'post-copyright' if (hexo-config('creative_commons.post'));
-
-@import 'post-widgets' if ((hexo-config('facebook_sdk.enable') && hexo-config('facebook_sdk.like_button')) || (hexo-config('vkontakte_api.enable') && hexo-config('vkontakte_api.like')) || hexo-config('rating.enable') || hexo-config('likely.enable') || (hexo-config('needmoreshare2.enable') && hexo-config('needmoreshare2.postbottom.enable')));

@@ -56,16 +56,6 @@
   <link rel="stylesheet" href="{{ fancybox_css_uri }}">
 {%- endif %}
 
-{%- if theme.likely.enable %}
-  {%- set likely_css_uri = theme.vendors.likely_css | default('//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css') %}
-  <link rel="stylesheet" href="{{ likely_css_uri }}">
-{%- endif %}
-
-{%- if theme.needmoreshare2.enable %}
-  {%- set needmoreshare2_css_uri = theme.vendors.needmoreshare2_css | default(next_vendors('needsharebutton/needsharebutton.css')) %}
-  <link rel="stylesheet" href="{{ needmoreshare2_css_uri }}">
-{%- endif %}
-
 {%- if theme.pace.enable %}
   {%- set pace_css_uri = theme.vendors.pace_css | default(next_vendors('pace/pace-theme-' + theme.pace.theme + '.min.css?v=1.0.2')) %}
   {%- set pace_js_uri = theme.vendors.pace | default(next_vendors('pace/pace.min.js?v=1.0.2')) %}
