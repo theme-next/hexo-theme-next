@@ -16,10 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('search-input');
   const resultContent = document.getElementById('search-result');
 
-  const removeElement = element => {
-    let el = document.querySelector(element);
-    if (el) el.remove();
-  };
   // Ref: https://github.com/ForbesLindesay/unescape-html
   const unescapeHtml = html => {
     return String(html)
@@ -238,6 +234,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
       searchResultList += '</ul>';
       resultContent.innerHTML = searchResultList;
+      window.pjax && window.pjax.refresh(resultContent);
     }
   };
 
@@ -256,7 +253,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }).get() : JSON.parse(res);
 
         // Remove loading animation
-        removeElement('.search-pop-overlay');
+        document.querySelector('.search-pop-overlay').innerHTML = '';
         document.body.style.overflow = '';
 
         if (callback) {
@@ -269,32 +266,17 @@ window.addEventListener('DOMContentLoaded', () => {
     fetchData();
   }
 
-  // Monitor main search box
-  const onPopupClose = () => {
-    document.querySelector('.popup').style.display = 'none';
-    document.querySelector('#search-input').value = '';
-    removeElement('.search-result-list');
-    removeElement('#no-result');
-    removeElement('.search-pop-overlay');
-    document.body.style.overflow = '';
-  };
-
   const proceedSearch = () => {
-    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
     document.body.style.overflow = 'hidden';
-    document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
-    let el = document.querySelector('.popup');
-    if (el.isVisible()) {
-      el.style.display = 'none';
-    } else {
-      el.style.display = 'block';
-    }
+    document.querySelector('.search-pop-overlay').style.display = 'block';
+    document.querySelector('.popup').style.display = 'block';
     document.getElementById('search-input').focus();
   };
 
   // Search function
   const searchFunc = () => {
-    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"><div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div>');
+    document.querySelector('.search-pop-overlay').style.display = '';
+    document.querySelector('.search-pop-overlay').innerHTML = '<div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div>';
     document.querySelector('#search-loading-icon').css({
       margin      : '20% auto 0 auto',
       'text-align': 'center'
@@ -323,10 +305,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.body.style.overflow = '';
+    document.querySelector('.search-pop-overlay').style.display = 'none';
+    document.querySelector('.popup').style.display = 'none';
+  };
+
+  document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
-  document.querySelector('.popup').addEventListener('click', event => {
-    event.stopPropagation();
-  });
   window.addEventListener('keyup', event => {
     let shouldDismissSearchPopup = event.which === 27 && document.querySelector('.popup').isVisible();
     if (shouldDismissSearchPopup) {
