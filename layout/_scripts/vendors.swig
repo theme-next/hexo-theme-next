@@ -53,7 +53,7 @@
 
 {%- if theme.canvas_ribbon.enable %}
   {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon | default(next_vendors('canvas-ribbon/canvas-ribbon.js')) %}
-  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
+  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
 {%- endif %}
 
 {%- for name, internal in js_vendors %}

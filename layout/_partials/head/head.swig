@@ -1,4 +1,5 @@
 <meta charset="UTF-8">
+<meta name="generator" content="Hexo {{ hexo_env('version') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,9 +101,9 @@
     path: '{{ config.search.path }}',
     motion: {{ theme.motion | json_encode }},
     translation: {
-      copy_button: '{{ __("post.copy_button") }}',
-      copy_success: '{{ __("post.copy_success") }}',
-      copy_failure: '{{ __("post.copy_failure") }}'
+      copy_button: '{{__("post.copy_button")}}',
+      copy_success: '{{__("post.copy_success")}}',
+      copy_failure: '{{__("post.copy_failure")}}'
     }
   };
 </script>
