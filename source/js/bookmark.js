@@ -35,7 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Save the position by clicking the icon
     link.addEventListener('click', event => {
       event.preventDefault();
-      localStorage.setItem('lastpage', location.pathname);
       doSaveScroll();
       $(link).animate({
         top: -30
@@ -44,12 +43,6 @@ window.addEventListener('DOMContentLoaded', () => {
           link.style.top = '';
         }, 400);
       });
-    });
-    link.addEventListener('dblclick', () => {
-      var lastpage = localStorage.getItem('lastpage');
-      if (lastpage && lastpage !== location.pathname) {
-        location.href = lastpage;
-      }
     });
     scrollToMark();
     window.addEventListener('pjax:success', scrollToMark);

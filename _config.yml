@@ -443,7 +443,7 @@ reading_progress:
 # Bookmark Support
 bookmark:
   enable: false
-  # If auto, save the reading position when closing the page or clicking the bookmark-icon.
+  # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
   # If manual, only save it by clicking the bookmark-icon.
   save: auto
 
