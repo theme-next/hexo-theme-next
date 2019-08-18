@@ -144,14 +144,14 @@ NexT.utils = {
         var winHeight = window.innerHeight;
         var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
         var scrollPercentRounded = Math.round(100 * window.scrollY / contentVisibilityHeight);
-        scrollPercent = Math.min(scrollPercentRounded, 100);
+        scrollPercent = Math.min(scrollPercentRounded, 100) + '%';
       }
       if (backToTop) {
-        $(backToTop).toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
-        document.querySelector('#scrollpercent span').innerText = scrollPercent;
+        window.pageYOffset > THRESHOLD ? backToTop.classList.add('back-to-top-on') : backToTop.classList.remove('back-to-top-on');
+        backToTop.querySelector('span').innerText = scrollPercent;
       }
       if (readingProgressBar) {
-        readingProgressBar.style.width = scrollPercent + '%';
+        readingProgressBar.style.width = scrollPercent;
       }
     });
 

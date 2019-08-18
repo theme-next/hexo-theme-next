@@ -11,9 +11,18 @@
   right: $b2t-position-right;
   text-align: center;
   transition-property: bottom;
-  width: hexo-config('back2top.scrollpercent') ? initial : 24px;
   z-index: $zindex-5;
   the-transition();
+
+  if (hexo-config('back2top.scrollpercent')) {
+    width: initial;
+  } else {
+    width: 24px;
+
+    span {
+      display: none;
+    }
+  }
 
   &:hover {
     color: $sidebar-highlight;
