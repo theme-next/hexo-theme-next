@@ -12,6 +12,14 @@ HTMLElement.prototype.height = function() {
   return parseFloat(window.getComputedStyle(this).height);
 };
 
+HTMLElement.prototype.outerHeight = function(flag) {
+  var height = this.offsetHeight;
+  if (!flag) return height;
+  var style = window.getComputedStyle(this);
+  height += parseInt(style.marginTop, 10) + parseInt(style.marginBottom, 10);
+  return height;
+};
+
 HTMLElement.prototype.css = function(dict) {
   for (var key in dict) {
     this.style[key] = dict[key];
@@ -25,31 +33,30 @@ NexT.utils = {
    * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    document.querySelectorAll('.post-body img')
-      .forEach(element => {
-        var $image = $(element);
-        var imageTitle = $image.attr('title') || $image.attr('alt');
-        var $imageWrapLink = $image.parent('a');
+    document.querySelectorAll('.post-body img').forEach(element => {
+      var $image = $(element);
+      var imageTitle = $image.attr('title') || $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
 
-        if ($imageWrapLink.length < 1) {
-          var imageLink = $image.attr('data-src') || $image.attr('src');
-          $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
-          if ($image.is('.post-gallery img')) {
-            $imageWrapLink.addClass('post-gallery-img');
-            $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-          } else if ($image.is('.group-picture img')) {
-            $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-          } else {
-            $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
-          }
+      if ($imageWrapLink.length < 1) {
+        var imageLink = $image.attr('data-src') || $image.attr('src');
+        $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
+        if ($image.is('.post-gallery img')) {
+          $imageWrapLink.addClass('post-gallery-img');
+          $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
+        } else if ($image.is('.group-picture img')) {
+          $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
+        } else {
+          $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
         }
+      }
 
-        if (imageTitle) {
-          $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
-          // Make sure img title tag will show correctly in fancybox
-          $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
-        }
-      });
+      if (imageTitle) {
+        $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
+        // Make sure img title tag will show correctly in fancybox
+        $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
+      }
+    });
 
     $('.fancybox').fancybox({
       loop   : true,
@@ -90,8 +97,8 @@ NexT.utils = {
           return element.innerText;
         }).join('\n');
         var ta = document.createElement('textarea');
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        var yPosition = window.scrollY;
+        ta.style.top = yPosition + 'px'; // Prevent page scrolling
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
         ta.readOnly = true;
@@ -132,19 +139,25 @@ NexT.utils = {
     $(window).on('load scroll', () => {
       var scrollPercent;
       if (backToTop || readingProgressBar) {
-        scrollPercent = NexT.utils.getScrollPercent();
+        var docHeight = document.querySelector('.container').height();
+        var winHeight = window.innerHeight;
+        var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
+        var scrollPercentRounded = Math.round(100 * window.scrollY / contentVisibilityHeight);
+        scrollPercent = Math.min(scrollPercentRounded, 100) + '%';
       }
       if (backToTop) {
-        $(backToTop).toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
-        document.querySelector('#scrollpercent span').innerText = scrollPercent;
+        window.scrollY > THRESHOLD ? backToTop.classList.add('back-to-top-on') : backToTop.classList.remove('back-to-top-on');
+        backToTop.querySelector('span').innerText = scrollPercent;
       }
       if (readingProgressBar) {
-        readingProgressBar.style.width = scrollPercent + '%';
+        readingProgressBar.style.width = scrollPercent;
       }
     });
 
     backToTop && backToTop.addEventListener('click', () => {
-      $('html, body').animate({ scrollTop: 0 });
+      $(document.documentElement).animate({
+        scrollTop: 0
+      });
     });
   },
 
@@ -156,13 +169,20 @@ NexT.utils = {
     $('.tabs ul.nav-tabs .tab').on('click', event => {
       event.preventDefault();
       // Prevent selected tab to select again.
-      if (!$(event.currentTarget).hasClass('active')) {
+      if (!event.currentTarget.classList.contains('active')) {
         // Add & Remove active class on `nav-tabs` & `tab-content`.
-        $(event.currentTarget).addClass('active').siblings().removeClass('active');
-        var tActive = $(event.currentTarget).find('a').attr('href');
-        $(tActive).addClass('active').siblings().removeClass('active');
+        [...event.currentTarget.parentNode.children].forEach(item => {
+          item.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+        var tActive = event.currentTarget.querySelector('a').getAttribute('href');
+        tActive = document.querySelector(tActive);
+        [...tActive.parentNode.children].forEach(item => {
+          item.classList.remove('active');
+        });
+        tActive.classList.add('active');
         // Trigger event
-        document.querySelector(tActive).dispatchEvent(new Event('tabs:click', {
+        tActive.dispatchEvent(new Event('tabs:click', {
           bubbles: true
         }));
       }
@@ -273,8 +293,7 @@ NexT.utils = {
   },
 
   hasMobileUA: function() {
-    var nav = window.navigator;
-    var ua = nav.userAgent;
+    var ua = navigator.userAgent;
     var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
 
     return pa.test(ua);
@@ -290,6 +309,22 @@ NexT.utils = {
 
   isDesktop: function() {
     return !this.isTablet() && !this.isMobile();
+  },
+
+  isMuse: function() {
+    return CONFIG.scheme === 'Muse';
+  },
+
+  isMist: function() {
+    return CONFIG.scheme === 'Mist';
+  },
+
+  isPisces: function() {
+    return CONFIG.scheme === 'Pisces';
+  },
+
+  isGemini: function() {
+    return CONFIG.scheme === 'Gemini';
   },
 
   /**
@@ -319,51 +354,16 @@ NexT.utils = {
     }
   },
 
-  isMuse: function() {
-    return CONFIG.scheme === 'Muse';
-  },
-
-  isMist: function() {
-    return CONFIG.scheme === 'Mist';
-  },
-
-  isPisces: function() {
-    return CONFIG.scheme === 'Pisces';
-  },
-
-  isGemini: function() {
-    return CONFIG.scheme === 'Gemini';
-  },
-
-  getContentVisibilityHeight: function() {
-    var docHeight = document.querySelector('.container').height();
-    var winHeight = window.innerHeight;
-    var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
-    return contentVisibilityHeight;
-  },
-
-  getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : 0;
-    return sidebarb2tHeight;
-  },
-
   getSidebarSchemePadding: function() {
     var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : 0;
     var sidebarInner = $('.sidebar-inner');
     var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
-    var sidebarOffset = CONFIG.sidebar.offset ? CONFIG.sidebar.offset : 12;
+    var sidebarOffset = CONFIG.sidebar.offset || 12;
     var sidebarSchemePadding = this.isPisces() || this.isGemini()
-      ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + this.getSidebarb2tHeight()
+      ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + sidebarb2tHeight
       : (sidebarPadding * 2) + (sidebarNavHeight / 2);
     return sidebarSchemePadding;
-  },
-
-  getScrollPercent: function() {
-    var scrollTop = window.scrollY;
-    var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
-    var scrollPercent = scrollTop / contentVisibilityHeight;
-    var scrollPercentRounded = Math.round(scrollPercent * 100);
-    return Math.min(scrollPercentRounded, 100);
   },
 
   getScript: function(url, callback, condition) {

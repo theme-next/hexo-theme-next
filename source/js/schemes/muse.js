@@ -25,8 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   function SidebarToggleLine(settings) {
-    this.el = $(settings.el);
-    this.status = $.extend({}, {
+    this.status = Object.assign({
       init: {
         width    : '100%',
         opacity  : 1,
@@ -45,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
       this.transform('close');
     };
     this.transform = function(status) {
-      this.el.css(this.status[status]);
+      document.querySelector(settings.el).css(this.status[status]);
     };
   }
 
@@ -124,8 +123,8 @@ window.addEventListener('DOMContentLoaded', () => {
     mouseupHandler: function(event) {
       var deltaX = event.pageX - mousePos.X;
       var deltaY = event.pageY - mousePos.Y;
-      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(event.target).is('.main');
-      if (this.isSidebarVisible && (clickingBlankPart || $(event.target).is('img.medium-zoom-image, .fancybox img'))) {
+      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
+      if (this.isSidebarVisible && (clickingBlankPart || event.target.matches('img.medium-zoom-image, .fancybox img'))) {
         this.hideSidebar();
       }
     },
@@ -218,11 +217,19 @@ window.addEventListener('DOMContentLoaded', () => {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    var containerHeight = $('#footer').attr('position') ? document.querySelector('.container').height() + $('#footer').outerHeight(true) : document.querySelector('.container').height();
+    var containerHeight = document.querySelector('.container').height();
+    var footer = document.getElementById('footer');
+    if (footer.getAttribute('position')) containerHeight += footer.outerHeight(true);
     if (containerHeight < window.innerHeight) {
-      $('#footer').css({ 'position': 'fixed', 'bottom': 0, 'left': 0, 'right': 0 }).attr('position', 'fixed');
+      footer.css({
+        'position': 'fixed',
+        'bottom': 0,
+        'left': 0,
+        'right': 0
+      }).setAttribute('position', 'fixed');
     } else {
-      $('#footer').removeAttr('style position');
+      footer.removeAttribute('position');
+      footer.style.cssText = '';
     }
   }
 

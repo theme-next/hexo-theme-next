@@ -10,8 +10,8 @@ hexo.extend.filter.register('theme_inject', injects => {
     let injectName = path.basename(element.name, path.extname(element.name));
     element.args[0] = Object.assign({
       configKey: injectName,
-      class: injectName,
-      button: injectName
+      class    : injectName,
+      button   : injectName
     }, element.args[0]);
     // Get locals and config
     let locals = element.args[0];

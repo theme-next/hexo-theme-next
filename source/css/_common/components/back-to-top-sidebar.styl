@@ -7,6 +7,12 @@
   text-align: center;
   visibility: hidden;
 
+  if (!hexo-config('back2top.scrollpercent')) {
+    span {
+      display: none;
+    }
+  }
+
   &:hover {
     opacity: $b2t-opacity-hover;
   }

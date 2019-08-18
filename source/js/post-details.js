@@ -63,7 +63,7 @@
     var targetSelector = NexT.utils.escapeSelector(event.currentTarget.getAttribute('href'));
     var offset = $(targetSelector).offset().top;
 
-    $('html, body').stop().animate({
+    $(document.documentElement).stop().animate({
       scrollTop: offset
     }, 500);
   });

@@ -24,6 +24,7 @@
   {% include '_partials/head/head-unique.swig' %}
   {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
+  <meta name="generator" content="Hexo {{ hexo_env('version') }}">
   {% include '_third-party/analytics/index.swig' %}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
@@ -76,9 +77,7 @@
     {%- if theme.back2top.enable and not theme.back2top.sidebar %}
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        {%- if theme.back2top.scrollpercent %}
-          <span id="scrollpercent"><span>0</span>%</span>
-        {%- endif %}
+        <span>0%</span>
       </div>
     {%- endif %}
 
