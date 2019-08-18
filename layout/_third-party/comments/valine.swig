@@ -1,13 +1,10 @@
-{%- set valine_uri = '//unpkg.com/valine/dist/Valine.min.js' %}
-{%- if theme.vendors.valine %}
-  {%- set valine_uri = theme.vendors.valine %}
-{%- endif %}
+{%- set valine_uri = theme.vendors.valine | default('//unpkg.com/valine/dist/Valine.min.js') %}
 
 <script>
-NexT.utils.getScript('{{ valine_uri }}', function() {
+NexT.utils.getScript('{{ valine_uri }}', () => {
   var GUEST = ['nick', 'mail', 'link'];
   var guest = '{{ theme.valine.guest_info }}';
-  guest = guest.split(',').filter(function(item) {
+  guest = guest.split(',').filter(item => {
     return GUEST.indexOf(item) > -1;
   });
   new Valine({

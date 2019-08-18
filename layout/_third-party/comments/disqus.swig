@@ -12,7 +12,7 @@
 {%- endif %}
 {%- if page.comments %}
 <script>
-  var disqus_config = function() {
+  function disqus_config() {
     this.page.url = {{ page.permalink | json }};
     this.page.identifier = {{ page.path | json }};
     this.page.title = '{{ page.title | addslashes }}';
@@ -34,25 +34,26 @@
     }
   }
   {%- if theme.disqus.lazyload %}
-    $(function() {
-      var offsetTop = $('#comments').offset().top - $(window).height();
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
       if (offsetTop <= 0) {
         // load directly when there's no a scrollbar
         window.addEventListener('load', loadComments, false);
       } else {
-        $(window).on('scroll.disqus_scroll', function() {
+        var disqus_scroll = () => {
           // offsetTop may changes because of manually resizing browser window or lazy loading images.
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          var scrollTop = $(window).scrollTop();
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
 
           // pre-load comments a bit? (margin or anything else)
           if (offsetTop - scrollTop < 60) {
-            $(window).off('.disqus_scroll');
+            window.removeEventListener('scroll', disqus_scroll);
             loadComments();
           }
-        });
+        };
+        window.addEventListener('scroll', disqus_scroll);
       }
-    });
+    })();
   {% else %}
     window.addEventListener('load', loadComments, false);
   {%- endif %}

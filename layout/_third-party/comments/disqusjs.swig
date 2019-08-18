@@ -1,17 +1,11 @@
 {%- if page.comments %}
-{%- set disqusjs_css_url = '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css' %}
-{%- if theme.vendors.disqusjs_css %}
-  {%- set disqusjs_css_url = theme.vendors.disqusjs_css %}
-{%- endif %}
-<link rel="stylesheet" href="{{ disqusjs_css_url }}">
+{%- set disqusjs_css_uri = theme.vendors.disqusjs_css | default('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css') %}
+<link rel="stylesheet" href="{{ disqusjs_css_uri }}">
 
-{%- set disqusjs_js_url = '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js' %}
-{%- if theme.vendors.disqusjs_js %}
-  {%- set disqusjs_js_url = theme.vendors.disqusjs_js %}
-{%- endif %}
+{%- set disqusjs_js_uri = theme.vendors.disqusjs_js | default('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js') %}
 
 <script>
-  NexT.utils.getScript('{{ disqusjs_js_url }}', function() {
+  NexT.utils.getScript('{{ disqusjs_js_uri }}', () => {
     window.dsqjs = new DisqusJS({
       api: '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',
       apikey: '{{ theme.disqusjs.apikey }}',

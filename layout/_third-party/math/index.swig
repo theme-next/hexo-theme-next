@@ -11,9 +11,9 @@
   {%- endif %}
 
   {%- if not theme.math.per_page or is_index_has_math or page.mathjax %}
-    {%- if theme.math.engine == 'mathjax' %}
+    {%- if theme.math.mathjax.enable %}
       {% include 'mathjax.swig' %}
-    {% elif theme.math.engine == 'katex' %}
+    {% elif theme.math.katex.enable %}
       {% include 'katex.swig' %}
     {%- endif %}
   {%- endif %}

@@ -10,7 +10,7 @@ NexT.motion.integrator = {
     this.cursor = -1;
     return this;
   },
-  add   : function(fn) {
+  add: function(fn) {
     this.queue.push(fn);
     return this;
   },
@@ -47,7 +47,7 @@ NexT.motion.middleWares = {
      */
     function hasElement($elements) {
       $elements = Array.isArray($elements) ? $elements : [$elements];
-      return $elements.every(function($element) {
+      return $elements.every($element => {
         return $element.length > 0;
       });
     }
@@ -174,7 +174,7 @@ NexT.motion.middleWares = {
         duration: 200,
         complete: function() {
           // After motion complete need to remove transform from sidebar to let affix work on Pisces | Gemini.
-          $sidebarAffix.css({ 'transform': 'initial' });
+          $sidebarAffix.css('transform', 'initial');
         }
       });
     }

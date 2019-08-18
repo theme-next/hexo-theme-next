@@ -13,7 +13,7 @@
     }
 
     $tocElement
-      .on('activate.bs.scrollspy', function() {
+      .on('activate.bs.scrollspy', () => {
         var $currentActiveElement = $(tocSelector + ' .active').last();
 
         removeCurrentActiveClass();
@@ -31,8 +31,8 @@
 
   var TAB_ANIMATE_DURATION = 200;
 
-  $('.sidebar-nav li').on('click', function() {
-    var item = $(this);
+  $('.sidebar-nav li').on('click', event => {
+    var item = $(event.currentTarget);
     var activeTabClassName = 'sidebar-nav-active';
     var activePanelClassName = 'sidebar-panel-active';
     if (item.hasClass(activeTabClassName)) {
@@ -42,12 +42,12 @@
     var currentTarget = $('.' + activePanelClassName);
     var target = $('.' + item.data('target'));
 
-    currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function() {
+    currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
       currentTarget.hide();
       target
         .stop()
         .css({'opacity': 0, 'display': 'block'})
-        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function() {
+        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, () => {
           currentTarget.removeClass(activePanelClassName);
           target.addClass(activePanelClassName);
         });
@@ -58,13 +58,13 @@
   });
 
   // TOC item animation navigate & prevent #item selector in adress bar.
-  $('.post-toc a').on('click', function(e) {
-    e.preventDefault();
-    var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+  $('.post-toc a').on('click', event => {
+    event.preventDefault();
+    var targetSelector = NexT.utils.escapeSelector(event.currentTarget.getAttribute('href'));
     var offset = $(targetSelector).offset().top;
 
-    $('html, body').stop().animate({
+    $(document.documentElement).stop().animate({
       scrollTop: offset
     }, 500);
   });
-}());
+})();

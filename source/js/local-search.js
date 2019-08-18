@@ -1,41 +1,48 @@
 /* global CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
   // Popup Window
-  var isfetched = false;
-  var datas;
-  var isXml = true;
+  let isfetched = false;
+  let datas;
+  let isXml = true;
   // Search DB path
-  var searchPath = CONFIG.path;
+  let searchPath = CONFIG.path;
   if (searchPath.length === 0) {
     searchPath = 'search.xml';
   } else if (/json$/i.test(searchPath)) {
     isXml = false;
   }
-  var path = CONFIG.root + searchPath;
-  var input = document.getElementById('local-search-input');
-  var resultContent = document.getElementById('local-search-result');
+  const path = CONFIG.root + searchPath;
+  const input = document.getElementById('search-input');
+  const resultContent = document.getElementById('search-result');
 
+  const removeElement = element => {
+    let el = document.querySelector(element);
+    if (el) el.remove();
+  };
   // Ref: https://github.com/ForbesLindesay/unescape-html
-  function unescapeHtml(html) {
+  const unescapeHtml = html => {
     return String(html)
       .replace(/&quot;/g, '"')
       .replace(/&#39;/g, '\'')
       .replace(/&#x3A;/g, ':')
       // Replace all the other &#x; chars
-      .replace(/&#(\d+);/g, function(m, p) {
+      .replace(/&#(\d+);/g, (m, p) => {
         return String.fromCharCode(p);
       })
       .replace(/&lt;/g, '<')
       .replace(/&gt;/g, '>')
       .replace(/&amp;/g, '&');
-  }
-  function getIndexByWord(word, text, caseSensitive) {
-    var wordLen = word.length;
+  };
+
+  const getIndexByWord = (word, text, caseSensitive) => {
+    let wordLen = word.length;
     if (wordLen === 0) {
       return [];
     }
-    var startPosition = 0; var position = []; var index = [];
+    let startPosition = 0;
+    let position = [];
+    let index = [];
     if (!caseSensitive) {
       text = text.toLowerCase();
       word = word.toLowerCase();
@@ -48,15 +55,15 @@ $(document).on('DOMContentLoaded', function() {
       startPosition = position + wordLen;
     }
     return index;
-  }
+  };
 
   // Merge hits into slices
-  function mergeIntoSlice(text, start, end, index, searchText) {
-    var item = index[index.length - 1];
-    var position = item.position;
-    var word = item.word;
-    var hits = [];
-    var searchTextCountInSlice = 0;
+  const mergeIntoSlice = (text, start, end, index, searchText) => {
+    let item = index[index.length - 1];
+    let position = item.position;
+    let word = item.word;
+    let hits = [];
+    let searchTextCountInSlice = 0;
     while (position + word.length <= end && index.length !== 0) {
       if (word === searchText) {
         searchTextCountInSlice++;
@@ -65,7 +72,7 @@ $(document).on('DOMContentLoaded', function() {
         position: position,
         length  : word.length
       });
-      var wordEnd = position + word.length;
+      let wordEnd = position + word.length;
 
       // Move to next position of hit
       index.pop();
@@ -86,57 +93,58 @@ $(document).on('DOMContentLoaded', function() {
       end            : end,
       searchTextCount: searchTextCountInSlice
     };
-  }
+  };
 
   // Highlight title and content
-  function highlightKeyword(text, slice) {
-    var result = '';
-    var prevEnd = slice.start;
-    slice.hits.forEach(function(hit) {
+  const highlightKeyword = (text, slice) => {
+    let result = '';
+    let prevEnd = slice.start;
+    slice.hits.forEach(hit => {
       result += text.substring(prevEnd, hit.position);
-      var end = hit.position + hit.length;
+      let end = hit.position + hit.length;
       result += `<b class="search-keyword">${text.substring(hit.position, end)}</b>`;
       prevEnd = end;
     });
     result += text.substring(prevEnd, slice.end);
     return result;
-  }
-  function inputEventFunction() {
-    var searchText = input.value.trim().toLowerCase();
-    var keywords = searchText.split(/[-\s]+/);
+  };
+
+  const inputEventFunction = () => {
+    let searchText = input.value.trim().toLowerCase();
+    let keywords = searchText.split(/[-\s]+/);
     if (keywords.length > 1) {
       keywords.push(searchText);
     }
-    var resultItems = [];
+    let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
-      datas.forEach(function(data) {
+      datas.forEach(data => {
         // Only match articles with not empty titles
         if (!data.title) {
           return;
         }
-        var searchTextCount = 0;
-        var title = data.title.trim();
-        var titleInLowerCase = title.toLowerCase();
-        var content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+        let searchTextCount = 0;
+        let title = data.title.trim();
+        let titleInLowerCase = title.toLowerCase();
+        let content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
         if (CONFIG.localsearch.unescape) {
           content = unescapeHtml(content);
         }
-        var contentInLowerCase = content.toLowerCase();
-        var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-        var indexOfTitle = [];
-        var indexOfContent = [];
-        keywords.forEach(function(keyword) {
+        let contentInLowerCase = content.toLowerCase();
+        let articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+        let indexOfTitle = [];
+        let indexOfContent = [];
+        keywords.forEach(keyword => {
           indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
           indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
         });
 
         // Show search results
         if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-          var hitCount = indexOfTitle.length + indexOfContent.length;
+          let hitCount = indexOfTitle.length + indexOfContent.length;
           // Sort index by position of keyword
-          [indexOfTitle, indexOfContent].forEach(function(index) {
-            index.sort(function(itemLeft, itemRight) {
+          [indexOfTitle, indexOfContent].forEach(index => {
+            index.sort((itemLeft, itemRight) => {
               if (itemRight.position !== itemLeft.position) {
                 return itemRight.position - itemLeft.position;
               }
@@ -144,21 +152,21 @@ $(document).on('DOMContentLoaded', function() {
             });
           });
 
-          var slicesOfTitle = [];
+          let slicesOfTitle = [];
           if (indexOfTitle.length !== 0) {
-            var tmp = mergeIntoSlice(title, 0, title.length, indexOfTitle, searchText);
+            let tmp = mergeIntoSlice(title, 0, title.length, indexOfTitle, searchText);
             searchTextCount += tmp.searchTextCountInSlice;
             slicesOfTitle.push(tmp);
           }
 
-          var slicesOfContent = [];
+          let slicesOfContent = [];
           while (indexOfContent.length !== 0) {
-            var item = indexOfContent[indexOfContent.length - 1];
-            var position = item.position;
-            var word = item.word;
+            let item = indexOfContent[indexOfContent.length - 1];
+            let position = item.position;
+            let word = item.word;
             // Cut out 100 characters
-            var start = position - 20;
-            var end = position + 80;
+            let start = position - 20;
+            let end = position + 80;
             if (start < 0) {
               start = 0;
             }
@@ -174,7 +182,7 @@ $(document).on('DOMContentLoaded', function() {
           }
 
           // Sort slices in content by search text's count and hits' count
-          slicesOfContent.sort(function(sliceLeft, sliceRight) {
+          slicesOfContent.sort((sliceLeft, sliceRight) => {
             if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
               return sliceRight.searchTextCount - sliceLeft.searchTextCount;
             } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
@@ -184,12 +192,12 @@ $(document).on('DOMContentLoaded', function() {
           });
 
           // Select top N slices in content
-          var upperBound = parseInt(CONFIG.localsearch.top_n_per_article, 10);
+          let upperBound = parseInt(CONFIG.localsearch.top_n_per_article, 10);
           if (upperBound >= 0) {
             slicesOfContent = slicesOfContent.slice(0, upperBound);
           }
 
-          var resultItem = '';
+          let resultItem = '';
 
           if (slicesOfTitle.length !== 0) {
             resultItem += `<li><a href="${articleUrl}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
@@ -197,7 +205,7 @@ $(document).on('DOMContentLoaded', function() {
             resultItem += `<li><a href="${articleUrl}" class="search-result-title">${title}</a>`;
           }
 
-          slicesOfContent.forEach(function(slice) {
+          slicesOfContent.forEach(slice => {
             resultItem += `<a href="${articleUrl}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
           });
 
@@ -216,7 +224,7 @@ $(document).on('DOMContentLoaded', function() {
     } else if (resultItems.length === 0) {
       resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>';
     } else {
-      resultItems.sort(function(resultLeft, resultRight) {
+      resultItems.sort((resultLeft, resultRight) => {
         if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
           return resultRight.searchTextCount - resultLeft.searchTextCount;
         } else if (resultLeft.hitCount !== resultRight.hitCount) {
@@ -224,87 +232,81 @@ $(document).on('DOMContentLoaded', function() {
         }
         return resultRight.id - resultLeft.id;
       });
-      var searchResultList = '<ul class="search-result-list">';
-      resultItems.forEach(function(result) {
+      let searchResultList = '<ul class="search-result-list">';
+      resultItems.forEach(result => {
         searchResultList += result.item;
       });
       searchResultList += '</ul>';
       resultContent.innerHTML = searchResultList;
     }
-  }
-  function fetchData(callback) {
-    $.ajax({
-      url     : path,
-      dataType: isXml ? 'xml' : 'json',
-      success : function(res) {
+  };
+
+  const fetchData = callback => {
+    fetch(path)
+      .then(response => response.text())
+      .then(res => {
         // Get the contents from search data
         isfetched = true;
-        datas = isXml ? $('entry', res).map(function() {
+        datas = isXml ? $('entry', res).map((i, e) => {
           return {
-            title  : $('title', this).text(),
-            content: $('content', this).text(),
-            url    : $('url', this).text()
+            title  : $('title', e).text(),
+            content: $('content', e).text(),
+            url    : $('url', e).text()
           };
-        }).get() : res;
+        }).get() : JSON.parse(res);
 
         // Remove loading animation
-        $('.local-search-pop-overlay').remove();
-        $('body').css('overflow', '');
+        removeElement('.search-pop-overlay');
+        document.body.style.overflow = '';
 
         if (callback) {
           callback();
         }
-      }
-    });
-  }
+      });
+  };
+
   if (CONFIG.localsearch.preload) {
     fetchData();
   }
 
   // Monitor main search box
-  function onPopupClose() {
-    $('.popup').hide();
-    $('#local-search-input').val('');
-    $('.search-result-list').remove();
-    $('#no-result').remove();
-    $('.local-search-pop-overlay').remove();
-    $('body').css('overflow', '');
-  }
+  const onPopupClose = () => {
+    document.querySelector('.popup').style.display = 'none';
+    document.querySelector('#search-input').value = '';
+    removeElement('.search-result-list');
+    removeElement('#no-result');
+    removeElement('.search-pop-overlay');
+    document.body.style.overflow = '';
+  };
 
-  function proceedSearch() {
-    $('body')
-      .append('<div class="local-search-pop-overlay"></div>')
-      .css('overflow', 'hidden');
-    $('.local-search-pop-overlay').click(onPopupClose);
-    $('.popup').show();
-    $('#local-search-input')
-      .attr('autocapitalize', 'none')
-      .attr('autocorrect', 'off')
-      .focus();
-  }
+  const proceedSearch = () => {
+    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"></div>');
+    document.body.style.overflow = 'hidden';
+    document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
+    let el = document.querySelector('.popup');
+    if (el.isVisible()) {
+      el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
+    }
+    document.getElementById('search-input').focus();
+  };
 
   // Search function
-  function searchFunc() {
-    // Start loading animation
-    $('body')
-      .append(`<div class="local-search-pop-overlay">
-          <div id="search-loading-icon">
-            <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-          </div>
-        </div>`)
-      .css('overflow', 'hidden');
-    $('#search-loading-icon').css({
+  const searchFunc = () => {
+    document.body.insertAdjacentHTML('beforeend', '<div class="search-pop-overlay"><div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div>');
+    document.querySelector('#search-loading-icon').css({
       margin      : '20% auto 0 auto',
       'text-align': 'center'
     });
     fetchData(proceedSearch);
-  }
+  };
 
   if (CONFIG.localsearch.trigger === 'auto') {
     input.addEventListener('input', inputEventFunction);
   } else {
-    $('.search-icon').click(inputEventFunction);
-    input.addEventListener('keypress', function(event) {
+    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+    input.addEventListener('keypress', event => {
       if (event.keyCode === 13) {
         inputEventFunction();
       }
@@ -312,8 +314,8 @@ $(document).on('DOMContentLoaded', function() {
   }
 
   // Handle and trigger popup window
-  $('.popup-trigger').click(function(e) {
-    e.stopPropagation();
+  document.querySelector('.popup-trigger').addEventListener('click', event => {
+    event.stopPropagation();
     if (isfetched === false) {
       searchFunc();
     } else {
@@ -321,12 +323,12 @@ $(document).on('DOMContentLoaded', function() {
     }
   });
 
-  $('.popup-btn-close').click(onPopupClose);
-  $('.popup').click(function(e) {
-    e.stopPropagation();
+  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  document.querySelector('.popup').addEventListener('click', event => {
+    event.stopPropagation();
   });
-  $(document).on('keyup', function(event) {
-    var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+  window.addEventListener('keyup', event => {
+    let shouldDismissSearchPopup = event.which === 27 && document.querySelector('.popup').isVisible();
     if (shouldDismissSearchPopup) {
       onPopupClose();
     }

@@ -1,6 +1,7 @@
+{%- set mhchem_uri = theme.vendors.mhchem | default('//cdn.jsdelivr.net/npm/mathjax-mhchem@3') %}
 <script type="text/x-mathjax-config">
   {%- if theme.math.mathjax.mhchem %}
-    MathJax.Ajax.config.path['mhchem'] = '{{ theme.math.mathjax.mhchem }}';
+    MathJax.Ajax.config.path['mhchem'] = '{{ mhchem_uri }}';
   {%- endif %}
 
   MathJax.Hub.Config({
@@ -44,8 +45,9 @@
     }
   });
 </script>
+{%- set mathjax_uri = theme.vendors.mathjax | default('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML') %}
 <script>
-  NexT.utils.getScript('{{ theme.math.mathjax.cdn }}', function() {
+  NexT.utils.getScript('{{ mathjax_uri }}', () => {
     MathJax.Hub.Typeset();
   }, window.MathJax);
 </script>

@@ -7,23 +7,19 @@
 {%- endif %}
 
 {%- if theme.fancybox %}
-  {%- set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
+  {%- set js_vendors.fancybox = '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js' %}
 {%- endif %}
 
 {%- if theme.mediumzoom %}
-  {%- set js_vendors.mediumzoom = 'mediumzoom/medium-zoom.min.js' %}
+  {%- set js_vendors.mediumzoom = '//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js' %}
 {%- endif %}
 
 {%- if theme.lazyload %}
-  {%- set js_vendors.lazyload = 'lazyload/lozad.min.js?v=1.10.0' %}
+  {%- set js_vendors.lazyload = '//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js' %}
 {%- endif %}
 
 {%- if theme.pangu %}
-  {%- set js_vendors.pangu = 'pangu/dist/pangu.min.js?v=4.0.7' %}
-{%- endif %}
-
-{%- if theme.reading_progress.enable %}
-  {%- set js_vendors.reading_progress = 'reading_progress/reading_progress.js' %}
+  {%- set js_vendors.pangu = '//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js' %}
 {%- endif %}
 
 {%- if theme.motion.enable %}
@@ -48,33 +44,24 @@
 
 {%- if theme.canvas_nest.enable %}
   {%- if theme.canvas_nest.onmobile %}
-    {%- set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest.min.js') %}
-    {%- if theme.vendors.canvas_nest %}
-      {%- set canvas_nest_uri = theme.vendors.canvas_nest %}
-    {%- endif %}
+    {%- set canvas_nest_uri = theme.vendors.canvas_nest | default(next_vendors('canvas-nest/canvas-nest.min.js')) %}
   {% else %}
-    {%- set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest-nomobile.min.js') %}
-    {%- if theme.vendors.canvas_nest_nomobile %}
-      {%- set canvas_nest_uri = theme.vendors.canvas_nest_nomobile %}
-    {%- endif %}
+    {%- set canvas_nest_uri = theme.vendors.canvas_nest_nomobile | default(next_vendors('canvas-nest/canvas-nest-nomobile.min.js')) %}
   {%- endif %}
   <script color='{{ theme.canvas_nest.color }}' opacity='{{ theme.canvas_nest.opacity }}' zIndex='{{ theme.canvas_nest.zIndex }}' count='{{ theme.canvas_nest.count }}' src="{{ canvas_nest_uri }}"></script>
 {%- endif %}
 
 {%- if theme.canvas_ribbon.enable %}
-  {%- set canvas_ribbon_uri = url_for(theme.vendors._internal + '/canvas-ribbon/canvas-ribbon.js') %}
-  {%- if theme.vendors.canvas_ribbon %}
-    {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon %}
-  {%- endif %}
-  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
+  {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon | default(next_vendors('canvas-ribbon/canvas-ribbon.js')) %}
+  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
 {%- endif %}
 
 {%- for name, internal in js_vendors %}
-  {%- set internal_script = url_for(theme.vendors._internal + '/' + internal) %}
+  {%- set internal_script = next_vendors(internal) %}
   <script src="{{ theme.vendors[name] | default(internal_script) }}"></script>
 {%- endfor %}
 
 {%- for name, internal in js_defer_vendors %}
-  {%- set internal_script = url_for(theme.vendors._internal + '/' + internal) %}
+  {%- set internal_script = next_vendors(internal) %}
   <script defer src="{{ theme.vendors[name] | default(internal_script) }}"></script>
 {%- endfor %}

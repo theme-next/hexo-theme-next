@@ -3,14 +3,10 @@
 NexT 内部提供数学公式渲染的引擎，这样你就不需要自己手动在模板中引入 JS 或者 CSS；
 只需要将 `next/_config.yml` 中 `math` 的 `enable` 选项改为 `true`，并选择对应的渲染引擎即可：
 
-
 ```yml
 math:
   enable: true
-  ...
-  engine: mathjax
 ```
-
 
 需要注意的是，仅仅将 `math` 的 `enable` 打开**并不能让你看到数学公式**，你还需要**使用对应的 Hexo 渲染器(Renderer)** 才能真正在博客页面中显示出数学公式。引擎对应使用的 Hexo 渲染器会在引擎相关的部分介绍。
 
@@ -29,15 +25,14 @@ npm un hexo-renderer-marked --save
 npm i hexo-renderer-pandoc --save # 或者 hexo-renderer-kramed
 ```
 
-
 然后在 `next/_config.yml` 中将 `math` 的 `enable` 打开，并选择 `mathjax` 作为渲染引擎。
 
 ```yml
 math:
   enable: true
   ...
-  engine: mathjax
-  #engine: katex
+  mathjax:
+    enable: true
 ```
 
 执行 Hexo 生成，部署，或者启动服务器：
@@ -131,8 +126,8 @@ npm i hexo-renderer-markdown-it-plus --save
 math:
   enable: true
   ...
-  #engine: mathjax
-  engine: katex
+  katex:
+    enable: true
 ```
 
 执行 Hexo 生成，部署，或者启动服务器：
@@ -197,42 +192,35 @@ markdown:
 如果配置的内容接在冒号后面，那么内容和冒号之间必须有一个空格(例如`enable: true`)
 
 ```yml
-
-# Math Equations Render Support
+# Math Formulas Render Support
 math:
-  enable: false
+  enable: true
 
-  # Default(true) will load mathjax/katex script on demand
-  # That is it only render those page who has 'mathjax: true' in Front-matter.
-  # If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.
+  # Default (true) will load mathjax / katex script on demand.
+  # That is it only render those page which has `mathjax: true` in Front-matter.
+  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
   per_page: true
 
-  engine: mathjax
-  #engine: katex
-
-  # hexo-renderer-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
+  # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
   mathjax:
-    # Use 2.7.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com).
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+    enable: true
+    # See: https://mhchem.github.io/MathJax-mhchem/
+    mhchem: false
 
-  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin)
-  # needed to full Katex support.
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
   katex:
-    # Use 0.7.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css
-    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
+    enable: false
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+    copy_tex: false
 ```
 
-### enable
+### `enable`
 
 `true` 或者 `false`，默认为 `false`。
 
 `true` 是打开数学公式渲染，`false` 则是关闭。
 
-### per_page
+### `per_page`
 
 `true` 或者 `false`，默认为 `true`。
 
@@ -271,21 +259,3 @@ title: 'Not Render Math Either'
 ```
 
 当你将它设置为 `false` 时，它就会在每个页面都加载 MathJax 或者 Katex 来进行数学公式渲染。
-
-### cdn
-
-MathJax 和 Katex 都提供了 `cdn` 的配置，如果你不知道什么是 `cdn` ，**请不要修改这个配置**。
-
-首先，MathJax 和 Katex 都使用了 [jsDelivr](https://www.jsdelivr.com/) 作为默认 CDN；
-
-之所以选择 jsDelivr 是因为它在全球各地都有比较不错的速度，而且具有中国官方颁布的 ICP 证书，在中国也能比较好地访问。
-
-同时，我们也提供了其他的 CDN 备选方案，包括著名的 [CDNJS](https://cdnjs.com/)。
-
-对于 MathJax 来说，我们目前采用的版本为 2.7.1。
-
-对于 Katex，由于上面提到的版本问题，我们目前采用的版本为 0.7.1。
-
-如果你想尝试我们提供的备选方案以外的 CDN，请注意使用对应的版本。
-
-特别的，对于中国的博客主，或者您的博客访问大部分来源于中国，由于 CDNJS 在部分中国地区被墙，请不要使用 CDNJS 作为 CDN。

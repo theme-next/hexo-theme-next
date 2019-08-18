@@ -1,4 +1,4 @@
-<script src="{{ url_for(theme.js) }}/utils.js?v={{ version }}"></script>
+{{- next_js('utils.js') }}
 {%- if theme.motion.enable %}
-  <script src="{{ url_for(theme.js) }}/motion.js?v={{ version }}"></script>
+  {{- next_js('motion.js') }}
 {%- endif %}

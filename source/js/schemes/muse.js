@@ -1,6 +1,6 @@
 /* global NexT, CONFIG */
 
-$(document).on('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
 
   var sidebarToggleLines = {
     lines: [],
@@ -8,25 +8,24 @@ $(document).on('DOMContentLoaded', function() {
       this.lines.push(line);
     },
     init: function() {
-      this.lines.forEach(function(line) {
+      this.lines.forEach(line => {
         line.init();
       });
     },
     arrow: function() {
-      this.lines.forEach(function(line) {
+      this.lines.forEach(line => {
         line.arrow();
       });
     },
     close: function() {
-      this.lines.forEach(function(line) {
+      this.lines.forEach(line => {
         line.close();
       });
     }
   };
 
   function SidebarToggleLine(settings) {
-    this.el = $(settings.el);
-    this.status = $.extend({}, {
+    this.status = Object.assign({
       init: {
         width    : '100%',
         opacity  : 1,
@@ -45,7 +44,7 @@ $(document).on('DOMContentLoaded', function() {
       this.transform('close');
     };
     this.transform = function(status) {
-      this.el.css(this.status[status]);
+      document.querySelector(settings.el).css(this.status[status]);
     };
   }
 
@@ -102,34 +101,30 @@ $(document).on('DOMContentLoaded', function() {
     init            : function() {
       sidebarToggleLines.init();
 
-      $('body')
-        .on('mousedown', this.mousedownHandler.bind(this))
-        .on('mouseup', this.mouseupHandler.bind(this));
-      $('#sidebar-dimmer')
-        .on('click', this.clickHandler.bind(this));
-      $('.sidebar-toggle')
-        .on('click', this.clickHandler.bind(this))
-        .on('mouseenter', this.mouseEnterHandler.bind(this))
-        .on('mouseleave', this.mouseLeaveHandler.bind(this));
+      window.addEventListener('mousedown', this.mousedownHandler.bind(this));
+      window.addEventListener('mouseup', this.mouseupHandler.bind(this));
+      document.querySelector('#sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
+      document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
+      document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
+      document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
       this.sidebarEl
         .on('touchstart', this.touchstartHandler.bind(this))
         .on('touchend', this.touchendHandler.bind(this))
-        .on('touchmove', function(e) {
-          e.preventDefault();
+        .on('touchmove', event => {
+          event.preventDefault();
         });
-      $(document)
-        .on('sidebar:show', this.showSidebar.bind(this))
-        .on('sidebar:hide', this.hideSidebar.bind(this));
+      window.addEventListener('sidebar:show', this.showSidebar.bind(this));
+      window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
     },
-    mousedownHandler: function(e) {
-      mousePos.X = e.pageX;
-      mousePos.Y = e.pageY;
+    mousedownHandler: function(event) {
+      mousePos.X = event.pageX;
+      mousePos.Y = event.pageY;
     },
-    mouseupHandler: function(e) {
-      var deltaX = e.pageX - mousePos.X;
-      var deltaY = e.pageY - mousePos.Y;
-      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(e.target).is('.main');
-      if (this.isSidebarVisible && (clickingBlankPart || $(e.target).is('img.medium-zoom-image, .fancybox img'))) {
+    mouseupHandler: function(event) {
+      var deltaX = event.pageX - mousePos.X;
+      var deltaY = event.pageY - mousePos.Y;
+      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
+      if (this.isSidebarVisible && (clickingBlankPart || event.target.matches('img.medium-zoom-image, .fancybox img'))) {
         this.hideSidebar();
       }
     },
@@ -146,13 +141,13 @@ $(document).on('DOMContentLoaded', function() {
         sidebarToggleLines.init();
       }
     },
-    touchstartHandler: function(e) {
-      touchPos.X = e.originalEvent.touches[0].clientX;
-      touchPos.Y = e.originalEvent.touches[0].clientY;
+    touchstartHandler: function(event) {
+      touchPos.X = event.originalEvent.touches[0].clientX;
+      touchPos.Y = event.originalEvent.touches[0].clientY;
     },
-    touchendHandler: function(e) {
-      var deltaX = e.originalEvent.changedTouches[0].clientX - touchPos.X;
-      var deltaY = e.originalEvent.changedTouches[0].clientY - touchPos.Y;
+    touchendHandler: function(event) {
+      var deltaX = event.originalEvent.changedTouches[0].clientX - touchPos.X;
+      var deltaY = event.originalEvent.changedTouches[0].clientY - touchPos.Y;
       var effectiveSliding = Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight));
       if (this.isSidebarVisible && effectiveSliding) {
         this.hideSidebar();
@@ -192,7 +187,7 @@ $(document).on('DOMContentLoaded', function() {
         this.sidebarEl.stop().animate({
           width  : SIDEBAR_WIDTH,
           display: 'block'
-        }, SIDEBAR_DISPLAY_DURATION, function() {
+        }, SIDEBAR_DISPLAY_DURATION, () => {
           self.sidebarEl.addClass('sidebar-active');
         });
       }
@@ -209,11 +204,12 @@ $(document).on('DOMContentLoaded', function() {
       NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': 0} : {'padding-left': 0});
 
       // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-      if ($('.post-toc-wrap')) {
+      var tocWrap = document.querySelector('.post-toc-wrap');
+      if (tocWrap) {
         if ($('.site-overview-wrap').css('display') === 'block') {
-          $('.post-toc-wrap').removeClass('motion-element');
+          tocWrap.classList.remove('motion-element');
         } else {
-          $('.post-toc-wrap').addClass('motion-element');
+          tocWrap.classList.add('motion-element');
         }
       }
     }
@@ -221,14 +217,23 @@ $(document).on('DOMContentLoaded', function() {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    var containerHeight = $('#footer').attr('position') ? $('.container').height() + $('#footer').outerHeight(true) : $('.container').height();
+    var containerHeight = document.querySelector('.container').height();
+    var footer = document.getElementById('footer');
+    if (footer.getAttribute('position')) containerHeight += footer.outerHeight(true);
     if (containerHeight < window.innerHeight) {
-      $('#footer').css({ 'position': 'fixed', 'bottom': 0, 'left': 0, 'right': 0 }).attr('position', 'fixed');
+      footer.css({
+        'position': 'fixed',
+        'bottom': 0,
+        'left': 0,
+        'right': 0
+      }).setAttribute('position', 'fixed');
     } else {
-      $('#footer').removeAttr('style position');
+      footer.removeAttribute('position');
+      footer.style.cssText = '';
     }
   }
 
   updateFooterPosition();
-  $(window).on('resize scroll', updateFooterPosition);
+  window.addEventListener('resize', updateFooterPosition);
+  window.addEventListener('scroll', updateFooterPosition);
 });

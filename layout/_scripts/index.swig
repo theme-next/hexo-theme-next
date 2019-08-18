@@ -5,5 +5,4 @@
 {% include scheme_script %}
 
 {% include 'next-boot.swig' %}
-{% include 'exturl.swig' %}
 {% include 'three.swig' %}

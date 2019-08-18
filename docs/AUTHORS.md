@@ -148,6 +148,9 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
     <td align="center"><a href="https://xyyuchn.github.io/"><img src="https://avatars3.githubusercontent.com/u/46118157?v=4" width="100px;" alt="xyyuchn"/><br /><sub><b>xyyuchn</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=xyyuchn" title="Documentation">📖</a></td>
     <td align="center"><a href="http://maples7.com/"><img src="https://avatars0.githubusercontent.com/u/9960982?v=4" width="100px;" alt="Maples7"/><br /><sub><b>Maples7</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=Maples7" title="Code">💻</a> <a href="https://github.com/theme-next/hexo-theme-next/issues?q=author%3AMaples7" title="Bug reports">🐛</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://littleylv.github.io/"><img src="https://avatars2.githubusercontent.com/u/16814596?v=4" width="100px;" alt="Siuwing Leoi"/><br /><sub><b>Siuwing Leoi</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/issues?q=author%3Alittleylv" title="Bug reports">🐛</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

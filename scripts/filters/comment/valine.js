@@ -25,10 +25,10 @@ hexo.extend.filter.register('theme_inject', injects => {
   injects.postMeta.raw('valine', `
   {% if post.comments and (is_post() or theme.valine.comment_count) %}
   <span class="post-meta-item">
-    ${iconText}
-    <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-    </a>
+    ${iconText('comment-o', 'valine')}
+    <a title="valine" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">{#
+      #}<span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>{#
+    #}</a>
   </span>
   {% endif %}
   `);

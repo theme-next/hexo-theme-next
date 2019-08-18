@@ -1,6 +1,6 @@
 {%- if theme.facebook_sdk.enable %}
   <script>
-    window.fbAsyncInit = function() {
+    function fbAsyncInit() {
       FB.init({
         appId  : '{{ theme.facebook_sdk.app_id }}',
         xfbml  : true,

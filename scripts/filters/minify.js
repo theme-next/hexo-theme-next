@@ -29,10 +29,6 @@ hexo.extend.filter.register('after_generate', () => {
     });
   }
 
-  if (!theme.exturl) {
-    hexo.route.remove('js/exturl.js');
-  }
-
   if (theme.vendors.jquery) {
     hexo.route.remove('lib/jquery/index.js');
   }
@@ -46,7 +42,6 @@ hexo.extend.filter.register('after_generate', () => {
   }
 
   if (theme.scheme === 'Muse' || theme.scheme === 'Mist') {
-    hexo.route.remove('js/affix.js');
     hexo.route.remove('js/schemes/pisces.js');
   } else if (theme.scheme === 'Pisces' || theme.scheme === 'Gemini') {
     hexo.route.remove('js/schemes/muse.js');

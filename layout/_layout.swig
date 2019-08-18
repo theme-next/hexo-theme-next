@@ -22,10 +22,9 @@
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
-  {%- for inject_item in theme.injects.head %}
-    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {%- endfor %}
+  {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
+  <meta name="generator" content="Hexo {{ hexo_env('version') }}">
   {% include '_third-party/analytics/index.swig' %}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
@@ -74,10 +73,12 @@
     {%- if theme.back2top.enable and not theme.back2top.sidebar %}
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        {%- if theme.back2top.scrollpercent %}
-          <span id="scrollpercent"><span>0</span>%</span>
-        {%- endif %}
+        <span>0%</span>
       </div>
+    {%- endif %}
+
+    {%- if theme.reading_progress.enable %}
+      <div class="reading-progress-bar"></div>
     {%- endif %}
 
     {{ partial('_partials/share/index.swig', {}, {cache: theme.cache.enable}) }}
@@ -96,9 +97,7 @@
 
   {% block script_extra %}{% endblock %}
 
-  {%- for inject_item in theme.injects.bodyEnd %}
-    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {%- endfor %}
+  {{- next_inject('bodyEnd') }}
 
   {%- if theme.pjax %}
     </div>
