@@ -123,8 +123,8 @@ window.addEventListener('DOMContentLoaded', () => {
     mouseupHandler: function(event) {
       var deltaX = event.pageX - mousePos.X;
       var deltaY = event.pageY - mousePos.Y;
-      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(event.target).is('.main');
-      if (this.isSidebarVisible && (clickingBlankPart || $(event.target).is('img.medium-zoom-image, .fancybox img'))) {
+      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
+      if (this.isSidebarVisible && (clickingBlankPart || event.target.matches('img.medium-zoom-image, .fancybox img'))) {
         this.hideSidebar();
       }
     },

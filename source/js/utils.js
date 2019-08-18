@@ -33,31 +33,30 @@ NexT.utils = {
    * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    document.querySelectorAll('.post-body img')
-      .forEach(element => {
-        var $image = $(element);
-        var imageTitle = $image.attr('title') || $image.attr('alt');
-        var $imageWrapLink = $image.parent('a');
+    document.querySelectorAll('.post-body img').forEach(element => {
+      var $image = $(element);
+      var imageTitle = $image.attr('title') || $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
 
-        if ($imageWrapLink.length < 1) {
-          var imageLink = $image.attr('data-src') || $image.attr('src');
-          $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
-          if ($image.is('.post-gallery img')) {
-            $imageWrapLink.addClass('post-gallery-img');
-            $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-          } else if ($image.is('.group-picture img')) {
-            $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-          } else {
-            $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
-          }
+      if ($imageWrapLink.length < 1) {
+        var imageLink = $image.attr('data-src') || $image.attr('src');
+        $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
+        if ($image.is('.post-gallery img')) {
+          $imageWrapLink.addClass('post-gallery-img');
+          $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
+        } else if ($image.is('.group-picture img')) {
+          $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
+        } else {
+          $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
         }
+      }
 
-        if (imageTitle) {
-          $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
-          // Make sure img title tag will show correctly in fancybox
-          $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
-        }
-      });
+      if (imageTitle) {
+        $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
+        // Make sure img title tag will show correctly in fancybox
+        $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
+      }
+    });
 
     $('.fancybox').fancybox({
       loop   : true,
@@ -156,7 +155,9 @@ NexT.utils = {
     });
 
     backToTop && backToTop.addEventListener('click', () => {
-      $('html, body').animate({ scrollTop: 0 });
+      $(document.documentElement).animate({
+        scrollTop: 0
+      });
     });
   },
 
