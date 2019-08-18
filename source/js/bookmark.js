@@ -3,10 +3,7 @@
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  var link;
-
   var doSaveScroll = () => {
-    localStorage.setItem('lastpage', location.pathname);
     localStorage.setItem('bookmark' + location.pathname, window.scrollY);
   };
 
@@ -14,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     var top = localStorage.getItem('bookmark' + location.pathname);
     top = parseInt(top, 10);
     // If the page opens with a specific hash, just jump out
-    if (!isNaN(top) && location.hash !== '') {
+    if (!isNaN(top) && location.hash == '') {
       // Auto scroll to the position
       $(document.documentElement).animate({
         scrollTop: top
@@ -24,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Register everything
   var init = function(trigger) {
     // Create a link element
-    link = document.querySelector('.book-mark-link');
+    var link = document.querySelector('.book-mark-link');
     // Scroll event
     window.addEventListener('scroll', () => {
       window.scrollY === 0 ? link.classList.add('book-mark-link-fixed') : link.classList.remove('book-mark-link-fixed');
@@ -38,7 +35,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Save the position by clicking the icon
     link.addEventListener('click', event => {
       event.preventDefault();
-      localStorage.setItem('bookmark' + location.pathname, window.scrollY);
+      localStorage.setItem('lastpage', location.pathname);
+      doSaveScroll();
       $(link).animate({
         top: -30
       }, 'fast', () => {
