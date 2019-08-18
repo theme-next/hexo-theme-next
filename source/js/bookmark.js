@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     var top = localStorage.getItem('bookmark' + location.pathname);
     top = parseInt(top, 10);
     // If the page opens with a specific hash, just jump out
-    if (!isNaN(top) && location.hash == '') {
+    if (!isNaN(top) && location.hash === '') {
       // Auto scroll to the position
       $(document.documentElement).animate({
         scrollTop: top
