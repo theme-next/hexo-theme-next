@@ -16,7 +16,9 @@ window.addEventListener('DOMContentLoaded', () => {
     // If the page opens with a specific hash, just jump out
     if (!isNaN(top) && location.hash !== '') {
       // Auto scroll to the position
-      $(document.documentElement).animate({ 'scrollTop': top }, 'fast');
+      $(document.documentElement).animate({
+        scrollTop: top
+      }, 'fast');
     }
   };
   // Register everything
@@ -37,7 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', event => {
       event.preventDefault();
       localStorage.setItem('bookmark' + location.pathname, window.scrollY);
-      $(link).animate({ top: -30 }, 'fast', () => {
+      $(link).animate({
+        top: -30
+      }, 'fast', () => {
         setTimeout(() => {
           link.style.top = '';
         }, 400);
