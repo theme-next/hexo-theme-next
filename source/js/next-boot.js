@@ -18,6 +18,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  window.addEventListener('hashchange', () => {
+    var tHash = location.hash;
+    if (tHash !== '' && !tHash.match(/%\S{2}/)) {
+      var target = document.querySelector(`.tabs ul.nav-tabs li a[href="${tHash}"]`);
+      target && target.click();
+    }
+  });
+
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
     NexT.motion.integrator

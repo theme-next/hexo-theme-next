@@ -168,13 +168,20 @@ NexT.utils = {
     $('.tabs ul.nav-tabs .tab').on('click', event => {
       event.preventDefault();
       // Prevent selected tab to select again.
-      if (!$(event.currentTarget).hasClass('active')) {
+      if (!event.currentTarget.classList.contains('active')) {
         // Add & Remove active class on `nav-tabs` & `tab-content`.
-        $(event.currentTarget).addClass('active').siblings().removeClass('active');
-        var tActive = $(event.currentTarget).find('a').attr('href');
-        $(tActive).addClass('active').siblings().removeClass('active');
+        [...event.currentTarget.parentNode.children].forEach(item => {
+          item.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+        var tActive = event.currentTarget.querySelector('a').getAttribute('href');
+        tActive = document.querySelector(tActive);
+        [...tActive.parentNode.children].forEach(item => {
+          item.classList.remove('active');
+        });
+        tActive.classList.add('active');
         // Trigger event
-        document.querySelector(tActive).dispatchEvent(new Event('tabs:click', {
+        tActive.dispatchEvent(new Event('tabs:click', {
           bubbles: true
         }));
       }
