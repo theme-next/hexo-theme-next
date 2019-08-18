@@ -25,8 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   function SidebarToggleLine(settings) {
-    this.el = $(settings.el);
-    this.status = $.extend({}, {
+    this.status = Object.assign({
       init: {
         width    : '100%',
         opacity  : 1,
@@ -45,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
       this.transform('close');
     };
     this.transform = function(status) {
-      this.el.css(this.status[status]);
+      document.querySelector(settings.el).css(this.status[status]);
     };
   }
 
