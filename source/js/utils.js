@@ -90,7 +90,7 @@ NexT.utils = {
           return element.innerText;
         }).join('\n');
         var ta = document.createElement('textarea');
-        var yPosition = window.scrollY;
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
         ta.style.top = yPosition + 'px'; // Prevent page scroll
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
@@ -135,7 +135,7 @@ NexT.utils = {
         scrollPercent = NexT.utils.getScrollPercent();
       }
       if (backToTop) {
-        $(backToTop).toggleClass('back-to-top-on', window.scrollY > THRESHOLD);
+        $(backToTop).toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
         document.querySelector('#scrollpercent span').innerText = scrollPercent;
       }
       if (readingProgressBar) {
