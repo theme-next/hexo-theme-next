@@ -12,7 +12,7 @@
       {%- set loadQL = true %}
     {%- endif %}
   {%- endif %}
-  
+
   {%- if loadQL or (page.quicklink or post.quicklink) %}
     <script src="{{ quicklink_uri }}"></script>
     <script>

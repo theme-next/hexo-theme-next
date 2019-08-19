@@ -22,11 +22,7 @@
   <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}">
 {%- endif %}
 
-{%- if theme.rss === '' and config.feed and config.feed.path %}
-  {%- set rss = config.feed.path %}
-{% elif theme.rss %}
-  {%- set rss = theme.rss %}
-{%- endif %}
+{%- set rss = config.feed.path or theme.rss %}
 {%- if rss %}
   <link rel="alternate" href="{{ url_for(rss) }}" title="{{ title }}" type="application/atom+xml">
 {%- endif %}
