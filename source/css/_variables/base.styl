@@ -274,6 +274,13 @@ $toc-link-active-current-border-color = $sidebar-highlight;
 
 // Components
 // --------------------------------------------------
+// Bookmark
+get_bookmark_color() {
+  $bookmark-color = hexo-config('bookmark.color');
+  return $bookmark-color is a 'string' ? $bookmark-color : $black-deep;
+}
+$bookmark-color               = get_bookmark_color();
+
 // Back to top
 $b2t-opacity                  = 1;
 $b2t-opacity-hover            = .8;

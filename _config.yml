@@ -443,6 +443,9 @@ reading_progress:
 # Bookmark Support
 bookmark:
   enable: false
+  # In some cases you may need to change the color of the bookmark.
+  # If you don't want to change the default color, just leave it as blank.
+  color:
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
   # If manual, only save it by clicking the bookmark-icon.
   save: auto

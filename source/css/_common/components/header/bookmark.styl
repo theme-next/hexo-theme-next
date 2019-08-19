@@ -1,6 +1,6 @@
 .book-mark-link {
   border-bottom: none;
-  color: #222;
+  color: unquote($bookmark-color);
   display: block;
   font-size: 32px !important;
   left: 30px;
@@ -9,7 +9,7 @@
   transition: .3s;
 
   +tablet-mobile() {
-    display: none;
+    display: none !important;
   }
 }
 
