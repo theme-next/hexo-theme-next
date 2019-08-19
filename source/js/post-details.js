@@ -39,9 +39,8 @@
       return;
     }
 
-    var currentTarget = $('.' + activePanelClassName);
     var target = $('.' + item.data('target'));
-
+    var currentTarget = target.siblings('.sidebar-panel');
     currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
       currentTarget.hide();
       target
@@ -56,6 +55,13 @@
     item.siblings().removeClass(activeTabClassName);
     item.addClass(activeTabClassName);
   });
+  if (document.querySelector('.post-toc-wrap').childElementCount > 0) {
+    document.querySelector('.sidebar-nav').style.display = '';
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    document.querySelector('.sidebar-nav').style.display = 'none';
+    document.querySelector('.sidebar-nav-overview').click();
+  }
 
   // TOC item animation navigate & prevent #item selector in adress bar.
   $('.post-toc a').on('click', event => {

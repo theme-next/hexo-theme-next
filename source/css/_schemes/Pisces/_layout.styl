@@ -121,4 +121,13 @@ if (hexo-config('sidebar.position') == 'right') {
     padding-left: 0;
     padding-right: 260px;
   }
+} else {
+  .back-to-top {
+    left: auto;
+    right: $b2t-position-right;
+
+    +tablet-mobile() {
+      right: $b2t-position-right-mobile;
+    }
+  }
 }
