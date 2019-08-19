@@ -41,16 +41,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 $(document).on('DOMContentLoaded pjax:success', () => {
 
-  if (CONFIG.save_scroll) {
-    // Read position from localStorage
-    var value = localStorage.getItem('scroll' + location.pathname);
-    $('html, body').animate({ scrollTop: value || 0 });
-    // Write position in localStorage
-    NexT.utils.saveScrollTimer = setInterval(() => {
-      localStorage.setItem('scroll' + location.pathname, window.scrollY);
-    }, 1000);
-  }
-
   /**
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.

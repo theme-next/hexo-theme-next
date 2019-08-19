@@ -1,5 +1,4 @@
 {% include 'baidu-push.swig' %}
-{% include 'bookmark.swig' %}
 
 {% include 'analytics/analytics-with-jquery.swig' %}
 {% include 'facebook-sdk.swig' %}
