@@ -1,7 +1,7 @@
 <script>
 var pjax = new Pjax({
   selectors: [
-    'title',
+    'head title',
     '#page-configurations',
     '.content-wrap',
     '.sidebar-inner',
