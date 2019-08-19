@@ -1,6 +1,5 @@
 <script>
 var pjax = new Pjax({
-  elements: 'a:not(.fancybox)',
   selectors: [
     'head title',
     '#page-configurations',

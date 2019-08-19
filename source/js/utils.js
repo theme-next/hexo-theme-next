@@ -58,6 +58,7 @@ NexT.utils = {
       }
     });
 
+    pjax && ($.fancybox.defaults.hash = false);
     $('.fancybox').fancybox({
       loop   : true,
       helpers: {
