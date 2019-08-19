@@ -100,7 +100,7 @@
   }
 }
 
-.sidebar-position-right {
+if (hexo-config('sidebar.position') == 'right') {
   .header-inner {
     right: 0;
   }
@@ -111,6 +111,10 @@
 
   .sidebar {
     float: right;
+  }
+
+  .book-mark-link {
+    left: $b2t-position-right;
   }
 
   .footer-inner {
