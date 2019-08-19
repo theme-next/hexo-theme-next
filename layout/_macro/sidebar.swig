@@ -21,7 +21,7 @@
         {%- set display_toc = toc.length > 1 and display_toc %}
       {%- endif %}
 
-      <ul class="sidebar-nav motion-element">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc" data-target="post-toc-wrap">
           {{ __('sidebar.toc') }}
         </li>
@@ -31,7 +31,7 @@
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap motion-element sidebar-panel">
+      <div class="post-toc-wrap sidebar-panel">
         {%- if display_toc %}
           <div class="post-toc">
             <div class="post-toc-content">{{ toc }}</div>

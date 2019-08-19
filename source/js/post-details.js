@@ -26,42 +26,7 @@
 
     $('body').scrollspy({ target: tocSelector });
   }
-
   initScrollSpy();
-
-  var TAB_ANIMATE_DURATION = 200;
-
-  $('.sidebar-nav li').on('click', event => {
-    var item = $(event.currentTarget);
-    var activeTabClassName = 'sidebar-nav-active';
-    var activePanelClassName = 'sidebar-panel-active';
-    if (item.hasClass(activeTabClassName)) {
-      return;
-    }
-
-    var target = $('.' + item.data('target'));
-    var currentTarget = target.siblings('.sidebar-panel');
-    currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
-      currentTarget.hide();
-      target
-        .stop()
-        .css({'opacity': 0, 'display': 'block'})
-        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, () => {
-          currentTarget.removeClass(activePanelClassName);
-          target.addClass(activePanelClassName);
-        });
-    });
-
-    item.siblings().removeClass(activeTabClassName);
-    item.addClass(activeTabClassName);
-  });
-  if (document.querySelector('.post-toc-wrap').childElementCount > 0) {
-    document.querySelector('.sidebar-nav').style.display = '';
-    document.querySelector('.sidebar-nav-toc').click();
-  } else {
-    document.querySelector('.sidebar-nav').style.display = 'none';
-    document.querySelector('.sidebar-nav-overview').click();
-  }
 
   // TOC item animation navigate & prevent #item selector in adress bar.
   $('.post-toc a').on('click', event => {

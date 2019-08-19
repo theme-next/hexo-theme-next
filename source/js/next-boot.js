@@ -56,6 +56,42 @@ $(document).on('DOMContentLoaded pjax:success', () => {
   NexT.utils.registerActiveMenuItem();
   NexT.utils.embeddedVideoTransformer();
 
+  var sidebarNav = document.querySelector('.sidebar-nav');
+  var TAB_ANIMATE_DURATION = 200;
+
+  $(sidebarNav.querySelectorAll('li')).on('click', event => {
+    var item = $(event.currentTarget);
+    var activeTabClassName = 'sidebar-nav-active';
+    var activePanelClassName = 'sidebar-panel-active';
+    if (item.hasClass(activeTabClassName)) return;
+
+    var target = $('.' + item.data('target'));
+    var currentTarget = target.siblings('.sidebar-panel');
+    currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
+      currentTarget.hide();
+      target
+        .stop()
+        .css({ 'opacity': 0, 'display': 'block' })
+        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, () => {
+          // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+          currentTarget.removeClass(activePanelClassName, 'motion-element');
+          target.addClass(activePanelClassName, 'motion-element');
+        });
+    });
+
+    item.siblings().removeClass(activeTabClassName);
+    item.addClass(activeTabClassName);
+  });
+  if (document.querySelector('.post-toc-wrap').childElementCount > 0) {
+    sidebarNav.style.display = '';
+    sidebarNav.classList.add('motion-element');
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    sidebarNav.style.display = 'none';
+    sidebarNav.classList.remove('motion-element');
+    document.querySelector('.sidebar-nav-overview').click();
+  }
+
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
