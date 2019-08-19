@@ -7,7 +7,7 @@ yaml = require('js-yaml')
 
 gulp.task 'lint', ->
   return gulp.src([
-    './source/js/*.js',
+    './source/js/**/*.js',
     './scripts/**/*.js'
   ]).pipe eslint()
     .pipe eslint.format()

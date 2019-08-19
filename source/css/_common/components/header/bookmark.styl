@@ -1,0 +1,18 @@
+.book-mark-link {
+  border-bottom: none;
+  color: #222;
+  display: block;
+  font-size: 32px !important;
+  left: 30px;
+  position: fixed;
+  top: -10px;
+  transition: .3s;
+
+  +tablet-mobile() {
+    display: none !important;
+  }
+}
+
+.book-mark-link:hover, .book-mark-link-fixed {
+  top: -2px;
+}

@@ -29,19 +29,17 @@
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang or page.language or config.language }}">
-
-  {%- set container_class = 'container' %}
-  {%- if theme.sidebar.position %}
-    {%- set container_class = container_class + ' sidebar-position-' + theme.sidebar.position %}
-  {%- endif %}
-
-  <div class="{{ container_class }}">
+<body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
+
+    {%- if theme.bookmark.enable %}
+      <a class="book-mark-link book-mark-link-fixed fa fa-bookmark" href="#"></a>
+    {%- endif %}
 
     {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
 
@@ -81,7 +79,7 @@
       <div class="reading-progress-bar"></div>
     {%- endif %}
 
-    {{ partial('_partials/share/index.swig', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/share.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
   {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}

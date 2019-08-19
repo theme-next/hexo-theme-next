@@ -1,7 +1,7 @@
 <script>
 var pjax = new Pjax({
   selectors: [
-    'title',
+    'head title',
     '#page-configurations',
     '.content-wrap',
     '.sidebar-inner',
@@ -12,11 +12,10 @@ var pjax = new Pjax({
   },
   analytics: false,
   cacheBust: false,
-  scrollTo: !CONFIG.save_scroll
+  scrollTo: !CONFIG.bookmark.enable
 });
 window.addEventListener('pjax:send', () => {
   $('.sidebar-inner').stop().fadeTo('fast', 0);
-  CONFIG.save_scroll && clearInterval(NexT.utils.saveScrollTimer);
 });
 window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {

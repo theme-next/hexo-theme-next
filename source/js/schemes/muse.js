@@ -223,9 +223,9 @@ window.addEventListener('DOMContentLoaded', () => {
     if (containerHeight < window.innerHeight) {
       footer.css({
         'position': 'fixed',
-        'bottom': 0,
-        'left': 0,
-        'right': 0
+        'bottom'  : 0,
+        'left'    : 0,
+        'right'   : 0
       }).setAttribute('position', 'fixed');
     } else {
       footer.removeAttribute('position');
