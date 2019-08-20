@@ -165,8 +165,6 @@ Issues related: `types`+`contents`+`results`
     - `Question`: An issue about questions
     - `Meta`: Denoting a change of usage conditions
     - `Polls`: An issue that initiated a poll
-    - `High Priority`: A detected bug or misprint with high priority
-    - `Low Priority`: A detected bug or misprint with low priority
 - By contents
     - `Roadmap`: An issue about future development
     - `Hexo`: An issue related to Hexo
@@ -174,11 +172,13 @@ Issues related: `types`+`contents`+`results`
     - `Docs`: Need to add instruction document
     - `Configurations`: An issue related to configurations
     - `CSS`: An issue related to CSS
-    - `Duplicate`: An issue which had been mentioned
-    - `Irrelevant`: An irrelevant issue for Next
+    - `Fonts`: An issue related to fonts
+    - `PJAX`: An issue related to PJAX
     - `Custom`: An issue related to custom things
     - `Support`: An issue labeled as support requests
 - By results
+    - `Duplicate`: An issue which had been mentioned
+    - `Irrelevant`: An irrelevant issue for Next
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue
     - `Need Verify`: Need confirmation from the developers or user about the bug or solution

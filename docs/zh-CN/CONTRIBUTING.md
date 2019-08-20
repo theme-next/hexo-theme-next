@@ -162,8 +162,6 @@ Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
     - `Question`: 提出疑问的 Issue
     - `Meta`: 表明使用条款变更的 Issue
     - `Polls`: 发起投票的 Issue
-    - `High Priority`: 检测到具有高优先级的 Bug 或笔误的 Issue
-    - `Low Priority`: 检测到具有低优先级的 Bug 或笔误的 Issue
 - 内容
     - `Roadmap`: 与 NexT 主题发展相关的 Issue
     - `Hexo`: 与 Hexo 相关的 Issue
@@ -171,11 +169,13 @@ Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
     - `Docs`: 需要添加文档说明的 Issue
     - `Configurations`: 与 NexT 主题设置相关的 Issue
     - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue
-    - `Duplicate`: 重复提及的 Issue
-    - `Irrelevant`: 与 NexT 主题无关的 Issue
+    - `Fonts`: 与 NexT 主题字体相关的 Issue
+    - `PJAX`: 与 NexT 主题 PJAX 相关的 Issue
     - `Custom`: 与 NexT 主题个性化相关的 Issue
     - `Support`: 被标记为支持请求的 Issue
 - 结果
+    - `Duplicate`: 重复提及的 Issue
+    - `Irrelevant`: 与 NexT 主题无关的 Issue
     - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
     - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
