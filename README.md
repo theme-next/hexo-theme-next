@@ -4,6 +4,8 @@
 
 # <div align="center"><a title="NexT website repository" href="https://github.com/theme-next/theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/50c44698148f4e56b51cdff7e52fd8ae)](https://app.codacy.com/app/mkb/hexo-theme-next?utm_source=github.com&utm_medium=referral&utm_content=theme-next/hexo-theme-next&utm_campaign=Badge_Grade_Dashboard)
+
 <p align="center">«NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch with love.</p>
 
 <p align="center">
