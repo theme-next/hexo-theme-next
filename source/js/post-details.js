@@ -2,13 +2,15 @@
 
 ($ => {
   'use strict';
-
+  if ($.isFunction($.fn.scrollspy)) return;
   // SCROLLSPY CLASS DEFINITION
   // ==========================
   function ScrollSpy(element, options) {
     this.$body = $(document.body);
     this.$scrollElement = $(element).is(document.body) ? $(window) : $(element);
-    this.options = $.extend({}, ScrollSpy.DEFAULTS, options);
+    this.options = Object.assign({
+      offset: 10
+    }, options);
     this.selector = (this.options.target || '') + ' .nav li > a';
     this.offsets = [];
     this.targets = [];
@@ -19,12 +21,6 @@
     this.refresh();
     this.process();
   }
-
-  ScrollSpy.VERSION = '3.3.2';
-
-  ScrollSpy.DEFAULTS = {
-    offset: 10
-  };
 
   ScrollSpy.prototype.getScrollHeight = function() {
     return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight);
@@ -63,8 +59,6 @@
         that.offsets.push(this[0]);
         that.targets.push(this[1]);
       });
-
-
   };
 
   ScrollSpy.prototype.process = function() {
