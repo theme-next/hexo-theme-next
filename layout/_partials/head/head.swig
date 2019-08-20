@@ -22,9 +22,11 @@
   <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}">
 {%- endif %}
 
-{%- set rss = config.feed.path or theme.rss %}
-{%- if rss %}
-  <link rel="alternate" href="{{ url_for(rss) }}" title="{{ title }}" type="application/atom+xml">
+{%- if theme.rss === '' and config.feed.path %}
+  {%- set theme.rss = config.feed.path %}
+{%- endif %}
+{%- if theme.rss %}
+  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml">
 {%- endif %}
 
 {%- if theme.disable_baidu_transformation %}
