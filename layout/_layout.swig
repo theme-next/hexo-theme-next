@@ -20,7 +20,7 @@
   {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
   <meta name="generator" content="Hexo {{ hexo_env('version') }}">
-  {% include '_third-party/analytics/index.swig' %}
+  {{ partial('_third-party/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
 
@@ -31,12 +31,6 @@
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
-
-    {%- if theme.bookmark.enable %}
-      <a class="book-mark-link book-mark-link-fixed" href="#"></a>
-    {%- endif %}
-
-    {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -63,18 +57,7 @@
       </div>
     </footer>
 
-    {%- if theme.back2top.enable and not theme.back2top.sidebar %}
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        <span>0%</span>
-      </div>
-    {%- endif %}
-
-    {%- if theme.reading_progress.enable %}
-      <div class="reading-progress-bar"></div>
-    {%- endif %}
-
-    {{ partial('_partials/share.swig', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/widgets.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
   {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}
@@ -94,7 +77,7 @@
 
   {%- if theme.pjax %}
     </div>
-    {% include '_partials/pjax.swig' %}
+    {{ partial('_scripts/pjax.swig', {}, {cache: theme.cache.enable}) }}
   {%- endif %}
 </body>
 </html>

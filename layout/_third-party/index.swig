@@ -1,6 +1,7 @@
 {% include 'baidu-push.swig' %}
 
-{% include 'analytics/analytics-with-jquery.swig' %}
+{% include 'analytics/firestore.swig' %}
+{% include 'analytics/lean-analytics.swig' %}
 {% include 'facebook-sdk.swig' %}
 {% include 'rating.swig' %}
 
