@@ -12,10 +12,7 @@
 
       {%- set display_toc = theme.toc.enable and display_toc %}
       {%- if display_toc %}
-        {%- set next_toc_number = theme.toc.number %}
-        {%- if page.toc_number !== undefined %}
-          {%- set next_toc_number = page.toc_number %}
-        {%- endif %}
+        {%- set next_toc_number = page.toc_number | default(theme.toc.number) %}
         {%- set next_toc_max_depth = page.toc_max_depth | default(theme.toc.max_depth) | default(6) %}
         {%- set toc = toc(page.content, { "class": "nav", list_number: next_toc_number, max_depth: next_toc_max_depth }) %}
         {%- set display_toc = toc.length > 1 and display_toc %}

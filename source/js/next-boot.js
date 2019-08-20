@@ -99,7 +99,7 @@ $(document).on('DOMContentLoaded pjax:success', () => {
   function initSidebarDimension() {
     // Initialize Sidebar & TOC Height.
     var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-    $('.site-overview, .post-toc').css('max-height', sidebarWrapperHeight);
+    $('.site-overview-wrap, .post-toc-wrap').css('max-height', sidebarWrapperHeight);
   }
   initSidebarDimension();
   window.addEventListener('resize', initSidebarDimension);
