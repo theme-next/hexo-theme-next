@@ -1,6 +1,5 @@
 .book-mark-link {
   border-bottom: none;
-  color: unquote(hexo-config('bookmark.color'));
   display: inline-block;
   right: $b2t-position-right;
   position: fixed;
@@ -11,6 +10,7 @@
     display: none;
   }
   &::before {
+    color: unquote(hexo-config('bookmark.color'));
     content: "\f02e";
     font-family: $font-family-icons;
     font-size: 32px;
