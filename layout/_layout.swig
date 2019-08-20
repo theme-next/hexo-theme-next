@@ -13,12 +13,7 @@
   {%- set pjax = ' pjax' %}
 {%- endif %}
 
-{%- set html_class = 'theme-next ' + theme.scheme %}
-{%- if theme.motion.enable %}
-  {%- set html_class = html_class + ' use-motion' %}
-{%- endif %}
-
-<html class="{{ html_class | lower }}" lang="{{ config.language }}">
+<html lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
@@ -30,7 +25,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
-  <div class="container">
+  <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
