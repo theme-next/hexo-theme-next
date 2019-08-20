@@ -1,6 +1,6 @@
 /* global NexT */
 
-(function($) {
+($ => {
   'use strict';
 
   // SCROLLSPY CLASS DEFINITION
@@ -149,7 +149,7 @@
     });
   });
 
-}(jQuery));
+})(jQuery);
 
 (function() {
 
