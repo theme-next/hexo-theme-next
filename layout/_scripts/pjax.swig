@@ -7,6 +7,9 @@ var pjax = new Pjax({
     '.post-toc-wrap',
     '#pjax'
   ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
   analytics: false,
   cacheBust: false,
   scrollTo: !CONFIG.bookmark.enable
