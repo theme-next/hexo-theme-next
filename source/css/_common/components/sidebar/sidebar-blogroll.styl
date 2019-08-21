@@ -16,6 +16,9 @@
 }
 
 .links-of-blogroll-item {
+  if (hexo-config('links_layout') == 'inline') {
+    display: inline-block;
+  }
   padding: 2px 10px;
 
   a, span.exturl {
@@ -26,4 +29,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+}
+
+.links-of-blogroll-inline .links-of-blogroll-item {
+
 }
