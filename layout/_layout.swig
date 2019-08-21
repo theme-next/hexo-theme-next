@@ -13,35 +13,24 @@
   {%- set pjax = ' pjax' %}
 {%- endif %}
 
-{%- set html_class = 'theme-next ' + theme.scheme %}
-{%- if theme.motion.enable %}
-  {%- set html_class = html_class + ' use-motion' %}
-{%- endif %}
-
-<html class="{{ html_class | lower }}" lang="{{ config.language }}">
+<html lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
   {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
   <meta name="generator" content="Hexo {{ hexo_env('version') }}">
-  {% include '_third-party/analytics/index.swig' %}
+  {{ partial('_third-party/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
-  <div class="container">
+  <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
-
-    {%- if theme.bookmark.enable %}
-      <a class="book-mark-link book-mark-link-fixed" href="#"></a>
-    {%- endif %}
-
-    {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -68,18 +57,7 @@
       </div>
     </footer>
 
-    {%- if theme.back2top.enable and not theme.back2top.sidebar %}
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        <span>0%</span>
-      </div>
-    {%- endif %}
-
-    {%- if theme.reading_progress.enable %}
-      <div class="reading-progress-bar"></div>
-    {%- endif %}
-
-    {{ partial('_partials/share.swig', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/widgets.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
   {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}
@@ -99,7 +77,7 @@
 
   {%- if theme.pjax %}
     </div>
-    {% include '_partials/pjax.swig' %}
+    {{ partial('_scripts/pjax.swig', {}, {cache: theme.cache.enable}) }}
   {%- endif %}
 </body>
 </html>

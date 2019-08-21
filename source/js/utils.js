@@ -356,11 +356,11 @@ NexT.utils = {
   },
 
   getSidebarSchemePadding: function() {
-    var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : 0;
     var sidebarInner = $('.sidebar-inner');
     var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
+    var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : sidebarOffset;
     var sidebarSchemePadding = this.isPisces() || this.isGemini()
       ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + sidebarb2tHeight
       : (sidebarPadding * 2) + (sidebarNavHeight / 2);
