@@ -1,1 +1,1 @@
-{{- next_js('scrollspy.js', 'post-details.js') }}
+{{- next_js('post-details.js') }}
