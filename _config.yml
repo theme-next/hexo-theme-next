@@ -546,31 +546,24 @@ math:
 # For moreinformation: https://github.com/MoOx/pjax
 pjax: false
 
-# Fancybox. There is support for old version 2 and new version 3.
-# Choose only one variant, do not need to install both.
-# To install 2.x: https://github.com/theme-next/theme-next-fancybox
-# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
+# FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox
 fancybox: false
 
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.
-# Dependencies: https://github.com/theme-next/theme-next-mediumzoom
 # For more information: https://github.com/francoischalifour/medium-zoom
 mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
-# Dependencies: https://github.com/theme-next/theme-next-lazyload
 # For more information: https://github.com/ApoorvSaxena/lozad.js
 lazyload: false
 
 # Pangu Support
-# Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
 pangu: false
 
 # Quicklink Support
-# Dependencies: https://github.com/theme-next/theme-next-quicklink
 # For more information: https://github.com/GoogleChromeLabs/quicklink
 quicklink:
   enable: false
@@ -680,7 +673,7 @@ gitalk:
 
 
 # ---------------------------------------------------------------
-# Post Widgets / Content Sharing Services
+# Post Widgets & Content Sharing Services
 # See: https://theme-next.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
 
@@ -791,7 +784,6 @@ tencent_mta: # <app_id>
 # ---------------------------------------------------------------
 
 # Algolia Search
-# Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
 # For more information: https://www.algolia.com
 algolia_search:
   enable: false
@@ -802,7 +794,7 @@ algolia_search:
     hits_empty: "We didn't find any results for the search: ${query}"
     hits_stats: "${hits} results found in ${time} ms"
 
-# Local search
+# Local Search
 # Dependencies: https://github.com/wzpan/hexo-generator-search
 local_search:
   enable: false
