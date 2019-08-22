@@ -106,16 +106,16 @@
 .links-of-blogroll {
   padding: 3px 0 0;
   text-align: center;
+
+  if (hexo-config('links_settings.layout') == 'inline') {
+    clearfix();
+  }
 }
 
 .links-of-blogroll-item {
   padding: 0;
-}
 
-.links-of-blogroll-inline {
-  clearfix();
-
-  .links-of-blogroll-item {
+  if (hexo-config('links_settings.layout') == 'inline') {
     sidebar-inline-links-item();
 
     if (!hexo-config('social_icons.icons_only')) {

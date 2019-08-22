@@ -13,7 +13,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <{%- if theme.seo %}h2{% else %}h1{%- endif %}>{#
+        <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{#
         #}{{ page.category }}{#
         #}<small>{{ __('title.category') }}</small>
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>

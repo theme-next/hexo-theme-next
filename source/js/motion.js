@@ -118,7 +118,7 @@ NexT.motion.middleWares = {
     var postHeaderTransition = CONFIG.motion.transition.post_header;
     var postBody = document.querySelectorAll('.post-body');
     var postBodyTransition = CONFIG.motion.transition.post_body;
-    var collHeader = document.querySelectorAll('.collection-title, .archive-year');
+    var collHeader = document.querySelectorAll('.collection-header');
     var collHeaderTransition = CONFIG.motion.transition.coll_header;
     var hasPost = postBlock.length > 0;
 

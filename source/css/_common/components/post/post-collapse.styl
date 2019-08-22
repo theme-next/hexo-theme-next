@@ -9,17 +9,27 @@
   }
 
   .collection-title {
-    margin: 60px 0;
+    font-size: $font-size-large;
     position: relative;
 
-    h1, h2 {
-      margin-left: 20px;
+    &::before { 
+      background: $grey-dark;
+      border: 1px solid white;
+      border-radius: 50%;
+      content: ' ';
+      height: 10px;
+      left: 0;
+      margin-left: -6px;
+      margin-top: -4px;
+      position: absolute;
+      top: 50%;
+      width: 10px;
     }
+  }
 
-    small {
-      color: $grey;
-      margin-left: 5px;
-    }
+  .collection-year {
+    margin: 60px 0;
+    position: relative;
 
     &::before {
       background: $grey;
@@ -32,6 +42,14 @@
       position: absolute;
       top: 50%;
       width: 8px;
+    }
+  }
+
+  .collection-header {
+    margin: 0 0 0 20px;
+    small {
+      color: $grey;
+      margin-left: 5px;
     }
   }
 

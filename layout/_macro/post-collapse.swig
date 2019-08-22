@@ -1,17 +1,15 @@
 {% macro render(posts) %}
 {%- for post in posts %}
 
-  {# Show year #}
   {%- set year %}
   {%- set post.year = date(post.date, 'YYYY') %}
 
   {%- if post.year !== year %}
     {%- set year = post.year %}
-    <div class="collection-title">
-      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
+    <div class="collection-year">
+      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{{ year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
     </div>
   {%- endif %}
-  {# endshow #}
 
   <article class="post" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
