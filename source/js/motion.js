@@ -27,34 +27,22 @@ NexT.motion.integrator = {
 NexT.motion.middleWares = {
   logo: function(integrator) {
     var sequence = [];
-    var $brand = $('.brand');
-    var $image = $('.custom-logo-image');
-    var $title = $('.site-title');
-    var $subtitle = $('.site-subtitle');
-    var $logoLineTop = $('.logo-line-before i');
-    var $logoLineBottom = $('.logo-line-after i');
+    var brand = document.querySelector('.brand');
+    var image = document.querySelector('.custom-logo-image');
+    var title = document.querySelector('.site-title');
+    var subtitle = document.querySelector('.site-subtitle');
+    var logoLineTop = document.querySelector('.logo-line-before i');
+    var logoLineBottom = document.querySelector('.logo-line-after i');
 
-    $brand.length > 0 && sequence.push({
-      e: $brand,
+    brand && sequence.push({
+      e: brand,
       p: {opacity: 1},
       o: {duration: 200}
     });
 
-    /**
-     * Check if $elements exist.
-     * @param {jQuery|Array} $elements
-     * @returns {boolean}
-     */
-    function hasElement($elements) {
-      $elements = Array.isArray($elements) ? $elements : [$elements];
-      return $elements.every($element => {
-        return $element.length > 0;
-      });
-    }
-
     function getMistLineSettings(element, translateX) {
       return {
-        e: $(element),
+        e: element,
         p: {translateX: translateX},
         o: {
           duration     : 500,
@@ -65,41 +53,39 @@ NexT.motion.middleWares = {
 
     function pushImageToSequence() {
       sequence.push({
-        e: $image,
+        e: image,
         p: {opacity: 1, top: 0},
         o: {duration: 200}
       });
     }
 
-    NexT.utils.isMist() && hasElement([$logoLineTop, $logoLineBottom])
+    NexT.utils.isMist() && logoLineTop && logoLineBottom
     && sequence.push(
-      getMistLineSettings($logoLineTop, '100%'),
-      getMistLineSettings($logoLineBottom, '-100%')
+      getMistLineSettings(logoLineTop, '100%'),
+      getMistLineSettings(logoLineBottom, '-100%')
     );
 
-    NexT.utils.isMuse() && hasElement($image) && pushImageToSequence();
+    NexT.utils.isMuse() && image && pushImageToSequence();
 
-    hasElement($title) && sequence.push({
-      e: $title,
+    title && sequence.push({
+      e: title,
       p: {opacity: 1, top: 0},
       o: {duration: 200}
     });
 
-    hasElement($subtitle) && sequence.push({
-      e: $subtitle,
+    subtitle && sequence.push({
+      e: subtitle,
       p: {opacity: 1, top: 0},
       o: {duration: 200}
     });
 
-    (NexT.utils.isPisces() || NexT.utils.isGemini()) && hasElement($image) && pushImageToSequence();
+    (NexT.utils.isPisces() || NexT.utils.isGemini()) && image && pushImageToSequence();
 
     if (sequence.length > 0) {
       sequence[sequence.length - 1].o.complete = function() {
         integrator.next();
       };
-      /* eslint-disable */
       $.Velocity.RunSequence(sequence);
-      /* eslint-enable */
     } else {
       integrator.next();
     }
@@ -166,10 +152,10 @@ NexT.motion.middleWares = {
   sidebar: function(integrator) {
     NexT.utils.updateSidebarPosition();
     var sidebarAffix = document.querySelector('.sidebar-inner');
-    var $sidebarAffixTransition = CONFIG.motion.transition.sidebar;
+    var sidebarAffixTransition = CONFIG.motion.transition.sidebar;
     // Only for Pisces | Gemini.
     if (CONFIG.motion.transition.sidebar && (NexT.utils.isPisces() || NexT.utils.isGemini())) {
-      $.Velocity(sidebarAffix, 'transition.' + $sidebarAffixTransition, {
+      $.Velocity(sidebarAffix, 'transition.' + sidebarAffixTransition, {
         display : null,
         duration: 200,
         complete: function() {
