@@ -17,7 +17,7 @@ NexT.motion.integrator = {
   next: function() {
     this.cursor++;
     var fn = this.queue[this.cursor];
-    $.isFunction(fn) && fn(NexT.motion.integrator);
+    typeof fn === 'function' && fn(NexT.motion.integrator);
   },
   bootstrap: function() {
     this.next();
@@ -111,7 +111,7 @@ NexT.motion.middleWares = {
 
   menu: function(integrator) {
 
-    $('.menu-item').velocity('transition.slideDownIn', {
+    $.Velocity(document.querySelectorAll('.menu-item'), 'transition.slideDownIn', {
       display : null,
       duration: 200,
       complete: function() {
@@ -126,15 +126,15 @@ NexT.motion.middleWares = {
 
   postList: function(integrator) {
 
-    var $postBlock = $('.post-block, .pagination, .comments');
-    var $postBlockTransition = CONFIG.motion.transition.post_block;
-    var $postHeader = $('.post-header');
-    var $postHeaderTransition = CONFIG.motion.transition.post_header;
-    var $postBody = $('.post-body');
-    var $postBodyTransition = CONFIG.motion.transition.post_body;
-    var $collHeader = $('.collection-title, .archive-year');
-    var $collHeaderTransition = CONFIG.motion.transition.coll_header;
-    var hasPost = $postBlock.length > 0;
+    var postBlock = document.querySelectorAll('.post-block, .pagination, .comments');
+    var postBlockTransition = CONFIG.motion.transition.post_block;
+    var postHeader = document.querySelectorAll('.post-header');
+    var postHeaderTransition = CONFIG.motion.transition.post_header;
+    var postBody = document.querySelectorAll('.post-body');
+    var postBodyTransition = CONFIG.motion.transition.post_body;
+    var collHeader = document.querySelectorAll('.collection-title, .archive-year');
+    var collHeaderTransition = CONFIG.motion.transition.coll_header;
+    var hasPost = postBlock.length > 0;
 
     if (hasPost) {
       var postMotionOptions = window.postMotionOptions || {
@@ -146,16 +146,16 @@ NexT.motion.middleWares = {
       };
 
       if (CONFIG.motion.transition.post_block) {
-        $postBlock.velocity('transition.' + $postBlockTransition, postMotionOptions);
+        $.Velocity(postBlock, 'transition.' + postBlockTransition, postMotionOptions);
       }
       if (CONFIG.motion.transition.post_header) {
-        $postHeader.velocity('transition.' + $postHeaderTransition, postMotionOptions);
+        $.Velocity(postHeader, 'transition.' + postHeaderTransition, postMotionOptions);
       }
       if (CONFIG.motion.transition.post_body) {
-        $postBody.velocity('transition.' + $postBodyTransition, postMotionOptions);
+        $.Velocity(postBody, 'transition.' + postBodyTransition, postMotionOptions);
       }
       if (CONFIG.motion.transition.coll_header) {
-        $collHeader.velocity('transition.' + $collHeaderTransition, postMotionOptions);
+        $.Velocity(collHeader, 'transition.' + collHeaderTransition, postMotionOptions);
       }
     }
     if (NexT.utils.isPisces() || NexT.utils.isGemini()) {
@@ -165,16 +165,16 @@ NexT.motion.middleWares = {
 
   sidebar: function(integrator) {
     NexT.utils.updateSidebarPosition();
-    var $sidebarAffix = $('.sidebar-inner');
+    var sidebarAffix = document.querySelector('.sidebar-inner');
     var $sidebarAffixTransition = CONFIG.motion.transition.sidebar;
     // Only for Pisces | Gemini.
     if (CONFIG.motion.transition.sidebar && (NexT.utils.isPisces() || NexT.utils.isGemini())) {
-      $sidebarAffix.velocity('transition.' + $sidebarAffixTransition, {
+      $.Velocity(sidebarAffix, 'transition.' + $sidebarAffixTransition, {
         display : null,
         duration: 200,
         complete: function() {
           // After motion complete need to remove transform from sidebar to let affix work on Pisces | Gemini.
-          $sidebarAffix.css('transform', 'initial');
+          sidebarAffix.style.transform = 'initial';
         }
       });
     }
