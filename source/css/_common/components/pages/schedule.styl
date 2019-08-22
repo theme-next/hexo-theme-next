@@ -14,12 +14,12 @@
   padding: 0px;
 
   hr {
-    background: #222;
+    background: $black-deep;
     margin: 20px 0 45px 0 !important;
 
     &::after {
-      background: #222;
-      color: #FFF;
+      background: $black-deep;
+      color: white;
       content: 'NOW';
       display: inline-block;
       font-weight: bold;
@@ -29,7 +29,7 @@
   }
 
   li.event {
-    background: #F9F9F9;
+    background: #f9f9f9;
     margin: 20px 0;
     min-height: 40px;
     padding-left: 10px;
@@ -39,7 +39,7 @@
       padding-bottom: 3px;
 
       &::before {
-        color: #bbb;
+        color: $grey;
         content: '\f111';
         display: inline-block;
         font-family: FontAwesome;
@@ -50,7 +50,7 @@
     }
 
     span.event-relative-time {
-      color: #bbb;
+      color: $grey;
       display: inline-block;
       font-size: 12px;
       font-weight: $font-weight-normal;
@@ -58,7 +58,7 @@
     }
 
     span.event-details {
-      color: #bbb;
+      color: $grey;
       display: block;
       line-height: 18px;
       margin-left: 56px;
@@ -67,7 +67,7 @@
       text-indent: -24px;
 
       &::before {
-        color: #bbb;
+        color: $grey;
         display: inline-block;
         font-family: FontAwesome;
         margin-right: 9px;
@@ -87,7 +87,7 @@
   }
 
   li.event-past {
-    background: #FCFCFC;
+    background: #fcfcfc;
     padding: 15px 0 15px 10px;
 
     & > * {
@@ -95,47 +95,47 @@
     }
 
     h2.event-summary {
-      color: #bbb;
+      color: $grey;
 
       &::before {
-        color: #DFDFDF;
+        color: #dfdfdf;
       }
     }
   }
 
   li.event-now {
-    background: #222;
-    color: #FFF;
+    background: $black-deep;
+    color: white;
     padding: 15px 0 15px 10px;
 
     h2.event-summary {
       &::before {
         animation: dot-flash 1s alternate infinite ease-in-out;
-        color: #FFF;
+        color: white;
         transform: scale(1.2);
       }
     }
 
     * {
-      color: #FFF !important;
+      color: white !important;
     }
   }
 
   li.event-future {
-    background: #222;
-    color: #FFF;
+    background: $black-deep;
+    color: white;
     padding: 15px 0 15px 10px;
 
     h2.event-summary {
       &::before {
         animation: dot-flash 1s alternate infinite ease-in-out;
-        color: #FFF;
+        color: white;
         transform: scale(1.2);
       }
     }
 
     * {
-      color: #FFF !important;
+      color: white !important;
     }
   }
 }
