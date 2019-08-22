@@ -8,7 +8,7 @@
       </div>
     {%- endif %}
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="{{ config.root }}" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">{{ title }}</span>
