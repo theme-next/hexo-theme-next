@@ -208,10 +208,12 @@ social_icons:
   transition: false
 
 # Blog rolls
-links_icon: link
-links_title: Links
-links_layout: block
-#links_layout: inline
+links_settings:
+  icon: link
+  title: Links
+  # Available values: block | inline
+  layout: block
+
 links:
   #Title: http://example.com
 

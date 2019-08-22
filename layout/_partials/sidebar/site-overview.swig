@@ -122,10 +122,10 @@
 
 {# Blogroll #}
 {%- if theme.links %}
-  <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+  <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
-      {{ theme.links_title }}
+      <i class="fa fa-fw fa-{{ theme.links_settings.icon | default('link') | lower }}"></i>
+      {{ theme.links_settings.title }}
     </div>
     <ul class="links-of-blogroll-list">
       {%- for blogrollText, blogrollURL in theme.links %}
