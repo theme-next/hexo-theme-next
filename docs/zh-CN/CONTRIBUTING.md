@@ -87,16 +87,16 @@
 
 1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击 `Fork`。
 2. 进入到已经 `Fork` 的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
-    ```bash
+    ```sh
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
 3. 进入 `hexo-theme-next` 本地文件夹，并创建分支。
-    ```bash
+    ```sh
     $ cd hexo-theme-next
     $ git checkout -b patchname
     ```
 4. 本地修改并测试，推送分支。
-    ```bash
+    ```sh
     $ git add .
     $ git commit -m "add commit messamge"
     $ git push origin patchname
