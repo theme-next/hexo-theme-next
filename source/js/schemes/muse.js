@@ -176,6 +176,7 @@ window.addEventListener('DOMContentLoaded', () => {
           },
           complete: function() {
             self.sidebarEl.addClass('sidebar-active');
+            NexT.utils.initSidebarDimension();
           }
         });
       } else {
@@ -185,6 +186,7 @@ window.addEventListener('DOMContentLoaded', () => {
           display: 'block'
         }, SIDEBAR_DISPLAY_DURATION, () => {
           self.sidebarEl.addClass('sidebar-active');
+          NexT.utils.initSidebarDimension();
         });
       }
 

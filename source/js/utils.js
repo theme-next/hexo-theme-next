@@ -338,8 +338,27 @@ NexT.utils = {
     return selector.replace(/[!"$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, '\\$&');
   },
 
+  /**
+   * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
+   * Need for Sidebar/TOC inner scrolling if content taller then viewport.
+   */
+  initSidebarDimension: function() {
+    var sidebarInner = $('.sidebar-inner');
+    var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
+    var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
+    var sidebarOffset = CONFIG.sidebar.offset || 12;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : sidebarOffset;
+    var sidebarSchemePadding = NexT.utils.isPisces() || NexT.utils.isGemini()
+      ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + sidebarb2tHeight
+      : (sidebarPadding * 2) + (sidebarNavHeight / 2);
+    // Initialize Sidebar & TOC Height.
+    var sidebarWrapperHeight = document.body.clientHeight - sidebarSchemePadding;
+    $('.site-overview-wrap, .post-toc-wrap').css('max-height', sidebarWrapperHeight);
+  },
+
   updateSidebarPosition: function() {
     if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
+      this.initSidebarDimension();
       return;
     }
     // Expand sidebar on post detail page by default, when post has a toc.
@@ -353,18 +372,6 @@ NexT.utils = {
     if (display) {
       window.dispatchEvent(new Event('sidebar:show'));
     }
-  },
-
-  getSidebarSchemePadding: function() {
-    var sidebarInner = $('.sidebar-inner');
-    var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
-    var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
-    var sidebarOffset = CONFIG.sidebar.offset || 12;
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : sidebarOffset;
-    var sidebarSchemePadding = this.isPisces() || this.isGemini()
-      ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + sidebarb2tHeight
-      : (sidebarPadding * 2) + (sidebarNavHeight / 2);
-    return sidebarSchemePadding;
   },
 
   getScript: function(url, callback, condition) {
