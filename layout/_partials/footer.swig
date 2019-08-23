@@ -2,7 +2,7 @@
 #}{%- set current = date(Date.now(), "YYYY") %}{#
 #}{%- if theme.footer.beian.enable %}{#
 #}{{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
-  {%- if theme.footer.beian.gongan_icon_url %}<span><img src="{{ theme.footer.beian.gongan_icon_url }}" style="display:inline-block;"/></span>
+  {%- if theme.footer.beian.gongan_icon_url %}<span><img src="{{ theme.footer.beian.gongan_icon_url }}" style="display:inline-block;"/>
   {%- endif %}
   {{ next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' + theme.footer.beian.gongan_id,
   theme.footer.beian.gongan_num + ' ') }}{#
