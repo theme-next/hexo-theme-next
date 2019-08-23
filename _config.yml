@@ -93,16 +93,6 @@ footer:
     # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
     gongan_icon_url:
 
-  # Gonganbeian information for Chinese users. See: http://www.beian.gov.cn
-  gonganbeian:
-    enable: true
-    # The full record num of the public security.
-    num:
-    # The digit in record num of the public security.
-    id:
-    # The icon for the public security record. See: http://www.beian.gov.cn/portal/download
-    url:
-
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
