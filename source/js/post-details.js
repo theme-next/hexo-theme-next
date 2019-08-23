@@ -1,5 +1,3 @@
-/* global NexT */
-
 (function() {
 
   const navItems = document.querySelectorAll('.post-toc li');
@@ -26,14 +24,10 @@
       element.classList.remove('active', 'active-current');
     });
     target.classList.add('active', 'active-current');
-    var $currentActiveElement = $(target);
-
-    $currentActiveElement
-      .parents('li')
-      .addClass('active');
+    $(target).parents('li').addClass('active');
 
     // Scrolling to center active TOC element if TOC content is taller then viewport.
-    $tocElement.scrollTop($currentActiveElement.offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
+    $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
   }
 
   const intersectionObserver = new IntersectionObserver(entries => {
@@ -46,5 +40,4 @@
   for (let i = 0; i < sections.length; i++) {
     intersectionObserver.observe(sections[i]);
   }
-  window.addEventListener('pjax:send', intersectionObserver.disconnect);
 })();
