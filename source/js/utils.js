@@ -260,8 +260,8 @@ NexT.utils = {
       var index = sections.indexOf(entries[0].target);
       activateNavByIndex(navItems[index]);
     }, {
-        rootMargin: '0px 0px -100%'
-      });
+      rootMargin: '0px 0px -100%'
+    });
 
     for (let i = 0; i < sections.length; i++) {
       intersectionObserver.observe(sections[i]);
