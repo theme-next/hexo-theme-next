@@ -1,11 +1,12 @@
 <div class="copyright">{#
 #}{%- set current = date(Date.now(), "YYYY") %}{#
 #}{%- if theme.footer.beian.enable %}{#
-#}  {{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}{#
+#}{{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
+  {%- if theme.footer.beian.gongan_icon_url %}<span><img src="{{ theme.footer.beian.gongan_icon_url }}" style="display:inline-block;"/></span>
+  {%- endif %}
+  {{ next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' + theme.footer.beian.gongan_id,
+  theme.footer.beian.gongan_num + ' ') }}{#
 #}{%- endif %}{#
-#}{%- if theme.footer.gonganbeian.enable %}<span><img src="{{ theme.footer.gonganbeian.url }}" style="display:inline-block;"/></span>{#
-#}  {{ next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' + theme.footer.gonganbeian.id,
-theme.footer.gonganbeian.num + ' ') }}{#
 #}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
 #}<span itemprop="copyrightYear">{{ current }}</span>
   <span class="with-love" id="animate">
