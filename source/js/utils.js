@@ -195,7 +195,7 @@ NexT.utils = {
       if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
         var featureID = data.split(':')[1];
         var height = data.split(':')[2];
-        document.querySelector(`iframe[data-feature=${featureID}]`).style.height = parseInt(height, 10) + 30 + "px";
+        document.querySelector(`iframe[data-feature=${featureID}]`).style.height = parseInt(height, 10) + 30 + 'px';
       }
     }, false);
   },
