@@ -215,7 +215,7 @@ NexT.utils = {
 
   registerSidebarTOC: function() {
     var sidebarNav = document.querySelector('.sidebar-nav');
-    if (document.querySelector('.post-toc-wrap').childElementCount > 0) {
+    if (document.querySelector('.post-toc')) {
       sidebarNav.style.display = '';
       sidebarNav.classList.add('motion-element');
       document.querySelector('.sidebar-nav-toc').click();
@@ -223,6 +223,7 @@ NexT.utils = {
       sidebarNav.style.display = 'none';
       sidebarNav.classList.remove('motion-element');
       document.querySelector('.sidebar-nav-overview').click();
+      return;
     }
 
     const navItems = document.querySelectorAll('.post-toc li');
@@ -402,7 +403,7 @@ NexT.utils = {
       return;
     }
     // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
+    var $tocContent = $('.post-toc');
     var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter
