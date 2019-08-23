@@ -71,18 +71,8 @@ NexT.boot.refresh = function() {
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
+  NexT.utils.registerSidebarTOC();
   NexT.utils.embeddedVideoTransformer();
-
-  var sidebarNav = document.querySelector('.sidebar-nav');
-  if (document.querySelector('.post-toc-wrap').childElementCount > 0) {
-    sidebarNav.style.display = '';
-    sidebarNav.classList.add('motion-element');
-    document.querySelector('.sidebar-nav-toc').click();
-  } else {
-    sidebarNav.style.display = 'none';
-    sidebarNav.classList.remove('motion-element');
-    document.querySelector('.sidebar-nav-overview').click();
-  }
 
   $('table').not('.gist table').wrap('<div class="table-container"></div>');
 };
