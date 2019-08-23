@@ -72,7 +72,6 @@ NexT.boot.refresh = function() {
   NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerSidebarTOC();
-  NexT.utils.embeddedVideoTransformer();
 
   $('table').not('.gist table').wrap('<div class="table-container"></div>');
 };
