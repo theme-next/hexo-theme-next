@@ -75,6 +75,23 @@ NexT.boot.refresh = function() {
   NexT.utils.registerSidebarTOC();
 
   $(':not(.gist) table').wrap('<div class="table-container"></div>');
+  document.querySelectorAll('iframe').forEach(element => {
+    var SUPPORTED_PLAYERS = [
+      'www.youtube.com',
+      'player.vimeo.com',
+      'player.youku.com',
+      'player.bilibili.com',
+      'www.tudou.com'
+    ];
+    var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
+    if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
+      $(element).wrap('<div class="video-container"></div>');
+      var width = Number(element.width), height = Number(element.height);
+      if (width && height) {
+        element.parentNode.style.paddingTop = height / width * 100 + '%';
+      }
+    }
+  });
 };
 
 NexT.boot.motion = function() {
