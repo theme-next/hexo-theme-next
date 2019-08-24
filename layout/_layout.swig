@@ -71,8 +71,6 @@
   {% include '_third-party/quicklink.swig' %}
   {% include '_third-party/vkontakte-api.swig' %}
 
-  {% block script_extra %}{% endblock %}
-
   {{- next_inject('bodyEnd') }}
 
   {%- if theme.pjax %}

@@ -29,8 +29,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Register beforeunload event when the trigger is auto
     if (trigger === 'auto') {
       // Register beforeunload event
-      addEventListener('beforeunload', doSaveScroll);
-      addEventListener('pjax:send', doSaveScroll);
+      window.addEventListener('beforeunload', doSaveScroll);
+      window.addEventListener('pjax:send', doSaveScroll);
     }
     // Save the position by clicking the icon
     link.addEventListener('click', event => {

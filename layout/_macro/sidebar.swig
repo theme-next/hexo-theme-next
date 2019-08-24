@@ -30,9 +30,7 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
         {%- if display_toc %}
-          <div class="post-toc">
-            <div class="post-toc-content">{{ toc }}</div>
-          </div>
+          <div class="post-toc">{{ toc }}</div>
         {%- endif %}
       </div>
       <!--/noindex-->
