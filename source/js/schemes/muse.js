@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var mousePos = {}; var touchPos = {};
 
   var sidebarToggleMotion = {
-    sidebarEl       : $('.sidebar'),
+    sidebarEl       : document.querySelector('.sidebar'),
     isSidebarVisible: false,
     init            : function() {
       sidebarToggleLines.init();
@@ -107,12 +107,9 @@ window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
-      this.sidebarEl
-        .on('touchstart', this.touchstartHandler.bind(this))
-        .on('touchend', this.touchendHandler.bind(this))
-        .on('touchmove', event => {
-          event.preventDefault();
-        });
+      this.sidebarEl.addEventListener('touchstart', this.touchstartHandler.bind(this))
+      this.sidebarEl.addEventListener('touchend', this.touchendHandler.bind(this))
+      this.sidebarEl.addEventListener('touchmove', event => event.preventDefault());
       window.addEventListener('sidebar:show', this.showSidebar.bind(this));
       window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
     },
@@ -155,32 +152,17 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     showSidebar: function() {
       this.isSidebarVisible = true;
-
+      this.sidebarEl.classList.add('sidebar-active');
       if (typeof $.Velocity === 'function') {
-        this.sidebarEl.addClass('sidebar-active').stop().velocity(isRight ? {
-          right: 0
-        } : {
-          left: 0
-        }, {
-          duration: SIDEBAR_DISPLAY_DURATION,
-          begin   : function() {
-            $.Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-              stagger: 50,
-              drag   : true
-            });
-            $.Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-              stagger: 50,
-              drag   : true,
-              display: 'flex'
-            });
-          }
+        $.Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+          stagger: 50,
+          drag: true
         });
-      } else {
-        this.sidebarEl.addClass('sidebar-active').stop().animate(isRight ? {
-          right: 0
-        } : {
-          left: 0
-        }, SIDEBAR_DISPLAY_DURATION);
+        $.Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+          stagger: 50,
+          drag: true,
+          display: 'flex'
+        });
       }
 
       sidebarToggleLines.close();
@@ -192,11 +174,7 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     hideSidebar: function() {
       this.isSidebarVisible = false;
-      this.sidebarEl.removeClass('sidebar-active').stop().animate(isRight ? {
-        right: -SIDEBAR_WIDTH
-      } : {
-        left: -SIDEBAR_WIDTH
-      }, SIDEBAR_DISPLAY_DURATION);
+      this.sidebarEl.classList.remove('sidebar-active');
 
       sidebarToggleLines.init();
       NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {
