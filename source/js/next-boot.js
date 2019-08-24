@@ -28,7 +28,7 @@ NexT.boot.registerEvents = function() {
 
     var target = $('.' + item.data('target'));
     if (item.hasClass(activeTabClassName)) {
-      target.find('.motion-element').css({ opacity: 1 });
+      //target.find('.motion-element').css({ opacity: 1 });
       return;
     }
     var currentTarget = target.siblings('.sidebar-panel');
@@ -86,9 +86,10 @@ NexT.boot.refresh = function() {
     var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
     if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
       $(element).wrap('<div class="video-container"></div>');
-      var width = Number(element.width), height = Number(element.height);
+      var width = Number(element.width);
+      var height = Number(element.height);
       if (width && height) {
-        element.parentNode.style.paddingTop = height / width * 100 + '%';
+        element.parentNode.style.paddingTop = (height / width * 100) + '%';
       }
     }
   });

@@ -181,7 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
         this.sidebarEl.addClass('sidebar-active').stop().animate({
           width: SIDEBAR_WIDTH
         }, SIDEBAR_DISPLAY_DURATION, () => {
-          self.sidebarEl.find('.motion-element').css({opacity: 1});
+          //self.sidebarEl.find('.motion-element').css({opacity: 1});
           NexT.utils.initSidebarDimension();
         });
       }
@@ -192,7 +192,7 @@ window.addEventListener('DOMContentLoaded', () => {
     hideSidebar: function() {
       var self = this;
       this.isSidebarVisible = false;
-      this.sidebarEl.find('.motion-element').css({opacity: 0});
+      //this.sidebarEl.find('.motion-element').css({opacity: 0});
       this.sidebarEl.stop().animate({width: 0}, SIDEBAR_DISPLAY_DURATION, () => {
         self.sidebarEl.removeClass('sidebar-active');
       });
