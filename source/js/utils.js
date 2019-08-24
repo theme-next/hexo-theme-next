@@ -1,17 +1,5 @@
 /* global NexT, CONFIG */
 
-HTMLElement.prototype.isVisible = function() {
-  return window.getComputedStyle(this).display !== 'none';
-};
-
-HTMLElement.prototype.width = function() {
-  return parseFloat(window.getComputedStyle(this).width);
-};
-
-HTMLElement.prototype.height = function() {
-  return parseFloat(window.getComputedStyle(this).height);
-};
-
 HTMLElement.prototype.outerHeight = function(flag) {
   var height = this.offsetHeight;
   if (!flag) return height;
@@ -136,7 +124,7 @@ NexT.utils = {
     $(window).on('load scroll', () => {
       var scrollPercent;
       if (backToTop || readingProgressBar) {
-        var docHeight = document.querySelector('.container').height();
+        var docHeight = document.querySelector('.container').offsetHeight;
         var winHeight = window.innerHeight;
         var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
         var scrollPercentRounded = Math.round(100 * window.scrollY / contentVisibilityHeight);
@@ -312,12 +300,12 @@ NexT.utils = {
     var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
     var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : sidebarOffset;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : sidebarOffset;
     var sidebarSchemePadding = NexT.utils.isPisces() || NexT.utils.isGemini()
       ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + sidebarb2tHeight
       : (sidebarPadding * 2) + (sidebarNavHeight / 2);
     // Initialize Sidebar & TOC Height.
-    var sidebarWrapperHeight = document.body.clientHeight - sidebarSchemePadding;
+    var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding;
     $('.site-overview-wrap, .post-toc-wrap').css('max-height', sidebarWrapperHeight);
   },
 

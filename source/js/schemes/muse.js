@@ -205,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    var containerHeight = document.querySelector('.container').height();
+    var containerHeight = document.querySelector('.container').offsetHeight;
     var footer = document.getElementById('footer');
     if (footer.getAttribute('position')) containerHeight += footer.outerHeight(true);
     if (containerHeight < window.innerHeight) {
