@@ -21,7 +21,7 @@
     animation: octocat-wave 560ms ease-in-out;
   }
 
-  > svg {
+  svg {
     border: 0;
     color: white;
     fill: $bg-color;
@@ -31,7 +31,7 @@
   }
 
   +tablet-mobile() {
-    > svg {
+    svg {
       if (($scheme == 'Pisces') || ($scheme == 'Gemini')) {
         color: $bg-color;
         fill: white;
@@ -48,7 +48,7 @@
   }
 
   +mobile() {
-    > svg {
+    svg {
       if ($scheme == 'Mist') {
         top: inherit;
 

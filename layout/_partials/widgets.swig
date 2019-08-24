@@ -18,8 +18,3 @@
 
   {{ next_url(github_URL, github_image, {class: 'github-corner', title: github_title, "aria-label": github_title}) }}
 {%- endif %}
-{%- if theme.add_this_id %}
-  <div class="addthis_inline_share_toolbox">
-    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ theme.add_this_id }}" async="async"></script>
-  </div>
-{%- endif %}

@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const sidebarOffset = CONFIG.sidebar.offset || 12;
   const sidebarInner = document.querySelector('.sidebar-inner');
 
-  const getHeaderOffset = () => document.querySelector('.header-inner').height() + sidebarOffset;
+  const getHeaderOffset = () => document.querySelector('.header-inner').offsetHeight + sidebarOffset;
 
   const getFooterOffset = () => {
     let footer = document.querySelector('#footer');
@@ -119,17 +119,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const resizeListener = () => {
-    window.matchMedia('(min-width: 992px)').addListener(event => {
-      if (event.matches) {
-        $(window).off('.affix');
-        $('.sidebar-inner').removeData('bs.affix');
-        sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
-        initAffix();
-      }
-    });
-  };
+  window.matchMedia('(min-width: 992px)').addListener(event => {
+    if (event.matches) {
+      $(window).off('.affix');
+      $('.sidebar-inner').removeData('bs.affix');
+      sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
+      initAffix();
+    }
+  });
 
   initAffix();
-  resizeListener();
 });

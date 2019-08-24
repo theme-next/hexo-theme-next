@@ -32,13 +32,15 @@
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
 
+    {{ partial('_partials/widgets.swig', {}, {cache: theme.cache.enable}) }}
+
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           {%- if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
           {%- endif %}
-          <div id="content" class="content {% block page_class %}{% endblock %}">
+          <div id="content" class="content">
             {% block content %}{% endblock %}
           </div>
           {% include '_partials/comments.swig' %}
@@ -56,8 +58,6 @@
         {% block footer %}{% endblock %}
       </div>
     </footer>
-
-    {{ partial('_partials/widgets.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
   {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}

@@ -1,8 +1,6 @@
-// Post Expanded
+// Post Expand
 // --------------------------------------------------
-.posts-expand {
-  padding-top: 0;
-
+.posts-expand .home {
   .post-title, .post-meta {
     text-align: $site-meta-text-align;
 
@@ -10,6 +8,14 @@
       text-align: center;
     }
   }
+
+  .post-meta {
+    margin: 0 0 20px 0;
+  }
+}
+
+.posts-expand {
+  padding-top: 0;
 
   .post-eof {
     display: none;
@@ -23,13 +29,8 @@
     margin-top: 0;
   }
 
-  .post-meta {
-    margin-bottom: 20px;
-    margin-top: 5px;
-  }
-
-  .post-title:hover::before {
-    background: $black-deep;
+  .post-title, .post-meta {
+    text-align: center;
   }
 
   .post-body img {
