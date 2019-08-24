@@ -1,24 +1,10 @@
 /*
-// > 1600px
-+desktop-large() {
-
-}
-
-// > 992px
-+desktop() {
-
-}
-
-// > 768px & < 991px
-+tablet() {
-
-}
-
 // < 767px
 +mobile() {
 
 }
 */
+
 +mobile-small() {
   // For Pisces & Gemini schemes only wider width (remove main blocks in Gemini).
   .content-wrap {
@@ -59,9 +45,12 @@
       }
     }
 
+    > * {
+      margin-bottom: 10px !important;
+    }
+
     // For paragraphs narrow width.
     > p {
-      margin: 0 0 10px 0;
       padding: 0 18px;
     }
 
@@ -90,12 +79,7 @@
       padding: 0 5px;
     }
 
-    iframe, img, video {
-      margin-bottom: 10px !important;
-    }
-
     .note {
-      margin-bottom: 10px !important;
       padding: 10px !important;
 
       if (hexo-config('note.icons')) {
