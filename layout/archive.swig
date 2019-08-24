@@ -4,8 +4,6 @@
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-archive{% endblock %}
-
 {% block content %}
 
   {#####################}

@@ -1,9 +1,4 @@
-  {%- set post_class = 'post' %}
-  {%- if post.sticky > 0 %}
-    {%- set post_class = post_class + ' post-sticky' %}
-  {%- endif %}
-
-  <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
   {##################}
   {### POST BLOCK ###}
   {##################}

@@ -1,15 +1,7 @@
-// Post Expanded
+// Post Expand
 // --------------------------------------------------
 .posts-expand {
   padding-top: 0;
-
-  .post-title, .post-meta {
-    text-align: $site-meta-text-align;
-
-    +mobile() {
-      text-align: center;
-    }
-  }
 
   .post-eof {
     display: none;
@@ -23,13 +15,17 @@
     margin-top: 0;
   }
 
+  .post-title, .post-meta {
+    text-align: $site-meta-text-align;
+
+    +mobile() {
+      text-align: center;
+    }
+  }
+
   .post-meta {
     margin-bottom: 20px;
     margin-top: 5px;
-  }
-
-  .post-title:hover::before {
-    background: $black-deep;
   }
 
   .post-body img {

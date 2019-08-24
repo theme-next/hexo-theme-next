@@ -45,12 +45,9 @@
       }
     }
 
-    > * {
-      margin-bottom: 10px !important;
-    }
-
     // For paragraphs narrow width.
     > p {
+      margin: 0 0 10px 0;
       padding: 0 18px;
     }
 
@@ -79,7 +76,12 @@
       padding: 0 5px;
     }
 
+    img, video {
+      margin-bottom: 10px !important;
+    }
+
     .note {
+      margin-bottom: 10px !important;
       padding: 10px !important;
 
       if (hexo-config('note.icons')) {
