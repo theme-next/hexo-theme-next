@@ -9,17 +9,17 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     init: function() {
       this.lines.forEach(line => {
-        line.init();
+        line.transform('init');
       });
     },
     arrow: function() {
       this.lines.forEach(line => {
-        line.arrow();
+        line.transform('arrow');
       });
     },
     close: function() {
       this.lines.forEach(line => {
-        line.close();
+        line.transform('close');
       });
     }
   };
@@ -34,15 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
         left     : 0
       }
     }, settings.status);
-    this.init = function() {
-      this.transform('init');
-    };
-    this.arrow = function() {
-      this.transform('arrow');
-    };
-    this.close = function() {
-      this.transform('close');
-    };
     this.transform = function(status) {
       document.querySelector(settings.el).css(this.status[status]);
     };
