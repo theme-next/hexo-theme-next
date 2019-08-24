@@ -6,14 +6,6 @@
   .posts-expand {
     margin: 0 20px;
   }
-
-  .post-body {
-    .highlight {
-      margin-left: 0;
-      margin-right: 0;
-      padding: 0;
-    }
-  }
 }
 
 .posts-expand .post-body {
@@ -49,6 +41,10 @@
     border: 1px solid $gray-lighter;
     box-sizing: border-box;
     padding: 3px;
+
+    +mobile() {
+      padding: initial;
+    }
   }
 
   iframe, img, video {

@@ -9,26 +9,20 @@
 
   button {
     background: transparent;
-    border: none;
+    border: 0;
     margin-top: 2px;
     padding: 9px 10px;
   }
 }
 
 .site-nav {
+  display: block;
+
   +mobile() {
     border-top: 1px solid $gray-lighter;
     clear: both;
     display: none;
     margin: 0 -10px;
     padding: 0 10px;
-  }
-
-  +tablet() {
-    display: block !important;
-  }
-
-  +desktop() {
-    display: block !important;
   }
 }

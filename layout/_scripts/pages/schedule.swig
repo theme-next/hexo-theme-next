@@ -42,18 +42,18 @@
     FIELD_SINGLEEVENTS + '=' + calendar.singleEvents + '&' +
     FIELD_MAXRESULTS   + '=' + calendar.maxResults;
 
-
   fetchData();
   var queryLoop = setInterval(fetchData, 60000);
 
   function fetchData() {
+    var eventList = document.getElementById('event-list');
+    if (!eventList) return;
+
     fetch(request_url).then(response => {
       return response.json();
     }).then(data => {
-      $eventList = document.getElementById('event-list');
-
       // Clean the event list
-      $eventList.innerHTML = '';
+      eventList.innerHTML = '';
       var prevEnd = 0; // used to decide where to insert an <hr>
 
       data.items.forEach(event => {
@@ -65,11 +65,11 @@
         tense = judgeTense(now, start, end); // 0:now 1:future -1:past
 
         if (tense == 1 && prevEnd < now) {
-          $eventList.innerHTML += '<hr>';
+          eventList.innerHTML += '<hr>';
         }
 
         eventDOM = buildEventDOM(tense, event);
-        $eventList.innerHTML += eventDOM;
+        eventList.innerHTML += eventDOM;
 
         prevEnd = end;
       });

@@ -1,12 +1,12 @@
 @keyframes dot-flash {
   from {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
 
   to {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(0.8);
   }
 }
 
@@ -15,7 +15,7 @@
 
   hr {
     background: $black-deep;
-    margin: 20px 0 45px 0 !important;
+    margin: 20px 0 45px 0;
 
     &::after {
       background: $black-deep;
@@ -42,8 +42,8 @@
         color: $grey;
         content: '\f111';
         display: inline-block;
-        font-family: FontAwesome;
-        font-size: 8px;
+        font-family: $font-family-icons;
+        font-size: 10px;
         margin-right: 25px;
         vertical-align: middle;
       }
@@ -90,7 +90,7 @@
     background: #fcfcfc;
     padding: 15px 0 15px 10px;
 
-    & > * {
+    > * {
       opacity: .9;
     }
 
@@ -112,7 +112,6 @@
       &::before {
         animation: dot-flash 1s alternate infinite ease-in-out;
         color: white;
-        transform: scale(1.2);
       }
     }
 
@@ -130,7 +129,6 @@
       &::before {
         animation: dot-flash 1s alternate infinite ease-in-out;
         color: white;
-        transform: scale(1.2);
       }
     }
 

@@ -63,25 +63,20 @@
 }
 
 if (hexo-config('algolia_search.enable')) {
-  // Fix bug using algolia search's CDN
-  .ais-search-box--magnifier svg {
-    display: none !important;
-  }
-
-  .ais-search-box--reset svg {
-    display: none !important;
-  }
-
   .search-input {
     display: inline-block;
     width: calc(90% - 30px);
 
     input {
       background: transparent;
-      border: none;
+      border: 0;
       outline: none;
       padding: 5px 0;
       width: 100%;
+    }
+    // Hide default icon of algolia search
+    .ais-search-box--magnifier svg, .ais-search-box--reset svg {
+      display: none;
     }
   }
 
@@ -197,7 +192,7 @@ if (hexo-config('local_search.enable')) {
 
       input {
         background: transparent;
-        border: none;
+        border: 0;
         display: block;
         height: 20px;
         outline: none;

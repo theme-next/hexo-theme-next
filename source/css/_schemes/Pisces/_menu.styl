@@ -12,13 +12,11 @@
   border-top: none;
 
   +tablet() {
-    display: none !important;
-  }
-}
+    display: none;
 
-.site-nav-on {
-  +tablet() {
-    display: block !important;
+    &.site-nav-on {
+      display: block;
+    }
   }
 }
 
