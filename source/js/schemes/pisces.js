@@ -119,17 +119,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const resizeListener = () => {
-    window.matchMedia('(min-width: 992px)').addListener(event => {
-      if (event.matches) {
-        $(window).off('.affix');
-        $('.sidebar-inner').removeData('bs.affix');
-        sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
-        initAffix();
-      }
-    });
-  };
+  window.matchMedia('(min-width: 992px)').addListener(event => {
+    if (event.matches) {
+      $(window).off('.affix');
+      $('.sidebar-inner').removeData('bs.affix');
+      sidebarInner.classList.remove('affix', 'affix-top', 'affix-bottom');
+      initAffix();
+    }
+  });
 
   initAffix();
-  resizeListener();
 });
