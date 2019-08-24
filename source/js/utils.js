@@ -205,7 +205,6 @@ NexT.utils = {
     var sidebarNav = document.querySelector('.sidebar-nav');
     if (document.querySelector('.post-toc')) {
       sidebarNav.style.display = '';
-      //sidebarNav.style.opacity = 1;
       sidebarNav.classList.add('motion-element');
       document.querySelector('.sidebar-nav-toc').click();
     } else {
