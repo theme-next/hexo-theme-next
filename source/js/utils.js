@@ -205,14 +205,15 @@ NexT.utils = {
     var sidebarNav = document.querySelector('.sidebar-nav');
     if (document.querySelector('.post-toc')) {
       sidebarNav.style.display = '';
+      //sidebarNav.style.opacity = 1;
       sidebarNav.classList.add('motion-element');
       document.querySelector('.sidebar-nav-toc').click();
     } else {
       sidebarNav.style.display = 'none';
       sidebarNav.classList.remove('motion-element');
       document.querySelector('.sidebar-nav-overview').click();
-      return;
     }
+    NexT.utils.initSidebarDimension();
 
     const navItems = document.querySelectorAll('.post-toc li');
     const sections = [...navItems].map(element => {
@@ -311,7 +312,7 @@ NexT.utils = {
 
   updateSidebarPosition: function() {
     if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
-      this.initSidebarDimension();
+      //this.initSidebarDimension();
       return;
     }
     // Expand sidebar on post detail page by default, when post has a toc.

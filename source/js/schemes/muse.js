@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
   sidebarToggleLines.push(sidebarToggleLine2nd);
   sidebarToggleLines.push(sidebarToggleLine3rd);
 
-  var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px';
+  var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
   var SIDEBAR_DISPLAY_DURATION = 200;
   var mousePos = {}; var touchPos = {};
 
@@ -155,11 +155,12 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     showSidebar: function() {
       this.isSidebarVisible = true;
-      var self = this;
 
       if (typeof $.Velocity === 'function') {
-        this.sidebarEl.addClass('sidebar-active').stop().velocity({
-          width: SIDEBAR_WIDTH
+        this.sidebarEl.addClass('sidebar-active').stop().velocity(isRight ? {
+          right: 0
+        } : {
+          left: 0
         }, {
           duration: SIDEBAR_DISPLAY_DURATION,
           begin   : function() {
@@ -172,33 +173,37 @@ window.addEventListener('DOMContentLoaded', () => {
               drag   : true,
               display: 'flex'
             });
-          },
-          complete: function() {
-            NexT.utils.initSidebarDimension();
           }
         });
       } else {
-        this.sidebarEl.addClass('sidebar-active').stop().animate({
-          width: SIDEBAR_WIDTH
-        }, SIDEBAR_DISPLAY_DURATION, () => {
-          //self.sidebarEl.find('.motion-element').css({opacity: 1});
-          NexT.utils.initSidebarDimension();
-        });
+        this.sidebarEl.addClass('sidebar-active').stop().animate(isRight ? {
+          right: 0
+        } : {
+          left: 0
+        }, SIDEBAR_DISPLAY_DURATION);
       }
 
       sidebarToggleLines.close();
-      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': SIDEBAR_WIDTH} : {'padding-left': SIDEBAR_WIDTH}, SIDEBAR_DISPLAY_DURATION);
+      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {
+        'padding-right': SIDEBAR_WIDTH
+      } : {
+        'padding-left': SIDEBAR_WIDTH
+      }, SIDEBAR_DISPLAY_DURATION);
     },
     hideSidebar: function() {
-      var self = this;
       this.isSidebarVisible = false;
-      //this.sidebarEl.find('.motion-element').css({opacity: 0});
-      this.sidebarEl.stop().animate({width: 0}, SIDEBAR_DISPLAY_DURATION, () => {
-        self.sidebarEl.removeClass('sidebar-active');
-      });
+      this.sidebarEl.removeClass('sidebar-active').stop().animate(isRight ? {
+        right: -SIDEBAR_WIDTH
+      } : {
+        left: -SIDEBAR_WIDTH
+      }, SIDEBAR_DISPLAY_DURATION);
 
       sidebarToggleLines.init();
-      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': 0} : {'padding-left': 0}, SIDEBAR_DISPLAY_DURATION);
+      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {
+        'padding-right': 0
+      } : {
+        'padding-left': 0
+      }, SIDEBAR_DISPLAY_DURATION);
     }
   };
   sidebarToggleMotion.init();

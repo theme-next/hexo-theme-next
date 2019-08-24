@@ -1,7 +1,6 @@
 if (hexo-config('sidebar.position') == 'right') {
   .sidebar {
-    left: auto;
-    right: 0;
+    right: 0 - $sidebar-desktop;
   }
 
   .sidebar-toggle, .back-to-top {
@@ -16,12 +15,12 @@ if (hexo-config('sidebar.position') == 'right') {
   .book-mark-link {
     left: $b2t-position-right;
   }
+} else {
+  .sidebar {
+    left: 0 - $sidebar-desktop;
+  }
 }
 
 .sidebar {
-  display: none;
-
-  &.sidebar-active {
-    display: block;
-  }
+  width: $sidebar-desktop;
 }
