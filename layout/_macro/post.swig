@@ -1,8 +1,8 @@
-  <article class="post" itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article">
   {##################}
   {### POST BLOCK ###}
   {##################}
-  <div class="post-block">
+  <div class="post-block {% if is_index %}home{% else %}post{% endif %}">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">

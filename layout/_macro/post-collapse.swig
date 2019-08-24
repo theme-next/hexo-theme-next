@@ -11,7 +11,7 @@
     </div>
   {%- endif %}
 
-  <article class="post" itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="post-title">

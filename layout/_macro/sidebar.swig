@@ -30,17 +30,15 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
         {%- if display_toc %}
-          <div class="post-toc">{{ toc }}</div>
+          <div class="post-toc motion-element">{{ toc }}</div>
         {%- endif %}
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}
 
-          {{- next_inject('sidebar') }}
-        </div>
+        {{- next_inject('sidebar') }}
       </div>
 
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
