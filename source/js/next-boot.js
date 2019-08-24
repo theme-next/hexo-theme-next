@@ -73,7 +73,7 @@ NexT.boot.refresh = function() {
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerSidebarTOC();
 
-  $('table').not('.gist table').wrap('<div class="table-container"></div>');
+  $(':not(.gist) table').wrap('<div class="table-container"></div>');
 };
 
 NexT.boot.motion = function() {
