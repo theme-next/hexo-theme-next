@@ -39,8 +39,7 @@ NexT.boot.registerEvents = function() {
         .stop()
         .css({ opacity: 0 })
         .addClass(activePanelClassName)
-        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION)
-        .find('.motion-element').css({ opacity: 1 });
+        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
     });
 
     item.siblings().removeClass(activeTabClassName);
