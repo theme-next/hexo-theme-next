@@ -241,18 +241,6 @@ NexT.utils = {
   },
 
   registerSidebarTOC: function() {
-    var sidebarNav = document.querySelector('.sidebar-nav');
-    if (document.querySelector('.post-toc')) {
-      sidebarNav.style.display = '';
-      sidebarNav.classList.add('motion-element');
-      document.querySelector('.sidebar-nav-toc').click();
-    } else {
-      sidebarNav.style.display = 'none';
-      sidebarNav.classList.remove('motion-element');
-      document.querySelector('.sidebar-nav-overview').click();
-    }
-    NexT.utils.initSidebarDimension();
-
     const navItems = document.querySelectorAll('.post-toc li');
     const sections = [...navItems].map(element => {
       var link = element.querySelector('a.nav-link');
@@ -318,7 +306,6 @@ NexT.utils = {
       sections.forEach(item => intersectionObserver.observe(item));
     }
     createIntersectionObserver(document.documentElement.scrollHeight);
-
   },
 
   hasMobileUA: function() {
@@ -375,13 +362,23 @@ NexT.utils = {
   },
 
   updateSidebarPosition: function() {
+    var sidebarNav = document.querySelector('.sidebar-nav');
+    var hasTOC = document.querySelector('.post-toc');
+    if (hasTOC) {
+      sidebarNav.style.display = '';
+      sidebarNav.classList.add('motion-element');
+      document.querySelector('.sidebar-nav-toc').click();
+    } else {
+      sidebarNav.style.display = 'none';
+      sidebarNav.classList.remove('motion-element');
+      document.querySelector('.sidebar-nav-overview').click();
+    }
+    NexT.utils.initSidebarDimension();
     if (!this.isDesktop() || this.isPisces() || this.isGemini()) return;
     // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc');
     var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
-      // There's no definition sidebar in the page front-matter
-      var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
+      // There's no definition sidebar in the page front-matter.
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
     }
     if (display) {
