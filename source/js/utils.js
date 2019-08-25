@@ -15,6 +15,12 @@ HTMLElement.prototype.css = function(dict) {
   return this;
 };
 
+HTMLElement.prototype.wrap = function(wrapper) {
+  this.parentNode.insertBefore(wrapper, this);
+  this.parentNode.removeChild(this);
+  wrapper.appendChild(this);
+};
+
 NexT.utils = {
 
   /**
@@ -68,16 +74,20 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    $('.highlight').not('.gist .highlight').each((i, e) => {
-      function initButton(button) {
+    document.querySelectorAll('figure.highlight').forEach(e => {
+      const initButton = button => {
         if (CONFIG.copycode.style === 'mac') {
-          button.html('<i class="fa fa-clipboard"></i>');
+          button.innerHTML = '<i class="fa fa-clipboard"></i>';
         } else {
-          button.text(CONFIG.translation.copy_button);
+          button.innerText = CONFIG.translation.copy_button;
         }
-      }
-      var $button = $('<div>').addClass('copy-btn');
-      $button.on('click', event => {
+      };
+      const box = document.createElement('div');
+      box.classList.add('highlight-wrap');
+      e.wrap(box);
+      e.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
+      var button = e.parentNode.querySelector('.copy-btn');
+      button.addEventListener('click', event => {
         var code = [...event.currentTarget.parentNode.querySelectorAll('.code .line')].map(element => {
           return element.innerText;
         }).join('\n');
@@ -88,7 +98,7 @@ NexT.utils = {
         ta.style.opacity = '0';
         ta.readOnly = true;
         ta.value = code;
-        document.body.appendChild(ta);
+        document.body.append(ta);
         const selection = document.getSelection();
         const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
         ta.select();
@@ -106,13 +116,42 @@ NexT.utils = {
         }
         document.body.removeChild(ta);
       });
-      $button.on('mouseleave', event => {
+      button.addEventListener('mouseleave', event => {
         setTimeout(() => {
-          initButton($(event.currentTarget));
+          initButton(event.target);
         }, 300);
       });
-      initButton($button);
-      $(e).wrap($('<div>').addClass('highlight-wrap')).after($button);
+      initButton(button);
+    });
+  },
+
+  wrapTableWithBox: function() {
+    [...document.querySelectorAll('table')].forEach(table => {
+      const box = document.createElement('div');
+      box.className = 'table-container';
+      table.wrap(box);
+    });
+  },
+
+  registerVideoIframe: function() {
+    document.querySelectorAll('iframe').forEach(element => {
+      const SUPPORTED_PLAYERS = [
+        'www.youtube.com',
+        'player.vimeo.com',
+        'player.youku.com',
+        'player.bilibili.com',
+        'www.tudou.com'
+      ];
+      const pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
+      if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
+        const box = document.createElement('div');
+        box.className = 'video-container';
+        element.wrap(box);
+        let width = Number(element.width); let height = Number(element.height);
+        if (width && height) {
+          element.parentNode.style.paddingTop = (height / width * 100) + '%';
+        }
+      }
     });
   },
 
@@ -244,16 +283,42 @@ NexT.utils = {
       $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
     }
 
-    const intersectionObserver = new IntersectionObserver(entries => {
-      var index = sections.indexOf(entries[0].target);
-      activateNavByIndex(navItems[index]);
-    }, {
-      rootMargin: '0px 0px -100%'
-    });
-
-    for (let i = 0; i < sections.length; i++) {
-      intersectionObserver.observe(sections[i]);
+    function findIndex(entries) {
+      let index = 0;
+      let entry = entries[index];
+      if (entry.boundingClientRect.top > 0) {
+        index = sections.indexOf(entry.target);
+        return index === 0 ? 0 : index - 1;
+      }
+      for (;index < entries.length; index++) {
+        if (entries[index].boundingClientRect.top <= 0) {
+          entry = entries[index];
+        } else {
+          return sections.indexOf(entry.target);
+        }
+      }
+      return sections.indexOf(entry.target);
     }
+
+    function createIntersectionObserver(marginTop) {
+      marginTop = Math.floor(marginTop + 10000);
+      let intersectionObserver = new IntersectionObserver((entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      }, {
+        rootMargin: marginTop + 'px 0px -100% 0px',
+        threshold : 0
+      });
+      sections.forEach(item => intersectionObserver.observe(item));
+    }
+    createIntersectionObserver(document.documentElement.scrollHeight);
+
   },
 
   hasMobileUA: function() {

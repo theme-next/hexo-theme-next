@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
       {%- set display_toc = theme.toc.enable and display_toc %}
