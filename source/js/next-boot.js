@@ -21,24 +21,26 @@ NexT.boot.registerEvents = function() {
   });
 
   var TAB_ANIMATE_DURATION = 200;
-  $('.sidebar-nav li').on('click', event => {
-    var item = $(event.currentTarget);
-    var activeTabClassName = 'sidebar-nav-active';
-    var activePanelClassName = 'sidebar-panel-active';
-    if (item.hasClass(activeTabClassName)) return;
+  document.querySelectorAll('.sidebar-nav li').forEach(element => {
+    element.addEventListener('click', event => {
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (event.currentTarget.classList.contains(activeTabClassName)) return;
 
-    var target = $('.' + item.data('target'));
-    var currentTarget = target.siblings('.sidebar-panel');
-    currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
-      // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-      currentTarget.removeClass(activePanelClassName);
-      target
-        .stop()
-        .css({ opacity: 0 })
-        .addClass(activePanelClassName)
-        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
+      var target = $('.' + event.currentTarget.getAttribute('data-target'));
+      var currentTarget = target.siblings('.sidebar-panel');
+      currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
+        // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+        currentTarget.removeClass(activePanelClassName);
+        target
+          .stop()
+          .css({ opacity: 0 })
+          .addClass(activePanelClassName)
+          .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
+      });
     });
 
+    var item = $(event.currentTarget);
     item.siblings().removeClass(activeTabClassName);
     item.addClass(activeTabClassName);
   });
