@@ -12,4 +12,7 @@
 {% include scheme_script %}
 
 {{- next_js('next-boot.js') }}
+{%- if theme.pjax %}
+  {{- next_js('next-pjax.js') }}
+{%- endif %}
 {% include 'three.swig' %}

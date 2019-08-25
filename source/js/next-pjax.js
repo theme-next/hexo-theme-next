@@ -1,4 +1,3 @@
-<script>
 var pjax = new Pjax({
   selectors: [
     'head title',
@@ -16,8 +15,23 @@ var pjax = new Pjax({
 });
 window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    $(element).parent().append($(element).remove());
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var src = element.src || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    script.id = element.id;
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== "") {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
   });
+  NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
     NexT.motion.integrator
@@ -27,4 +41,3 @@ window.addEventListener('pjax:success', () => {
   }
   NexT.utils.updateSidebarPosition();
 });
-</script>

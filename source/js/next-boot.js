@@ -93,4 +93,3 @@ window.addEventListener('DOMContentLoaded', () => {
   NexT.boot.refresh();
   NexT.boot.motion();
 });
-window.addEventListener('pjax:success', NexT.boot.refresh);

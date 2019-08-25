@@ -357,8 +357,9 @@ NexT.utils = {
     // Margin of sidebar b2t: 8px -10px -20px, brings a different of 12px.
     if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += sidebarOffset * 2 - 12;
     // Initialize Sidebar & TOC Height.
-    var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding;
-    $('.site-overview-wrap, .post-toc-wrap').css('max-height', sidebarWrapperHeight);
+    var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
+    document.querySelector('.site-overview-wrap').style.maxHeight = sidebarWrapperHeight;
+    document.querySelector('.post-toc-wrap').style.maxHeight = sidebarWrapperHeight;
   },
 
   updateSidebarPosition: function() {
