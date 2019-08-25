@@ -61,7 +61,7 @@ var Affix = {
       });
     }
   }
-}
+};
 
 window.addEventListener('DOMContentLoaded', () => {
   const sidebarOffset = CONFIG.sidebar.offset || 12;
