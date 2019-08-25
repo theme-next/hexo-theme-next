@@ -15,6 +15,12 @@ HTMLElement.prototype.css = function(dict) {
   return this;
 };
 
+HTMLElement.prototype.wrap = function(wrapper) {
+  this.parentNode.insertBefore(wrapper, this);
+  this.parentNode.removeChild(this);
+  wrapper.appendChild(this);
+};
+
 NexT.utils = {
 
   /**
@@ -68,16 +74,20 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    $('.highlight').not('.gist .highlight').each((i, e) => {
-      function initButton(button) {
+    document.querySelectorAll('.highlight:not(.gist)').forEach(e => {
+      const initButton = button => {
         if (CONFIG.copycode.style === 'mac') {
-          button.html('<i class="fa fa-clipboard"></i>');
+          button.innerHTML = '<i class="fa fa-clipboard"></i>';
         } else {
-          button.text(CONFIG.translation.copy_button);
+          button.textContent = CONFIG.translation.copy_button;
         }
-      }
-      var $button = $('<div>').addClass('copy-btn');
-      $button.on('click', event => {
+      };
+      const box = document.createElement('div');
+      box.classList.add('highlight-wrap');
+      e.wrap(box);
+      e.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
+      var button = e.parentNode.querySelector('.copy-btn');
+      button.addEventListener('click', event => {
         var code = [...event.currentTarget.parentNode.querySelectorAll('.code .line')].map(element => {
           return element.innerText;
         }).join('\n');
@@ -88,7 +98,7 @@ NexT.utils = {
         ta.style.opacity = '0';
         ta.readOnly = true;
         ta.value = code;
-        document.body.appendChild(ta);
+        document.body.append(ta);
         const selection = document.getSelection();
         const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
         ta.select();
@@ -106,13 +116,42 @@ NexT.utils = {
         }
         document.body.removeChild(ta);
       });
-      $button.on('mouseleave', event => {
+      button.addEventListener('mouseleave', event => {
         setTimeout(() => {
-          initButton($(event.currentTarget));
+          initButton(event.target);
         }, 300);
       });
-      initButton($button);
-      $(e).wrap($('<div>').addClass('highlight-wrap')).after($button);
+      initButton(button);
+    });
+  },
+
+  wrapTableWithBox: function() {
+    [...document.querySelectorAll(':not(.gist) table')].forEach(table => {
+      const box = document.createElement('div');
+      box.className = 'table-box';
+      table.wrap(box);
+    });
+  },
+
+  registerVideoIframe: function() {
+    document.querySelectorAll('iframe').forEach(element => {
+      const SUPPORTED_PLAYERS = [
+        'www.youtube.com',
+        'player.vimeo.com',
+        'player.youku.com',
+        'player.bilibili.com',
+        'www.tudou.com'
+      ];
+      const pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
+      if (!element.parentNode.matches('.video-box') && element.src.search(pattern) > 0) {
+        const box = document.createElement('div');
+        box.className = 'video-box';
+        element.wrap(box);
+        let width = Number(element.width); let height = Number(element.height);
+        if (width && height) {
+          element.parentNode.style.paddingTop = (height / width * 100) + '%';
+        }
+      }
     });
   },
 
