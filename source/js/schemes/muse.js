@@ -4,10 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   var sidebarToggleLines = {
     lines: [],
-    push : function(line) {
-      this.lines.push(line);
-    },
-    init: function() {
+    init : function() {
       this.lines.forEach(line => {
         line.transform('init');
       });
@@ -39,51 +36,42 @@ window.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  var isRight = CONFIG.sidebar.position !== 'left';
+  var isRight = CONFIG.sidebar.position == 'right';
 
-  var sidebarToggleLine1st = new SidebarToggleLine({
+  sidebarToggleLines.lines = [new SidebarToggleLine({
     el    : '.sidebar-toggle-line-first',
     status: isRight
       ? {
         arrow: {width: '50%', transform: 'rotate(-45deg)', top: '2px'},
         close: {width: '100%', transform: 'rotate(-45deg)', top: '5px'}
-      }
-      : {
+      } : {
         arrow: {width: '50%', transform: 'rotate(45deg)', top: '2px', left: '50%'},
         close: {width: '100%', transform: 'rotate(-45deg)', top: '5px', left: '0px'}
       }
-  });
-  var sidebarToggleLine2nd = new SidebarToggleLine({
+  }), new SidebarToggleLine({
     el    : '.sidebar-toggle-line-middle',
     status: isRight
       ? {
         arrow: {width: '90%'},
         close: {opacity: 0}
-      }
-      : {
+      } : {
         arrow: {width: '90%', left: '2px'},
         close: {opacity: 0, left: '0px'}
       }
-  });
-  var sidebarToggleLine3rd = new SidebarToggleLine({
+  }), new SidebarToggleLine({
     el    : '.sidebar-toggle-line-last',
     status: isRight
       ? {
         arrow: {width: '50%', transform: 'rotate(45deg)', top: '-2px'},
         close: {width: '100%', transform: 'rotate(45deg)', top: '-5px'}
-      }
-      : {
+      } : {
         arrow: {width: '50%', transform: 'rotate(-45deg)', top: '-2px', left: '50%'},
         close: {width: '100%', transform: 'rotate(45deg)', top: '-5px', left: '0px'}
       }
-  });
-
-  sidebarToggleLines.push(sidebarToggleLine1st);
-  sidebarToggleLines.push(sidebarToggleLine2nd);
-  sidebarToggleLines.push(sidebarToggleLine3rd);
+  })];
 
   var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
-  var SIDEBAR_DISPLAY_DURATION = 200;
+  var SIDEBAR_DISPLAY_DURATION = 400;
   var mousePos = {}; var touchPos = {};
 
   var sidebarToggleMotion = {
@@ -147,11 +135,11 @@ window.addEventListener('DOMContentLoaded', () => {
       if (typeof $.Velocity === 'function') {
         $.Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
           stagger: 50,
-          drag: true
+          drag   : true
         });
         $.Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
           stagger: 50,
-          drag: true,
+          drag   : true,
           display: 'flex'
         });
       }
