@@ -1,6 +1,7 @@
-/* global NexT, CONFIG */
+/* global NexT, CONFIG, Pjax */
 
-new Pjax({
+// eslint-disable-next-line no-unused-vars
+var pjax = new Pjax({
   selectors: [
     'head title',
     '#page-configurations',
@@ -15,6 +16,7 @@ new Pjax({
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
+
 window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
     var code = element.text || element.textContent || element.innerHTML || '';
