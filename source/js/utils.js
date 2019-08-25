@@ -160,7 +160,7 @@ NexT.utils = {
     var backToTop = document.querySelector('.back-to-top');
     var readingProgressBar = document.querySelector('.reading-progress-bar');
     // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load scroll', () => {
+    window.addEventListener('scroll', () => {
       var scrollPercent;
       if (backToTop || readingProgressBar) {
         var docHeight = document.querySelector('.container').offsetHeight;
@@ -348,14 +348,13 @@ NexT.utils = {
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
   initSidebarDimension: function() {
-    var sidebarInner = $('.sidebar-inner');
-    var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
+    var sidebarPadding = 40;
     var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : sidebarOffset;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
     var sidebarSchemePadding = NexT.utils.isPisces() || NexT.utils.isGemini()
-      ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + sidebarb2tHeight
-      : (sidebarPadding * 2) + (sidebarNavHeight / 2);
+      ? sidebarPadding + sidebarNavHeight + sidebarb2tHeight + sidebarOffset * 2
+      : sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
     // Initialize Sidebar & TOC Height.
     var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding;
     $('.site-overview-wrap, .post-toc-wrap').css('max-height', sidebarWrapperHeight);
