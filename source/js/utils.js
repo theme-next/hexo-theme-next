@@ -230,6 +230,7 @@ NexT.utils = {
   registerActiveMenuItem: function() {
     document.querySelectorAll('.menu-item').forEach(element => {
       var target = element.querySelector('a[href]');
+      if (!target) return;
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
       if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
