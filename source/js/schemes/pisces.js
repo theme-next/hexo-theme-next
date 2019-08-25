@@ -1,7 +1,7 @@
 /* global CONFIG */
 
-class Affix {
-  constructor(element, options) {
+var Affix = {
+  init: function(element, options) {
     this.options = Object.assign({
       offset: 0,
       target: window
@@ -16,8 +16,8 @@ class Affix {
     this.unpin = null;
     this.pinnedOffset = null;
     this.checkPosition();
-  }
-  getState(scrollHeight, height, offsetTop, offsetBottom) {
+  },
+  getState: function(scrollHeight, height, offsetTop, offsetBottom) {
     let scrollTop = this.target.scrollY;
     let targetHeight = this.target.innerHeight;
     if (offsetTop != null && this.affixed === 'top') return scrollTop < offsetTop ? 'top' : false;
@@ -31,15 +31,15 @@ class Affix {
     if (offsetTop != null && scrollTop <= offsetTop) return 'top';
     if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom';
     return false;
-  }
-  getPinnedOffset() {
+  },
+  getPinnedOffset: function() {
     if (this.pinnedOffset) return this.pinnedOffset;
     this.element.classList.remove('affix-top', 'affix-bottom');
     this.element.classList.add('affix');
     let scrollTop = this.target.scrollY;
     return (this.pinnedOffset = $(this.element).offset().top - scrollTop);
-  }
-  checkPosition() {
+  },
+  checkPosition: function() {
     if (window.getComputedStyle(this.element).display === 'none') return;
     let height = $(this.element).height();
     let offset = this.options.offset;
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let footerMargin = footer.offsetHeight - footerInner.offsetHeight;
   let footerOffset = footer.offsetHeight + footerMargin;
 
-  new Affix(document.querySelector('.sidebar-inner'), {
+  Affix.init(document.querySelector('.sidebar-inner'), {
     offset: {
       top   : headerOffset - sidebarOffset,
       bottom: footerOffset
