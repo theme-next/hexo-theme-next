@@ -9,10 +9,10 @@
 {% include scheme_script %}
 
 {{- next_js('next-boot.js') }}
-{%- if theme.pjax %}
-  {{- next_js('next-pjax.js') }}
-{%- endif %}
 {%- if theme.bookmark.enable %}
   {{- next_js('bookmark.js') }}
+{%- endif %}
+{%- if theme.pjax %}
+  {% include 'pjax.swig' %}
 {%- endif %}
 {% include 'three.swig' %}

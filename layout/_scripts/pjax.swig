@@ -1,6 +1,4 @@
-/* global NexT, CONFIG, Pjax */
-
-// eslint-disable-next-line no-unused-vars
+<script>
 var pjax = new Pjax({
   selectors: [
     'head title',
@@ -45,3 +43,4 @@ window.addEventListener('pjax:success', () => {
   }
   NexT.utils.updateSidebarPosition();
 });
+</script>
