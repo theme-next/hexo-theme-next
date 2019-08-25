@@ -250,8 +250,8 @@ NexT.utils = {
       sidebarNav.style.display = 'none';
       sidebarNav.classList.remove('motion-element');
       document.querySelector('.sidebar-nav-overview').click();
-      return;
     }
+    NexT.utils.initSidebarDimension();
 
     const navItems = document.querySelectorAll('.post-toc li');
     const sections = [...navItems].map(element => {
@@ -375,10 +375,7 @@ NexT.utils = {
   },
 
   updateSidebarPosition: function() {
-    if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
-      this.initSidebarDimension();
-      return;
-    }
+    if (!this.isDesktop() || this.isPisces() || this.isGemini()) return;
     // Expand sidebar on post detail page by default, when post has a toc.
     var $tocContent = $('.post-toc');
     var display = CONFIG.page.sidebar;

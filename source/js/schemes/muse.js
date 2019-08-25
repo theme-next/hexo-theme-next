@@ -4,22 +4,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
   var sidebarToggleLines = {
     lines: [],
-    push : function(line) {
-      this.lines.push(line);
-    },
-    init: function() {
+    init : function() {
       this.lines.forEach(line => {
-        line.init();
+        line.transform('init');
       });
     },
     arrow: function() {
       this.lines.forEach(line => {
-        line.arrow();
+        line.transform('arrow');
       });
     },
     close: function() {
       this.lines.forEach(line => {
-        line.close();
+        line.transform('close');
       });
     }
   };
@@ -34,69 +31,51 @@ window.addEventListener('DOMContentLoaded', () => {
         left     : 0
       }
     }, settings.status);
-    this.init = function() {
-      this.transform('init');
-    };
-    this.arrow = function() {
-      this.transform('arrow');
-    };
-    this.close = function() {
-      this.transform('close');
-    };
     this.transform = function(status) {
       document.querySelector(settings.el).css(this.status[status]);
     };
   }
 
-  var isRight = CONFIG.sidebar.position !== 'left';
+  var isRight = CONFIG.sidebar.position === 'right';
 
-  var sidebarToggleLine1st = new SidebarToggleLine({
+  sidebarToggleLines.lines = [new SidebarToggleLine({
     el    : '.sidebar-toggle-line-first',
     status: isRight
       ? {
         arrow: {width: '50%', transform: 'rotate(-45deg)', top: '2px'},
         close: {width: '100%', transform: 'rotate(-45deg)', top: '5px'}
-      }
-      : {
+      } : {
         arrow: {width: '50%', transform: 'rotate(45deg)', top: '2px', left: '50%'},
         close: {width: '100%', transform: 'rotate(-45deg)', top: '5px', left: '0px'}
       }
-  });
-  var sidebarToggleLine2nd = new SidebarToggleLine({
+  }), new SidebarToggleLine({
     el    : '.sidebar-toggle-line-middle',
     status: isRight
       ? {
         arrow: {width: '90%'},
         close: {opacity: 0}
-      }
-      : {
+      } : {
         arrow: {width: '90%', left: '2px'},
         close: {opacity: 0, left: '0px'}
       }
-  });
-  var sidebarToggleLine3rd = new SidebarToggleLine({
+  }), new SidebarToggleLine({
     el    : '.sidebar-toggle-line-last',
     status: isRight
       ? {
         arrow: {width: '50%', transform: 'rotate(45deg)', top: '-2px'},
         close: {width: '100%', transform: 'rotate(45deg)', top: '-5px'}
-      }
-      : {
+      } : {
         arrow: {width: '50%', transform: 'rotate(-45deg)', top: '-2px', left: '50%'},
         close: {width: '100%', transform: 'rotate(45deg)', top: '-5px', left: '0px'}
       }
-  });
+  })];
 
-  sidebarToggleLines.push(sidebarToggleLine1st);
-  sidebarToggleLines.push(sidebarToggleLine2nd);
-  sidebarToggleLines.push(sidebarToggleLine3rd);
-
-  var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px';
-  var SIDEBAR_DISPLAY_DURATION = 200;
+  var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
+  var SIDEBAR_DISPLAY_DURATION = 400;
   var mousePos = {}; var touchPos = {};
 
   var sidebarToggleMotion = {
-    sidebarEl       : $('.sidebar'),
+    sidebarEl       : document.querySelector('.sidebar'),
     isSidebarVisible: false,
     init            : function() {
       sidebarToggleLines.init();
@@ -107,12 +86,9 @@ window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
-      this.sidebarEl
-        .on('touchstart', this.touchstartHandler.bind(this))
-        .on('touchend', this.touchendHandler.bind(this))
-        .on('touchmove', event => {
-          event.preventDefault();
-        });
+      this.sidebarEl.addEventListener('touchstart', this.touchstartHandler.bind(this));
+      this.sidebarEl.addEventListener('touchend', this.touchendHandler.bind(this));
+      this.sidebarEl.addEventListener('touchmove', event => event.preventDefault());
       window.addEventListener('sidebar:show', this.showSidebar.bind(this));
       window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
     },
@@ -155,50 +131,36 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     showSidebar: function() {
       this.isSidebarVisible = true;
-      var self = this;
-
+      this.sidebarEl.classList.add('sidebar-active');
       if (typeof $.Velocity === 'function') {
-        this.sidebarEl.addClass('sidebar-active').stop().velocity({
-          width: SIDEBAR_WIDTH
-        }, {
-          duration: SIDEBAR_DISPLAY_DURATION,
-          begin   : function() {
-            $.Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-              stagger: 50,
-              drag   : true
-            });
-            $.Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-              stagger: 50,
-              drag   : true,
-              display: 'flex'
-            });
-          },
-          complete: function() {
-            NexT.utils.initSidebarDimension();
-          }
+        $.Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+          stagger: 50,
+          drag   : true
         });
-      } else {
-        this.sidebarEl.addClass('sidebar-active').stop().animate({
-          width: SIDEBAR_WIDTH
-        }, SIDEBAR_DISPLAY_DURATION, () => {
-          self.sidebarEl.find('.motion-element').css({opacity: 1});
-          NexT.utils.initSidebarDimension();
+        $.Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+          stagger: 50,
+          drag   : true,
+          display: 'flex'
         });
       }
 
       sidebarToggleLines.close();
-      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': SIDEBAR_WIDTH} : {'padding-left': SIDEBAR_WIDTH}, SIDEBAR_DISPLAY_DURATION);
+      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {
+        'padding-right': SIDEBAR_WIDTH
+      } : {
+        'padding-left': SIDEBAR_WIDTH
+      }, SIDEBAR_DISPLAY_DURATION);
     },
     hideSidebar: function() {
-      var self = this;
       this.isSidebarVisible = false;
-      this.sidebarEl.find('.motion-element').css({opacity: 0});
-      this.sidebarEl.stop().animate({width: 0}, SIDEBAR_DISPLAY_DURATION, () => {
-        self.sidebarEl.removeClass('sidebar-active');
-      });
+      this.sidebarEl.classList.remove('sidebar-active');
 
       sidebarToggleLines.init();
-      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': 0} : {'padding-left': 0}, SIDEBAR_DISPLAY_DURATION);
+      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {
+        'padding-right': 0
+      } : {
+        'padding-left': 0
+      }, SIDEBAR_DISPLAY_DURATION);
     }
   };
   sidebarToggleMotion.init();
