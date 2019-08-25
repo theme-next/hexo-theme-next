@@ -10,7 +10,7 @@
   }
 
   .post-meta {
-    margin: 0 0 20px 0;
+    margin: 5px 0 20px 0;
   }
 }
 
@@ -23,14 +23,18 @@
 
   article {
     margin-top: 120px;
-  }
 
-  .post:first-child {
-    margin-top: 0;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   .post-title, .post-meta {
     text-align: center;
+  }
+
+  .post-title-link::before {
+    background-color: $black-deep;
   }
 
   .post-body img {

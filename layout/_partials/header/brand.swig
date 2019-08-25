@@ -1,4 +1,4 @@
-<div class="site-brand-wrapper">
+<div class="site-brand-container">
   <div class="site-meta{%- if theme.custom_logo %} custom-logo{%- endif %}">
     {%- if theme.custom_logo and theme.scheme === 'Muse' %}
       <div class="site-meta-headline">
