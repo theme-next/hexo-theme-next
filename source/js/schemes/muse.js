@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  var isRight = CONFIG.sidebar.position == 'right';
+  var isRight = CONFIG.sidebar.position === 'right';
 
   sidebarToggleLines.lines = [new SidebarToggleLine({
     el    : '.sidebar-toggle-line-first',
