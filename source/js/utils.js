@@ -74,12 +74,13 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    document.querySelectorAll('.highlight:not(.gist)').forEach(e => {
+    document.querySelectorAll('.highlight').forEach(e => {
+      if (e.classList.contains('tab-size')) return;
       const initButton = button => {
         if (CONFIG.copycode.style === 'mac') {
           button.innerHTML = '<i class="fa fa-clipboard"></i>';
         } else {
-          button.textContent = CONFIG.translation.copy_button;
+          button.innerText = CONFIG.translation.copy_button;
         }
       };
       const box = document.createElement('div');
