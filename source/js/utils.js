@@ -244,16 +244,42 @@ NexT.utils = {
       $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
     }
 
-    const intersectionObserver = new IntersectionObserver(entries => {
-      var index = sections.indexOf(entries[0].target);
-      activateNavByIndex(navItems[index]);
-    }, {
-      rootMargin: '0px 0px -100%'
-    });
-
-    for (let i = 0; i < sections.length; i++) {
-      intersectionObserver.observe(sections[i]);
+    function findIndex(entries) {
+      let index = 0;
+      let entry = entries[index];
+      if (entry.boundingClientRect.top > 0) {
+        index = sections.indexOf(entry.target);
+        return index === 0 ? 0 : index - 1;
+      }
+      for (;index < entries.length; index++) {
+        if (entries[index].boundingClientRect.top <= 0) {
+          entry = entries[index];
+        } else {
+          return sections.indexOf(entry.target);
+        }
+      }
+      return sections.indexOf(entry.target);
     }
+
+    function createIntersectionObserver(marginTop) {
+      marginTop = Math.floor(marginTop + 10000);
+      let intersectionObserver = new IntersectionObserver((entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      }, {
+        rootMargin: marginTop + 'px 0px -100% 0px',
+        threshold : 0
+      });
+      sections.forEach(item => intersectionObserver.observe(item));
+    }
+    createIntersectionObserver(document.documentElement.scrollHeight);
+
   },
 
   hasMobileUA: function() {
