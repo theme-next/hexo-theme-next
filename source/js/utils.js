@@ -349,12 +349,13 @@ NexT.utils = {
    */
   initSidebarDimension: function() {
     var sidebarPadding = 40;
-    var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
+    var sidebarNav = document.querySelector('.sidebar-nav');
+    var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
     var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
-    var sidebarSchemePadding = NexT.utils.isPisces() || NexT.utils.isGemini()
-      ? sidebarPadding + sidebarNavHeight + sidebarb2tHeight + sidebarOffset * 2
-      : sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
+    var sidebarSchemePadding = sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
+    // Margin of sidebar b2t: 8px -10px -20px, brings a different of 12px.
+    if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += sidebarOffset * 2 - 12;
     // Initialize Sidebar & TOC Height.
     var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding;
     $('.site-overview-wrap, .post-toc-wrap').css('max-height', sidebarWrapperHeight);
