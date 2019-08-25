@@ -143,9 +143,9 @@ NexT.utils = {
         'www.tudou.com'
       ];
       const pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
-      if (!element.parentNode.matches('.video-box') && element.src.search(pattern) > 0) {
+      if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
         const box = document.createElement('div');
-        box.className = 'video-box';
+        box.className = 'video-container';
         element.wrap(box);
         let width = Number(element.width); let height = Number(element.height);
         if (width && height) {
