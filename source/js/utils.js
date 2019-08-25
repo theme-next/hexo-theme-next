@@ -74,8 +74,7 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    document.querySelectorAll('.highlight').forEach(e => {
-      if (e.classList.contains('tab-size')) return;
+    document.querySelectorAll('.highlight:not(table)').forEach(e => {
       const initButton = button => {
         if (CONFIG.copycode.style === 'mac') {
           button.innerHTML = '<i class="fa fa-clipboard"></i>';
@@ -127,7 +126,7 @@ NexT.utils = {
   },
 
   wrapTableWithBox: function() {
-    [...document.querySelectorAll(':not(.gist) table')].forEach(table => {
+    [...document.querySelectorAll('table:not(.highlight)')].forEach(table => {
       const box = document.createElement('div');
       box.className = 'table-box';
       table.wrap(box);
