@@ -21,7 +21,7 @@ NexT.boot.registerEvents = function() {
   });
 
   var TAB_ANIMATE_DURATION = 200;
-  $('.sidebar-nav li').on('click', event => {
+  document.querySelectorAll('.sidebar-nav li').addEventListener('click', event => {
     var item = $(event.currentTarget);
     var activeTabClassName = 'sidebar-nav-active';
     var activePanelClassName = 'sidebar-panel-active';

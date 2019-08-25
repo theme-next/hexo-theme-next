@@ -21,6 +21,12 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
+NodeList.prototype.addEventListener = function(event, fn) {
+  this.forEach(element => {
+    element.addEventListener(event, fn);
+  });
+};
+
 NexT.utils = {
 
   /**
@@ -190,7 +196,7 @@ NexT.utils = {
    */
   registerTabsTag: function() {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    $('.tabs ul.nav-tabs .tab').on('click', event => {
+    document.querySelectorAll('.tabs ul.nav-tabs .tab').addEventListener('click', event => {
       event.preventDefault();
       // Prevent selected tab to select again.
       if (!event.currentTarget.classList.contains('active')) {
@@ -356,7 +362,7 @@ NexT.utils = {
     var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
     var sidebarSchemePadding = sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
     // Margin of sidebar b2t: 8px -10px -20px, brings a different of 12px.
-    if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += sidebarOffset * 2 - 12;
+    if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += (sidebarOffset * 2) - 12;
     // Initialize Sidebar & TOC Height.
     var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
     document.querySelector('.site-overview-wrap').style.maxHeight = sidebarWrapperHeight;

@@ -1,4 +1,6 @@
-var pjax = new Pjax({
+/* global NexT, CONFIG */
+
+new Pjax({
   selectors: [
     'head title',
     '#page-configurations',
@@ -11,7 +13,7 @@ var pjax = new Pjax({
   },
   analytics: false,
   cacheBust: false,
-  scrollTo: !CONFIG.bookmark.enable
+  scrollTo : !CONFIG.bookmark.enable
 });
 window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
@@ -26,7 +28,7 @@ window.addEventListener('pjax:success', () => {
       // Force synchronous loading of peripheral JS.
       script.async = false;
     }
-    if (code !== "") {
+    if (code !== '') {
       script.appendChild(document.createTextNode(code));
     }
     parent.appendChild(script);
