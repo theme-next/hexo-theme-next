@@ -17,12 +17,15 @@ var pjax = new Pjax({
 
 window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
+    var id = element.id || '';
     var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
     var parent = element.parentNode;
     parent.removeChild(element);
     var script = document.createElement('script');
-    script.id = element.id;
+    if (id !=='') {
+      script.id = element.id;
+    }
     if (src !== '') {
       script.src = src;
       // Force synchronous loading of peripheral JS.
