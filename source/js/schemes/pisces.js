@@ -8,6 +8,7 @@ var Affix = {
     }, options);
     this.target = this.options.target;
     this.target.addEventListener('scroll', this.checkPosition.bind(this));
+    this.target.addEventListener('click', this.checkPositionWithEventLoop.bind(this));
     window.matchMedia('(min-width: 992px)').addListener(event => {
       if (event.matches) this.checkPosition();
     });
@@ -38,6 +39,9 @@ var Affix = {
     this.element.classList.add('affix');
     let scrollTop = this.target.scrollY;
     return (this.pinnedOffset = $(this.element).offset().top - scrollTop);
+  },
+  checkPositionWithEventLoop() {
+    setTimeout(this.checkPosition.bind(this), 1);
   },
   checkPosition: function() {
     if (window.getComputedStyle(this.element).display === 'none') return;
