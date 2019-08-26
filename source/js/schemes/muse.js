@@ -1,4 +1,4 @@
-/* global NexT, CONFIG */
+/* global NexT, CONFIG, Velocity */
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -132,12 +132,12 @@ window.addEventListener('DOMContentLoaded', () => {
     showSidebar: function() {
       this.isSidebarVisible = true;
       this.sidebarEl.classList.add('sidebar-active');
-      if (typeof $.Velocity === 'function') {
-        $.Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+      if (typeof Velocity === 'function') {
+        Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
           stagger: 50,
           drag   : true
         });
-        $.Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+        Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
           stagger: 50,
           drag   : true,
           display: 'flex'

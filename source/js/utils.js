@@ -9,9 +9,7 @@ HTMLElement.prototype.outerHeight = function(flag) {
 };
 
 HTMLElement.prototype.css = function(dict) {
-  for (var key in dict) {
-    this.style[key] = dict[key];
-  }
+  Object.assign(this.style, dict);
   return this;
 };
 
