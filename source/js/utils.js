@@ -21,12 +21,6 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
-NodeList.prototype.addEventListener = function(event, fn) {
-  this.forEach(element => {
-    element.addEventListener(event, fn);
-  });
-};
-
 NexT.utils = {
 
   /**
@@ -196,26 +190,28 @@ NexT.utils = {
    */
   registerTabsTag: function() {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    document.querySelectorAll('.tabs ul.nav-tabs .tab').addEventListener('click', event => {
-      event.preventDefault();
-      // Prevent selected tab to select again.
-      if (!event.currentTarget.classList.contains('active')) {
-        // Add & Remove active class on `nav-tabs` & `tab-content`.
-        [...event.currentTarget.parentNode.children].forEach(item => {
-          item.classList.remove('active');
-        });
-        event.currentTarget.classList.add('active');
-        var tActive = event.currentTarget.querySelector('a').getAttribute('href');
-        tActive = document.querySelector(tActive);
-        [...tActive.parentNode.children].forEach(item => {
-          item.classList.remove('active');
-        });
-        tActive.classList.add('active');
-        // Trigger event
-        tActive.dispatchEvent(new Event('tabs:click', {
-          bubbles: true
-        }));
-      }
+    document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(tab => {
+      tab.addEventListener('click', event => {
+        event.preventDefault();
+        // Prevent selected tab to select again.
+        if (!event.currentTarget.classList.contains('active')) {
+          // Add & Remove active class on `nav-tabs` & `tab-content`.
+          [...event.currentTarget.parentNode.children].forEach(item => {
+            item.classList.remove('active');
+          });
+          event.currentTarget.classList.add('active');
+          var tActive = event.currentTarget.querySelector('a').getAttribute('href');
+          tActive = document.querySelector(tActive);
+          [...tActive.parentNode.children].forEach(item => {
+            item.classList.remove('active');
+          });
+          tActive.classList.add('active');
+          // Trigger event
+          tActive.dispatchEvent(new Event('tabs:click', {
+            bubbles: true
+          }));
+        }
+      });
     });
 
     window.dispatchEvent(new Event('tabs:register'));
