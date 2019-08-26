@@ -118,12 +118,12 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     },
     touchstartHandler: function(event) {
-      touchPos.X = event.originalEvent.touches[0].clientX;
-      touchPos.Y = event.originalEvent.touches[0].clientY;
+      touchPos.X = event.touches[0].clientX;
+      touchPos.Y = event.touches[0].clientY;
     },
     touchendHandler: function(event) {
-      var deltaX = event.originalEvent.changedTouches[0].clientX - touchPos.X;
-      var deltaY = event.originalEvent.changedTouches[0].clientY - touchPos.Y;
+      var deltaX = event.changedTouches[0].clientX - touchPos.X;
+      var deltaY = event.changedTouches[0].clientY - touchPos.Y;
       var effectiveSliding = Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight));
       if (this.isSidebarVisible && effectiveSliding) {
         this.hideSidebar();
