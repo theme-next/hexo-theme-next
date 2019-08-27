@@ -263,7 +263,7 @@ NexT.utils = {
       return document.getElementById(link.getAttribute('href').replace('#', ''));
     });
 
-    var $tocElement = $('.post-toc');
+    var tocElement = document.querySelector('.post-toc-wrap');
     function activateNavByIndex(target) {
       if (target.classList.contains('active-current')) return;
 
@@ -274,7 +274,12 @@ NexT.utils = {
       $(target).parents('li').addClass('active');
 
       // Scrolling to center active TOC element if TOC content is taller then viewport.
-      $tocElement.scrollTop(target.getBoundingClientRect().top - $tocElement[0].getBoundingClientRect().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
+      window.anime({
+        targets: tocElement,
+        duration: 200,
+        easing: 'linear',
+        scrollTop: tocElement.scrollTop - (tocElement.offsetHeight / 2) + target.getBoundingClientRect().top - tocElement.getBoundingClientRect().top
+      });
     }
 
     function findIndex(entries) {
@@ -354,12 +359,11 @@ NexT.utils = {
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
   initSidebarDimension: function() {
-    var sidebarPadding = 40;
     var sidebarNav = document.querySelector('.sidebar-nav');
     var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
     var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
-    var sidebarSchemePadding = sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
+    var sidebarSchemePadding = CONFIG.sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
     // Margin of sidebar b2t: 8px -10px -20px, brings a different of 12px.
     if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += (sidebarOffset * 2) - 12;
     // Initialize Sidebar & TOC Height.

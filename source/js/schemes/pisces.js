@@ -30,7 +30,7 @@ var Affix = {
       return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
     }
     let initializing = this.affixed === null;
-    let colliderTop = initializing ? scrollTop : $(this.element).offset().top;
+    let colliderTop = initializing ? scrollTop : this.element.getBoundingClientRect().top + scrollTop;
     let colliderHeight = initializing ? targetHeight : height;
     if (offsetTop != null && scrollTop <= offsetTop) return 'top';
     if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom';
@@ -47,7 +47,7 @@ var Affix = {
   },
   checkPosition: function() {
     if (window.getComputedStyle(this.element).display === 'none') return;
-    let height = $(this.element).height();
+    let height = this.element.offsetHeight - CONFIG.sidebarPadding;
     let offset = this.options.offset;
     let offsetTop = offset.top;
     let offsetBottom = offset.bottom;
@@ -62,9 +62,7 @@ var Affix = {
       this.element.classList.add(affixType);
     }
     if (affix === 'bottom') {
-      $(this.element).offset({
-        top: scrollHeight - height - offsetBottom
-      });
+      this.element.style.top = scrollHeight - height - offsetBottom + 'px';
     }
   }
 };
