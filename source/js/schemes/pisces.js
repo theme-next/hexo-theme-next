@@ -10,7 +10,13 @@ var Affix = {
     this.target.addEventListener('scroll', this.checkPosition.bind(this));
     this.target.addEventListener('click', this.checkPositionWithEventLoop.bind(this));
     window.matchMedia('(min-width: 992px)').addListener(event => {
-      if (event.matches) this.checkPosition();
+      if (event.matches) {
+        this.options = {
+          offset: NexT.utils.getAffixParam(),
+          target: window
+        };
+        this.checkPosition();
+      }
     });
     this.element = element;
     this.affixed = null;
@@ -67,7 +73,7 @@ var Affix = {
   }
 };
 
-window.addEventListener('DOMContentLoaded', () => {
+NexT.utils.getAffixParam = function() {
   const sidebarOffset = CONFIG.sidebar.offset || 12;
 
   let headerOffset = document.querySelector('.header-inner').offsetHeight + sidebarOffset;
@@ -76,14 +82,20 @@ window.addEventListener('DOMContentLoaded', () => {
   let footerMargin = footer.offsetHeight - footerInner.offsetHeight;
   let footerOffset = footer.offsetHeight + footerMargin;
 
-  Affix.init(document.querySelector('.sidebar-inner'), {
-    offset: {
-      top   : headerOffset - sidebarOffset,
-      bottom: footerOffset
-    }
-  });
   document.querySelector('.sidebar').css({
-    'margin-top' : `${headerOffset}px`,
+    'margin-top': `${headerOffset}px`,
     'margin-left': 'auto'
+  });
+
+  return {
+    top: headerOffset - sidebarOffset,
+    bottom: footerOffset
+  };
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+
+  Affix.init(document.querySelector('.sidebar-inner'), {
+    offset: NexT.utils.getAffixParam()
   });
 });

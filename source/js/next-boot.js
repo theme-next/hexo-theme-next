@@ -28,25 +28,33 @@ NexT.boot.registerEvents = function() {
   var TAB_ANIMATE_DURATION = 200;
   document.querySelectorAll('.sidebar-nav li').forEach(li => {
     li.addEventListener('click', event => {
-      var item = $(event.currentTarget);
+      var item = event.currentTarget;
       var activeTabClassName = 'sidebar-nav-active';
       var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) return;
+      if (item.classList.contains(activeTabClassName)) return;
 
-      var target = $('.' + item.data('target'));
+      var target = $('.' + item.getAttribute('data-target'));
       var currentTarget = target.siblings('.sidebar-panel');
-      currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
-        // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-        currentTarget.removeClass(activePanelClassName);
-        target
-          .stop()
-          .css({ opacity: 0 })
-          .addClass(activePanelClassName)
-          .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
+      window.anime({
+        targets       : currentTarget[0],
+        duration      : TAB_ANIMATE_DURATION,
+        easing        : 'linear',
+        opacity       : 0,
+        changeComplete: () => {
+          // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+          currentTarget.removeClass(activePanelClassName);
+          target
+            .stop()
+            .css({ opacity: 0 })
+            .addClass(activePanelClassName)
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
+        }
       });
 
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
+      [...item.parentNode.children].forEach(element => {
+        element.classList.remove(activeTabClassName);
+      });
+      item.classList.add(activeTabClassName);
     });
   });
 
