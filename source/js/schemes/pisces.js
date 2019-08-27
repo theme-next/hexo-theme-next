@@ -3,17 +3,14 @@
 var Affix = {
   init: function(element, options) {
     this.options = Object.assign({
-      offset: 0,
-      target: window
+      offset: 0
     }, options);
-    this.target = this.options.target;
-    this.target.addEventListener('scroll', this.checkPosition.bind(this));
-    this.target.addEventListener('click', this.checkPositionWithEventLoop.bind(this));
+    window.addEventListener('scroll', this.checkPosition.bind(this));
+    window.addEventListener('click', this.checkPositionWithEventLoop.bind(this));
     window.matchMedia('(min-width: 992px)').addListener(event => {
       if (event.matches) {
         this.options = {
-          offset: NexT.utils.getAffixParam(),
-          target: window
+          offset: NexT.utils.getAffixParam()
         };
         this.checkPosition();
       }
@@ -25,11 +22,11 @@ var Affix = {
     this.checkPosition();
   },
   getState: function(scrollHeight, height, offsetTop, offsetBottom) {
-    let scrollTop = this.target.scrollY;
-    let targetHeight = this.target.innerHeight;
+    let scrollTop = window.scrollY;
+    let targetHeight = window.innerHeight;
     if (offsetTop != null && this.affixed === 'top') return scrollTop < offsetTop ? 'top' : false;
     if (this.affixed === 'bottom') {
-      if (offsetTop != null) return scrollTop + this.unpin <= $(this.element).offset().top ? false : 'bottom';
+      if (offsetTop != null) return scrollTop + this.unpin <= this.element.getBoundingClientRect().top + scrollTop ? false : 'bottom';
       return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
     }
     let initializing = this.affixed === null;
@@ -43,8 +40,7 @@ var Affix = {
     if (this.pinnedOffset) return this.pinnedOffset;
     this.element.classList.remove('affix-top', 'affix-bottom');
     this.element.classList.add('affix');
-    let scrollTop = this.target.scrollY;
-    return (this.pinnedOffset = $(this.element).offset().top - scrollTop);
+    return this.pinnedOffset = this.element.getBoundingClientRect().top;
   },
   checkPositionWithEventLoop() {
     setTimeout(this.checkPosition.bind(this), 1);

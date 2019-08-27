@@ -252,7 +252,7 @@ NexT.utils = {
       link.addEventListener('click', event => {
         event.preventDefault();
         var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
-        var offset = $(target).offset().top;
+        var offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
           targets  : document.documentElement,
           duration : 500,
@@ -274,7 +274,7 @@ NexT.utils = {
       $(target).parents('li').addClass('active');
 
       // Scrolling to center active TOC element if TOC content is taller then viewport.
-      $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
+      $tocElement.scrollTop(target.getBoundingClientRect().top - $tocElement[0].getBoundingClientRect().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
     }
 
     function findIndex(entries) {

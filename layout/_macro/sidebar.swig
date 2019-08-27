@@ -19,10 +19,10 @@
       {%- endif %}
 
       <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+        <li class="sidebar-nav-toc" data-target="0">
           {{ __('sidebar.toc') }}
         </li>
-        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+        <li class="sidebar-nav-overview" data-target="1">
           {{ __('sidebar.overview') }}
         </li>
       </ul>

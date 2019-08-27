@@ -33,21 +33,26 @@ NexT.boot.registerEvents = function() {
       var activePanelClassName = 'sidebar-panel-active';
       if (item.classList.contains(activeTabClassName)) return;
 
-      var target = $('.' + item.getAttribute('data-target'));
-      var currentTarget = target.siblings('.sidebar-panel');
+      var targets = document.querySelectorAll('.sidebar-panel');
+      var index = item.getAttribute('data-target');
+      var target = targets[index];
+      var currentTarget = targets[1 - index];
       window.anime({
-        targets : currentTarget[0],
+        targets : currentTarget,
         duration: TAB_ANIMATE_DURATION,
         easing  : 'linear',
         opacity : 0,
         complete: () => {
           // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-          currentTarget.removeClass(activePanelClassName);
-          target
-            .stop()
-            .css({ opacity: 0 })
-            .addClass(activePanelClassName)
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
+          currentTarget.classList.remove(activePanelClassName);
+          target.css.opacity = 0;
+          target.classList.add(activePanelClassName);
+          window.anime({
+            targets : target,
+            duration: TAB_ANIMATE_DURATION,
+            easing  : 'linear',
+            opacity : 1
+          });
         }
       });
 
