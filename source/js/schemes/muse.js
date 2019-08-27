@@ -145,22 +145,30 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       sidebarToggleLines.close();
-      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {
+      NexT.utils.isDesktop() && window.anime(Object.assign({
+        targets : document.body,
+        duration: SIDEBAR_DISPLAY_DURATION,
+        easing  : 'linear'
+      }, isRight ? {
         'padding-right': SIDEBAR_WIDTH
       } : {
         'padding-left': SIDEBAR_WIDTH
-      }, SIDEBAR_DISPLAY_DURATION);
+      }));
     },
     hideSidebar: function() {
       this.isSidebarVisible = false;
       this.sidebarEl.classList.remove('sidebar-active');
 
       sidebarToggleLines.init();
-      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {
+      NexT.utils.isDesktop() && window.anime(Object.assign({
+        targets : document.body,
+        duration: SIDEBAR_DISPLAY_DURATION,
+        easing  : 'linear'
+      }, isRight ? {
         'padding-right': 0
       } : {
         'padding-left': 0
-      }, SIDEBAR_DISPLAY_DURATION);
+      }));
     }
   };
   sidebarToggleMotion.init();

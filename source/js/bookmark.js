@@ -13,9 +13,12 @@ window.addEventListener('DOMContentLoaded', () => {
     // If the page opens with a specific hash, just jump out
     if (!isNaN(top) && location.hash === '') {
       // Auto scroll to the position
-      $(document.documentElement).animate({
-        scrollTop: top
-      }, 'fast');
+      window.anime({
+        targets  : document.documentElement,
+        scrollTop: top,
+        duration : 200,
+        easing   : 'linear'
+      });
     }
   };
   // Register everything
@@ -36,12 +39,16 @@ window.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', event => {
       event.preventDefault();
       doSaveScroll();
-      $(link).animate({
-        top: -30
-      }, 'fast', () => {
-        setTimeout(() => {
-          link.style.top = '';
-        }, 400);
+      window.anime({
+        targets       : link,
+        top           : -30,
+        duration      : 200,
+        easing        : 'linear',
+        changeComplete: () => {
+          setTimeout(() => {
+            link.style.top = '';
+          }, 400);
+        }
       });
     });
     scrollToMark();

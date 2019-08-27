@@ -177,8 +177,11 @@ NexT.utils = {
     });
 
     backToTop && backToTop.addEventListener('click', () => {
-      $(document.documentElement).animate({
-        scrollTop: 0
+      window.anime({
+        targets  : document.documentElement,
+        scrollTop: 0,
+        duration : 500,
+        easing   : 'linear'
       });
     });
   },
@@ -250,10 +253,12 @@ NexT.utils = {
         event.preventDefault();
         var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
         var offset = $(target).offset().top;
-
-        $(document.documentElement).stop().animate({
-          scrollTop: offset + 10
-        }, 500);
+        window.anime({
+          targets  : document.documentElement,
+          scrollTop: offset + 10,
+          duration : 500,
+          easing   : 'linear'
+        });
       });
       return document.getElementById(link.getAttribute('href').replace('#', ''));
     });
