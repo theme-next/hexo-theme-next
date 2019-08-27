@@ -4,8 +4,6 @@
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-archive{% endblock %}
-
 {% block content %}
 
   {#####################}
@@ -15,8 +13,7 @@
     <div id="posts" class="posts-collapse">
 
       {%- if theme.cheers %}
-      <span class="archive-move-on"></span>
-      <span class="archive-page-counter">
+      <div class="collection-title">
         {%- set cheers %}
         {%- set posts_length = site.posts.length %}
         {%- if posts_length > 210 %} {%- set cheers = 'excellent' %}
@@ -27,8 +24,8 @@
         {% else %}
           {%- set cheers = 'um' %}
         {%- endif %}
-        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
-      </span>
+        <span class="collection-header">{{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}</span>
+      </div>
       {%- endif %}
 
       {{ post_template.render(page.posts) }}

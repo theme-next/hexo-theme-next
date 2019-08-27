@@ -90,16 +90,16 @@ Before creating a Pull Request (PR), please check [this list](#before-submitting
 
 1. On GitHub, navigate to the original page of the [hexo-theme-next](https://github.com/theme-next/hexo-theme-next). In the top-right corner of the page, click **Fork**.
 2. Under the repository name in your forked repository, click **Clone or download**. In the `Clone with SSH` section, copy the clone URL for the repository. Open Git Bash, and change the current working directory to the location where you want the cloned directory to be made. Type `git clone`, and then paste the URL you copied. Press **Enter**. Your local clone will be created.
-    ```bash
+    ```sh
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
 3. Navigate into your new cloned repository. Switch branches to the compare branch of the pull request where the original changes were made.
-    ```bash
+    ```sh
     $ cd hexo-theme-next
     $ git checkout -b patchname
     ```
 4. After you commit your changes to the head branch of the pull request you can push your changes up to the original pull request directly.
-    ```bash
+    ```sh
     $ git add .
     $ git commit -m "add commit messamge"
     $ git push origin patchname
@@ -165,8 +165,6 @@ Issues related: `types`+`contents`+`results`
     - `Question`: An issue about questions
     - `Meta`: Denoting a change of usage conditions
     - `Polls`: An issue that initiated a poll
-    - `High Priority`: A detected bug or misprint with high priority
-    - `Low Priority`: A detected bug or misprint with low priority
 - By contents
     - `Roadmap`: An issue about future development
     - `Hexo`: An issue related to Hexo
@@ -174,11 +172,13 @@ Issues related: `types`+`contents`+`results`
     - `Docs`: Need to add instruction document
     - `Configurations`: An issue related to configurations
     - `CSS`: An issue related to CSS
-    - `Duplicate`: An issue which had been mentioned
-    - `Irrelevant`: An irrelevant issue for Next
+    - `Fonts`: An issue related to fonts
+    - `PJAX`: An issue related to PJAX
     - `Custom`: An issue related to custom things
     - `Support`: An issue labeled as support requests
 - By results
+    - `Duplicate`: An issue which had been mentioned
+    - `Irrelevant`: An irrelevant issue for Next
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue
     - `Need Verify`: Need confirmation from the developers or user about the bug or solution

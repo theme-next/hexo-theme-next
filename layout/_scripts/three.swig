@@ -14,24 +14,22 @@
   {%- endif %}
 
   <script>
-    ;((d, w) => {
-      loadThree = () => {
-        let s = d.createElement('script');
-        s.src = '{{ three_uri }}';
-        d.body.appendChild(s);
-      }
-      let styles = ['{{ waves_uri }}', '{{ lines_uri }}', '{{ sphere_uri }}'];
-      loadStyle = () => {
-        styles.forEach(x => {
-          if (x !== '') {
-            let s = d.createElement('script');
-            s.src = x;
-            d.body.appendChild(s);
-          }
-        })
-      }
-      w.addEventListener('DOMContentLoaded', loadThree);
-      w.addEventListener('load', loadStyle);
-    })(document, window);
+  (function() {
+    window.addEventListener('DOMContentLoaded', () => {
+      let script = document.createElement('script');
+      script.src = '{{ three_uri }}';
+      document.body.appendChild(script);
+    });
+    let styles = ['{{ waves_uri }}', '{{ lines_uri }}', '{{ sphere_uri }}'];
+    window.addEventListener('load', () => {
+      styles.forEach(item => {
+        if (item !== '') {
+          let script = document.createElement('script');
+          script.src = item;
+          document.body.appendChild(script);
+        }
+      });
+    });
+  })();
   </script>
 {%- endif %}

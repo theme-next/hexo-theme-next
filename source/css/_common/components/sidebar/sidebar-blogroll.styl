@@ -16,6 +16,9 @@
 }
 
 .links-of-blogroll-item {
+  if (hexo-config('links_settings.layout') == 'inline') {
+    display: inline-block;
+  }
   padding: 2px 10px;
 
   a, span.exturl {

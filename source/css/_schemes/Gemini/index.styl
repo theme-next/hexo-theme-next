@@ -115,11 +115,11 @@ $use-seo = hexo-config('seo');
 
 // Sub-menu(s).
 .sub-menu {
-  border-bottom: initial !important;
+  border-bottom: initial;
   box-shadow: $box-shadow-inner;
 
   // Adapt submenu(s) with post-blocks.
-  &+ #content > #posts {
+  + #content > #posts {
     .post-block {
       box-shadow: $box-shadow;
       margin-top: $sidebar-offset;
@@ -218,10 +218,6 @@ $use-seo = hexo-config('seo');
     // Components inside Posts.
     .post-button {
       margin: $sidebar-offset 0;
-    }
-
-    img {
-      padding: initial !important;
     }
   }
 

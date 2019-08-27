@@ -504,6 +504,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "MartinMa94",
+      "name": "Martin Ma",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/25997737?v=4",
+      "profile": "https://github.com/MartinMa94",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 6

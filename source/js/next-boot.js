@@ -1,6 +1,8 @@
 /* global NexT, CONFIG */
 
-window.addEventListener('DOMContentLoaded', () => {
+NexT.boot = {};
+
+NexT.boot.registerEvents = function() {
 
   NexT.utils.registerScrollPercent();
   NexT.utils.registerCanIUseTag();
@@ -18,6 +20,33 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  var TAB_ANIMATE_DURATION = 200;
+  document.querySelectorAll('.sidebar-nav li').forEach(li => {
+    li.addEventListener('click', event => {
+      var item = $(event.currentTarget);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) return;
+
+      var target = $('.' + item.data('target'));
+      var currentTarget = target.siblings('.sidebar-panel');
+      currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
+        // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+        currentTarget.removeClass(activePanelClassName);
+        target
+          .stop()
+          .css({ opacity: 0 })
+          .addClass(activePanelClassName)
+          .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
+      });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+  });
+
+  window.addEventListener('resize', NexT.utils.initSidebarDimension);
+
   window.addEventListener('hashchange', () => {
     var tHash = location.hash;
     if (tHash !== '' && !tHash.match(/%\S{2}/)) {
@@ -25,7 +54,29 @@ window.addEventListener('DOMContentLoaded', () => {
       target && target.click();
     }
   });
+};
 
+NexT.boot.refresh = function() {
+
+  /**
+   * Register JS handlers by condition option.
+   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
+   */
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img');
+  CONFIG.lazyload && window.lozad('.post-body img').observe();
+  CONFIG.pangu && window.pangu.spacingPage();
+
+  CONFIG.exturl && NexT.utils.registerExtURL();
+  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
+  NexT.utils.registerTabsTag();
+  NexT.utils.registerActiveMenuItem();
+  NexT.utils.registerSidebarTOC();
+  NexT.utils.wrapTableWithBox();
+  NexT.utils.registerVideoIframe();
+};
+
+NexT.boot.motion = function() {
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
     NexT.motion.integrator
@@ -37,39 +88,10 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     NexT.utils.updateSidebarPosition();
   }
-});
+};
 
-$(document).on('DOMContentLoaded pjax:success', () => {
-
-  /**
-   * Register JS handlers by condition option.
-   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
-   */
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
-  CONFIG.lazyload && window.lozad('.post-body img').observe();
-  CONFIG.pangu && window.pangu.spacingPage();
-
-  CONFIG.exturl && NexT.utils.registerExtURL();
-  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
-  NexT.utils.registerTabsTag();
-  NexT.utils.registerActiveMenuItem();
-  NexT.utils.embeddedVideoTransformer();
-
-  /**
-   * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
-   * Need for Sidebar/TOC inner scrolling if content taller then viewport.
-   */
-  function initSidebarDimension() {
-    // Initialize Sidebar & TOC Height.
-    var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-    $('.site-overview, .post-toc').css('max-height', sidebarWrapperHeight);
-  }
-  initSidebarDimension();
-  window.addEventListener('resize', initSidebarDimension);
-
-  function wrapTable() {
-    $('table').not('.gist table').wrap('<div class="table-container"></div>');
-  }
-  wrapTable();
+window.addEventListener('DOMContentLoaded', () => {
+  NexT.boot.registerEvents();
+  NexT.boot.refresh();
+  NexT.boot.motion();
 });

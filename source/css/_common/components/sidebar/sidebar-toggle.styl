@@ -3,16 +3,16 @@
   bottom: 45px;
   cursor: pointer;
   height: 14px;
+  left: $b2t-position-right;
   line-height: 0;
   padding: 5px;
   position: fixed;
-  left: $b2t-position-right;
   width: 14px;
   z-index: $zindex-5;
 
   +tablet-mobile() {
+    left: $b2t-position-right-mobile;
     opacity: $b2t-opacity-hover;
-    right: $b2t-position-right-mobile;
 
     if (!hexo-config('sidebar.onmobile')) {
       display: none;

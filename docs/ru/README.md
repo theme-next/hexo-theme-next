@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16272760/61057395-d2deb000-a427-11e9-8e28-f348fe181795.png">
+  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
 </p>
 
 ## Демо
@@ -43,15 +43,15 @@
 
 В конфиге NexT'а теперь можно найти зависимости на каждый модуль, который был вынесен во внешние репозитории, которые могут быть найдены по [ссылке основной организации](https://github.com/theme-next).
 
-Например, Вы хотите использовать `fancybox` для своего сайта. Открываем конфиг NexT'а и находим:
+Например, Вы хотите использовать `pjax` для своего сайта. Открываем конфиг NexT'а и находим:
 
 ```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax: false
 ```
 
-Затем включаем параметр `fancybox` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
+Затем включаем параметр `pjax` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
 
 ## Обновление
 

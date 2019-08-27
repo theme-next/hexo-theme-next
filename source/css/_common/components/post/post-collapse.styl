@@ -1,25 +1,35 @@
 .posts-collapse {
-  margin-left: $posts-collapse-left;
+  margin-left: $posts-collapse-margin;
   position: relative;
   z-index: $zindex-1;
 
   +mobile() {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: $posts-collapse-margin-mobile;
+    margin-right: $posts-collapse-margin-mobile;
   }
 
   .collection-title {
-    margin: 60px 0;
+    font-size: $font-size-large;
     position: relative;
 
-    h1, h2 {
-      margin-left: 20px;
+    &::before {
+      background: $grey-dark;
+      border: 1px solid white;
+      border-radius: 50%;
+      content: ' ';
+      height: 10px;
+      left: 0;
+      margin-left: -6px;
+      margin-top: -4px;
+      position: absolute;
+      top: 50%;
+      width: 10px;
     }
+  }
 
-    small {
-      color: $grey;
-      margin-left: 5px;
-    }
+  .collection-year {
+    margin: 60px 0;
+    position: relative;
 
     &::before {
       background: $grey;
@@ -35,14 +45,22 @@
     }
   }
 
-  .post {
+  .collection-header {
+    margin: 0 0 0 20px;
+    small {
+      color: $grey;
+      margin-left: 5px;
+    }
+  }
+
+  article {
     margin: 30px 0;
   }
 
   .post-header {
+    border-bottom: 1px dashed $grey-light;
     position: relative;
     the-transition();
-    border-bottom: 1px dashed $grey-light;
     transition-property: border;
 
     &::before {

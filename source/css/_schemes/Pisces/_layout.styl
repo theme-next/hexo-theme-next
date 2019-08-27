@@ -94,8 +94,7 @@
   padding-left: 260px;
 
   +tablet-mobile() {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0;
     width: auto;
   }
 }
@@ -120,5 +119,14 @@ if (hexo-config('sidebar.position') == 'right') {
   .footer-inner {
     padding-left: 0;
     padding-right: 260px;
+  }
+} else {
+  .back-to-top {
+    left: auto;
+    right: $b2t-position-right;
+
+    +tablet-mobile() {
+      right: $b2t-position-right-mobile;
+    }
   }
 }

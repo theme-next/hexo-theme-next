@@ -1,23 +1,18 @@
-.post-toc-empty {
-  color: $grey-dim;
-  font-size: $font-size-small;
-}
-
 .post-toc-wrap {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .post-toc {
-  overflow: auto;
+  font-size: $font-size-small;
 
   ol {
-    font-size: $font-size-small;
     list-style: none;
     margin: 0;
     padding: 0 2px 5px 10px;
     text-align: left;
 
-    & > ol {
+    > ol {
       padding-left: 0;
     }
 
@@ -58,7 +53,7 @@
     .active-current > .nav-child {
       display: block;
 
-      & > .nav-item {
+      > .nav-item {
         display: block;
       }
     }

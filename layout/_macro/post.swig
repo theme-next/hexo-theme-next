@@ -1,13 +1,8 @@
-  {%- set post_class = 'post' %}
-  {%- if post.sticky > 0 %}
-    {%- set post_class = post_class + ' post-sticky' %}
-  {%- endif %}
-
-  <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article">
   {##################}
   {### POST BLOCK ###}
   {##################}
-  <div class="post-block">
+  <div class="post-block {% if is_index %}home{% else %}post{% endif %}">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">

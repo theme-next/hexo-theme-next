@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16272760/61057395-d2deb000-a427-11e9-8e28-f348fe181795.png">
+  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
 </p>
 
 ## 即时预览
@@ -43,29 +43,28 @@
 
 在 NexT 配置中你现在可以找到已经被移至外部仓库的依赖项。你可以在[组织主页](https://github.com/theme-next)中找到它们。
 
-例如，假设你想要在你的站点中使用 `fancybox` 插件，请进入 NexT 配置文件，你会看到如下内容：
+例如，假设你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，你会看到如下内容：
 
 ```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax: false
 ```
 
-将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
+将 `pjax` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
 
 ### 例外
 
 如果你使用的插件脚本依赖 CDN，那么需要替换你的 CDN 链接：
 
-例如，假如你使用了 `fancybox` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
+例如，假如你使用了 `mediumzoom` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
 
 ```yml
 vendors:
   # ...
   # Some contents...
   # ...
-  fancybox: # Set or update fancybox cdn url.
-  fancybox_css: # Set or update fancybox cdn url.
+  mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
 通过替换 CDN 链接来替换 [插件列表](https://github.com/theme-next) 项目来升级。

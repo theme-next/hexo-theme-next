@@ -3,8 +3,6 @@
 
 {% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
-
 {% block content %}
 
   <div id="posts" class="posts-expand">
@@ -15,8 +13,4 @@
 
 {% block sidebar %}
   {{ sidebar_template.render(true) }}
-{% endblock %}
-
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
 {% endblock %}

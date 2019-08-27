@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16272760/61057395-d2deb000-a427-11e9-8e28-f348fe181795.png">
+  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
 </p>
 
 ## Live Preview
@@ -43,29 +43,28 @@ Or you can see [detailed installation instructions][docs-installation-url] if yo
 
 In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
 
-For example, if you want to use `fancybox` in your site, go to NexT config and see:
+For example, if you want to use `pjax` in your site, go to NexT config and see:
 
 ```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax: false
 ```
 
-Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
+Then turn on `pjax` and go to «Dependencies» link with installation instructions of this module.
 
 ### Exceptions
 
-If you use cdn for any plugins, you need to replace your cdn link.
+If you use CDN for any plugins, you need to replace your CDN link.
 
-For example, if you want to use `fancybox` and you configured a cdn link, go to NexT config and see:
+For example, if you want to use `mediumzoom` and you configured a CDN link, go to NexT config and see:
 
 ```yml
 vendors:
   # ...
   # Some contents...
   # ...
-  fancybox: # Set or update fancybox cdn url.
-  fancybox_css: # Set or update fancybox cdn url.
+  mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
 Instead of defining [main organization link](https://github.com/theme-next) for updates.

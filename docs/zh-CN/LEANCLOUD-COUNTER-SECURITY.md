@@ -73,7 +73,7 @@ leancloud_visitors:
       return query.get(request.object.id).then(function (obj) {
           if (obj.get("time") > request.object.get("time")) {
               throw new AV.Cloud.Error('Invalid update!');
-          } 
+          }
           return request.object.save();
       });
   }

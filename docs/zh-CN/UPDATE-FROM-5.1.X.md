@@ -29,7 +29,7 @@
 4. 更新语言配置
 
     从 v6.0.3 版本起，`zh-Hans` 改名为 `zh-CN`：https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3
-    
+
     升级到 v6.0.3 及以后版本的用户，需要显式修改 Hexo 主配置文件 `_config.yml` 里的 `language` 配置，否则语言显示不正确。
 
 关于第三方库的启用，参见[这里](https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md#插件)。

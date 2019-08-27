@@ -102,8 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
   window.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', event => {
-    let shouldDismissSearchPopup = event.which === 27 && document.querySelector('.popup').isVisible();
-    if (shouldDismissSearchPopup) {
+    if (event.which === 27) {
       onPopupClose();
     }
   });

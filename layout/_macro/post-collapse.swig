@@ -6,12 +6,12 @@
 
   {%- if year !== current_year %}
     {%- set current_year = year %}
-    <div class="collection-title">
-      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="archive-year" id="archive-year-{{ current_year }}">{{ current_year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
+    <div class="collection-year">
+      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{{ current_year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
     </div>
   {%- endif %}
 
-  <article class="post" itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="post-title">

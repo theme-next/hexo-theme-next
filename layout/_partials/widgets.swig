@@ -1,3 +1,15 @@
+{%- if theme.back2top.enable and not theme.back2top.sidebar %}
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+{%- endif %}
+{%- if theme.reading_progress.enable %}
+  <div class="reading-progress-bar"></div>
+{%- endif %}
+{%- if theme.bookmark.enable %}
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+{%- endif %}
 {%- if theme.github_banner.enable %}
   {%- set github_URL = theme.github_banner.permalink %}
   {%- set github_title = theme.github_banner.title %}

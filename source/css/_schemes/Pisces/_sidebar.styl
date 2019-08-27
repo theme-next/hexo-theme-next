@@ -1,7 +1,3 @@
-.use-motion .sidebar .motion-element {
-  opacity: 1;
-}
-
 .sidebar {
   bottom: auto;
   right: auto;
@@ -39,11 +35,6 @@
   }
 }
 
-.site-overview {
-  // margin: 0 2px;
-  text-align: left;
-}
-
 .site-author {
   clearfix();
 }
@@ -58,12 +49,13 @@
   text-align: center;
 
   a {
-    border: none !important;
+    border: 0;
     color: $orange;
     display: block;
 
     &:hover {
       background: none;
+      border: 0;
       color: darken($orange, 20%);
 
       .fa {
@@ -106,18 +98,17 @@
 .links-of-blogroll {
   padding: 3px 0 0;
   text-align: center;
+
+  if (hexo-config('links_settings.layout') == 'inline') {
+    clearfix();
+  }
 }
 
 .links-of-blogroll-item {
   padding: 0;
-}
 
-.links-of-blogroll-inline {
-  clearfix();
-
-  .links-of-blogroll-item {
+  if (hexo-config('links_settings.layout') == 'inline') {
     sidebar-inline-links-item();
-    display: inline-block;
 
     if (!hexo-config('social_icons.icons_only')) {
       width: unset;

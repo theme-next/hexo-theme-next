@@ -1,3 +1,6 @@
+// Read tabs border_radius from NexT config and set in "$tbr px" to use it as string variable in this CSS section.
+hexo-config('tabs.border_radius') is a 'unit' ? ($tbr = unit(hexo-config('tabs.border_radius'), px)) : ($tbr = 0);
+
 .post-body .tabs {
   margin-bottom: 20px;
 }
@@ -6,8 +9,6 @@
   display: block;
   padding-top: 10px;
   position: relative;
-  // Read tabs border_radius from NexT config and set in "$tbr px" to use it as string variable in this CSS section.
-  hexo-config('tabs.border_radius') is a 'unit' ? ($tbr = unit(hexo-config('tabs.border_radius'), px)) : ($tbr = 0);
 
   ul.nav-tabs {
     display: flex;
@@ -22,7 +23,7 @@
     }
 
     li.tab {
-      background-color: #fff;
+      background-color: white;
       border-bottom: 1px solid #ddd;
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
@@ -49,7 +50,7 @@
         the-transition-ease-out();
       }
 
-      & a {
+      a {
         border-bottom: initial;
         display: block;
         line-height: 1.8em;
@@ -57,7 +58,7 @@
         padding: .25em .75em;
         text-align: center;
 
-        & i {
+        i {
           width: (18em / 14);
         }
 
@@ -79,7 +80,7 @@
           border-top: 1px solid $table-border-color;
         }
 
-        & a {
+        a {
           color: $link-color;
           cursor: default;
         }

@@ -12,13 +12,11 @@
   border-top: none;
 
   +tablet() {
-    display: none !important;
-  }
-}
+    display: none;
 
-.site-nav-on {
-  +tablet() {
-    display: block !important;
+    &.site-nav-on {
+      display: block;
+    }
   }
 }
 
@@ -65,7 +63,7 @@
   .badge {
     background-color: $grey-light;
     border-radius: 10px;
-    color: #fff;
+    color: white;
     display: inline-block;
     float: right;
     font-weight: $font-weight-bolder;

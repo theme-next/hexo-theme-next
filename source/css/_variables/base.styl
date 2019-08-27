@@ -103,7 +103,7 @@ $font-size-headings-base  = unit(hexo-config('font.headings.size'), em) if hexo-
 
 // Global line height
 $line-height-base         = 2;
-$line-height-code-block   = 1.6  // Can't be less than 1.3;
+$line-height-code-block   = 1.6; // Can't be less than 1.3;
 
 
 // Z-index master list
@@ -210,30 +210,16 @@ $menu-link-border               = transparent;
 $menu-link-hover-border         = $black-deep;
 
 
-// Posts Expand
-// --------------------------------------------------
-$posts-expand-title-font-weight = $font-weight-normal;
-$post-copyright = {
-  margin: 2em 0 0,
-  padding: .5em 1em,
-  bg: #f9f9f9,
-  border: {
-    width: 3px,
-    style: solid,
-    color: #ff1700
-  }
-}
-
-
 // Posts Collpase
 // --------------------------------------------------
-$posts-collapse-left            = 55px;
-$posts-collapse-left-mobile     = 5px;
+$posts-collapse-margin          = 55px;
+$posts-collapse-margin-mobile   = 20px;
 
 
 // Sidebar
 // Variables for sidebar section elements.
 // --------------------------------------------------
+
 $sidebar-offset                       = unit(hexo-config('sidebar.offset'), px) if hexo-config('sidebar.offset') is a 'unit';
 $sidebar-nav-color                    = $black-light;
 $sidebar-nav-hover-color              = $whitesmoke;
@@ -288,8 +274,8 @@ $b2t-sidebar-bg-color         = $black-deep;
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator
-$post-eof-margin-top          = 80px  //  or 160px for more white space;
-$post-eof-margin-bottom       = 60px  //  or 120px for less white space;
+$post-eof-margin-top          = 80px; //  or 160px for more white space;
+$post-eof-margin-bottom       = 60px; //  or 120px for less white space;
 
 
 // Iconography
@@ -303,7 +289,7 @@ $center-quote-right           = '../images/quote-r.svg';
 // Note colors
 // --------------------------------------------------
 // Read note light_bg_offset from NexT config and set in "$lbg%" to use it as string variable.
-hexo-config('note.light_bg_offset') is a 'unit' ? ($lbg = unit(hexo-config('note.light_bg_offset'),"%")) : ($lbg = 0);
+hexo-config('note.light_bg_offset') is a 'unit' ? ($lbg = unit(hexo-config('note.light_bg_offset'), "%")) : ($lbg = 0);
 
 // Default
 $note-default-border        = #777;
