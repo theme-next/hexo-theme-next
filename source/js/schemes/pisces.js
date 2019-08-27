@@ -1,4 +1,4 @@
-/* global CONFIG */
+/* global NexT, CONFIG */
 
 var Affix = {
   init: function(element, options) {

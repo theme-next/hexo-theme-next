@@ -1,4 +1,4 @@
-/* global NexT, CONFIG */
+/* global NexT, CONFIG, Velocity */
 
 NexT.boot = {};
 
