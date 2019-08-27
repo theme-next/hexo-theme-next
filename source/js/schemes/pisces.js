@@ -40,7 +40,7 @@ var Affix = {
     if (this.pinnedOffset) return this.pinnedOffset;
     this.element.classList.remove('affix-top', 'affix-bottom');
     this.element.classList.add('affix');
-    return this.pinnedOffset = this.element.getBoundingClientRect().top;
+    return this.pinnedOffset === this.element.getBoundingClientRect().top;
   },
   checkPositionWithEventLoop() {
     setTimeout(this.checkPosition.bind(this), 1);
