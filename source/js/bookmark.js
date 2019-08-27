@@ -40,11 +40,11 @@ window.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       doSaveScroll();
       window.anime({
-        targets       : link,
-        duration      : 200,
-        easing        : 'linear',
-        top           : -30,
-        changeComplete: () => {
+        targets : link,
+        duration: 200,
+        easing  : 'linear',
+        top     : -30,
+        complete: () => {
           setTimeout(() => {
             link.style.top = '';
           }, 400);

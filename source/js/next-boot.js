@@ -36,11 +36,11 @@ NexT.boot.registerEvents = function() {
       var target = $('.' + item.getAttribute('data-target'));
       var currentTarget = target.siblings('.sidebar-panel');
       window.anime({
-        targets       : currentTarget[0],
-        duration      : TAB_ANIMATE_DURATION,
-        easing        : 'linear',
-        opacity       : 0,
-        changeComplete: () => {
+        targets : currentTarget[0],
+        duration: TAB_ANIMATE_DURATION,
+        easing  : 'linear',
+        opacity : 0,
+        complete: () => {
           // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
           currentTarget.removeClass(activePanelClassName);
           target
