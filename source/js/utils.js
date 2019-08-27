@@ -271,8 +271,11 @@ NexT.utils = {
         element.classList.remove('active', 'active-current');
       });
       target.classList.add('active', 'active-current');
-      $(target).parents('li').addClass('active');
-
+      var parent = target.parentNode;
+      while (!parent.matches('.post-toc')) {
+        if (parent.matches('li')) parent.classList.add('active');
+        parent = parent.parentNode;
+      }
       // Scrolling to center active TOC element if TOC content is taller then viewport.
       window.anime({
         targets: tocElement,
@@ -401,11 +404,16 @@ NexT.utils = {
     if (condition) {
       callback();
     } else {
-      $.ajax({
-        url     : url,
-        dataType: 'script',
-        cache   : true
-      }).then(callback);
+      var script = document.createElement('script');
+      script.onload = script.onreadystatechange = function(_, isAbort) {
+        if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
+          script.onload = script.onreadystatechange = null;
+          script = undefined;
+          if (!isAbort && callback) setTimeout(callback, 0);
+        }
+      };
+      script.src = url;
+      document.head.appendChild(script);
     }
   }
 };
