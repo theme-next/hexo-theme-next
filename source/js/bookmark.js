@@ -15,9 +15,9 @@ window.addEventListener('DOMContentLoaded', () => {
       // Auto scroll to the position
       window.anime({
         targets  : document.documentElement,
-        scrollTop: top,
         duration : 200,
-        easing   : 'linear'
+        easing   : 'linear',
+        scrollTop: top
       });
     }
   };
@@ -41,9 +41,9 @@ window.addEventListener('DOMContentLoaded', () => {
       doSaveScroll();
       window.anime({
         targets       : link,
-        top           : -30,
         duration      : 200,
         easing        : 'linear',
+        top           : -30,
         changeComplete: () => {
           setTimeout(() => {
             link.style.top = '';

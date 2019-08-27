@@ -179,9 +179,9 @@ NexT.utils = {
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
         targets  : document.documentElement,
-        scrollTop: 0,
         duration : 500,
-        easing   : 'linear'
+        easing   : 'linear',
+        scrollTop: 0
       });
     });
   },
@@ -255,9 +255,9 @@ NexT.utils = {
         var offset = $(target).offset().top;
         window.anime({
           targets  : document.documentElement,
-          scrollTop: offset + 10,
           duration : 500,
-          easing   : 'linear'
+          easing   : 'linear',
+          scrollTop: offset + 10
         });
       });
       return document.getElementById(link.getAttribute('href').replace('#', ''));

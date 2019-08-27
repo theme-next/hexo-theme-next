@@ -9,15 +9,20 @@ NexT.boot.registerEvents = function() {
 
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle button').addEventListener('click', () => {
-    var $siteNav = $('.site-nav');
+    var siteNav = document.querySelector('.site-nav');
     var ON_CLASS_NAME = 'site-nav-on';
-    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
-    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
-    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+    var animateAction = siteNav.classList.contains(ON_CLASS_NAME) ? 'slideUp' : 'slideDown';
 
-    $siteNav.stop()[animateAction]('fast', () => {
-      $siteNav[animateCallback](ON_CLASS_NAME);
-    });
+    if (typeof Velocity === 'function') {
+      Velocity(siteNav, animateAction, {
+        duration: 200,
+        complete: function() {
+          siteNav.classList.toggle(ON_CLASS_NAME);
+        }
+      });
+    } else {
+      siteNav.classList.toggle(ON_CLASS_NAME);
+    }
   });
 
   var TAB_ANIMATE_DURATION = 200;
