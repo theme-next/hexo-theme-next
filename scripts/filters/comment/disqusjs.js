@@ -3,7 +3,6 @@
 'use strict';
 
 const path = require('path');
-const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
@@ -22,4 +21,4 @@ hexo.extend.filter.register('theme_inject', injects => {
 
   injects.bodyEnd.file('disqusjs', path.join(hexo.theme_dir, 'layout/_third-party/comments/disqusjs.swig'));
 
-}, priority.disqusjs);
+});

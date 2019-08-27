@@ -22,9 +22,12 @@ hexo.extend.filter.register('theme_inject', injects => {
     }
     // Set custom button content
     if (config.nav) {
-      let customButton = config.nav[locals.configKey];
-      if (customButton) {
-        locals.button = customButton;
+      let nav = config.nav[locals.configKey] || {};
+      if (nav.order) {
+        element.args[2] = nav.order;
+      }
+      if (nav.text) {
+        locals.button = nav.text;
       }
     }
   });
