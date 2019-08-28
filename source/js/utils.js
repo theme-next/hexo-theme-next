@@ -230,7 +230,7 @@ NexT.utils = {
       var target = element.querySelector('a[href]');
       if (!target) return;
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
-      var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
+      var isSubPath = target.pathname !== CONFIG.root && location.pathname.indexOf(target.pathname) === 0;
       if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
         element.classList.add('menu-item-active');
       } else {
