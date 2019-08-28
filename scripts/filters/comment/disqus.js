@@ -4,7 +4,6 @@
 
 const path = require('path');
 const {iconText} = require('./common');
-const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
@@ -23,7 +22,7 @@ hexo.extend.filter.register('theme_inject', injects => {
 
   injects.bodyEnd.file('disqus', path.join(hexo.theme_dir, 'layout/_third-party/comments/disqus.swig'));
 
-}, priority.disqus);
+});
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
@@ -39,6 +38,6 @@ hexo.extend.filter.register('theme_inject', injects => {
     #}</a>
   </span>
   {% endif %}
-  `);
+  `, {}, {}, theme.disqus.post_meta_order);
 
-}, priority.disqus_post_meta);
+});

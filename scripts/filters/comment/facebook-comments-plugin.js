@@ -3,7 +3,6 @@
 'use strict';
 
 const {iconText} = require('./common');
-const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
@@ -24,7 +23,7 @@ hexo.extend.filter.register('theme_inject', injects => {
     button   : '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook'
   });
 
-}, priority.facebook_comments_plugin);
+});
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
@@ -40,6 +39,6 @@ hexo.extend.filter.register('theme_inject', injects => {
     #}</a>
   </span>
   {% endif %}
-  `);
+  `, {}, {}, theme.facebook_comments_plugin.post_meta_order);
 
-}, priority.facebook_comments_plugin_post_meta);
+});
