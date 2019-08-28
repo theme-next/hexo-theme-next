@@ -26,15 +26,14 @@ NexT.boot.registerEvents = function() {
   });
 
   var TAB_ANIMATE_DURATION = 200;
-  document.querySelectorAll('.sidebar-nav li').forEach(li => {
-    li.addEventListener('click', event => {
+  document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
+    element.addEventListener('click', event => {
       var item = event.currentTarget;
       var activeTabClassName = 'sidebar-nav-active';
       var activePanelClassName = 'sidebar-panel-active';
       if (item.classList.contains(activeTabClassName)) return;
 
       var targets = document.querySelectorAll('.sidebar-panel');
-      var index = item.getAttribute('data-target');
       var target = targets[index];
       var currentTarget = targets[1 - index];
       window.anime({

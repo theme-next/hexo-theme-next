@@ -19,10 +19,10 @@
       {%- endif %}
 
       <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc" data-target="0">
+        <li class="sidebar-nav-toc">
           {{ __('sidebar.toc') }}
         </li>
-        <li class="sidebar-nav-overview" data-target="1">
+        <li class="sidebar-nav-overview">
           {{ __('sidebar.overview') }}
         </li>
       </ul>
