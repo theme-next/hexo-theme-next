@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }, settings.status);
     this.transform = function(status) {
-      document.querySelector(settings.el).css(this.status[status]);
+      Object.assign(document.querySelector(settings.el).style, this.status[status]);
     };
   }
 
@@ -176,17 +176,11 @@ window.addEventListener('DOMContentLoaded', () => {
   function updateFooterPosition() {
     var containerHeight = document.querySelector('.container').offsetHeight;
     var footer = document.getElementById('footer');
-    if (footer.getAttribute('position')) containerHeight += footer.outerHeight(true);
+    if (footer.classList.contains('footer-fixed')) containerHeight += footer.outerHeight(true);
     if (containerHeight < window.innerHeight) {
-      footer.css({
-        'position': 'fixed',
-        'bottom'  : 0,
-        'left'    : 0,
-        'right'   : 0
-      }).setAttribute('position', 'fixed');
+      footer.classList.add('footer-fixed');
     } else {
-      footer.removeAttribute('position');
-      footer.style.cssText = '';
+      footer.classList.remove('footer-fixed');
     }
   }
 

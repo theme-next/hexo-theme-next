@@ -44,7 +44,7 @@ NexT.boot.registerEvents = function() {
         complete: () => {
           // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
           currentTarget.classList.remove(activePanelClassName);
-          target.css.opacity = 0;
+          target.style.opacity = 0;
           target.classList.add(activePanelClassName);
           window.anime({
             targets : target,

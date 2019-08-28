@@ -8,11 +8,6 @@ HTMLElement.prototype.outerHeight = function(flag) {
   return height;
 };
 
-HTMLElement.prototype.css = function(dict) {
-  Object.assign(this.style, dict);
-  return this;
-};
-
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
