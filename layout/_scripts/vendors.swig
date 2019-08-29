@@ -1,5 +1,4 @@
 {%- set js_vendors = {} %}
-{%- set js_defer_vendors = {} %}
 {%- set js_vendors.anime = 'anime.min.js?v=3.1.0' %}
 
 {%- if theme.pjax %}
@@ -28,21 +27,6 @@
   {%- set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}
 {%- endif %}
 
-{%- if theme.three.enable and not theme.three.delay %}
-  {%- if theme.three.three_waves %}
-    {%- set js_defer_vendors.three = 'three/three.min.js' %}
-    {%- set js_defer_vendors.three_waves = 'three/three-waves.min.js' %}
-  {%- endif %}
-  {%- if theme.three.canvas_lines %}
-    {%- set js_defer_vendors.three = 'three/three.min.js' %}
-    {%- set js_defer_vendors.canvas_lines = 'three/canvas_lines.min.js' %}
-  {%- endif %}
-  {%- if theme.three.canvas_sphere %}
-    {%- set js_defer_vendors.three = 'three/three.min.js' %}
-    {%- set js_defer_vendors.canvas_sphere = 'three/canvas_sphere.min.js' %}
-  {%- endif %}
-{%- endif %}
-
 {%- if theme.canvas_nest.enable %}
   {%- if theme.canvas_nest.onmobile %}
     {%- set canvas_nest_uri = theme.vendors.canvas_nest | default(next_vendors('canvas-nest/canvas-nest.min.js')) %}
@@ -60,9 +44,4 @@
 {%- for name, internal in js_vendors %}
   {%- set internal_script = next_vendors(internal) %}
   <script src="{{ theme.vendors[name] | default(internal_script) }}"></script>
-{%- endfor %}
-
-{%- for name, internal in js_defer_vendors %}
-  {%- set internal_script = next_vendors(internal) %}
-  <script defer src="{{ theme.vendors[name] | default(internal_script) }}"></script>
 {%- endfor %}

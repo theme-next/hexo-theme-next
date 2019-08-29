@@ -929,7 +929,6 @@ pace:
 # Dependencies: https://github.com/theme-next/theme-next-three
 three:
   enable: false
-  delay: false # Set true to further delay loading
   three_waves: false
   canvas_lines: false
   canvas_sphere: false
