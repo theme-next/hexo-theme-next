@@ -8,13 +8,6 @@ HTMLElement.prototype.outerHeight = function(flag) {
   return height;
 };
 
-HTMLElement.prototype.css = function(dict) {
-  for (var key in dict) {
-    this.style[key] = dict[key];
-  }
-  return this;
-};
-
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
@@ -179,7 +172,10 @@ NexT.utils = {
     });
 
     backToTop && backToTop.addEventListener('click', () => {
-      $(document.documentElement).animate({
+      window.anime({
+        targets  : document.documentElement,
+        duration : 500,
+        easing   : 'linear',
         scrollTop: 0
       });
     });
@@ -234,7 +230,7 @@ NexT.utils = {
       var target = element.querySelector('a[href]');
       if (!target) return;
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
-      var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
+      var isSubPath = target.pathname !== CONFIG.root && location.pathname.indexOf(target.pathname) === 0;
       if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
         element.classList.add('menu-item-active');
       } else {
@@ -251,16 +247,18 @@ NexT.utils = {
       link.addEventListener('click', event => {
         event.preventDefault();
         var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
-        var offset = $(target).offset().top;
-
-        $(document.documentElement).stop().animate({
+        var offset = target.getBoundingClientRect().top + window.scrollY;
+        window.anime({
+          targets  : document.documentElement,
+          duration : 500,
+          easing   : 'linear',
           scrollTop: offset + 10
-        }, 500);
+        });
       });
       return document.getElementById(link.getAttribute('href').replace('#', ''));
     });
 
-    var $tocElement = $('.post-toc');
+    var tocElement = document.querySelector('.post-toc-wrap');
     function activateNavByIndex(target) {
       if (target.classList.contains('active-current')) return;
 
@@ -268,10 +266,18 @@ NexT.utils = {
         element.classList.remove('active', 'active-current');
       });
       target.classList.add('active', 'active-current');
-      $(target).parents('li').addClass('active');
-
+      var parent = target.parentNode;
+      while (!parent.matches('.post-toc')) {
+        if (parent.matches('li')) parent.classList.add('active');
+        parent = parent.parentNode;
+      }
       // Scrolling to center active TOC element if TOC content is taller then viewport.
-      $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
+      window.anime({
+        targets  : tocElement,
+        duration : 200,
+        easing   : 'linear',
+        scrollTop: tocElement.scrollTop - (tocElement.offsetHeight / 2) + target.getBoundingClientRect().top - tocElement.getBoundingClientRect().top
+      });
     }
 
     function findIndex(entries) {
@@ -351,12 +357,11 @@ NexT.utils = {
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
   initSidebarDimension: function() {
-    var sidebarPadding = 40;
     var sidebarNav = document.querySelector('.sidebar-nav');
     var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
     var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
-    var sidebarSchemePadding = sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
+    var sidebarSchemePadding = CONFIG.sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
     // Margin of sidebar b2t: 8px -10px -20px, brings a different of 12px.
     if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += (sidebarOffset * 2) - 12;
     // Initialize Sidebar & TOC Height.
@@ -394,11 +399,16 @@ NexT.utils = {
     if (condition) {
       callback();
     } else {
-      $.ajax({
-        url     : url,
-        dataType: 'script',
-        cache   : true
-      }).then(callback);
+      var script = document.createElement('script');
+      script.onload = script.onreadystatechange = function(_, isAbort) {
+        if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
+          script.onload = script.onreadystatechange = null;
+          script = undefined;
+          if (!isAbort && callback) setTimeout(callback, 0);
+        }
+      };
+      script.src = url;
+      document.head.appendChild(script);
     }
   }
 };

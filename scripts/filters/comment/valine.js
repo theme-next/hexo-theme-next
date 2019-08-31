@@ -4,7 +4,6 @@
 
 const path = require('path');
 const {iconText} = require('./common');
-const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
@@ -15,7 +14,7 @@ hexo.extend.filter.register('theme_inject', injects => {
 
   injects.bodyEnd.file('valine', path.join(hexo.theme_dir, 'layout/_third-party/comments/valine.swig'));
 
-}, priority.valine);
+});
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
@@ -31,6 +30,6 @@ hexo.extend.filter.register('theme_inject', injects => {
     #}</a>
   </span>
   {% endif %}
-  `);
+  `, {}, {}, theme.valine.post_meta_order);
 
-}, priority.valine_post_meta);
+});

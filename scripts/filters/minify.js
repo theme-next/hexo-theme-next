@@ -33,8 +33,8 @@ hexo.extend.filter.register('after_generate', () => {
     });
   }
 
-  if (theme.vendors.jquery) {
-    hexo.route.remove('lib/jquery/index.js');
+  if (theme.vendors.anime) {
+    hexo.route.remove('lib/anime.min.js');
   }
 
   if (!theme.algolia_search.enable) {
