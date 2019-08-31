@@ -34,11 +34,7 @@
             <a href="{{ url_for(config.category_dir) + '/' }}">
           {%- endif %}
         {%- endif %}
-        {%- set visibleCategories = 0 %}
-        {%- for cat in site.categories %}
-          {%- if cat.length %}{%- set visibleCategories += 1 %}{%- endif %}
-        {%- endfor %}
-        <span class="site-state-item-count">{{ visibleCategories }}</span>
+        <span class="site-state-item-count">{{ site.categories.length }}</span>
         <span class="site-state-item-name">{{ __('state.categories') }}</span>
         {%- if hasCategoriesPage %}</a>{%- endif %}
       </div>
@@ -55,11 +51,7 @@
             <a href="{{ url_for(config.tag_dir) + '/' }}">
           {%- endif %}
         {%- endif %}
-        {%- set visibleTags = 0 %}
-        {%- for tag in site.tags %}
-          {%- if tag.length %}{%- set visibleTags += 1 %}{%- endif %}
-        {%- endfor %}
-        <span class="site-state-item-count">{{ visibleTags }}</span>
+        <span class="site-state-item-count">{{ site.tags.length }}</span>
         <span class="site-state-item-name">{{ __('state.tags') }}</span>
         {%- if hasTagsPage %}</a>{%- endif %}
       </div>
