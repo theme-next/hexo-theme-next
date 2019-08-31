@@ -15,10 +15,10 @@
           {% else %}
             {%- set link = link + '/' + path %}
           {%- endif %}
-          {%- if path.indexOf('.html') == -1 %}
-            <li><a href="{{ url_for(link) }}/">{{ path | upper }}</a></li>
-          {% else %}
+          {%- if path.includes('.html') %}
             <li>{{ path | replace('.html', '') | upper }}</li>
+          {% else %}
+            <li><a href="{{ url_for(link) }}/">{{ path | upper }}</a></li>
           {%- endif %}
         {%- endif %}
       {%- endif %}
