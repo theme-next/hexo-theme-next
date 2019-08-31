@@ -19,7 +19,6 @@
   {% include '_partials/head/head-unique.swig' %}
   {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
-  <meta name="generator" content="Hexo {{ hexo_env('version') }}">
   {{ partial('_third-party/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
