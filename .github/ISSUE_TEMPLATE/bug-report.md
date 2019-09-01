@@ -9,14 +9,12 @@ assignees: ''
 
 <!-- ATTENTION!
 IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOUT INVESTIGATING.
-如果你不填充下面的内容，我们可能会直接关闭你的 issue。
-
-If you want to fast resolve your issue, WRITE IT IN ENGLISH, please. Not all contributors / collaborators know Chinese and Google translate can't always translate issues accurately. Thanks!
+如果你不填写下面的内容，我们可能会直接关闭你的 Issue。
 -->
 
 ### I agree and want to create new issue <!-- 我确认我已经查看了 -->
 
-<!-- Check all with [x] (把 [ ] 换成 [X] 来选择) -->
+<!-- Check all with [x] (把 [ ] 换成 [x] 来选择) -->
 - [ ] Yes, I was on [Hexo Docs page](https://hexo.io/docs/), especially on [Templates](https://hexo.io/docs/templates.html), [Variables](https://hexo.io/docs/variables.html), [Helpers](https://hexo.io/docs/helpers.html) and [Troubleshooting](https://hexo.io/docs/troubleshooting.html).
 - [ ] Yes, I was on [NexT Documentation Site](http://theme-next.org/docs/).
 - [ ] And yes, I already searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue) and this is not help to me.
@@ -66,7 +64,7 @@ If you want to fast resolve your issue, WRITE IT IN ENGLISH, please. Not all con
 ### NexT Information
 
 **NexT Version:**
-<!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
+<!-- Check needed with [x] (把 [ ] 换成 [x] 来选择) -->
 
 - [ ] Latest Master branch
 - [ ] Latest Release version
@@ -74,7 +72,7 @@ If you want to fast resolve your issue, WRITE IT IN ENGLISH, please. Not all con
 
 
 **NexT Scheme:**
-<!-- Check needed with [x] (把 [ ] 换成 [X] 来选择) -->
+<!-- Check needed with [x] (把 [ ] 换成 [x] 来选择) -->
 
 - [ ] All schemes
 - [ ] Muse
