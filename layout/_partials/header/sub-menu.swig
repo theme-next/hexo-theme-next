@@ -1,4 +1,4 @@
-{%- if not is_home() && not is_post() %}
+{%- if not is_home() and not is_post() %}
   {%- if theme.menu %}
 
     {% import '../../_macro/menu/menu-item.swig' as menu_item %}

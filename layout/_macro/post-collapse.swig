@@ -1,13 +1,13 @@
 {% macro render(posts) %}
 {%- for post in posts %}
 
-  {%- set year %}
-  {%- set post.year = date(post.date, 'YYYY') %}
+  {%- set current_year %}
+  {%- set year = date(post.date, 'YYYY') %}
 
-  {%- if post.year !== year %}
-    {%- set year = post.year %}
+  {%- if year !== current_year %}
+    {%- set current_year = year %}
     <div class="collection-year">
-      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{{ year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
+      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{{ current_year }}</{%- if theme.seo %}h2{% else %}h1{%- endif %}>
     </div>
   {%- endif %}
 

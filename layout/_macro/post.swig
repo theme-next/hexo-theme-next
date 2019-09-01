@@ -17,7 +17,7 @@
 
     {%- if post.header !== false %}
       <header class="post-header">
-        <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction &&post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">{#
+        <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">{#
         #}{# Link posts #}{#
         #}{%- if post.link %}
             {%- if post.sticky > 0 %}
@@ -54,7 +54,7 @@
               </span>
               <span class="post-meta-item-text">{{ __('post.posted') }}</span>
 
-              {%- if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
+              {%- if not date_diff and time_diff and theme.post_meta.updated_at.enable and theme.post_meta.updated_at.another_day %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
               {% else %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
@@ -66,10 +66,10 @@
             </span>
           {%- endif %}
 
-          {%- if theme.post_meta.updated_at.enable && datetime_diff %}
-            {%- set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
+          {%- if theme.post_meta.updated_at.enable and datetime_diff %}
+            {%- set display_updated = not theme.post_meta.updated_at.another_day or theme.post_meta.updated_at.another_day and date_diff %}
 
-            {%- if display_updated or !theme.post_meta.created_at %}
+            {%- if display_updated or not theme.post_meta.created_at %}
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -174,7 +174,7 @@
     {#################}
     {### POST BODY ###}
     {#################}
-    <div class="post-body{%- if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
+    <div class="post-body{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
 
       {# Gallery support #}
       {%- if post.photos and post.photos.length %}

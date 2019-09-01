@@ -7,7 +7,7 @@
 
     {%- for name, image in theme.reward %}
       {%- set builtin = ['wechatpay', 'alipay', 'bitcoin'] %}
-      {%- if builtin.indexOf(name) !== -1 %}
+      {%- if builtin.includes(name) %}
         {%- set translation = __('reward.' + name) %}
       {% else %}
         {%- set translation = name %}

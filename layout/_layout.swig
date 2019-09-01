@@ -4,10 +4,10 @@
 {%- set version = next_env('version') %}
 
 {# Language & Config #}
-{%- set title = __('title') !== 'title' && __('title') || config.title %}
-{%- set subtitle = __('subtitle') !== 'subtitle' && __('subtitle') || config.subtitle %}
-{%- set author = __('author') !== 'author' && __('author') || config.author %}
-{%- set description = __('description') !== 'description' && __('description') || config.description %}
+{%- set title = __('title') !== 'title' and __('title') or config.title %}
+{%- set subtitle = __('subtitle') !== 'subtitle' and __('subtitle') or config.subtitle %}
+{%- set author = __('author') !== 'author' and __('author') or config.author %}
+{%- set description = __('description') !== 'description' and __('description') or config.description %}
 
 {%- if theme.pjax %}
   {%- set pjax = ' pjax' %}
@@ -19,7 +19,6 @@
   {% include '_partials/head/head-unique.swig' %}
   {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
-  <meta name="generator" content="Hexo {{ hexo_env('version') }}">
   {{ partial('_third-party/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
@@ -37,7 +36,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          {%- if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
+          {%- if theme.scheme === 'Pisces' or theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
           {%- endif %}
           <div id="content" class="content">

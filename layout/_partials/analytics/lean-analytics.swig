@@ -1,4 +1,4 @@
-{%- if theme.leancloud_visitors.enable and !theme.valine.visitor %}
+{%- if theme.leancloud_visitors.enable and not theme.valine.visitor %}
   {# custom analytics part create by xiamo; edited by LEAFERx #}
   <script{{ pjax }}>
   function leancloudSelector(url) {
