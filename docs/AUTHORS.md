@@ -151,6 +151,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
   <tr>
     <td align="center"><a href="https://littleylv.github.io/"><img src="https://avatars2.githubusercontent.com/u/16814596?v=4" width="100px;" alt="Siuwing Leoi"/><br /><sub><b>Siuwing Leoi</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/issues?q=author%3Alittleylv" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/MartinMa94"><img src="https://avatars1.githubusercontent.com/u/25997737?v=4" width="100px;" alt="Martin Ma"/><br /><sub><b>Martin Ma</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=MartinMa94" title="Code">💻</a> <a href="https://github.com/theme-next/hexo-theme-next/commits?author=MartinMa94" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://wangjiezhe.com"><img src="https://avatars0.githubusercontent.com/u/5236768?v=4" width="100px;" alt="Jiezhe Wang"/><br /><sub><b>Jiezhe Wang</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/issues?q=author%3Awangjiezhe" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
