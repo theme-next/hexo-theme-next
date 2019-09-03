@@ -55,8 +55,8 @@ NexT.utils = {
   registerExtURL: function() {
     document.querySelectorAll('.exturl').forEach(element => {
       element.addEventListener('click', event => {
-        var $exturl = event.currentTarget.getAttribute('data-url');
-        var $decurl = decodeURIComponent(escape(window.atob($exturl)));
+        var exturl = event.currentTarget.getAttribute('data-url');
+        var decurl = decodeURIComponent(escape(window.atob(exturl)));
         window.open($decurl, '_blank', 'noopener');
         return false;
       });
@@ -81,7 +81,8 @@ NexT.utils = {
       e.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
       var button = e.parentNode.querySelector('.copy-btn');
       button.addEventListener('click', event => {
-        var code = [...event.currentTarget.parentNode.querySelectorAll('.code .line')].map(element => {
+        var target = event.currentTarget;
+        var code = [...target.parentNode.querySelectorAll('.code .line')].map(element => {
           return element.innerText;
         }).join('\n');
         var ta = document.createElement('textarea');
@@ -99,10 +100,10 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          event.currentTarget.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
+          target.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
         }
         ta.blur(); // For iOS
-        event.currentTarget.blur();
+        target.blur();
         if (selected) {
           selection.removeAllRanges();
           selection.addRange(selected);
@@ -189,15 +190,15 @@ NexT.utils = {
     document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(tab => {
       tab.addEventListener('click', event => {
         event.preventDefault();
+        var target = event.currentTarget;
         // Prevent selected tab to select again.
-        if (!event.currentTarget.classList.contains('active')) {
+        if (!target.classList.contains('active')) {
           // Add & Remove active class on `nav-tabs` & `tab-content`.
-          [...event.currentTarget.parentNode.children].forEach(item => {
+          [...target.parentNode.children].forEach(item => {
             item.classList.remove('active');
           });
-          event.currentTarget.classList.add('active');
-          var tActive = event.currentTarget.querySelector('a').getAttribute('href');
-          tActive = document.querySelector(tActive);
+          target.classList.add('active');
+          var tActive = document.getElementById(target.querySelector('a').getAttribute('href').replace('#', ''));
           [...tActive.parentNode.children].forEach(item => {
             item.classList.remove('active');
           });
