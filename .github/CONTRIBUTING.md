@@ -182,7 +182,7 @@ Issues related: `types`+`contents`+`results`
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue
     - `Need Verify`: Need confirmation from the developers or user about the bug or solution
-    - `Can't Reproduce`: An issue that can't be reproduced
+    - `Can't Reproduce`: An issue that cannot be reproduced
     - `Verified`: An issue that has been verified
     - `Help Wanted`: An issue that needs help
     - `Probably Solved`: An issue that has been resolved maybe
