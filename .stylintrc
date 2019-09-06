@@ -35,7 +35,7 @@
     "truncate": true
   },
   "semicolons": "always",
-  "sortOrder": "grouped",
+  "sortOrder": "alphabetical",
   "stackedProperties": false,
   "trailingWhitespace": "never",
   "universal": false,

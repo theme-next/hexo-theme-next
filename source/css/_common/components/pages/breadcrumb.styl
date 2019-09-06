@@ -1,21 +1,21 @@
 ul.breadcrumb {
+  font-size: $font-size-smallest;
   list-style: none;
   margin: 1em 0;
   padding: 0 2em;
   text-align: center;
-  font-size: $font-size-small
 
-  & li {
+  li {
     display: inline;
   }
 
-  & li+li:before {
-    padding: 0.5em;
+  li + li::before {
+    content: '/\00a0';
     font-weight: normal;
-    content: "/\00a0";
+    padding: .5em;
   }
 
-  & li+li:last-child {
+  li + li:last-child {
     font-weight: bold;
   }
 }

@@ -1,31 +1,35 @@
 .site-state {
   display: flex;
   justify-content: center;
-  overflow: hidden;
   line-height: 1.4;
-  white-space: nowrap;
-  text-align: $site-state-align;
   margin-top: 10px;
+  overflow: hidden;
+  text-align: $site-state-align;
+  white-space: nowrap;
 }
 
 .site-state-item {
-  padding: 0 15px;
   border-left: 1px solid $site-state-item-border-color;
+  padding: 0 15px;
 
-  &:first-child { border-left: none; }
+  &:first-child {
+    border-left: none;
+  }
 
-  a { border-bottom: none; }
+  a {
+    border-bottom: none;
+  }
 }
 
 .site-state-item-count {
-  show();
-  text-align: center;
   color: $site-state-item-count-color;
-  font-weight: $font-weight-bold;
+  display: block;
   font-size: $site-state-item-count-font-size;
+  font-weight: $font-weight-bold;
+  text-align: center;
 }
 
 .site-state-item-name {
-  font-size: $site-state-item-name-font-size;
   color: $site-state-item-name-color;
+  font-size: $site-state-item-name-font-size;
 }

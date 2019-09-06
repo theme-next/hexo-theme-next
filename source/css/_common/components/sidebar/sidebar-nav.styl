@@ -1,30 +1,38 @@
 // Sidebar Navigation
-
 .sidebar-nav {
   margin: 0 0 20px;
   padding-left: 0;
+
+  li {
+    border-bottom: 1px solid transparent;
+    color: $sidebar-nav-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $font-size-small;
+
+    &.sidebar-nav-overview {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      color: $sidebar-nav-hover-color;
+    }
+  }
+
+  .sidebar-nav-active {
+    border-bottom-color: $sidebar-highlight;
+    color: $sidebar-highlight;
+
+    &:hover {
+      color: $sidebar-highlight;
+    }
+  }
 }
 
-.sidebar-nav li {
-  display: inline-block;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-  font-size: 14px;
-  color: $sidebar-nav-color;
-
-  &:hover { color: $sidebar-nav-hover-color; }
+.sidebar-panel {
+  display: none;
 }
 
-.page-post-detail .sidebar-nav-toc { padding: 0 5px; }
-
-.page-post-detail .sidebar-nav-overview { margin-left: 10px; }
-
-.sidebar-nav .sidebar-nav-active {
-  color: $sidebar-highlight;
-  border-bottom-color: $sidebar-highlight;
-
-  &:hover { color: $sidebar-highlight; }
+.sidebar-panel-active {
+  display: block;
 }
-
-.sidebar-panel { display: none; }
-.sidebar-panel-active { display: block; }

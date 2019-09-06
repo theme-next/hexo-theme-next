@@ -2,25 +2,19 @@
 
 'use strict';
 
-hexo.extend.helper.register('hexo_env', function(type) {
-  return this.env[type];
+const crypto = require('crypto');
+
+hexo.extend.helper.register('gitalk_md5', function(path) {
+  var str = this.url_for(path);
+  str = encodeURI(str);
+  str.replace('index.html', '');
+  return crypto.createHash('md5').update(str).digest('hex');
 });
 
-hexo.extend.helper.register('next_env', function(type) {
-  var path = require('path');
-  var env = require(path.normalize('../../package.json'));
+hexo.extend.helper.register('hexo_env', type => hexo.env[type]);
+
+hexo.extend.helper.register('next_env', type => {
+  const path = require('path');
+  const env = require(path.normalize('../../package.json'));
   return env[type];
-});
-
-hexo.extend.helper.register('item_active', function(path, className) {
-  var canonical = this.page.canonical_path;
-  var current = this.url_for(canonical).replace('index.html', '', 'g');
-  var result = '';
-
-  if (current.indexOf(path) !== -1) {
-    if (path !== '/' || path === current) {
-      result = ' ' + className;
-    }
-  }
-  return result;
 });

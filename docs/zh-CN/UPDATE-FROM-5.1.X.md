@@ -9,7 +9,7 @@
 推荐通过如下步骤从 v5 升级到 v6：
 
 1. 并不修改原有的 `next` 目录，而只是复制部分 NexT 文件：
-    1. `config.yml` 或 `next.yml`（如果你使用了[数据文件](DATA-FILES.md)）。
+    1. `_config.yml` 或 `next.yml`（如果你使用了[数据文件](DATA-FILES.md)）。
     2. 自定义的 CSS 配置，它们应在 `next/source/css/_custom/*` 和 `next/source/css/_variables/*` 中。
     3. 自定义的排布配置，它们应在 `next/layout/_custom/*` 中。
     4. 任何其它可能的附加自定义内容；为了定位它们，你可以通过某些工具在仓库间比较。
@@ -28,8 +28,8 @@
 
 4. 更新语言配置
 
-    从 v6.0.3版本起，`zh-Hans`改名为`zh-CN`：https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3
-    
-    升级到v6.0.3及以后版本的用户，需要显式修改`_config.xml`里的language配置，否则语言显示不正确。
+    从 v6.0.3 版本起，`zh-Hans` 改名为 `zh-CN`：https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3
+
+    升级到 v6.0.3 及以后版本的用户，需要显式修改 Hexo 主配置文件 `_config.yml` 里的 `language` 配置，否则语言显示不正确。
 
 关于第三方库的启用，参见[这里](https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md#插件)。

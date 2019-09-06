@@ -2,23 +2,26 @@
   margin-top: 20px;
 
   a, span.exturl {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-    margin-bottom: 10px;
     border-bottom-color: $black-light;
-    font-size: 13px;
-    if hexo-config('social_icons.transition') { the-transition(); }
+    display: inline-block;
+    font-size: $font-size-smaller;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
 
-    &:before {
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 3px;
-      content: " ";
-      width: 4px;
-      height: 4px;
-      circle();
+    if (hexo-config('social_icons.transition')) {
+      the-transition();
+    }
+
+    &::before {
       background: rgb(random-color(0, 255) - 50%, random-color(0, 255) - 50%, random-color(0, 255) - 50%);
+      border-radius: 50%;
+      content: ' ';
+      display: inline-block;
+      height: 4px;
+      margin-right: 3px;
+      vertical-align: middle;
+      width: 4px;
     }
   }
 }

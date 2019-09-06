@@ -1,6 +1,5 @@
 <h1 align="center">Algolia Search</h1>
 
-
 NexT provides Algolia search plugin for index your hexo website content. To use this feature, make sure that the version of NexT you are using is after the v5.1.0 release. What you should note here is that only turn on `enable` of `algolia_search` in `next/_config.yml` cannot let you use the algolia search correctly, you need to install corresponding [Hexo Algolia](https://github.com/oncletom/hexo-algolia) plugin to seach your website with Algolia. Follow the steps described below to complete the installation of Algolia search.
 
 1. Register at [Algolia](https://www.algolia.com/), you can log in directly using GitHub or Google Account. Upon Customer’s initial sign-up for an Account, Customer will have a free, fourteen (14) day evaluation period (the “Evaluation Period”) for the Algolia Services commencing on the Effective Date, subject to the limitations on Algolia’s website. After that, Algolia offers a free, branded version for up to 10k records and 100k operations per month.
@@ -46,24 +45,6 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
 
     ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png)
 
-1. Change dir to NexT directory, and install module to `source/lib` directory.
-
-    ```
-    $ cd themes/next
-    $ git clone https://github.com/theme-next/theme-next-algolia-instant-search source/lib/algolia-instant-search
-    ```
-
-    If you want to use the CDN instead of clone this repo, then need to **set vendors** in NexT `_config.yml` file:
-    ```yml
-    vendors:
-      ...
-      # Internal version: 1
-      # https://www.algolia.com
-      algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
-      algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
-      ...
-    ```
-
 1. In `next/_config.yml`, turn on `enable` of `algolia_search`. At the same time, you need to **turn off other search plugins** like Local Search. You can also adjust the text in `labels` according to your needs.
 
     ```yml
@@ -76,6 +57,19 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
         input_placeholder: Search for Posts
         hits_empty: "We didn't find any results for the search: ${query}"
         hits_stats: "${hits} results found in ${time} ms"
+    ```
+
+1. If you want to use a different version from CDN, please follow the instructions below.
+
+    You need to **set vendors** in NexT `_config.yml` file:
+    ```yml
+    vendors:
+      ...
+      # Internal version: 1
+      # https://www.algolia.com
+      algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
+      algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
+      ...
     ```
 
 <h2 align="center">Known Issues</h2>

@@ -1,25 +1,16 @@
 .posts-expand {
   padding-top: 40px;
-}
 
-+mobile() {
-  .posts-expand {
+  +mobile() {
     margin: 0 20px;
   }
-
-  .post-body {
-    .highlight {
-      margin-left: 0px;
-      margin-right: 0px;
-      padding: 0;
-    }
-  }
 }
 
-.posts-expand .post-body {
+.post-body {
   +desktop() {
     text-align: unquote(hexo-config('text_align.desktop'));
   }
+
   +tablet-mobile() {
     text-align: unquote(hexo-config('text_align.mobile'));
   }
@@ -28,10 +19,10 @@
     padding-top: 10px;
 
     .header-anchor {
+      border-bottom-style: none;
+      color: $grey-light;
       float: right;
       margin-left: 10px;
-      color: $grey-light;
-      border-bottom-style: none;
       visibility: hidden;
 
       &:hover {
@@ -45,9 +36,34 @@
   }
 
   img {
-    box-sizing: border-box;
-    margin: 0 auto 25px;
-    padding: 3px;
     border: 1px solid $gray-lighter;
+    box-sizing: border-box;
+    padding: 3px;
+
+    +mobile() {
+      padding: initial;
+    }
+  }
+
+  iframe, img, video {
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    height: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-top: 75%;
+    position: relative;
+    width: 100%;
+
+    iframe, object, embed {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 }

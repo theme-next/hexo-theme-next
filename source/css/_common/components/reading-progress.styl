@@ -1,0 +1,14 @@
+.reading-progress-bar {
+  background: unquote(hexo-config('reading_progress.color'));
+  display: block;
+  height: unquote(hexo-config('reading_progress.height'));
+  left: 0;
+  position: fixed;
+  if (hexo-config('reading_progress.position') == 'bottom') {
+    bottom: 0;
+  } else {
+    top: 0;
+  }
+  width: 0;
+  z-index: 9999;
+}

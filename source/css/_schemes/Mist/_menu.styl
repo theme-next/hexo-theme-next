@@ -1,16 +1,18 @@
 // Menu
 // --------------------------------------------------
-.site-brand-wrapper {
+.site-brand-container {
   flex-shrink: 0;
 }
 
 .site-nav-toggle {
-  position: static;
   float: right;
+  position: static;
+  top: 10px;
 }
 
 .site-nav {
   flex-grow: 1;
+
   +mobile() {
     transform: translateY(10px);
   }
@@ -21,7 +23,7 @@
 }
 
 .menu {
-  //float: right;
+  // float: right;
   margin: 0;
 
   +mobile() {
@@ -29,37 +31,41 @@
     padding: 0;
   }
 
-  br { display: none; }
+  br {
+    display: none;
+  }
 
   .menu-item {
     margin: 0;
+
     +mobile() {
-      show();
+      display: block;
       margin-top: 5px;
     }
 
     .badge {
-      display: inline-block;
-      padding: 1px 4px;
-      margin-left: 5px;
-      font-weight: 700;
-      line-height: 1;
-      color: $black-light;
-      text-align: center;
-      white-space: nowrap;
-      background-color: #fff;
+      background-color: white;
       border-radius: 10px;
-      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+      color: $black-light;
+      display: inline-block;
+      font-weight: $font-weight-bolder;
+      line-height: 1;
+      margin-left: 5px;
+      padding: 1px 4px;
+      text-align: center;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+      white-space: nowrap;
+
       +mobile() {
         float: right;
-        margin: 0.35em 0 0 0;
+        margin: .35em 0 0 0;
       }
     }
 
     a, span.exturl {
-      padding: 0 10px;
-      border: none;
+      border: 0;
       border-radius: 2px;
+      padding: 0 10px;
       transition-property: background;
 
       +mobile() {
@@ -75,9 +81,14 @@
   }
 
   a::before {
-    hide();
-    +mobile() { display: block; }
+    display: none;
+
+    +mobile() {
+      display: block;
+    }
   }
 
-  +mobile() { float: none; }
+  +mobile() {
+    float: none;
+  }
 }

@@ -16,14 +16,17 @@
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-blue.svg"></a>
 </p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
+</p>
+
 ## 即时预览
 
-* :heart_decoration: Muse 主题: [LEAFERx](https://leaferx.online) | [Alex LEE](http://saili.science) | [Miaia](https://11.tt)
-* :six_pointed_star: Mist 主题: [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
-* :pisces: Pisces 主题: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Jiaxi He](http://jiaxi.io)
-* :gemini: Gemini 主题: [Ivan.Nginx](https://almostover.ru) | [Raincal](https://raincal.com) | [Dandy](https://dandyxu.me)
+<p align="center">
+:heart_decoration: <a href="https://muse.theme-next.org">Muse</a> | :six_pointed_star: <a href="https://mist.theme-next.org">Mist</a> | :pisces: <a href="https://pisces.theme-next.org">Pisces</a> | :gemini: <a href="https://theme-next.org">Gemini</a>
+</p>
 
-更多 «NexT» 的例子参见[这里](https://github.com/iissnan/hexo-theme-next/issues/119)。
+<p align="center">更多 «NexT» 的例子参见<a href="https://github.com/iissnan/hexo-theme-next/issues/119">这里</a>。</p>
 
 ## 安装
 
@@ -40,29 +43,28 @@
 
 在 NexT 配置中你现在可以找到已经被移至外部仓库的依赖项。你可以在[组织主页](https://github.com/theme-next)中找到它们。
 
-例如，假设你想要在你的站点中使用 `fancybox` 插件，请进入 NexT 配置文件，你会看到如下内容：
+例如，假设你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，你会看到如下内容：
 
 ```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax: false
 ```
 
-将 `fancybox` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
+将 `pjax` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
 
 ### 例外
 
 如果你使用的插件脚本依赖 CDN，那么需要替换你的 CDN 链接：
 
-例如，假如你使用了 `fancybox` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
+例如，假如你使用了 `mediumzoom` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
 
 ```yml
 vendors:
   # ...
   # Some contents...
   # ...
-  fancybox: # Set or update fancybox cdn url.
-  fancybox_css: # Set or update fancybox cdn url.
+  mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
 通过替换 CDN 链接来替换 [插件列表](https://github.com/theme-next) 项目来升级。
@@ -81,29 +83,19 @@ $ git pull
 
 **如果你想要从 v5.1.x 更新到 v6.0.x，阅读[这篇文档][docs-update-5-1-x-url]。**
 
-## 已知问题
-
-对于仍然遇到 **«[Error: Cannot find module 'hexo-util'](https://github.com/iissnan/hexo-theme-next/issues/1490)»** 这一错误的用户，请检查你的 NPM 版本。
-
-* `> 3`：仍然出现错误吗？请删除 `node_modules` 目录并通过 `npm install` 重新安装。
-* `< 3`：请通过 `npm install --save-dev hexo-util` 将 `hexo-util` 依赖手动添加至你的站点依赖包中。
-
 ## 贡献你的代码
 
 我们欢迎你贡献出你的一份力量，你可以随时提交 issue 或 fork 本仓库。静候你的 pull request。
 
 ## 反馈
 
+* 浏览 [Awesome NexT][awesome-next-url] 列表。
 * 在 [Stack Overflow][stack-url] 上提问。
 * 在 [GitHub Issues][issues-bug-url] 报告Bug。
 * 在 [GitHub][issues-feat-url] 请求新的功能。
-* 为 [popular feature requests][feat-req-vote-url] 投票。
+* 为 [受欢迎的 Feature request][feat-req-vote-url] 投票。
 * 加入我们的 [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] 聊天。
 * 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
-
-## 第三方应用程序
-
-* :triangular_flag_on_post: <a title="Hexo Markdown 编辑器" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 ## 鸣谢
 
@@ -131,6 +123,11 @@ $ git pull
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
+[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
+[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md
+
+[awesome-next-url]: https://github.com/theme-next/awesome-next
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
@@ -145,12 +142,8 @@ $ git pull
 <!--[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg-->
 <!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
 
-[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
-[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
+<!--[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip-->
+<!--[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest-->
 <!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases-->
-[tags-url]: https://github.com/theme-next/hexo-theme-next/tags
-[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master
-
-[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
-[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md
+<!--[tags-url]: https://github.com/theme-next/hexo-theme-next/tags-->
+<!--[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master-->

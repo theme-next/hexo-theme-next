@@ -1,32 +1,30 @@
 #reward-container {
-  padding: 10px 0;
   margin: 20px auto;
-  width: 90%;
+  padding: 10px 0;
   text-align: center;
+  width: 90%;
 }
 
 #reward-button {
-  cursor: pointer;
+  background: #f44336;
   border: 0;
-  outline: 0;
-  display: inline-block;
-  vertical-align: text-top;
-  margin: 0;
-  padding: 0 15px;
   border-radius: 5px;
-  height: $font-size-large * 2;
-  line-height: $font-size-large * 2;
-  font-size: $font-size-large;
-  color: #fff;
-  background: #F44336;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
   letter-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
+  line-height: 2;
+  margin: 0;
+  outline: 0;
+  padding: 0 15px;
+  text-indent: 0;
   text-shadow: none;
+  text-transform: none;
+  vertical-align: text-top;
 }
 
 #reward-button span:hover {
-  background: #F7877F;
+  background: #f7877f;
 }
 
 #qr {
@@ -37,25 +35,26 @@
   }
 
   img {
-    width: 180px;
-    max-width: 100%;
     display: inline-block;
-    margin: 0.8em 2em 0 2em;
+    margin: .8em 2em 0 2em;
+    max-width: 100%;
+    width: 180px;
   }
 
   p {
     text-align: center;
   }
 
-  if hexo-config('reward_settings.animation') {
-    & > div:hover p {
-      animation: roll 0.1s infinite linear;
+  if (hexo-config('reward_settings.animation')) {
+    > div:hover p {
+      animation: roll .1s infinite linear;
     }
 
     @keyframes roll {
       from {
         transform: rotateZ(30deg);
       }
+
       to {
         transform: rotateZ(-30deg);
       }

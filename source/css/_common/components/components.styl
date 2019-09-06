@@ -1,18 +1,20 @@
-@import "highlight";
-@import "tags";
+@import 'highlight';
+@import 'tags';
+@import 'buttons';
+@import 'pagination';
+@import 'comments';
 
-@import "buttons";
-@import "pagination";
-@import "comments";
-@import (hexo-config('back2top.sidebar') ? "back-to-top-sidebar" : "back-to-top") if (hexo-config('back2top.enable'));
+@import (hexo-config('back2top.sidebar') ? 'back-to-top-sidebar' : 'back-to-top') if (hexo-config('back2top.enable'));
 
-@import "header";
-@import "post";
-@import "sidebar";
-@import "footer";
-@import "third-party";
+@import 'reading-progress' if (hexo-config('reading_progress.enable'));
 
-@import "pages";
+@import 'header';
+@import 'post';
+@import 'sidebar';
+@import 'footer';
+@import 'third-party';
+@import 'pages';
 
-@import "rainbow" if hexo-config('safari_rainbow');
-@import "scrollbar" if hexo-config('custom_scrollbar');
+@import 'rainbow' if (hexo-config('safari_rainbow'));
+
+@import 'scrollbar' if (hexo-config('custom_scrollbar'));

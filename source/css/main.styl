@@ -3,25 +3,23 @@
 
 $scheme    = hexo-config('scheme') ? hexo-config('scheme') : 'Muse';
 
-$custom_styles = hexo-config('custom_file_path.styles') ? "../../../../../" + hexo-config('custom_file_path.styles') : custom;
-$custom_mixins = hexo-config('custom_file_path.mixins') ? "../../../../../" + hexo-config('custom_file_path.mixins') : custom;
-$custom_variables = hexo-config('custom_file_path.variables') ? "../../../../../" + hexo-config('custom_file_path.variables') : custom;
-
-$variables = base $scheme $custom_variables;
-$mixins    = base $scheme $custom_mixins;
+$variables = base $scheme;
+$mixins    = base $scheme;
 
 
 // Variables Layer
 // --------------------------------------------------
 for $variable in $variables
   @import "_variables/" + $variable;
-
+for $inject_variable in hexo-config('injects.variable')
+  @import $inject_variable;
 
 // Mixins Layer
 // --------------------------------------------------
 for $mixin in $mixins
   @import "_mixins/" + $mixin;
-
+for $inject_mixin in hexo-config('injects.mixin')
+  @import $inject_mixin;
 
 // Common Layer
 // --------------------------------------------------
@@ -43,4 +41,5 @@ for $mixin in $mixins
 
 // Custom Layer
 // --------------------------------------------------
-@import "_custom/" + $custom_styles;
+for $inject_style in hexo-config('injects.style')
+  @import $inject_style;

@@ -2,43 +2,51 @@
   margin: 0;
   text-align: $site-meta-text-align;
 
-  +mobile() { text-align: center; }
+  +mobile() {
+    text-align: center;
+  }
 }
 
 .brand {
-  position: relative;
-  display: inline-block;
-  padding: 0 40px;
-  color: $brand-color;
   background: $brand-bg;
   border-bottom: none;
-  &:hover { color: $brand-hover-color; }
+  color: $brand-color;
+  display: inline-block;
+  line-height: $title-font-size;
+  padding: 0 40px;
+  position: relative;
+
+  &:hover {
+    color: $brand-hover-color;
+  }
 }
 
 .logo {
   display: inline-block;
-  margin-right: 5px;
   line-height: 36px;
+  margin-right: 5px;
   vertical-align: top;
 }
 
 .site-title {
   display: inline-block;
-  vertical-align: top;
-  line-height: 36px;
-  font-size: $logo-font-size;
-  font-weight: normal;
   font-family: $font-family-logo;
+  font-size: $title-font-size;
+  font-weight: normal;
+  line-height: 1.5;
+  vertical-align: top;
 }
 
 .site-subtitle {
-  margin-top: 10px;
-  font-size: $subtitle-font-size;
   color: $subtitle-color;
+  font-size: $subtitle-font-size;
+  margin-top: 10px;
 }
 
 .use-motion {
-  .brand { opacity: 0; }
+  .brand {
+    opacity: 0;
+  }
 
   .logo, .site-title, .site-subtitle, .custom-logo-image {
     opacity: 0;

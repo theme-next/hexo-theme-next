@@ -16,14 +16,17 @@
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-blue.svg"></a>
 </p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
+</p>
+
 ## Демо
 
-* :heart_decoration: Muse тема: [LEAFERx](https://leaferx.online) | [Alex LEE](http://saili.science) | [Miaia](https://11.tt)
-* :six_pointed_star: Mist тема: [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
-* :pisces: Pisces тема: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Jiaxi He](http://jiaxi.io)
-* :gemini: Gemini тема: [Ivan.Nginx](https://almostover.ru) | [Raincal](https://raincal.com) | [Dandy](https://dandyxu.me)
+<p align="center">
+:heart_decoration: <a href="https://muse.theme-next.org">Muse</a> | :six_pointed_star: <a href="https://mist.theme-next.org">Mist</a> | :pisces: <a href="https://pisces.theme-next.org">Pisces</a> | :gemini: <a href="https://theme-next.org">Gemini</a>
+</p>
 
-Больше примеров «NexT» [здесь](https://github.com/iissnan/hexo-theme-next/issues/119).
+<p align="center">Больше примеров «NexT» <a href="https://github.com/iissnan/hexo-theme-next/issues/119">здесь</a>.</p>
 
 ## Установка
 
@@ -40,15 +43,15 @@
 
 В конфиге NexT'а теперь можно найти зависимости на каждый модуль, который был вынесен во внешние репозитории, которые могут быть найдены по [ссылке основной организации](https://github.com/theme-next).
 
-Например, Вы хотите использовать `fancybox` для своего сайта. Открываем конфиг NexT'а и находим:
+Например, Вы хотите использовать `pjax` для своего сайта. Открываем конфиг NexT'а и находим:
 
 ```yml
-# Fancybox
-# Dependencies: https://github.com/theme-next/theme-next-fancybox
-fancybox: false
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax: false
 ```
 
-Затем включаем параметр `fancybox` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
+Затем включаем параметр `pjax` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
 
 ## Обновление
 
@@ -64,29 +67,19 @@ $ git pull
 
 **Если нужно обновиться с версии v5.1.x на v6.0.x, читаем [здесь][docs-update-5-1-x-url].**
 
-## Известные баги
-
-Для тех, кто столкнулся с ошибкой **«[Error: Cannot find module 'hexo-util'](https://github.com/iissnan/hexo-theme-next/issues/1490)»**, следует проверить версию NPM.
-
-* `> 3`: Всё равно не работает? Удалите директорию `node_modules` и переустановите с помощью `npm install`.
-* `< 3`: Добавьте `hexo-util` принудительно командой `npm install --save-dev hexo-util` к основным пакетам с Hexo.
-
 ## Содействие
 
 Приветсвуется любое содействие, не стесняйтесь сообщать «Баги», брать «Форки» и вливать «Пулы».
 
 ## Обратная связь
 
+* Посетите [Awesome NexT][awesome-next-url] список.
 * Задать вопрос на [Stack Overflow][stack-url].
 * Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
 * Запросить новую возможность на [GitHub][issues-feat-url].
 * Голосовать за [популярные запросы возможностей][feat-req-vote-url].
 * Вступить в наши [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] чаты.
 * Подписаться на новости через [канал Telegram'а][t-news-url].
-
-## Сторонние приложения
-
-* :triangular_flag_on_post: <a title="Маркдаун Редактор под Hexo" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
 
 ## Благодарности
 
@@ -114,6 +107,11 @@ $ git pull
 [browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
 [browser-url]: https://www.browserstack.com
 
+[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
+[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/UPDATE-FROM-5.1.X.md
+
+[awesome-next-url]: https://github.com/theme-next/awesome-next
 [stack-url]: https://stackoverflow.com/questions/tagged/theme-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
@@ -128,12 +126,8 @@ $ git pull
 <!--[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg-->
 <!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
 
-[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
-[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
+<!--[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip-->
+<!--[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest-->
 <!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases-->
-[tags-url]: https://github.com/theme-next/hexo-theme-next/tags
-[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master
-
-[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
-[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/UPDATE-FROM-5.1.X.md
+<!--[tags-url]: https://github.com/theme-next/hexo-theme-next/tags-->
+<!--[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master-->

@@ -2,7 +2,7 @@
 
 <h2 align="center">Step 1 &rarr; Go to Hexo dir</h2>
 
-Change dir to **hexo root** directory. There must be `node_modules`, `source`, `themes` and other directories:
+Change dir to **Hexo root** directory. There must be `node_modules`, `source`, `themes` and other directories:
    ```sh
    $ cd hexo
    $ ls
@@ -100,7 +100,7 @@ There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
 
 <h2 align="center">Step 3 &rarr; Set it up</h2>
 
-Set theme in main **hexo root config** `_config.yml` file:
+Set theme in main **Hexo root config** `_config.yml` file:
 
 ```yml
 theme: next

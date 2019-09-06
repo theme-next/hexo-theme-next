@@ -1,38 +1,35 @@
-.site-brand-wrapper {
+.site-brand-container {
   position: relative;
 }
 
 .site-meta {
-  padding: 20px 0;
-  color: white;
   background: $black-deep;
+  color: white;
+  padding: 20px 0;
 
   +tablet-mobile() {
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 16px rgba(0, 0, 0, .5);
   }
 }
 
 .brand {
-  padding: 0;
   background: none;
+  padding: 0;
 
   &:hover {
-   color: white;
+    color: white;
   }
 }
 
 .site-subtitle {
-  margin: 10px 10px 0;
   font-weight: initial;
+  margin: 10px 10px 0;
 }
 
 .custom-logo-image {
   margin-top: 20px;
-  +tablet-mobile() {
-    hide();
-  }
-}
 
-.site-search form {
-  hide();
+  +tablet-mobile() {
+    display: none;
+  }
 }

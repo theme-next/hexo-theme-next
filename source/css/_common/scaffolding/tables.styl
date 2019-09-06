@@ -1,30 +1,31 @@
 .table-container {
-  margin: 20px 0;
-  overflow: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-.highlight .table-container {
-  margin: 0px;
+  overflow: auto;
 }
 
 table {
-  width: $table-width;
   border-collapse: collapse;
   border-spacing: 0;
   font-size: $table-font-size;
+  margin: 0 0 20px 0;
+  width: $table-width;
 }
 
 table > tbody > tr {
-  &:nth-of-type(odd) { background-color: $table-row-odd-bg-color; }
-  &:hover { background-color: $table-row-hover-bg-color; }
+  &:nth-of-type(odd) {
+    background-color: $table-row-odd-bg-color;
+  }
+
+  &:hover {
+    background-color: $table-row-hover-bg-color;
+  }
 }
 
 caption, th, td {
+  font-weight: normal;
   padding: $table-cell-padding;
   text-align: $table-content-alignment;
   vertical-align: $table-content-vertical;
-  font-weight: normal;
 }
 
 th, td {
@@ -33,8 +34,8 @@ th, td {
 }
 
 th {
-  padding-bottom: 10px;
   font-weight: $table-th-font-weight;
+  padding-bottom: 10px;
 }
 
 td {
