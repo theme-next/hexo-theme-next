@@ -7,31 +7,31 @@
 # If true, will fully override default configuration by options from `_data/next.yml` (override). Only for NexT settings.
 # And if true, all config from default NexT `_config.yml` must be copied into `next.yml`. Use if you know what you are doing.
 # Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
-override: true
+override: false
 
 # Console reminder if new version released.
-reminder: true
+reminder: false
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
   enable: true
 
 # Remove unnecessary files after hexo generate.
-minify: true
+minify: false
 
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
-  # head: source/_data/head.swig
-  # header: source/_data/header.swig
-  # sidebar: source/_data/sidebar.swig
-  # postMeta: source/_data/post-meta.swig
-  # postBodyEnd: source/_data/post-body-end.swig
-  # footer: source/_data/footer.swig
-  # bodyEnd: source/_data/body-end.swig
-  # variable: source/_data/variables.styl
-  # mixin: source/_data/mixins.styl
-  # style: source/_data/styles.styl
+  #head: source/_data/head.swig
+  #header: source/_data/header.swig
+  #sidebar: source/_data/sidebar.swig
+  #postMeta: source/_data/post-meta.swig
+  #postBodyEnd: source/_data/post-body-end.swig
+  #footer: source/_data/footer.swig
+  #bodyEnd: source/_data/body-end.swig
+  #variable: source/_data/variables.styl
+  #mixin: source/_data/mixins.styl
+  #style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -44,8 +44,8 @@ favicon:
   medium: /images/favicon-32x32-next.png
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
-  android_manifest: /images/manifest.json
-  ms_browserconfig: /images/browserconfig.xml
+  #android_manifest: /images/manifest.json
+  #ms_browserconfig: /images/browserconfig.xml
 
 # hexo-generator-feed required for rss support. Leave rss as blank to use site's feed link.
 # Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.
@@ -53,7 +53,7 @@ rss:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  since: 2018
+  #since: 2015
 
   # Icon between year and copyright info.
   icon:
@@ -116,14 +116,14 @@ disable_baidu_transformation: false
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
-seo: true
+seo: false
 
 # If true, will add site-subtitle to index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
 index_with_subtitle: false
 
 # Automatically add external URL with Base64 encrypt & decrypt.
-exturl: true
+exturl: false
 
 # Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
@@ -142,7 +142,7 @@ yandex_site_verification:
 baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: true
+baidu_push: false
 
 
 # ---------------------------------------------------------------
@@ -157,9 +157,9 @@ baidu_push: true
 # External url should start with http:// or https://
 menu:
   home: / || home
-  about: /about/ || user
-  tags: /tags/ || tags
-  categories: /categories/ || th
+  #about: /about/ || user
+  #tags: /tags/ || tags
+  #categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -196,9 +196,9 @@ site_state: true
 # Value before `||` delimiter is the target permalink.
 # Value after `||` delimiter is the name of Font Awesome icon. If icon (with or without delimiter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/AugF || github
-  E-Mail: mailto:yunpanwang@gmail.com || envelope
-  Weibo: https://weibo.com/Joswxe || weibo
+  #GitHub: https://github.com/yourname || github
+  #E-Mail: mailto:yourname@gmail.com || envelope
+  #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -221,16 +221,16 @@ links_settings:
   layout: block
 
 links:
-  Title: http://www.baidu.com
+  #Title: http://example.com
 
 # Sidebar Avatar
 avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: /images/avatar.gif
+  url: #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
-  rounded: true
+  rounded: false
   # If true, the avatar would be rotated with the cursor.
   rotated: false
 
@@ -271,8 +271,8 @@ sidebar:
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
 chat:
-  enable: true  # ?
-  service: chatra
+  enable: false
+  #service: chatra
   #service: tidio
   icon: comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
@@ -322,7 +322,7 @@ tag_icon: false
 
 # Wechat Subscriber
 wechat_subscriber:
-  enable: true
+  enable: false
   qcode: #/uploads/wechat-qcode.jpg
   #description: Subscribe to my blog by scanning my public wechat account.
 
@@ -330,13 +330,13 @@ wechat_subscriber:
 reward_settings:
   # If true, reward would be displayed in every article by default.
   # You can show or hide reward in a specific article throuth `reward: true | false` in Front-matter.
-  enable: true
+  enable: false
   animation: false
-  comment: Donate comment here.
+  #comment: Donate comment here.
 
 reward:
   #wechatpay: /images/wechatpay.png
-  alipay: /images/alipay.png
+  #alipay: /images/alipay.png
   #bitcoin: /images/bitcoin.png
 
 # Related popular posts
@@ -355,7 +355,7 @@ related_posts:
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
-  enable: true
+  enable: false
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
 
@@ -436,13 +436,13 @@ codeblock:
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: true
+  sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: true
+  scrollpercent: false
 
 # Reading progress bar
 reading_progress:
-  enable: true
+  enable: false
   # Available values: top | bottom
   position: top
   color: "#37c6c0"
@@ -450,7 +450,7 @@ reading_progress:
 
 # Bookmark Support
 bookmark:
-  enable: true
+  enable: false
   # Customize the color of the bookmark.
   color: "#222"
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
@@ -459,8 +459,8 @@ bookmark:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: true
-  permalink: https://github.com/AugF
+  enable: false
+  permalink: https://github.com/yourname
   title: Follow me on GitHub
 
 
@@ -530,7 +530,7 @@ font:
 
 # Math Formulas Render Support
 math:
-  enable: true
+  enable: false
 
   # Default (true) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
@@ -539,15 +539,15 @@ math:
 
   # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
   mathjax:
-    enable: true
+    enable: false
     # See: https://mhchem.github.io/MathJax-mhchem/
-    mhchem: true
+    mhchem: false
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
   katex:
-    enable: true
+    enable: false
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-    copy_tex: true
+    copy_tex: false
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
@@ -574,7 +574,7 @@ pangu: false
 # Quicklink Support
 # For more information: https://github.com/GoogleChromeLabs/quicklink
 quicklink:
-  enable: true
+  enable: false
 
   # Quicklink (quicklink.umd.js script) is loaded on demand.
   # Add `quicklink: true` in Front-matter of the page or post you need.
@@ -610,20 +610,20 @@ comments:
   storage: true
   # Modify texts or order for any navs, here are some examples.
   nav:
-    disqus:
-      text: Load Disqus
-      order: -1
-    facebook_comments_plugin:
-      text: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
-    gitalk:
-      order: -2
+    #disqus:
+    #  text: Load Disqus
+    #  order: -1
+    #facebook_comments_plugin:
+    #  text: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
+    #gitalk:
+    #  order: -2
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname:
   count: true
-  lazyload: true
+  lazyload: false
   #post_meta_order: 0
 
 # DisqusJS
@@ -652,7 +652,7 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
+  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
   appid: # Your leancloud application appid
   appkey: # Your leancloud application appkey
   notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
@@ -668,7 +668,7 @@ valine:
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: MTiAyMC80NjU1Mi8yMzA2Mg==
+livere_uid: # <your_uid>
 
 # Gitalk
 # Demo: https://gitalk.github.io
@@ -863,7 +863,7 @@ note:
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
   style: simple
-  icons: true
+  icons: false
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
