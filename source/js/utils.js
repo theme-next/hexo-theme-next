@@ -174,7 +174,7 @@ NexT.utils = {
 
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
-        targets  : document.documentElement,
+        targets  : [document.documentElement, document.body],
         duration : 500,
         easing   : 'linear',
         scrollTop: 0
@@ -250,7 +250,7 @@ NexT.utils = {
         var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
         var offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
-          targets  : document.documentElement,
+          targets  : [document.documentElement, document.body],
           duration : 500,
           easing   : 'linear',
           scrollTop: offset + 10

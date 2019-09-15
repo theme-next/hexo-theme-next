@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!isNaN(top) && location.hash === '') {
       // Auto scroll to the position
       window.anime({
-        targets  : document.documentElement,
+        targets  : [document.documentElement, document.body],
         duration : 200,
         easing   : 'linear',
         scrollTop: top
