@@ -125,12 +125,12 @@
           {%- endif %}
 
           {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-            <span class="post-meta-item" title="{{ __('post.views') }}">
+            <span class="post-meta-item" title="{{ __('post.views') }}" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              <span id="busuanzi_value_page_pv"></span>
             </span>
           {%- endif %}
 
