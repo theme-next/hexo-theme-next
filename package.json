@@ -27,9 +27,8 @@
   },
   "homepage": "https://theme-next.org",
   "devDependencies": {
-    "all-contributors-cli": "^6.8.1",
-    "coffeescript": "^2.4.1",
-    "eslint": "^6.2.0",
+    "all-contributors-cli": "^6.9.0",
+    "eslint": "^6.4.0",
     "eslint-config-theme-next": "^1.1.2",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
