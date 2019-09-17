@@ -12,7 +12,7 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 如果你不填写下面的内容，我们可能会直接关闭你的 Issue。
 -->
 
-### I agree and want to create new issue <!-- 我确认我已经查看了 -->
+## I agree and want to create new issue <!-- 我确认我已经查看了 -->
 
 <!-- Check all with [x], not [ x] or [x ] (把 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
 - [ ] I have confirmed that this bug only appears in theme NexT, but cannot be reproduced in other themes (e.g. default theme landscape). In other words, prove that this is a NexT bug, not a bug from Hexo.
@@ -22,25 +22,21 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 
 ***
 
-### Expected behavior <!-- 预期行为 -->
+## Expected behavior <!-- 预期行为 -->
 
 
-### Actual behavior <!-- 实际行为 -->
+## Actual behavior <!-- 实际行为 -->
+* Links to demo site with this bug: N/A
+* Links to repository or source code of the blog: N/A
 
 
-### Steps to reproduce the behavior <!-- 重现步骤 -->
+## Steps to reproduce the behavior <!-- 重现步骤 -->
 1. N/A
 2. N/A
 3. N/A
 
-* Link to demo site with this bug: N/A
-* Link(s) to source code or any usefull link(s): N/A
 
-### Node.js and NPM Information
-<!-- Paste output from `node -v && npm -v` (粘贴 `node -v && npm -v` 输出的信息) -->
-```
-
-```
+## Hexo Information
 
 ### Package dependencies Information
 <!-- Paste output from `cat package.json` (粘贴 `cat package.json` 输出的信息) -->
@@ -48,44 +44,23 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 
 ```
 
-### Hexo Information
-
-#### Hexo version
+### Hexo Version
 <!-- Paste output from `hexo -v` (粘贴 `hexo -v` 输出的信息) -->
 ```
 
 ```
 
-#### Hexo Configuration
+### Hexo Configuration
 <!-- Paste configuration from Hexo `_config.yml` (从 Hexo `_config.yml` 中粘贴信息) -->
 ```yml
 
 ```
 
-### NexT Information
 
-**NexT Version:**
-<!-- Check needed with [x], not [ x] or [x ] (把 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
-
-- [ ] Latest Master branch
-- [ ] Latest Release version
-- [ ] Old version
-
-
-**NexT Scheme:**
-<!-- Check needed with [x], not [ x] or [x ] (把 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
-
-- [ ] All schemes
-- [ ] Muse
-- [ ] Mist
-- [ ] Pisces
-- [ ] Gemini
-
-
-#### NexT Configuration:
+### NexT Configuration
 <!-- Paste ONLY CHANGED CONFIGURATION from NexT `_config.yml` (只粘贴NexT主题配置文件 `_config.yml` 中修改过的部分) -->
 ```yml
 
 ```
 
-### Other Information <!-- (Like Browser, System, Screenshots) -->
+## Other Information <!-- (Like Browser, System, Screenshots) -->
