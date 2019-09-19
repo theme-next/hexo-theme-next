@@ -25,6 +25,8 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 
 
 ## Actual behavior <!-- 实际行为 -->
+
+<!-- Please provide at least one of the following information (请至少提供以下的一项信息) -->
 * Links to demo site with this feature: N/A
 * Links to repository or source code of the blog: N/A
 
@@ -33,13 +35,3 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 1. N/A
 2. N/A
 3. N/A
-
-
-**NexT Scheme:**
-<!-- Check needed with [x], not [ x] or [x ] (把 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
-
-- [ ] All schemes
-- [ ] Muse
-- [ ] Mist
-- [ ] Pisces
-- [ ] Gemini
