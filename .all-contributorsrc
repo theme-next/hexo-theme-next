@@ -523,6 +523,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "sankoshine",
+      "name": "SanKo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7546269?v=4",
+      "profile": "https://github.com/sankoshine",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6
