@@ -17,8 +17,7 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 <!-- Change [ ] to [x] to select, not [ x] or [x ] (将 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
 
 - [ ] I have already viewed [Hexo Docs page](https://hexo.io/docs/), especially [Templates](https://hexo.io/docs/templates.html), [Variables](https://hexo.io/docs/variables.html), [Helpers](https://hexo.io/docs/helpers.html) and [Troubleshooting](https://hexo.io/docs/troubleshooting.html).
-- [ ] I have already viewed [NexT Documentation Site](http://theme-next.org/docs/).
-- [ ] I have searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue) which does not help me.
+- [ ] I have already viewed [NexT Documentation Site](http://theme-next.org/docs/) and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue) which does not help me.
 
 ***
 
