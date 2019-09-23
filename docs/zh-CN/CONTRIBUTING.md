@@ -201,7 +201,6 @@ Pull requests 的标签：
 - `Discussion`: 需要进行讨论的 Pull request
 - `Work in Progress`: 仍在进行改动和完善的 Pull request
 - `Skip Release`: 无需在 Release Note 中展现的 Pull request
-- `v6.x`: 与 NexT v6.x 旧版相关的用于修复和改进的 Pull request
 
 <a name="commit-messages-rules"></a>
 
