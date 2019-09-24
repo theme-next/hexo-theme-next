@@ -167,8 +167,8 @@ Issues related: `types`+`contents`+`results`
     - `Polls`: An issue that initiated a poll
 - By contents
     - `Roadmap`: An issue about future development
-    - `Hexo`: An issue related to Hexo
-    - `3rd Party Service`: An issue related to 3rd party service
+    - `Hexo`: An issue related to Hexo or Hexo plugins
+    - `3rd Party Plugin`: An issue related to 3rd party plugins & service
     - `Docs`: Need to add instruction document
     - `Configurations`: An issue related to configurations
     - `CSS`: An issue related to CSS
@@ -193,7 +193,7 @@ Issues related: `types`+`contents`+`results`
 Pull requests related:
 
 - `Breaking Change`: A pull request that makes breaking change
-- `External Change`: A pull request that makes update for external change
+- `3rd Party Plugin`: A pull request that makes update for 3rd party plugins & service
 - `Bug Fix`: A pull request that fixes the related bug
 - `Docs`: A pull request that Instruction document has been added
 - `New Feature`: A pull request that provides a new feature
@@ -204,7 +204,6 @@ Pull requests related:
 - `Discussion`: A pull request that needs to be discussed
 - `Work in Progress`: A pull request that is still working in progress
 - `Skip Release`: A pull request that should be excluded from release note
-- `v6.x`: A pull request that bug fixes and some improvements, related to old NexT version 6
 
 <a name="commit-messages-rules"></a>
 
