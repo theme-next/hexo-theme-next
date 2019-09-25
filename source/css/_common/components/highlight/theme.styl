@@ -66,6 +66,57 @@ if ($highlight-theme == 'night') {
     color: lighten($highlight-background, 40%),
     bg-color: lighten($highlight-background, 16%)
   };
+} else if ($highlight-theme == 'solarized') {
+  $highlight-background   = #fdf6e3;
+  $highlight-current-line = #eee8d5;
+  $highlight-selection    = #eee8d5;
+  $highlight-foreground   = #586e75;
+  $highlight-comment      = #93a1a1;
+  $highlight-red          = #dc322f;
+  $highlight-orange       = #cb4b16;
+  $highlight-yellow       = #b58900;
+  $highlight-green        = #859900;
+  $highlight-aqua         = #2aa198;
+  $highlight-blue         = #268bd2;
+  $highlight-purple       = #6c71c4;
+  $highlight-gutter       = {
+    color: $highlight-comment,
+    bg-color: $highlight-background
+  };
+} else if ($highlight-theme == 'solarized dark') {
+  $highlight-background   = #002b36;
+  $highlight-current-line = #073642;
+  $highlight-selection    = #073642;
+  $highlight-foreground   = #93a1a1;
+  $highlight-comment      = #586e75;
+  $highlight-red          = #dc322f;
+  $highlight-orange       = #cb4b16;
+  $highlight-yellow       = #b58900;
+  $highlight-green        = #859900;
+  $highlight-aqua         = #2aa198;
+  $highlight-blue         = #268bd2;
+  $highlight-purple       = #6c71c4;
+  $highlight-gutter       = {
+    color: $highlight-comment,
+    bg-color: $highlight-background
+  };
+} else if ($highlight-theme == 'galactic') {
+  $highlight-background   = #262626;
+  $highlight-current-line = #303030;
+  $highlight-selection    = #303030;
+  $highlight-foreground   = #9e9e9e;
+  $highlight-comment      = #6a6a6a;
+  $highlight-red          = #ff511a;
+  $highlight-orange       = #dd7202;
+  $highlight-yellow       = #a68f01;
+  $highlight-green        = #4ca340;
+  $highlight-aqua         = #07a38f;
+  $highlight-blue         = #3294ff;
+  $highlight-purple       = #cc62fe;
+  $highlight-gutter       = {
+    color: $highlight-comment,
+    bg-color: $highlight-background
+  };
 } else {
   $highlight-background   = #f7f7f7;
   $highlight-current-line = #efefef;
