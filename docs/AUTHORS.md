@@ -156,6 +156,9 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
     <td align="center"><a href="https://liam.page/en/about"><img src="https://avatars2.githubusercontent.com/u/3348485?v=4" width="100px;" alt="Liam Huang"/><br /><sub><b>Liam Huang</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=Liam0205" title="Code">💻</a></td>
     <td align="center"><a href="https://maxocull.com"><img src="https://avatars0.githubusercontent.com/u/4708067?v=4" width="100px;" alt="Max O'Cull"/><br /><sub><b>Max O'Cull</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=Maxattax97" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/TrumanDu"><img src="https://avatars0.githubusercontent.com/u/16727775?v=4" width="100px;" alt="truman.p.du"/><br /><sub><b>truman.p.du</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=TrumanDu" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
