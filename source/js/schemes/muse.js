@@ -2,6 +2,11 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
+  var isRight = CONFIG.sidebar.position === 'right';
+  var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
+  var SIDEBAR_DISPLAY_DURATION = 400;
+  var mousePos = {}; var touchPos = {};
+
   var sidebarToggleLines = {
     lines: document.querySelector('.sidebar-toggle'),
     init : function() {
@@ -16,12 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
       this.lines.classList.add('toggle-close');
     }
   };
-
-  var isRight = CONFIG.sidebar.position === 'right';
-
-  var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
-  var SIDEBAR_DISPLAY_DURATION = 400;
-  var mousePos = {}; var touchPos = {};
 
   var sidebarToggleMotion = {
     sidebarEl       : document.querySelector('.sidebar'),
