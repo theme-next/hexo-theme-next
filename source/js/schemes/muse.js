@@ -8,12 +8,12 @@ window.addEventListener('DOMContentLoaded', () => {
       this.lines.classList.remove('toggle-arrow', 'toggle-close');
     },
     arrow: function() {
-      this.lines.classList.add('toggle-arrow');
       this.lines.classList.remove('toggle-close');
+      this.lines.classList.add('toggle-arrow');
     },
     close: function() {
-      this.lines.classList.add('toggle-close');
       this.lines.classList.remove('toggle-arrow');
+      this.lines.classList.add('toggle-close');
     }
   };
 
