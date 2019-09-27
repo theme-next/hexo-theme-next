@@ -104,45 +104,14 @@ creative_commons:
 
 
 # ---------------------------------------------------------------
-# SEO Settings
+# Scheme Settings
 # ---------------------------------------------------------------
 
-# Disable Baidu transformation on mobile devices.
-disable_baidu_transformation: false
-
-# Set a canonical link tag in your hexo, you could use it for your SEO of blog.
-# See: https://support.google.com/webmasters/answer/139066
-# Remember to set up your URL in Hexo `_config.yml` (e.g. url: http://yourdomain.com)
-canonical: true
-
-# Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
-seo: false
-
-# If true, will add site-subtitle to index page.
-# Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
-index_with_subtitle: false
-
-# Automatically add external URL with Base64 encrypt & decrypt.
-exturl: false
-
-# Google Webmaster tools verification.
-# See: https://www.google.com/webmasters
-google_site_verification:
-
-# Bing Webmaster tools verification.
-# See: https://www.bing.com/webmaster
-bing_site_verification:
-
-# Yandex Webmaster tools verification.
-# See: https://webmaster.yandex.ru
-yandex_site_verification:
-
-# Baidu Webmaster tools verification.
-# See: https://ziyuan.baidu.com/site
-baidu_site_verification:
-
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+# Schemes
+scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+#scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -172,20 +141,42 @@ menu_settings:
 
 
 # ---------------------------------------------------------------
-# Scheme Settings
-# ---------------------------------------------------------------
-
-# Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
-
-
-# ---------------------------------------------------------------
 # Sidebar Settings
 # See: https://theme-next.org/docs/theme-settings/sidebar
 # ---------------------------------------------------------------
+
+sidebar:
+  # Sidebar Position.
+  position: left
+  #position: right
+
+  # Manual define the sidebar width. If commented, will be default for:
+  # Muse | Mist: 320
+  # Pisces | Gemini: 240
+  #width: 300
+
+  # Sidebar Display (only for Muse | Mist), available values:
+  #  - post    expand on posts automatically. Default.
+  #  - always  expand for all pages automatically.
+  #  - hide    expand only when click on the sidebar toggle icon.
+  #  - remove  totally remove sidebar including sidebar toggle.
+  display: post
+
+  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+  offset: 12
+  # Enable sidebar on narrow view (only for Muse | Mist).
+  onmobile: false
+
+# Sidebar Avatar
+avatar:
+  # In theme directory (source/images): /images/avatar.gif
+  # In site directory (source/uploads): /uploads/avatar.gif
+  # You can also use other linking images.
+  url: #/images/avatar.gif
+  # If true, the avatar would be dispalyed in circle.
+  rounded: false
+  # If true, the avatar would be rotated with the cursor.
+  rotated: false
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -223,17 +214,6 @@ links_settings:
 links:
   #Title: http://example.com
 
-# Sidebar Avatar
-avatar:
-  # In theme directory (source/images): /images/avatar.gif
-  # In site directory (source/uploads): /uploads/avatar.gif
-  # You can also use other linking images.
-  url: #/images/avatar.gif
-  # If true, the avatar would be dispalyed in circle.
-  rounded: false
-  # If true, the avatar would be rotated with the cursor.
-  rotated: false
-
 # Table Of Contents in the Sidebar
 toc:
   enable: true
@@ -245,28 +225,6 @@ toc:
   expand_all: false
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front-matter.
   max_depth: 6
-
-sidebar:
-  # Sidebar Position.
-  position: left
-  #position: right
-
-  # Manual define the sidebar width. If commented, will be default for:
-  # Muse | Mist: 320
-  # Pisces | Gemini: 240
-  #width: 300
-
-  # Sidebar Display (only for Muse | Mist), available values:
-  #  - post    expand on posts automatically. Default.
-  #  - always  expand for all pages automatically.
-  #  - hide    expand only when click on the sidebar toggle icon.
-  #  - remove  totally remove sidebar including sidebar toggle.
-  display: post
-
-  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-  offset: 12
-  # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
@@ -420,7 +378,7 @@ custom_logo: #/uploads/custom-logo.jpg
 
 codeblock:
   # Code Highlight theme
-  # Available values: normal | night | night eighties | night blue | night bright
+  # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
   highlight_theme: normal
   # Add copy button on codeblock
@@ -515,6 +473,48 @@ font:
   codes:
     external: true
     family:
+
+
+# ---------------------------------------------------------------
+# SEO Settings
+# ---------------------------------------------------------------
+
+# Disable Baidu transformation on mobile devices.
+disable_baidu_transformation: false
+
+# Set a canonical link tag in your hexo, you could use it for your SEO of blog.
+# See: https://support.google.com/webmasters/answer/139066
+# Remember to set up your URL in Hexo `_config.yml` (e.g. url: http://yourdomain.com)
+canonical: true
+
+# Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
+seo: false
+
+# If true, will add site-subtitle to index page.
+# Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
+index_with_subtitle: false
+
+# Automatically add external URL with Base64 encrypt & decrypt.
+exturl: false
+
+# Google Webmaster tools verification.
+# See: https://www.google.com/webmasters
+google_site_verification:
+
+# Bing Webmaster tools verification.
+# See: https://www.bing.com/webmaster
+bing_site_verification:
+
+# Yandex Webmaster tools verification.
+# See: https://webmaster.yandex.ru
+yandex_site_verification:
+
+# Baidu Webmaster tools verification.
+# See: https://ziyuan.baidu.com/site
+baidu_site_verification:
+
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
+baidu_push: false
 
 
 # ---------------------------------------------------------------

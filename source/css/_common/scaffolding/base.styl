@@ -3,6 +3,10 @@
   color: $selection-color;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: $body-bg-color;
   color: $text-color;
@@ -11,7 +15,9 @@ body {
   line-height: $line-height-base;
 
   +tablet-mobile() {
-    padding-right: 0;
+    // Remove the padding of body when the sidebar is open.
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -35,8 +41,6 @@ p {
 
 a, span.exturl {
   word-wrap();
-  // Remove the gray background color from active links in IE 10.
-  background-color: transparent;
   border-bottom: 1px solid $link-decoration-color;
   color: $link-color;
   outline: none;
