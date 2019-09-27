@@ -158,9 +158,8 @@ Issues related: `types`+`contents`+`results`
 
 - By types
     - `Bug`: A detected bug that needs to be confirmed
-    - `Improvement Need`: An issue that needs improvement
+    - `Improvement`: An issue that needs improvement
     - `Feature Request`: An issue that wants a new feature
-    - `Non English`: Requires the attention of a multi-lingual maintainer
     - `Discussion`: An issue that needs to be discussed
     - `Question`: An issue about questions
     - `Meta`: Denoting a change of usage conditions

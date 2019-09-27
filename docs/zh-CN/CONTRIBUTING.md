@@ -155,9 +155,8 @@ Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
 
 - 类型
     - `Bug`: 检测到需要进行确认的 Bug
-    - `Improvement Need`: 需要改进的 Issue
+    - `Improvement`: 需要改进的 Issue
     - `Feature Request`: 提出了新功能请求的 Issue
-    - `Non English`: 需要多语言维护者参与的 Issue
     - `Discussion`: 需要进行讨论的 Issue
     - `Question`: 提出疑问的 Issue
     - `Meta`: 表明使用条款变更的 Issue
