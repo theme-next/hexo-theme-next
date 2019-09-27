@@ -158,6 +158,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/TrumanDu"><img src="https://avatars0.githubusercontent.com/u/16727775?v=4" width="100px;" alt="truman.p.du"/><br /><sub><b>truman.p.du</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=TrumanDu" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ifmos"><img src="https://avatars3.githubusercontent.com/u/16851606?v=4" width="100px;" alt="Mos"/><br /><sub><b>Mos</b></sub></a><br /><a href="https://github.com/theme-next/hexo-theme-next/commits?author=ifmos" title="Code">💻</a> <a href="#review-ifmos" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
