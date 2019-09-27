@@ -89,15 +89,6 @@
   display: none;
 }
 
-.footer-inner {
-  padding-left: 260px;
-
-  +tablet-mobile() {
-    padding: 0;
-    width: auto;
-  }
-}
-
 if (hexo-config('sidebar.position') == 'right') {
   .header-inner {
     right: 0;
@@ -116,10 +107,13 @@ if (hexo-config('sidebar.position') == 'right') {
   }
 
   .footer-inner {
-    padding-left: 0;
     padding-right: 260px;
   }
 } else {
+  .footer-inner {
+    padding-left: 260px;
+  }
+
   .back-to-top {
     left: auto;
     right: $b2t-position-right;
@@ -127,5 +121,14 @@ if (hexo-config('sidebar.position') == 'right') {
     +tablet-mobile() {
       right: $b2t-position-right-mobile;
     }
+  }
+}
+
+.footer-inner {
+
+  +tablet-mobile() {
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
   }
 }

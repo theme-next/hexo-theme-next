@@ -1,6 +1,9 @@
+// Footer Section
+// --------------------------------------------------
 .footer {
   color: $grey-dark;
   font-size: $font-size-small;
+  padding: 20px 0;
 
   &.footer-fixed {
     bottom: 0;
@@ -15,7 +18,22 @@
 }
 
 .footer-inner {
+  box-sizing: border-box;
+  margin: 0 auto;
   text-align: center;
+  width: $content-desktop;
+
+  +desktop-large() {
+    .container & {
+      width: $content-desktop-large;
+    }
+  }
+
+  +desktop-largest() {
+    .container & {
+      width: $content-desktop-largest;
+    }
+  }
 }
 
 @keyframes iconAnimate {
