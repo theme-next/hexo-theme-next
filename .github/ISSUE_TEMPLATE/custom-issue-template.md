@@ -18,8 +18,8 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 
 - [ ] I have executed `hexo clean`, cleared the browser cache and disabled all CDN services (e.g. Cloudflare Rocket Loader), this issue still exists.
 - [ ] I have confirmed that this issue only appears in theme NexT, but cannot be reproduced in other themes (e.g. default theme landscape). In other words, prove that this is a NexT issue, not a issue from Hexo.
-- [ ] I have already viewed [Hexo Docs page](https://hexo.io/docs/), especially [Templates](https://hexo.io/docs/templates.html), [Variables](https://hexo.io/docs/variables.html), [Helpers](https://hexo.io/docs/helpers.html) and [Troubleshooting](https://hexo.io/docs/troubleshooting.html).
-- [ ] I have already viewed [NexT Documentation Site](http://theme-next.org/docs/) and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue) which does not help me.
+- [ ] I have already viewed [NexT Documentation Site](http://theme-next.org/docs/) and [Hexo Docs page](https://hexo.io/docs/), especially [Troubleshooting](https://hexo.io/docs/troubleshooting.html) part.
+- [ ] I have already viewed the latest Roadmap on GitHub and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue), which does not help me.
 
 ***
 
