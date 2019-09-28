@@ -23,6 +23,7 @@
         </a>
       </div>
     {%- endif %}
+
     {%- if site.categories.length > 0 %}
       {%- set categoriesPageQuery = site.pages.find({type: 'categories'}, {lean: true}) %}
       {%- set hasCategoriesPage = categoriesPageQuery.length > 0 %}
@@ -39,6 +40,7 @@
         {%- if hasCategoriesPage %}</a>{%- endif %}
       </div>
     {%- endif %}
+
     {%- if site.tags.length > 0 %}
       {%- set tagsPageQuery = site.pages.find({type: 'tags'}, {lean: true}) %}
       {%- set hasTagsPage = tagsPageQuery.length > 0 %}
