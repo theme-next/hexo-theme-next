@@ -2,12 +2,6 @@
 {%- set js_defer_vendors = {} %}
 {%- set js_vendors.anime = 'anime.min.js?v=3.1.0' %}
 
-{# Velocity must be loaded before jQuery #}
-{%- if theme.motion.enable %}
-  {%- set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
-  {%- set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}
-{%- endif %}
-
 {%- if theme.pjax %}
   {%- set js_vendors.pjax = 'pjax/pjax.min.js?v=0.2.8' %}
 {%- endif %}
@@ -27,6 +21,11 @@
 
 {%- if theme.pangu %}
   {%- set js_vendors.pangu = '//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js' %}
+{%- endif %}
+
+{%- if theme.motion.enable %}
+  {%- set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
+  {%- set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}
 {%- endif %}
 
 {%- if theme.three.enable and not theme.three.delay %}
