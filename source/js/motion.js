@@ -1,6 +1,6 @@
 /* global NexT, CONFIG, Velocity */
 
-if ($ && $.Velocity) window.Velocity = $.Velocity;
+if (window.$ && window.$.Velocity) window.Velocity = window.$.Velocity;
 
 NexT.motion = {};
 
