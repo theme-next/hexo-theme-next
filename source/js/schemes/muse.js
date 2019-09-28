@@ -133,14 +133,9 @@ window.addEventListener('DOMContentLoaded', () => {
       this.isSidebarVisible = true;
       this.sidebarEl.classList.add('sidebar-active');
       if (typeof Velocity === 'function') {
-        Velocity(document.querySelectorAll('.sidebar .motion-element:not(.site-state)'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
+        Velocity(document.querySelectorAll('.sidebar .motion-element'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
           stagger: 50,
           drag   : true
-        });
-        Velocity(document.querySelector('.site-state'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-          stagger: 50,
-          drag   : true,
-          display: 'flex'
         });
       }
 

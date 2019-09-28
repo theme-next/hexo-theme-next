@@ -1,5 +1,7 @@
 /* global NexT, CONFIG, Velocity */
 
+if ($ && $.Velocity) window.Velocity = $.Velocity;
+
 NexT.motion = {};
 
 NexT.motion.integrator = {
