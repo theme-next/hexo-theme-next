@@ -9,56 +9,54 @@
 </div>
 
 {%- if theme.site_state %}
-  <div class="site-state-wrap motion-element">
-    <nav class="site-state">
-      {%- if config.archive_dir != '/' and site.posts.length > 0 %}
-        <div class="site-state-item site-state-posts">
-          {%- if theme.menu.archives %}
-            <a href="{{ url_for(theme.menu.archives).split('||')[0] | trim }}">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+    {%- if config.archive_dir != '/' and site.posts.length > 0 %}
+      <div class="site-state-item site-state-posts">
+        {%- if theme.menu.archives %}
+          <a href="{{ url_for(theme.menu.archives).split('||')[0] | trim }}">
+        {% else %}
+          <a href="{{ url_for(config.archive_dir) }}">
+        {%- endif %}
+          <span class="site-state-item-count">{{ site.posts.length }}</span>
+          <span class="site-state-item-name">{{ __('state.posts') }}</span>
+        </a>
+      </div>
+    {%- endif %}
+    {%- if site.categories.length > 0 %}
+      {%- set categoriesPageQuery = site.pages.find({type: 'categories'}, {lean: true}) %}
+      {%- set hasCategoriesPage = categoriesPageQuery.length > 0 %}
+      <div class="site-state-item site-state-categories">
+        {%- if hasCategoriesPage %}
+          {%- if theme.menu.categories %}
+            <a href="{{ url_for(theme.menu.categories).split('||')[0] | trim }}">
           {% else %}
-            <a href="{{ url_for(config.archive_dir) }}">
+            <a href="{{ url_for(config.category_dir) + '/' }}">
           {%- endif %}
-            <span class="site-state-item-count">{{ site.posts.length }}</span>
-            <span class="site-state-item-name">{{ __('state.posts') }}</span>
-          </a>
-        </div>
-      {%- endif %}
-
-      {%- if site.categories.length > 0 %}
-        {%- set categoriesPageQuery = site.pages.find({type: 'categories'}, {lean: true}) %}
-        {%- set hasCategoriesPage = categoriesPageQuery.length > 0 %}
-        <div class="site-state-item site-state-categories">
-          {%- if hasCategoriesPage %}
-            {%- if theme.menu.categories %}
-              <a href="{{ url_for(theme.menu.categories).split('||')[0] | trim }}">
-            {% else %}
-              <a href="{{ url_for(config.category_dir) + '/' }}">
-            {%- endif %}
+        {%- endif %}
+        <span class="site-state-item-count">{{ site.categories.length }}</span>
+        <span class="site-state-item-name">{{ __('state.categories') }}</span>
+        {%- if hasCategoriesPage %}</a>{%- endif %}
+      </div>
+    {%- endif %}
+    {%- if site.tags.length > 0 %}
+      {%- set tagsPageQuery = site.pages.find({type: 'tags'}, {lean: true}) %}
+      {%- set hasTagsPage = tagsPageQuery.length > 0 %}
+      <div class="site-state-item site-state-tags">
+        {%- if hasTagsPage %}
+          {%- if theme.menu.tags %}
+            <a href="{{ url_for(theme.menu.tags).split('||')[0] | trim }}">
+          {% else %}
+            <a href="{{ url_for(config.tag_dir) + '/' }}">
           {%- endif %}
-          <span class="site-state-item-count">{{ site.categories.length }}</span>
-          <span class="site-state-item-name">{{ __('state.categories') }}</span>
-          {%- if hasCategoriesPage %}</a>{%- endif %}
-        </div>
-      {%- endif %}
-
-      {%- if site.tags.length > 0 %}
-        {%- set tagsPageQuery = site.pages.find({type: 'tags'}, {lean: true}) %}
-        {%- set hasTagsPage = tagsPageQuery.length > 0 %}
-        <div class="site-state-item site-state-tags">
-          {%- if hasTagsPage %}
-            {%- if theme.menu.tags %}
-              <a href="{{ url_for(theme.menu.tags).split('||')[0] | trim }}">
-            {% else %}
-              <a href="{{ url_for(config.tag_dir) + '/' }}">
-            {%- endif %}
-          {%- endif %}
-          <span class="site-state-item-count">{{ site.tags.length }}</span>
-          <span class="site-state-item-name">{{ __('state.tags') }}</span>
-          {%- if hasTagsPage %}</a>{%- endif %}
-        </div>
-      {%- endif %}
-    </nav>
-  </div>
+        {%- endif %}
+        <span class="site-state-item-count">{{ site.tags.length }}</span>
+        <span class="site-state-item-name">{{ __('state.tags') }}</span>
+        {%- if hasTagsPage %}</a>{%- endif %}
+      </div>
+    {%- endif %}
+  </nav>
+</div>
 {%- endif %}
 
 {%- if theme.rss %}
