@@ -28,9 +28,7 @@
       border-bottom-color: $sidebar-highlight;
     }
 
-    $badges = hexo-config('menu_settings.badges');
-
-    if (!$badges) {
+    if (!hexo-config('menu_settings.badges')) {
       &::after {
         content: initial;
       }
