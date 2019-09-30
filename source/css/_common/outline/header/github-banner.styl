@@ -15,7 +15,6 @@
 .github-corner {
   $scheme = hexo-config('scheme');
   $bg-color = unquote(hexo-config('android_chrome_color'));
-  $mobile-layout-economy = hexo-config('mobile_layout_economy');
 
   :hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
@@ -47,16 +46,10 @@
     }
   }
 
-  +mobile() {
-    svg {
-      if ($scheme == 'Mist') {
+  if ($scheme == 'Mist') {
+    +mobile() {
+      svg {
         top: inherit;
-
-        if ($mobile-layout-economy) {
-          +mobile-small() {
-            margin-top: initial;
-          }
-        }
       }
     }
   }
