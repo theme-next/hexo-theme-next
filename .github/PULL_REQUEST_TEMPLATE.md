@@ -13,10 +13,11 @@ npm run test
 npm run test lint:stylus
 ```
 And make sure that this PR does not cause more warning messages.
+
+5. Please check if your PR fulfills the following requirements.
 -->
 
 ## PR Checklist <!-- 我确认我已经查看了 -->
-<!-- Please check if your PR fulfills the following requirements -->
 <!-- Change [ ] to [x] to select, not [ x] or [x ] (将 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
 
 - [ ] The commit message follows [our guidelines](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).

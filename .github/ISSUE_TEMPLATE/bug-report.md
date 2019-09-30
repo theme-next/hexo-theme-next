@@ -8,12 +8,13 @@ assignees: ''
 ---
 
 <!-- ATTENTION!
-IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOUT INVESTIGATING.
-如果你不填写下面的内容，我们可能会直接关闭你的 Issue。
+IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION, WE MIGHT CLOSE YOUR ISSUE WITHOUT INVESTIGATING.
+如果你没有按照要求填写以下内容，我们可能会直接关闭你的 Issue。
+Please check if your Issue fulfills the following requirements.
+请务必确认你在提交此 Issue 前已经查看并完成了下列检查单中的所有事项。
 -->
 
 ## Issue Checklist <!-- 我确认我已经查看了 -->
-<!-- Please check if your Issue fulfills the following requirements -->
 <!-- Change [ ] to [x] to select, not [ x] or [x ] (将 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
 
 - [ ] I have executed `hexo clean`, cleared the browser cache and disabled all CDN services (e.g. Cloudflare Rocket Loader), this issue still exists.
@@ -39,7 +40,13 @@ IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION WE MIGHT CLOSE YOUR ISSUE WITHOU
 3. N/A
 
 
-## Hexo Information
+## Environment Information
+
+### Node.js and NPM Information
+<!-- Paste output from `node -v && npm -v` (粘贴 `node -v && npm -v` 输出的信息) -->
+```
+
+```
 
 ### Package dependencies Information
 <!-- Paste output from `cat package.json` (粘贴 `cat package.json` 输出的信息) -->
