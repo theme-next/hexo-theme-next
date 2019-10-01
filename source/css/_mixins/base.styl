@@ -85,15 +85,6 @@ word-wrap() {
   word-wrap: break-word;
 }
 
-disable-touch-hover() {
-  // To prevent hover on external links with touch devices after click.
-  @media (hover: none) {
-    &:hover {
-      background: none;
-    }
-  }
-}
-
 disable-user-select() {
   -moz-user-select: none;
   -ms-user-select: none;

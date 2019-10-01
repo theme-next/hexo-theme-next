@@ -23,16 +23,11 @@
 }
 
 .menu {
-  // float: right;
   margin: 0;
 
   +mobile() {
     margin: 10px 0;
     padding: 0;
-  }
-
-  br {
-    display: none;
   }
 
   .menu-item {
@@ -63,7 +58,6 @@
     }
 
     a, span.exturl {
-      border: 0;
       border-radius: 2px;
       padding: 0 10px;
       transition-property: background;
@@ -75,8 +69,6 @@
       &:hover {
         @extend .menu-item-active a;
       }
-
-      disable-touch-hover();
     }
   }
 

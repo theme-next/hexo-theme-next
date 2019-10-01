@@ -9,7 +9,8 @@
 </div>
 
 {%- if theme.site_state %}
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
     {%- if config.archive_dir != '/' and site.posts.length > 0 %}
       <div class="site-state-item site-state-posts">
         {%- if theme.menu.archives %}
@@ -57,6 +58,7 @@
       </div>
     {%- endif %}
   </nav>
+</div>
 {%- endif %}
 
 {%- if theme.rss %}

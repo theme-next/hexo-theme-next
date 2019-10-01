@@ -23,9 +23,8 @@
 .menu-item-active a {
   background: #f9f9f9;
   border-bottom-color: white;
-  $badges = hexo-config('menu_settings.badges');
 
-  if (!$badges) {
+  if (!hexo-config('menu_settings.badges')) {
     &::after {
       background-color: $grey;
       border-radius: 50%;
@@ -45,8 +44,6 @@
   margin: 0;
 
   a, span.exturl {
-    box-sizing: border-box;
-    line-height: inherit;
     padding: 5px 20px;
     position: relative;
     text-align: left;
@@ -56,8 +53,6 @@
     &:hover {
       @extend .menu-item-active a;
     }
-
-    disable-touch-hover();
   }
 
   .badge {
@@ -74,9 +69,5 @@
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
     vertical-align: middle;
     white-space: nowrap;
-  }
-
-  br {
-    display: none;
   }
 }

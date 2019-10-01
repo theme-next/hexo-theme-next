@@ -559,6 +559,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ifmos",
+      "name": "Mos",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/16851606?v=4",
+      "profile": "https://github.com/ifmos",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 6

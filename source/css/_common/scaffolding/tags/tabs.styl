@@ -1,5 +1,5 @@
 // Read tabs border_radius from NexT config and set in "$tbr px" to use it as string variable in this CSS section.
-hexo-config('tabs.border_radius') is a 'unit' ? ($tbr = unit(hexo-config('tabs.border_radius'), px)) : ($tbr = 0);
+$tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.border_radius'), px) : 0;
 
 .post-body .tabs {
   margin-bottom: 20px;

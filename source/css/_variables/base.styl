@@ -1,6 +1,6 @@
 //
 // Variables
-// =================================================
+// ==================================================
 
 
 // Colors
@@ -69,8 +69,8 @@ $font-family-headings     = get_font_family('headings'), $font-family-base if ge
 $font-family-posts        = $font-family-base;
 $font-family-posts        = get_font_family('posts'), $font-family-base if get_font_family('posts');
 
-$font-family-monospace    = consolas, Menlo, $font-family-chinese, monospace;
-$font-family-monospace    = get_font_family('codes'), consolas, Menlo, $font-family-chinese, monospace if get_font_family('codes');
+$font-family-monospace    = consolas, Menlo, monospace, $font-family-chinese;
+$font-family-monospace    = get_font_family('codes'), consolas, Menlo, monospace, $font-family-chinese if get_font_family('codes');
 
 $font-family-icons        = 'FontAwesome';
 
@@ -97,7 +97,7 @@ $font-size-largest        = 1.375em;
 
 // Headings font size
 $font-size-headings-step  = .125em;
-$font-size-headings-base  = 1.875em;
+$font-size-headings-base  = 1.625em;
 $font-size-headings-base  = unit(hexo-config('font.headings.size'), em) if hexo-config('font.headings.size') is a 'unit';
 
 
@@ -199,15 +199,11 @@ $brand-color                    = white;
 $brand-hover-color              = white;
 $brand-bg                       = $black-deep;
 
-$title-font-size                = $font-size-largest;
-$title-font-size                = unit(hexo-config('font.title.size'), em) if hexo-config('font.title.size') is a 'unit';
-$subtitle-font-size             = $font-size-smaller;
+$font-size-title                = $font-size-largest;
+$font-size-title                = unit(hexo-config('font.title.size'), em) if hexo-config('font.title.size') is a 'unit';
+$font-size-subtitle             = $font-size-smaller;
 $subtitle-color                 = $grey-dark;
 $site-subtitle-color            = $grey-dark;
-
-// Menu
-$menu-link-border               = transparent;
-$menu-link-hover-border         = $black-deep;
 
 
 // Posts Collpase
