@@ -36,22 +36,6 @@
     vertical-align: top;
   }
 
-  .badge {
-    background-color: $gainsboro;
-    display: inline-block;
-    font-weight: $font-weight-bolder;
-    line-height: 1;
-    margin-left: 5px;
-    padding: 1px 4px;
-    text-align: center;
-    white-space: nowrap;
-
-    +mobile() {
-      float: right;
-      margin: .35em 0 0 0;
-    }
-  }
-
   a, span.exturl {
     +mobile() {
       padding: 5px 10px;
@@ -75,6 +59,15 @@
       line-height: 2;
       margin-right: 0;
       width: 100%;
+    }
+  }
+
+  .badge {
+    background-color: $gainsboro;
+    padding: 1px 4px;
+
+    +mobile() {
+      float: right;
     }
   }
 }
