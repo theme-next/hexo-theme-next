@@ -569,6 +569,16 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "kuretru",
+      "name": "呉真",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/13750214?v=4",
+      "profile": "https://blog.kuretru.com/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 6
