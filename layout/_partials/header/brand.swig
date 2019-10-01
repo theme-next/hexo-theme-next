@@ -30,10 +30,10 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="{{ __('accessibility.nav_toggle') }}">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="{{ __('accessibility.nav_toggle') }}">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>

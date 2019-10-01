@@ -8,20 +8,20 @@ NexT.boot.registerEvents = function() {
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
-  document.querySelector('.site-nav-toggle button').addEventListener('click', () => {
+  document.querySelector('.site-nav-toggle .toggle').addEventListener('click', () => {
+    event.currentTarget.classList.toggle('toggle-close');
     var siteNav = document.querySelector('.site-nav');
-    var ON_CLASS_NAME = 'site-nav-on';
-    var animateAction = siteNav.classList.contains(ON_CLASS_NAME) ? 'slideUp' : 'slideDown';
+    var animateAction = siteNav.classList.contains('site-nav-on') ? 'slideUp' : 'slideDown';
 
     if (typeof Velocity === 'function') {
       Velocity(siteNav, animateAction, {
         duration: 200,
         complete: function() {
-          siteNav.classList.toggle(ON_CLASS_NAME);
+          siteNav.classList.toggle('site-nav-on');
         }
       });
     } else {
-      siteNav.classList.toggle(ON_CLASS_NAME);
+      siteNav.classList.toggle('site-nav-on');
     }
   });
 

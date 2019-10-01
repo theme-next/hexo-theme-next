@@ -2,77 +2,25 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  var sidebarToggleLines = {
-    lines: [],
-    init : function() {
-      this.lines.forEach(line => {
-        line.transform('init');
-      });
-    },
-    arrow: function() {
-      this.lines.forEach(line => {
-        line.transform('arrow');
-      });
-    },
-    close: function() {
-      this.lines.forEach(line => {
-        line.transform('close');
-      });
-    }
-  };
-
-  function SidebarToggleLine(settings) {
-    this.status = Object.assign({
-      init: {
-        width    : '100%',
-        opacity  : 1,
-        transform: 'rotate(0deg)',
-        top      : 0,
-        left     : 0
-      }
-    }, settings.status);
-    this.transform = function(status) {
-      Object.assign(document.querySelector(settings.el).style, this.status[status]);
-    };
-  }
-
   var isRight = CONFIG.sidebar.position === 'right';
-
-  sidebarToggleLines.lines = [new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-first',
-    status: isRight
-      ? {
-        arrow: {width: '50%', transform: 'rotate(-45deg)', top: '2px'},
-        close: {width: '100%', transform: 'rotate(-45deg)', top: '5px'}
-      } : {
-        arrow: {width: '50%', transform: 'rotate(45deg)', top: '2px', left: '50%'},
-        close: {width: '100%', transform: 'rotate(-45deg)', top: '5px', left: '0px'}
-      }
-  }), new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-middle',
-    status: isRight
-      ? {
-        arrow: {width: '90%'},
-        close: {opacity: 0}
-      } : {
-        arrow: {width: '90%', left: '2px'},
-        close: {opacity: 0, left: '0px'}
-      }
-  }), new SidebarToggleLine({
-    el    : '.sidebar-toggle-line-last',
-    status: isRight
-      ? {
-        arrow: {width: '50%', transform: 'rotate(45deg)', top: '-2px'},
-        close: {width: '100%', transform: 'rotate(45deg)', top: '-5px'}
-      } : {
-        arrow: {width: '50%', transform: 'rotate(-45deg)', top: '-2px', left: '50%'},
-        close: {width: '100%', transform: 'rotate(45deg)', top: '-5px', left: '0px'}
-      }
-  })];
-
   var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
   var SIDEBAR_DISPLAY_DURATION = 400;
   var mousePos = {}; var touchPos = {};
+
+  var sidebarToggleLines = {
+    lines: document.querySelector('.sidebar-toggle'),
+    init : function() {
+      this.lines.classList.remove('toggle-arrow', 'toggle-close');
+    },
+    arrow: function() {
+      this.lines.classList.remove('toggle-close');
+      this.lines.classList.add('toggle-arrow');
+    },
+    close: function() {
+      this.lines.classList.remove('toggle-arrow');
+      this.lines.classList.add('toggle-close');
+    }
+  };
 
   var sidebarToggleMotion = {
     sidebarEl       : document.querySelector('.sidebar'),

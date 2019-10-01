@@ -1,0 +1,93 @@
+.toggle {
+  line-height: 0;
+
+  .toggle-line {
+    background: white;
+    display: inline-block;
+    height: 2px;
+    left: 0px;
+    margin-top: 3px;
+    position: relative;
+    top: 0px;
+    transition: all .4s;
+    vertical-align: top;
+    width: 100%;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+if (hexo-config('sidebar.position') == 'right') {
+  .toggle.toggle-arrow {
+    .toggle-line-first {
+      top: 2px;
+      transform: rotate(-45deg);
+      width: 50%;
+    }
+
+    .toggle-line-middle {
+      width: 90%;
+    }
+
+    .toggle-line-last {
+      top: -2px;
+      transform: rotate(45deg);
+      width: 50%;
+    }
+  }
+
+  .toggle.toggle-close {
+    .toggle-line-first {
+      top: 5px;
+      transform: rotate(-45deg);
+    }
+
+    .toggle-line-middle {
+      opacity: 0;
+    }
+
+    .toggle-line-last {
+      top: -5px;
+      transform: rotate(45deg);
+    }
+  }
+} else {
+  .toggle.toggle-arrow {
+    .toggle-line-first {
+      left: 50%;
+      top: 2px;
+      transform: rotate(45deg);
+      width: 50%;
+    }
+
+    .toggle-line-middle {
+      left: 2px;
+      width: 90%;
+    }
+
+    .toggle-line-last {
+      left: 50%;
+      top: -2px;
+      transform: rotate(-45deg);
+      width: 50%;
+    }
+  }
+
+  .toggle.toggle-close {
+    .toggle-line-first {
+      transform: rotate(-45deg);
+      top: 5px;
+    }
+
+    .toggle-line-middle {
+      opacity: 0;
+    }
+
+    .toggle-line-last {
+      transform: rotate(45deg);
+      top: -5px;
+    }
+  }
+}
