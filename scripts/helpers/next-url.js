@@ -66,5 +66,5 @@ hexo.extend.helper.register('next_url', function(path, text, options) {
     }
   }
 
-  return htmlTag(tag, attrs, text);
+  return htmlTag(tag, attrs, text, false);
 });
