@@ -16,20 +16,22 @@
   }
 
   a, span.exturl {
-    border-bottom: 1px solid $menu-link-border;
+    border-bottom: 0;
     display: block;
     font-size: $font-size-smaller;
-    line-height: inherit;
     transition-property: border-color;
     the-transition();
 
-    &:hover {
-      border-bottom-color: $menu-link-hover-border;
+    // To prevent hover on external links with touch devices after click.
+    @media (hover: none) {
+      &:hover {
+        border-bottom-color: transparent !important;
+      }
     }
   }
 
   .fa {
-    margin-right: 5px;
+    margin-right: 8px;
   }
 }
 

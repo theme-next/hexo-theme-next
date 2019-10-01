@@ -4,9 +4,9 @@
 @import '../Pisces/_sub-menu';
 @import '../Pisces/_sidebar';
 
-// =================================================
+// ==================================================
 // Rewrite _layout.styl
-// =================================================
+// ==================================================
 // Sidebar padding used as main desktop content padding for sidebar padding and post blocks padding too.
 
 // In `source/css/_variables/Pisces.styl` there are variable for main offset:
@@ -19,17 +19,16 @@
 // P.S. If u want to change this paddings u may set this variables into `custom_file_path.variable` (in theme _config.yml).
 
 // So, it will 12px in Desktop, 10px in Tablets and 8px in Mobiles for all possible paddings.
-// =================================================
+// ==================================================
 // Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
 $use-seo = hexo-config('seo');
 
-// =================================================
+// ==================================================
 // Desktop layout styles.
-// =================================================
+// ==================================================
 // Post blocks.
 .content-wrap {
   background: initial;
-  border-radius: initial;
   box-shadow: initial;
   padding: initial;
 }
@@ -69,10 +68,6 @@ $use-seo = hexo-config('seo');
 // Top main padding from header to posts (default 40px).
 .posts-expand {
   padding-top: initial;
-
-  .post-title-link {
-    line-height: inherit;
-  }
 }
 
 // Post navigation items.
@@ -135,9 +130,9 @@ $use-seo = hexo-config('seo');
   }
 }
 
-// =================================================
+// ==================================================
 // Headers.
-// =================================================
+// ==================================================
 .post-body {
   h1, h2 {
     border-bottom: 1px solid $body-bg-color;
@@ -158,9 +153,9 @@ $use-seo = hexo-config('seo');
   }
 }
 
-// =================================================
+// ==================================================
 // > 768px & < 991px
-// =================================================
+// ==================================================
 +tablet() {
   // Posts in blocks.
   .content-wrap {
@@ -203,9 +198,9 @@ $use-seo = hexo-config('seo');
   }
 }
 
-// =================================================
+// ==================================================
 // < 767px
-// =================================================
+// ==================================================
 +mobile() {
   // Posts in blocks.
   .content-wrap {

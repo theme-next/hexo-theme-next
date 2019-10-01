@@ -1,4 +1,4 @@
-.page-number-basic {
+$page-number-basic {
   display: inline-block;
   margin: 0 10px;
   padding: 0 11px;
@@ -16,7 +16,7 @@
   text-align: center;
 
   .prev, .next, .page-number {
-    @extend .page-number-basic;
+    @extend $page-number-basic;
     border-bottom: 0;
     border-top: 1px solid $pagination-link-border;
     transition-property: border-color;
@@ -28,7 +28,7 @@
   }
 
   .space {
-    @extend .page-number-basic;
+    @extend $page-number-basic;
     margin: 0;
     padding: 0;
   }

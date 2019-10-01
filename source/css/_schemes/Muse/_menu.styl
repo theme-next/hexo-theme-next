@@ -21,7 +21,7 @@
 }
 
 .menu-item-active a {
-  border-bottom-color: $menu-link-hover-border;
+  border-bottom: 1px solid $menu-link-hover-border;
   color: $black-deep;
 
   +mobile() {
@@ -52,12 +52,6 @@
     }
   }
 
-  br {
-    +mobile() {
-      display: none;
-    }
-  }
-
   a, span.exturl {
     +mobile() {
       padding: 5px 10px;
@@ -66,21 +60,20 @@
     &:hover {
       @extend .menu-item-active a;
     }
-
-    // To prevent hover on external links with touch devices after click.
-    @media (hover: none) {
-      &:hover {
-        border-bottom-color: transparent !important;
-      }
-    }
   }
 
   .fa {
     +tablet() {
+      display: block;
+      line-height: 2;
+      margin-right: 0;
       width: 100%;
     }
 
     +desktop() {
+      display: block;
+      line-height: 2;
+      margin-right: 0;
       width: 100%;
     }
   }

@@ -6,10 +6,6 @@
     font-size: $font-size-large;
   }
 
-  +mobile() {
-    font-size: $font-size-small;
-  }
-
   span.exturl .fa {
     font-size: $font-size-small;
     margin-left: 4px;
@@ -65,11 +61,10 @@
 @import 'post-eof';
 @import 'post-expand';
 @import 'post-gallery';
-@import 'post-meta';
+@import 'post-header';
 @import 'post-nav';
 @import 'post-rtl';
 @import 'post-tags';
-@import 'post-title';
 @import 'post-widgets';
 
 @import 'post-reward' if (hexo-config('reward_settings.enable'));
