@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16944225/64427386-6ee80900-d0b1-11e9-8664-411e818e0710.gif">
+  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
 </p>
 
 ## 即时预览
@@ -53,7 +53,7 @@ pjax: false
 
 将 `pjax` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
 
-### 例外
+### 设置 CDN
 
 如果你使用的插件脚本依赖 CDN，那么需要替换你的 CDN 链接：
 
@@ -83,19 +83,18 @@ $ git pull
 
 **如果你想要从 v5.1.x 更新到 v6.0.x，阅读[这篇文档][docs-update-5-1-x-url]。**
 
-## 贡献你的代码
-
-我们欢迎你贡献出你的一份力量，你可以随时提交 issue 或 fork 本仓库。静候你的 pull request。
-
 ## 反馈
 
+* 加入我们的 [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] 聊天。
+* 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
 * 浏览 [Awesome NexT][awesome-next-url] 列表。
-* 在 [Stack Overflow][stack-url] 上提问。
 * 在 [GitHub Issues][issues-bug-url] 报告Bug。
 * 在 [GitHub][issues-feat-url] 请求新的功能。
 * 为 [受欢迎的 Feature request][feat-req-vote-url] 投票。
-* 加入我们的 [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] 聊天。
-* 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
+
+## 贡献你的代码
+
+我们欢迎你贡献出你的一份力量，你可以随时提交 issue 或 fork 本仓库。静候你的 pull request。
 
 ## 鸣谢
 
@@ -127,23 +126,17 @@ $ git pull
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md
 
-[awesome-next-url]: https://github.com/theme-next/awesome-next
-[stack-url]: https://stackoverflow.com/questions/tagged/theme-next
-[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
-[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
-[feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
-
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
 [t-chat-url]: https://t.me/theme_next_chinese
 [t-news-url]: https://t.me/theme_next_news
 
-<!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->
-<!--[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg-->
-<!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
+[awesome-next-url]: https://github.com/theme-next/awesome-next
+[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
+[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
+[feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
 
 <!--[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip-->
 <!--[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest-->
 <!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases-->
 <!--[tags-url]: https://github.com/theme-next/hexo-theme-next/tags-->
-<!--[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master-->

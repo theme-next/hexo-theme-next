@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16944225/64427386-6ee80900-d0b1-11e9-8664-411e818e0710.gif">
+  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
 </p>
 
 ## Live Preview
@@ -53,7 +53,7 @@ pjax: false
 
 Then turn on `pjax` and go to «Dependencies» link with installation instructions of this module.
 
-### Exceptions
+### Configure CDN
 
 If you use CDN for any plugins, you need to replace your CDN link.
 
@@ -83,19 +83,18 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 **If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].**
 
-## Contributing
-
-Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
-
 ## Feedback
 
+* Join our [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] chats.
+* Follow us with [Telegram Channel][t-news-url] for latest news.
 * Visit the [Awesome NexT][awesome-next-url] list.
-* Ask a question on [Stack Overflow][stack-url].
 * Report a bug in [GitHub Issues][issues-bug-url].
 * Request a new feature on [GitHub][issues-feat-url].
 * Vote for [popular feature requests][feat-req-vote-url].
-* Join to our [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] chats.
-* Follow us with [Telegram Channel][t-news-url] for latest news.
+
+## Contributing
+
+Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
 
 ## Thanks
 
@@ -127,23 +126,17 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
 
-[awesome-next-url]: https://github.com/theme-next/awesome-next
-[stack-url]: https://stackoverflow.com/questions/tagged/theme-next
-[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
-[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
-[feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
-
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
 [t-chat-url]: https://t.me/theme_next
 [t-news-url]: https://t.me/theme_next_news
 
-<!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->
-<!--[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg-->
-<!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
+[awesome-next-url]: https://github.com/theme-next/awesome-next
+[issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
+[issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
+[feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
 
 <!--[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip-->
 <!--[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest-->
 <!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases-->
 <!--[tags-url]: https://github.com/theme-next/hexo-theme-next/tags-->
-<!--[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master-->
