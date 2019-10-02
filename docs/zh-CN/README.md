@@ -32,18 +32,18 @@
 
 最简单的安装方式是直接克隆整个仓库：
 
-   ```sh
-   $ cd hexo
-   $ git clone https://github.com/theme-next/hexo-theme-next themes/next
-   ```
+```sh
+$ cd hexo
+$ git clone https://github.com/theme-next/hexo-theme-next themes/next
+```
 
 此外，如果你想要使用其他方式，你也可以参见[详细安装步骤][docs-installation-url]。
 
 ## 插件
 
-在 NexT 配置中你现在可以找到已经被移至外部仓库的依赖项。你可以在[组织主页](https://github.com/theme-next)中找到它们。
+在 NexT 配置中有一些第三方插件，它们已经被移至外部仓库。你可以在[组织主页](https://github.com/theme-next)中找到它们。
 
-例如，假设你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，你会看到如下内容：
+例如，你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，你会看到如下内容：
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
@@ -51,13 +51,13 @@
 pjax: false
 ```
 
-将 `pjax` 配置项打开，进入它上面的 «Dependencies» 链接以查看它的安装步骤。
+启用 `pjax` 配置项，打开它上面的 «Dependencies» 链接以查看它的安装步骤。
 
 ### 设置 CDN
 
-如果你使用的插件脚本依赖 CDN，那么需要替换你的 CDN 链接：
+如果你想要通过 CDN 来加载插件脚本，那么需要设置相关的 CDN 链接。
 
-例如，假如你使用了 `mediumzoom` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
+例如，你使用了 `mediumzoom` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
 
 ```yml
 vendors:
@@ -67,7 +67,7 @@ vendors:
   mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
-通过替换 CDN 链接来替换 [插件列表](https://github.com/theme-next) 项目来升级。
+通过设置 CDN 链接来代替通过 [插件列表](https://github.com/theme-next) 项目进行升级。
 
 ## 更新
 

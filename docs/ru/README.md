@@ -32,10 +32,10 @@
 
 Простейший вариант установки — склонировать весь репозиторий:
 
-   ```sh
-   $ cd hexo
-   $ git clone https://github.com/theme-next/hexo-theme-next themes/next
-   ```
+```sh
+$ cd hexo
+$ git clone https://github.com/theme-next/hexo-theme-next themes/next
+```
 
 Или предлагаю почитать [детальные инструкции по установке][docs-installation-url], если вариант выше не устраивает.
 
