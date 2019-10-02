@@ -6,20 +6,20 @@ categories:
   - title: '💥 Breaking Changes'
     label: '💥 Breaking Change'
 
-  - title: '🌀 External Changes'
-    label: '🌀 External Change'
-
   - title: '🌟 New Features'
     label: '🌟 New Feature'
 
   - title: '⭐ Features'
     label: '⭐ Feature'
 
+  - title: '🐞 Bug Fixes'
+    label: '🐞 Bug Fix'
+
   - title: '🛠 Improvements'
     label: '🛠 Improvement'
 
-  - title: '🐞 Bug Fixes'
-    label: '🐞 Bug Fix'
+  - title: '🌀 External Changes'
+    label: '🔌 3rd Party Plugin'
 
   - title: '📖 Documentation'
     label: '📖 Docs'
