@@ -42,7 +42,7 @@ $use-seo = hexo-config('seo');
 }
 
 // When blocks are siblings (homepage).
-#posts > .post-block + .post-block {
+.post-block + .post-block {
   border-radius: $border-radius;
   // Rewrite shadows & borders because all blocks have offsets.
   box-shadow: $box-shadow;
@@ -112,7 +112,7 @@ $use-seo = hexo-config('seo');
   box-shadow: $box-shadow-inner;
 
   // Adapt submenu(s) with post-blocks.
-  + #content > #posts {
+  + #content {
     .post-block {
       box-shadow: $box-shadow;
       margin-top: $sidebar-offset;
@@ -178,7 +178,7 @@ $use-seo = hexo-config('seo');
   }
 
   // Only if blocks are siblings need bottom margin (homepage).
-  #posts > .post-block + .post-block {
+  .post-block + .post-block {
     margin-top: $content-tablet-padding;
   }
 
@@ -222,7 +222,7 @@ $use-seo = hexo-config('seo');
   }
 
   // Only if blocks are siblings need bottom margin (homepage).
-  #posts > .post-block + .post-block {
+  .post-block + .post-block {
     margin-top: $content-mobile-padding;
   }
 

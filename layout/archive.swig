@@ -9,8 +9,8 @@
   {#####################}
   {### ARCHIVE BLOCK ###}
   {#####################}
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
+  <div class="post-block">
+    <div class="posts-collapse">
 
       {%- if theme.cheers %}
       <div class="collection-title">
