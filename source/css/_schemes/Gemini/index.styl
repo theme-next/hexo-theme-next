@@ -42,13 +42,11 @@ $use-seo = hexo-config('seo');
 }
 
 // When blocks are siblings (homepage).
-#posts > article + article {
-  .post-block {
-    border-radius: $border-radius;
-    // Rewrite shadows & borders because all blocks have offsets.
-    box-shadow: $box-shadow;
-    margin-top: $sidebar-offset;
-  }
+#posts > .post-block + .post-block {
+  border-radius: $border-radius;
+  // Rewrite shadows & borders because all blocks have offsets.
+  box-shadow: $box-shadow;
+  margin-top: $sidebar-offset;
 }
 
 // Comments blocks.
@@ -180,10 +178,8 @@ $use-seo = hexo-config('seo');
   }
 
   // Only if blocks are siblings need bottom margin (homepage).
-  #posts > article + article {
-    .post-block {
-      margin-top: $content-tablet-padding;
-    }
+  #posts > .post-block + .post-block {
+    margin-top: $content-tablet-padding;
   }
 
   .comments {
@@ -226,10 +222,8 @@ $use-seo = hexo-config('seo');
   }
 
   // Only if blocks are siblings need bottom margin (homepage).
-  #posts > article + article {
-    .post-block {
-      margin-top: $content-mobile-padding;
-    }
+  #posts > .post-block + .post-block {
+    margin-top: $content-mobile-padding;
   }
 
   .comments {

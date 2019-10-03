@@ -4,6 +4,7 @@
 {% block title %}{{ title }}{%- if theme.index_with_subtitle and subtitle %} - {{ subtitle }}{%- endif %}{% endblock %}
 
 {% block content %}
+
   <div id="posts" class="posts-expand">
     {%- for post in page.posts %}
       {{ partial('_macro/post.swig', {is_index: true}) }}
@@ -11,6 +12,7 @@
   </div>
 
   {% include '_partials/pagination.swig' %}
+
 {% endblock %}
 
 {% block sidebar %}

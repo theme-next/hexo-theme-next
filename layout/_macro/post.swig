@@ -1,8 +1,7 @@
-  <article itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block {% if is_index %}home{% endif %}" lang="{{ post.lang or post.language or config.language }}">
   {##################}
   {### POST BLOCK ###}
   {##################}
-  <div class="post-block {% if is_index %}home{% else %}post{% endif %}">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -296,7 +295,6 @@
         {%- endif %}
       </footer>
     {%- endif %}
-  </div>
   {######################}
   {### END POST BLOCK ###}
   {######################}

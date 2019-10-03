@@ -21,7 +21,7 @@
     {##################}
     {### PAGE BLOCK ###}
     {##################}
-    <div class="post-block page">
+    <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="{{ page.lang or page.language or config.language }}">
       {% include '_partials/page/page-header.swig' %}
       {#################}
       {### PAGE BODY ###}
@@ -57,7 +57,7 @@
       {#####################}
       {### END PAGE BODY ###}
       {#####################}
-    </div>
+    </article>
     {% include '_partials/page/breadcrumb.swig' %}
     {######################}
     {### END PAGE BLOCK ###}
