@@ -26,14 +26,14 @@
             {%- endif %}
             {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
             {%- set postText = post.title or post.link %}
-            {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
+            {{ next_url(post.link, postText + postTitleIcon, { class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
           {% elif is_index %}
             {%- if post.sticky > 0 %}
               <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
                 <i class="fa fa-thumb-tack"></i>
               </span>
             {%- endif %}
-            {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
+            {{ next_url(post.path, post.title | default(__('post.untitled')), { class: 'post-title-link', itemprop: 'url' }) }}
           {% else -%}
             {{- post.title -}}
             {% include '../_partials/post-edit.swig' %}
@@ -59,8 +59,8 @@
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
               {%- endif %}
 
-              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
-              #}{{ date(post.date) -}}
+              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">
+                {{- date(post.date) -}}
               </time>
             </span>
           {%- endif %}
@@ -74,8 +74,8 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">{{ __('post.edited') }}</span>
-                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
-                #}{{ date(post.updated) -}}
+                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">
+                  {{- date(post.updated) -}}
                 </time>
               </span>
             {%- endif %}
@@ -161,9 +161,9 @@
           {%- endif %}
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
-            <div class="post-description">{#
-              #}{{ post.description }}{#
-            #}</div>
+            <div class="post-description">
+              {{- post.description -}}
+            </div>
           {%- endif %}
 
         </div>

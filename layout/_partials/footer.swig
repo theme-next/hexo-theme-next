@@ -22,9 +22,9 @@
     {%- if theme.symbols_count_time.item_text_total %}
       <span class="post-meta-item-text">{{ __('symbols_count_time.count_total') + __('symbol.colon') }}</span>
     {%- endif %}
-    <span title="{{ __('symbols_count_time.count_total') }}">{#
-    #}{{ symbolsCountTotal(site) }}{#
-  #}</span>
+    <span title="{{ __('symbols_count_time.count_total') }}">
+      {{- symbolsCountTotal(site) -}}
+    </span>
   {%- endif %}
 
   {%- if config.symbols_count_time.total_time %}
@@ -35,17 +35,17 @@
     {%- if theme.symbols_count_time.item_text_total %}
       <span class="post-meta-item-text">{{ __('symbols_count_time.time_total') }} &asymp;</span>
     {%- endif %}
-    <span title="{{ __('symbols_count_time.time_total') }}">{#
-    #}{{ symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
-  #}</span>
+    <span title="{{ __('symbols_count_time.time_total') }}">
+      {{- symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) -}}
+    </span>
   {%- endif %}
 </div>
 
 {%- if theme.footer.powered.enable %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}{#
-  #}{%- if theme.footer.powered.version %} v{{ hexo_env('version') }}{%- endif %}{#
- #}</div>
+  <div class="powered-by">
+    {{- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}
+    {%- if theme.footer.powered.version %} v{{ hexo_env('version') }}{%- endif -%}
+  </div>
 {%- endif %}
 
 {%- if theme.footer.powered.enable and theme.footer.theme.enable %}
@@ -53,10 +53,10 @@
 {%- endif %}
 
 {%- if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{{ __('footer.theme') }} – {{ next_url('https://theme-next.org', 'NexT.' + theme.scheme, {class: 'theme-link'}) }}{#
-  #}{%- if theme.footer.theme.version %} v{{ version }}{%- endif %}{#
-#}</div>
+  <div class="theme-info">
+    {{- __('footer.theme') }} – {{ next_url('https://theme-next.org', 'NexT.' + theme.scheme, {class: 'theme-link'}) }}
+    {%- if theme.footer.theme.version %} v{{ version }}{%- endif -%}
+  </div>
 {%- endif %}
 
 {%- if theme.add_this_id %}
