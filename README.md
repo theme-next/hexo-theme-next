@@ -5,7 +5,7 @@
 # <div align="center"><a title="NexT website repository" href="https://github.com/theme-next/theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
 <p align="center">
-  «NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch with love.
+  «NexT» is a high quality elegant <a href="https://hexo.io">Hexo</a> theme. It is crafted from scratch with love.
 <br>
 <br>
   <a href="https://bestpractices.coreinfrastructure.org/projects/2625"><img src="https://bestpractices.coreinfrastructure.org/projects/2625/badge" title="Core Infrastructure Initiative Best Practices"></a>
@@ -15,7 +15,8 @@
 <br>
 <br>
   <a href="https://github.com/theme-next/hexo-theme-next/releases"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
-  <a href="http://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue?style=flat-square"></a>
+  <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue?style=flat-square"></a>
+  <a href="https://www.browserstack.com"><img src="https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari-blue?style=flat-square"></a>
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-blue?style=flat-square"></a>
 <br>
   <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
@@ -27,7 +28,7 @@
   :heart_decoration: <a href="https://muse.theme-next.org">Muse</a> | :six_pointed_star: <a href="https://mist.theme-next.org">Mist</a> | :pisces: <a href="https://pisces.theme-next.org">Pisces</a> | :gemini: <a href="https://theme-next.org">Gemini</a>
 <br>
 <br>
-  More «NexT» examples <a href="https://github.com/iissnan/hexo-theme-next/issues/119">here</a>.
+  More «NexT» examples <a href="https://github.com/theme-next/awesome-next#live-preview">here</a>.
 </p>
 
 ## Installation
@@ -83,7 +84,7 @@ $ git pull
 And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
 However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
-**If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].**
+**If you want to update from v5.1.x to v6.0.x, read [this][docs-update-5-1-x-url].**
 
 ## Feedback
 
@@ -142,6 +143,3 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 <!--[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest -->
 <!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases -->
 <!--[tags-url]: https://github.com/theme-next/hexo-theme-next/tags -->
-
-<!--[browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey?style=flat-square -->
-<!--[browser-url]: https://www.browserstack.com -->
