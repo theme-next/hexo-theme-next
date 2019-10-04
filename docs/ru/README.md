@@ -1,7 +1,7 @@
 <div align="right">
   Язык:
   <a title="Английский" href="../../README.md">:us:</a>
-  <a title="Китайский" href="../../docs/zh-CN/README.md">:cn:</a>
+  <a title="Китайский" href="../zh-CN/README.md">:cn:</a>
   :ru:
 </div>
 
