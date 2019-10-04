@@ -17,17 +17,16 @@
 
 {% block content %}
 
-  <div id="posts" class="posts-expand">
+  <div class="posts-expand">
     {##################}
     {### PAGE BLOCK ###}
     {##################}
-    <div class="post-block page">
+    <div class="post-block" lang="{{ page.lang or page.language or config.language }}">
       {% include '_partials/page/page-header.swig' %}
       {#################}
       {### PAGE BODY ###}
       {#################}
       <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
-        {# tagcloud page support #}
         {%- if page.type === 'tags' %}
           <div class="tag-cloud">
             <div class="tag-cloud-title">

@@ -9,8 +9,8 @@
   {#################}
   {### TAG BLOCK ###}
   {#################}
-  <div class="post-block tag">
-    <div id="posts" class="posts-collapse">
+  <div class="post-block">
+    <div class="posts-collapse">
       <div class="collection-title">
         <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">{#
         #}{{ page.tag }}{#

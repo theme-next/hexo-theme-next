@@ -5,7 +5,7 @@
 
 {% block content %}
 
-  <div id="posts" class="posts-expand">
+  <div class="posts-expand">
     {{ partial('_macro/post.swig', {post: page}) }}
   </div>
 
