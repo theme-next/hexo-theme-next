@@ -1,6 +1,9 @@
-<div align="right">Язык: <a title="Английский" href="../../README.md">:us:</a>
-<a title="Китайский" href="../../docs/zh-CN/README.md">:cn:</a>
-:ru:</div>
+<div align="right">
+  Язык:
+  <a title="Английский" href="../../README.md">:us:</a>
+  <a title="Китайский" href="../../docs/zh-CN/README.md">:cn:</a>
+  :ru:
+</div>
 
 # <div align="center"><a title="Репозиторий сайта NexT" href="https://github.com/theme-next/theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 

@@ -1,6 +1,9 @@
-<div align="right">Language: :us:
-<a title="Chinese" href="docs/zh-CN/README.md">:cn:</a>
-<a title="Russian" href="docs/ru/README.md">:ru:</a></div>
+<div align="right">
+  Language:
+  :us:
+  <a title="Chinese" href="docs/zh-CN/README.md">:cn:</a>
+  <a title="Russian" href="docs/ru/README.md">:ru:</a>
+</div>
 
 # <div align="center"><a title="NexT website repository" href="https://github.com/theme-next/theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
