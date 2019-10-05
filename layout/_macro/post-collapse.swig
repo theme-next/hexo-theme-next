@@ -26,7 +26,7 @@
         {%- if post.link %}{# Link posts #}
           {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
           {%- set postText = post.title or post.link %}
-          {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
+          {{ next_url(post.link, postText + postTitleIcon, { class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
         {% else %}
           <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
             <span itemprop="name">{{ post.title | default(__('post.untitled')) }}</span>
