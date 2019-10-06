@@ -90,8 +90,8 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 ## Feedback
 
-* Join our [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] chats.
 * Follow us with [Telegram Channel][t-news-url] for latest news.
+* Join our [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] chats.
 * Visit the [Awesome NexT][awesome-next-url] list.
 * Report a bug in [GitHub Issues][issues-bug-url].
 * Request a new feature on [GitHub][issues-feat-url].
@@ -131,10 +131,10 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
 
+[t-news-url]: https://t.me/theme_next_news
+[t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
-[t-chat-url]: https://t.me/theme_next
-[t-news-url]: https://t.me/theme_next_news
 
 [awesome-next-url]: https://github.com/theme-next/awesome-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md

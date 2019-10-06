@@ -90,8 +90,8 @@ $ git pull
 
 ## 反馈
 
-* 加入我们的 [Gitter][gitter-url] / [Riot][riot-url] / [Telegram][t-chat-url] 聊天。
 * 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
+* 加入我们的 [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] 聊天。
 * 浏览 [Awesome NexT][awesome-next-url] 列表。
 * 在 [GitHub Issues][issues-bug-url] 报告Bug。
 * 在 [GitHub][issues-feat-url] 请求新的功能。
@@ -131,10 +131,10 @@ $ git pull
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md
 
+[t-news-url]: https://t.me/theme_next_news
+[t-chat-url]: https://t.me/theme_next_chinese
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
-[t-chat-url]: https://t.me/theme_next_chinese
-[t-news-url]: https://t.me/theme_next_news
 
 [awesome-next-url]: https://github.com/theme-next/awesome-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
