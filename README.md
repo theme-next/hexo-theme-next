@@ -48,7 +48,7 @@ Or you can see [detailed installation instructions][docs-installation-url] if yo
 
 In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
 
-For example, if you want to use `pjax` in your site, go to NexT config and see:
+For example, if you want to enable `pjax` on your site, go to NexT config and see:
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
