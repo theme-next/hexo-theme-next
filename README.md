@@ -141,8 +141,3 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
-
-<!--[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip -->
-<!--[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest -->
-<!--[releases-url]: https://github.com/theme-next/hexo-theme-next/releases -->
-<!--[tags-url]: https://github.com/theme-next/hexo-theme-next/tags -->
