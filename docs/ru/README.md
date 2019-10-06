@@ -75,6 +75,7 @@ $ git pull
 
 * Подписаться на новости через [канал Telegram'а][t-news-url].
 * Вступить в наши [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] чаты.
+* [Добавить или улучшить перевод][i18n-url] за несколько секунд.
 * Посетите [Awesome NexT][awesome-next-url] список.
 * Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
 * Запросить новую возможность на [GitHub][issues-feat-url].
@@ -118,6 +119,7 @@ $ git pull
 [t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
+[i18n-url]: https://i18n.theme-next.org
 
 [awesome-next-url]: https://github.com/theme-next/awesome-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md

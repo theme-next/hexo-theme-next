@@ -91,6 +91,7 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 * Follow us with [Telegram Channel][t-news-url] for latest news.
 * Join our [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] chats.
+* [Add or improve translation][i18n-url] in few seconds.
 * Visit the [Awesome NexT][awesome-next-url] list.
 * Report a bug in [GitHub Issues][issues-bug-url].
 * Request a new feature on [GitHub][issues-feat-url].
@@ -134,6 +135,7 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
+[i18n-url]: https://i18n.theme-next.org
 
 [awesome-next-url]: https://github.com/theme-next/awesome-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
