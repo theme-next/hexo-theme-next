@@ -86,7 +86,7 @@ $ git pull
 如果你在此过程中收到了任何错误报告 (例如 **«Commit your changes or stash them before you can merge»**)，我们推荐你使用 [Hexo 数据文件][docs-data-files-url]特性。\
 然而你也可以通过提交（`Commit`）、贮藏（`Stash`）或忽视（`Discard`）本地更改以绕过这种更新错误。具体方法请参考[这里](https://stackoverflow.com/a/15745424/5861495)。
 
-**如果你想要从 v5.1.x 更新到 v6.0.x，阅读[这篇文档][docs-update-5-1-x-url]。**
+**如果你想要从 v5.1.x 更新到最新版本，阅读[这篇文档][docs-update-5-1-x-url]。**
 
 ## 反馈
 

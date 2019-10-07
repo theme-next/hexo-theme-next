@@ -86,7 +86,7 @@ $ git pull
 And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
 However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
-**If you want to update from v5.1.x to v6.0.x, read [this][docs-update-5-1-x-url].**
+**If you want to update from v5.1.x to the latest version, read [this][docs-update-5-1-x-url].**
 
 ## Feedback
 

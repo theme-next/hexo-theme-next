@@ -207,7 +207,6 @@ Pull requests related:
 - `Discussion`: A pull request that needs to be discussed
 - `Work in Progress`: A pull request that is still working in progress
 - `Skip Release`: A pull request that should be excluded from release note
-- `v6.x`: A pull request that bug fixes and some improvements, related to old NexT version 6
 
 <a name="commit-messages-rules"></a>
 
