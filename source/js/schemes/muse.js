@@ -120,10 +120,10 @@ window.addEventListener('DOMContentLoaded', () => {
     var containerHeight = document.querySelector('.container').offsetHeight;
     var footer = document.getElementById('footer');
     if (footer.classList.contains('footer-fixed')) containerHeight += footer.outerHeight(true);
-    if (containerHeight < window.innerHeight) {
-      footer.classList.add('footer-fixed');
-    } else {
+    if (containerHeight > window.innerHeight) {
       footer.classList.remove('footer-fixed');
+    } else {
+      footer.classList.add('footer-fixed');
     }
   }
 
