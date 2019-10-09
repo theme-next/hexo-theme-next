@@ -747,10 +747,9 @@ growingio_analytics: # <project_id>
 google_analytics:
   tracking_id: # <app_id>
   localhost_ignored: true
-
-# Google Analytics Pageview
-google_analytics_pageview:
-  tracking_id: # <app_id>
+  # By default, NexT will load an external gtag.js script on your site.
+  # If you only need the pageview feature, set the following option to true to get a better performance.
+  only_pageview: false
 
 # CNZZ count
 cnzz_siteid:
