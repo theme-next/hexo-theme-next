@@ -25,7 +25,7 @@
           t  : 'pageview',
           dp : encodeURIComponent(location.pathname)
         }));
-      }
+      };
       document.addEventListener('pjax:complete', sendPageView);
       sendPageView();
     </script>
