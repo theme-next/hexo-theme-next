@@ -20,7 +20,7 @@
         localStorage.setItem('uid', uid);
         navigator.sendBeacon('https://www.google-analytics.com/collect', new URLSearchParams({
           v  : 1,
-          tid: '{{ theme.google_analytics_pageview.tracking_id }}',
+          tid: '{{ theme.google_analytics.tracking_id }}',
           cid: uid,
           t  : 'pageview',
           dp : encodeURIComponent(location.pathname)
