@@ -34,8 +34,8 @@
               </span>
             {%- endif %}
             {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url'}) }}
-          {% else -%}
-            {{- post.title -}}
+          {%- else %}
+            {{- post.title }}
             {% include '../_partials/post-edit.swig' %}
           {%- endif %}
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
@@ -60,7 +60,7 @@
               {%- endif %}
 
               <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">
-                {{- date(post.date) -}}
+                {{- date(post.date) }}
               </time>
             </span>
           {%- endif %}
@@ -75,7 +75,7 @@
                 </span>
                 <span class="post-meta-item-text">{{ __('post.edited') }}</span>
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">
-                  {{- date(post.updated) -}}
+                  {{- date(post.updated) }}
                 </time>
               </span>
             {%- endif %}
@@ -162,7 +162,7 @@
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
             <div class="post-description">
-              {{- post.description -}}
+              {{- post.description }}
             </div>
           {%- endif %}
 

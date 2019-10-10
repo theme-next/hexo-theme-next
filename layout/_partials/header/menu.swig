@@ -17,17 +17,17 @@
       {% else %}
       {# Main Menu (standard menu items) #}
         {%- set itemName = name.toLowerCase() %}
-        {{- menu_item.render(name, respath) | trim -}}
-      {%- endif -%}
+        {{- menu_item.render(name, respath) | trim }}
+      {%- endif %}
     {%- endfor %}
 
     {%- if hasSearch %}
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger">
-        {%- if theme.menu_settings.icons -%}
+        {%- if theme.menu_settings.icons %}
           <i class="fa fa-search fa-fw"></i>
         {%- endif %}
-        {{- __('menu.search') -}}
+        {{- __('menu.search') }}
         </a>
       </li>
     {%- endif %}
