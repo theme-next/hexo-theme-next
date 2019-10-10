@@ -16,9 +16,9 @@
 
     {%- if post.header !== false %}
       <header class="post-header">
-        <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">{#
-        #}{# Link posts #}{#
-        #}{%- if post.link %}
+        <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">
+          {# Link posts #}
+          {%- if post.link %}
             {%- if post.sticky > 0 %}
               <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
                 <i class="fa fa-thumb-tack"></i>
@@ -88,11 +88,11 @@
               </span>
               <span class="post-meta-item-text">{{ __('post.in') }}</span>
               {%- for cat in post.categories %}
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
-                #}<a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">{#
-                  #}<span itemprop="name">{{ cat.name }}</span>{#
-                #}</a>{#
-              #}</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
+                    <span itemprop="name">{{ cat.name }}</span>
+                  </a>
+                </span>
 
                 {%- set cat_length = post.categories.length %}
                 {%- if cat_length > 1 and loop.index !== cat_length %}
