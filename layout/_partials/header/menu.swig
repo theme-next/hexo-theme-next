@@ -5,7 +5,7 @@
     {%- for name, path in theme.menu %}
       {%- set respath = path %}
       {%- if path == '[object Object]' %}
-      {# Main Menu (default menu item for Submenu) #}
+        {# Main Menu (default menu item for Submenu) #}
         {%- for subname, subpath in path %}
           {%- set itemName = subname.toLowerCase() %}
           {%- set respath = subpath %}
@@ -15,7 +15,7 @@
           {%- endif %}
         {%- endfor %}
       {% else %}
-      {# Main Menu (standard menu items) #}
+        {# Main Menu (standard menu items) #}
         {%- set itemName = name.toLowerCase() %}
         {{- menu_item.render(name, respath) | trim }}
       {%- endif %}

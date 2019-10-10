@@ -59,9 +59,7 @@
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
               {%- endif %}
 
-              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">
-                {{- date(post.date) }}
-              </time>
+              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date) }}</time>
             </span>
           {%- endif %}
 
@@ -74,9 +72,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">{{ __('post.edited') }}</span>
-                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">
-                  {{- date(post.updated) }}
-                </time>
+                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
               </span>
             {%- endif %}
           {%- endif %}
@@ -161,9 +157,7 @@
           {%- endif %}
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
-            <div class="post-description">
-              {{- post.description }}
-            </div>
+            <div class="post-description">{{ post.description }}</div>
           {%- endif %}
 
         </div>
