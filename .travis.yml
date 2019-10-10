@@ -8,9 +8,6 @@ cache:
 
 install: npm install
 
-before_script:
-  - npm install -g gulp
-
 addons:
   browserstack:
     username: "ivannginx1"

@@ -23,7 +23,7 @@
 
     {%- if hasSearch %}
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
+        <a role="button" class="popup-trigger">
         {%- if theme.menu_settings.icons -%}
           <i class="fa fa-search fa-fw"></i>
         {%- endif %}
