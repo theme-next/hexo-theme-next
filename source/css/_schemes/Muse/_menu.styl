@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    z-index: $zindex-3;
   }
 }
 
@@ -21,11 +20,11 @@
 }
 
 .menu-item-active a {
-  border-bottom: 1px solid $menu-link-hover-border;
+  border-bottom: 1px solid $menu-link-hover-border !important;
   color: $black-deep;
 
   +mobile() {
-    border-bottom: 1px dotted $gray-lighter;
+    border-bottom: 1px dotted $gray-lighter !important;
   }
 }
 
@@ -37,6 +36,8 @@
   }
 
   a, span.exturl {
+    border-bottom: 1px solid transparent;
+
     +mobile() {
       padding: 5px 10px;
     }

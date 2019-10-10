@@ -1,7 +1,6 @@
 .posts-collapse {
   margin-left: $posts-collapse-margin;
   position: relative;
-  z-index: $zindex-1;
 
   +mobile() {
     margin-left: $posts-collapse-margin-mobile;
@@ -46,7 +45,9 @@
   }
 
   .collection-header {
+    display: inline-block;
     margin: 0 0 0 20px;
+
     small {
       color: $grey;
       margin-left: 5px;
@@ -56,9 +57,10 @@
   .post-header {
     border-bottom: 1px dashed $grey-light;
     margin: 30px 0;
+    padding-left: 15px;
     position: relative;
-    the-transition();
     transition-property: border;
+    the-transition();
 
     &::before {
       background: $grey;
@@ -87,7 +89,6 @@
   .post-meta {
     display: inline;
     font-size: $font-size-smallest;
-    margin-left: 15px;
     margin-right: 10px;
   }
 
@@ -113,7 +114,6 @@
     position: absolute;
     top: 1.25em;
     width: 4px;
-    z-index: $zindex-bottom;
   }
 
   .fa-external-link {

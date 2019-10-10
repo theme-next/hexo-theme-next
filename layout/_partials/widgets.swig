@@ -8,7 +8,7 @@
   <div class="reading-progress-bar"></div>
 {%- endif %}
 {%- if theme.bookmark.enable %}
-  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 {%- endif %}
 {%- if theme.github_banner.enable %}
   {%- set github_URL = theme.github_banner.permalink %}
