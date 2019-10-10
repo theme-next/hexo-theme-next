@@ -8,8 +8,6 @@
 
 为了解决这一问题，NexT 将利用 Hexo 的[数据文件](https://hexo.io/docs/data-files.html)特性。因为数据文件是在 Hexo 3 中被引入，所以你需要更新至 Hexo 3.0 以后的版本来使用这一特性。
 
-如果你仍然希望使用 Hexo 2.x，你依旧可以按老的方式进行配置。NexT 仍然兼容 Hexo 2.x（但可能会出现错误）。
-
 <h2 align="center">选择 1：Hexo 方式</h2>
 
 使用这一方式，你的全部配置都将置于 Hexo 站点配置文件（`/_config.yml`），并且不需要修改 `/themes/next/_config.yml`，或者创建什么其他的文件。但是所有的主题选项必须放置在 `theme_config` 后，并全部增加两个空格的缩进。
