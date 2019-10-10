@@ -26,14 +26,14 @@
             {%- endif %}
             {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
             {%- set postText = post.title or post.link %}
-            {{ next_url(post.link, postText + postTitleIcon, { class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
+            {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url'}) }}
           {% elif is_index %}
             {%- if post.sticky > 0 %}
               <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
                 <i class="fa fa-thumb-tack"></i>
               </span>
             {%- endif %}
-            {{ next_url(post.path, post.title | default(__('post.untitled')), { class: 'post-title-link', itemprop: 'url' }) }}
+            {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url'}) }}
           {% else -%}
             {{- post.title -}}
             {% include '../_partials/post-edit.swig' %}
