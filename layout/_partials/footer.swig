@@ -44,8 +44,8 @@
 {%- if theme.footer.powered.enable %}
   <div class="powered-by">{#
   #}{{ __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}{#
-  #}{%- if theme.footer.powered.version %} v{{ hexo_env('version') }}{%- endif %}{#
-#}</div>
+  #}{%- if theme.footer.powered.version %} v{{ hexo_env('version') }}{%- endif %}
+  </div>
 {%- endif %}
 
 {%- if theme.footer.powered.enable and theme.footer.theme.enable %}
@@ -53,14 +53,14 @@
 {%- endif %}
 
 {%- if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{%- set next_site = 'https://theme-next.org' %}{#
-  #}{%- if theme.scheme !== 'Gemini' %}{#
-    #}{%- set next_site = 'https://' + theme.scheme.toLowerCase() + '.theme-next.org' %}{#
-  #}{%- endif%}{#
-  #}{{ __('footer.theme') }} – {{ next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'}) }}{#
-  #}{%- if theme.footer.theme.version %} v{{ version }}{%- endif %}{#
-  #}</div>
+  <div class="theme-info">
+    {%- set next_site = 'https://theme-next.org' %}
+    {%- if theme.scheme !== 'Gemini' %}
+      {%- set next_site = 'https://' + theme.scheme.toLowerCase() + '.theme-next.org' %}
+    {%- endif %}
+    {{- __('footer.theme') }} – {{ next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'}) }}
+    {%- if theme.footer.theme.version %} v{{ version }}{%- endif %}
+  </div>
 {%- endif %}
 
 {%- if theme.add_this_id %}
