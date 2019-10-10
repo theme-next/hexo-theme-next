@@ -93,13 +93,11 @@
     }
 
     if ($note-icons) {
-      &:not(.no-icon) {
-        &::before {
-          content: $note-default-icon;
+      &:not(.no-icon)::before {
+        content: $note-default-icon;
 
-          if ($note-style != 'modern') {
-            color: $note-default-text;
-          }
+        if ($note-style != 'modern') {
+          color: $note-default-text;
         }
       }
     }
@@ -137,13 +135,11 @@
     }
 
     if ($note-icons) {
-      &:not(.no-icon) {
-        &::before {
-          content: $note-primary-icon;
+      &:not(.no-icon)::before {
+        content: $note-primary-icon;
 
-          if ($note-style != 'modern') {
-            color: $note-primary-text;
-          }
+        if ($note-style != 'modern') {
+          color: $note-primary-text;
         }
       }
     }
@@ -181,13 +177,11 @@
     }
 
     if ($note-icons) {
-      &:not(.no-icon) {
-        &::before {
-          content: $note-info-icon;
+      &:not(.no-icon)::before {
+        content: $note-info-icon;
 
-          if ($note-style != 'modern') {
-            color: $note-info-text;
-          }
+        if ($note-style != 'modern') {
+          color: $note-info-text;
         }
       }
     }
@@ -225,13 +219,11 @@
     }
 
     if ($note-icons) {
-      &:not(.no-icon) {
-        &::before {
-          content: $note-success-icon;
+      &:not(.no-icon)::before {
+        content: $note-success-icon;
 
-          if ($note-style != 'modern') {
-            color: $note-success-text;
-          }
+        if ($note-style != 'modern') {
+          color: $note-success-text;
         }
       }
     }
@@ -269,13 +261,11 @@
     }
 
     if ($note-icons) {
-      &:not(.no-icon) {
-        &::before {
-          content: $note-warning-icon;
+      &:not(.no-icon)::before {
+        content: $note-warning-icon;
 
-          if ($note-style != 'modern') {
-            color: $note-warning-text;
-          }
+        if ($note-style != 'modern') {
+          color: $note-warning-text;
         }
       }
     }
@@ -313,13 +303,11 @@
     }
 
     if ($note-icons) {
-      &:not(.no-icon) {
-        &::before {
-          content: $note-danger-icon;
+      &:not(.no-icon)::before {
+        content: $note-danger-icon;
 
-          if ($note-style != 'modern') {
-            color: $note-danger-text;
-          }
+        if ($note-style != 'modern') {
+          color: $note-danger-text;
         }
       }
     }

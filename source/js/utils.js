@@ -164,7 +164,7 @@ NexT.utils = {
         scrollPercent = Math.min(scrollPercentRounded, 100) + '%';
       }
       if (backToTop) {
-        window.scrollY > THRESHOLD ? backToTop.classList.add('back-to-top-on') : backToTop.classList.remove('back-to-top-on');
+        backToTop.classList.toggle('back-to-top-on', window.scrollY > THRESHOLD);
         backToTop.querySelector('span').innerText = scrollPercent;
       }
       if (readingProgressBar) {
@@ -232,11 +232,7 @@ NexT.utils = {
       if (!target) return;
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== CONFIG.root && location.pathname.indexOf(target.pathname) === 0;
-      if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
-        element.classList.add('menu-item-active');
-      } else {
-        element.classList.remove('menu-item-active');
-      }
+      element.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
   },
 
