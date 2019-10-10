@@ -118,7 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function updateFooterPosition() {
     var containerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.main').offsetHeight;
-    var footer = document.getElementById('footer');
+    var footer = document.querySelector('.footer');
     if (footer.classList.contains('footer-fixed')) {
       containerHeight += footer.outerHeight(true);
     }
