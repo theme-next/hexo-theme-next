@@ -19,7 +19,7 @@
     {%- if __('disqus') !== 'disqus' -%}
       this.language = '{{ __('disqus') }}';
     {% endif -%}
-  };
+  }
   function loadComments() {
     if (window.DISQUS) {
       DISQUS.reset({
