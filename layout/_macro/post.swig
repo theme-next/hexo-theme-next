@@ -283,10 +283,7 @@
       </footer>
     {% else %}
       <footer class="post-footer">
-        {%- set isLast = loop.index % post.per_page === 0 %}
-        {%- if not isLast %}
-          <div class="post-eof"></div>
-        {%- endif %}
+        <div class="post-eof"></div>
       </footer>
     {%- endif %}
   </article>
