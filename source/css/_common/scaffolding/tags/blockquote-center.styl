@@ -7,7 +7,6 @@
   text-align: center;
 
   &::before, &::after {
-    background-position: 0 -6px;
     background-repeat: no-repeat;
     background-size: 22px 22px;
     content: ' ';
@@ -20,6 +19,7 @@
 
   &::before {
     background-image: url($center-quote-left);
+    background-position: 0 -6px;
     border-top: 1px solid $grey-light;
     top: -20px;
   }
