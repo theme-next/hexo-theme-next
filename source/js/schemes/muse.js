@@ -117,11 +117,8 @@ window.addEventListener('DOMContentLoaded', () => {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    var containerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.main').offsetHeight;
-    var footer = document.getElementById('footer');
-    if (footer.classList.contains('footer-fixed')) {
-      containerHeight += footer.outerHeight(true);
-    }
+    var footer = document.querySelector('.footer');
+    var containerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.main').offsetHeight + footer.offsetHeight;
     footer.classList.toggle('footer-fixed', containerHeight <= window.innerHeight);
   }
 
