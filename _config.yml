@@ -224,7 +224,7 @@ toc:
   wrap: false
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: false
-  # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front-matter.
+  # Maximum heading depth of generated toc.
   max_depth: 6
 
 # A button to open designated chat widget in sidebar.
@@ -280,6 +280,7 @@ symbols_count_time:
 tag_icon: false
 
 # Wechat Subscriber
+# Front-matter variable.
 wechat_subscriber:
   enable: false
   qcode: #/uploads/wechat-qcode.jpg
@@ -289,7 +290,6 @@ wechat_subscriber:
 # Front-matter variable (unsupport animation).
 reward_settings:
   # If true, reward would be displayed in every article by default.
-  # You can show or hide reward in a specific article throuth `reward: true | false` in Front-matter.
   enable: false
   animation: false
   #comment: Donate comment here.
