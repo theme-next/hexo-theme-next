@@ -227,11 +227,11 @@
       {{- next_inject('postBodyEnd') }}
 
       {%- if page.wechat_subscriber.enable %}
-        {{ partial('../_partials/post/wechat-subscriber.swig', {}, {cache: theme.cache.enable}) }}
+        {{ partial('../_partials/post/wechat-subscriber.swig') }}
       {%- endif %}
 
       {%- if page.reward_settings.enable %}
-        {{ partial('../_partials/post/post-reward.swig', {}, {cache: theme.cache.enable}) }}
+        {{ partial('../_partials/post/post-reward.swig') }}
       {%- endif %}
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
