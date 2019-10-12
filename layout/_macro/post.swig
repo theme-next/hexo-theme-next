@@ -226,7 +226,7 @@
     {%- if not is_index %}
       {{- next_inject('postBodyEnd') }}
 
-      {%- if theme.wechat_subscriber.enable %}
+      {%- if page.wechat_subscriber.enable %}
         {{ partial('../_partials/post/wechat-subscriber.swig', {}, {cache: theme.cache.enable}) }}
       {%- endif %}
 
