@@ -23,14 +23,17 @@ hexo.extend.filter.register('template_locals', (locals) => {
   if (page.reward !== undefined) {
     page.reward_settings.enable = page.reward;
     hexo.log.warn(`front-matter: reward has deprecated, path: ${page.path}`);
+    hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211.');
   }
   if (page.toc_number !== undefined) {
     page.toc.number = page.toc_number;
     hexo.log.warn(`front-matter: toc_number has deprecated, path: ${page.path}`);
+    hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211.');
   }
   if (page.toc_max_depth !== undefined) {
     page.toc.max_depth = page.toc_max_depth;
     hexo.log.warn(`front-matter: toc_max_depth has deprecated, path: ${page.path}`);
+    hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211.');
   }
 
   // Set default value for toc.max_depth
