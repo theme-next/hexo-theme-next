@@ -230,12 +230,7 @@
         {{ partial('../_partials/post/wechat-subscriber.swig', {}, {cache: theme.cache.enable}) }}
       {%- endif %}
 
-      {%- if post.reward === undefined and theme.reward_settings.enable %}
-        {%- set reward_able = true %}
-      {% else %}
-        {%- set reward_able = post.reward %}
-      {%- endif %}
-      {%- if reward_able %}
+      {%- if page.reward_settings.enable %}
         {{ partial('../_partials/post/post-reward.swig', {}, {cache: theme.cache.enable}) }}
       {%- endif %}
 

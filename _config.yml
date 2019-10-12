@@ -215,6 +215,7 @@ links:
   #Title: http://example.com
 
 # Table of Contents in the Sidebar
+# Front-matter variable (unsupport wrap expand_all).
 toc:
   enable: true
   # Automatically add list number to toc.
@@ -285,6 +286,7 @@ wechat_subscriber:
   #description: Subscribe to my blog by scanning my public wechat account.
 
 # Reward (Donate)
+# Front-matter variable (unsupport animation).
 reward_settings:
   # If true, reward would be displayed in every article by default.
   # You can show or hide reward in a specific article throuth `reward: true | false` in Front-matter.
