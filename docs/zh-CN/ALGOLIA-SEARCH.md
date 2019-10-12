@@ -10,7 +10,7 @@ NexT 内部提供 Algolia 的搜索功能，要使用此功能请确保所使用
 
     ```
     $ cd hexo
-    $ npm install --save hexo-algolia
+    $ npm install hexo-algolia
     ```
 
 1. 在 `API Keys` 页面找到需要使用的一些配置的值，包括 `ApplicationID` 和 `Search-Only API Key`。注意，`Admin API Key` 需要保密保存，不要外泄。

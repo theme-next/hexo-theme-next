@@ -22,8 +22,8 @@ If you use MathJax to render Math Equations, you need to use **only one of them*
 Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and install one of the renderer above:
 
 ```sh
-npm un hexo-renderer-marked --save
-npm i hexo-renderer-pandoc --save # or hexo-renderer-kramed
+npm uninstall hexo-renderer-marked
+npm install hexo-renderer-pandoc # or hexo-renderer-kramed
 ```
 
 Secondly, in `next/_config.yml`, turn on `enable` of `math` and choose `mathjax` as engine.
@@ -114,8 +114,8 @@ If you use Katex to render Math Equations, you need to use **only one of those r
 Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and **install one of selected above**.
 
 ```sh
-npm un hexo-renderer-marked --save
-npm i hexo-renderer-markdown-it-plus --save
+npm uninstall hexo-renderer-marked
+npm install hexo-renderer-markdown-it-plus
 # or hexo-renderer-markdown-it
 ```
 
@@ -141,7 +141,7 @@ hexo clean && hexo g -d
 If you use `hexo-renderer-markdown-it`，you also need to add `markdown-it-katex` as its plugin：
 
 ```
-npm i markdown-it-katex --save
+npm install markdown-it-katex
 ```
 
 And then in `hexo/_config.yml` you need to add `markdown-it-katex` as a plugin for `hexo-renderer-markdown-it`:

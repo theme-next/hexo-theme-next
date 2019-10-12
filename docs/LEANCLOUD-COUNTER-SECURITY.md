@@ -105,7 +105,7 @@ Please note the difference between **site config file** and **theme config file*
 
 - Open cmd then switch to **root path of site**, type commands to install `hexo-leancloud-counter-security` plugin:
   ```
-  npm install hexo-leancloud-counter-security --save
+  npm install hexo-leancloud-counter-security
   ```
 
 - Open **site config file** `_config.yml`, add those config:
