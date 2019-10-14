@@ -13,7 +13,7 @@ NexT.utils.getScript('{{ valine_uri }}', () => {
     notify: {{ theme.valine.notify }},
     appId: '{{ theme.valine.appid }}',
     appKey: '{{ theme.valine.appkey }}',
-    placeholder: '{{ theme.valine.placeholder | escape }}',
+    placeholder: {{ theme.valine.placeholder | json }},
     avatar: '{{ theme.valine.avatar }}',
     meta: guest,
     pageSize: '{{ theme.valine.pageSize }}' || 10,
