@@ -43,7 +43,7 @@ a, span.exturl {
   word-wrap();
   border-bottom: 1px solid $link-decoration-color;
   color: $link-color;
-  outline: none;
+  outline: 0;
   text-decoration: none;
 
   &:hover {
@@ -64,13 +64,7 @@ iframe, img, video {
 
 hr {
   background-color: $gray-lighter;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    white,
-    white 4px,
-    transparent 4px,
-    transparent 8px
-  );
+  background-image: repeating-linear-gradient(-45deg, white, white 4px, transparent 4px, transparent 8px);
   border: 0;
   height: 3px;
   margin: 40px 0;
@@ -98,8 +92,8 @@ dd {
 }
 
 kbd {
-  background-color: #f9f9f9;
-  background-image: linear-gradient(top, #eee, white, #eee);
+  background-color: $whitesmoke;
+  background-image: linear-gradient($gainsboro, white, $gainsboro);
   border: 1px solid $grey-light;
   border-radius: .2em;
   box-shadow: .1em .1em .2em rgba(0, 0, 0, .1);

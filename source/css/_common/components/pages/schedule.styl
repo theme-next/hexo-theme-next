@@ -10,7 +10,7 @@
   }
 }
 
-#event-list {
+.event-list {
   padding: 0;
 
   hr {
@@ -28,18 +28,20 @@
     }
   }
 
-  li.event {
-    background: #f9f9f9;
+  .event {
+    background: $black-deep;
     margin: 20px 0;
     min-height: 40px;
-    padding-left: 10px;
+    padding: 15px 0 15px 10px;
 
-    h2.event-summary {
+    .event-summary {
+      color: white;
       margin: 0;
       padding-bottom: 3px;
 
       &::before {
-        color: $grey;
+        animation: dot-flash 1s alternate infinite ease-in-out;
+        color: white;
         content: '\f111';
         display: inline-block;
         font-family: $font-family-icons;
@@ -49,7 +51,7 @@
       }
     }
 
-    span.event-relative-time {
+    .event-relative-time {
       color: $grey;
       display: inline-block;
       font-size: 12px;
@@ -57,8 +59,8 @@
       padding-left: 12px;
     }
 
-    span.event-details {
-      color: $grey;
+    .event-details {
+      color: white;
       display: block;
       line-height: 18px;
       margin-left: 56px;
@@ -67,9 +69,9 @@
       text-indent: -24px;
 
       &::before {
-        color: $grey;
+        color: white;
         display: inline-block;
-        font-family: FontAwesome;
+        font-family: $font-family-icons;
         margin-right: 9px;
         text-align: center;
         text-indent: 0;
@@ -86,54 +88,17 @@
     }
   }
 
-  li.event-past {
-    background: #fcfcfc;
-    padding: 15px 0 15px 10px;
+  .event-past {
+    background: $whitesmoke;
 
-    > * {
-      opacity: .9;
-    }
-
-    h2.event-summary {
+    .event-summary, .event-details {
       color: $grey;
+      opacity: .9;
 
       &::before {
-        color: #dfdfdf;
+        animation: none;
+        color: $grey;
       }
-    }
-  }
-
-  li.event-now {
-    background: $black-deep;
-    color: white;
-    padding: 15px 0 15px 10px;
-
-    h2.event-summary {
-      &::before {
-        animation: dot-flash 1s alternate infinite ease-in-out;
-        color: white;
-      }
-    }
-
-    * {
-      color: white !important;
-    }
-  }
-
-  li.event-future {
-    background: $black-deep;
-    color: white;
-    padding: 15px 0 15px 10px;
-
-    h2.event-summary {
-      &::before {
-        animation: dot-flash 1s alternate infinite ease-in-out;
-        color: white;
-      }
-    }
-
-    * {
-      color: white !important;
     }
   }
 }

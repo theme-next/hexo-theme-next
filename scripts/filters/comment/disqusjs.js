@@ -12,9 +12,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   injects.comment.raw('disqusjs', `
   <div class="comments" id="comments">
     <div id="disqus_thread">
-      <noscript>{#
-      #}Please enable JavaScript to view the comments powered by Disqus.{#
-    #}</noscript>
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
   `, {}, {cache: true});

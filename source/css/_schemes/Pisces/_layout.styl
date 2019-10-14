@@ -27,9 +27,7 @@
   width: $sidebar-desktop;
 
   +desktop-large() {
-    .container & {
-      width: $sidebar-desktop;
-    }
+    width: $sidebar-desktop;
   }
 
   +tablet-mobile() {
@@ -43,7 +41,7 @@
   clearfix();
 }
 
-.container .main-inner {
+.main-inner {
   +tablet-mobile() {
     width: auto;
   }

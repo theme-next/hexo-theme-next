@@ -21,12 +21,8 @@
     display: none;
   }
 
-  .post-block {
+  .post-block:not(:first-child) {
     margin-top: 120px;
-
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   .post-title, .post-meta {
@@ -34,7 +30,7 @@
   }
 
   .post-title-link::before {
-    background-color: $black-deep;
+    background: $black-deep;
   }
 
   .post-body img {
@@ -48,10 +44,10 @@
       background: $whitesmoke;
       border-bottom: none;
       padding: 1px 5px;
-    }
 
-    a:hover {
-      background: $grey-light;
+      &:hover {
+        background: $grey-light;
+      }
     }
   }
 

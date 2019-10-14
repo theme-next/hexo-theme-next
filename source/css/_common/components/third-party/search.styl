@@ -1,5 +1,5 @@
 .search-pop-overlay {
-  background-color: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .3);
   display: none;
   height: 100%;
   left: 0;
@@ -45,7 +45,7 @@
   }
 
   .popup-btn-close {
-    border-left: 1px solid #eee;
+    border-left: 1px solid $gainsboro;
     cursor: pointer;
     float: right;
 
@@ -70,7 +70,7 @@ if (hexo-config('algolia_search.enable')) {
     input {
       background: transparent;
       border: 0;
-      outline: none;
+      outline: 0;
       padding: 5px 0;
       width: 100%;
     }
@@ -118,7 +118,7 @@ if (hexo-config('algolia_search.enable')) {
   }
 
   .algolia-hit-item-link {
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed $grey-light;
     display: block;
     the-transition();
   }
@@ -166,7 +166,7 @@ if (hexo-config('local_search.enable')) {
     }
 
     p.search-result {
-      border-bottom: 1px dashed #ccc;
+      border-bottom: 1px dashed $grey-light;
       padding: 5px 0;
     }
 
@@ -175,8 +175,8 @@ if (hexo-config('local_search.enable')) {
     }
 
     .search-keyword {
-      border-bottom: 1px dashed #f00;
-      color: #f00;
+      border-bottom: 1px dashed $red;
+      color: $red;
       font-weight: bold;
     }
 
@@ -200,7 +200,7 @@ if (hexo-config('local_search.enable')) {
         border: 0;
         display: block;
         height: 20px;
-        outline: none;
+        outline: 0;
         padding: 8px 0;
         vertical-align: middle;
         width: 100%;

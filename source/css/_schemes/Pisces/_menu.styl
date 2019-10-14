@@ -8,7 +8,7 @@
   }
 
   .toggle .toggle-line {
-    background-color: white;
+    background: white;
   }
 }
 
@@ -21,11 +21,11 @@
 }
 
 .menu-item-active a {
-  background: #f9f9f9;
+  background: $whitesmoke;
 
   if (!hexo-config('menu_settings.badges')) {
     &::after {
-      background-color: $grey;
+      background: $grey;
       border-radius: 50%;
       content: ' ';
       height: 6px;
@@ -54,7 +54,7 @@
   }
 
   .badge {
-    background-color: $grey-light;
+    background: $grey-light;
     border-radius: 10px;
     color: white;
     float: right;

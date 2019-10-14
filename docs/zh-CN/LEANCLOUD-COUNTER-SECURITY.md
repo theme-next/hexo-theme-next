@@ -115,7 +115,7 @@ leancloud_visitors:
 
 - 打开 cmd 并切换至**博客根目录**，键入以下命令以安装 `hexo-leancloud-counter-security` 插件：
   ```
-  npm install hexo-leancloud-counter-security --save
+  npm install hexo-leancloud-counter-security
   ```
 
 - 打开**博客配置文件** `_config.yml`，新增以下配置：

@@ -5,16 +5,15 @@
     background: white;
     display: inline-block;
     height: 2px;
-    left: 0px;
-    margin-top: 3px;
+    left: 0;
     position: relative;
-    top: 0px;
+    top: 0;
     transition: all .4s;
     vertical-align: top;
     width: 100%;
 
-    &:first-child {
-      margin-top: 0;
+    &:not(:first-child) {
+      margin-top: 3px;
     }
   }
 }

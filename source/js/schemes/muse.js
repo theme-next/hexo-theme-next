@@ -117,14 +117,9 @@ window.addEventListener('DOMContentLoaded', () => {
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
-    var containerHeight = document.querySelector('.container').offsetHeight;
-    var footer = document.getElementById('footer');
-    if (footer.classList.contains('footer-fixed')) containerHeight += footer.outerHeight(true);
-    if (containerHeight > window.innerHeight) {
-      footer.classList.remove('footer-fixed');
-    } else {
-      footer.classList.add('footer-fixed');
-    }
+    var footer = document.querySelector('.footer');
+    var containerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.main').offsetHeight + footer.offsetHeight;
+    footer.classList.toggle('footer-fixed', containerHeight <= window.innerHeight);
   }
 
   updateFooterPosition();

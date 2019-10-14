@@ -3,25 +3,21 @@
   display: table;
   table-layout: fixed;
   width: 100%;
+
+  .post-gallery-img {
+    border: 0;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    img {
+      border: 0;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 .post-gallery-row {
   display: table-row;
-}
-
-.post-gallery .post-gallery-img {
-  border: 0;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-
-  img {
-    border: 0;
-    max-height: 100%;
-    max-width: 100%;
-  }
-}
-
-.fancybox-close, .fancybox-close:hover {
-  border: 0;
 }

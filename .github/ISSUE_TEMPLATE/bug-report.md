@@ -1,18 +1,14 @@
 ---
 name: Bug Report
-about: Create a report to help us improve.
+about: Something isn't working as expected
 title: ''
 labels: Bug
 assignees: ''
 
 ---
 
-<!-- ATTENTION!
-IF YOU DON'T FILL OUT THE FOLLOWING INFORMATION, WE MIGHT CLOSE YOUR ISSUE WITHOUT INVESTIGATING.
-如果你没有按照要求填写以下内容，我们可能会直接关闭你的 Issue。
 Please check if your Issue fulfills the following requirements.
-请务必确认你在提交此 Issue 前已经查看并完成了下列检查单中的所有事项。
--->
+请务必确认您在提交此 Issue 前已经查看并完成了下列检查单中的所有事项。
 
 ## Issue Checklist <!-- 我确认我已经查看了 -->
 <!-- Change [ ] to [x] to select, not [ x] or [x ] (将 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
