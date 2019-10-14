@@ -11,13 +11,26 @@
 
 'use strict';
 
-const keys = ['toc', 'reward_settings', 'wechat_subscriber'];
+const keys = ['toc', 'reward_settings', 'wechat_subscriber', 'quicklink'];
 
 hexo.extend.filter.register('template_locals', (locals) => {
   const { page, theme } = locals;
   keys.forEach(key => {
     page[key] = Object.assign({}, theme[key], page[key]);
   });
+
+  // Set default value for toc.max_depth
+  if (!page.toc.max_depth) {
+    page.toc.max_depth = 6;
+  }
+
+  // Set home or archive quicklink
+  if (page.__index) {
+    page.quicklink.enable = theme.quicklink.home;
+  }
+  if (page.archive) {
+    page.quicklink.enable = theme.quicklink.archive;
+  }
 
   // Compatible
   if (page.reward !== undefined) {
@@ -34,10 +47,5 @@ hexo.extend.filter.register('template_locals', (locals) => {
     page.toc.max_depth = page.toc_max_depth;
     hexo.log.warn(`front-matter: toc_max_depth has deprecated, path: ${page.path}`);
     hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211.');
-  }
-
-  // Set default value for toc.max_depth
-  if (!page.toc.max_depth) {
-    page.toc.max_depth = 6;
   }
 });
