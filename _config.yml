@@ -434,8 +434,6 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  # Use custom fonts families or not.
-  # Depended options: `external` and `family`.
   enable: false
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
