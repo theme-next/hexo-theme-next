@@ -1,0 +1,29 @@
+// Header Section
+// --------------------------------------------------
+.header {
+  background: $head-bg;
+}
+
+.header-inner {
+  margin: 0 auto;
+  padding: 100px 0 70px;
+  position: relative;
+  width: $content-desktop;
+
+  +desktop-large() {
+    width: $content-desktop-large;
+  }
+
+  +desktop-largest() {
+    width: $content-desktop-largest;
+  }
+}
+
+@import 'headerband';
+@import 'site-meta';
+@import 'site-nav';
+@import 'menu';
+
+@import 'bookmark' if (hexo-config('bookmark.enable'));
+
+@import 'github-banner' if (hexo-config('github_banner.enable'));

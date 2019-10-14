@@ -10,6 +10,10 @@ hexo.extend.filter.register('after_generate', () => {
   const velocity = lists.filter(list => list.includes('lib/velocity'));
   const fontawesome = lists.filter(list => list.includes('lib/font-awesome'));
 
+  if (!theme.bookmark.enable) {
+    hexo.route.remove('js/bookmark.js');
+  }
+
   if (!theme.motion.enable) {
     hexo.route.remove('js/motion.js');
     velocity.forEach(path => {
@@ -29,12 +33,8 @@ hexo.extend.filter.register('after_generate', () => {
     });
   }
 
-  if (!theme.exturl) {
-    hexo.route.remove('js/exturl.js');
-  }
-
-  if (theme.vendors.jquery) {
-    hexo.route.remove('lib/jquery/index.js');
+  if (theme.vendors.anime) {
+    hexo.route.remove('lib/anime.min.js');
   }
 
   if (!theme.algolia_search.enable) {
@@ -46,7 +46,6 @@ hexo.extend.filter.register('after_generate', () => {
   }
 
   if (theme.scheme === 'Muse' || theme.scheme === 'Mist') {
-    hexo.route.remove('js/affix.js');
     hexo.route.remove('js/schemes/pisces.js');
   } else if (theme.scheme === 'Pisces' || theme.scheme === 'Gemini') {
     hexo.route.remove('js/schemes/muse.js');

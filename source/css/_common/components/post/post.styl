@@ -2,6 +2,10 @@
   word-wrap();
   font-family: $font-family-posts;
 
+  +desktop-large() {
+    font-size: $font-size-large;
+  }
+
   span.exturl .fa {
     font-size: $font-size-small;
     margin-left: 4px;
@@ -20,6 +24,11 @@
 .post-sticky-flag {
   display: inline-block;
   transform: rotate(30deg);
+}
+
+.post-button {
+  margin-top: 40px;
+  text-align: center;
 }
 
 .use-motion {
@@ -42,28 +51,22 @@
   }
 
   if (hexo-config('motion.transition.coll_header')) {
-    .collection-title {
+    .collection-header {
       opacity: 0;
     }
   }
 }
 
-@import 'post-button';
 @import 'post-collapse';
 @import 'post-eof';
 @import 'post-expand';
 @import 'post-gallery';
-@import 'post-meta';
+@import 'post-header';
 @import 'post-nav';
 @import 'post-rtl';
 @import 'post-tags';
-@import 'post-title';
-@import 'post-type';
+@import 'post-widgets';
 
 @import 'post-reward' if (hexo-config('reward_settings.enable'));
 
 @import 'post-copyright' if (hexo-config('creative_commons.post'));
-
-@import 'post-widgets' if ((hexo-config('facebook_sdk.enable') && hexo-config('facebook_sdk.like_button')) || (hexo-config('vkontakte_api.enable') && hexo-config('vkontakte_api.like')) || hexo-config('rating.enable') || hexo-config('likely.enable') || (hexo-config('needmoreshare2.enable') && hexo-config('needmoreshare2.postbottom.enable')));
-
-@import 'post-reading_progress' if (hexo-config('reading_progress.enable'));

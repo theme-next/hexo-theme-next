@@ -3,7 +3,6 @@
 'use strict';
 
 const {iconText} = require('./common');
-const priority = hexo.config.inject_priority || {};
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
@@ -19,9 +18,12 @@ hexo.extend.filter.register('theme_inject', injects => {
        data-colorscheme="{{ theme.facebook_comments_plugin.scheme }}">
     </div>
   </div>
-  `);
+  `, {
+    configKey: 'facebook_comments_plugin',
+    button   : '<i class="fa fa-facebook-official" aria-hidden="true"></i> facebook'
+  });
 
-}, priority.facebook_comments_plugin);
+});
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
@@ -31,12 +33,12 @@ hexo.extend.filter.register('theme_inject', injects => {
   injects.postMeta.raw('facebook-comments-plugin', `
   {% if post.comments %}
   <span class="post-meta-item">
-    ${iconText}
-    <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+    ${iconText('comment-o', 'facebook')}
+    <a title="facebook comments" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
       <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
     </a>
   </span>
   {% endif %}
-  `);
+  `, {}, {}, theme.facebook_comments_plugin.post_meta_order);
 
-}, priority.facebook_comments_plugin_post_meta);
+});

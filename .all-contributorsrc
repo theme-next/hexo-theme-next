@@ -495,6 +495,90 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "littleylv",
+      "name": "Siuwing Leoi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16814596?v=4",
+      "profile": "https://littleylv.github.io/",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "MartinMa94",
+      "name": "Martin Ma",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/25997737?v=4",
+      "profile": "https://github.com/MartinMa94",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "wangjiezhe",
+      "name": "Jiezhe Wang",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5236768?v=4",
+      "profile": "https://wangjiezhe.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "sankoshine",
+      "name": "SanKo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7546269?v=4",
+      "profile": "https://github.com/sankoshine",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "Liam0205",
+      "name": "Liam Huang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3348485?v=4",
+      "profile": "https://liam.page/en/about",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Maxattax97",
+      "name": "Max O'Cull",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4708067?v=4",
+      "profile": "https://maxocull.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "TrumanDu",
+      "name": "truman.p.du",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/16727775?v=4",
+      "profile": "https://github.com/TrumanDu",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ifmos",
+      "name": "Mos",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/16851606?v=4",
+      "profile": "https://github.com/ifmos",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "kuretru",
+      "name": "呉真",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/13750214?v=4",
+      "profile": "https://blog.kuretru.com/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 6

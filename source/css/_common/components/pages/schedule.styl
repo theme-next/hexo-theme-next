@@ -1,25 +1,25 @@
 @keyframes dot-flash {
   from {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
 
   to {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(.8);
   }
 }
 
-#event-list {
-  padding: 0px;
+.event-list {
+  padding: 0;
 
   hr {
-    background: #222;
-    margin: 20px 0 45px 0 !important;
+    background: $black-deep;
+    margin: 20px 0 45px 0;
 
     &::after {
-      background: #222;
-      color: #FFF;
+      background: $black-deep;
+      color: white;
       content: 'NOW';
       display: inline-block;
       font-weight: bold;
@@ -28,37 +28,39 @@
     }
   }
 
-  li.event {
-    background: #F9F9F9;
+  .event {
+    background: $black-deep;
     margin: 20px 0;
     min-height: 40px;
-    padding-left: 10px;
+    padding: 15px 0 15px 10px;
 
-    h2.event-summary {
+    .event-summary {
+      color: white;
       margin: 0;
       padding-bottom: 3px;
 
       &::before {
-        color: #bbb;
+        animation: dot-flash 1s alternate infinite ease-in-out;
+        color: white;
         content: '\f111';
         display: inline-block;
-        font-family: FontAwesome;
-        font-size: 8px;
+        font-family: $font-family-icons;
+        font-size: 10px;
         margin-right: 25px;
         vertical-align: middle;
       }
     }
 
-    span.event-relative-time {
-      color: #bbb;
+    .event-relative-time {
+      color: $grey;
       display: inline-block;
       font-size: 12px;
       font-weight: $font-weight-normal;
       padding-left: 12px;
     }
 
-    span.event-details {
-      color: #bbb;
+    .event-details {
+      color: white;
       display: block;
       line-height: 18px;
       margin-left: 56px;
@@ -67,9 +69,9 @@
       text-indent: -24px;
 
       &::before {
-        color: #bbb;
+        color: white;
         display: inline-block;
-        font-family: FontAwesome;
+        font-family: $font-family-icons;
         margin-right: 9px;
         text-align: center;
         text-indent: 0;
@@ -86,56 +88,17 @@
     }
   }
 
-  li.event-past {
-    background: #FCFCFC;
-    padding: 15px 0 15px 10px;
+  .event-past {
+    background: $whitesmoke;
 
-    & > * {
+    .event-summary, .event-details {
+      color: $grey;
       opacity: .9;
-    }
-
-    h2.event-summary {
-      color: #bbb;
 
       &::before {
-        color: #DFDFDF;
+        animation: none;
+        color: $grey;
       }
-    }
-  }
-
-  li.event-now {
-    background: #222;
-    color: #FFF;
-    padding: 15px 0 15px 10px;
-
-    h2.event-summary {
-      &::before {
-        animation: dot-flash 1s alternate infinite ease-in-out;
-        color: #FFF;
-        transform: scale(1.2);
-      }
-    }
-
-    * {
-      color: #FFF !important;
-    }
-  }
-
-  li.event-future {
-    background: #222;
-    color: #FFF;
-    padding: 15px 0 15px 10px;
-
-    h2.event-summary {
-      &::before {
-        animation: dot-flash 1s alternate infinite ease-in-out;
-        color: #FFF;
-        transform: scale(1.2);
-      }
-    }
-
-    * {
-      color: #FFF !important;
     }
   }
 }

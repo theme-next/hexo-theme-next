@@ -3,15 +3,16 @@
 <h2 align="center">Шаг 1 &rarr; Идём в директорию Hexo</h2>
 
 Меняем каталог на **корневой hexo**. Там должны находиться `node_modules`, `source`, `themes` и другие папки:
-   ```sh
-   $ cd hexo
-   $ ls
-   _config.yml  node_modules  package.json  public  scaffolds  source  themes
-   ```
+
+```sh
+$ cd hexo
+$ ls
+_config.yml  node_modules  package.json  public  scaffolds  source  themes
+```
 
 <h2 align="center">Шаг 2 &rarr; Скачиваем NexT</h2>
 
-<p align="center">Скачиваем тему с GitHub.</br>
+<p align="center">Скачиваем тему с GitHub.<br>
 Имеются <b>3 способа</b> как зделать это, нужно <b>выбрать только 1</b> из них.</p>
 
 ### Способ 1: Скачиваем [последнюю версию релиза][releases-latest-url]

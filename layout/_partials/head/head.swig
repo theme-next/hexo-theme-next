@@ -1,8 +1,7 @@
 <meta charset="UTF-8">
-<meta name="generator" content="Hexo {{ hexo_env('version') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hexo {{ hexo_env('version') }}">
 
 {%- if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
@@ -21,6 +20,13 @@
 {%- endif %}
 {%- if theme.favicon.ms_browserconfig %}
   <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}">
+{%- endif %}
+
+{%- if theme.rss === '' and config.feed.path %}
+  {%- set theme.rss = config.feed.path %}
+{%- endif %}
+{%- if theme.rss %}
+  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml">
 {%- endif %}
 
 {%- if theme.disable_baidu_transformation %}
@@ -49,47 +55,19 @@
 
 {{ next_font() }}
 
-{%- set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.7.0') %}
-{%- if theme.vendors.fontawesome %}
-  {%- set font_awesome_uri = theme.vendors.fontawesome %}
-{%- endif %}
+{%- set font_awesome_uri = theme.vendors.fontawesome | default(next_vendors('font-awesome/css/font-awesome.min.css?v=4.7.0')) %}
 <link rel="stylesheet" href="{{ font_awesome_uri }}">
 
 {%- if theme.fancybox %}
-  {%- set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css') %}
-  {%- if theme.vendors.fancybox_css %}
-    {%- set fancybox_css_uri = theme.vendors.fancybox_css %}
-  {%- endif %}
+  {%- set fancybox_css_uri = theme.vendors.fancybox_css | default(next_vendors('//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css')) %}
   <link rel="stylesheet" href="{{ fancybox_css_uri }}">
 {%- endif %}
 
-{%- if theme.likely.enable %}
-  {%- set likely_css_url = '//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css' %}
-  {%- if theme.vendors.likely_css %}
-    {%- set likely_css_url = theme.vendors.likely_css %}
-  {%- endif %}
-  <link rel="stylesheet" href="{{ likely_css_url }}">
-{%- endif %}
-
-{%- if theme.needmoreshare2.enable %}
-  {%- set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
-  {%- if theme.vendors.needmoreshare2_css %}
-    {%- set needmoreshare2_css = theme.vendors.needmoreshare2_css %}
-  {%- endif %}
-  <link rel="stylesheet" href="{{ needmoreshare2_css }}">
-{%- endif %}
-
 {%- if theme.pace.enable %}
-  {%- set pace_css_uri = url_for(theme.vendors._internal + '/pace/pace-theme-'+ theme.pace.theme +'.min.css?v=1.0.2') %}
-  {%- set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
-    {%- if theme.vendors.pace %}
-      {%- set pace_js_uri = theme.vendors.pace %}
-    {%- endif %}
-    {%- if theme.vendors.pace_css %}
-      {%- set pace_css_uri = theme.vendors.pace_css %}
-    {%- endif %}
-  <script src="{{ pace_js_uri }}"></script>
+  {%- set pace_css_uri = theme.vendors.pace_css | default(next_vendors('pace/pace-theme-' + theme.pace.theme + '.min.css?v=1.0.2')) %}
+  {%- set pace_js_uri = theme.vendors.pace | default(next_vendors('pace/pace.min.js?v=1.0.2')) %}
   <link rel="stylesheet" href="{{ pace_css_uri }}">
+  <script src="{{ pace_js_uri }}"></script>
 {%- endif %}
 
 {# Export some HEXO Configurations to Front-End #}
@@ -99,16 +77,17 @@
     root: '{{ config.root }}',
     scheme: '{{ theme.scheme }}',
     version: '{{ version }}',
+    exturl: {{ theme.exturl }},
     sidebar: {{ theme.sidebar | json_encode }},
-    back2top: {{ theme.back2top | json_encode }},
-    save_scroll: {{ theme.save_scroll }},
     copycode: {{ theme.codeblock.copy_button | json_encode }},
+    back2top: {{ theme.back2top | json_encode }},
+    bookmark: {{ theme.bookmark | json_encode }},
     fancybox: {{ theme.fancybox }},
     mediumzoom: {{ theme.mediumzoom }},
     lazyload: {{ theme.lazyload }},
     pangu: {{ theme.pangu }},
     algolia: {
-      applicationID: '{{ config.algolia.applicationID }}',
+      appID: '{{ config.algolia.applicationID }}',
       apiKey: '{{ config.algolia.apiKey }}',
       indexName: '{{ config.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},
@@ -116,12 +95,12 @@
     },
     localsearch: {{ theme.local_search | json_encode }},
     path: '{{ config.search.path }}',
-    tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     translation: {
-      copy_button: '{{__("post.copy_button")}}',
-      copy_success: '{{__("post.copy_success")}}',
-      copy_failure: '{{__("post.copy_failure")}}'
-    }
+      copy_button: '{{ __("post.copy_button") }}',
+      copy_success: '{{ __("post.copy_success") }}',
+      copy_failure: '{{ __("post.copy_failure") }}'
+    },
+    sidebarPadding: 40
   };
 </script>

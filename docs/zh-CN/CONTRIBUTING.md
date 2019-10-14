@@ -1,7 +1,9 @@
-<div align="right">语言：
-<a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
-:cn:
-<a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a></div>
+<div align="right">
+  语言：
+  <a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
+  :cn:
+  <a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a>
+</div>
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
@@ -87,16 +89,16 @@
 
 1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击 `Fork`。
 2. 进入到已经 `Fork` 的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
-    ```bash
+    ```sh
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
 3. 进入 `hexo-theme-next` 本地文件夹，并创建分支。
-    ```bash
+    ```sh
     $ cd hexo-theme-next
     $ git checkout -b patchname
     ```
 4. 本地修改并测试，推送分支。
-    ```bash
+    ```sh
     $ git add .
     $ git commit -m "add commit messamge"
     $ git push origin patchname
@@ -155,27 +157,26 @@ Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
 
 - 类型
     - `Bug`: 检测到需要进行确认的 Bug
-    - `Improvement Need`: 需要改进的 Issue
+    - `Improvement`: 需要改进的 Issue
     - `Feature Request`: 提出了新功能请求的 Issue
-    - `Non English`: 需要多语言维护者参与的 Issue
     - `Discussion`: 需要进行讨论的 Issue
     - `Question`: 提出疑问的 Issue
     - `Meta`: 表明使用条款变更的 Issue
     - `Polls`: 发起投票的 Issue
-    - `High Priority`: 检测到具有高优先级的 Bug 或笔误的 Issue
-    - `Low Priority`: 检测到具有低优先级的 Bug 或笔误的 Issue
 - 内容
     - `Roadmap`: 与 NexT 主题发展相关的 Issue
-    - `Hexo`: 与 Hexo 相关的 Issue
-    - `3rd Party Service`: 与第三方服务相关的 Issue
+    - `Hexo`: 与 Hexo 和 Hexo 插件相关的 Issue
+    - `3rd Party Plugin`: 与第三方插件和服务相关的 Issue
     - `Docs`: 需要添加文档说明的 Issue
     - `Configurations`: 与 NexT 主题设置相关的 Issue
     - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue
-    - `Duplicate`: 重复提及的 Issue
-    - `Irrelevant`: 与 NexT 主题无关的 Issue
+    - `Fonts`: 与 NexT 主题字体相关的 Issue
+    - `PJAX`: 与 NexT 主题 PJAX 相关的 Issue
     - `Custom`: 与 NexT 主题个性化相关的 Issue
     - `Support`: 被标记为支持请求的 Issue
 - 结果
+    - `Duplicate`: 重复提及的 Issue
+    - `Irrelevant`: 与 NexT 主题无关的 Issue
     - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
     - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
@@ -190,7 +191,7 @@ Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
 Pull requests 的标签：
 
 - `Breaking Change`: 产生重大变动的 Pull request
-- `External Change`: 针对外部变动进行更新的 Pull request
+- `3rd Party Plugin`: 针对第三方插件和服务进行更新的 Pull request
 - `Bug Fix`: 修复相关 Bug 的 Pull request
 - `Docs`: 添加了文档说明的 Pull request
 - `New Feature`: 添加了新功能的 Pull request
@@ -201,7 +202,6 @@ Pull requests 的标签：
 - `Discussion`: 需要进行讨论的 Pull request
 - `Work in Progress`: 仍在进行改动和完善的 Pull request
 - `Skip Release`: 无需在 Release Note 中展现的 Pull request
-- `v6.x`: 与 NexT v6.x 旧版相关的用于修复和改进的 Pull request
 
 <a name="commit-messages-rules"></a>
 

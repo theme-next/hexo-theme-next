@@ -1,23 +1,99 @@
-/* global NexT, CONFIG */
+/* global NexT, CONFIG, Velocity */
 
-$(document).on('DOMContentLoaded', function() {
+NexT.boot = {};
 
-  CONFIG.back2top.enable && NexT.utils.registerBackToTop();
+NexT.boot.registerEvents = function() {
+
+  NexT.utils.registerScrollPercent();
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
-  $('.site-nav-toggle button').on('click', function() {
-    var $siteNav = $('.site-nav');
-    var ON_CLASS_NAME = 'site-nav-on';
-    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
-    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
-    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+  document.querySelector('.site-nav-toggle .toggle').addEventListener('click', () => {
+    event.currentTarget.classList.toggle('toggle-close');
+    var siteNav = document.querySelector('.site-nav');
+    var animateAction = siteNav.classList.contains('site-nav-on') ? 'slideUp' : 'slideDown';
 
-    $siteNav.stop()[animateAction]('fast', function() {
-      $siteNav[animateCallback](ON_CLASS_NAME);
+    if (typeof Velocity === 'function') {
+      Velocity(siteNav, animateAction, {
+        duration: 200,
+        complete: function() {
+          siteNav.classList.toggle('site-nav-on');
+        }
+      });
+    } else {
+      siteNav.classList.toggle('site-nav-on');
+    }
+  });
+
+  var TAB_ANIMATE_DURATION = 200;
+  document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
+    element.addEventListener('click', event => {
+      var item = event.currentTarget;
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.classList.contains(activeTabClassName)) return;
+
+      var targets = document.querySelectorAll('.sidebar-panel');
+      var target = targets[index];
+      var currentTarget = targets[1 - index];
+      window.anime({
+        targets : currentTarget,
+        duration: TAB_ANIMATE_DURATION,
+        easing  : 'linear',
+        opacity : 0,
+        complete: () => {
+          // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+          currentTarget.classList.remove(activePanelClassName);
+          target.style.opacity = 0;
+          target.classList.add(activePanelClassName);
+          window.anime({
+            targets : target,
+            duration: TAB_ANIMATE_DURATION,
+            easing  : 'linear',
+            opacity : 1
+          });
+        }
+      });
+
+      [...item.parentNode.children].forEach(element => {
+        element.classList.remove(activeTabClassName);
+      });
+      item.classList.add(activeTabClassName);
     });
   });
 
+  window.addEventListener('resize', NexT.utils.initSidebarDimension);
+
+  window.addEventListener('hashchange', () => {
+    var tHash = location.hash;
+    if (tHash !== '' && !tHash.match(/%\S{2}/)) {
+      var target = document.querySelector(`.tabs ul.nav-tabs li a[href="${tHash}"]`);
+      target && target.click();
+    }
+  });
+};
+
+NexT.boot.refresh = function() {
+
+  /**
+   * Register JS handlers by condition option.
+   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
+   */
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img');
+  CONFIG.lazyload && window.lozad('.post-body img').observe();
+  CONFIG.pangu && window.pangu.spacingPage();
+
+  CONFIG.exturl && NexT.utils.registerExtURL();
+  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
+  NexT.utils.registerTabsTag();
+  NexT.utils.registerActiveMenuItem();
+  NexT.utils.registerSidebarTOC();
+  NexT.utils.wrapTableWithBox();
+  NexT.utils.registerVideoIframe();
+};
+
+NexT.boot.motion = function() {
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
     NexT.motion.integrator
@@ -29,72 +105,10 @@ $(document).on('DOMContentLoaded', function() {
   } else {
     NexT.utils.updateSidebarPosition();
   }
-});
+};
 
-$(document).on('DOMContentLoaded pjax:success', function() {
-
-  if (CONFIG.save_scroll) {
-    // Read position from localStorage
-    var value = localStorage.getItem('scroll' + location.pathname);
-    $('html, body').animate({ scrollTop: value || 0 });
-    // Write position in localStorage
-    NexT.utils.saveScrollTimer = setInterval(function() {
-      localStorage.setItem('scroll' + location.pathname, $(window).scrollTop());
-    }, 1000);
-  }
-
-  /**
-   * Register JS handlers by condition option.
-   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
-   */
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
-  CONFIG.lazyload && window.lozad('.post-body img').observe();
-  CONFIG.pangu && window.pangu.spacingPage();
-
-  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
-  CONFIG.tabs && NexT.utils.registerTabsTag();
-  NexT.utils.registerActiveMenuItem();
-  NexT.utils.embeddedVideoTransformer();
-
-  /**
-   * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
-   * Need for Sidebar/TOC inner scrolling if content taller then viewport.
-   */
-  function updateSidebarHeight(height) {
-    height = height || 'auto';
-    $('.site-overview, .post-toc').css('max-height', height);
-  }
-
-  function initSidebarDimension() {
-    var updateSidebarHeightTimer;
-
-    $(window).on('resize', function() {
-      updateSidebarHeightTimer && clearTimeout(updateSidebarHeightTimer);
-
-      updateSidebarHeightTimer = setTimeout(function() {
-        var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-
-        updateSidebarHeight(sidebarWrapperHeight);
-      }, 0);
-    });
-
-    // Initialize Sidebar & TOC Width.
-    var scrollbarWidth = NexT.utils.getScrollbarWidth();
-    if ($('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.site-overview').css('width', `calc(100% + ${scrollbarWidth}px)`);
-    }
-    if ($('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.post-toc').css('width', `calc(100% + ${scrollbarWidth}px)`);
-    }
-
-    // Initialize Sidebar & TOC Height.
-    updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
-  }
-  initSidebarDimension();
-
-  function wrapTable() {
-    $('table').not('.gist table').wrap('<div class="table-container"></div>');
-  }
-  wrapTable();
+window.addEventListener('DOMContentLoaded', () => {
+  NexT.boot.registerEvents();
+  NexT.boot.refresh();
+  NexT.boot.motion();
 });

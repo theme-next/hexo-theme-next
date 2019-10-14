@@ -1,0 +1,38 @@
+.site-nav-toggle {
+  display: none;
+  left: 10px;
+  position: absolute;
+
+  +mobile() {
+    display: block;
+  }
+
+  .toggle {
+    background: transparent;
+    border: 0;
+    margin-top: 2px;
+    padding: 10px;
+    width: 22px;
+
+    .toggle-line {
+      background: $text-color;
+      border-radius: 1px;
+    }
+  }
+}
+
+.site-nav {
+  display: block;
+
+  +mobile() {
+    border-top: 1px solid $gray-lighter;
+    clear: both;
+    display: none;
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+
+  &.site-nav-on {
+    display: block;
+  }
+}

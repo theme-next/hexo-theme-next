@@ -12,7 +12,7 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
 
     ```
     $ cd hexo
-    $ npm install --save hexo-algolia
+    $ npm install hexo-algolia
     ```
 
 1. Go to the `API Keys` page and find your credentials. You will need the `Application ID` and the `Search-only API key` in the following sections. The `Admin API key` need to keep confidential. Never store your Admin API Key as apiKey in the` _config.yml` file: it would give full control of your Algolia index to others and you don't want to face the consequences.
@@ -45,24 +45,6 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
 
     ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png)
 
-1. Change dir to NexT directory, and install module to `source/lib` directory.
-
-    ```
-    $ cd themes/next
-    $ git clone https://github.com/theme-next/theme-next-algolia-instant-search source/lib/algolia-instant-search
-    ```
-
-    If you want to use the CDN instead of clone this repo, then need to **set vendors** in NexT `_config.yml` file:
-    ```yml
-    vendors:
-      ...
-      # Internal version: 1
-      # https://www.algolia.com
-      algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
-      algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
-      ...
-    ```
-
 1. In `next/_config.yml`, turn on `enable` of `algolia_search`. At the same time, you need to **turn off other search plugins** like Local Search. You can also adjust the text in `labels` according to your needs.
 
     ```yml
@@ -75,6 +57,19 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
         input_placeholder: Search for Posts
         hits_empty: "We didn't find any results for the search: ${query}"
         hits_stats: "${hits} results found in ${time} ms"
+    ```
+
+1. If you want to use a different version from CDN, please follow the instructions below.
+
+    You need to **set vendors** in NexT `_config.yml` file:
+    ```yml
+    vendors:
+      ...
+      # Internal version: 1
+      # https://www.algolia.com
+      algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
+      algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
+      ...
     ```
 
 <h2 align="center">Known Issues</h2>

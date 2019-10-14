@@ -8,8 +8,6 @@ At present, NexT encourages users to store some options in site's `/_config.yml`
 
 In order to resolve this issue, NexT will take advantage of Hexo [Data files](https://hexo.io/docs/data-files.html). Because Data files is introduced in Hexo 3, so you need upgrade Hexo to 3.0 (or above) to use this feature.
 
-If you prefer Hexo 2.x, you can still use the old approach for configurations. NexT is still compatible with Hexo 2.x (but errors are possible).
-
 <h2 align="center">Option 1: Hexo-Way</h2>
 
 With this way, all your configurations locate in main Hexo config file (`/_config.yml`), you don't need to touch `/themes/next/_config.yml` or create any new files. But you must preserve double spaces indents within `theme_config` option.
@@ -54,7 +52,7 @@ If there are any new options in new releases, you just need to copy those option
   2. Copy **all** NexT theme options from theme's `/themes/next/_config.yml` into `/source/_data/next.yml`.
 
 3. Then, in main site's `/_config.yml` need to define `theme: next` option (and if needed, `source_dir: source`).
-4. Use standart parameters to start server, generate or deploy (`hexo clean && hexo g -d && hexo s`).
+4. Use standard parameters to start server, generate or deploy (`hexo clean && hexo g -d && hexo s`).
 
 ### Useful links
 

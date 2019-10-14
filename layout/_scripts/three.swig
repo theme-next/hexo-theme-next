@@ -1,40 +1,16 @@
-{%- if theme.three.enable and theme.three.delay %}
-  {%- set three_url = url_for(theme.vendors._internal + '/three/three.min.js') %}
-  {%- if theme.vendors.three %}
-    {%- set three_url = theme.vendors.three %}
-  {%- endif %}
-
+{%- if theme.three.enable %}
+  {%- set three_uri = theme.vendors.three | default(next_vendors('three/three.min.js')) %}
+  <script defer src="{{ three_uri }}"></script>
   {%- if theme.three.three_waves %}
-    {%- set waves = theme.vendors.three_waves | default(url_for(theme.vendors._internal + '/three/three-waves.min.js')) %}
+    {%- set waves_uri = theme.vendors.three_waves | default(next_vendors('three/three-waves.min.js')) %}
+    <script defer src="{{ waves_uri }}"></script>
   {%- endif %}
-
   {%- if theme.three.canvas_lines %}
-    {%- set lines = theme.vendors.canvas_lines | default(url_for(theme.vendors._internal + '/three/canvas_lines.min.js')) %}
+    {%- set lines_uri = theme.vendors.canvas_lines | default(next_vendors('three/canvas_lines.min.js')) %}
+    <script defer src="{{ lines_uri }}"></script>
   {%- endif %}
-
   {%- if theme.three.canvas_sphere %}
-    {%- set sphere = theme.vendors.canvas_sphere | default(url_for(theme.vendors._internal + '/three/canvas_sphere.min.js')) %}
+    {%- set sphere_uri = theme.vendors.canvas_sphere | default(next_vendors('three/canvas_sphere.min.js')) %}
+    <script defer src="{{ sphere_uri }}"></script>
   {%- endif %}
-
-  <script>
-    ;((d, w) => {
-      loadThree = () => {
-        let s = d.createElement('script');
-        s.src = '{{ three_url }}';
-        d.body.appendChild(s);
-      }
-      let styles = ['{{ waves }}', '{{ lines }}', '{{ sphere }}'];
-      loadStyle = () => {
-        styles.forEach(x => {
-          if (x !== '') {
-            let s = d.createElement('script');
-            s.src = x;
-            d.body.appendChild(s);
-          }
-        })
-      }
-      w.addEventListener('DOMContentLoaded', loadThree);
-      w.addEventListener('load', loadStyle);
-    })(document, window);
-  </script>
 {%- endif %}

@@ -1,17 +1,11 @@
 {%- if page.comments %}
-{%- set gitalk_css_url = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css' %}
-{%- if theme.vendors.gitalk_css %}
-  {%- set gitalk_css_url = theme.vendors.gitalk_css %}
-{%- endif %}
-<link rel="stylesheet" href="{{ gitalk_css_url }}">
+{%- set gitalk_css_uri = theme.vendors.gitalk_css | default('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css') %}
+<link rel="stylesheet" href="{{ gitalk_css_uri }}">
 
-{%- set gitalk_js_url = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js' %}
-{%- if theme.vendors.gitalk_js %}
-  {%- set gitalk_js_url = theme.vendors.gitalk_js %}
-{%- endif %}
+{%- set gitalk_js_uri = theme.vendors.gitalk_js | default('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js') %}
 
 <script>
-  function initGitalk() {
+  NexT.utils.getScript('{{ gitalk_js_uri }}', () => {
     var gitalk = new Gitalk({
       clientID: '{{ theme.gitalk.client_id }}',
       clientSecret: '{{ theme.gitalk.client_secret }}',
@@ -27,7 +21,6 @@
       distractionFreeMode: '{{ theme.gitalk.distraction_free_mode }}'
     });
     gitalk.render('gitalk-container');
-  }
-  NexT.utils.getScript('{{ gitalk_js_url }}', initGitalk, window.Gitalk);
+  }, window.Gitalk);
 </script>
 {%- endif %}

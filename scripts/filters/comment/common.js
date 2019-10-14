@@ -1,12 +1,23 @@
 'use strict';
 
+function capitalize(input) {
+  return input.toString().charAt(0).toUpperCase() + input.toString().substr(1);
+}
+
 module.exports = {
-  iconText: `
-    <span class="post-meta-item-icon">
-      <i class="fa fa-comment-o"></i>
-    </span>
-    {% if theme.post_meta.item_text %}
-      <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-    {% endif %}
-  `
+  iconText(icon, key, defaultValue) {
+    if (!defaultValue) {
+      defaultValue = capitalize(key);
+    }
+    return `
+      <span class="post-meta-item-icon">
+        <i class="fa fa-${icon}"></i>
+      </span>
+      {%- set post_meta_comment = __('post.comments.${key}') %}
+      {%- if post_meta_comment == 'post.comments.${key}' %}
+        {%- set post_meta_comment = '${defaultValue}' %}
+      {%- endif %}
+      <span class="post-meta-item-text">{{ post_meta_comment + __('symbol.colon') }}</span>
+    `;
+  }
 };

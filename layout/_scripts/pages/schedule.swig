@@ -42,18 +42,18 @@
     FIELD_SINGLEEVENTS + '=' + calendar.singleEvents + '&' +
     FIELD_MAXRESULTS   + '=' + calendar.maxResults;
 
-
   fetchData();
   var queryLoop = setInterval(fetchData, 60000);
 
   function fetchData() {
+    var eventList = document.querySelector('.event-list');
+    if (!eventList) return;
+
     fetch(request_url).then(response => {
       return response.json();
     }).then(data => {
-      $eventList = document.getElementById('event-list');
-
       // Clean the event list
-      $eventList.innerHTML = '';
+      eventList.innerHTML = '';
       var prevEnd = 0; // used to decide where to insert an <hr>
 
       data.items.forEach(event => {
@@ -65,11 +65,11 @@
         tense = judgeTense(now, start, end); // 0:now 1:future -1:past
 
         if (tense == 1 && prevEnd < now) {
-          $eventList.innerHTML += '<hr>';
+          eventList.innerHTML += '<hr>';
         }
 
         eventDOM = buildEventDOM(tense, event);
-        $eventList.innerHTML += eventDOM;
+        eventList.innerHTML += eventDOM;
 
         prevEnd = end;
       });
@@ -89,19 +89,19 @@
     elapsed = Math.abs(elapsed);
 
     if      ( elapsed < msPerHour  ) {
-      return Math.round(elapsed/msPerMinute) + ' minutes ' + tense;
+      return Math.round(elapsed / msPerMinute) + ' minutes ' + tense;
     }
     else if ( elapsed < msPerDay   ) {
-      return Math.round(elapsed/msPerHour) + ' hours ' + tense;
+      return Math.round(elapsed / msPerHour) + ' hours ' + tense;
     }
     else if ( elapsed < msPerMonth ) {
-      return 'about ' + Math.round(elapsed/msPerDay) + ' days ' + tense;
+      return 'about ' + Math.round(elapsed / msPerDay) + ' days ' + tense;
     }
     else if ( elapsed < msPerYear  ) {
-      return 'about ' + Math.round(elapsed/msPerMonth) + ' months ' + tense;
+      return 'about ' + Math.round(elapsed / msPerMonth) + ' months ' + tense;
     }
     else {
-      return 'about' + Math.round(elapsed/msPerYear) + ' years' + tense;
+      return 'about' + Math.round(elapsed / msPerYear) + ' years' + tense;
     }
   }
 
@@ -128,36 +128,27 @@
       default:
         throw 'Time data error';
     }
-    durationFormat = {
+    var durationFormat = {
       weekday: 'short',
       hour   : '2-digit',
       minute : '2-digit'
     };
-    relativeTimeStr = (tense == 0) ? 'NOW' : getRelativeTime(now, start);
-    durationStr = start.toLocaleTimeString([], durationFormat) + ' - ' +
-                  end.toLocaleTimeString([], durationFormat);
+    var relativeTimeStr = (tense == 0) ? 'NOW' : getRelativeTime(now, start);
+    var durationStr = start.toLocaleTimeString([], durationFormat) + ' - ' + end.toLocaleTimeString([], durationFormat);
 
-    liOpen  = '<li class="event ' + tenseClass + '">';
-    liClose = '</li>';
-    h2Open  = '<h2 class="event-summary">';
-    h2Close = '</h2>';
-
-    locationDOM     = '';
+    var locationDOM = '';
     if (calendar.showLocation && event.location) {
-      locationDOM   = '<span class="event-location event-details">' + event.location + '</span>';
+      locationDOM = '<span class="event-location event-details">' + event.location + '</span>';
     }
-    relativeTimeDOM = '<span class="event-relative-time">' + relativeTimeStr + '</span>';
-    durationDOM     = '<span class="event-duration event-details">' + durationStr + '</span>';
 
-    eventContent =
-      liOpen +
-        h2Open +
-          event.summary +
-          relativeTimeDOM+
-        h2Close +
-        locationDOM +
-        durationDOM +
-      liClose;
+    var eventContent = `<div class="event ${tenseClass}">
+        <h2 class="event-summary">
+          ${event.summary}
+          <span class="event-relative-time">${relativeTimeStr}</span>
+        </h2>
+        ${locationDOM}
+        <span class="event-duration event-details">${durationStr}</span>
+      </div>`;
     return eventContent;
   }
 })();
