@@ -13,8 +13,8 @@
 {%- if page.comments %}
 <script>
   function disqus_config() {
-    this.page.url = {{ page.permalink | json }};
-    this.page.identifier = {{ page.path | json }};
+    this.page.url = {{ page.permalink | dump }};
+    this.page.identifier = {{ page.path | dump }};
     this.page.title = '{{ page.title | addslashes }}';
     {%- if __('disqus') !== 'disqus' %}
       this.language = '{{ __('disqus') }}';

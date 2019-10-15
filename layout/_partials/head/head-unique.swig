@@ -10,7 +10,7 @@
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
-    sidebar: {{ page.sidebar | json }},
+    sidebar: {{ page.sidebar | dump }},
     isHome: {{ is_home() }},
     isPost: {{ is_post() }},
     isPage: {{ is_page() }},
