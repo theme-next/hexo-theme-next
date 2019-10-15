@@ -8,7 +8,7 @@
 
     {%- set menuText = __('menu.' + name) | replace('menu.', '') %}
     {%- if theme.menu_settings.icons %}
-      {%- set menuIcon = default('<i class="fa fa-fw fa-' + value.split('||')[1] | trim, 'question-circle') + '"></i>' %}
+      {%- set menuIcon = '<i class="fa fa-fw fa-' + value.split('||')[1] | trim or 'question-circle' + '"></i>' %}
     {%- endif %}
 
     {%- set menuBadge = '' %}

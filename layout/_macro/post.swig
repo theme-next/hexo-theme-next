@@ -7,7 +7,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ author }}">
       <meta itemprop="description" content="{{ description }}">
-      <meta itemprop="image" content="{{ url_for( default(theme.avatar.url, theme.images + '/avatar.gif') ) }}">
+      <meta itemprop="image" content="{{ url_for( theme.avatar.url or theme.images + '/avatar.gif' ) }}">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -33,7 +33,7 @@
                 <i class="fa fa-thumb-tack"></i>
               </span>
             {%- endif %}
-            {{ next_url(post.path, default(post.title, __('post.untitled')), {class: 'post-title-link', itemprop: 'url'}) }}
+            {{ next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
             {{- post.title }}
             {% include '../_partials/post-edit.swig' %}
