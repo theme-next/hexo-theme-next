@@ -24,11 +24,9 @@ module.exports = hexo => {
     merge(hexo.theme.config, hexo.config.theme_config);
   }
 
-  if (hexo.theme.config.cache && hexo.theme.config.cache.enable) {
-    if (hexo.config.relative_link) {
-      hexo.log.warn('Since caching is turned on, the `relative_link` option in Hexo `_config.yml` is set to `false` to avoid potential hazards.');
-      hexo.config.relative_link = false;
-    }
+  if (hexo.theme.config.cache && hexo.theme.config.cache.enable && hexo.config.relative_link) {
+    hexo.log.warn('Since caching is turned on, the `relative_link` option in Hexo `_config.yml` is set to `false` to avoid potential hazards.');
+    hexo.config.relative_link = false;
   }
 
   // Custom languages support. Introduced in NexT v6.3.0.

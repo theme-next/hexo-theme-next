@@ -47,7 +47,7 @@ module.exports = hexo => {
 
   // Inject stylus, and get absolute path base on hexo dir.
   points.styles.forEach(type => {
-    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.resolve(hexo.base_dir, item));
+    hexo.theme.config.injects[type] = injects[type].files.map(item => path.resolve(hexo.base_dir, item));
   });
 
   // Inject views
