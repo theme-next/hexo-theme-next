@@ -29,7 +29,7 @@
           {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url'}) }}
         {% else %}
           <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
-            <span itemprop="name">{{ post.title | default(__('post.untitled')) }}</span>
+            <span itemprop="name">{{ default(post.title, __('post.untitled')) }}</span>
           </a>
         {%- endif %}
       </{%- if theme.seo %}h3{% else %}h2{%- endif %}>

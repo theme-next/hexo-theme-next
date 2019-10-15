@@ -1,4 +1,4 @@
-{%- set valine_uri = theme.vendors.valine | default('//unpkg.com/valine/dist/Valine.min.js') %}
+{%- set valine_uri = default(theme.vendors.valine, '//unpkg.com/valine/dist/Valine.min.js') %}
 
 <script>
 NexT.utils.getScript('{{ valine_uri }}', () => {

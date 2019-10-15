@@ -1,7 +1,7 @@
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   {%- if theme.avatar.url %}
     <img class="site-author-image" itemprop="image"
-      src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
+      src="{{ url_for( default(theme.avatar.url, theme.images + '/avatar.gif') ) }}"
       alt="{{ author }}">
   {%- endif %}
   <p class="site-author-name" itemprop="name">{{ author }}</p>
@@ -92,7 +92,7 @@
         {%- set sidebarText = name %}
       {%- endif %}
       {%- if theme.social_icons.enable %}
-        {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim | default('globe') + '"></i>' %}
+        {%- set sidebarIcon = default('<i class="fa fa-fw fa-' + link.split('||')[1] | trim, 'globe') + '"></i>' %}
       {%- endif %}
         {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
       </span>
@@ -118,7 +118,7 @@
 {%- if theme.links %}
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-{{ theme.links_settings.icon | default('link') | lower }}"></i>
+      <i class="fa fa-fw fa-{{ default(theme.links_settings.icon, 'link') | lower }}"></i>
       {{ theme.links_settings.title }}
     </div>
     <ul class="links-of-blogroll-list">
