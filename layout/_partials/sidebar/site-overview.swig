@@ -92,7 +92,7 @@
         {%- set sidebarText = name %}
       {%- endif %}
       {%- if theme.social_icons.enable %}
-        {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim or 'globe' + '"></i>' %}
+        {%- set sidebarIcon = '<i class="fa fa-fw fa-' + (link.split('||')[1] | trim or 'globe') + '"></i>' %}
       {%- endif %}
         {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
       </span>
