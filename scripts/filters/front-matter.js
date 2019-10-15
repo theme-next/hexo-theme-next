@@ -13,7 +13,7 @@
 
 const keys = ['toc', 'reward_settings', 'wechat_subscriber', 'quicklink'];
 
-hexo.extend.filter.register('template_locals', (locals) => {
+hexo.extend.filter.register('template_locals', locals => {
   const { page, theme } = locals;
   keys.forEach(key => {
     page[key] = Object.assign({}, theme[key], page[key]);
