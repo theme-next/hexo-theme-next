@@ -1,5 +1,5 @@
 {% macro render(posts) %}
-{%- for post in posts %}
+{%- for post in posts.toArray() %}
 
   {%- set current_year %}
   {%- set year = date(post.date, 'YYYY') %}
