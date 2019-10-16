@@ -37,7 +37,7 @@
             {{ next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
             {{- post.title }}
-            {% include '_partials/post-edit.swig' %}
+            {% include '../_partials/post-edit.swig' %}
           {%- endif %}
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
@@ -221,7 +221,7 @@
     {#####################}
 
     {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {% include '_partials/post/post-related.swig' %}
+      {% include '../_partials/post/post-related.swig' %}
     {%- endif %}
 
     {%- if not is_index %}
@@ -241,7 +241,7 @@
       {%- endif %}
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
-        {% include '_partials/post/post-copyright.swig' %}
+        {% include '../_partials/post/post-copyright.swig' %}
       {%- endif %}
 
       <footer class="post-footer">
