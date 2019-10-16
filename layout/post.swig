@@ -1,6 +1,6 @@
 {% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template with context %}
-{% import '_macro/sidebar.swig' as sidebar_template with context %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 {% block title %}{{ page.title }} | {{ title }}{% endblock %}
 

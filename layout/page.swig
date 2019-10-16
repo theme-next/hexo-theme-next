@@ -1,5 +1,5 @@
 {% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template with context %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
   {% block title %}
     {%- set page_title_suffix = ' | ' + title %}
