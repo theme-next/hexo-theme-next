@@ -84,7 +84,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.in') }}</span>
-              {%- for cat in post.categories %}
+              {%- for cat in post.categories.toArray() %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
                     <span itemprop="name">{{ cat.name }}</span>
@@ -252,7 +252,7 @@
             {%- set tag_indicate = '#' %}
           {%- endif %}
           <div class="post-tags">
-            {%- for tag in post.tags %}
+            {%- for tag in post.tags.toArray() %}
               <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
             {%- endfor %}
           </div>
