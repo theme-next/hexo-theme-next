@@ -1,4 +1,4 @@
-{%- set popular_posts = popular_posts_json(theme.related_posts.params, post) %}
+{%- set popular_posts = popular_posts_json(theme.related_posts.params, page) %}
 {%- if popular_posts.json and popular_posts.json.length > 0 %}
   <div class="popular-posts-header">{{ theme.related_posts.title or __('post.related_posts') }}</div>
   <ul class="popular-posts">
