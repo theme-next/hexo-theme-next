@@ -10,8 +10,8 @@
       api: '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',
       apikey: '{{ theme.disqusjs.apikey }}',
       shortname: '{{ theme.disqusjs.shortname }}',
-      url: {{ page.permalink | dump }},
-      identifier: {{ page.path | dump }},
+      url: {{ page.permalink | json }},
+      identifier: {{ page.path | json }},
       title: '{{ page.title | addslashes }}',
     });
   }, window.DisqusJS);
