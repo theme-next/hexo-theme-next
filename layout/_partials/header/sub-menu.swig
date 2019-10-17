@@ -1,5 +1,6 @@
-{%- if theme.menu and not is_home() and not is_post() %}
-  {% import 'menu-item.swig' as menu_item %}
+{% import 'menu-item.swig' as menu_item %}
+
+{%- if theme.menu %}
 
   {# Submenu & Submenu-2 #}
   {%- for name, value in theme.menu %}
