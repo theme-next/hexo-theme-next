@@ -12,7 +12,7 @@
   }
 
   // Read config form theme config file
-  Object.assign(calendar, {{ theme.calendar | json }});
+  Object.assign(calendar, {{ theme.calendar | dump }});
 
   var now = new Date();
   var timeMax = new Date();
