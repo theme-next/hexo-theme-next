@@ -100,6 +100,8 @@ $ git pull
 
 ## 贡献你的代码
 
+[![](https://opencollective.com/theme-next/contributors.svg?width=890)](https://github.com/theme-next/hexo-theme-next/graphs/contributors)
+
 我们欢迎你贡献出你的一份力量，你可以随时提交 issue 或 fork 本仓库。静候你的 pull request。
 
 ## 鸣谢

@@ -100,6 +100,8 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 ## Contributing
 
+[![](https://opencollective.com/theme-next/contributors.svg?width=890)](https://github.com/theme-next/hexo-theme-next/graphs/contributors)
+
 Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
 
 ## Thanks

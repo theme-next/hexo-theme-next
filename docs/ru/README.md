@@ -84,6 +84,8 @@ $ git pull
 
 ## Содействие
 
+[![](https://opencollective.com/theme-next/contributors.svg?width=890)](https://github.com/theme-next/hexo-theme-next/graphs/contributors)
+
 Приветсвуется любое содействие, не стесняйтесь сообщать «Баги», брать «Форки» и вливать «Пулы».
 
 ## Благодарности
