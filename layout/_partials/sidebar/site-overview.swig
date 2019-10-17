@@ -1,9 +1,6 @@
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  {%- if theme.avatar.url %}
-    <img class="site-author-image" itemprop="image"
-      src="{{ url_for( theme.avatar.url or theme.images + '/avatar.gif' ) }}"
-      alt="{{ author }}">
-  {%- endif %}
+  <img class="site-author-image" itemprop="image" alt="{{ author }}"
+    src="{{ url_for(theme.avatar.url or theme.images + '/avatar.gif') }}">
   <p class="site-author-name" itemprop="name">{{ author }}</p>
   <div class="site-description" itemprop="description">{{ description }}</div>
 </div>
@@ -118,7 +115,7 @@
 {%- if theme.links %}
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-{{ theme.links_settings.icon or 'link' | lower }}"></i>
+      <i class="fa fa-fw fa-{{ (theme.links_settings.icon or 'link') | lower }}"></i>
       {{ theme.links_settings.title }}
     </div>
     <ul class="links-of-blogroll-list">
