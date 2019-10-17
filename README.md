@@ -100,11 +100,11 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 ## Contributing
 
-We welcome you to join the development of Hexo. Please see [contributing document][contributing-document-url]. 🤗
+We welcome you to join the development of NexT. Please see [contributing document][contributing-document-url]. 🤗
 
 Also, we welcome PR or issue to [official-plugins][official-plugins-url].
 
-## Contributers
+## Contributors
 
 [![][contributors-image]][contributors-url]
 
