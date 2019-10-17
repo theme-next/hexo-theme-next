@@ -31,11 +31,11 @@ hexo.extend.filter.register('theme_inject', injects => {
   if (!theme.facebook_sdk.enable || !theme.facebook_comments_plugin.enable) return;
 
   injects.postMeta.raw('facebook-comments-plugin', `
-  {% if page.comments %}
+  {% if post.comments %}
   <span class="post-meta-item">
     ${iconText('comment-o', 'facebook')}
-    <a title="facebook comments" href="{{ url_for(page.path) }}#comments" itemprop="discussionUrl">
-      <span class="post-comments-count fb-comments-count" data-href="{{ page.permalink }}" itemprop="commentCount">0</span>
+    <a title="facebook comments" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+      <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
     </a>
   </span>
   {% endif %}
