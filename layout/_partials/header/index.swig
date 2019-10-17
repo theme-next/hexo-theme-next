@@ -4,10 +4,6 @@
 
 <nav class="site-nav">
   {{ partial('_partials/header/menu.swig', {}, {cache: theme.cache.enable}) }}
-
-  {%- if theme.scheme === 'Muse' or theme.scheme === 'Mist' %}
-    {% include 'sub-menu.swig' %}
-  {%- endif %}
 </nav>
 
 {%- if hasSearch %}
