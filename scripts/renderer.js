@@ -16,6 +16,9 @@ function njkCompile(data) {
     dictionary[key] = value;
     return dictionary;
   });
+  env.addFilter('json', function(dictionary) {
+    return JSON.stringify(dictionary || '');
+  });
   return nunjucks.compile(data.text, env, data.path);
 }
 
