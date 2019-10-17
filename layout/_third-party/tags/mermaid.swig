@@ -1,5 +1,5 @@
 {%- if theme.mermaid.enable %}
-{%- set mermaid_uri = theme.vendors.mermaid | default('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js') %}
+{%- set mermaid_uri = theme.vendors.mermaid or '//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js' %}
 <script{{ pjax }}>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('{{ mermaid_uri }}', () => {

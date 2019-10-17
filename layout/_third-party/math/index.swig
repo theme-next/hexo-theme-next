@@ -3,7 +3,7 @@
 
   {# At home, check if there has `mathjax: true` post #}
   {%- if is_home() and theme.math.per_page %}
-    {%- for post in page.posts %}
+    {%- for post in page.posts.toArray() %}
       {%- if post.mathjax and not is_index_has_math %}
         {%- set is_index_has_math = true %}
       {%- endif %}

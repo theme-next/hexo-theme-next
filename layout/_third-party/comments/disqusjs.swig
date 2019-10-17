@@ -1,8 +1,8 @@
 {%- if page.comments %}
-{%- set disqusjs_css_uri = theme.vendors.disqusjs_css | default('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css') %}
+{%- set disqusjs_css_uri = theme.vendors.disqusjs_css or '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css' %}
 <link rel="stylesheet" href="{{ disqusjs_css_uri }}">
 
-{%- set disqusjs_js_uri = theme.vendors.disqusjs_js | default('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js') %}
+{%- set disqusjs_js_uri = theme.vendors.disqusjs_js or '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js' %}
 
 <script>
   NexT.utils.getScript('{{ disqusjs_js_uri }}', () => {
