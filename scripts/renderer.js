@@ -12,6 +12,10 @@ function njkCompile(data) {
     watch: false
   }, hexo.config.nunjucks);
   const env = nunjucks.configure(templateDir, config);
+  env.addFilter('attr', function(dictionary, key, value) {
+    dictionary[key] = value;
+    return dictionary;
+  });
   return nunjucks.compile(data.text, env, data.path);
 }
 
