@@ -6,8 +6,9 @@ const path = require('path');
 
 hexo.extend.filter.register('template_locals', function(locals) {
   const { config } = this;
-  // NexT version
-  locals.version = require(path.normalize('../../package.json')).version;
+  // Hexo & NexT version
+  locals.hexo_version = this.env.version;
+  locals.next_version = require(path.normalize('../../package.json')).version;
   // Language & Config
   locals.title = locals.__('title') !== 'title' && locals.__('title') || config.title;
   locals.subtitle = locals.__('subtitle') !== 'subtitle' && locals.__('subtitle') || config.subtitle;
@@ -15,5 +16,6 @@ hexo.extend.filter.register('template_locals', function(locals) {
   locals.description = locals.__('description') !== 'description' && locals.__('description') || config.description;
   // Current year
   locals.copyright_year = new Date().getFullYear();
+  // PJAX
   locals.pjax = config.theme.pjax ? ' pjax' : '';
 });
