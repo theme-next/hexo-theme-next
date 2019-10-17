@@ -6,7 +6,7 @@
 
 .header-inner {
   +mobile() {
-    padding: 50px 0 35px;
+    padding: 50px 0 0;
   }
 }
 
@@ -14,8 +14,12 @@
   padding-bottom: 60px;
 }
 
-.posts-expand {
+.content {
   padding-top: 70px;
+
+  +mobile() {
+    padding-top: 35px;
+  }
 }
 
 embed {

@@ -36,6 +36,7 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          {% include '_partials/header/sub-menu.swig' %}
           <div class="content">
             {% block content %}{% endblock %}
           </div>

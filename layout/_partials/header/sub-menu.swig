@@ -1,6 +1,6 @@
 {% import 'menu-item.swig' as menu_item %}
 
-{%- if theme.menu %}
+{%- if theme.menu and is_page() %}
 
   {# Submenu & Submenu-2 #}
   {%- for name, value in theme.menu %}

@@ -17,8 +17,6 @@
 
 {% block content %}
 
-  {% include '_partials/header/sub-menu.swig' %}
-
   <div class="posts-expand">
     {##################}
     {### PAGE BLOCK ###}
