@@ -1,19 +1,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
-<meta name="generator" content="Hexo {{ hexo_env('version') }}">
+<meta name="generator" content="Hexo {{ hexo_version }}">
 
 {%- if theme.favicon.apple_touch_icon %}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ next_version }}">
 {%- endif %}
 {%- if theme.favicon.medium %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}?v={{ version }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}?v={{ next_version }}">
 {%- endif %}
 {%- if theme.favicon.small %}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}?v={{ version }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}?v={{ next_version }}">
 {%- endif %}
 {%- if theme.favicon.safari_pinned_tab %}
-  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}?v={{ version }}" color="{{ theme.android_chrome_color }}">
+  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}?v={{ next_version }}" color="{{ theme.android_chrome_color }}">
 {%- endif %}
 {%- if theme.favicon.android_manifest %}
   <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
@@ -23,7 +23,7 @@
 {%- endif %}
 
 {%- if theme.rss === '' and config.feed.path %}
-  {%- set theme.rss = config.feed.path %}
+  {%- set theme = theme | attr('rss', config.feed.path) %}
 {%- endif %}
 {%- if theme.rss %}
   <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ title }}" type="application/atom+xml">
@@ -51,7 +51,7 @@
   <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}">
 {%- endif %}
 
-<link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}">
+<link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ next_version }}">
 
 {{ next_font() }}
 
@@ -76,7 +76,7 @@
   var CONFIG = {
     root: '{{ config.root }}',
     scheme: '{{ theme.scheme }}',
-    version: '{{ version }}',
+    version: '{{ next_version }}',
     exturl: {{ theme.exturl }},
     sidebar: {{ theme.sidebar | json }},
     copycode: {{ theme.codeblock.copy_button | json }},
