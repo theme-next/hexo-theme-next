@@ -2,9 +2,9 @@
 
   {%- set itemURL = value.split('||')[0] | trim %}
   {%- if itemURL.indexOf('http') != 0 %}
-    {%- set itemURL = itemURL | replace('//', '/', 'g') %}
+    {%- set itemURL = itemURL | replace('//', '/') %}
   {%- endif %}
-  <li class="menu-item menu-item-{{ itemName | replace(' ', '-', 'g') }}">
+  <li class="menu-item menu-item-{{ itemName | replace(' ', '-') }}">
 
     {%- set menuText = __('menu.' + name) | replace('menu.', '') %}
     {%- if theme.menu_settings.icons %}

@@ -8,7 +8,7 @@
 
       {# If current URL is value of parent submenu 'default' path #}
       {%- set currentParentUrl = page.path.split('/')[0] | trim %}
-      {%- if currentParentUrl == value.default.split('||')[0] | trim | replace('/', '', 'g') %}
+      {%- if currentParentUrl == value.default.split('||')[0] | trim | replace('/', '') %}
 
         {# Submenu items #}
         <ul id="sub-menu" class="sub-menu menu">
@@ -55,7 +55,7 @@
                 {# If current URL is value of parent submenu 'default' path #}
                 {%- set paths = page.path.split('/') %}
                 {%- if paths.length > 2 %}
-                  {%- if paths[1] == subvalue.default.split('||')[0] | trim | replace('/', '', 'g') %}
+                  {%- if paths[1] == subvalue.default.split('||')[0] | trim | replace('/', '') %}
 
                     {# Submenu-2 items #}
                     <ul id="sub-menu-2" class="sub-menu menu">
