@@ -1,4 +1,4 @@
-{% import 'menu-item.swig' as menu_item %}
+{% import 'menu-item.swig' as menu_item with context %}
 
 {%- if theme.menu %}
   <ul id="menu" class="menu">
