@@ -17,5 +17,5 @@ hexo.extend.filter.register('template_locals', function(locals) {
   // Current year
   locals.copyright_year = new Date().getFullYear();
   // PJAX
-  locals.pjax = config.theme.pjax ? ' pjax' : '';
+  locals.pjax = this.theme.config.pjax ? ' pjax' : '';
 });
