@@ -24,6 +24,16 @@ hexo.extend.helper.register('next_vendors', function(url) {
   return this.url_for(`${internal}/${url}`);
 });
 
+hexo.extend.helper.register('post_edit', function(src) {
+  var theme = hexo.theme.config;
+  if (!theme.post_edit.enable) return '';
+  const editIcon = '<i class="fa fa-pencil"></i>';
+  return this.next_url(theme.post_edit.url + src, editIcon, {
+    class: 'post-edit-link',
+    title: this.__('post.edit')
+  });
+});
+
 hexo.extend.helper.register('gitalk_md5', function(path) {
   var str = this.url_for(path);
   str = encodeURI(str);
