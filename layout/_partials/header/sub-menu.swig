@@ -1,6 +1,6 @@
-{%- if theme.menu and not is_home() and not is_post() %}
-  {% import 'menu-item.swig' as menu_item with context %}
+{% import 'menu-item.swig' as menu_item %}
 
+{%- if theme.menu and is_page() %}
   {# Submenu & Submenu-2 #}
   {%- for name, value in theme.menu %}
     {%- set respath = value %}
