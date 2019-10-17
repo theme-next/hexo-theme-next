@@ -24,7 +24,7 @@
               {% else %}
                 {%- set respath = parentValue + subvalue %}
               {%- endif %}
-              {{ menu_item.render(subname, respath) }}
+              {{ menu_item.render(subname, itemName, respath) }}
             {%- endif %}
           {% else %}
             {# For 'default' submenu item in main submenu #}
@@ -32,7 +32,7 @@
             {%- for subname2, subvalue2 in subvalue %}
               {%- if subname2 == 'default' %}
                 {%- set respath = parentValue + subvalue2 %}
-                {{ menu_item.render(subname, respath) }}
+                {{ menu_item.render(subname, itemName, respath) }}
               {%- endif %}
             {%- endfor %}
           {%- endif %}
@@ -70,7 +70,7 @@
                         {% else %}
                           {%- set respath2 = parentValue + parentSubValue + subvalue2 %}
                         {%- endif %}
-                        {{ menu_item.render(subname2, respath2) }}
+                        {{ menu_item.render(subname2, itemName, respath2) }}
                       {%- endif %}
                     {%- endfor %}
                     </ul>

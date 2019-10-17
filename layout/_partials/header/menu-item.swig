@@ -1,4 +1,4 @@
-{% macro render(name, value) %}
+{% macro render(name, itemName, value) %}
 
   {%- set itemURL = value.split('||')[0] | trim %}
   {%- if itemURL.indexOf('http') != 0 %}
