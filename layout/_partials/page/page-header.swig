@@ -9,7 +9,7 @@
   {%- if page.description %}
     <div class="post-description">{{ page.description }}</div>
   {%- endif %}
-  {% include 'breadcrumb.swig' %}
+  {% include '_partials/page/breadcrumb.swig' %}
 </div>
 
 </header>
