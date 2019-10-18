@@ -15,7 +15,7 @@
   function disqus_config() {
     this.page.url = {{ page.permalink | json }};
     this.page.identifier = {{ page.path | json }};
-    this.page.title = '{{ page.title | addslashes }}';
+    this.page.title = {{ page.title | json }};
     {%- if __('disqus') !== 'disqus' %}
       this.language = '{{ __('disqus') }}';
     {%- endif %}
