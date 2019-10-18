@@ -28,6 +28,7 @@ module.exports = hexo => {
     hexo.log.warn('Since caching is turned on, the `relative_link` option in Hexo `_config.yml` is set to `false` to avoid potential hazards.');
     hexo.config.relative_link = false;
   }
+  hexo.config.meta_generator = false;
 
   // Custom languages support. Introduced in NexT v6.3.0.
   if (data.languages) {
