@@ -30,8 +30,8 @@ njkRenderer.compile = function(data) {
   // Need a closure to keep the compiled template.
   return function(locals, callback) {
     return compiledTemplate.render(locals, callback);
-  }
-}
+  };
+};
 
 hexo.extend.renderer.register('njk', 'html', njkRenderer);
 hexo.extend.renderer.register('swig', 'html', njkRenderer);

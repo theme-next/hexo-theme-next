@@ -6,12 +6,12 @@ hexo.extend.filter.register('after_post_render', data => {
   const { config } = hexo;
   const theme = hexo.theme.config;
   const filters = {
-    excerpt : theme.auto_excerpt && theme.auto_excerpt.enable && data.excerpt == '',
+    excerpt : theme.auto_excerpt && theme.auto_excerpt.enable && data.excerpt === '',
     exturl  : theme.exturl,
     lazyload: theme.lazyload
-  }
+  };
   if (!filters.excerpt && !filters.exturl && !filters.lazyload) {
-    return
+    return;
   }
   const cheerio = require('cheerio');
   const $ = cheerio.load(data.content, {
