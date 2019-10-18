@@ -4,8 +4,8 @@
 
 const path = require('path');
 
-hexo.extend.filter.register('template_locals', function(locals) {
-  const { env, config } = this;
+hexo.extend.filter.register('template_locals', locals => {
+  const { env, config } = hexo;
   const { __, theme } = locals;
   // Hexo & NexT version
   locals.hexo_version = env.version;
