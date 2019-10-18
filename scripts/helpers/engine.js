@@ -12,20 +12,19 @@ hexo.extend.helper.register('next_inject', function(point) {
 });
 
 hexo.extend.helper.register('next_js', function(...urls) {
-  let js = hexo.theme.config.js;
-  let version = require(path.normalize('../../package.json')).version;
+  const js = hexo.theme.config.js;
+  const version = require(path.normalize('../../package.json')).version;
   return urls.map(url => this.js(`${js}/${url}?v=${version}`)).join('');
 });
 
-
 hexo.extend.helper.register('next_vendors', function(url) {
   if (url.startsWith('//')) return url;
-  let internal = hexo.theme.config.vendors._internal;
+  const internal = hexo.theme.config.vendors._internal;
   return this.url_for(`${internal}/${url}`);
 });
 
 hexo.extend.helper.register('post_edit', function(src) {
-  var theme = hexo.theme.config;
+  const theme = hexo.theme.config;
   if (!theme.post_edit.enable) return '';
   const editIcon = '<i class="fa fa-pencil"></i>';
   return this.next_url(theme.post_edit.url + src, editIcon, {
@@ -35,7 +34,7 @@ hexo.extend.helper.register('post_edit', function(src) {
 });
 
 hexo.extend.helper.register('gitalk_md5', function(path) {
-  var str = this.url_for(path);
+  let str = this.url_for(path);
   str = encodeURI(str);
   str.replace('index.html', '');
   return crypto.createHash('md5').update(str).digest('hex');
