@@ -13,8 +13,7 @@ hexo.extend.helper.register('next_inject', function(point) {
 
 hexo.extend.helper.register('next_js', function(...urls) {
   const js = hexo.theme.config.js;
-  const version = require(path.normalize('../../package.json')).version;
-  return urls.map(url => this.js(`${js}/${url}?v=${version}`)).join('');
+  return urls.map(url => this.js(`${js}/${url}`)).join('');
 });
 
 hexo.extend.helper.register('next_vendors', function(url) {
