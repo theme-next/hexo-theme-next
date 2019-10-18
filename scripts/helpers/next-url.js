@@ -1,7 +1,3 @@
-/**
- * next-url.js | https://theme-next.org/api/helpers/next-url/
- */
-
 /* global hexo */
 
 'use strict';
