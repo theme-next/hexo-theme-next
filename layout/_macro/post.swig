@@ -5,9 +5,9 @@
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="{{ url_for(theme.avatar.url or theme.images + '/avatar.gif') }}">
       <meta itemprop="name" content="{{ author }}">
       <meta itemprop="description" content="{{ description }}">
-      <meta itemprop="image" content="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -33,10 +33,10 @@
                 <i class="fa fa-thumb-tack"></i>
               </span>
             {%- endif %}
-            {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url'}) }}
+            {{ next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
             {{- post.title }}
-            {% include '../_partials/post-edit.swig' %}
+            {{- post_edit(page.source) }}
           {%- endif %}
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
@@ -83,7 +83,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.in') }}</span>
-              {%- for cat in post.categories %}
+              {%- for cat in post.categories.toArray() %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
                     <span itemprop="name">{{ cat.name }}</span>
@@ -173,7 +173,7 @@
       {%- if post.photos and post.photos.length %}
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           {%- set COLUMN_NUMBER = 3 %}
-          {%- for photo in post.photos %}
+          {%- for photo in post.photos.toArray() %}
             {%- if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{%- endif %}
               <img src="{{ url_for(photo) }}" itemprop="contentUrl">
             {%- if loop.index0 % COLUMN_NUMBER === 2 %}</div>{%- endif %}
@@ -220,22 +220,22 @@
     {#####################}
 
     {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {% include '../_partials/post/post-related.swig' with { post: post } %}
+      {% include '../_partials/post/post-related.swig' %}
     {%- endif %}
 
     {%- if not is_index %}
       {{- next_inject('postBodyEnd') }}
 
       {%- if page.wechat_subscriber.enable %}
-        {{ partial('../_partials/post/wechat-subscriber.swig') }}
+        {{ partial('_partials/post/wechat-subscriber.swig') }}
       {%- endif %}
 
       {%- if page.reward_settings.enable %}
-        {{ partial('../_partials/post/post-reward.swig') }}
+        {{ partial('_partials/post/post-reward.swig') }}
       {%- endif %}
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
-        {% include '../_partials/post/post-copyright.swig' with { post: post } %}
+        {% include '../_partials/post/post-copyright.swig' %}
       {%- endif %}
 
       <footer class="post-footer">
@@ -246,13 +246,13 @@
             {%- set tag_indicate = '#' %}
           {%- endif %}
           <div class="post-tags">
-            {%- for tag in post.tags %}
+            {%- for tag in post.tags.toArray() %}
               <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
             {%- endfor %}
           </div>
         {%- endif %}
 
-        {{ partial('../_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
 
         {%- if post.prev or post.next %}
           <div class="post-nav">
@@ -278,10 +278,7 @@
       </footer>
     {% else %}
       <footer class="post-footer">
-        {%- set isLast = loop.index % post.per_page === 0 %}
-        {%- if not isLast %}
-          <div class="post-eof"></div>
-        {%- endif %}
+        <div class="post-eof"></div>
       </footer>
     {%- endif %}
   </article>

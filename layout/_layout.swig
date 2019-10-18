@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-
-{# NexT version #}
-{%- set version = next_env('version') %}
-
-{# Language & Config #}
-{%- set title = __('title') !== 'title' and __('title') or config.title %}
-{%- set subtitle = __('subtitle') !== 'subtitle' and __('subtitle') or config.subtitle %}
-{%- set author = __('author') !== 'author' and __('author') or config.author %}
-{%- set description = __('description') !== 'description' and __('description') or config.description %}
-
-{%- if theme.pjax %}
-  {%- set pjax = ' pjax' %}
-{%- endif %}
-
 <html lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
@@ -36,9 +22,7 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          {%- if theme.scheme === 'Pisces' or theme.scheme === 'Gemini' %}
-            {% include '_partials/header/sub-menu.swig' %}
-          {%- endif %}
+          {% include '_partials/header/sub-menu.swig' %}
           <div class="content">
             {% block content %}{% endblock %}
           </div>

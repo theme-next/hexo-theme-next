@@ -5,7 +5,7 @@
 let cheerio;
 
 hexo.extend.filter.register('after_post_render', data => {
-  var theme = hexo.theme.config;
+  const theme = hexo.theme.config;
   // Exit if `auto_excerpt` option disable in NexT.
   if (!theme.auto_excerpt || !theme.auto_excerpt.enable || data.excerpt !== '') return;
 

@@ -157,37 +157,23 @@ We use "labels" in the issue tracker to help classify Pull requests and Issues. 
 
 If you are unsure what a label is about or which labels you should apply to a PR or issue, look no further!
 
-Issues related: `types`+`contents`+`results`
+Issues related:
 
 - By types
     - `Bug`: A detected bug that needs to be confirmed
-    - `Improvement`: An issue that needs improvement
     - `Feature Request`: An issue that wants a new feature
-    - `Discussion`: An issue that needs to be discussed
     - `Question`: An issue about questions
     - `Meta`: Denoting a change of usage conditions
-    - `Polls`: An issue that initiated a poll
-- By contents
-    - `Roadmap`: An issue about future development
-    - `Hexo`: An issue related to Hexo or Hexo plugins
-    - `3rd Party Plugin`: An issue related to 3rd party plugins & service
-    - `Docs`: Need to add instruction document
-    - `Configurations`: An issue related to configurations
-    - `CSS`: An issue related to CSS
-    - `Fonts`: An issue related to fonts
-    - `PJAX`: An issue related to PJAX
-    - `Custom`: An issue related to custom things
     - `Support`: An issue labeled as support requests
+    - `Polls`: An issue that initiated a poll
 - By results
     - `Duplicate`: An issue which had been mentioned
     - `Irrelevant`: An irrelevant issue for Next
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue
     - `Need Verify`: Need confirmation from the developers or user about the bug or solution
-    - `Can't Reproduce`: An issue that cannot be reproduced
     - `Verified`: An issue that has been verified
-    - `Help Wanted`: An issue that needs help
-    - `Probably Solved`: An issue that has been resolved maybe
+    - `Can't Reproduce`: An issue that cannot be reproduced
     - `Solved`: An issue that has been solved
     - `Stale`: This issue has been automatically marked as stale because lack of recent activity
     - `Locked`: This issue has been automatically locked since there has not been any recent activity after it was closed
@@ -195,17 +181,28 @@ Issues related: `types`+`contents`+`results`
 Pull requests related:
 
 - `Breaking Change`: A pull request that makes breaking change
-- `3rd Party Plugin`: A pull request that makes update for 3rd party plugins & service
 - `Bug Fix`: A pull request that fixes the related bug
-- `Docs`: A pull request that Instruction document has been added
 - `New Feature`: A pull request that provides a new feature
 - `Feature`: A pull request that provides an option or addition to existing feature
-- `Improvement`: A pull request that improves NexT
 - `i18n`: A pull request that makes new languages translation
-- `Performance`: A pull request that improves the performance
-- `Discussion`: A pull request that needs to be discussed
 - `Work in Progress`: A pull request that is still working in progress
 - `Skip Release`: A pull request that should be excluded from release note
+
+Both:
+
+- `Roadmap`: An issue / pull request about future development
+- `Help Wanted`: An issue / pull request that needs help
+- `Discussion`: An issue / pull request that needs to be discussed
+- `Improvement`: An issue that needs improvement or a pull request that improves NexT
+- `Performance`: An issue / pull request that improves the performance
+- `Hexo`: An issue / pull request related to Hexo or Hexo plugins
+- `Template Engine`: An issue / pull request related to template engine
+- `CSS`: An issue / pull request related to CSS
+- `Fonts`: An issue / pull request related to fonts
+- `PJAX`: An issue / pull request related to PJAX
+- `3rd Party Plugin`: An issue / pull request related to 3rd party plugins & service
+- `Docs`: An issue / pull request related to instruction document
+- `Configurations`: An issue / pull request related to configurations
 
 <a name="commit-messages-rules"></a>
 

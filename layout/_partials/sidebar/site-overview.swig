@@ -1,9 +1,6 @@
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  {%- if theme.avatar.url %}
-    <img class="site-author-image" itemprop="image"
-      src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
-      alt="{{ author }}">
-  {%- endif %}
+  <img class="site-author-image" itemprop="image" alt="{{ author }}"
+    src="{{ url_for(theme.avatar.url or theme.images + '/avatar.gif') }}">
   <p class="site-author-name" itemprop="name">{{ author }}</p>
   <div class="site-description" itemprop="description">{{ description }}</div>
 </div>
@@ -14,7 +11,7 @@
     {%- if config.archive_dir != '/' and site.posts.length > 0 %}
       <div class="site-state-item site-state-posts">
         {%- if theme.menu.archives %}
-          <a href="{{ url_for(theme.menu.archives).split('||')[0] | trim }}">
+          <a href="{{ url_for(theme.menu.archives.split('||')[0] | trim) }}">
         {% else %}
           <a href="{{ url_for(config.archive_dir) }}">
         {%- endif %}
@@ -30,7 +27,7 @@
       <div class="site-state-item site-state-categories">
         {%- if hasCategoriesPage %}
           {%- if theme.menu.categories %}
-            <a href="{{ url_for(theme.menu.categories).split('||')[0] | trim }}">
+            <a href="{{ url_for(theme.menu.categories.split('||')[0] | trim) }}">
           {% else %}
             <a href="{{ url_for(config.category_dir) + '/' }}">
           {%- endif %}
@@ -47,7 +44,7 @@
       <div class="site-state-item site-state-tags">
         {%- if hasTagsPage %}
           {%- if theme.menu.tags %}
-            <a href="{{ url_for(theme.menu.tags).split('||')[0] | trim }}">
+            <a href="{{ url_for(theme.menu.tags.split('||')[0] | trim) }}">
           {% else %}
             <a href="{{ url_for(config.tag_dir) + '/' }}">
           {%- endif %}
@@ -92,7 +89,7 @@
         {%- set sidebarText = name %}
       {%- endif %}
       {%- if theme.social_icons.enable %}
-        {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim | default('globe') + '"></i>' %}
+        {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim + '"></i>' %}
       {%- endif %}
         {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
       </span>
@@ -118,7 +115,7 @@
 {%- if theme.links %}
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-{{ theme.links_settings.icon | default('link') | lower }}"></i>
+      <i class="fa fa-fw fa-{{ (theme.links_settings.icon or 'link') | lower }}"></i>
       {{ theme.links_settings.title }}
     </div>
     <ul class="links-of-blogroll-list">

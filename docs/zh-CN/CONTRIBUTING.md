@@ -153,55 +153,52 @@
 
 如果您不确定某个标签的含义，或者不知道将哪些标签应用于 PR 或 issue，千万别错过这个。
 
-Issues 的标签：使用 `类型`+`内容`+`结果` 的组合
+Issue 的标签：
 
 - 类型
     - `Bug`: 检测到需要进行确认的 Bug
-    - `Improvement`: 需要改进的 Issue
     - `Feature Request`: 提出了新功能请求的 Issue
-    - `Discussion`: 需要进行讨论的 Issue
     - `Question`: 提出疑问的 Issue
     - `Meta`: 表明使用条款变更的 Issue
-    - `Polls`: 发起投票的 Issue
-- 内容
-    - `Roadmap`: 与 NexT 主题发展相关的 Issue
-    - `Hexo`: 与 Hexo 和 Hexo 插件相关的 Issue
-    - `3rd Party Plugin`: 与第三方插件和服务相关的 Issue
-    - `Docs`: 需要添加文档说明的 Issue
-    - `Configurations`: 与 NexT 主题设置相关的 Issue
-    - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue
-    - `Fonts`: 与 NexT 主题字体相关的 Issue
-    - `PJAX`: 与 NexT 主题 PJAX 相关的 Issue
-    - `Custom`: 与 NexT 主题个性化相关的 Issue
     - `Support`: 被标记为支持请求的 Issue
+    - `Polls`: 发起投票的 Issue
 - 结果
     - `Duplicate`: 重复提及的 Issue
     - `Irrelevant`: 与 NexT 主题无关的 Issue
     - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
     - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
-    - `Can't Reproduce`: 无法复现的 Issue
     - `Verified`: 已经被确认的 Issue
-    - `Help Wanted`: 需要帮助的 Issue
-    - `Probably Solved`: 可能已经解决的 Issue
+    - `Can't Reproduce`: 无法复现的 Issue
     - `Solved`: 已经解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
     - `Locked`: 关闭后长期没有新动态的 Issue
 
-Pull requests 的标签：
+Pull Request 的标签：
 
-- `Breaking Change`: 产生重大变动的 Pull request
-- `3rd Party Plugin`: 针对第三方插件和服务进行更新的 Pull request
-- `Bug Fix`: 修复相关 Bug 的 Pull request
-- `Docs`: 添加了文档说明的 Pull request
-- `New Feature`: 添加了新功能的 Pull request
-- `Feature`: 为现有功能提供选项或加成的 Pull request
-- `Improvement`: 改进了 NexT 主题的 Pull request
-- `i18n`: 更新了翻译的 Pull request
-- `Performance`: 提高了 NexT 主题性能的 Pull request
-- `Discussion`: 需要进行讨论的 Pull request
-- `Work in Progress`: 仍在进行改动和完善的 Pull request
-- `Skip Release`: 无需在 Release Note 中展现的 Pull request
+- `Breaking Change`: 产生重大变动的 Pull Request
+- `Bug Fix`: 修复相关 Bug 的 Pull Request
+- `New Feature`: 添加了新功能的 Pull Request
+- `Feature`: 为现有功能提供选项或加成的 Pull Request
+- `i18n`: 更新了翻译的 Pull Request
+- `Work in Progress`: 仍在进行改动和完善的 Pull Request
+- `Skip Release`: 无需在 Release Note 中展现的 Pull Request
+
+两者兼有：
+
+- `Roadmap`: 与 NexT 主题发展相关的 Issue 或者 Pull Request
+- `Help Wanted`: 需要帮助的 Issue 或者 Pull Request
+- `Discussion`: 需要进行讨论的 Issue 或者 Pull Request
+- `Improvement`: 需要改进的 Issue 或者改进了 NexT 主题的 Pull Request
+- `Performance`: 提出性能问题的 Issue 或者提高了 NexT 主题性能的 Pull Request
+- `Hexo`: 与 Hexo 和 Hexo 插件相关的 Issue 或者 Pull Request
+- `Template Engine`: 与模版引擎相关的 Issue 或者 Pull Request
+- `CSS`: 与 NexT 主题 CSS 文件相关的 Issue 或者 Pull Request
+- `Fonts`: 与 NexT 主题字体相关的 Issue 或者 Pull Request
+- `PJAX`: 与 PJAX 相关的 Issue 或者 Pull Request
+- `3rd Party Plugin`: 与第三方插件和服务相关的 Issue 或者 Pull Request
+- `Docs`: 与文档说明相关的 Issue 或者 Pull Request
+- `Configurations`: 与 NexT 主题设置相关的 Issue 或者 Pull Request
 
 <a name="commit-messages-rules"></a>
 

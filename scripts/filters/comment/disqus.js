@@ -3,7 +3,7 @@
 'use strict';
 
 const path = require('path');
-const {iconText} = require('./common');
+const { iconText } = require('./common');
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {

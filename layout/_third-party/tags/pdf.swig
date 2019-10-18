@@ -1,5 +1,5 @@
 {%- if theme.pdf.enable %}
-{%- set pdfobject_uri = theme.vendors.pdfobject | default('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js') %}
+{%- set pdfobject_uri = theme.vendors.pdfobject or '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js' %}
 <script{{ pjax }}>
 if (document.querySelectorAll('div.pdf').length) {
   NexT.utils.getScript('{{ pdfobject_uri }}', () => {

@@ -1,5 +1,5 @@
 {% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+{% import '_macro/sidebar.swig' as sidebar_template with context %}
 
 {% block title %}{{ page.title }} | {{ title }}{% endblock %}
 

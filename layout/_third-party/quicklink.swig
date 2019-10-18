@@ -1,5 +1,5 @@
 {%- if page.quicklink.enable %}
-  {%- set quicklink_uri = theme.vendors.quicklink | default(next_vendors('//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js')) %}
+  {%- set quicklink_uri = theme.vendors.quicklink or next_vendors('//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js') %}
   <script src="{{ quicklink_uri }}"></script>
   <script>
     {%- if page.quicklink.delay %}

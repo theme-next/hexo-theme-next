@@ -112,18 +112,16 @@ $use-seo = hexo-config('seo');
   box-shadow: $box-shadow-inner;
 
   // Adapt submenu(s) with post-blocks.
-  + .content {
-    .post-block {
-      box-shadow: $box-shadow;
-      margin-top: $sidebar-offset;
+  + .content .post-block {
+    box-shadow: $box-shadow;
+    margin-top: $sidebar-offset;
 
-      +tablet() {
-        margin-top: $content-tablet-padding;
-      }
+    +tablet() {
+      margin-top: $content-tablet-padding;
+    }
 
-      +mobile() {
-        margin-top: $content-mobile-padding;
-      }
+    +mobile() {
+      margin-top: $content-mobile-padding;
     }
   }
 }

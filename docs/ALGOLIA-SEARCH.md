@@ -12,7 +12,7 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
 
     ```
     $ cd hexo
-    $ npm install --save hexo-algolia
+    $ npm install hexo-algolia
     ```
 
 1. Go to the `API Keys` page and find your credentials. You will need the `Application ID` and the `Search-only API key` in the following sections. The `Admin API key` need to keep confidential. Never store your Admin API Key as apiKey in the` _config.yml` file: it would give full control of your Algolia index to others and you don't want to face the consequences.

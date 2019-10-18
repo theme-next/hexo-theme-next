@@ -84,8 +84,7 @@ $font-weight-bolder       = 700;
 
 
 // Font size
-$font-size-base           = 1em;
-$font-size-base           = unit(hexo-config('font.global.size'), em) if hexo-config('font.global.size') is a 'unit';
+$font-size-base           = (hexo-config('font.enable') and hexo-config('font.global.size') is a 'unit') ? unit(hexo-config('font.global.size'), em) : 1em;
 $font-size-smallest       = .75em;
 $font-size-smaller        = .8125em;
 $font-size-small          = .875em;
@@ -97,8 +96,7 @@ $font-size-largest        = 1.375em;
 
 // Headings font size
 $font-size-headings-step  = .125em;
-$font-size-headings-base  = 1.625em;
-$font-size-headings-base  = unit(hexo-config('font.headings.size'), em) if hexo-config('font.headings.size') is a 'unit';
+$font-size-headings-base  = (hexo-config('font.enable') and hexo-config('font.headings.size') is a 'unit') ? unit(hexo-config('font.headings.size'), em) : 1.625em;
 
 
 // Global line height
@@ -108,11 +106,12 @@ $line-height-code-block   = 1.6; // Can't be less than 1.3;
 
 // Z-index master list
 // --------------------------------------------------
-$zindex-1       = 100;
-$zindex-2       = 200;
-$zindex-3       = 300;
-$zindex-4       = 400;
-$zindex-5       = 500;
+$zindex-0       = 1000
+$zindex-1       = 1100;
+$zindex-2       = 1200;
+$zindex-3       = 1300;
+$zindex-4       = 1400;
+$zindex-5       = 1500;
 
 
 // Table
@@ -198,8 +197,7 @@ $brand-color                    = white;
 $brand-hover-color              = white;
 $brand-bg                       = $black-deep;
 
-$font-size-title                = $font-size-largest;
-$font-size-title                = unit(hexo-config('font.title.size'), em) if hexo-config('font.title.size') is a 'unit';
+$font-size-title                = (hexo-config('font.enable') and hexo-config('font.title.size') is a 'unit') ? unit(hexo-config('font.title.size'), em) : $font-size-largest;
 $font-size-subtitle             = $font-size-smaller;
 $subtitle-color                 = $grey-dark;
 $site-subtitle-color            = $grey-dark;
@@ -215,7 +213,7 @@ $posts-collapse-margin-mobile   = 20px;
 // Variables for sidebar section elements.
 // --------------------------------------------------
 
-$sidebar-offset                       = unit(hexo-config('sidebar.offset'), px) if hexo-config('sidebar.offset') is a 'unit';
+$sidebar-offset                       = hexo-config('sidebar.offset') is a 'unit' ? unit(hexo-config('sidebar.offset'), px) : 12px;
 $sidebar-nav-color                    = $black-light;
 $sidebar-nav-hover-color              = $whitesmoke;
 $sidebar-highlight                    = $blue-bright;
@@ -284,7 +282,7 @@ $center-quote-right           = '../images/quote-r.svg';
 // Note colors
 // --------------------------------------------------
 // Read note light_bg_offset from NexT config and set in "$lbg%" to use it as string variable.
-hexo-config('note.light_bg_offset') is a 'unit' ? ($lbg = unit(hexo-config('note.light_bg_offset'), "%")) : ($lbg = 0);
+$lbg = hexo-config('note.light_bg_offset') is a 'unit' ? unit(hexo-config('note.light_bg_offset'), "%") : 0;
 
 // Default
 $note-default-border        = #777;

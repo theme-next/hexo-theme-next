@@ -21,8 +21,8 @@ math:
 首先，卸载原有的渲染器 `hexo-renderer-marked`，并安装这两种渲染器的**其中一个**：
 
 ```sh
-npm un hexo-renderer-marked --save
-npm i hexo-renderer-pandoc --save # 或者 hexo-renderer-kramed
+npm uninstall hexo-renderer-marked
+npm install hexo-renderer-pandoc # 或者 hexo-renderer-kramed
 ```
 
 然后在 `next/_config.yml` 中将 `math` 的 `enable` 打开，并选择 `mathjax` 作为渲染引擎。
@@ -114,8 +114,8 @@ Katex 渲染引擎相对于 MathJax 来说**大大提高了速度**，而且在�
 首先，卸载原有的渲染器 `hexo-renderer-marked`，并安装这两种渲染器的**其中一个**：
 
 ```sh
-npm un hexo-renderer-marked --save
-npm i hexo-renderer-markdown-it-plus --save
+npm uninstall hexo-renderer-marked
+npm install hexo-renderer-markdown-it-plus
 # 或者 hexo-renderer-markdown-it
 ```
 
@@ -142,7 +142,7 @@ hexo clean && hexo g -d
 如果你使用 `hexo-renderer-markdown-it`，你还需要为其加上 `markdown-it-katex` 作为插件：
 
 ```
-npm i markdown-it-katex --save
+npm install markdown-it-katex
 ```
 
 然后在 `hexo/_config.yml` 中将 `markdown-it-katex` 作为插件写入 `hexo-renderer-markdown-it` 的配置中：

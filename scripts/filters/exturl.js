@@ -5,9 +5,8 @@
 let cheerio;
 
 hexo.extend.filter.register('after_post_render', data => {
-  var theme = hexo.theme.config;
   // Exit if `exturl` option disable in NexT.
-  if (!theme.exturl) return;
+  if (!hexo.theme.config.exturl) return;
 
   const url = require('url');
 
