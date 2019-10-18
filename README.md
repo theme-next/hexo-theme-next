@@ -102,7 +102,7 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 We welcome you to join the development of NexT. Please see [contributing document][contributing-document-url]. 🤗
 
-Also, we welcome PR or issue to [official-plugins][official-plugins-url].
+Also, we welcome Issue or PR to [official-plugins][official-plugins-url].
 
 ## Contributors
 

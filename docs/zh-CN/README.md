@@ -72,7 +72,7 @@ vendors:
   mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
-通过设置 CDN 链接来代替通过 [插件列表][official-plugins-url] 项目进行升级。
+通过设置 CDN 链接来代替通过[插件列表][official-plugins-url]项目进行升级。
 
 ## 更新
 
