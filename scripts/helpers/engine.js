@@ -26,8 +26,7 @@ hexo.extend.helper.register('next_vendors', function(url) {
 hexo.extend.helper.register('post_edit', function(src) {
   const theme = hexo.theme.config;
   if (!theme.post_edit.enable) return '';
-  const editIcon = '<i class="fa fa-pencil"></i>';
-  return this.next_url(theme.post_edit.url + src, editIcon, {
+  return this.next_url(theme.post_edit.url + src, '<i class="fa fa-pencil"></i>', {
     class: 'post-edit-link',
     title: this.__('post.edit')
   });

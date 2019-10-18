@@ -12,9 +12,9 @@
 
   {%- if not theme.math.per_page or is_index_has_math or page.mathjax %}
     {%- if theme.math.mathjax.enable %}
-      {% include 'mathjax.swig' %}
+      {% include '_third-party/math/mathjax.swig' %}
     {% elif theme.math.katex.enable %}
-      {% include 'katex.swig' %}
+      {% include '_third-party/math/katex.swig' %}
     {%- endif %}
   {%- endif %}
 {%- endif %}
