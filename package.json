@@ -4,9 +4,7 @@
   "description": "Elegant and powerful theme for Hexo",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp",
-    "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -24,7 +22,6 @@
   },
   "homepage": "https://theme-next.org",
   "devDependencies": {
-    "all-contributors-cli": "^6.9.1",
     "eslint": "^6.5.1",
     "eslint-config-theme-next": "^1.1.3",
     "gulp": "^4.0.2",
