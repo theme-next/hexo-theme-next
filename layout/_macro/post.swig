@@ -1,4 +1,3 @@
-{% macro render(post, is_index) %}
   {##################}
   {### POST BLOCK ###}
   {##################}
@@ -37,7 +36,7 @@
             {{ next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
             {{- post.title }}
-            {% include '../_partials/post-edit.swig' %}
+            {{- post_edit(page.source) }}
           {%- endif %}
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
@@ -291,4 +290,3 @@
   {######################}
   {### END POST BLOCK ###}
   {######################}
-{% endmacro %}

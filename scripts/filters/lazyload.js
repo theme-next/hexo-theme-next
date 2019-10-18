@@ -5,9 +5,8 @@
 let cheerio;
 
 hexo.extend.filter.register('after_post_render', data => {
-  var theme = hexo.theme.config;
   // Exit if `lazyload` option disable in NexT.
-  if (!theme.lazyload) return;
+  if (!hexo.theme.config.lazyload) return;
 
   if (!cheerio) cheerio = require('cheerio');
 
