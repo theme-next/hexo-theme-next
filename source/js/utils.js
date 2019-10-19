@@ -179,8 +179,8 @@ NexT.utils = {
    */
   registerTabsTag: function() {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(tab => {
-      tab.addEventListener('click', event => {
+    document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(element => {
+      element.addEventListener('click', event => {
         event.preventDefault();
         var target = event.currentTarget;
         // Prevent selected tab to select again.
