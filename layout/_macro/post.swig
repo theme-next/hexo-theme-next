@@ -220,7 +220,7 @@
     {#####################}
 
     {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {% include '../_partials/post/post-related.swig' %}
+      {{ partial('_partials/post/post-related.swig') }}
     {%- endif %}
 
     {%- if not is_index %}
@@ -240,7 +240,7 @@
       {%- endif %}
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
-        {% include '../_partials/post/post-copyright.swig' %}
+        {{ partial('_partials/post/post-copyright.swig') }}
       {%- endif %}
 
       <footer class="post-footer">

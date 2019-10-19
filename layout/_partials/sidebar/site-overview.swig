@@ -85,11 +85,15 @@
     {%- for name, link in theme.social %}
       <span class="links-of-author-item">
       {%- set sidebarURL = link.split('||')[0] | trim %}
-      {%- if not (theme.social_icons.enable) or (not theme.social_icons.icons_only) %}
-        {%- set sidebarText = name %}
-      {%- endif %}
       {%- if theme.social_icons.enable %}
         {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim + '"></i>' %}
+      {%- else %}
+        {%- set sidebarIcon = '' %}
+      {%- endif %}
+      {%- if theme.social_icons.enable and theme.social_icons.icons_only %}
+        {%- set sidebarText = '' %}
+      {%- else %}
+        {%- set sidebarText = name %}
       {%- endif %}
         {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
       </span>
