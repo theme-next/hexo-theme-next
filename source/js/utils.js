@@ -59,7 +59,7 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    document.querySelectorAll('figure.highlight').forEach(e => {
+    document.querySelectorAll('figure.highlight').forEach(element => {
       const initButton = button => {
         if (CONFIG.copycode.style === 'mac') {
           button.innerHTML = '<i class="fa fa-clipboard"></i>';
@@ -69,13 +69,13 @@ NexT.utils = {
       };
       const box = document.createElement('div');
       box.classList.add('highlight-wrap');
-      e.wrap(box);
-      e.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
-      var button = e.parentNode.querySelector('.copy-btn');
+      element.wrap(box);
+      element.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
+      var button = element.parentNode.querySelector('.copy-btn');
       button.addEventListener('click', event => {
         var target = event.currentTarget;
-        var code = [...target.parentNode.querySelectorAll('.code .line')].map(element => {
-          return element.innerText;
+        var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => {
+          return line.innerText;
         }).join('\n');
         var ta = document.createElement('textarea');
         var yPosition = window.scrollY;
@@ -127,9 +127,7 @@ NexT.utils = {
         'player.youku.com',
         'player.bilibili.com',
         'www.tudou.com'
-      ].some(origin => {
-        element.src.includes(origin);
-      });
+      ].some(host => element.src.includes(host));
       if (supported && !element.parentNode.matches('.video-container')) {
         const box = document.createElement('div');
         box.className = 'video-container';
@@ -210,8 +208,8 @@ NexT.utils = {
 
   registerCanIUseTag: function() {
     // Get responsive height passed from iframe.
-    window.addEventListener('message', e => {
-      var data = e.data;
+    window.addEventListener('message', event => {
+      var data = event.data;
       if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
         var featureID = data.split(':')[1];
         var height = data.split(':')[2];
