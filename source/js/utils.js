@@ -276,7 +276,7 @@ NexT.utils = {
         index = sections.indexOf(entry.target);
         return index === 0 ? 0 : index - 1;
       }
-      for (;index < entries.length; index++) {
+      for (; index < entries.length; index++) {
         if (entries[index].boundingClientRect.top <= 0) {
           entry = entries[index];
         } else {
@@ -301,7 +301,9 @@ NexT.utils = {
         rootMargin: marginTop + 'px 0px -100% 0px',
         threshold : 0
       });
-      sections.forEach(item => intersectionObserver.observe(item));
+      sections.forEach(item => {
+        item && intersectionObserver.observe(item);
+      });
     }
     createIntersectionObserver(document.documentElement.scrollHeight);
   },
