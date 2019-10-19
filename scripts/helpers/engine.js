@@ -38,3 +38,14 @@ hexo.extend.helper.register('gitalk_md5', function(path) {
   str.replace('index.html', '');
   return crypto.createHash('md5').update(str).digest('hex');
 });
+
+hexo.extend.helper.register('canonical', function() {
+  const permalink = hexo.config.permalink;
+  const canonical = hexo.theme.config.canonical;
+  if (!canonical) return '';
+  var url = this.url.replace(/index\.html$/, '');
+  if (!permalink.endsWith('.html')) {
+    url = url.replace(/\.html$/, '');
+  }
+  return `<link rel="canonical" href="${url}">`;
+});
