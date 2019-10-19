@@ -84,19 +84,16 @@
   <div class="links-of-author motion-element">
     {%- for name, link in theme.social %}
       <span class="links-of-author-item">
-        {%- set sidebarURL = link.split('||')[0] | trim %}
+      {%- set sidebarURL = link.split('||')[0] | trim %}
+      {%- if theme.social_icons.enable %}
         {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim + '"></i>' %}
+      {%- endif %}
+      {%- if theme.social_icons.enable and theme.social_icons.icons_only %}
+        {%- set sidebarText = '' %}
+      {%- else %}
         {%- set sidebarText = name %}
-        {%- if theme.social_icons.enable %}
-          {%- if theme.social_icons.icons_only %}
-            {%- set sidebarContent = sidebarIcon %}
-          {% else %}
-            {%- set sidebarContent = sidebarIcon + sidebarText %}
-          {%- endif %}
-        {% else %}
-          {%- set sidebarContent = sidebarText %}
-        {%- endif %}
-        {{ next_url(sidebarURL, sidebarContent, {title: name + ' → ' + sidebarURL}) }}
+      {%- endif %}
+        {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
       </span>
     {%- endfor %}
   </div>
