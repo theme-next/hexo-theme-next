@@ -244,11 +244,11 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(res => {
         // Get the contents from search data
         isfetched = true;
-        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(item => {
+        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
           return {
-            title  : item.querySelector('title').innerHTML,
-            content: item.querySelector('content').innerHTML,
-            url    : item.querySelector('url').innerHTML
+            title  : element.querySelector('title').innerHTML,
+            content: element.querySelector('content').innerHTML,
+            url    : element.querySelector('url').innerHTML
           };
         }) : JSON.parse(res);
 

@@ -121,19 +121,21 @@ NexT.utils = {
 
   registerVideoIframe: function() {
     document.querySelectorAll('iframe').forEach(element => {
-      const SUPPORTED_PLAYERS = [
+      const supported = [
         'www.youtube.com',
         'player.vimeo.com',
         'player.youku.com',
         'player.bilibili.com',
         'www.tudou.com'
-      ];
-      const pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
-      if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
+      ].some(origin => {
+        element.src.includes(origin);
+      });
+      if (supported && !element.parentNode.matches('.video-container')) {
         const box = document.createElement('div');
         box.className = 'video-container';
         element.wrap(box);
-        let width = Number(element.width); let height = Number(element.height);
+        let width = Number(element.width);
+        let height = Number(element.height);
         if (width && height) {
           element.parentNode.style.paddingTop = (height / width * 100) + '%';
         }
@@ -186,13 +188,13 @@ NexT.utils = {
         // Prevent selected tab to select again.
         if (!target.classList.contains('active')) {
           // Add & Remove active class on `nav-tabs` & `tab-content`.
-          [...target.parentNode.children].forEach(item => {
-            item.classList.remove('active');
+          [...target.parentNode.children].forEach(element => {
+            element.classList.remove('active');
           });
           target.classList.add('active');
           var tActive = document.getElementById(target.querySelector('a').getAttribute('href').replace('#', ''));
-          [...tActive.parentNode.children].forEach(item => {
-            item.classList.remove('active');
+          [...tActive.parentNode.children].forEach(element => {
+            element.classList.remove('active');
           });
           tActive.classList.add('active');
           // Trigger event
@@ -301,8 +303,8 @@ NexT.utils = {
         rootMargin: marginTop + 'px 0px -100% 0px',
         threshold : 0
       });
-      sections.forEach(item => {
-        item && intersectionObserver.observe(item);
+      sections.forEach(element => {
+        element && intersectionObserver.observe(element);
       });
     }
     createIntersectionObserver(document.documentElement.scrollHeight);

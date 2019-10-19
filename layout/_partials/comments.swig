@@ -17,11 +17,11 @@
       <script{{ pjax }}>
         (function() {
           let commentButton = document.querySelectorAll('.comment-button');
-            commentButton.forEach(item => {
+            commentButton.forEach(element => {
             let commentClass = item.classList[2];
-            item.addEventListener('click', () => {
+            element.addEventListener('click', () => {
               commentButton.forEach(rmActive => rmActive.classList.remove('active'));
-              item.classList.add('active');
+              element.classList.add('active');
               document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
               document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
               {%- if theme.comments.storage %}
