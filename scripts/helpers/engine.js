@@ -12,8 +12,8 @@ hexo.extend.helper.register('next_inject', function(point) {
 });
 
 hexo.extend.helper.register('next_js', function(...urls) {
-  const js = hexo.theme.config.js;
-  const version = require(path.normalize('../../package.json')).version;
+  const { js } = hexo.theme.config;
+  const { version } = require(path.normalize('../../package.json'));
   return urls.map(url => this.js(`${js}/${url}?v=${version}`)).join('');
 });
 
@@ -40,8 +40,8 @@ hexo.extend.helper.register('gitalk_md5', function(path) {
 });
 
 hexo.extend.helper.register('canonical', function() {
-  const permalink = hexo.config.permalink;
-  const canonical = hexo.theme.config.canonical;
+  const { permalink } = hexo.config;
+  const { canonical } = hexo.theme.config;
   if (!canonical) return '';
   var url = this.url.replace(/index\.html$/, '');
   if (!permalink.endsWith('.html')) {
