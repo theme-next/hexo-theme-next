@@ -87,6 +87,8 @@
       {%- set sidebarURL = link.split('||')[0] | trim %}
       {%- if theme.social_icons.enable %}
         {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim + '"></i>' %}
+      {%- else %}
+        {%- set sidebarIcon = '' %}
       {%- endif %}
       {%- if theme.social_icons.enable and theme.social_icons.icons_only %}
         {%- set sidebarText = '' %}
