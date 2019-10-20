@@ -112,10 +112,10 @@ NexT.utils = {
   },
 
   wrapTableWithBox: function() {
-    document.querySelectorAll('table').forEach(table => {
+    document.querySelectorAll('table').forEach(element => {
       const box = document.createElement('div');
       box.className = 'table-container';
-      table.wrap(box);
+      element.wrap(box);
     });
   },
 
