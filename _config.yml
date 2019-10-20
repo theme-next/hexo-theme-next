@@ -589,7 +589,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
+  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -598,8 +598,6 @@ comments:
     #disqus:
     #  text: Load Disqus
     #  order: -1
-    #facebook_comments_plugin:
-    #  text: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
     #gitalk:
     #  order: -2
 
@@ -678,33 +676,6 @@ gitalk:
 # Post Widgets & Content Sharing Services
 # See: https://theme-next.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
-
-# Facebook SDK Support
-facebook_sdk:
-  enable:       false
-  app_id:       # <app_id>
-  fb_admin:     # <user_id>
-  like_button:  # true
-  webmaster:    # true
-
-# Facebook comments plugin
-# This plugin depends on Facebook SDK.
-# If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
-facebook_comments_plugin:
-  enable:       false
-  num_of_posts: 10    # Minimum posts num is 1
-  width:        100%  # Default width is 550px
-  scheme:       light # Default scheme is light (light or dark)
-  #post_meta_order: 0
-
-# VKontakte API Support
-# To get your AppID visit https://vk.com/editapp?act=create
-vkontakte_api:
-  enable:       false
-  app_id:       # <app_id>
-  like:         true
-  comments:     true
-  num_of_posts: 10
 
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
