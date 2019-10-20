@@ -33,9 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const getIndexByWord = (word, text, caseSensitive) => {
     let wordLen = word.length;
-    if (wordLen === 0) {
-      return [];
-    }
+    if (wordLen === 0) return [];
     let startPosition = 0;
     let position = [];
     let index = [];
@@ -116,9 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // Perform local searching
       datas.forEach(data => {
         // Only match articles with not empty titles
-        if (!data.title) {
-          return;
-        }
+        if (!data.title) return;
         let searchTextCount = 0;
         let title = data.title.trim();
         let titleInLowerCase = title.toLowerCase();

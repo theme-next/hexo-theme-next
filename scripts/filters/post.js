@@ -10,9 +10,7 @@ hexo.extend.filter.register('after_post_render', data => {
     exturl  : theme.exturl,
     lazyload: theme.lazyload
   };
-  if (!filters.excerpt && !filters.exturl && !filters.lazyload) {
-    return;
-  }
+  if (!filters.excerpt && !filters.exturl && !filters.lazyload) return;
   const cheerio = require('cheerio');
   const $ = cheerio.load(data.content, {
     decodeEntities: false
@@ -54,9 +52,7 @@ hexo.extend.filter.register('after_post_render', data => {
     });
     var length = 0;
     elements.each((i, o) => {
-      if (length > theme.auto_excerpt.length) {
-        return;
-      }
+      if (length > theme.auto_excerpt.length) return;
       length += $(o).text().length;
       _$.root().append($(o).remove());
     });
