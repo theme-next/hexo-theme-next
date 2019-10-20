@@ -1,12 +1,26 @@
 'use strict';
 
+function isObject(item) {
+  return (item && typeof item === 'object' && !Array.isArray(item));
+}
+
+function merge(target, source) {
+  if (!isObject(target) || !isObject(source)) return;
+  for (const key in source) {
+    if (isObject(source[key])) {
+      if (!target[key]) Object.assign(target, { [key]: {} });
+      merge(target[key], source[key]);
+    } else {
+      Object.assign(target, { [key]: source[key] });
+    }
+  }
+}
+
 module.exports = hexo => {
   if (!hexo.locals.get) return;
 
   var data = hexo.locals.get('data');
   if (!data) return;
-
-  const merge = require(hexo.base_dir + 'node_modules/lodash/merge');
 
   /**
    * Merge configs from _data/next.yml into hexo.theme.config.
