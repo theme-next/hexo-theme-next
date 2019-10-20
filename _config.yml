@@ -278,12 +278,6 @@ symbols_count_time:
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
 
-# Wechat Subscriber
-wechat_subscriber:
-  enable: false
-  qcode: #/uploads/wechat-qcode.jpg
-  #description: Subscribe to my blog by scanning my public wechat account.
-
 # Reward (Donate)
 reward_settings:
   # If true, reward would be displayed in every article by default.

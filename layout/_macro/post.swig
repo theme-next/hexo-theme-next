@@ -226,10 +226,6 @@
     {%- if not is_index %}
       {{- next_inject('postBodyEnd') }}
 
-      {%- if theme.wechat_subscriber.enable %}
-        {{ partial('_partials/post/wechat-subscriber.swig', {}, {cache: theme.cache.enable}) }}
-      {%- endif %}
-
       {%- if post.reward === undefined and theme.reward_settings.enable %}
         {%- set reward_able = true %}
       {% else %}
