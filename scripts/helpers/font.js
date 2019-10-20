@@ -5,9 +5,7 @@
 hexo.extend.helper.register('next_font', () => {
   var config = hexo.theme.config.font;
 
-  if (!config || !config.enable) {
-    return '';
-  }
+  if (!config || !config.enable) return '';
 
   var fontDisplay = '&display=swap';
   var fontSubset = '&subset=latin,latin-ext';
