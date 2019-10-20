@@ -364,9 +364,6 @@ android_chrome_color: "#222"
 # Hide sticky headers and color the menu bar on Safari (iOS / macOS).
 safari_rainbow: false
 
-# Optimize the display of scrollbars on webkit based browsers.
-custom_scrollbar: false
-
 # Custom Logo (Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.jpg
 
