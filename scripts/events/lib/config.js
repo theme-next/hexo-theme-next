@@ -1,10 +1,10 @@
 'use strict';
 
-function isObject(item) {
-  return (item && typeof item === 'object' && !Array.isArray(item));
-}
+const isObject = item => {
+  return item && typeof item === 'object' && !Array.isArray(item);
+};
 
-function merge(target, source) {
+const merge = (target, source) => {
   for (const key in source) {
     if (isObject(target[key]) && isObject(source[key])) {
       merge(target[key], source[key]);
@@ -13,7 +13,7 @@ function merge(target, source) {
     }
   }
   return target;
-}
+};
 
 module.exports = hexo => {
   if (!hexo.locals.get) return;
