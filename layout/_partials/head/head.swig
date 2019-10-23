@@ -70,7 +70,7 @@
   <script src="{{ pace_js_uri }}"></script>
 {%- endif %}
 
-{# Export some HEXO Configurations to Front-End #}
+{# Export some Hexo Configurations to Front-End #}
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {

@@ -12,7 +12,7 @@
       shortname: '{{ theme.disqusjs.shortname }}',
       url: {{ page.permalink | json }},
       identifier: {{ page.path | json }},
-      title: '{{ page.title | addslashes }}',
+      title: {{ page.title | json }},
     });
   }, window.DisqusJS);
 </script>
