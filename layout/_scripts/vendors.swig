@@ -1,8 +1,8 @@
 {%- set js_vendors = {} %}
-{%- set js_vendors = js_vendors | attr('anime', 'anime.min.js?v=3.1.0') %}
+{%- set js_vendors = js_vendors | attr('anime', 'anime.min.js') %}
 
 {%- if theme.pjax %}
-  {%- set js_vendors = js_vendors | attr('pjax', 'pjax/pjax.min.js?v=0.2.8') %}
+  {%- set js_vendors = js_vendors | attr('pjax', 'pjax/pjax.min.js') %}
 {%- endif %}
 
 {%- if theme.fancybox %}
@@ -23,8 +23,8 @@
 {%- endif %}
 
 {%- if theme.motion.enable %}
-  {%- set js_vendors = js_vendors | attr('velocity', 'velocity/velocity.min.js?v=1.2.1') %}
-  {%- set js_vendors = js_vendors | attr('velocity_ui', 'velocity/velocity.ui.min.js?v=1.2.1') %}
+  {%- set js_vendors = js_vendors | attr('velocity', 'velocity/velocity.min.js') %}
+  {%- set js_vendors = js_vendors | attr('velocity_ui', 'velocity/velocity.ui.min.js') %}
 {%- endif %}
 
 {%- if theme.canvas_nest.enable %}
