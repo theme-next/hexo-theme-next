@@ -1,5 +1,5 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template with context %}
+{% extends '_layout.njk' %}
+{% import '_macro/sidebar.njk' as sidebar_template with context %}
 
   {% block title %}
     {%- set page_title_suffix = ' | ' + title %}
@@ -22,7 +22,7 @@
     {### PAGE BLOCK ###}
     {##################}
     <div class="post-block" lang="{{ page.lang or page.language or config.language }}">
-      {% include '_partials/page/page-header.swig' %}
+      {% include '_partials/page/page-header.njk' %}
       {#################}
       {### PAGE BODY ###}
       {#################}
@@ -48,7 +48,7 @@
         {% elif page.type === 'schedule' %}
           <div class="event-list">
           </div>
-          {% include '_scripts/pages/schedule.swig' %}
+          {% include '_scripts/pages/schedule.njk' %}
         {% else %}
           {{ page.content }}
         {%- endif %}
@@ -57,7 +57,7 @@
       {### END PAGE BODY ###}
       {#####################}
     </div>
-    {% include '_partials/page/breadcrumb.swig' %}
+    {% include '_partials/page/breadcrumb.njk' %}
     {######################}
     {### END PAGE BLOCK ###}
     {######################}

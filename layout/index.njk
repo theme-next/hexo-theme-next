@@ -1,5 +1,5 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template with context %}
+{% extends '_layout.njk' %}
+{% import '_macro/sidebar.njk' as sidebar_template with context %}
 
 {% block title %}{{ title }}{%- if theme.index_with_subtitle and subtitle %} - {{ subtitle }}{%- endif %}{% endblock %}
 
@@ -7,11 +7,11 @@
 
   <div class="posts-expand">
     {%- for post in page.posts.toArray() %}
-      {{ partial('_macro/post.swig', {post: post, is_index: true}) }}
+      {{ partial('_macro/post.njk', {post: post, is_index: true}) }}
     {%- endfor %}
   </div>
 
-  {% include '_partials/pagination.swig' %}
+  {% include '_partials/pagination.njk' %}
 
 {% endblock %}
 

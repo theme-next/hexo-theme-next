@@ -17,6 +17,6 @@ hexo.extend.filter.register('theme_inject', injects => {
   </div>
   `, {}, {cache: true});
 
-  injects.bodyEnd.file('disqusjs', path.join(hexo.theme_dir, 'layout/_third-party/comments/disqusjs.swig'));
+  injects.bodyEnd.file('disqusjs', path.join(hexo.theme_dir, 'layout/_third-party/comments/disqusjs.njk'));
 
 });

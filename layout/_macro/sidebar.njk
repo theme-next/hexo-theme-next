@@ -34,7 +34,7 @@
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_partials/sidebar/site-overview.njk', {}, {cache: theme.cache.enable}) }}
 
         {{- next_inject('sidebar') }}
       </div>

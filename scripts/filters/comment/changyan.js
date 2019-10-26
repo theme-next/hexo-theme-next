@@ -16,7 +16,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   </div>
   `, {}, {cache: true});
 
-  injects.bodyEnd.file('changyan', path.join(hexo.theme_dir, 'layout/_third-party/comments/changyan.swig'));
+  injects.bodyEnd.file('changyan', path.join(hexo.theme_dir, 'layout/_third-party/comments/changyan.njk'));
 
 });
 

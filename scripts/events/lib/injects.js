@@ -55,9 +55,9 @@ module.exports = hexo => {
     let configs = Object.create(null);
     hexo.theme.config.injects[type] = [];
     injects[type].raws.forEach((injectObj, index) => {
-      // If there is no suffix, will add `.swig`.
+      // If there is no suffix, will add `.njk`.
       if (injectObj.name.indexOf('.') < 0) {
-        injectObj.name += '.swig';
+        injectObj.name += '.njk';
       }
       let name = `inject/${type}/${injectObj.name}`;
       // Add or override view.

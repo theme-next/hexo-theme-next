@@ -1,0 +1,18 @@
+{% include 'baidu-push.njk' %}
+
+{% include 'facebook-sdk.njk' %}
+{% include 'rating.njk' %}
+
+{%- if theme.algolia_search.enable %}
+  {% include 'search/algolia-search.njk' %}
+{% elif theme.swiftype_key %}
+  {% include 'search/swiftype.njk' %}
+{% elif theme.local_search.enable %}
+  {% include 'search/localsearch.njk' %}
+{%- endif %}
+
+{% include 'chat/chatra.njk' %}
+{% include 'chat/tidio.njk' %}
+
+{% include 'tags/pdf.njk' %}
+{% include 'tags/mermaid.njk' %}

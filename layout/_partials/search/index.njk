@@ -1,8 +1,8 @@
 <div class="popup search-popup">
   {%- if theme.algolia_search.enable %}
-    {% include 'algolia-search.swig' %}
+    {% include 'algolia-search.njk' %}
   {% elif theme.local_search.enable %}
-    {% include 'localsearch.swig' %}
+    {% include 'localsearch.njk' %}
   {%- endif %}
 </div>
 <div class="search-pop-overlay"></div>

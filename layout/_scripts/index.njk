@@ -1,11 +1,11 @@
-{% include 'vendors.swig' %}
+{% include 'vendors.njk' %}
 
 {{- next_js('utils.js') }}
 {%- if theme.motion.enable %}
   {{- next_js('motion.js') }}
 {%- endif %}
 
-{%- set scheme_script = 'schemes/' + theme.scheme | lower + '.swig' %}
+{%- set scheme_script = 'schemes/' + theme.scheme | lower + '.njk' %}
 {% include scheme_script %}
 
 {{- next_js('next-boot.js') }}
@@ -13,6 +13,6 @@
   {{- next_js('bookmark.js') }}
 {%- endif %}
 {%- if theme.pjax %}
-  {% include 'pjax.swig' %}
+  {% include 'pjax.njk' %}
 {%- endif %}
-{% include 'three.swig' %}
+{% include 'three.njk' %}
