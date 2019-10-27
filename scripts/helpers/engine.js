@@ -2,7 +2,6 @@
 
 'use strict';
 
-const path = require('path');
 const crypto = require('crypto');
 
 hexo.extend.helper.register('next_inject', function(point) {
