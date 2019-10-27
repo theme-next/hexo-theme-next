@@ -1,13 +1,8 @@
 language: node_js
+
 node_js: node
 
 cache:
   npm: true
 
 install: npm install
-
-addons:
-  browserstack:
-    username: "shuqiaozhang1"
-    access_key:
-      secure: "lHlu4+2TOEZ1qQo5Dn7wyCUsTH0fUnhr/bU0LlPplTVJVfi1UPEPcVm6l/7blP2PU5WE2UMkiHIgApFQH6KI+4Hoclg0mzGfoe7t+HC4n/ejelSjLVMIKGFP+XUsAAvcL/SL3kJAQB7M4BBRV49AZ9RmdXrie0S6kzJ8YC+UU48QUjR/lVudEzhbvMhlE35LW8Gyq8jf0at/fwZ43a4E3T7pAf5NnHZZgQQnguSeryw+rRcbg//LFytmnd4WRnovrCdTfUrtSBLwY2eiN3JDSgA2oRyR53F9QInzs6yI45HimcgzYTPqFXORuaJHnpKlZLtPV7SUsfzGBz+Pz1h9YZzCNSjw3DQNHNsJmSq/ESN0N5s48alsZSPqGDY3YZ1Rl3pTZOhB/T9DAvLMZwHotyXr/lmZU+OigE6LFCZl34G+VKG1TW9y7G7KLiVJAQQVnAitD4ePZC+mEV3lZacuoL1dbd9DA8k6ANIM5/OoJotoNc5VINB86CqPaCjNcQSOUcUx1UWCxDYB+fH5NK61LBWTpEEiUXYFc/FznvkwHXccxJP4K+793aMM9880uXweQSwsjL6PIcxKdQJwXUN0+NlkA9H8LHoklF95SlB5tCsflVJwI8Jn/iJNLSPwjjXkP/ypqYbVeLgDnOtZlh6P4HWkQs1uTN2Xa9++tpCkunQ="

@@ -128,9 +128,9 @@ $ git pull
 <br>
   <a href="https://codacy.com"><img align="center" width="155" src="https://user-images.githubusercontent.com/16944225/55026017-623f8f00-5002-11e9-88bf-0d6a5884c6c2.png"></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://www.browserstack.com"><img align="center" width="140" src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png"></a>
+  <a href="https://travis-ci.com"><img align="center" width="140" src="https://raw.githubusercontent.com/travis-ci/travis-web/master/public/images/logos/TravisCI-Full-Color.png"></a>
 <br>
-  <sub>Codacy 容许我们运行测试套件，BrowserStack 容许我们在真实的浏览器中进行测试。</sub>
+  <sub>Codacy 容许我们监控代码质量，Travis CI 容许我们运行测试套件。</sub>
 </p>
 
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md
