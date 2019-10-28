@@ -684,13 +684,6 @@ add_this_id:
 # See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
 # ---------------------------------------------------------------
 
-# Baidu Analytics
-baidu_analytics: # <app_id>
-
-# Growingio Analytics
-# Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
-growingio_analytics: # <project_id>
-
 # Google Analytics
 google_analytics:
   tracking_id: # <app_id>
@@ -699,12 +692,14 @@ google_analytics:
   # If you only need the pageview feature, set the following option to true to get a better performance.
   only_pageview: false
 
+# Baidu Analytics
+baidu_analytics: # <app_id>
+
+# Growingio Analytics
+growingio_analytics: # <project_id>
+
 # CNZZ count
 cnzz_siteid:
-
-# Application Insights
-# See: https://azure.microsoft.com/en-us/services/application-insights
-application_insights:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
