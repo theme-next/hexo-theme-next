@@ -46,11 +46,6 @@
   <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}">
 {%- endif %}
 
-{%- if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}
-  <meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}">
-  <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}">
-{%- endif %}
-
 <link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css">
 
 {{ next_font() }}

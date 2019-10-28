@@ -1,4 +1,4 @@
-{%- if theme.math.enable %}
+{%- if theme.math.mathjax.enable or theme.math.katex.enable %}
   {%- set is_index_has_math = false %}
 
   {# At home, check if there has `mathjax: true` post #}
