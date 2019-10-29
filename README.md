@@ -46,7 +46,7 @@ Or you can see [detailed installation instructions][docs-installation-url] if yo
 
 ## Plugins
 
-In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
+In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link][official-plugins-url].
 
 For example, if you want to enable `pjax` on your site, go to NexT config and see:
 
@@ -72,7 +72,7 @@ vendors:
   mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
-Instead of defining [main organization link](https://github.com/theme-next) for updates.
+Instead of defining [main organization link][official-plugins-url] for updates.
 
 ## Update
 
@@ -100,7 +100,13 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 ## Contributing
 
-Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
+We welcome you to join the development of NexT. Please see [contributing document][contributing-document-url]. 🤗
+
+Also, we welcome Issue or PR to [official-plugins][official-plugins-url].
+
+## Contributors
+
+[![][contributors-image]][contributors-url]
 
 ## Thanks
 
@@ -124,10 +130,10 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 <br>
   <a href="https://codacy.com"><img align="center" width="155" src="https://user-images.githubusercontent.com/16944225/55026017-623f8f00-5002-11e9-88bf-0d6a5884c6c2.png"></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://www.browserstack.com"><img align="center" width="140" src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png"></a>
+  <a href="https://travis-ci.com"><img align="center" width="140" src="https://raw.githubusercontent.com/travis-ci/travis-web/master/public/images/logos/TravisCI-Full-Color.png"></a>
 <br>
 <br>
-  <sub>Codacy allows us to run the test suite, BrowserStack allows us to test in real browsers.</sub>
+  <sub>Codacy allows us to monitor code quality, Travis CI allows us to run the test suite.</sub>
 </p>
 
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
@@ -144,3 +150,8 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
+
+[contributing-document-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
+[official-plugins-url]: https://github.com/theme-next
+[contributors-image]: https://opencollective.com/theme-next/contributors.svg?width=890
+[contributors-url]: https://github.com/theme-next/hexo-theme-next/graphs/contributors

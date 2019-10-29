@@ -46,7 +46,7 @@ $ git clone https://github.com/theme-next/hexo-theme-next themes/next
 
 ## 插件
 
-在 NexT 配置中有一些第三方插件，它们已经被移至外部仓库。你可以在[组织主页](https://github.com/theme-next)中找到它们。
+在 NexT 配置中有一些第三方插件，它们已经被移至外部仓库。你可以在[组织主页][official-plugins-url]中找到它们。
 
 例如，你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，你会看到如下内容：
 
@@ -72,7 +72,7 @@ vendors:
   mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
-通过设置 CDN 链接来代替通过 [插件列表](https://github.com/theme-next) 项目进行升级。
+通过设置 CDN 链接来代替通过[插件列表][official-plugins-url]项目进行升级。
 
 ## 更新
 
@@ -100,7 +100,13 @@ $ git pull
 
 ## 贡献你的代码
 
-我们欢迎你贡献出你的一份力量，你可以随时提交 issue 或 fork 本仓库。静候你的 pull request。
+我们欢迎你加入 NexT 的开发，贡献出你的一份力量。请看[开源贡献指南][contributing-document-url]。 🤗
+
+你也可以随时向我们的[官方插件][official-plugins-url]提交 Issue 或 Pull Request。
+
+## 贡献者
+
+[![][contributors-image]][contributors-url]
 
 ## 鸣谢
 
@@ -122,9 +128,9 @@ $ git pull
 <br>
   <a href="https://codacy.com"><img align="center" width="155" src="https://user-images.githubusercontent.com/16944225/55026017-623f8f00-5002-11e9-88bf-0d6a5884c6c2.png"></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://www.browserstack.com"><img align="center" width="140" src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png"></a>
+  <a href="https://travis-ci.com"><img align="center" width="140" src="https://raw.githubusercontent.com/travis-ci/travis-web/master/public/images/logos/TravisCI-Full-Color.png"></a>
 <br>
-  <sub>Codacy 容许我们运行测试套件，BrowserStack 容许我们在真实的浏览器中进行测试。</sub>
+  <sub>Codacy 容许我们监控代码质量，Travis CI 容许我们运行测试套件。</sub>
 </p>
 
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md
@@ -141,3 +147,8 @@ $ git pull
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22+sort%3Areactions-%2B1-desc
+
+[contributing-document-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/CONTRIBUTING.md
+[official-plugins-url]: https://github.com/theme-next
+[contributors-image]: https://opencollective.com/theme-next/contributors.svg?width=890
+[contributors-url]: https://github.com/theme-next/hexo-theme-next/graphs/contributors

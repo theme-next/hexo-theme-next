@@ -201,7 +201,7 @@
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
-              <a class="btn" href="{{ url_for(post.path) }}{%- if theme.scroll_to_more %}#more{%- endif %}" rel="contents">
+              <a class="btn" href="{{ url_for(post.path) }}#more" rel="contents">
                 {{ __('post.read_more') }} &raquo;
               </a>
             </div>
@@ -220,22 +220,18 @@
     {#####################}
 
     {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {% include '../_partials/post/post-related.swig' %}
+      {{ partial('_partials/post/post-related.swig') }}
     {%- endif %}
 
     {%- if not is_index %}
       {{- next_inject('postBodyEnd') }}
-
-      {%- if page.wechat_subscriber.enable %}
-        {{ partial('_partials/post/wechat-subscriber.swig') }}
-      {%- endif %}
 
       {%- if page.reward_settings.enable %}
         {{ partial('_partials/post/post-reward.swig') }}
       {%- endif %}
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
-        {% include '../_partials/post/post-copyright.swig' %}
+        {{ partial('_partials/post/post-copyright.swig') }}
       {%- endif %}
 
       <footer class="post-footer">

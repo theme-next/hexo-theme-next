@@ -1,4 +1,4 @@
-{%- if theme.math.enable %}
+{%- if theme.math.mathjax.enable or theme.math.katex.enable %}
   {%- set is_index_has_math = false %}
 
   {# At home, check if there has `mathjax: true` post #}
@@ -12,9 +12,9 @@
 
   {%- if not theme.math.per_page or is_index_has_math or page.mathjax %}
     {%- if theme.math.mathjax.enable %}
-      {% include 'mathjax.swig' %}
+      {% include '_third-party/math/mathjax.swig' %}
     {% elif theme.math.katex.enable %}
-      {% include 'katex.swig' %}
+      {% include '_third-party/math/katex.swig' %}
     {%- endif %}
   {%- endif %}
 {%- endif %}
