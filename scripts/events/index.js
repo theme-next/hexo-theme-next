@@ -14,11 +14,7 @@ hexo.on('generateAfter', () => {
   const https = require('https');
   const path = require('path');
   const { version } = require(path.normalize('../../package.json'));
-  https.get({
-    hostname: 'api.github.com',
-    port    : 443,
-    path    : '/repos/theme-next/hexo-theme-next/releases/latest',
-    method  : 'GET',
+  https.get('https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest', {
     headers : {
       'User-Agent': 'Theme NexT Client'
     }
