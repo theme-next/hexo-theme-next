@@ -14,11 +14,47 @@
 
 const keys = ['toc', 'reward_settings', 'quicklink'];
 
+function showWarnLog(source, variable) {
+  hexo.log.warn(`front-matter: '${variable}' has deprecated, source: ${source}`);
+  hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211');
+}
+
+function compatibleBeforeAssign(page) {
+  if (page.quicklink === true) {
+    page.quicklink = {enable: true};
+    showWarnLog(page.source, 'quicklink:true');
+  }
+  if (page.quicklink === false) {
+    page.quicklink = {enable: false};
+    showWarnLog(page.source, 'quicklink:true');
+  }
+}
+
+function compatibleAfterAssign(page) {
+  if (page.reward !== undefined) {
+    page.reward_settings.enable = page.reward;
+    showWarnLog(page.source, 'reward');
+  }
+  if (page.toc_number !== undefined) {
+    page.toc.number = page.toc_number;
+    showWarnLog(page.source, 'toc_number');
+  }
+  if (page.toc_max_depth !== undefined) {
+    page.toc.max_depth = page.toc_max_depth;
+    showWarnLog(page.source, 'toc_max_depth');
+  }
+}
+
 hexo.extend.filter.register('template_locals', locals => {
   const { page, theme } = locals;
+
+  compatibleBeforeAssign(page);
+
   keys.forEach(key => {
     page[key] = Object.assign({}, theme[key], page[key]);
   });
+
+  compatibleAfterAssign(page);
 
   // Set default value for toc.max_depth
   if (!page.toc.max_depth) {
@@ -31,22 +67,5 @@ hexo.extend.filter.register('template_locals', locals => {
   }
   if (page.archive) {
     page.quicklink.enable = theme.quicklink.archive;
-  }
-
-  // Compatible
-  if (page.reward !== undefined) {
-    page.reward_settings.enable = page.reward;
-    hexo.log.warn(`front-matter: reward has deprecated, path: ${page.path}`);
-    hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211.');
-  }
-  if (page.toc_number !== undefined) {
-    page.toc.number = page.toc_number;
-    hexo.log.warn(`front-matter: toc_number has deprecated, path: ${page.path}`);
-    hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211.');
-  }
-  if (page.toc_max_depth !== undefined) {
-    page.toc.max_depth = page.toc_max_depth;
-    hexo.log.warn(`front-matter: toc_max_depth has deprecated, path: ${page.path}`);
-    hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211.');
   }
 });
