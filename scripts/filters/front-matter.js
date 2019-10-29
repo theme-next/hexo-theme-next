@@ -12,7 +12,7 @@
 
 'use strict';
 
-const keys = ['toc', 'reward_settings', 'wechat_subscriber', 'quicklink'];
+const keys = ['toc', 'reward_settings', 'quicklink'];
 
 hexo.extend.filter.register('template_locals', locals => {
   const { page, theme } = locals;
