@@ -959,7 +959,7 @@ vendors:
 
   # Lazyload
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-  # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js
+  # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
   lazyload:
 
   # Pangu
