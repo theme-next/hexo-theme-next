@@ -2,20 +2,15 @@
 
 NexT provides two render engines for displaying Math Equations.
 
-If you choose to use this feature, you don't need to manually import any JS or CSS. You just need to turn on `enable` of `math` and choose a render engine for it (located in `next/_config.yml`):
+If you choose to use this feature, you don't need to manually import any JS or CSS. You just need to choose a render engine and turn on `enable` for it (located in `next/_config.yml`).
 
-```yml
-math:
-  enable: true
-```
-
-Notice: only turning on `enable` of `math` **cannot let you see the displayed equations correctly**, you need to install the **corresponding Hexo Renderer** to fully support the display of Math Equations. The corresponding Hexo Renderer per engine will be provided below.
+Notice: only turning on `enable` **cannot let you see the displayed equations correctly**, you need to install the **corresponding Hexo Renderer** to fully support the display of Math Equations. The corresponding Hexo Renderer per engine will be provided below.
 
 <h2 align="center">Provided Render Engine</h2>
 
-For now, NexT provides two Render Engines: [MathJax](https://www.mathjax.org/) and [Katex](https://khan.github.io/KaTeX/) (default is MathJax).
+For now, NexT provides two Render Engines: [MathJax](https://www.mathjax.org/) and [Katex](https://khan.github.io/KaTeX/).
 
-### MathJax (default)
+### MathJax
 
 If you use MathJax to render Math Equations, you need to use **only one of them**: [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) or [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed).
 
@@ -26,11 +21,10 @@ npm uninstall hexo-renderer-marked
 npm install hexo-renderer-pandoc # or hexo-renderer-kramed
 ```
 
-Secondly, in `next/_config.yml`, turn on `enable` of `math` and choose `mathjax` as engine.
+Secondly, in `next/_config.yml`, turn on `enable` of `mathjax`.
 
 ```yml
 math:
-  enable: true
   ...
   mathjax:
     enable: true
@@ -119,11 +113,10 @@ npm install hexo-renderer-markdown-it-plus
 # or hexo-renderer-markdown-it
 ```
 
-Secondly, in `next/_config.yml`, turn on `enable` option of `math` and choose `katex` as render engine.
+Secondly, in `next/_config.yml`, turn on `enable` option of `katex`.
 
 ```yml
 math:
-  enable: true
   ...
   katex:
     enable: true
@@ -193,8 +186,6 @@ If your content of config is put just directly after the config name, then a spa
 ```yml
 # Math Formulas Render Support
 math:
-  enable: true
-
   # Default (true) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
   # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
@@ -212,12 +203,6 @@ math:
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex: false
 ```
-
-### `enable`
-
-`true` or `false`, default is `false`.
-
-`true` to turn on render of Math Equations, `false` to turn off it.
 
 ### `per_page`
 

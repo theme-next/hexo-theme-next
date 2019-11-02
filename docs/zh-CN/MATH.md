@@ -1,20 +1,15 @@
 <h1 align="center">数学公式</h1>
 
 NexT 内部提供数学公式渲染的引擎，这样你就不需要自己手动在模板中引入 JS 或者 CSS；
-只需要将 `next/_config.yml` 中 `math` 的 `enable` 选项改为 `true`，并选择对应的渲染引擎即可：
+只需要选择对应的渲染引擎，并在 `next/_config.yml` 中将其 `enable` 选项改为 `true` 即可。
 
-```yml
-math:
-  enable: true
-```
-
-需要注意的是，仅仅将 `math` 的 `enable` 打开**并不能让你看到数学公式**，你还需要**使用对应的 Hexo 渲染器(Renderer)** 才能真正在博客页面中显示出数学公式。引擎对应使用的 Hexo 渲染器会在引擎相关的部分介绍。
+需要注意的是，仅仅将 `enable` 打开**并不能让你看到数学公式**，你还需要**使用对应的 Hexo 渲染器(Renderer)** 才能真正在博客页面中显示出数学公式。引擎对应使用的 Hexo 渲染器会在引擎相关的部分介绍。
 
 <h2 align="center">提供的渲染引擎</h2>
 
-目前，NexT 提供两种数学公式渲染引擎，分别为 [MathJax](https://www.mathjax.org/) 和 [Katex](https://khan.github.io/KaTeX/)，默认为 MathJax。
+目前，NexT 提供两种数学公式渲染引擎，分别为 [MathJax](https://www.mathjax.org/) 和 [Katex](https://khan.github.io/KaTeX/)。
 
-### MathJax(默认)
+### MathJax
 
 如果你选择使用 MathJax 进行数学公式渲染，你需要使用 [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) 或者 [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed) 这两个渲染器的其中一个。
 
@@ -25,11 +20,10 @@ npm uninstall hexo-renderer-marked
 npm install hexo-renderer-pandoc # 或者 hexo-renderer-kramed
 ```
 
-然后在 `next/_config.yml` 中将 `math` 的 `enable` 打开，并选择 `mathjax` 作为渲染引擎。
+然后在 `next/_config.yml` 中将 `mathjax` 的 `enable` 打开。
 
 ```yml
 math:
-  enable: true
   ...
   mathjax:
     enable: true
@@ -119,12 +113,10 @@ npm install hexo-renderer-markdown-it-plus
 # 或者 hexo-renderer-markdown-it
 ```
 
-
-然后在 `next/_config.yml` 中将 `math` 的 `enable` 打开，并选择 `katex` 作为渲染引擎。
+然后在 `next/_config.yml` 中将 `katex` 的 `enable` 打开。
 
 ```yml
 math:
-  enable: true
   ...
   katex:
     enable: true
@@ -213,12 +205,6 @@ math:
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex: false
 ```
-
-### `enable`
-
-`true` 或者 `false`，默认为 `false`。
-
-`true` 是打开数学公式渲染，`false` 则是关闭。
 
 ### `per_page`
 
