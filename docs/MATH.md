@@ -171,9 +171,9 @@ markdown:
    Then in corresponding TOC item it will show the related LaTex code 3 times ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694)).
 6. If you use math in your post's title, it will not be rendered ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879)).
 
-We currently use Katex 0.7.1, some of those bugs might be caused by the outdated version of Katex we use.
+We currently use Katex 0.11.1, some of those bugs might be caused by the outdated version of Katex we use.
 
-But, as what is described in the beginning, the render of Math Equations relies on Hexo Renderer. Currently, Katex-related renderers only support Katex version until 0.7.1.
+But, as what is described in the beginning, the render of Math Equations relies on Hexo Renderer. Currently, Katex-related renderers only support Katex version until 0.11.1.
 
 We will continuously monitor the updates of corresponding renderers, if there is a renderer which supports newer version of Katex, we will update the Katex we use.
 
