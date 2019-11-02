@@ -172,7 +172,6 @@ Issue 的标签：
     - `Can't Reproduce`: 无法复现的 Issue
     - `Solved`: 已经解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
-    - `Locked`: 关闭后长期没有新动态的 Issue
 
 Pull Request 的标签：
 

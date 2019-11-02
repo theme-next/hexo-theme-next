@@ -8,11 +8,10 @@ daysUntilLock: 365
 skipCreatedBefore: false
 
 # Issues and pull requests with these labels will be ignored. Set to `[]` to disable
-exemptLabels:
-  - backlog
+exemptLabels: []
 
 # Label to add before locking, such as `outdated`. Set to `false` to disable
-lockLabel: 🔒 Locked
+lockLabel: false
 
 # Comment to post before locking. Set to `false` to disable
 lockComment: >

@@ -186,8 +186,6 @@ markdown:
 ```yml
 # Math Formulas Render Support
 math:
-  enable: true
-
   # Default (true) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
   # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.

@@ -176,7 +176,6 @@ Issues related:
     - `Can't Reproduce`: An issue that cannot be reproduced
     - `Solved`: An issue that has been solved
     - `Stale`: This issue has been automatically marked as stale because lack of recent activity
-    - `Locked`: This issue has been automatically locked since there has not been any recent activity after it was closed
 
 Pull requests related:
 
