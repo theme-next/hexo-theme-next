@@ -58,9 +58,9 @@
 </div>
 {%- endif %}
 
-{%- if theme.rss %}
+{%- if rss %}
   <div class="feed-link motion-element">
-    <a href="{{ url_for(theme.rss) }}" rel="alternate">
+    <a href="{{ url_for(rss) }}" rel="alternate">
       <i class="fa fa-rss"></i>RSS
     </a>
   </div>
