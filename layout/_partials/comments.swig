@@ -18,7 +18,7 @@
         (function() {
           let commentButton = document.querySelectorAll('.comment-button');
             commentButton.forEach(element => {
-            let commentClass = item.classList[2];
+            let commentClass = element.classList[2];
             element.addEventListener('click', () => {
               commentButton.forEach(rmActive => rmActive.classList.remove('active'));
               element.classList.add('active');
