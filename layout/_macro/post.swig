@@ -257,24 +257,23 @@
 
         {%- if post.prev or post.next %}
           <div class="post-nav">
+          <!--It must still be set to "post-nav-next", 
+              otherwise the order of the arrow and link text will be reversed.
+          -->
             <div class="post-nav-next post-nav-item">
-              {%- if post.next %}
-                <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-                  <i class="fa fa-chevron-left"></i> {{ post.next.title }}
-                </a>
-              {%- endif %}
+              {% if post.prev %}
+ 					      <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}"><i class="fa fa-chevron-left"></i> {{ post.prev.title }}</a>
+              {% endif %}
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              {%- if post.prev %}
-                <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-                  {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
-                </a>
-              {%- endif %}
+              {% if post.next %}
+                <a href="{{ url_for(post.next.path) }}" rel="prev" title="{{ post.next.title }}">{{ post.next.title }} <i class="fa fa-chevron-right"></i></a>
+              {% endif %}
             </div>
-          </div>
+		      </div>
         {%- endif %}
       </footer>
     {% else %}
