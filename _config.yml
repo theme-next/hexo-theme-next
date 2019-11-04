@@ -113,6 +113,15 @@ scheme: Muse
 #scheme: Pisces
 #scheme: Gemini
 
+# ---------------------------------------------------------------
+# Auto Dark Mode Settings
+# ---------------------------------------------------------------
+
+# If turned on, the background color and text color will change automatically according to user's system setting
+# It's recommend to change codeblock section to dark theme as well
+# Suppurted browsers: https://caniuse.com/#search=prefers-color-scheme
+auto_dark_mode:
+  enable: true
 
 # ---------------------------------------------------------------
 # Menu Settings

@@ -39,6 +39,12 @@ $use-seo = hexo-config('seo');
   border-radius: $border-radius-inner;
   box-shadow: $box-shadow-inner;
   padding: $content-desktop-padding;
+
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-darkgrey;
+    }
+  }
 }
 
 // When blocks are siblings (homepage).
@@ -57,6 +63,13 @@ $use-seo = hexo-config('seo');
   margin: auto;
   margin-top: $sidebar-offset;
   padding: $content-desktop-padding;
+
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-dark;
+      color: $text-color-dark;
+    }
+  }
 }
 
 .tabs-comment {

@@ -28,6 +28,12 @@
     background: white;
     border-bottom-color: $sidebar-highlight;
     color: $sidebar-highlight;
+ 
+    if (hexo-config('auto_dark_mode.enable')) {
+      +auto-dark-mode() {
+        background: $grey;
+      }
+    }
 
     &:hover {
       background: white;

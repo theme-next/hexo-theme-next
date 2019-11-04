@@ -24,6 +24,13 @@
     opacity: 0;
   }
 
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-darkgrey;
+      color: $text-color-dark;
+    }
+  }
+
   &.affix {
     position: fixed;
     top: $sidebar-offset;

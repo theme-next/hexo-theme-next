@@ -7,6 +7,12 @@
     padding: 0;
     width: 100%;
   }
+
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-darkgrey;
+    }
+  }
 }
 
 .site-nav-toggle {

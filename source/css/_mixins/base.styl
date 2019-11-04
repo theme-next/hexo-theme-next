@@ -91,3 +91,9 @@ disable-user-select() {
   -webkit-user-select: none;
   user-select: none;
 }
+
+auto-dark-mode() {
+  @media (prefers-color-scheme: dark) {
+    {block}
+  }
+}

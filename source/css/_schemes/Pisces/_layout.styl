@@ -35,6 +35,13 @@
     position: relative;
     width: auto;
   }
+
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-darkgrey;
+      color: $text-color-dark;
+    }
+  }
 }
 
 .main {
@@ -55,6 +62,12 @@
   float: right;
   padding: $content-desktop-padding;
   width: $content-wrap;
+
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-darkgrey;
+    }
+  }
 
   +tablet-mobile() {
     border-radius: initial;

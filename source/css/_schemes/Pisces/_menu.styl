@@ -23,6 +23,12 @@
 .menu-item-active a {
   background: $whitesmoke;
 
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $grey;
+    }
+  }
+
   if (!hexo-config('menu_settings.badges')) {
     &::after {
       background: $grey;

@@ -19,6 +19,13 @@ body {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-dark;
+      color: $text-color-dark;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

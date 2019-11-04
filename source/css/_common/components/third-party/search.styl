@@ -34,6 +34,13 @@
     width: 100%;
   }
 
+  if (hexo-config('auto_dark_mode.enable')) {
+    +auto-dark-mode() {
+      background: $body-bg-color-darkgrey;
+      color: $text-color-dark;
+    }
+  }
+
   .search-icon, .popup-btn-close {
     color: $grey-dark;
     display: inline-block;
