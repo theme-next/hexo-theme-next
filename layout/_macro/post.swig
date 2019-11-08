@@ -36,7 +36,7 @@
             {{ next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
             {{- post.title }}
-            {{- post_edit(page.source) }}
+            {{- post_edit(post.source) }}
           {%- endif %}
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
@@ -226,13 +226,8 @@
     {%- if not is_index %}
       {{- next_inject('postBodyEnd') }}
 
-      {%- if post.reward === undefined and theme.reward_settings.enable %}
-        {%- set reward_able = true %}
-      {% else %}
-        {%- set reward_able = post.reward %}
-      {%- endif %}
-      {%- if reward_able %}
-        {{ partial('_partials/post/post-reward.swig', {}, {cache: theme.cache.enable}) }}
+      {%- if post.reward_settings.enable %}
+        {{ partial('_partials/post/post-reward.swig') }}
       {%- endif %}
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
