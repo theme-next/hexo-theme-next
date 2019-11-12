@@ -102,9 +102,8 @@ NexT.boot.motion = function() {
       .add(NexT.motion.middleWares.postList)
       .add(NexT.motion.middleWares.sidebar)
       .bootstrap();
-  } else {
-    NexT.utils.updateSidebarPosition();
   }
+  NexT.utils.updateSidebarPosition();
 };
 
 window.addEventListener('DOMContentLoaded', () => {
