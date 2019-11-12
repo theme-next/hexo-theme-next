@@ -97,7 +97,7 @@
       {%- else %}
         {%- set sidebarText = name %}
       {%- endif %}
-        {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
+        {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' → ' + sidebarURL}) }}
       </span>
     {%- endfor %}
   </div>
