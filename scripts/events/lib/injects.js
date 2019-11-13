@@ -6,48 +6,52 @@ const points = require('./injects-point');
 
 // Defining stylus types
 class StylusInject {
-  constructor() {
+  constructor(base_dir) {
+    this.base_dir = base_dir;
     this.files = [];
   }
   push(file) {
-    this.files.push(file);
+    // Get absolute path base on hexo dir
+    this.files.push(path.resolve(this.base_dir, file));
   }
 }
 
 // Defining view types
 class ViewInject {
-  constructor() {
+  constructor(base_dir) {
+    this.base_dir = base_dir;
     this.raws = [];
   }
   raw(name, raw, ...args) {
     this.raws.push({name, raw, args});
   }
   file(name, file, ...args) {
-    this.raw(name, fs.readFileSync(file, 'utf8'), ...args);
+    // Get absolute path base on hexo dir
+    this.raw(name, fs.readFileSync(path.resolve(this.base_dir, file), 'utf8'), ...args);
   }
 }
 
 // Init injects
-function initInject() {
+function initInject(base_dir) {
   let injects = {};
   points.styles.forEach(item => {
-    injects[item] = new StylusInject();
+    injects[item] = new StylusInject(base_dir);
   });
   points.views.forEach(item => {
-    injects[item] = new ViewInject();
+    injects[item] = new ViewInject(base_dir);
   });
   return injects;
 }
 
 module.exports = hexo => {
   // Exec theme_inject filter
-  let injects = initInject();
+  let injects = initInject(hexo.base_dir);
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
 
-  // Inject stylus, and get absolute path base on hexo dir.
+  // Inject stylus
   points.styles.forEach(type => {
-    hexo.theme.config.injects[type] = injects[type].files.map(item => path.resolve(hexo.base_dir, item));
+    hexo.theme.config.injects[type] = injects[type].files;
   });
 
   // Inject views
@@ -55,7 +59,7 @@ module.exports = hexo => {
     let configs = Object.create(null);
     hexo.theme.config.injects[type] = [];
     injects[type].raws.forEach((injectObj, index) => {
-      // If there is no suffix, will add `.swig`.
+      // If there is no suffix, `.swig` will be added
       if (injectObj.name.indexOf('.') < 0) {
         injectObj.name += '.swig';
       }
