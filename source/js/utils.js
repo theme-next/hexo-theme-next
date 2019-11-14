@@ -60,15 +60,12 @@ NexT.utils = {
    */
   registerCopyCode: function() {
     document.querySelectorAll('figure.highlight').forEach(element => {
-      const initButton = button => {
-        button.querySelector('i').className = 'fa fa-clipboard';
-      };
       const box = document.createElement('div');
       box.classList.add('highlight-wrap');
       element.wrap(box);
       element.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
       var button = element.parentNode.querySelector('.copy-btn');
-      button.innerHTML = '<i class="fa"></i>';
+      button.innerHTML = '<i class="fa fa-clipboard"></i>';
       button.addEventListener('click', event => {
         var target = event.currentTarget;
         var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => {
@@ -101,10 +98,9 @@ NexT.utils = {
       });
       button.addEventListener('mouseleave', event => {
         setTimeout(() => {
-          initButton(event.target);
+          event.target.querySelector('i').className = 'fa fa-clipboard';
         }, 300);
       });
-      initButton(button);
     });
   },
 
