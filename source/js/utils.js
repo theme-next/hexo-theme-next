@@ -61,19 +61,17 @@ NexT.utils = {
   registerCopyCode: function() {
     document.querySelectorAll('figure.highlight').forEach(element => {
       const box = document.createElement('div');
-      box.classList.add('highlight-wrap');
       element.wrap(box);
-      element.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
+      box.classList.add('highlight-wrap');
+      box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard"></i></div>');
       var button = element.parentNode.querySelector('.copy-btn');
-      button.innerHTML = '<i class="fa fa-clipboard"></i>';
       button.addEventListener('click', event => {
         var target = event.currentTarget;
         var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => {
           return line.innerText;
         }).join('\n');
         var ta = document.createElement('textarea');
-        var yPosition = window.scrollY;
-        ta.style.top = yPosition + 'px'; // Prevent page scrolling
+        ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
         ta.style.position = 'absolute';
         ta.style.opacity = '0';
         ta.readOnly = true;
