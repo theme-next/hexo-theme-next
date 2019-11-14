@@ -61,17 +61,14 @@ NexT.utils = {
   registerCopyCode: function() {
     document.querySelectorAll('figure.highlight').forEach(element => {
       const initButton = button => {
-        if (CONFIG.copycode.style === 'mac') {
-          button.innerHTML = '<i class="fa fa-clipboard"></i>';
-        } else {
-          button.innerText = CONFIG.translation.copy_button;
-        }
+        button.querySelector('i').className = 'fa fa-clipboard';
       };
       const box = document.createElement('div');
       box.classList.add('highlight-wrap');
       element.wrap(box);
       element.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
       var button = element.parentNode.querySelector('.copy-btn');
+      button.innerHTML = '<i class="fa"></i>';
       button.addEventListener('click', event => {
         var target = event.currentTarget;
         var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => {
@@ -92,7 +89,7 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          target.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
+          target.querySelector('i').className = result ? 'fa fa-check' : 'fa fa-times';
         }
         ta.blur(); // For iOS
         target.blur();
