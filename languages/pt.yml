@@ -28,12 +28,8 @@ post:
   read_more: Ler mais
   untitled: Sem título
   sticky: Sticky
-  toc_empty: Esta publicação não possui uma tabela de conteúdo
   views: Views
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
