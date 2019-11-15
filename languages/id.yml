@@ -28,12 +28,8 @@ post:
   read_more: Baca lebih
   untitled: Tidak ada title
   sticky: Sticky
-  toc_empty: Posting ini tidak memiliki Daftar Isi
   views: Views
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
