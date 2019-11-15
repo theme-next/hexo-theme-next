@@ -30,9 +30,6 @@ post:
   sticky: 置頂
   views: 閱讀次數
   related_posts: 相關文章
-  copy_button: 複製
-  copy_success: 複製成功
-  copy_failure: 複製失敗
   copyright:
     author: 作者
     link: 文章連結

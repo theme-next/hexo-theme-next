@@ -30,9 +30,6 @@ post:
   sticky: Épingler
   views: Vues
   related_posts: Articles similares
-  copy_button: Copie
-  copy_success: Copie réussie
-  copy_failure: Copie ratée
   copyright:
     author: Auteur de l'article
     link: Lien de l'article

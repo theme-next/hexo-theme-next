@@ -30,9 +30,6 @@ post:
   sticky: Sticky
   views: Views
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post auteur
     link: Post link
