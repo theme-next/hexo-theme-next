@@ -28,12 +28,8 @@ post:
   read_more: Daha fazla oku
   untitled: Başlıksız
   sticky: Sabit
-  toc_empty: Bu gönderinin içindekiler kısmı yok
   views: Görünümler
   related_posts: İlgili Gönderiler
-  copy_button: Kopyala
-  copy_success: Kopyalandı
-  copy_failure: Kopyalanamadı
   copyright:
     author: Gönderiyi yazan
     link: Gönderi bağlantısı
