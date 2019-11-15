@@ -28,12 +28,8 @@ post:
   read_more: 더 읽어보기
   untitled: 제목 없음
   sticky: 고정
-  toc_empty: 목차 없음
   views: Views
   related_posts: Related Posts
-  copy_button: 복사
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
