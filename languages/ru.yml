@@ -30,9 +30,6 @@ post:
   sticky: Ссылка
   views: Просмотров
   related_posts: Похожие записи
-  copy_button: Скопировать
-  copy_success: Скопировано!
-  copy_failure: Ошибка копирования!
   copyright:
     author: Автор записи
     link: Ссылка на запись

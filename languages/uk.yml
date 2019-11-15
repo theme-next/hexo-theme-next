@@ -30,9 +30,6 @@ post:
   sticky: Посилання
   views: Переглядів
   related_posts: Схожі записи
-  copy_button: Скопіювати
-  copy_success: Скопійовано!
-  copy_failure: Помилка копіювання!
   copyright:
     author: Автор запису
     link: Посилання на запис

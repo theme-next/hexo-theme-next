@@ -30,9 +30,6 @@ post:
   sticky: Sabit
   views: Görünümler
   related_posts: İlgili Gönderiler
-  copy_button: Kopyala
-  copy_success: Kopyalandı
-  copy_failure: Kopyalanamadı
   copyright:
     author: Gönderiyi yazan
     link: Gönderi bağlantısı

@@ -30,9 +30,6 @@ post:
   sticky: Angepinnt
   views: Aufrufe
   related_posts: Ähnliche Beiträge
-  copy_button: Kopieren
-  copy_success: Kopiert
-  copy_failure: Kopieren fehlgeschlagen
   copyright:
     author: Beitragsautor
     link: Beitragslink

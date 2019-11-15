@@ -30,9 +30,6 @@ post:
   sticky: 置顶
   views: 阅读次数
   related_posts: 相关文章
-  copy_button: 复制
-  copy_success: 复制成功
-  copy_failure: 复制失败
   copyright:
     author: 本文作者
     link: 本文链接
