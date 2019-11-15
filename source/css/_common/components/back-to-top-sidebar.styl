@@ -1,24 +1,23 @@
 .back-to-top {
   background: $b2t-sidebar-bg-color;
-  cursor: pointer;
   font-size: $b2t-font-size;
   margin: 20px - $sidebar-offset -10px -20px;
-  opacity: $b2t-opacity;
+  opacity: 0;
   text-align: center;
-  visibility: hidden;
+  the-transition();
 
-  &:hover {
-    opacity: $b2t-opacity-hover;
-  }
-
-  +tablet-mobile() {
-    if (!hexo-config('sidebar.onmobile')) {
+  if (!hexo-config('back2top.scrollpercent')) {
+    span {
       display: none;
     }
   }
 
   &.back-to-top-on {
-    visibility: visible;
-    the-transition();
+    cursor: pointer;
+    opacity: $b2t-opacity;
+
+    &:hover {
+      opacity: $b2t-opacity-hover;
+    }
   }
 }

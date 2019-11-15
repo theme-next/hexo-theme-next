@@ -1,16 +1,29 @@
-.header-inner, .container .main-inner, .footer-inner {
+.header-inner, .main-inner, .footer-inner {
   +mobile() {
     width: auto;
   }
 }
 
 .header-inner {
+  padding-top: 100px;
+
   +mobile() {
-    padding: 50px 0 35px;
+    padding-top: 50px;
   }
 }
 
-// embed tag
+.main-inner {
+  padding-bottom: 60px;
+}
+
+.content {
+  padding-top: 70px;
+
+  +mobile() {
+    padding-top: 35px;
+  }
+}
+
 embed {
   display: block;
   margin: 0 auto 25px auto;

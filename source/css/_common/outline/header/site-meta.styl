@@ -1,0 +1,49 @@
+.site-meta {
+  margin: 0;
+  text-align: $site-meta-text-align;
+
+  +mobile() {
+    text-align: center;
+  }
+}
+
+.brand {
+  background: $brand-bg;
+  border-bottom: none;
+  color: $brand-color;
+  display: inline-block;
+  line-height: $font-size-title;
+  padding: 0 40px;
+  position: relative;
+
+  &:hover {
+    color: $brand-hover-color;
+  }
+}
+
+.site-title {
+  display: inline-block;
+  font-family: $font-family-logo;
+  font-size: $font-size-title;
+  font-weight: normal;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.site-subtitle {
+  color: $subtitle-color;
+  font-size: $font-size-subtitle;
+  margin-top: 10px;
+}
+
+.use-motion {
+  .brand {
+    opacity: 0;
+  }
+
+  .site-title, .site-subtitle, .custom-logo-image {
+    opacity: 0;
+    position: relative;
+    top: -10px;
+  }
+}

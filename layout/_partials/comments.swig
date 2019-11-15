@@ -17,11 +17,11 @@
       <script{{ pjax }}>
         (function() {
           let commentButton = document.querySelectorAll('.comment-button');
-            commentButton.forEach(item => {
-            let commentClass = item.classList[2];
-            item.addEventListener('click', () => {
+            commentButton.forEach(element => {
+            let commentClass = element.classList[2];
+            element.addEventListener('click', () => {
               commentButton.forEach(rmActive => rmActive.classList.remove('active'));
-              item.classList.add('active');
+              element.classList.add('active');
               document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
               document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
               {%- if theme.comments.storage %}
@@ -57,7 +57,7 @@
         </div>
       </div>
       <script>
-        window.addEventListener('tabs:register', function() {
+        window.addEventListener('tabs:register', () => {
           let activeClass = '{{ theme.comments.activeClass }}';
           {%- if theme.comments.storage %}
             activeClass = localStorage.getItem('comments_active') || activeClass;
@@ -70,8 +70,8 @@
           }
         });
         {%- if theme.comments.storage %}
-        window.addEventListener('tabs:click', function(e) {
-          let commentClass = e.target.classList[1];
+        window.addEventListener('tabs:click', event => {
+          let commentClass = event.target.classList[1];
           localStorage.setItem('comments_active', commentClass);
         });
         {%- endif %}

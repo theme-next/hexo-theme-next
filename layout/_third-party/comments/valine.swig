@@ -1,14 +1,11 @@
-{%- set valine_uri = '//unpkg.com/valine/dist/Valine.min.js' %}
-{%- if theme.vendors.valine %}
-  {%- set valine_uri = theme.vendors.valine %}
-{%- endif %}
+{%- set valine_uri = theme.vendors.valine or '//unpkg.com/valine/dist/Valine.min.js' %}
 
 <script>
-NexT.utils.getScript('{{ valine_uri }}', function() {
+NexT.utils.getScript('{{ valine_uri }}', () => {
   var GUEST = ['nick', 'mail', 'link'];
   var guest = '{{ theme.valine.guest_info }}';
-  guest = guest.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
   });
   new Valine({
     el: '#comments',
@@ -16,13 +13,15 @@ NexT.utils.getScript('{{ valine_uri }}', function() {
     notify: {{ theme.valine.notify }},
     appId: '{{ theme.valine.appid }}',
     appKey: '{{ theme.valine.appkey }}',
-    placeholder: '{{ theme.valine.placeholder }}',
+    placeholder: {{ theme.valine.placeholder | json }},
     avatar: '{{ theme.valine.avatar }}',
     meta: guest,
     pageSize: '{{ theme.valine.pageSize }}' || 10,
     visitor: {{ theme.valine.visitor }},
     lang: '{{ theme.valine.language }}' || 'zh-cn',
-    path: location.pathname
+    path: location.pathname,
+    recordIP: {{ theme.valine.recordIP }},
+    serverURLs: '{{ theme.valine.serverURLs }}'
   });
 }, window.Valine);
 </script>

@@ -1,0 +1,35 @@
+if (hexo-config('sidebar.position') == 'right') {
+  .sidebar {
+    right: 0 - $sidebar-desktop;
+
+    &.sidebar-active {
+      right: 0;
+    }
+  }
+
+  .sidebar-toggle, .back-to-top {
+    left: auto;
+    right: $b2t-position-right;
+
+    +tablet-mobile() {
+      right: $b2t-position-right-mobile;
+    }
+  }
+
+  .book-mark-link {
+    left: $b2t-position-right;
+  }
+} else {
+  .sidebar {
+    left: 0 - $sidebar-desktop;
+
+    &.sidebar-active {
+      left: 0;
+    }
+  }
+}
+
+.sidebar {
+  transition: all .4s;
+  width: $sidebar-desktop;
+}

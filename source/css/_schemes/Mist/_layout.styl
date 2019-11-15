@@ -1,0 +1,65 @@
+// Tags
+// --------------------------------------------------
+a {
+  border-bottom-color: $grey-light;
+}
+
+hr {
+  height: 2px;
+  margin: 20px 0;
+}
+
+// Components
+// --------------------------------------------------
+.btn {
+  border-radius: 0;
+  border-width: 2px;
+  padding: 0 10px;
+}
+
+.headband {
+  display: none;
+}
+
+// Page - Container
+// --------------------------------------------------
+.main-inner {
+  padding-bottom: 80px;
+
+  +mobile() {
+    width: auto;
+  }
+}
+
+.content {
+  padding-top: 80px;
+}
+
+// Pagination
+// --------------------------------------------------
+.pagination {
+  margin: 120px 0 0;
+  text-align: left;
+
+  +mobile() {
+    margin: 80px 10px 0;
+    text-align: center;
+  }
+}
+
+// Footer
+// --------------------------------------------------
+.footer {
+  background: $whitesmoke;
+  color: $grey-dim;
+  padding: 10px 0;
+}
+
+.footer-inner {
+  text-align: left;
+
+  +mobile() {
+    text-align: center;
+    width: auto;
+  }
+}

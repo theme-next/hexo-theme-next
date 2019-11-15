@@ -1,6 +1,9 @@
-<div align="right">Language: :us:
-<a title="Chinese" href="../docs/zh-CN/CONTRIBUTING.md">:cn:</a>
-<a title="Russian" href="../docs/ru/CONTRIBUTING.md">:ru:</a></div>
+<div align="right">
+  Language:
+  :us:
+  <a title="Chinese" href="../docs/zh-CN/CONTRIBUTING.md">:cn:</a>
+  <a title="Russian" href="../docs/ru/CONTRIBUTING.md">:ru:</a>
+</div>
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
@@ -90,16 +93,16 @@ Before creating a Pull Request (PR), please check [this list](#before-submitting
 
 1. On GitHub, navigate to the original page of the [hexo-theme-next](https://github.com/theme-next/hexo-theme-next). In the top-right corner of the page, click **Fork**.
 2. Under the repository name in your forked repository, click **Clone or download**. In the `Clone with SSH` section, copy the clone URL for the repository. Open Git Bash, and change the current working directory to the location where you want the cloned directory to be made. Type `git clone`, and then paste the URL you copied. Press **Enter**. Your local clone will be created.
-    ```bash
+    ```sh
     $ git clone git@github.com:username/hexo-theme-next.git
     ```
 3. Navigate into your new cloned repository. Switch branches to the compare branch of the pull request where the original changes were made.
-    ```bash
+    ```sh
     $ cd hexo-theme-next
     $ git checkout -b patchname
     ```
 4. After you commit your changes to the head branch of the pull request you can push your changes up to the original pull request directly.
-    ```bash
+    ```sh
     $ git add .
     $ git commit -m "add commit messamge"
     $ git push origin patchname
@@ -154,57 +157,51 @@ We use "labels" in the issue tracker to help classify Pull requests and Issues. 
 
 If you are unsure what a label is about or which labels you should apply to a PR or issue, look no further!
 
-Issues related: `types`+`contents`+`results`
+Issues related:
 
 - By types
     - `Bug`: A detected bug that needs to be confirmed
-    - `Improvement Need`: An issue that needs improvement
     - `Feature Request`: An issue that wants a new feature
-    - `Non English`: Requires the attention of a multi-lingual maintainer
-    - `Discussion`: An issue that needs to be discussed
     - `Question`: An issue about questions
     - `Meta`: Denoting a change of usage conditions
+    - `Support`: An issue labeled as support requests
     - `Polls`: An issue that initiated a poll
-    - `High Priority`: A detected bug or misprint with high priority
-    - `Low Priority`: A detected bug or misprint with low priority
-- By contents
-    - `Roadmap`: An issue about future development
-    - `Hexo`: An issue related to Hexo
-    - `3rd Party Service`: An issue related to 3rd party service
-    - `Docs`: Need to add instruction document
-    - `Configurations`: An issue related to configurations
-    - `CSS`: An issue related to CSS
+- By results
     - `Duplicate`: An issue which had been mentioned
     - `Irrelevant`: An irrelevant issue for Next
-    - `Custom`: An issue related to custom things
-    - `Support`: An issue labeled as support requests
-- By results
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue
     - `Need Verify`: Need confirmation from the developers or user about the bug or solution
-    - `Can't Reproduce`: An issue that can't be reproduced
     - `Verified`: An issue that has been verified
-    - `Help Wanted`: An issue that needs help
-    - `Probably Solved`: An issue that has been resolved maybe
+    - `Can't Reproduce`: An issue that cannot be reproduced
     - `Solved`: An issue that has been solved
     - `Stale`: This issue has been automatically marked as stale because lack of recent activity
-    - `Locked`: This issue has been automatically locked since there has not been any recent activity after it was closed
 
 Pull requests related:
 
 - `Breaking Change`: A pull request that makes breaking change
-- `External Change`: A pull request that makes update for external change
 - `Bug Fix`: A pull request that fixes the related bug
-- `Docs`: A pull request that Instruction document has been added
 - `New Feature`: A pull request that provides a new feature
 - `Feature`: A pull request that provides an option or addition to existing feature
-- `Improvement`: A pull request that improves NexT
 - `i18n`: A pull request that makes new languages translation
-- `Performance`: A pull request that improves the performance
-- `Discussion`: A pull request that needs to be discussed
 - `Work in Progress`: A pull request that is still working in progress
 - `Skip Release`: A pull request that should be excluded from release note
-- `v6.x`: A pull request that bug fixes and some improvements, related to old NexT version 6
+
+Both:
+
+- `Roadmap`: An issue / pull request about future development
+- `Help Wanted`: An issue / pull request that needs help
+- `Discussion`: An issue / pull request that needs to be discussed
+- `Improvement`: An issue that needs improvement or a pull request that improves NexT
+- `Performance`: An issue / pull request that improves the performance
+- `Hexo`: An issue / pull request related to Hexo or Hexo plugins
+- `Template Engine`: An issue / pull request related to template engine
+- `CSS`: An issue / pull request related to CSS
+- `Fonts`: An issue / pull request related to fonts
+- `PJAX`: An issue / pull request related to PJAX
+- `3rd Party Plugin`: An issue / pull request related to 3rd party plugins & service
+- `Docs`: An issue / pull request related to instruction document
+- `Configurations`: An issue / pull request related to configurations
 
 <a name="commit-messages-rules"></a>
 

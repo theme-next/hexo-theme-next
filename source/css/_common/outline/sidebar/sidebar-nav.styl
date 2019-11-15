@@ -1,0 +1,39 @@
+// Sidebar Navigation
+.sidebar-nav {
+  margin: 0;
+  padding-bottom: 20px;
+  padding-left: 0;
+
+  li {
+    border-bottom: 1px solid transparent;
+    color: $sidebar-nav-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $font-size-small;
+
+    &.sidebar-nav-overview {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      color: $sidebar-nav-hover-color;
+    }
+  }
+
+  .sidebar-nav-active {
+    border-bottom-color: $sidebar-highlight;
+    color: $sidebar-highlight;
+
+    &:hover {
+      color: $sidebar-highlight;
+    }
+  }
+}
+
+.sidebar-panel {
+  display: none;
+}
+
+.sidebar-panel-active {
+  display: block;
+}

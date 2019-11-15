@@ -3,15 +3,16 @@
 <h2 align="center">Step 1 &rarr; Go to Hexo dir</h2>
 
 Change dir to **Hexo root** directory. There must be `node_modules`, `source`, `themes` and other directories:
-   ```sh
-   $ cd hexo
-   $ ls
-   _config.yml  node_modules  package.json  public  scaffolds  source  themes
-   ```
+
+```sh
+$ cd hexo
+$ ls
+_config.yml  node_modules  package.json  public  scaffolds  source  themes
+```
 
 <h2 align="center">Step 2 &rarr; Get NexT</h2>
 
-<p align="center">Download theme from GitHub.</br>
+<p align="center">Download theme from GitHub.<br>
 There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
 
 ### Option 1: Download [latest release version][releases-latest-url]

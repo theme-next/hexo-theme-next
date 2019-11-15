@@ -5,15 +5,24 @@
   color: $b2t-color;
   cursor: pointer;
   font-size: $b2t-font-size;
+  left: $b2t-position-right;
   opacity: $b2t-opacity;
   padding: 0 6px;
   position: fixed;
-  right: $b2t-position-right;
   text-align: center;
   transition-property: bottom;
-  width: hexo-config('back2top.scrollpercent') ? initial : 24px;
-  z-index: $zindex-5;
+  z-index: $zindex-3;
   the-transition();
+
+  if (hexo-config('back2top.scrollpercent')) {
+    width: initial;
+  } else {
+    width: 24px;
+
+    span {
+      display: none;
+    }
+  }
 
   &:hover {
     color: $sidebar-highlight;
@@ -24,7 +33,7 @@
   }
 
   +tablet-mobile() {
+    left: $b2t-position-right-mobile;
     opacity: $b2t-opacity-hover;
-    right: $b2t-position-right-mobile;
   }
 }

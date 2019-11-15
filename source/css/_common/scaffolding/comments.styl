@@ -1,0 +1,42 @@
+.comments {
+  margin: 60px 20px 0;
+  overflow: hidden;
+}
+
+.comment-button-group {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  margin: 1em 0;
+
+  .comment-button {
+    margin: .1em .2em;
+
+    &.active {
+      background: $btn-default-hover-bg;
+      border-color: $btn-default-hover-border-color;
+      color: $btn-default-hover-color;
+    }
+  }
+}
+
+.comment-position {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.tabs-comment {
+  background: white;
+  margin-top: 4em;
+  padding-top: 0;
+
+  .comments {
+    border: 0;
+    box-shadow: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

@@ -1,63 +1,44 @@
-  {%- set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
-
-  {%- set post_class = 'post post-type-' + post.type | default('normal') %}
-  {%- if post_extra_class > 0 %}
-    {%- set post_class = post_class + ' ' + post_extra_class | default('') %}
-  {%- endif %}
-  {%- if post.sticky > 0 %}
-    {%- set post_class = post_class + ' post-sticky' %}
-  {%- endif %}
-
-  {%- if theme.reading_progress.enable && not is_index %}
-    <div class="reading-progress-bar"></div>
-  {%- endif %}
-
-  <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
   {##################}
   {### POST BLOCK ###}
   {##################}
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block {% if is_index %}home{% endif %}" lang="{{ post.lang or post.language or config.language }}">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="{{ url_for(theme.avatar.url or theme.images + '/avatar.gif') }}">
       <meta itemprop="name" content="{{ author }}">
       <meta itemprop="description" content="{{ description }}">
-      <meta itemprop="image" content="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}">
     </span>
 
-    {%- if not headlessPost %}
+    {%- if post.header !== false %}
       <header class="post-header">
-
-        {# Not to show title for quote posts that do not have a title #}
-        {%- if not (is_index and post.type === 'quote' and not post.title) %}
-          <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">{#
-          #}{# Link posts #}{#
-          #}{%- if post.link %}
-              {%- if post.sticky > 0 %}
-                <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
-                  <i class="fa fa-thumb-tack"></i>
-                </span>
-              {%- endif %}
-              {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
-              {%- set postText = post.title or post.link %}
-              {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
-            {% elif is_index %}
-              {%- if post.sticky > 0 %}
-                <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
-                  <i class="fa fa-thumb-tack"></i>
-                </span>
-              {%- endif %}
-              {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
-            {% else -%}
-              {{- post.title -}}
-              {% include '../_partials/post-edit.swig' %}
+        <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">
+          {# Link posts #}
+          {%- if post.link %}
+            {%- if post.sticky > 0 %}
+              <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+                <i class="fa fa-thumb-tack"></i>
+              </span>
             {%- endif %}
-          </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
-        {%- endif %}
+            {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
+            {%- set postText = post.title or post.link %}
+            {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url'}) }}
+          {% elif is_index %}
+            {%- if post.sticky > 0 %}
+              <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+                <i class="fa fa-thumb-tack"></i>
+              </span>
+            {%- endif %}
+            {{ next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
+          {%- else %}
+            {{- post.title }}
+            {{- post_edit(post.source) }}
+          {%- endif %}
+        </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
         <div class="post-meta">
 
@@ -72,30 +53,26 @@
               </span>
               <span class="post-meta-item-text">{{ __('post.posted') }}</span>
 
-              {%- if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
+              {%- if not date_diff and time_diff and theme.post_meta.updated_at.enable and theme.post_meta.updated_at.another_day %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
               {% else %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
               {%- endif %}
 
-              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
-              #}{{ date(post.date) -}}
-              </time>
+              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date) }}</time>
             </span>
           {%- endif %}
 
-          {%- if theme.post_meta.updated_at.enable && datetime_diff %}
-            {%- set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
+          {%- if theme.post_meta.updated_at.enable and datetime_diff %}
+            {%- set display_updated = not theme.post_meta.updated_at.another_day or theme.post_meta.updated_at.another_day and date_diff %}
 
-            {%- if display_updated or !theme.post_meta.created_at %}
+            {%- if display_updated or not theme.post_meta.created_at %}
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">{{ __('post.edited') }}</span>
-                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
-                #}{{ date(post.updated) -}}
-                </time>
+                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
               </span>
             {%- endif %}
           {%- endif %}
@@ -106,12 +83,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.in') }}</span>
-              {%- for cat in post.categories %}
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">{#
-                #}<a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">{#
-                  #}<span itemprop="name">{{ cat.name }}</span>{#
-                #}</a>{#
-              #}</span>
+              {%- for cat in post.categories.toArray() %}
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
+                    <span itemprop="name">{{ cat.name }}</span>
+                  </a>
+                </span>
 
                 {%- set cat_length = post.categories.length %}
                 {%- if cat_length > 1 and loop.index !== cat_length %}
@@ -143,18 +120,16 @@
           {%- endif %}
 
           {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-            <span class="post-meta-item" title="{{ __('post.views') }}">
+            <span class="post-meta-item" title="{{ __('post.views') }}" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              <span id="busuanzi_value_page_pv"></span>
             </span>
           {%- endif %}
 
-          {%- for inject_item in theme.injects.postMeta %}
-            {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-          {%- endfor %}
+          {{- next_inject('postMeta') }}
 
           {%- if config.symbols_count_time.symbols %}
           {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
@@ -182,9 +157,7 @@
           {%- endif %}
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
-            <div class="post-description">{#
-              #}{{ post.description }}{#
-            #}</div>
+            <div class="post-description">{{ post.description }}</div>
           {%- endif %}
 
         </div>
@@ -194,13 +167,13 @@
     {#################}
     {### POST BODY ###}
     {#################}
-    <div class="post-body{%- if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
+    <div class="post-body{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
 
       {# Gallery support #}
       {%- if post.photos and post.photos.length %}
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           {%- set COLUMN_NUMBER = 3 %}
-          {%- for photo in post.photos %}
+          {%- for photo in post.photos.toArray() %}
             {%- if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{%- endif %}
               <img src="{{ url_for(photo) }}" itemprop="contentUrl">
             {%- if loop.index0 % COLUMN_NUMBER === 2 %}</div>{%- endif %}
@@ -216,7 +189,7 @@
           {{ post.description }}
           <!--noindex-->
           {%- if theme.read_more_btn %}
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="{{ url_for(post.path) }}">
                 {{ __('post.read_more') }} &raquo;
               </a>
@@ -227,161 +200,84 @@
           {{ post.excerpt }}
           <!--noindex-->
           {%- if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}{%- if theme.scroll_to_more %}#more{%- endif %}" rel="contents">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
-          {%- endif %}
-          <!--/noindex-->
-        {% elif theme.auto_excerpt.enable %}
-          {%- set content = post.content | replace('<td class="gutter">.*?</td>', "", "g") | striptags %}
-            <p>
-              {{ content.substring(0, theme.auto_excerpt.length) }}
-              {%- if content.length > theme.auto_excerpt.length %}...{%- endif %}
-            </p>
-          <!--noindex-->
-          {%- if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}{%- if theme.scroll_to_more %}#more{%- endif %}" rel="contents">
+            <div class="post-button">
+              <a class="btn" href="{{ url_for(post.path) }}#more" rel="contents">
                 {{ __('post.read_more') }} &raquo;
               </a>
             </div>
           {%- endif %}
           <!--/noindex-->
         {% else %}
-          {%- if post.type === 'picture' %}
-            <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
-          {% else %}
-            {{ post.content }}
-          {%- endif %}
+          {{ post.content }}
         {%- endif %}
       {% else %}
         {{ post.content }}
       {%- endif %}
     </div>
 
-    {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {% include '../_partials/post/post-related.swig' with { post: post } %}
-    {%- endif %}
-
-    {%- if not is_index %}
-      {%- for inject_item in theme.injects.postBodyEnd %}
-        {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-      {%- endfor %}
-    {%- endif %}
-
     {#####################}
     {### END POST BODY ###}
     {#####################}
 
-    {%- if theme.wechat_subscriber.enable and not is_index %}
-      {% include '../_partials/post/wechat-subscriber.swig' %}
+    {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
+      {{ partial('_partials/post/post-related.swig') }}
     {%- endif %}
 
-    {%- if post.reward === undefined and theme.reward_settings.enable %}
-      {%- set reward_able = true %}
+    {%- if not is_index %}
+      {{- next_inject('postBodyEnd') }}
+
+      {%- if post.reward_settings.enable %}
+        {{ partial('_partials/post/post-reward.swig') }}
+      {%- endif %}
+
+      {%- if theme.creative_commons.license and theme.creative_commons.post %}
+        {{ partial('_partials/post/post-copyright.swig') }}
+      {%- endif %}
+
+      <footer class="post-footer">
+        {%- if post.tags and post.tags.length %}
+          {%- if theme.tag_icon %}
+            {%- set tag_indicate = '<i class="fa fa-tag"></i>' %}
+          {% else %}
+            {%- set tag_indicate = '#' %}
+          {%- endif %}
+          <div class="post-tags">
+            {%- for tag in post.tags.toArray() %}
+              <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
+            {%- endfor %}
+          </div>
+        {%- endif %}
+
+        {{ partial('_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
+
+        {%- if post.prev or post.next %}
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              {%- if post.next %}
+                <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
+                  <i class="fa fa-chevron-left"></i> {{ post.next.title }}
+                </a>
+              {%- endif %}
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              {%- if post.prev %}
+                <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
+                  {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
+                </a>
+              {%- endif %}
+            </div>
+          </div>
+        {%- endif %}
+      </footer>
     {% else %}
-      {%- set reward_able = post.reward %}
-    {%- endif %}
-    {%- if reward_able and not is_index %}
-      <div>
-        {% include '../_partials/post/reward.swig' %}
-      </div>
-    {%- endif %}
-
-    {%- if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
-      <div>
-        {% include '../_partials/post/post-copyright.swig' with { post: post } %}
-      </div>
-    {%- endif %}
-
-    <footer class="post-footer">
-      {%- if post.tags and post.tags.length and not is_index %}
-        {%- if theme.tag_icon %}
-          {%- set tag_indicate = '<i class="fa fa-tag"></i>' %}
-        {% else %}
-          {%- set tag_indicate = '#' %}
-        {%- endif %}
-        <div class="post-tags">
-          {%- for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
-          {%- endfor %}
-        </div>
-      {%- endif %}
-
-      {%- if not is_index %}
-      {%- if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
-        <div class="post-widgets">
-        {%- if theme.rating.enable %}
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        {%- endif %}
-
-        {%- if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-          <div class="social-like">
-            {%- if theme.vkontakte_api.enable and theme.vkontakte_api.like %}
-              <div class="vk_like">
-                <span id="vk_like"></span>
-              </div>
-            {%- endif %}
-
-            {%- if theme.facebook_sdk.enable and theme.facebook_sdk.like_button %}
-              <div class="fb_like">
-                <div class="fb-like" data-layout="button_count" data-share="true"></div>
-              </div>
-            {%- endif %}
-          </div>
-        {%- endif %}
-
-        {%- if theme.likely.enable or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
-          <div class="social-share">
-            {%- if theme.likely.enable %}
-              {% include '../_partials/share/likely.swig' %}
-            {%- endif %}
-            {%- if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
-              <div id="needsharebutton-postbottom">
-                <span class="btn">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i>
-                </span>
-              </div>
-            {%- endif %}
-          </div>
-        {%- endif %}
-        </div>
-      {%- endif %}
-      {%- endif %}
-
-      {%- if not is_index and (post.prev or post.next) %}
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            {%- if post.next %}
-              <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ post.next.title }}
-              </a>
-            {%- endif %}
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            {%- if post.prev %}
-              <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-                {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
-              </a>
-            {%- endif %}
-          </div>
-        </div>
-      {%- endif %}
-
-      {%- set isLast = loop.index % post.per_page === 0 %}
-      {%- if is_index and not isLast %}
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      {%- endif %}
-    </footer>
-  </div>
+      </footer>
+    {%- endif %}
+  </article>
   {######################}
   {### END POST BLOCK ###}
   {######################}
-  </article>

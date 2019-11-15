@@ -1,0 +1,115 @@
+/*
+// < 767px
++mobile() {
+
+}
+*/
+
++mobile-small() {
+  // For Pisces & Gemini schemes only wider width (remove main blocks in Gemini).
+  .content-wrap {
+    padding: initial !important;
+  }
+
+  // For all schemes wider width.
+  .posts-expand {
+    // For Muse & Mist & Pisces schemes only wider width.
+    margin: initial !important;
+    padding-top: $content-mobile-padding !important;
+
+    .post-header {
+      padding: 0 18px;
+    }
+
+    .post-meta {
+      margin: 3px 0 10px 0 !important;
+    }
+  }
+
+  .post-block {
+    margin-top: initial !important;
+    // Inside posts blocks content padding (default 40px).
+    padding: $content-mobile-padding 0 !important;
+  }
+
+  .post-body {
+    // For headers narrow width.
+    h1, h2, h3, h4, h5, h6 {
+      margin: 10px 18px 8px;
+    }
+
+    // Rewrite paddings & margins inside tags.
+    .note, .tabs .tab-content .tab-pane {
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0 5px;
+      }
+    }
+
+    // For paragraphs narrow width.
+    > p {
+      margin: 0 0 10px 0;
+      padding: 0 18px;
+    }
+
+    // For lists narrow width.
+    > ul {
+      margin-inline-end: 1em;
+    }
+
+    // For blockquotes.
+    > blockquote {
+      margin: 0 18px;
+    }
+
+    // For external links alignment.
+    > span.exturl {
+      margin-left: 18px;
+    }
+
+    // For Mist more button alignment.
+    > .post-button a {
+      margin-left: 18px;
+    }
+
+    // Rewrite paddings & margins inside tags.
+    .note > p, .tabs .tab-content .tab-pane > p {
+      padding: 0 5px;
+    }
+
+    img, video {
+      margin-bottom: 10px !important;
+    }
+
+    .note {
+      margin-bottom: 10px !important;
+      padding: 10px !important;
+
+      if (hexo-config('note.icons')) {
+        &:not(.no-icon) {
+          padding-left: 35px !important;
+
+          &::before {
+            left: 12px !important;
+            top: 8px !important;
+          }
+        }
+      }
+    }
+
+    .tabs .tab-content .tab-pane {
+      padding: 10px 10px 0 10px !important;
+    }
+  }
+
+  .post-nav {
+    padding-bottom: 2px;
+    // padding: 2px 8px;
+  }
+}
+
+/*
+// < 413px
++mobile-smallest() {
+
+}
+*/
