@@ -28,12 +28,8 @@ post:
   read_more: 続きを読む
   untitled: 無題
   sticky: 固定
-  toc_empty: 見出しがありません
   views: 閲覧数
   related_posts: 関連記事
-  copy_button: コピー
-  copy_success: コピーしました
-  copy_failure: コピーに失敗しました
   copyright:
     author: 著者
     link: 記事へのリンク
