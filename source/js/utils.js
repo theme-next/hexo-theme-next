@@ -62,7 +62,7 @@ NexT.utils = {
     document.querySelectorAll('figure.highlight').forEach(element => {
       const box = document.createElement('div');
       element.wrap(box);
-      box.classList.add('highlight-wrap');
+      box.classList.add('highlight-container');
       box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard"></i></div>');
       var button = element.parentNode.querySelector('.copy-btn');
       button.addEventListener('click', event => {
