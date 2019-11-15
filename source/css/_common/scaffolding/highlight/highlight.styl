@@ -50,13 +50,22 @@ pre {
   pre {
     border: 0;
     margin: 0;
-    padding: 10px 0;
+    padding: 0;
   }
 
   table {
     border: 0;
     margin: 0;
     width: auto;
+  }
+
+  tr {
+    &:first-child pre {
+      padding-top: 10px;
+    }
+    &:last-child pre {
+      padding-bottom: 10px;
+    }
   }
 
   td {
