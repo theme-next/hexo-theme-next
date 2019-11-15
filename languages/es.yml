@@ -28,12 +28,8 @@ post:
   read_more: Leer más
   untitled: Sin título
   sticky: Sticky
-  toc_empty: Esta entrada no tiene una tabla de contenidos
   views: Visitas
   related_posts: Entradas relacionadas
-  copy_button: Copiar
-  copy_success: Copiado
-  copy_failure: Copiar falló
   copyright:
     author: Autor de la entrada
     link: Enlace a la entrada
