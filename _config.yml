@@ -121,7 +121,7 @@ scheme: Muse
 # Usage: `Key: /link/ || icon`
 # Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
-# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
+# When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
   home: / || home
@@ -170,9 +170,9 @@ sidebar:
 avatar:
   # Replace the default image and set the url here.
   url: #/images/avatar.gif
-  # If true, the avatar would be dispalyed in circle.
+  # If true, the avatar will be dispalyed in circle.
   rounded: false
-  # If true, the avatar would be rotated with the cursor.
+  # If true, the avatar will be rotated with the cursor.
   rotated: false
 
 # Posts / Categories / Tags in sidebar.
@@ -208,7 +208,7 @@ links_settings:
   layout: block
 
 links:
-  #Title: http://example.com
+  #Title: http://yoursite.com
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -248,7 +248,7 @@ auto_excerpt:
   length: 150
 
 # Read more button
-# If true, the read more button would be displayed in excerpt section.
+# If true, the read more button will be displayed in excerpt section.
 read_more_btn: true
 
 # Post meta display settings
@@ -275,7 +275,7 @@ tag_icon: false
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
 reward_settings:
-  # If true, reward would be displayed in every article by default.
+  # If true, reward will be displayed in every article by default.
   enable: false
   animation: false
   #comment: Donate comment here.
@@ -462,15 +462,15 @@ font:
 # Disable Baidu transformation on mobile devices.
 disable_baidu_transformation: false
 
-# Set a canonical link tag in your hexo, you could use it for your SEO of blog.
+# Set a canonical link tag for your Hexo site.
 # See: https://support.google.com/webmasters/answer/139066
-# Remember to set up your URL in Hexo `_config.yml` (e.g. url: http://yourdomain.com)
+# Remember to set up your URL in Hexo `_config.yml` (e.g. url: http://yoursite.com)
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
 seo: false
 
-# If true, will add site-subtitle to index page.
+# If true, site-subtitle will be added to index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
 index_with_subtitle: false
 
@@ -527,7 +527,6 @@ math:
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
-# For moreinformation: https://github.com/MoOx/pjax
 pjax: false
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
