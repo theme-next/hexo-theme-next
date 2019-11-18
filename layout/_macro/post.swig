@@ -250,7 +250,7 @@
 
         {{ partial('_partials/post/post-footer.swig', {}, {cache: theme.cache.enable}) }}
 
-        {%- if post.prev or post.next %}
+        {%- if (theme.post_navigation) and (post.prev or post.next) %}
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               {%- if post.next %}

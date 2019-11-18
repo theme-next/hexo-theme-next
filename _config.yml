@@ -305,6 +305,8 @@ post_edit:
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
 
+post_navigation: true # show previous post and next post in post footer if exists
+
 
 # ---------------------------------------------------------------
 # Custom Page Settings
