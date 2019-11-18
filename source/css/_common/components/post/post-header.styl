@@ -3,10 +3,10 @@
 }
 
 .posts-expand .post-title {
-  word-wrap();
   font-weight: $font-weight-normal;
   margin: initial;
   text-align: center;
+  word-wrap();
 
   if (hexo-config('post_edit.enable')) {
     .post-edit-link {
@@ -15,8 +15,8 @@
       display: inline-block;
       float: right;
       font-size: $font-size-larger;
-      the-transition-ease-in();
       margin-left: -1.2em;
+      the-transition-ease-in();
 
       +mobile-small() {
         margin-left: initial;
