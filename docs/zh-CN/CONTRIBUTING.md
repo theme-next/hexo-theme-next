@@ -165,12 +165,12 @@ Issue 的标签：
 - 结果
     - `Duplicate`: 重复提及的 Issue
     - `Irrelevant`: 与 NexT 主题无关的 Issue
+    - `Invalid`: 无法复现的 Issue
     - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
-    - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
     - `Verified`: 已经被确认的 Issue
-    - `Can't Reproduce`: 无法复现的 Issue
     - `Solved`: 已经解决的 Issue
+    - `Backlog`: 待解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
 
 Pull Request 的标签：

@@ -169,12 +169,12 @@ Issues related:
 - By results
     - `Duplicate`: An issue which had been mentioned
     - `Irrelevant`: An irrelevant issue for Next
+    - `Invalid`: An issue that cannot be reproduced
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue
-    - `Need Verify`: Need confirmation from the developers or user about the bug or solution
     - `Verified`: An issue that has been verified
-    - `Can't Reproduce`: An issue that cannot be reproduced
     - `Solved`: An issue that has been solved
+    - `Backlog`: An issue that is to be completed and later compensated
     - `Stale`: This issue has been automatically marked as stale because lack of recent activity
 
 Pull requests related:
