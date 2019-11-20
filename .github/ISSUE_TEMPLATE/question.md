@@ -46,25 +46,19 @@ Please check if your Issue fulfills the following requirements. If you refuse to
 ```
 
 ### Package dependencies Information
-<!-- Paste output from `cat package.json` (粘贴 `cat package.json` 输出的信息) -->
-```
-
-```
-
-### Hexo Version
-<!-- Paste output from `hexo -v` (粘贴 `hexo -v` 输出的信息) -->
+<!-- Paste output from `npm ls --depth 0` (粘贴 `npm ls --depth 0` 输出的信息) -->
 ```
 
 ```
 
 ### Hexo Configuration
-<!-- Paste configuration from Hexo `_config.yml` (从 Hexo `_config.yml` 中粘贴信息) -->
+<!-- Paste configuration from Hexo `_config.yml` (粘贴 Hexo `_config.yml` 中的内容) -->
 ```yml
 
 ```
 
 ### NexT Configuration
-<!-- Paste ONLY CHANGED CONFIGURATION from NexT `_config.yml` (只粘贴NexT主题配置文件 `_config.yml` 中修改过的部分) -->
+<!-- Paste ONLY CHANGED CONFIGURATION from NexT `_config.yml` (只粘贴 NexT 主题配置文件 `_config.yml` 中修改过的部分) -->
 ```yml
 
 ```
