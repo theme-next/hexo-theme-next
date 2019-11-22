@@ -15,7 +15,7 @@ hexo.on('generateAfter', () => {
   const path = require('path');
   const { version } = require(path.normalize('../../package.json'));
   https.get('https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest', {
-    headers : {
+    headers: {
       'User-Agent': 'Theme NexT Client'
     }
   }, res => {

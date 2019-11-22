@@ -47,7 +47,7 @@ hexo.extend.helper.register('post_nav', function(post) {
     <div class="post-nav">
       <div class="post-nav-item">${left}</div>
       <div class="post-nav-item">${right}</div>
-    </div>`
+    </div>`;
 });
 
 hexo.extend.helper.register('gitalk_md5', function(path) {
