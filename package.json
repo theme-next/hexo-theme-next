@@ -16,7 +16,7 @@
     "next"
   ],
   "author": "NexT <support@theme-next.org> (https://theme-next.org)",
-  "license": "AGPL",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/theme-next/hexo-theme-next/issues"
   },
