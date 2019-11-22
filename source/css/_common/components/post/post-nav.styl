@@ -1,24 +1,16 @@
 .post-nav {
   border-top: 1px solid $gainsboro;
-  display: table;
+  display: flex;
+  justify-content: space-between;
   margin-top: 15px;
-  width: 100%;
-}
-
-.post-nav-divider {
-  display: table-cell;
-  width: 10%;
+  padding-top: 10px;
 }
 
 .post-nav-item {
-  display: table-cell;
-  padding: 10px 0 0 0;
-  vertical-align: top;
-  width: 45%;
+  flex: 1;
 
   a {
     border-bottom: none;
-    color: $link-color;
     display: block;
     font-size: $font-size-small;
     line-height: 1.6;
@@ -36,24 +28,30 @@
 
   .fa {
     font-size: $font-size-smallest;
-    margin-right: 5px;
-  }
-}
-
-.post-nav-next {
-  a {
-    padding-left: 5px;
-  }
-}
-
-.post-nav-prev {
-  text-align: right;
-
-  a {
-    padding-right: 5px;
   }
 
-  .fa {
-    margin-left: 5px;
+  &:first-child {
+    margin-right: 15px;
+
+    a {
+      padding-left: 5px;
+    }
+
+    .fa {
+      margin-right: 5px;
+    }
+  }
+
+  &:last-child {
+    margin-left: 15px;
+    text-align: right;
+
+    a {
+      padding-right: 5px;
+    }
+
+    .fa {
+      margin-left: 5px;
+    }
   }
 }
