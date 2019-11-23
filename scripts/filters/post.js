@@ -6,11 +6,10 @@ hexo.extend.filter.register('after_post_render', data => {
   const { config } = hexo;
   const theme = hexo.theme.config;
   const filters = {
-    excerpt : theme.auto_excerpt && theme.auto_excerpt.enable && data.excerpt === '',
     exturl  : theme.exturl,
     lazyload: theme.lazyload
   };
-  if (!filters.excerpt && !filters.exturl && !filters.lazyload) return;
+  if (!filters.exturl && !filters.lazyload) return;
   const cheerio = require('cheerio');
   const $ = cheerio.load(data.content, {
     decodeEntities: false
@@ -45,29 +44,6 @@ hexo.extend.filter.register('after_post_render', data => {
       });
     });
   }
-  if (filters.excerpt) {
-    const elements = $.root().children();
-    const _$ = cheerio.load('', {
-      decodeEntities: false
-    });
-    var length = 0;
-    elements.each((i, o) => {
-      if (length > theme.auto_excerpt.length) return;
-      length += $(o).text().length;
-      _$.root().append($(o).remove());
-    });
-
-    if ($.root().children().length) {
-      data.excerpt = _$.html();
-      data.more = $.html();
-      data.content = data.excerpt + '<a id="more"></a>' + data.more;
-    } else {
-      data.excerpt = '';
-      data.content = _$.html();
-      data.more = data.content;
-    }
-  } else {
-    data.content = $.html();
-  }
+  data.content = $.html();
 
 }, 20);
