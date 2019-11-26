@@ -241,12 +241,6 @@ chat:
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
 
-# Automatically excerpt (Not recommend).
-# Use <!-- more --> in the post to control excerpt accurately.
-auto_excerpt:
-  enable: false
-  length: 150
-
 # Read more button
 # If true, the read more button will be displayed in excerpt section.
 read_more_btn: true
@@ -314,9 +308,6 @@ post_navigation: left
 # Custom Page Settings
 # See: https://theme-next.org/docs/theme-settings/custom-pages
 # ---------------------------------------------------------------
-
-# Enable "cheers" for archive page.
-cheers: true
 
 # TagCloud settings for tags page.
 tagcloud:
