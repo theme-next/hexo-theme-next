@@ -28,12 +28,7 @@ hexo.extend.helper.register('next_url', function(path, text, options) {
 
   options = options || {};
 
-  var keys = Object.keys(options);
-  var key = '';
-
-  for (var i = 0, len = keys.length; i < len; i++) {
-    key = keys[i];
-
+  for (let key of Object.keys(options)) {
     /**
      * If option have `class` attribute, add it to
      * 'exturl' class if `exturl` option enabled.

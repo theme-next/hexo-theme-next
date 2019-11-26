@@ -5,7 +5,7 @@ function isObject(item) {
 }
 
 function merge(target, source) {
-  for (const key in source) {
+  for (const key of Object.keys(source)) {
     if (isObject(target[key]) && isObject(source[key])) {
       merge(target[key], source[key]);
     } else {
