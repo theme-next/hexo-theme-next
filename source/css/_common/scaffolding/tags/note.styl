@@ -1,6 +1,8 @@
 .post-body .note {
   $note-icons = hexo-config('note.icons');
   $note-style = hexo-config('note.style');
+
+  border-radius: $note-border-radius;
   margin-bottom: 20px;
   padding: 15px;
   position: relative;
@@ -19,10 +21,6 @@
     background: lighten($gainsboro, 65%);
     border: initial;
     border-left: 3px solid $gainsboro;
-  }
-
-  if (hexo-config('note.border_radius') is a 'unit') {
-    border-radius: unit(hexo-config('note.border_radius'), px);
   }
 
   h2, h3, h4, h5, h6 {

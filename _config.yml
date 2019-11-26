@@ -617,20 +617,19 @@ changyan:
   #post_meta_order: 0
 
 # Valine
-# You can get your appid and appkey from https://leancloud.cn
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
+  enable: false
   appid: # Your leancloud application appid
   appkey: # Your leancloud application appkey
-  notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
+  notify: false # Mail notifier
   verify: false # Verification code
   placeholder: Just go go # Comment box placeholder
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
   language: # Language, available values: en, zh-cn
-  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
@@ -641,8 +640,7 @@ valine:
 livere_uid: # <your_uid>
 
 # Gitalk
-# Demo: https://gitalk.github.io
-# For more information: https://github.com/gitalk/gitalk
+# For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
   enable: false
   github_id: # GitHub repo owner
@@ -695,8 +693,10 @@ growingio_analytics: # <project_id>
 # CNZZ count
 cnzz_siteid:
 
-# Show number of visitors to each article.
+# Show number of visitors of each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
+# AppID and AppKey are recommended to be the same as valine's for counter compatibility.
+# Do not enable both `valine.visitor` and `leancloud_visitors`.
 leancloud_visitors:
   enable: false
   app_id: # <app_id>
@@ -798,7 +798,6 @@ note:
   #  - disabled  disable all CSS styles import of note tag.
   style: simple
   icons: false
-  border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0
@@ -808,7 +807,6 @@ tabs:
   transition:
     tabs: false
     labels: true
-  border_radius: 0
 
 # PDF tag, requires two plugins: pdfObject and pdf.js
 # pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
