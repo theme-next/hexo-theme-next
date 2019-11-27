@@ -27,6 +27,7 @@ hexo.extend.helper.register('next_url', function(path, text, options = {}) {
   }
 
   for (let key in options) {
+
     /**
      * If option have `class` attribute, add it to
      * 'exturl' class if `exturl` option enabled.
@@ -56,5 +57,5 @@ hexo.extend.helper.register('next_url', function(path, text, options = {}) {
     }
   }
 
-  return htmlTag(tag, attrs, text, false);
+  return htmlTag(tag, attrs, decodeURI(text), false);
 });
