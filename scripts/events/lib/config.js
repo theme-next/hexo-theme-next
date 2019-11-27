@@ -45,19 +45,19 @@ module.exports = hexo => {
 
   // Custom languages support. Introduced in NexT v6.3.0.
   if (data.languages) {
-    var lang = hexo.config.language;
-    var i18n = hexo.theme.i18n;
+    var { language } = hexo.config;
+    var { i18n } = hexo.theme;
 
     var mergeLang = lang => {
       i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
     };
 
-    if (Array.isArray(lang)) {
-      for (var i = 0; i < lang.length; i++) {
-        mergeLang(lang[i]);
+    if (Array.isArray(language)) {
+      for (let lang of language) {
+        mergeLang(lang);
       }
     } else {
-      mergeLang(lang);
+      mergeLang(language);
     }
   }
 };

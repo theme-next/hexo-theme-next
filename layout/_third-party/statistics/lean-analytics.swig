@@ -64,8 +64,7 @@
             return;
           }
           for (let item of results) {
-            var url = item.url;
-            var time = item.time;
+            let { url, time } = item;
             leancloudSelector(url).innerText = time;
           }
           for (let url of entries) {
