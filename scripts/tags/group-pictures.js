@@ -73,9 +73,9 @@ var LAYOUTS = {
 
 function groupBy(group, data) {
   var r = [];
-  for (var i = 0; i < group.length; i++) {
-    r.push(data.slice(0, group[i]));
-    data = data.slice(group[i]);
+  for (let count of group) {
+    r.push(data.slice(0, count));
+    data = data.slice(count);
   }
   return r;
 }

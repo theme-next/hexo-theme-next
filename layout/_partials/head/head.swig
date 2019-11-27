@@ -22,10 +22,6 @@
   <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}">
 {%- endif %}
 
-{%- if rss %}
-  <link rel="alternate" href="{{ url_for(rss) }}" title="{{ title }}" type="application/atom+xml">
-{%- endif %}
-
 {%- if theme.disable_baidu_transformation %}
   <meta http-equiv="Cache-Control" content="no-transform">
   <meta http-equiv="Cache-Control" content="no-siteapp">

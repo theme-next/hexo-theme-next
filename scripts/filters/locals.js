@@ -15,8 +15,6 @@ hexo.extend.filter.register('template_locals', locals => {
   locals.subtitle = __('subtitle') !== 'subtitle' ? __('subtitle') : config.subtitle;
   locals.author = __('author') !== 'author' ? __('author') : config.author;
   locals.description = __('description') !== 'description' ? __('description') : config.description;
-  // RSS
-  locals.rss = (theme.rss !== false) && (theme.rss || (config.feed && config.feed.path.toString()) || 'atom.xml');
   // PJAX
   locals.pjax = theme.pjax ? ' pjax' : '';
 });

@@ -47,10 +47,6 @@ favicon:
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
-# hexo-generator-feed required for rss support. Leave rss as blank to use site's feed link.
-# Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.
-rss:
-
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
   #since: 2015
@@ -189,11 +185,11 @@ social:
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
-  #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
+  #RSS: /atom.xml || rss
 
 social_icons:
   enable: true
