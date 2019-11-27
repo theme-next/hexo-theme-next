@@ -5,7 +5,7 @@
 const { htmlTag } = require('hexo-util');
 const url = require('url');
 
-hexo.extend.helper.register('next_url', function(path, text, options) {
+hexo.extend.helper.register('next_url', function(path, text, options = {}) {
   const { config } = this;
   var data = url.parse(path);
   var siteHost = url.parse(config.url).hostname || config.url;
@@ -26,9 +26,7 @@ hexo.extend.helper.register('next_url', function(path, text, options) {
     };
   }
 
-  options = options || {};
-
-  for (let key of Object.keys(options)) {
+  for (let key in options) {
     /**
      * If option have `class` attribute, add it to
      * 'exturl' class if `exturl` option enabled.
