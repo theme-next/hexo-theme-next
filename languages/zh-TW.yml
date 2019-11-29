@@ -35,9 +35,6 @@ post:
     link: 文章連結
     license_title: 版權聲明
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
-page:
-  totally: 共有
-  tags: 標籤
 footer:
   powered: "由 %s 強力驅動"
   theme: 主題
@@ -58,7 +55,6 @@ counter:
     other: "目前共有 %d 篇文章。"
 state:
   posts: 文章
-  pages: 頁面
   tags: 標籤
   categories: 分類
 search:
