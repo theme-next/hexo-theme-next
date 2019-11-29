@@ -35,9 +35,6 @@ post:
     link: Post link
     license_title: Copyright melding
     license_content: "Alle artikelen op deze blog zijn gelicenseerd onder %s, mits niet anders aangegeven."
-page:
-  totally: Totaal
-  tags: labels
 footer:
   powered: "Mede mogelijk gemaakt door %s"
   theme: Thema
@@ -58,7 +55,6 @@ counter:
     other: "%d posts in totaal."
 state:
   posts: posts
-  pages: pagina's
   tags: labels
   categories: categorieën
 search:
