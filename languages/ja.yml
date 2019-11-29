@@ -35,9 +35,6 @@ post:
     link: 記事へのリンク
     license_title: 著作権表示
     license_content: "このブログ内のすべての記事は、特別な記載がない限り %s の下のライセンスで保護されています。"
-page:
-  totally: 全ページ
-  tags: タグ
 footer:
   powered: "Powered by %s"
   theme: テーマ
@@ -58,7 +55,6 @@ counter:
     other: "全 %d ポスト"
 state:
   posts: ポスト
-  pages: ページ
   tags: タグ
   categories: カテゴリ
 search:

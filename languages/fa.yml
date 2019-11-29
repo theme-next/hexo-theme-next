@@ -35,9 +35,6 @@ post:
     link: لینک پست
     license_title: مقررات کپی رایت
     license_content: "همه مقالات در این وبلاگ تحت %s مجاز می باشند مگر اینکه به طور اضافی بیان شوند."
-page:
-  totally: درمجموع
-  tags: برجسب ها
 footer:
   powered: "قدرت گرفته از %s"
   theme: پوسته
@@ -58,7 +55,6 @@ counter:
     other: "%d برچسب در مجموع."
 state:
   posts: پست ها
-  pages: صفحات
   tags: برجسب ها
   categories: دسته بندی ها
 search:

@@ -35,9 +35,6 @@ post:
     link: Ссылка на запись
     license_title: Информация об авторских правах
     license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
-page:
-  totally: Всего
-  tags: тэги
 footer:
   powered: "Генератор — %s"
   theme: Тема
@@ -58,7 +55,6 @@ counter:
     other: "%d записей всего."
 state:
   posts: Архив
-  pages: Страницы
   tags: Тэги
   categories: Категории
 search:

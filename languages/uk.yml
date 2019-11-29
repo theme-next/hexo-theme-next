@@ -35,9 +35,6 @@ post:
     link: Посилання на запис
     license_title: Інформація про авторські права
     license_content: "Всі записи на цьому сайті захищені ліцензією %s, якщо не вказано додатково."
-page:
-  totally: Всього
-  tags: теги
 footer:
   powered: "Генератор — %s"
   theme: Тема
@@ -58,7 +55,6 @@ counter:
     other: "%d записів всього."
 state:
   posts: Архів
-  pages: Сторінки
   tags: Теги
   categories: Категорії
 search:

@@ -35,9 +35,6 @@ post:
     link: Liên kết bài viết
     license_title: Chú ý bản quyền
     license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
-page:
-  totally: Toàn bộ
-  tags: thẻ
 footer:
   powered: "Cung cấp bởi %s"
   theme: Giao Diện
@@ -58,7 +55,6 @@ counter:
     other: "tổng số %d bài viết."
 state:
   posts: bài viết
-  pages: trang
   tags: thẻ
   categories: mục
 search:
