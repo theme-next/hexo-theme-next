@@ -35,9 +35,6 @@ post:
     link: Beitragslink
     license_title: Urheberrechtshinweis
     license_content: "Alle Artikel in diesem Blog sind unter %s lizenziert, außer es wird anders angegeben."
-page:
-  totally: Gesamt
-  tags: schlagwörter
 footer:
   powered: "Erstellt mit  %s"
   theme: Design
@@ -58,7 +55,6 @@ counter:
     other: "Insgesamt %d Artikel."
 state:
   posts: Artikel
-  pages: Seiten
   tags: schlagwörter
   categories: Kategorien
 search:
