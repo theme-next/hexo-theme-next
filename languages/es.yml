@@ -35,9 +35,6 @@ post:
     link: Enlace a la entrada
     license_title: Copyright
     license_content: "Todos los artículos de este blog están licenciados bajo %s a no ser que se especifique una licencia adicional."
-page:
-  totally: Totalidad
-  tags: etiquetas
 footer:
   powered: "Creado mediante %s"
   theme: Tema
@@ -58,7 +55,6 @@ counter:
     other: "%d entradas en total."
 state:
   posts: entradas
-  pages: páginas
   tags: tags
   categories: categorías
 search:
