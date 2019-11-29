@@ -35,9 +35,6 @@ post:
     link: Link
     license_title: Copyright
     license_content: "Tutti gli articoli in questo sito sono sotto licenza %s salvo disposizione contraria."
-page:
-  totally: Totale
-  tags: tags
 footer:
   powered: "Powered by %s"
   theme: Tema
@@ -58,7 +55,6 @@ counter:
     other: "%d posts in totale."
 state:
   posts: posts
-  pages: pagine
   tags: tags
   categories: categorie
 search:
