@@ -43,15 +43,18 @@
     FIELD_MAXRESULTS   + '=' + calendar.maxResults;
 
   fetchData();
-  var queryLoop = setInterval(fetchData, 60000);
 
   function fetchData() {
+    setTimeout(fetchData, 60000);
     var eventList = document.querySelector('.event-list');
-    if (!eventList) return;
 
     fetch(request_url).then(response => {
       return response.json();
     }).then(data => {
+      if (data.items.length === 0) {
+        eventList.innerHTML = '<hr>';
+        return;
+      }
       // Clean the event list
       eventList.innerHTML = '';
       var prevEnd = 0; // used to decide where to insert an <hr>
