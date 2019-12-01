@@ -84,7 +84,6 @@
     },
     localsearch: {{ theme.local_search | json }},
     path: '{{ config.search.path }}',
-    motion: {{ theme.motion | json }},
-    sidebarPadding: 40
+    motion: {{ theme.motion | json }}
   };
 </script>

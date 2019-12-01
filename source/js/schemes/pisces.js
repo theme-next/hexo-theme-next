@@ -43,7 +43,7 @@ var Affix = {
   },
   checkPosition: function() {
     if (window.getComputedStyle(this.element).display === 'none') return;
-    let height = this.element.offsetHeight - CONFIG.sidebarPadding;
+    let height = this.element.offsetHeight - CONFIG.sidebar.padding * 2;
     let offset = this.offset;
     let offsetTop = offset.top;
     let offsetBottom = offset.bottom;
