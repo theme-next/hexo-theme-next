@@ -17,8 +17,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
-    {%- set postURL = page.url or page.permalink %}
-    {{ next_url(postURL, postURL, {title: page.title}) }}
+    {{ next_url(page.permalink, page.permalink, {title: page.title}) }}
   </li>
   <li class="post-copyright-license">
     <strong>{{ __('post.copyright.license_title') + __('symbol.colon') }} </strong>
