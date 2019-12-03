@@ -11,7 +11,7 @@ hexo.extend.filter.register('after_post_render', data => {
   };
   if (!filters.exturl && !filters.lazyload) return;
   if (filters.lazyload) {
-    data.content = data.content.replace(/(<img[^>]*)src=/img, "$1data-src=");
+    data.content = data.content.replace(/(<img[^>]*)src=/img, '$1data-src=');
   }
   if (filters.exturl) {
     const url = require('url');
