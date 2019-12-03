@@ -11,12 +11,12 @@ hexo.extend.filter.register('after_post_render', data => {
   };
   if (!filters.exturl && !filters.lazyload) return;
   if (filters.lazyload) {
-    data.content = data.content.replace(/(<img[^>]*)src=/img, '$1data-src=');
+    data.content = data.content.replace(/(<img[^>]*) src=/img, '$1 data-src=');
   }
   if (filters.exturl) {
     const url = require('url');
     var siteHost = url.parse(config.url).hostname || config.url;
-    data.content = data.content.replace(/<a href="([^"]+)".*?>([^<]+)<\/a>/img, (match, href, html) => {
+    data.content = data.content.replace(/<a[^>]* href="([^"]+)"[^>]*>([^<]+)<\/a>/img, (match, href, html) => {
       // Exit if the href attribute doesn't exists.
       if (!href) return match;
 
@@ -29,4 +29,4 @@ hexo.extend.filter.register('after_post_render', data => {
     });
   }
 
-}, 20);
+}, 0);
