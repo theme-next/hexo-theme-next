@@ -394,7 +394,7 @@ NexT.utils = {
   },
 
   loadComments: function(cb) {
-    if (!CONFIG.comments.lazyload) {
+    if (!CONFIG.comments.lazyload || !document.getElementById('comments')) {
       window.addEventListener('load', cb, false);
       return;
     }
@@ -403,18 +403,18 @@ NexT.utils = {
       // load directly when there's no a scrollbar
       window.addEventListener('load', cb, false);
     } else {
-      var disqus_scroll = () => {
+      var scroll_cb = () => {
         // offsetTop may changes because of manually resizing browser window or lazy loading images.
         var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
         var scrollTop = window.scrollY;
 
         // pre-load comments a bit? (margin or anything else)
         if (offsetTop - scrollTop < 60) {
-          window.removeEventListener('scroll', disqus_scroll);
+          window.removeEventListener('scroll', scroll_cb);
           cb();
         }
       };
-      window.addEventListener('scroll', disqus_scroll);
+      window.addEventListener('scroll', scroll_cb);
     }
   }
 };

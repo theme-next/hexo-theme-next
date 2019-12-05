@@ -1,6 +1,6 @@
 {%- if page.comments %}
 <script>
-Next.utils.loadComments(() => {
+NexT.utils.loadComments(() => {
   window.livereOptions = {
     refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
   };
