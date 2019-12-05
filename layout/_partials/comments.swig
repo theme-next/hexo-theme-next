@@ -24,15 +24,15 @@
               element.classList.add('active');
               document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
               document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
-              {%- if theme.comments.storage %}
+              if (CONFIG.comments.storage) {
                 localStorage.setItem('comments_active', commentClass);
-              {%- endif %}
+              }
             });
           });
-          let activeClass = '{{ theme.comments.activeClass }}';
-          {%- if theme.comments.storage %}
+          let activeClass = CONFIG.comments.activeClass;
+          if (CONFIG.comments.storage) {
             activeClass = localStorage.getItem('comments_active') || activeClass;
-          {%- endif %}
+          }
           if (activeClass) {
             let activeButton = document.querySelector(`.comment-button.${activeClass}`);
             if (activeButton) {
@@ -58,10 +58,10 @@
       </div>
       <script>
         window.addEventListener('tabs:register', () => {
-          let activeClass = '{{ theme.comments.activeClass }}';
-          {%- if theme.comments.storage %}
+          let activeClass = CONFIG.comments.activeClass;
+          if (CONFIG.comments.storage) {
             activeClass = localStorage.getItem('comments_active') || activeClass;
-          {%- endif %}
+          }
           if (activeClass) {
             let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
             if (activeTab) {
@@ -69,12 +69,12 @@
             }
           }
         });
-        {%- if theme.comments.storage %}
-        window.addEventListener('tabs:click', event => {
-          let commentClass = event.target.classList[1];
-          localStorage.setItem('comments_active', commentClass);
-        });
-        {%- endif %}
+        if (CONFIG.comments.storage) {
+          window.addEventListener('tabs:click', event => {
+            let commentClass = event.target.classList[1];
+            localStorage.setItem('comments_active', commentClass);
+          });
+        }
       </script>
     {%- endif %}
   {%- endif %}

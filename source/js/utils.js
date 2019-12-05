@@ -391,5 +391,30 @@ NexT.utils = {
       script.src = url;
       document.head.appendChild(script);
     }
+  },
+
+  loadComments: function(cb) {
+    if (!CONFIG.comments.lazyload) {
+      window.addEventListener('load', cb, false);
+      return;
+    }
+    var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+    if (offsetTop <= 0) {
+      // load directly when there's no a scrollbar
+      window.addEventListener('load', cb, false);
+    } else {
+      var disqus_scroll = () => {
+        // offsetTop may changes because of manually resizing browser window or lazy loading images.
+        var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+        var scrollTop = window.scrollY;
+
+        // pre-load comments a bit? (margin or anything else)
+        if (offsetTop - scrollTop < 60) {
+          window.removeEventListener('scroll', disqus_scroll);
+          cb();
+        }
+      };
+      window.addEventListener('scroll', disqus_scroll);
+    }
   }
 };
