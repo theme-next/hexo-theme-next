@@ -398,6 +398,9 @@ NexT.utils = {
         }
       };
       window.addEventListener('scroll', scrollListener);
+      window.addEventListener('pjax:send', () => {
+        window.removeEventListener('scroll', scrollListener);
+      });
     }
   }
 };

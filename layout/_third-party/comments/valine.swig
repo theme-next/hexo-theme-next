@@ -2,6 +2,7 @@
 
 <script>
 NexT.utils.loadComments(() => {
+  console.log('Log')
   NexT.utils.getScript('{{ valine_uri }}', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = '{{ theme.valine.guest_info }}';
