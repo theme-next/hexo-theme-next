@@ -393,28 +393,27 @@ NexT.utils = {
     }
   },
 
-  loadComments: function(cb) {
+  loadComments: function(callback) {
     if (!CONFIG.comments.lazyload || !document.getElementById('comments')) {
-      window.addEventListener('load', cb, false);
-      return;
+      return callback();
     }
     var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
     if (offsetTop <= 0) {
       // load directly when there's no a scrollbar
-      window.addEventListener('load', cb, false);
+      callback();
     } else {
-      var scroll_cb = () => {
+      var scrollListener = () => {
         // offsetTop may changes because of manually resizing browser window or lazy loading images.
         var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
         var scrollTop = window.scrollY;
 
         // pre-load comments a bit? (margin or anything else)
         if (offsetTop - scrollTop < 60) {
-          window.removeEventListener('scroll', scroll_cb);
-          cb();
+          window.removeEventListener('scroll', scrollListener);
+          callback();
         }
       };
-      window.addEventListener('scroll', scroll_cb);
+      window.addEventListener('scroll', scrollListener);
     }
   }
 };
