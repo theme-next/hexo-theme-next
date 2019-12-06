@@ -317,22 +317,6 @@ NexT.utils = {
     return !this.isTablet() && !this.isMobile();
   },
 
-  isMuse: function() {
-    return CONFIG.scheme === 'Muse';
-  },
-
-  isMist: function() {
-    return CONFIG.scheme === 'Mist';
-  },
-
-  isPisces: function() {
-    return CONFIG.scheme === 'Pisces';
-  },
-
-  isGemini: function() {
-    return CONFIG.scheme === 'Gemini';
-  },
-
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
@@ -344,7 +328,7 @@ NexT.utils = {
     var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
     var sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
     // Margin of sidebar b2t: 8px -10px -20px, brings a different of 12px.
-    if (NexT.utils.isPisces() || NexT.utils.isGemini()) sidebarSchemePadding += (sidebarOffset * 2) - 12;
+    if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') sidebarSchemePadding += (sidebarOffset * 2) - 12;
     // Initialize Sidebar & TOC Height.
     var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
     document.querySelector('.site-overview-wrap').style.maxHeight = sidebarWrapperHeight;
@@ -364,7 +348,7 @@ NexT.utils = {
       document.querySelector('.sidebar-nav-overview').click();
     }
     NexT.utils.initSidebarDimension();
-    if (!this.isDesktop() || this.isPisces() || this.isGemini()) return;
+    if (!this.isDesktop() || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
@@ -390,6 +374,33 @@ NexT.utils = {
       };
       script.src = url;
       document.head.appendChild(script);
+    }
+  },
+
+  loadComments: function(callback) {
+    if (!CONFIG.comments.lazyload || !document.getElementById('comments')) {
+      return callback();
+    }
+    var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+    if (offsetTop <= 0) {
+      // load directly when there's no a scrollbar
+      callback();
+    } else {
+      var scrollListener = () => {
+        // offsetTop may changes because of manually resizing browser window or lazy loading images.
+        var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+        var scrollTop = window.scrollY;
+
+        // pre-load comments a bit? (margin or anything else)
+        if (offsetTop - scrollTop < 60) {
+          window.removeEventListener('scroll', scrollListener);
+          callback();
+        }
+      };
+      window.addEventListener('scroll', scrollListener);
+      window.addEventListener('pjax:send', () => {
+        window.removeEventListener('scroll', scrollListener);
+      });
     }
   }
 };
