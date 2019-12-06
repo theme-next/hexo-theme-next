@@ -348,7 +348,7 @@ NexT.utils = {
       document.querySelector('.sidebar-nav-overview').click();
     }
     NexT.utils.initSidebarDimension();
-    if (!this.isDesktop() || this.isPisces() || this.isGemini()) return;
+    if (!this.isDesktop() || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
