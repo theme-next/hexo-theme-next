@@ -11,7 +11,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   if (!theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) return;
 
   injects.comment.raw('changyan', `
-  <div class="comments" id="comments">
+  <div class="comments">
     <div id="SOHUCS"></div>
   </div>
   `, {}, {cache: true});

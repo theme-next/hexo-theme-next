@@ -2,7 +2,7 @@
   <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ theme.changyan.appid }}"></script>
 {% elif page.comments %}
   <script>
-  NexT.utils.loadComments(() => {
+  NexT.utils.loadComments(document.querySelector('#SOHUCS'), () => {
     var appid = '{{ theme.changyan.appid }}';
     var conf = '{{ theme.changyan.appkey }}';
     var width = window.innerWidth || document.documentElement.clientWidth;

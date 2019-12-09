@@ -376,30 +376,21 @@ NexT.utils = {
     }
   },
 
-  loadComments: function(callback) {
-    if (!CONFIG.comments.lazyload || !document.getElementById('comments')) {
-      return callback();
-    }
-    var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
-    if (offsetTop <= 0) {
-      // load directly when there's no a scrollbar
+  loadComments: function(element, callback) {
+    if (!CONFIG.comments.lazyload) {
       callback();
-    } else {
-      var scrollListener = () => {
-        // offsetTop may changes because of manually resizing browser window or lazy loading images.
-        var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
-        var scrollTop = window.scrollY;
-
-        // pre-load comments a bit? (margin or anything else)
-        if (offsetTop - scrollTop < 60) {
-          window.removeEventListener('scroll', scrollListener);
-          callback();
-        }
-      };
-      window.addEventListener('scroll', scrollListener);
-      window.addEventListener('pjax:send', () => {
-        window.removeEventListener('scroll', scrollListener);
-      });
+      return;
     }
+    let intersectionObserver = new IntersectionObserver((entries, observer) => {
+      let entry = entries[0];
+      if (entry.isIntersecting) {
+        callback();
+        observer.disconnect();
+      }
+    }, {
+      threshold: 0
+    });
+    intersectionObserver.observe(element);
+    return intersectionObserver;
   }
 };
