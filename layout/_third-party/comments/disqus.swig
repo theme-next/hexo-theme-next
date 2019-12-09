@@ -12,7 +12,7 @@
 {%- endif %}
 {%- if page.comments %}
 <script>
-  NexT.utils.loadComments(() => {
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
       DISQUS.reset({
         reload: true,

@@ -1,7 +1,7 @@
 {%- set valine_uri = theme.vendors.valine or '//unpkg.com/valine/dist/Valine.min.js' %}
 
 <script>
-NexT.utils.loadComments(() => {
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('{{ valine_uri }}', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = '{{ theme.valine.guest_info }}';
@@ -9,7 +9,7 @@ NexT.utils.loadComments(() => {
       return GUEST.includes(item);
     });
     new Valine({
-      el: '#comments',
+      el: '#valine-comments',
       verify: {{ theme.valine.verify }},
       notify: {{ theme.valine.notify }},
       appId: '{{ theme.valine.appid }}',
