@@ -387,8 +387,6 @@ NexT.utils = {
         callback();
         observer.disconnect();
       }
-    }, {
-      threshold: 0
     });
     intersectionObserver.observe(element);
     return intersectionObserver;
