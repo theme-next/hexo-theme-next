@@ -9,7 +9,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
-    {{ next_url(page.permalink, page.permalink, {title: page.title}) }}
+    {{ next_url(page.path, page.permalink, {title: page.title}) }}
   </li>
   <li class="post-copyright-license">
     <strong>{{ __('post.copyright.license_title') + __('symbol.colon') }} </strong>
