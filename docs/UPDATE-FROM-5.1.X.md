@@ -1,5 +1,7 @@
 <h1 align="center">Update from NexT v5.1.x</h1>
 
+NexT version 5 works fine at most cases, but for frequent users, you maybe need to upgrade version 5 to 6 to get features and supports in new [Theme-Next](https://github.com/theme-next/hexo-theme-next) repository.
+
 There are no hard breaking changes between 5.1.x and the latest version. It's change major version to 6 because:
 
 1. Main repo was rebased from [iissnan's](https://github.com/iissnan/hexo-theme-next) profile to [theme-next](https://github.com/theme-next) organization.

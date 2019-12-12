@@ -163,7 +163,6 @@ markdown:
    那么文章目录中的这个标题会出现 3 次未渲染的公式代码([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694))
 6. 如果你在文章 Title 中使用公式，那么公式将不会被渲染。([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879))
 
-
 我们目前使用的 Katex 版本为 0.11.1，这里面可能有某些问题是因为 Katex 版本老旧导致的；
 
 但是，就像上面所说的，数学公式的渲染必须依靠渲染器来支持，目前的 Katex 相关的渲染器仅支持到 Katex 0.11.1；

@@ -14,6 +14,8 @@ First of all, thanks for taking your time to contribute and help make our projec
 [How Can I Contribute?](#how-can-i-contribute)
 
   * [Before Submitting An Issue](#before-submitting-an-issue)
+    * [Read the docs](#read-the-docs)
+    * [Quick debug instructions](quick-debug-instructions)
   * [Reporting Bugs](#reporting-bugs)
     * [Reporting Security Bugs](#reporting-security-bugs)
   * [Suggesting Enhancements](#suggesting-enhancements)
@@ -27,25 +29,28 @@ First of all, thanks for taking your time to contribute and help make our projec
   * [Labels Rules](#labels-rules)
   * [Commit Messages Rules](#commit-messages-rules)
 
-<a name="how-can-i-contribute"></a>
-
 ## How Can I Contribute?
-
-Main Theme-Next repository was rebased from [iissnan's](https://github.com/iissnan/hexo-theme-next) profile to [Theme-Next](https://github.com/theme-next) organization on GitHub. Most libraries under the `next/source/lib` directory was moved out to [external repos](https://github.com/theme-next) under NexT organization. Version 5 works fine at most cases, but for frequent users, you maybe need to [upgrade version 5 to 6](https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md) to get features and supports in new [Theme-Next](https://github.com/theme-next/hexo-theme-next) repository.
-
-<a name="before-submitting-an-issue"></a>
 
 ### Before Submitting An Issue
 
-If you just have a question, you'll get faster results by checking the FAQs for a list of common questions and problems (Work in progress) or the [«NexT» Documentation Site](https://theme-next.org/docs/) (Work in progress).
+#### Read the docs
+
+If you just have a question, you'll get faster results by checking the [FAQs for a list of common questions and problems](https://theme-next.org/docs/faqs) or the [troubleshooting part of «NexT» Documentation Site](https://theme-next.org/docs/troubleshooting).
 
 Also, you can perform a [cursory search](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) to see if the problem has already been reported or solved. You don't want to duplicate effort. You might be able to find the cause of the problem and fix things yourself, or add comments to the existed issue.
 
-If you find a bug in the source code, most importantly, please check carefully if you can reproduce the problem [in the latest release version of Next](https://github.com/theme-next/hexo-theme-next/releases/latest). Then, you can help us by
-[Reporting Bugs](#reporting-bugs) or [Suggesting Enhancements](#suggesting-enhancements) to our [ Repository](https://github.com/theme-next/hexo-theme-next). Even better, you can
-[submit a Pull Request](#submitting-a-pull-request) with a fix.
+#### Quick debug instructions
 
-<a name="reporting-bugs"></a>
+Before submitting an Issue on GitHub, you can follow the steps below to debug:
+
+* Execute `hexo clean`, cleare the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader)
+* Switch to another theme and check if the bug still exists (e.g. default theme landscape). In other words, prove that this is a NexT issue, not a issue from Hexo.
+* Upgrade Hexo and Hexo plugins to the latest version.
+* Uninstall all non-essential Hexo plugins.
+
+If you get an error message from Hexo or your browser, please search in Google / Stackoverflow / GitHub Issues, or report it to us when submitting a new Issue.
+
+If you find a bug in the source code, most importantly, please check carefully if you can reproduce the problem [in the latest release version of Next](https://github.com/theme-next/hexo-theme-next/releases/latest). Then, you can help us by [Reporting Bugs](#reporting-bugs) or [Suggesting Enhancements](#suggesting-enhancements) to our [Repository](https://github.com/theme-next/hexo-theme-next). Even better, you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
 
 ### Reporting Bugs
 
@@ -65,15 +70,11 @@ Following these guidelines helps maintainers and the community understand your r
 * Describe the behavior you observed after following the steps and point out what exactly is the problem with that behavior.
 * Explain which behavior you expected to see instead and why.
 
-<a name="reporting-security-bugs"></a>
-
 #### Reporting Security Bugs
 
 If you find a security issue, please act responsibly and report it not in the public issue tracker, but directly to us, so we can fix it before it can be exploited. Please send the related information to security@theme-next.com (desirable with using PGP for e-mail encryption).
 
 We will gladly special thanks to anyone who reports a vulnerability so that we can fix it. If you want to remain anonymous or pseudonymous instead, please let us know that; we will gladly respect your wishes.
-
-<a name="suggesting-enhancements"></a>
 
 ### Suggesting Enhancements
 
@@ -84,8 +85,6 @@ Following these guidelines helps maintainers and the community understand your s
 * Use a clear and descriptive title for the issue to identify the suggestion.
 * Describe the current behavior and explain which behavior you expected to see instead and Explain why this enhancement would be useful to most users.
 * Provide specific examples to demonstrate the suggestion. Include links to files (screenshots or GIFs) or live demo.
-
-<a name="submitting-a-pull-request"></a>
 
 ### Submitting a Pull Request
 
@@ -116,8 +115,6 @@ Following these guidelines helps maintainers and the community understand your p
 * Fill in [the required template](PULL_REQUEST_TEMPLATE.md) as many details as possible.
 * All features or bug fixes must be tested in all schemes. And provide specific examples to demonstrate the pull request. Include links to files (screenshots or GIFs) or live demo.
 
-<a name="creating-releases"></a>
-
 ### Creating Releases
 
 Releases are a great way to ship projects on GitHub to your users.
@@ -133,23 +130,15 @@ Releases are a great way to ship projects on GitHub to your users.
 5. If you'd like to include binary files along with your release, such as compiled programs, drag and drop or select files manually in the binaries box.
 6. If the release is unstable, select **This is a pre-release** to notify users that it's not ready for production. If you're ready to publicize your release, click **Publish release**. Otherwise, click **Save draft** to work on it later.
 
-<a name="guides"></a>
-
 ## Guides
-
-<a name="coding-rules"></a>
 
 ### Coding Rules
 
 This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md) to keep open and inclusive. By participating, you are expected to uphold this code.
 
-<a name="coding-standards"></a>
-
 ### Coding Standards
 
 To be continued.
-
-<a name="labels-rules"></a>
 
 ### Labels Rules
 
@@ -202,8 +191,6 @@ Both:
 - `3rd Party Plugin`: An issue / pull request related to 3rd party plugins & service
 - `Docs`: An issue / pull request related to instruction document
 - `Configurations`: An issue / pull request related to configurations
-
-<a name="commit-messages-rules"></a>
 
 ### Commit Messages Rules
 

@@ -1,5 +1,7 @@
 <h1 align="center">从 NexT v5.1.x 更新</h1>
 
+在大多数情况下，NexT V5 版本仍然能够正常运行，但是如果你想获得更多的功能和帮助，还是建议您升级到 NexT V6+ 版本，并移步 [Theme-Next](https://github.com/theme-next/hexo-theme-next) 仓库。
+
 在 5.1.x 版本和新版本之间没有很大的革命性改进。主版本号变更至 6 主要是因为：
 
 1. 主仓库已从 [iissnan 名下](https://github.com/iissnan/hexo-theme-next) 迁移至 [theme-next](https://github.com/theme-next) 组织。

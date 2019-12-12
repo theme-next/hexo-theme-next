@@ -18,9 +18,9 @@ And make sure that this PR does not cause more warning messages.
 -->
 
 ## PR Checklist <!-- 我确认我已经查看了 -->
-<!-- Change [ ] to [x] to select, not [ x] or [x ] (将 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
+<!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
-- [ ] The commit message follows [our guidelines](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
+- [ ] The commit message follows [guidelines for NexT](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
 - [ ] Tests for the changes was maked (for bug fixes / features).
    - [ ] Muse | Mist have been tested.
    - [ ] Pisces | Gemini have been tested.
