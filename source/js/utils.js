@@ -66,9 +66,7 @@ NexT.utils = {
       var button = element.parentNode.querySelector('.copy-btn');
       button.addEventListener('click', event => {
         var target = event.currentTarget;
-        var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => {
-          return line.innerText;
-        }).join('\n');
+        var code = [...target.parentNode.querySelectorAll('.code .line')].map(line => line.innerText).join('\n');
         var ta = document.createElement('textarea');
         ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
         ta.style.position = 'absolute';

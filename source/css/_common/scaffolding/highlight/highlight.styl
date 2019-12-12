@@ -36,22 +36,13 @@ code {
   pre {
     border: 0;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
   }
 
   table {
     border: 0;
     margin: 0;
     width: auto;
-  }
-
-  tr {
-    &:first-child pre {
-      padding-top: 10px;
-    }
-    &:last-child pre {
-      padding-bottom: 10px;
-    }
   }
 
   td {
@@ -77,13 +68,16 @@ code {
     }
   }
 
-  .gutter pre {
-    background: $highlight-gutter.bg-color;
-    color: $highlight-gutter.color;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: right;
+  .gutter {
     disable-user-select();
+
+    pre {
+      background: $highlight-gutter.bg-color;
+      color: $highlight-gutter.color;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: right;
+    }
   }
 
   .code pre {
