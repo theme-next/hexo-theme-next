@@ -15,7 +15,7 @@
         {%- for subname, subvalue in value %}
           {# For main submenu items #}
           {%- if subvalue != '[object Object]' %}
-            {%- set itemName = subname.toLowerCase() %}
+            {%- set itemName = subname | lower %}
             {%- if itemName == 'default' %}
               {%- set parentValue = subvalue.split('||')[0] | trim %}
             {% else %}
@@ -28,7 +28,7 @@
             {%- endif %}
           {% else %}
             {# For 'default' submenu item in main submenu #}
-            {%- set itemName = subname.toLowerCase() %}
+            {%- set itemName = subname | lower %}
             {%- for subname2, subvalue2 in subvalue %}
               {%- if subname2 == 'default' %}
                 {%- set respath = parentValue + subvalue2 %}
@@ -46,7 +46,7 @@
           {%- if value == '[object Object]' %}
 
             {%- for subname, subvalue in value %}
-              {%- set itemName = subname.toLowerCase() %}
+              {%- set itemName = subname | lower %}
               {%- if itemName == 'default' %}
                 {%- set parentValue = subvalue.split('||')[0] | trim %}
               {%- endif %}
@@ -61,7 +61,7 @@
                     <ul id="sub-menu-2" class="sub-menu menu">
                     {%- for subname2, subvalue2 in subvalue %}
                       {%- set respath2 = subvalue %}
-                      {%- set itemName = subname2.toLowerCase() %}
+                      {%- set itemName = subname2 | lower %}
                       {%- if itemName == 'default' %}
                         {%- set parentSubValue = subvalue2.split('||')[0] | trim %}
                       {% else %}

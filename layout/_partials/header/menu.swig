@@ -7,16 +7,16 @@
       {%- if path == '[object Object]' %}
         {# Main Menu (default menu item for Submenu) #}
         {%- for subname, subpath in path %}
-          {%- set itemName = subname.toLowerCase() %}
+          {%- set itemName = subname | lower %}
           {%- set respath = subpath %}
           {%- if itemName == 'default' %}
-            {%- set itemName = name.toLowerCase() %}
+            {%- set itemName = name | lower %}
             {{ menu_item.render(name, itemName, respath) }}
           {%- endif %}
         {%- endfor %}
       {% else %}
         {# Main Menu (standard menu items) #}
-        {%- set itemName = name.toLowerCase() %}
+        {%- set itemName = name | lower %}
         {{- menu_item.render(name, itemName, respath) | trim }}
       {%- endif %}
     {%- endfor %}
