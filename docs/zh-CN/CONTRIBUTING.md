@@ -90,24 +90,6 @@
 
 提交合并请求前，请再次确认您已经查看了 [你需要了解的](#你需要了解的) 内容，避免提交重复的合并请求。确定相关仓库后，创建合并请求。更多详细操作过程可以查看 [帮助文档](https://help.github.com/articles/creating-a-pull-request/)。
 
-1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击 `Fork`。
-2. 进入到已经 `Fork` 的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
-    ```sh
-    $ git clone git@github.com:username/hexo-theme-next.git
-    ```
-3. 进入 `hexo-theme-next` 本地文件夹，并创建分支。
-    ```sh
-    $ cd hexo-theme-next
-    $ git checkout -b patchname
-    ```
-4. 本地修改并测试，推送分支。
-    ```sh
-    $ git add .
-    $ git commit -m "add commit messamge"
-    $ git push origin patchname
-    ```
-5. 进入 `fork` 后的仓库，切换到新提交的 `patchname` 分支，点击 `patchname` 分支右侧的 **New pull request** 。在 PR 对比页面，正确选择你需要发起合并请求的分支，然后点击 **Create pull request** ，建立一个新的合并申请并描述变动。
-
 请认真遵守如下指南，这样我们才能更好地理解你的合并请求：
 
 * 创建合并请求时，请遵守 [编码规范](#编码规范) 和 [提交信息规范](#提交信息规范)。
@@ -138,7 +120,7 @@
 
 ### 编码规范
 
-未完待续。
+我们使用 ESLint 和 Stylint 来识别和报告 JavaScript 和 Stylus 中的模式，目的是使代码更加一致并避免错误。编码时应遵循这些规范。
 
 ### 标签规范
 

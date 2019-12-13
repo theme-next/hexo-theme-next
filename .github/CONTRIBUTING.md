@@ -90,24 +90,6 @@ Following these guidelines helps maintainers and the community understand your s
 
 Before creating a Pull Request (PR), please check [this list](#before-submitting-an-issue) as you might find out that you don't need to create one. After you've determined the repository your pull request is related to, create a pull request on that repository. The detailed document of creating a pull request can be found [here](https://help.github.com/articles/creating-a-pull-request/).
 
-1. On GitHub, navigate to the original page of the [hexo-theme-next](https://github.com/theme-next/hexo-theme-next). In the top-right corner of the page, click **Fork**.
-2. Under the repository name in your forked repository, click **Clone or download**. In the `Clone with SSH` section, copy the clone URL for the repository. Open Git Bash, and change the current working directory to the location where you want the cloned directory to be made. Type `git clone`, and then paste the URL you copied. Press **Enter**. Your local clone will be created.
-    ```sh
-    $ git clone git@github.com:username/hexo-theme-next.git
-    ```
-3. Navigate into your new cloned repository. Switch branches to the compare branch of the pull request where the original changes were made.
-    ```sh
-    $ cd hexo-theme-next
-    $ git checkout -b patchname
-    ```
-4. After you commit your changes to the head branch of the pull request you can push your changes up to the original pull request directly.
-    ```sh
-    $ git add .
-    $ git commit -m "add commit messamge"
-    $ git push origin patchname
-    ```
-5. Navigate to the original repository you created your fork from. To the right of the Branch menu, click **New pull request**. On the Compare page, confirm that the base fork is the repository you'd like to merge changes into. Use the base branch drop-down menu to select the branch of the upstream repository you'd like to merge changes into. Use the head fork drop-down menu to select your fork, then use the compare branch drop-down menu to select the branch you made your changes in. Click **Create pull request** and type a title and description for your pull request.
-
 Following these guidelines helps maintainers and the community understand your pull request :pencil::
 
 * Follow our [Coding Rules](#coding-rules) and [commit message conventions](#commit-messages-rules).
@@ -138,7 +120,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 ### Coding Standards
 
-To be continued.
+We use ESLint and Stylint for identifying and reporting on patterns in JavaScript and Stylus, with the goal of making code more consistent and avoiding bugs. These specifications should be followed when coding.
 
 ### Labels Rules
 
