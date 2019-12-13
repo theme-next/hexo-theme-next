@@ -1028,3 +1028,9 @@ vendors:
 css: css
 js: js
 images: images
+# Config cdn
+cdn:
+  # set js cdn
+  # ${version} will be replaced by next-version e.g. 7.5.0
+  # ${file} be replaced by file name e.g. next-boot.js
+  #js: https://cdn.jsdelivr.net/gh/theme-next/hexo-theme-next@${version}/source/js/${file}

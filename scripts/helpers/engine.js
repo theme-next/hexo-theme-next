@@ -12,7 +12,19 @@ hexo.extend.helper.register('next_inject', function(point) {
 
 hexo.extend.helper.register('next_js', function(...urls) {
   const { js } = hexo.theme.config;
-  return urls.map(url => this.js(`${js}/${url}`)).join('');
+  let version = this.next_version;
+  let cdn = hexo.theme.config.cdn;
+  return urls
+    .map((url) => {
+      if (cdn && cdn.js) {
+        return cdn.js
+          .replace(/\$\{version\}/g, version)
+          .replace(/\$\{file\}/g, url);
+      }
+      return `${js}/${url}`;
+    })
+    .map(url => this.js(url))
+    .join('');
 });
 
 hexo.extend.helper.register('next_vendors', function(url) {
