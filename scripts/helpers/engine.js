@@ -11,17 +11,12 @@ hexo.extend.helper.register('next_inject', function(point) {
 });
 
 hexo.extend.helper.register('next_js', function(...urls) {
-  const { js, cdn } = hexo.theme.config;
+  const { js } = hexo.theme.config;
   let version = this.next_version;
   return urls
-    .map((url) => {
-      if (cdn && cdn.js) {
-        return cdn.js
-          .replace(/\$\{version\}/g, version)
-          .replace(/\$\{file\}/g, url);
-      }
-      return `${js}/${url}`;
-    })
+    .map(url => js
+      .replace(/\$\{version\}/g, version)
+      .replace(/\$\{file\}/g, url))
     .map(url => this.js(url))
     .join('');
 });
