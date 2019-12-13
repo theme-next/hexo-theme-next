@@ -11,9 +11,8 @@ hexo.extend.helper.register('next_inject', function(point) {
 });
 
 hexo.extend.helper.register('next_js', function(...urls) {
-  const { js } = hexo.theme.config;
+  const { js, cdn } = hexo.theme.config;
   let version = this.next_version;
-  let cdn = hexo.theme.config.cdn;
   return urls
     .map((url) => {
       if (cdn && cdn.js) {
