@@ -1,0 +1,56 @@
+name: Performance Test
+
+on: [push]
+
+jobs:
+  run:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x,12.x,13.x]
+
+    steps:
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Checkout theme
+      uses: actions/checkout@v1
+      with:
+        path: themes/next
+    - name: Run test
+      run: |
+        cd ../../
+        npm install -g hexo-cli
+        hexo init test
+        mv themes/next test/themes/next
+        cd test
+        git clone https://github.com/theme-next/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
+        git clone https://github.com/theme-next/performance-test.git --depth=1 --quiet sh
+        git clone https://github.com/theme-next/hexo-theme-next.git --depth=1 --quiet themes/next-master
+
+        echo '-----------------------------'
+        echo 'Test current branch performance'
+        echo '-----------------------------'
+        hexo config theme next
+        sh ./sh/perf-test.sh
+        sh ./sh/perf-test.sh
+        echo ''
+
+        echo '-----------------------------'
+        echo 'Test master branch performance'
+        echo '-----------------------------'
+        hexo config theme next-master
+        sh ./sh/perf-test.sh
+        sh ./sh/perf-test.sh
+        echo ''
+
+        echo '-----------------------------'
+        echo 'Test default theme performance'
+        echo '-----------------------------'
+        hexo config theme landscape
+        sh ./sh/perf-test.sh
+        sh ./sh/perf-test.sh
+        echo ''
