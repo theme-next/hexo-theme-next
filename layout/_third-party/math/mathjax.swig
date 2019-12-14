@@ -1,53 +1,28 @@
-{%- set mhchem_uri = theme.vendors.mhchem or '//cdn.jsdelivr.net/npm/mathjax-mhchem@3' %}
-<script type="text/x-mathjax-config">
-  {%- if theme.math.mathjax.mhchem %}
-    MathJax.Ajax.config.path['mhchem'] = '{{ mhchem_uri }}';
-  {%- endif %}
+{%- set mathjax_uri = theme.vendors.mathjax or 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js' %}
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      {%- if theme.math.mathjax.mhchem %}
-        extensions: ['[mhchem]/mhchem.js'],
-      {%- endif %}
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-{%- set mathjax_uri = theme.vendors.mathjax or '//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML' %}
 <script>
-  NexT.utils.getScript('{{ mathjax_uri }}', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      {%- if theme.math.mathjax.mhchem %}
+        loader: {
+          load: ['[tex]/mhchem']
+        },
+      {%- endif %}
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        {%- if theme.math.mathjax.mhchem %}
+          packages: {'[+]': ['mhchem']},
+        {%- endif %}
+        tags: 'ams'
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '{{ mathjax_uri }}';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.typeset();
+  }
 </script>
