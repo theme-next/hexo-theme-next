@@ -38,6 +38,7 @@
       document.head.appendChild(script);
     })();
   } else {
+    MathJax.texReset();
     MathJax.typeset();
   }
 </script>
