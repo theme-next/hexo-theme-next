@@ -1,7 +1,7 @@
 {%- set mathjax_uri = theme.vendors.mathjax or '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js' %}
 
 <script>
-  if (!MathJax) {
+  if (typeof MathJax === 'undefined') {
     window.MathJax = {
       {%- if theme.math.mathjax.mhchem %}
         loader: {
