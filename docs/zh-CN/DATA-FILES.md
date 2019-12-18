@@ -6,13 +6,15 @@
 1. 配置项被分裂为两部分；
 2. 用户难以弄清何处存放配置选项。
 
-为了解决这一问题，NexT 将利用 Hexo 的[数据文件](https://hexo.io/docs/data-files.html)特性。因为数据文件是在 Hexo 3 中被引入，所以你需要更新至 Hexo 3.0 以后的版本来使用这一特性。
+为了解决这一问题，NexT 提供了以下两种方案。
 
 <h2 align="center">选择 1：Hexo 方式</h2>
 
-使用这一方式，你的全部配置都将置于 Hexo 站点配置文件（`/_config.yml`），并且不需要修改 `/themes/next/_config.yml`，或者创建什么其他的文件。但是所有的主题选项必须放置在 `theme_config` 后，并全部增加两个空格的缩进。
+使用这一方式，你的全部配置都将置于 Hexo 站点配置文件（`/_config.yml`），并且不需要修改 `/themes/next/_config.yml`，或者创建什么其他的文件。但是所有用到的主题选项必须放置在 `theme_config` 后，并全部增加两个空格的缩进。
 
-如果在新的 release 中出现了任何新的选项，那么你只需要从 `/themes/next/_config.yml` 中将他们复制到 `/_config.yml` 中并设置它们的值为你想要的选项。
+如果在新的 release 中新增了选项，那么你只需要从 `/themes/next/_config.yml` 中将他们复制到 `/_config.yml` 中并将它们的值设置为你想要的。
+
+Hexo 对 `theme_config` 的实现方式曾发生了多次改动。为了避免出现问题，请将 Hexo 更新至 4.2.0 及以后的版本。
 
 ### 用法
 
@@ -32,6 +34,8 @@
 但是可能无法让所有 Hexo 外部库都准确处理它们的附加选项（举个例子，`hexo-server` 模块只会从 Hexo 默认配置文件中读取选项）。
 
 如果在新的 release 中出现了任何新的选项，那么你只需要从 `/themes/next/_config.yml` 中将他们复制到 `/source/_data/next.yml` 中并设置它们的值为你想要的选项。
+
+这一方法依赖于 Hexo 的[数据文件](https://hexo.io/docs/data-files.html)特性。因为数据文件是在 Hexo 3 中被引入，所以你需要更新至 Hexo 3.0 以后的版本来使用这一特性。
 
 ### 用法
 
