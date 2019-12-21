@@ -148,7 +148,6 @@ NexT.utils = {
           readingProgressBar.style.width = scrollPercent.toFixed(2) + '%';
         }
       }
-      
     });
 
     backToTop && backToTop.addEventListener('click', () => {
