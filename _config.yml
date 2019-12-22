@@ -808,7 +808,7 @@ tabs:
 
 # PDF tag, requires two plugins: pdfObject and pdf.js
 # pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
-# The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
+# The following `cdn` setting is only for pdfObject, because CDN for pdf.js might be blocked by CORS policy.
 # So, you must install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
 # See: https://github.com/theme-next/theme-next-pdf
 pdf:
@@ -1026,10 +1026,10 @@ vendors:
 
 # Assets
 css: css
-# set js cdn
+# Set js CDN
 # ${version} will be replaced by next-version e.g. 7.6.0
 # ${file} be replaced by file name e.g. next-boot.js
-# if you want to use jsdelivr, can config as follow (should use release version, not master)
+# If you want to use jsDelivr, you can configure it as follow (should use release version, not master)
 # js: https://cdn.jsdelivr.net/gh/theme-next/hexo-theme-next@${version}/source/js/${file}
 js: js/${file}
 images: images
