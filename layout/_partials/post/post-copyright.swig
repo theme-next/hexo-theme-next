@@ -17,3 +17,20 @@
   </li>
 </ul>
 </div>
+<script>
+    document.body.oncopy = event => {
+        event.preventDefault(); // 取消默认的复制事件 
+        let textFont = copyFont = window.getSelection(0).toString();
+        if (copyFont.length > 10) {
+            textFont = copyFont + '\n\n' +
+                "--------------------\n" +
+                "{{ __('post.copyright.author') + __('symbol.colon') }}{{- page.author or author }}\n" +
+                "{{ __('post.copyright.link') + __('symbol.colon') }}{{ page.permalink }}\n" +
+                "{{ __('post.copyright.license_title') + __('symbol.colon') }}{{ ccText }}";
+        }
+        if (event.clipboardData) {
+            return event.clipboardData.setData('text', textFont);
+        }
+        return window.clipboardData.setData("text", textFont);
+    }
+</script>        
