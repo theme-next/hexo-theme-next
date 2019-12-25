@@ -1,13 +1,14 @@
 {%- if theme.leancloud_visitors.enable and not theme.valine.visitor %}
   <script{{ pjax }}>
   function leancloudSelector(url) {
+    url = encodeURI(url);
     return document.getElementById(url).querySelector('.leancloud-visitors-count');
   }
   if (CONFIG.page.isPost) {
     function addCount(Counter) {
       var visitors = document.querySelector('.leancloud_visitors');
-      var url = visitors.getAttribute('id').trim();
-      var title = visitors.getAttribute('data-flag-title').trim();
+      var url = decodeURI(visitors.getAttribute('id'));
+      var title = visitors.getAttribute('data-flag-title');
 
       Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
         .then(response => response.json())
@@ -25,7 +26,7 @@
               })
             {%- endif %}
               .catch(error => {
-                console.log('Failed to save visitor count', error);
+                console.error('Failed to save visitor count', error);
               })
           } else {
             {%- if theme.leancloud_visitors.security %}
@@ -38,20 +39,20 @@
                   leancloudSelector(url).innerText = 1;
                 })
                 .catch(error => {
-                  console.log('Failed to create', error);
+                  console.error('Failed to create', error);
                 });
             {%- endif %}
           }
         })
         .catch(error => {
-          console.log('LeanCloud Counter Error', error);
+          console.error('LeanCloud Counter Error', error);
         });
     }
   } else {
     function showTime(Counter) {
       var visitors = document.querySelectorAll('.leancloud_visitors');
       var entries = [...visitors].map(element => {
-        return element.getAttribute('id').trim();
+        return decodeURI(element.getAttribute('id'));
       });
 
       Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
@@ -75,7 +76,7 @@
           }
         })
         .catch(error => {
-          console.log('LeanCloud Counter Error', error);
+          console.error('LeanCloud Counter Error', error);
         });
     }
   }
