@@ -14,8 +14,6 @@ With this way, all your configurations locate in main Hexo config file (`/_confi
 
 If there are any new options in new releases, you just need to copy those options from `/themes/next/_config.yml`, paste into `/_config.yml` and set their values to whatever you want.
 
-Hexo's implementation of `theme_config` has changed several times. To avoid problems, you need upgrade Hexo to 4.2.0 (or above) to use this feature.
-
 ### Usage
 
 1. Please confirm that the `/source/_data/next.yml` file does not exist (delete it if exists).

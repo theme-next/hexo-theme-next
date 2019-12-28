@@ -14,8 +14,6 @@
 
 如果在新的 release 中新增了选项，那么你只需要从 `/themes/next/_config.yml` 中将他们复制到 `/_config.yml` 中并将它们的值设置为你想要的。
 
-Hexo 对 `theme_config` 的实现方式曾发生了多次改动。为了避免出现问题，请将 Hexo 更新至 4.2.0 及以后的版本。
-
 ### 用法
 
 1. 请确认不存在 `/source/_data/next.yml` 文件（如果已存在，请删除）

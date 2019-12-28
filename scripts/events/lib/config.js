@@ -33,6 +33,8 @@ module.exports = hexo => {
       merge(hexo.config, data.next);
       merge(hexo.theme.config, data.next);
     }
+  } else {
+    merge(hexo.theme.config, hexo.config.theme_config);
   }
 
   if (hexo.theme.config.cache && hexo.theme.config.cache.enable && hexo.config.relative_link) {
