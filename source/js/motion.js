@@ -112,6 +112,19 @@ NexT.motion.middleWares = {
     }
   },
 
+  subMenu: function(integrator) {
+    var subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
+    if (subMenuItem.length > 0)
+    {
+      subMenuItem.forEach(
+        function(currentValue, currentIndex, listObj) {
+          currentValue.setAttribute('style', 'opacity: 1');
+        }
+      );
+    }
+    integrator.next();
+  },
+
   postList: function(integrator) {
 
     var postBlock = document.querySelectorAll('.post-block, .pagination, .comments');
