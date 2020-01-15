@@ -114,7 +114,9 @@ NexT.motion.middleWares = {
   subMenu: function(integrator) {
     var subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
     if (subMenuItem.length > 0) {
-      subMenuItem.forEach(element => element.style.opacity = 1);
+      subMenuItem.forEach(element => {
+        element.style.opacity = 1;
+      });
     }
     integrator.next();
   },

@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var isRight = CONFIG.sidebar.position === 'right';
   var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
   var SIDEBAR_DISPLAY_DURATION = 400;
-  var mousePos = {}; var touchPos = {};
+  var mousePos = {};
 
   var sidebarToggleLines = {
     lines: document.querySelector('.sidebar-toggle'),
