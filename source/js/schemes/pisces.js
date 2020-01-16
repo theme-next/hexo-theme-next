@@ -20,7 +20,10 @@ var Affix = {
   getState: function(scrollHeight, height, offsetTop, offsetBottom) {
     let scrollTop = window.scrollY;
     let targetHeight = window.innerHeight;
-    if (offsetTop != null && this.affixed === 'top') return scrollTop < offsetTop ? 'top' : false;
+    if (offsetTop != null && this.affixed === 'top') {
+      if (document.querySelector('.content-wrap').offsetHeight < offsetTop) return 'top';
+      return scrollTop < offsetTop ? 'top' : false;
+    }
     if (this.affixed === 'bottom') {
       if (offsetTop != null) return this.unpin <= this.element.getBoundingClientRect().top ? false : 'bottom';
       return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
