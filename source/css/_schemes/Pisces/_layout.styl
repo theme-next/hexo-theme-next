@@ -65,22 +65,6 @@
   }
 }
 
-.sidebar {
-  background: $body-bg-color;
-  box-shadow: none;
-  margin-top: 100%;
-  position: static;
-  width: $sidebar-desktop;
-
-  +tablet-mobile() {
-    display: none;
-  }
-}
-
-.sidebar-toggle {
-  display: none;
-}
-
 if (hexo-config('sidebar.position') == 'right') {
   .header-inner {
     right: 0;

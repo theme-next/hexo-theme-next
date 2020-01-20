@@ -1,4 +1,13 @@
 .sidebar {
+  background: $body-bg-color;
+  box-shadow: none;
+  margin-top: 100%;
+  position: static;
+  width: $sidebar-desktop;
+
+  +tablet-mobile() {
+    display: none;
+  }
   a, span.exturl {
     color: $black-light;
 
@@ -7,6 +16,10 @@
       color: $black-deep;
     }
   }
+}
+
+.sidebar-toggle {
+  display: none;
 }
 
 .sidebar-inner {
