@@ -669,6 +669,14 @@ rating:
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
 
+# Follow me through Telegram Channel, Twitter, etc.
+follow_me:
+  enable: false
+  channels:
+    twitter: https://twitter.com/_username_ || Twitter
+    weibo: http://weibo.com/u/_username_/home || 微博
+    telegram: https://t.me/_channel_name_ || Telegram
+    wechat: /images/wechat_channel.jpg || 微信公众号
 
 # ---------------------------------------------------------------
 # Statistics and Analytics

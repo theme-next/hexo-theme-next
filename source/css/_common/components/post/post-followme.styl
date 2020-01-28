@@ -1,0 +1,60 @@
+.followme {
+  color: #afafaf;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  padding: 1rem 1rem 1.5rem;
+  margin-bottom: 3rem;
+
+  .social-list {
+    flex-wrap: wrap;
+
+    .social-item {
+      margin: .5rem 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .social-image {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+
+      .social-item {
+        margin: 0.5rem 0.75rem;
+      }
+    }
+
+    .social-link {
+      text-decoration: none;
+      border: none;
+      color: #565656;
+
+      span {
+        display: block;
+        margin-top: .5rem;
+        font-size: 14px;
+      }
+    }
+
+    .social-image {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .flex {
+    display: flex;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
