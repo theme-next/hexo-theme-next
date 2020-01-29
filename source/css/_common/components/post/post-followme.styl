@@ -2,42 +2,37 @@
   color: #afafaf;
   background-color: #f9f9f9;
   border-radius: 16px;
-  padding: 1rem 1rem 1.5rem;
-  margin: 2rem 0 1rem 0;
+  padding: 1em 1.5em;
+  margin: 2em 0 1em 0;
 
   .social-list {
     flex-wrap: wrap;
 
     .social-item {
-      margin: .5rem 2rem;
+      margin: 0.5em 2em;
     }
-
     @media (max-width: 1024px) {
-      .social-image {
-        width: 1.75rem;
-        height: 1.75rem;
-      }
-
       .social-item {
-        margin: 0.5rem 0.75rem;
+        margin: 0.5em 0.75em;
       }
     }
 
     .social-link {
-      text-decoration: none;
       border: none;
       color: #565656;
+      text-align: center;
+      display:inline-block;
 
-      span {
+      .icon {
+        width: 1.75em;
+        height: 1.75em;
+        font-size: 1.75em;
+      }
+
+      .label {
         display: block;
-        margin-top: .5rem;
         font-size: 14px;
       }
-    }
-
-    .social-image {
-      width: 1.75rem;
-      height: 1.75rem;
     }
   }
 

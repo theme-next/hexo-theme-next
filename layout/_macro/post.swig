@@ -228,7 +228,7 @@
         {{ partial('_partials/post/post-copyright.swig') }}
       {%- endif %}
 
-      {%- if theme.follow_me.enable %}
+      {%- if theme.follow_me %}
         {{ partial('_partials/post/post-followme.swig', {}, {cache: theme.cache.enable}) }}
       {%- endif %}
 

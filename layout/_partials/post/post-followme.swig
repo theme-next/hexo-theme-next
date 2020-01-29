@@ -1,20 +1,22 @@
-{%- if theme.follow_me.enable %}
-  {%- set builtin = ['twitter', 'weibo', 'telegram', 'wechat'] %}
+{%- if theme.follow_me %}
 
   <div class="followme flex-column align-center">
     <p>{{ __('follow_me.welcome') }}</p>
 
     <div class="flex align-center social-list">
-        {%- for name, link in theme.follow_me.channels %}
-          {%- if builtin.includes(name) %}
-            {%- set icon_url = __('/images/follow-me/' + name + '.svg') %}
+        {%- for name, value in theme.follow_me %}
+            {%- set link = value.split('||')[0] | trim %}
+            {%- set icon = value.split('||')[1] | trim %}
+
             <div class="social-item">
-              <a target="_blank" class="social-link" href="{{ link.split('||')[0] }}">
-                <img class="social-image" src="{{ url_for(icon_url) }}" alt="">
-                <span>{{ link.split('||')[1] }}</span>
+              <a target="_blank" class="social-link" href="{{ link }}">
+                <span class="icon">
+                  <i class="fa fa-{{ icon }}"></i>
+                </span>
+
+                <span class="label">{{ name }}</span>
               </a>
             </div>
-          {%- endif %}
         {%- endfor %}
     </div>
   </div>
