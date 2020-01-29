@@ -76,6 +76,8 @@ reward:
   wechatpay: 微信支付
   alipay: 支付寶
   bitcoin: 比特幣
+follow_me:
+  welcome: 歡迎關注我的其它發布渠道
 accessibility:
   nav_toggle: 切換導航欄
   prev_page: 上一頁

@@ -2,10 +2,9 @@
   {%- set builtin = ['twitter', 'weibo', 'telegram', 'wechat'] %}
 
   <div class="followme flex-column align-center">
-    <p>欢迎关注我的其它发布渠道</p>
+    <p>{{ __('follow_me.welcome') }}</p>
 
     <div class="flex align-center social-list">
-
         {%- for name, link in theme.follow_me.channels %}
           {%- if builtin.includes(name) %}
             {%- set icon_url = __('/images/follow-me/' + name + '.svg') %}
@@ -17,7 +16,6 @@
             </div>
           {%- endif %}
         {%- endfor %}
-
     </div>
   </div>
 {%- endif %}
