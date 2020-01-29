@@ -279,7 +279,7 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
     input.addEventListener('keypress', event => {
-      if (event.keyCode === 13) {
+      if (event.key === 'Enter') {
         inputEventFunction();
       }
     });
