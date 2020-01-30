@@ -81,9 +81,9 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
     return {
-      hits           : hits,
-      start          : start,
-      end            : end,
+      hits,
+      start,
+      end,
       searchTextCount: searchTextCountInSlice
     };
   };

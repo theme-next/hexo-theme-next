@@ -45,7 +45,7 @@ NexT.motion.middleWares = {
     function getMistLineSettings(element, translateX) {
       return {
         e: element,
-        p: {translateX: translateX},
+        p: {translateX},
         o: {
           duration     : 500,
           sequenceQueue: false

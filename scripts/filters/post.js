@@ -5,15 +5,11 @@
 hexo.extend.filter.register('after_post_render', data => {
   const { config } = hexo;
   const theme = hexo.theme.config;
-  const filters = {
-    exturl  : theme.exturl,
-    lazyload: theme.lazyload
-  };
-  if (!filters.exturl && !filters.lazyload) return;
-  if (filters.lazyload) {
+  if (!theme.exturl && !theme.lazyload) return;
+  if (theme.lazyload) {
     data.content = data.content.replace(/(<img[^>]*) src=/img, '$1 data-src=');
   }
-  if (filters.exturl) {
+  if (theme.exturl) {
     const url = require('url');
     var siteHost = url.parse(config.url).hostname || config.url;
     data.content = data.content.replace(/<a[^>]* href="([^"]+)"[^>]*>([^<]+)<\/a>/img, (match, href, html) => {
