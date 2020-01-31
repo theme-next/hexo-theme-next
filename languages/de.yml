@@ -76,6 +76,8 @@ reward:
   wechatpay: WeChat Bezahlung
   alipay: Alipay
   bitcoin: Bitcoin
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Navigationsleiste an/ausschalten
   prev_page: Vorherige Seite
