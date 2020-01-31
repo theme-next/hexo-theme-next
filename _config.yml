@@ -191,7 +191,6 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-  #RSS: /atom.xml || rss
 
 social_icons:
   enable: true
@@ -276,6 +275,14 @@ reward:
   #wechatpay: /images/wechatpay.png
   #alipay: /images/alipay.png
   #bitcoin: /images/bitcoin.png
+
+# Subscribe through Telegram Channel, Twitter, etc.
+# Usage: `Key: permalink || icon (Font Awesome)
+follow_me:
+  #Twitter: https://twitter.com/username || twitter
+  #Telegram: https://t.me/channel_name || telegram
+  #Wechat: /images/wechat_channel.jpg || wechat
+  #RSS: /atom.xml || rss
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -668,14 +675,6 @@ rating:
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
-
-# Subscribe through Telegram Channel, Twitter, etc.
-# Usage: `Key: permalink || icon(Font Awesome)
-follow_me:
-   Twitter: https://twitter.com/username || twitter
-   Telegram: https://t.me/channel_name || telegram
-   Wechat: /images/wechat_channel.jpg || wechat
-   RSS: /atom.xml || rss
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
