@@ -1,17 +1,22 @@
 .followme {
-  color: #afafaf;
-  background-color: #f9f9f9;
-  border-radius: 16px;
-  padding: 1em 1.5em;
+  align-items: center;
+  background: $whitesmoke;
+  border-left: 3px solid $red;
+  color: $grey;
+  display: flex;
+  flex-direction: column;
   margin: 2em 0 1em 0;
+  padding: 1em 1.5em;
 
   .social-list {
+    align-items: center;
+    display: flex;
     flex-wrap: wrap;
 
     .social-item {
       margin: 0.5em 2em;
     }
-    @media (max-width: 1024px) {
+    +tablet-mobile() {
       .social-item {
         margin: 0.5em 0.75em;
       }
@@ -19,14 +24,13 @@
 
     .social-link {
       border: none;
-      color: #565656;
-      text-align: center;
       display:inline-block;
+      text-align: center;
 
       .icon {
-        width: 1.75em;
-        height: 1.75em;
         font-size: 1.75em;
+        height: 1.75em;
+        width: 1.75em;
       }
 
       .label {
@@ -35,21 +39,4 @@
       }
     }
   }
-
-  .align-center {
-    align-items: center;
-  }
-
-  .flex {
-    display: flex;
-  }
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.align-center {
-  align-items: center;
 }
