@@ -1,9 +1,9 @@
 {%- if theme.follow_me %}
 
-  <div class="followme flex-column align-center">
+  <div class="followme">
     <p>{{ __('follow_me.welcome') }}</p>
 
-    <div class="flex align-center social-list">
+    <div class="social-list">
         {%- for name, value in theme.follow_me %}
             {%- set link = value.split('||')[0] | trim %}
             {%- set icon = value.split('||')[1] | trim %}
