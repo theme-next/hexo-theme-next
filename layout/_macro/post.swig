@@ -228,6 +228,10 @@
         {{ partial('_partials/post/post-copyright.swig') }}
       {%- endif %}
 
+      {%- if theme.follow_me %}
+        {{ partial('_partials/post/post-followme.swig', {}, {cache: theme.cache.enable}) }}
+      {%- endif %}
+
       <footer class="post-footer">
         {%- if post.tags and post.tags.length %}
           {%- if theme.tag_icon %}
