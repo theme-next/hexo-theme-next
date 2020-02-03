@@ -1,12 +1,12 @@
-/* global instantsearch, CONFIG */
+/* global instantsearch, algoliasearch, CONFIG */
 
 window.addEventListener('DOMContentLoaded', () => {
   const algoliaSettings = CONFIG.algolia;
+  const { indexName, appID, apiKey } = algoliaSettings;
 
   let search = instantsearch({
-    appId         : algoliaSettings.appID,
-    apiKey        : algoliaSettings.apiKey,
-    indexName     : algoliaSettings.indexName,
+    indexName,
+    searchClient  : algoliasearch(appID, apiKey),
     searchFunction: helper => {
       let searchInput = document.querySelector('#search-input input');
       if (searchInput.value) {
@@ -20,16 +20,24 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // Registering Widgets
-  [
+  search.addWidgets([
+    instantsearch.widgets.configure({
+      hitsPerPage: algoliaSettings.hits.per_page || 10
+    }),
+
     instantsearch.widgets.searchBox({
-      container  : '#search-input',
-      placeholder: algoliaSettings.labels.input_placeholder
+      container           : '#search-input',
+      placeholder         : algoliaSettings.labels.input_placeholder,
+      // Hide default icons of algolia search
+      showReset           : false,
+      showSubmit          : false,
+      showLoadingIndicator: false
     }),
 
     instantsearch.widgets.stats({
       container: '#algolia-stats',
       templates: {
-        body: data => {
+        text: data => {
           let stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
@@ -43,9 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.hits({
-      container  : '#algolia-hits',
-      hitsPerPage: algoliaSettings.hits.per_page || 10,
-      templates  : {
+      container: '#algolia-hits',
+      templates: {
         item: data => {
           let link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
@@ -62,24 +69,25 @@ window.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.pagination({
-      container    : '#algolia-pagination',
-      scrollTo     : false,
-      showFirstLast: false,
-      labels       : {
+      container: '#algolia-pagination',
+      scrollTo : false,
+      showFirst: false,
+      showLast : false,
+      templates: {
         first   : '<i class="fa fa-angle-double-left"></i>',
         last    : '<i class="fa fa-angle-double-right"></i>',
         previous: '<i class="fa fa-angle-left"></i>',
         next    : '<i class="fa fa-angle-right"></i>'
       },
       cssClasses: {
-        root    : 'pagination',
-        item    : 'pagination-item',
-        link    : 'page-number',
-        active  : 'current',
-        disabled: 'disabled-item'
+        root        : 'pagination',
+        item        : 'pagination-item',
+        link        : 'page-number',
+        selectedItem: 'current',
+        disabledItem: 'disabled-item'
       }
     })
-  ].forEach(search.addWidget, search);
+  ]);
 
   search.start();
 
@@ -102,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
   window.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', event => {
-    if (event.which === 27) {
+    if (event.key === 'Escape') {
       onPopupClose();
     }
   });

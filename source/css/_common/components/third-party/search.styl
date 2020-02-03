@@ -13,7 +13,6 @@
 .search-popup {
   background: white;
   border-radius: 5px;
-  color: $black-dim;
   display: none;
   height: 80%;
   left: 50%;
@@ -29,25 +28,19 @@
     height: 100%;
     left: 0;
     margin: 0;
-    padding: 0;
     top: 0;
     width: 100%;
   }
 
   .search-icon, .popup-btn-close {
     color: $grey-dark;
-    display: inline-block;
     font-size: 18px;
-    height: 36px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 18px;
+    padding: 0 10px;
   }
 
   .popup-btn-close {
     border-left: 1px solid $gainsboro;
     cursor: pointer;
-    float: right;
 
     &:hover .fa {
       color: $black-deep;
@@ -55,6 +48,7 @@
   }
 
   .search-header {
+    display: flex;
     background: $whitesmoke;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -62,21 +56,23 @@
   }
 }
 
+.site-search input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: 100%;
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
 if (hexo-config('algolia_search.enable')) {
   .search-input {
-    display: inline-block;
-    width: calc(90% - 30px);
+    flex-grow: 1;
 
-    input {
-      background: transparent;
-      border: 0;
-      outline: 0;
-      padding: 5px 0;
-      width: 100%;
-    }
-    // Hide default icon of algolia search
-    .ais-search-box--magnifier svg, .ais-search-box--reset svg {
-      display: none;
+    form {
+      padding: 2px;
     }
   }
 
@@ -94,23 +90,10 @@ if (hexo-config('algolia_search.enable')) {
     height: calc(100% - 55px);
     overflow: auto;
     padding: 5px 30px;
-    position: relative;
 
     hr {
       margin: 10px 0;
     }
-
-    .highlight {
-      color: red;
-      font-size: inherit;
-      font-style: normal;
-      margin: 0;
-      padding: 0 2px;
-    }
-  }
-
-  .algolia-hits {
-    margin-top: 20px;
   }
 
   .algolia-hit-item {
@@ -136,15 +119,21 @@ if (hexo-config('algolia_search.enable')) {
     }
 
     .page-number {
-      border-top: none;
+      border-top: 1px solid transparent;
+      the-transition();
 
       &:hover {
-        border-bottom: 1px solid $black-deep;
+        border-top: 1px solid $black-deep;
       }
     }
 
     .current .page-number {
       @extend .pagination .page-number.current;
+      cursor: default;
+
+      &:hover {
+        border-top-color: $pagination-active-border;
+      }
     }
 
     .disabled-item {
@@ -160,9 +149,15 @@ if (hexo-config('local_search.enable')) {
   }
 
   .search-popup {
+    .search-input-container {
+      padding: 2px;
+      flex-grow: 1;
+    }
+
     ul.search-result-list {
       margin: 0 5px;
       padding: 0;
+      width: 100%;
     }
 
     p.search-result {
@@ -181,37 +176,15 @@ if (hexo-config('local_search.enable')) {
     }
 
     #search-result {
+      display: flex;
       height: calc(100% - 55px);
       overflow: auto;
       padding: 5px 25px;
-      position: relative;
-    }
-
-    .search-input-container {
-      display: inline-block;
-      height: 36px;
-      line-height: 36px;
-      padding: 0 5px;
-      position: absolute;
-      width: calc(100% - 90px);
-
-      input {
-        background: transparent;
-        border: 0;
-        display: block;
-        height: 20px;
-        outline: 0;
-        padding: 8px 0;
-        width: 100%;
-      }
     }
 
     #no-result {
       color: $grey-light;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      margin: auto;
     }
   }
 }

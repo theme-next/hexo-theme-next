@@ -1,6 +1,6 @@
-{%- set algolia_instant_css_uri = theme.vendors.algolia_instant_css or next_vendors('//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css') %}
-{%- set algolia_instant_js_uri = theme.vendors.algolia_instant_js or next_vendors('//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js') %}
-<link rel="stylesheet" href="{{ algolia_instant_css_uri }}">
-<script src="{{ algolia_instant_js_uri }}"></script>
+{%- set algolia_search_uri = theme.vendors.algolia_search or next_vendors('//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js') %}
+{%- set instant_search_uri = theme.vendors.instant_search or next_vendors('//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js') %}
+<script src="{{ algolia_search_uri }}"></script>
+<script src="{{ instant_search_uri }}"></script>
 
 {{- next_js('algolia-search.js') }}

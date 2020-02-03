@@ -305,7 +305,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
   window.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', event => {
-    if (event.which === 27) {
+    if (event.key === 'Escape') {
       onPopupClose();
     }
   });

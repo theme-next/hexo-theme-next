@@ -980,10 +980,10 @@ vendors:
   gitalk_css:
 
   # Algolia Search
-  # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js
-  # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
-  algolia_instant_js:
-  algolia_instant_css:
+  # algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
+  # instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
+  algolia_search:
+  instant_search:
 
   # PDF
   # pdfobject: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
