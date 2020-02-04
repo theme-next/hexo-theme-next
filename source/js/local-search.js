@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
     isXml = false;
   }
   const path = CONFIG.root + searchPath;
-  const input = document.getElementById('search-input');
+  const input = document.querySelector('.search-input');
   const resultContent = document.getElementById('search-result');
 
   // Ref: https://github.com/ForbesLindesay/unescape-html
@@ -264,7 +264,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
     document.querySelector('.search-pop-overlay').style.display = 'block';
     document.querySelector('.popup').style.display = 'block';
-    document.getElementById('search-input').focus();
+    document.querySelector('.search-input').focus();
   };
 
   // Search function

@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     indexName,
     searchClient  : algoliasearch(appID, apiKey),
     searchFunction: helper => {
-      let searchInput = document.querySelector('#search-input input');
+      let searchInput = document.querySelector('.search-input');
       if (searchInput.value) {
         helper.search();
       }
@@ -26,12 +26,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.searchBox({
-      container           : '#search-input',
+      container           : '.search-input-container',
       placeholder         : algoliaSettings.labels.input_placeholder,
       // Hide default icons of algolia search
       showReset           : false,
       showSubmit          : false,
-      showLoadingIndicator: false
+      showLoadingIndicator: false,
+      cssClasses          : {
+        input: 'search-input'
+      }
     }),
 
     instantsearch.widgets.stats({
@@ -96,7 +99,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
     document.querySelector('.search-pop-overlay').style.display = 'block';
     document.querySelector('.popup').style.display = 'block';
-    document.querySelector('#search-input input').focus();
+    document.querySelector('.search-input').focus();
   });
 
   // Monitor main search box

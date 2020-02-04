@@ -56,7 +56,7 @@
   }
 }
 
-.site-search input {
+.site-search input.search-input {
   background: transparent;
   border: 0;
   outline: 0;
@@ -68,7 +68,7 @@
 }
 
 if (hexo-config('algolia_search.enable')) {
-  .search-input {
+  .search-input-container {
     flex-grow: 1;
 
     form {
@@ -150,8 +150,8 @@ if (hexo-config('local_search.enable')) {
 
   .search-popup {
     .search-input-container {
-      padding: 2px;
       flex-grow: 1;
+      padding: 2px;
     }
 
     ul.search-result-list {
