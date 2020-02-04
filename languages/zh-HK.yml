@@ -75,6 +75,7 @@ reward:
   donate: 打賞
   wechatpay: 微信支付
   alipay: 支付寶
+  paypal: PayPal
   bitcoin: 比特幣
 follow_me:
   welcome: 歡迎關注我的其它發布渠道
