@@ -28,20 +28,13 @@ post:
   read_more: Đọc tiếp
   untitled: Không có tiêu đề
   sticky: Đính
-  toc_empty: Bài viết này không có mục lục
   views: Views
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Người viết
     link: Liên kết bài viết
     license_title: Chú ý bản quyền
     license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
-page:
-  totally: Toàn bộ
-  tags: thẻ
 footer:
   powered: "Cung cấp bởi %s"
   theme: Giao Diện
@@ -62,7 +55,6 @@ counter:
     other: "tổng số %d bài viết."
 state:
   posts: bài viết
-  pages: trang
   tags: thẻ
   categories: mục
 search:
@@ -83,7 +75,10 @@ reward:
   donate: Tài trợ
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Trang trước
