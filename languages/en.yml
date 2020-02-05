@@ -87,6 +87,7 @@ reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
 
 follow_me:
