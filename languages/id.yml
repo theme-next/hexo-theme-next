@@ -28,20 +28,13 @@ post:
   read_more: Baca lebih
   untitled: Tidak ada title
   sticky: Sticky
-  toc_empty: Posting ini tidak memiliki Daftar Isi
   views: Views
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
-page:
-  totally: Total
-  tags: tags
 footer:
   powered: "Powered by %s"
   theme: Tema
@@ -62,7 +55,6 @@ counter:
     other: "%d total posting."
 state:
   posts: posting
-  pages: halaman
   tags: tags
   categories: kategori
 search:
@@ -83,7 +75,10 @@ reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Halaman sebelumnya
