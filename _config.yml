@@ -645,6 +645,7 @@ gitalk:
   repo: # Repository name to store issues
   client_id: # GitHub Application Client ID
   client_secret: # GitHub Application Client Secret
+  access_token: # GitHub Personal Access Token
   admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
