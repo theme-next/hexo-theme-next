@@ -1,10 +1,17 @@
 {% include 'baidu-push.swig' %}
-{% include 'bookmark.swig' %}
 
-{% include 'analytics/analytics-with-jquery.swig' %}
-{% include 'facebook-sdk.swig' %}
 {% include 'rating.swig' %}
 
-{% include 'search/index.swig' %}
-{% include 'chat/index.swig' %}
-{% include 'tags/index.swig' %}
+{%- if theme.algolia_search.enable %}
+  {% include 'search/algolia-search.swig' %}
+{% elif theme.swiftype_key %}
+  {% include 'search/swiftype.swig' %}
+{% elif theme.local_search.enable %}
+  {% include 'search/localsearch.swig' %}
+{%- endif %}
+
+{% include 'chat/chatra.swig' %}
+{% include 'chat/tidio.swig' %}
+
+{% include 'tags/pdf.swig' %}
+{% include 'tags/mermaid.swig' %}

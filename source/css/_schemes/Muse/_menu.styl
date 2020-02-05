@@ -2,11 +2,11 @@
   +mobile() {
     background: white;
     border-bottom: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-lighter;
     left: 0;
     margin: 0;
     padding: 0;
     width: 100%;
-    z-index: $zindex-3;
   }
 }
 
@@ -21,7 +21,7 @@
 }
 
 .menu-item-active a {
-  border-bottom-color: $menu-link-hover-border !important;
+  border-bottom: 1px solid $menu-link-hover-border !important;
   color: $black-deep;
 
   +mobile() {
@@ -33,32 +33,11 @@
   +mobile() {
     display: block;
     margin: 0 10px;
-    vertical-align: top;
-  }
-
-  .badge {
-    background-color: $gainsboro;
-    display: inline-block;
-    font-weight: $font-weight-bolder;
-    line-height: 1;
-    margin-left: 5px;
-    padding: 1px 4px;
-    text-align: center;
-    white-space: nowrap;
-
-    +mobile() {
-      float: right;
-      margin: .35em 0 0 0;
-    }
-  }
-
-  br {
-    +mobile() {
-      display: none;
-    }
   }
 
   a, span.exturl {
+    border-bottom: 1px solid transparent;
+
     +mobile() {
       padding: 5px 10px;
     }
@@ -66,22 +45,26 @@
     &:hover {
       @extend .menu-item-active a;
     }
-
-    // To prevent hover on external links with touch devices after click.
-    @media (hover: none) {
-      &:hover {
-        border-bottom-color: transparent !important;
-      }
-    }
   }
 
   .fa {
     +tablet() {
+      display: block;
+      line-height: 2;
+      margin-right: 0;
       width: 100%;
     }
 
     +desktop() {
+      display: block;
+      line-height: 2;
+      margin-right: 0;
       width: 100%;
     }
+  }
+
+  .badge {
+    background: $gainsboro;
+    padding: 1px 4px;
   }
 }

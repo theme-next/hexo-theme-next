@@ -1,0 +1,55 @@
+// Menu
+// --------------------------------------------------
+.menu {
+  margin-top: 20px;
+  padding-left: 0;
+  text-align: center;
+}
+
+.menu-item {
+  display: inline-block;
+  list-style: none;
+  margin: 0 10px;
+
+  +mobile() {
+    margin-top: 10px;
+  }
+
+  a, span.exturl {
+    border-bottom: 0;
+    display: block;
+    font-size: $font-size-smaller;
+    transition-property: border-color;
+    the-transition();
+
+    // To prevent hover on external links with touch devices after click.
+    @media (hover: none) {
+      &:hover {
+        border-bottom-color: transparent !important;
+      }
+    }
+  }
+
+  .fa {
+    margin-right: 8px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-weight: $font-weight-bolder;
+    line-height: 1;
+    margin-left: .35em;
+    margin-top: .35em;
+    text-align: center;
+    white-space: nowrap;
+
+    +mobile() {
+      float: right;
+      margin-left: 0;
+    }
+  }
+}
+
+.use-motion .menu-item {
+  opacity: 0;
+}

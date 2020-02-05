@@ -1,19 +1,19 @@
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   {%- if theme.avatar.url %}
-    <img class="site-author-image" itemprop="image"
-      src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
-      alt="{{ author }}">
+    <img class="site-author-image" itemprop="image" alt="{{ author }}"
+      src="{{ url_for(theme.avatar.url) }}">
   {%- endif %}
   <p class="site-author-name" itemprop="name">{{ author }}</p>
-  <div class="site-description motion-element" itemprop="description">{{ description }}</div>
+  <div class="site-description" itemprop="description">{{ description }}</div>
 </div>
 
 {%- if theme.site_state %}
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
     {%- if config.archive_dir != '/' and site.posts.length > 0 %}
       <div class="site-state-item site-state-posts">
         {%- if theme.menu.archives %}
-          <a href="{{ url_for(theme.menu.archives).split('||')[0] | trim }}">
+          <a href="{{ url_for(theme.menu.archives.split('||')[0] | trim) }}">
         {% else %}
           <a href="{{ url_for(config.archive_dir) }}">
         {%- endif %}
@@ -29,16 +29,12 @@
       <div class="site-state-item site-state-categories">
         {%- if hasCategoriesPage %}
           {%- if theme.menu.categories %}
-            <a href="{{ url_for(theme.menu.categories).split('||')[0] | trim }}">
+            <a href="{{ url_for(theme.menu.categories.split('||')[0] | trim) }}">
           {% else %}
             <a href="{{ url_for(config.category_dir) + '/' }}">
           {%- endif %}
         {%- endif %}
-        {%- set visibleCategories = 0 %}
-        {%- for cat in site.categories %}
-          {%- if cat.length %}{%- set visibleCategories += 1 %}{%- endif %}
-        {%- endfor %}
-        <span class="site-state-item-count">{{ visibleCategories }}</span>
+        <span class="site-state-item-count">{{ site.categories.length }}</span>
         <span class="site-state-item-name">{{ __('state.categories') }}</span>
         {%- if hasCategoriesPage %}</a>{%- endif %}
       </div>
@@ -50,33 +46,22 @@
       <div class="site-state-item site-state-tags">
         {%- if hasTagsPage %}
           {%- if theme.menu.tags %}
-            <a href="{{ url_for(theme.menu.tags).split('||')[0] | trim }}">
+            <a href="{{ url_for(theme.menu.tags.split('||')[0] | trim) }}">
           {% else %}
             <a href="{{ url_for(config.tag_dir) + '/' }}">
           {%- endif %}
         {%- endif %}
-        {%- set visibleTags = 0 %}
-        {%- for tag in site.tags %}
-          {%- if tag.length %}{%- set visibleTags += 1 %}{%- endif %}
-        {%- endfor %}
-        <span class="site-state-item-count">{{ visibleTags }}</span>
+        <span class="site-state-item-count">{{ site.tags.length }}</span>
         <span class="site-state-item-name">{{ __('state.tags') }}</span>
         {%- if hasTagsPage %}</a>{%- endif %}
       </div>
     {%- endif %}
   </nav>
-{%- endif %}
-
-{%- if theme.rss %}
-  <div class="feed-link motion-element">
-    <a href="{{ url_for(theme.rss) }}" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
+</div>
 {%- endif %}
 
 {%- if theme.chat.enable and theme.chat.service !== '' %}
-  <div class="chat motion-element">
+  <div class="sidebar-button motion-element">
   {%- if theme.chat.service == 'chatra' and theme.chatra.enable %}
     <a onclick="Chatra('openChat', true)">
   {%- endif %}
@@ -94,13 +79,17 @@
     {%- for name, link in theme.social %}
       <span class="links-of-author-item">
       {%- set sidebarURL = link.split('||')[0] | trim %}
-      {%- if not (theme.social_icons.enable) or (not theme.social_icons.icons_only) %}
+      {%- if theme.social_icons.enable %}
+        {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim + '"></i>' %}
+      {%- else %}
+        {%- set sidebarIcon = '' %}
+      {%- endif %}
+      {%- if theme.social_icons.enable and theme.social_icons.icons_only %}
+        {%- set sidebarText = '' %}
+      {%- else %}
         {%- set sidebarText = name %}
       {%- endif %}
-      {%- if theme.social_icons.enable %}
-        {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim | default('globe') + '"></i>' %}
-      {%- endif %}
-        {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
+        {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' → ' + sidebarURL}) }}
       </span>
     {%- endfor %}
   </div>
@@ -108,13 +97,6 @@
 
 {%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
   <div class="cc-license motion-element" itemprop="license">
-  {%- set ccLanguage = theme.creative_commons.language %}
-  {%- if theme.creative_commons.license === 'zero' %}
-    {%- set ccType = 'publicdomain/zero/1.0/' + ccLanguage %}
-  {% else %}
-    {%- set ccType = 'licenses/' + theme.creative_commons.license + '/4.0/' + ccLanguage %}
-  {%- endif %}
-  {%- set ccURL = 'https://creativecommons.org/' + ccType %}
   {%- set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons">' %}
     {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
   </div>
@@ -122,10 +104,10 @@
 
 {# Blogroll #}
 {%- if theme.links %}
-  <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+  <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
-      {{ theme.links_title }}
+      <i class="fa fa-fw fa-{{ (theme.links_settings.icon or 'link') | lower }}"></i>
+      {{ theme.links_settings.title }}
     </div>
     <ul class="links-of-blogroll-list">
       {%- for blogrollText, blogrollURL in theme.links %}

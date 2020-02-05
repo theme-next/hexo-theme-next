@@ -6,9 +6,7 @@ At present, NexT encourages users to store some options in site's `/_config.yml`
 1. Configurations are splitted into two pieces
 2. Users may be confused which place should be for options
 
-In order to resolve this issue, NexT will take advantage of Hexo [Data files](https://hexo.io/docs/data-files.html). Because Data files is introduced in Hexo 3, so you need upgrade Hexo to 3.0 (or above) to use this feature.
-
-If you prefer Hexo 2.x, you can still use the old approach for configurations. NexT is still compatible with Hexo 2.x (but errors are possible).
+In order to resolve this issue, NexT provides the following two solutions.
 
 <h2 align="center">Option 1: Hexo-Way</h2>
 
@@ -18,7 +16,7 @@ If there are any new options in new releases, you just need to copy those option
 
 ### Usage
 
-1. Check for no exists `/source/_data/next.yml` file (delete it if exists).
+1. Please confirm that the `/source/_data/next.yml` file does not exist (delete it if exists).
 2. Copy needed NexT theme options from theme's `/themes/next/_config.yml` into `/_config.yml`, then\
    2.1. Move all this settings to the right with two spaces (in Visual Studio Code: select all strings, <kbd>CTRL</kbd> + <kbd>]</kbd>).\
    2.2. Add `theme_config:` parameter above all this settings.
@@ -34,6 +32,8 @@ With this way, you can put all your configurations into one place (`/source/_dat
 But option may not accurately procces all hexo external libraries with their additional options (for example, `hexo-server` module options may be readed only in default hexo config).
 
 If there are any new options in new releases, you just need to copy those options from `/themes/next/_config.yml`, paste into `/source/_data/next.yml` and set their values to whatever you want.
+
+This method relies on Hexo [Data files](https://hexo.io/docs/data-files.html). Because Data files is introduced in Hexo 3, so you need upgrade Hexo to 3.0 (or above) to use this feature.
 
 ### Usage
 
@@ -54,7 +54,7 @@ If there are any new options in new releases, you just need to copy those option
   2. Copy **all** NexT theme options from theme's `/themes/next/_config.yml` into `/source/_data/next.yml`.
 
 3. Then, in main site's `/_config.yml` need to define `theme: next` option (and if needed, `source_dir: source`).
-4. Use standart parameters to start server, generate or deploy (`hexo clean && hexo g -d && hexo s`).
+4. Use standard parameters to start server, generate or deploy (`hexo clean && hexo g -d && hexo s`).
 
 ### Useful links
 

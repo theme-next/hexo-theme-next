@@ -1,0 +1,59 @@
+.sidebar {
+  background: $black-deep;
+  bottom: 0;
+  box-shadow: inset 0 2px 6px black;
+  position: fixed;
+  top: 0;
+
+  a, span.exturl {
+    border-bottom-color: $black-light;
+    color: $grey-dark;
+
+    &:hover {
+      border-bottom-color: $gainsboro;
+      color: $gainsboro;
+    }
+  }
+
+  +tablet-mobile() {
+    if (!hexo-config('sidebar.onmobile')) {
+      display: none;
+    }
+  }
+}
+
+.sidebar-inner {
+  color: $grey-dark;
+  padding: $sidebar-padding 10px;
+  text-align: center;
+}
+
+.cc-license {
+  margin-top: 10px;
+  text-align: center;
+
+  .cc-opacity {
+    border-bottom: none;
+    opacity: .7;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  img {
+    display: inline-block;
+  }
+}
+
+@import 'sidebar-author';
+@import 'sidebar-author-links';
+@import 'sidebar-button';
+@import 'sidebar-blogroll';
+@import 'sidebar-dimmer';
+@import 'sidebar-nav';
+@import 'sidebar-toggle';
+
+@import 'sidebar-toc' if (hexo-config('toc.enable'));
+
+@import 'site-state' if (hexo-config('site_state'));

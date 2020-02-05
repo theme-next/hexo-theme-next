@@ -1,5 +1,6 @@
 {%- if page.comments %}
 <script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
   window.livereOptions = {
     refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
   };
@@ -11,5 +12,6 @@
     j.async = true;
     e.parentNode.insertBefore(j, e);
   })(document, 'script');
+});
 </script>
 {%- endif %}

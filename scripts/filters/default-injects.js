@@ -7,9 +7,7 @@ const points = require('../events/lib/injects-point');
 hexo.extend.filter.register('theme_inject', injects => {
   let filePath = hexo.theme.config.custom_file_path;
 
-  if (!filePath) {
-    return;
-  }
+  if (!filePath) return;
 
   points.views.forEach(key => {
     if (filePath[key]) {

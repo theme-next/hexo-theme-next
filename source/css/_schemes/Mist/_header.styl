@@ -5,11 +5,11 @@
 }
 
 .header-inner {
-  clearfix();
   align-items: center;
   display: flex;
   justify-content: center;
   padding: 20px 0;
+  clearfix();
 
   +mobile() {
     display: block;
@@ -34,10 +34,6 @@
     +mobile() {
       display: block;
     }
-  }
-
-  .logo {
-    display: none;
   }
 
   .site-title {
@@ -75,4 +71,8 @@
   .logo-line-after i {
     right: -100%;
   }
+}
+
+.site-subtitle {
+  display: none;
 }

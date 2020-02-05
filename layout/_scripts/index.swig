@@ -1,9 +1,18 @@
 {% include 'vendors.swig' %}
-{% include 'commons.swig' %}
+
+{{- next_js('utils.js') }}
+{%- if theme.motion.enable %}
+  {{- next_js('motion.js') }}
+{%- endif %}
 
 {%- set scheme_script = 'schemes/' + theme.scheme | lower + '.swig' %}
 {% include scheme_script %}
 
-{% include 'next-boot.swig' %}
-{% include 'exturl.swig' %}
+{{- next_js('next-boot.js') }}
+{%- if theme.bookmark.enable %}
+  {{- next_js('bookmark.js') }}
+{%- endif %}
+{%- if theme.pjax %}
+  {% include 'pjax.swig' %}
+{%- endif %}
 {% include 'three.swig' %}
