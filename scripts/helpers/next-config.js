@@ -36,7 +36,7 @@ hexo.extend.helper.register('next_config', function() {
     path       : config.search.path,
     motion     : theme.motion
   };
-  return `<script id="hexo.configurations">
+  return `<script id="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = ${JSON.stringify(exportConfig)};
   </script>`;
