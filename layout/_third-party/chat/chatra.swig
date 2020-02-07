@@ -2,7 +2,7 @@
   {%- if theme.chatra.embed %}
   <script>
     window.ChatraSetup = {
-      mode: 'frame',
+      mode    : 'frame',
       injectTo: '{{ theme.chatra.embed }}'
     };
   </script>

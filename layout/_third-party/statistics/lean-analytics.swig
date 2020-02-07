@@ -88,8 +88,8 @@
         return fetch(`https://${api_server}/1.1${url}`, {
           method: method,
           headers: {
-            'X-LC-Id': '{{ theme.leancloud_visitors.app_id }}',
-            'X-LC-Key': '{{ theme.leancloud_visitors.app_key }}',
+            'X-LC-Id'     : '{{ theme.leancloud_visitors.app_id }}',
+            'X-LC-Key'    : '{{ theme.leancloud_visitors.app_key }}',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
