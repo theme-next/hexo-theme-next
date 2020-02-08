@@ -10,7 +10,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
     var gitalk = new Gitalk({
       clientID    : '{{ theme.gitalk.client_id }}',
       clientSecret: '{{ theme.gitalk.client_secret }}',
-      accessToken : '{{ theme.gitalk.access_token }}'
       repo        : '{{ theme.gitalk.repo }}',
       owner       : '{{ theme.gitalk.github_id }}',
       admin       : ['{{ theme.gitalk.admin_user }}'],
