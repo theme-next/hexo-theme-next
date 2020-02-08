@@ -33,9 +33,11 @@ hexo.extend.helper.register('next_config', function() {
       labels   : theme.algolia_search.labels
     },
     localsearch: theme.local_search,
-    path       : config.search.path,
     motion     : theme.motion
   };
+  if (config.search) {
+    exportConfig.path = config.search.path;
+  }
   return `<script id="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = ${JSON.stringify(exportConfig)};
