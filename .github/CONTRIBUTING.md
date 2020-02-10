@@ -45,8 +45,10 @@ Before submitting an Issue on GitHub, you can follow the steps below to debug:
 
 * Execute `hexo clean`, cleare the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader)
 * Switch to another theme and check if the bug still exists (e.g. default theme landscape). In other words, prove that this is a NexT issue, not a issue from Hexo.
+* Upgrade theme NexT to the latest version.
 * Upgrade Hexo and Hexo plugins to the latest version.
-* Uninstall all non-essential Hexo plugins.
+* Upgrade Node.js and `npm` to the latest version.
+* Uninstall all non-essential Hexo plugins, or reinstall all plugins using `npm install --save`.
 
 If you get an error message from Hexo or your browser, please search in Google / Stackoverflow / GitHub Issues, or report it to us when submitting a new Issue.
 
