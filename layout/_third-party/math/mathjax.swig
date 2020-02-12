@@ -11,7 +11,7 @@
         {%- endif %}
       },
       tex: {
-        inlineMath: {'[+]': [['$', '$'], ['\\(', '\\)']]},
+        inlineMath: {'[+]': [['$', '$']]},
         {%- if theme.math.mathjax.mhchem %}
           packages: {'[+]': ['ams', 'mhchem']},
         {%- else %}
