@@ -519,6 +519,19 @@ math:
     enable: false
     # See: https://mhchem.github.io/MathJax-mhchem/
     mhchem: false
+    # For hexo-renderer-marked, the default renderer of Hexo, some math equations with
+    # multiple subscribe mark of LaTeX (say, the underscore `_`) might cause problems.
+    # Enable this flag could bypass this problem by wrap your math codes in the inline-math_in_verbatim
+    # marks of Markdown, say, the backquote pair.
+    # For example,
+    # ```
+    # $ E = mc^2 $.
+    # ```
+    # could be replaced by
+    # ```
+    # `$ E = mc^2 $`.
+    # ```
+    math_in_verbatim: false
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
   katex:
