@@ -1,6 +1,18 @@
 {%- set mathjax_uri = theme.vendors.mathjax or '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js' %}
 
 <script>
+  {%- if theme.math.mathjax.math_in_verbatim %}
+    document.querySelectorAll('code').forEach(code => {
+      const text = code.innerHTML;
+      // is_inline_math  = /^\$(.*)\$$/.exec(text) || /^\\\((.*)\\\)$/.exec(text);
+      // is_display_math = /^\$\$(.*)\$\$$/ms.exec(text) || /^\\begin\{.+\}(.*)\\end\{.+\}/ms.exec(text);
+      if (/^\$\$(.*)\$\$$/ms.exec(text) || /^\\begin\{.+\}(.*)\\end\{.+\}/ms.exec(text)) {
+        code.outerHTML = "<span class='theme_next_mathjax_display has-jax'>" + text + "</span>";
+      } else if (/^\$(.*)\$$/.exec(text) || /^\\\((.*)\\\)$/.exec(text)) {
+        code.outerHTML = "<span class='theme_next_mathjax_inline has-jax'>"  + text + "</span>";
+      }
+    });
+  {%- endif %}
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
