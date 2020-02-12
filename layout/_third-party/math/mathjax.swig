@@ -3,15 +3,19 @@
 <script>
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
-      {%- if theme.math.mathjax.mhchem %}
-        loader: {
-          load: ['[tex]/mhchem']
-        },
-      {%- endif %}
+      loader: {
+        {%- if theme.math.mathjax.mhchem %}
+          load: ['[tex]/ams', '[tex]/mhchem'],
+        {%- else %}
+          load: ['[tex]/ams'],
+        {%- endif %}
+      },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
         {%- if theme.math.mathjax.mhchem %}
-          packages: {'[+]': ['mhchem']},
+          packages: {'[+]': ['ams', 'mhchem']},
+        {%- else %}
+          packages: {'[+]': ['ams']},
         {%- endif %}
         tags: 'ams'
       },
