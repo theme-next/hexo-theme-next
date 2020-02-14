@@ -119,3 +119,14 @@
     }
   }
 }
+
+if (hexo-config('back2top.sidebar')) {
+  // Only when back2top.sidebar is true, apply the following styles
+  .back-to-top {
+    margin: 8px - $sidebar-offset -10px -18px;
+
+    &.back-to-top-on {
+      margin-top: 16px;
+    }
+  }
+}
