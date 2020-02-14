@@ -1,14 +1,18 @@
 .site-nav-toggle {
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-
   +tablet() {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .toggle .toggle-line {
     background: white;
+  }
+}
+
+.site-nav-right {
+  +tablet() {
+    display: block;
   }
 }
 
