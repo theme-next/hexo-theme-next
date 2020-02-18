@@ -180,7 +180,7 @@
 
       {%- if is_index %}
         {%- if post.description and theme.excerpt_description %}
-          {{ post.description }}
+          <p>{{ post.description }}</p>
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
