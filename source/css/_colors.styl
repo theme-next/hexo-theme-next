@@ -1,0 +1,21 @@
+:root {
+  --body-bg-color: $body-bg-color;
+  --text-color: $text-color;
+  --post-block-bg-color: $post-block-bg-color;
+  --link-color: $link-color;
+  --post-copyright-bg-color: $post-copyright-bg-color;
+  --post-title-link-color: $post-title-link-color;
+}
+
+if (hexo-config('darkmode')) {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --body-bg-color: $body-bg-color-dark;
+      --text-color: $text-color-dark;
+      --post-block-bg-color: $post-block-bg-color-dark;
+      --link-color: $link-color-dark;
+      --post-copyright-bg-color: $post-copyright-bg-color-dark;
+      --post-title-link-color: $post-title-link-color-dark;
+    }
+  }
+}
