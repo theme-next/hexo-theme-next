@@ -1,10 +1,9 @@
 .site-author-image {
   border: $site-author-image-border-width solid $site-author-image-border-color;
   display: block;
-  height: $site-author-image-height;
   margin: 0 auto;
   max-width: $site-author-image-width;
-  padding: $site-author-image-padding;
+  padding: 2px;
 
   if (hexo-config('avatar.rounded')) {
     border-radius: 50%;
@@ -25,12 +24,12 @@ if (hexo-config('avatar.rotated')) {
   color: $site-author-name-color;
   font-weight: $site-author-name-weight;
   margin: $site-author-name-margin;
-  text-align: $site-author-name-align;
+  text-align: center;
 }
 
 .site-description {
   color: $site-description-color;
   font-size: $site-description-font-size;
   margin-top: $site-description-margin-top;
-  text-align: $site-description-align;
+  text-align: center;
 }

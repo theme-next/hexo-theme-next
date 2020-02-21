@@ -9,11 +9,11 @@
     display: none;
   }
   a, span.exturl {
-    color: $black-light;
+    color: var(--link-color);
 
     &:hover {
-      border-bottom-color: $black-deep;
-      color: $black-deep;
+      border-bottom-color: var(--sidebar-link-hover-color);
+      color: var(--sidebar-link-hover-color);
     }
   }
 }
@@ -23,7 +23,7 @@
 }
 
 .sidebar-inner {
-  background: white;
+  background: var(--content-bg-color);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   box-sizing: border-box;
