@@ -39,14 +39,14 @@ $use-seo = hexo-config('seo');
   border-radius: $border-radius-inner;
   box-shadow: $box-shadow-inner;
   padding: $content-desktop-padding;
-}
 
-// When blocks are siblings (homepage).
-.post-block + .post-block {
-  border-radius: $border-radius;
-  // Rewrite shadows & borders because all blocks have offsets.
-  box-shadow: $box-shadow;
-  margin-top: $sidebar-offset;
+  // When blocks are siblings (homepage).
+  & + .post-block {
+    border-radius: $border-radius;
+    // Rewrite shadows & borders because all blocks have offsets.
+    box-shadow: $box-shadow;
+    margin-top: $sidebar-offset;
+  }
 }
 
 // Comments blocks.

@@ -1,21 +1,21 @@
 // Post Expand
 // --------------------------------------------------
-.posts-expand .home {
-  .post-title, .post-meta {
-    text-align: $site-meta-text-align;
-
-    +mobile() {
-      text-align: center;
-    }
-  }
-
-  .post-meta {
-    margin: 5px 0 20px 0;
-  }
-}
-
 .posts-expand {
   padding-top: 0;
+
+  .home {
+    .post-title, .post-meta {
+      text-align: $site-meta-text-align;
+
+      +mobile() {
+        text-align: center;
+      }
+    }
+
+    .post-meta {
+      margin: 5px 0 20px 0;
+    }
+  }
 
   .post-eof {
     display: none;

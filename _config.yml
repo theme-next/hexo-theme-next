@@ -109,6 +109,9 @@ scheme: Muse
 #scheme: Pisces
 #scheme: Gemini
 
+# Dark Mode
+darkmode: false
+
 
 # ---------------------------------------------------------------
 # Menu Settings
