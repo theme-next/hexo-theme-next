@@ -5,6 +5,8 @@ $color-scheme-light {
   --text-color: $text-color;
   --link-color: $link-color;
   --link-hover-color: $link-hover-color;
+  --brand-color: $brand-color;
+  --brand-hover-color: $brand-hover-color;
   --table-row-odd-bg-color: $table-row-odd-bg-color;
   --table-row-hover-bg-color: $table-row-hover-bg-color;
   --menu-item-bg-color: $menu-item-bg-color;
@@ -17,13 +19,15 @@ $color-scheme-dark {
   --text-color: $text-color-dark;
   --link-color: $link-color-dark;
   --link-hover-color: white;
+  --brand-color: $brand-color-dark;
+  --brand-hover-color: $brand-hover-color-dark;
   --table-row-odd-bg-color: $table-row-odd-bg-color-dark;
   --table-row-hover-bg-color: $table-row-hover-bg-color-dark;
   --menu-item-bg-color: $menu-item-bg-color-dark;
 }
 
 :root {
-  @extend $color-scheme-light;
+  @extend $color-scheme-dark;
 }
 
 if (hexo-config('darkmode')) {
