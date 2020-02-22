@@ -7,16 +7,6 @@
   position: fixed;
   top: 0;
 
-  a, span.exturl {
-    border-bottom-color: $black-light;
-    color: $grey-dark;
-
-    &:hover {
-      border-bottom-color: $gainsboro;
-      color: $gainsboro;
-    }
-  }
-
   +tablet-mobile() {
     if (!hexo-config('sidebar.onmobile')) {
       display: none;

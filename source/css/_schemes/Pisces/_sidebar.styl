@@ -8,14 +8,6 @@
   +tablet-mobile() {
     display: none;
   }
-  a, span.exturl {
-    color: var(--link-color);
-
-    &:hover {
-      border-bottom-color: var(--link-hover-color);
-      color: var(--link-hover-color);
-    }
-  }
 }
 
 .sidebar-toggle {
@@ -109,6 +101,9 @@
 }
 
 .links-of-blogroll-item {
+  if (hexo-config('links_settings.layout') == 'inline') {
+    display: inline-block;
+  }
   padding: 0;
 
   if (hexo-config('links_settings.layout') == 'inline') {
