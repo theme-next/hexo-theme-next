@@ -1,6 +1,5 @@
 .site-nav {
   +mobile() {
-    background: white;
     border-bottom: 1px solid $gray-lighter;
     border-top: 1px solid $gray-lighter;
     left: 0;
@@ -22,7 +21,7 @@
 
 .menu-item-active a {
   background: transparent;
-  border-bottom: 1px solid $menu-link-hover-border !important;
+  border-bottom: 1px solid var(--link-hover-color) !important;
 
   +mobile() {
     border-bottom: 1px dotted $gray-lighter !important;
