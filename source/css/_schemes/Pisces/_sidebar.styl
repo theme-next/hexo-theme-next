@@ -73,6 +73,10 @@
 .links-of-author-item {
   sidebar-inline-links-item();
 
+  if (!hexo-config('social_icons.icons_only')) {
+    width: 50%;
+  }
+
   a, span.exturl {
     border-bottom: none;
     display: block;
@@ -83,7 +87,7 @@
     }
 
     &:hover {
-      background: $gainsboro;
+      background: var(--body-bg-color);
       border-radius: 4px;
     }
   }
@@ -93,20 +97,11 @@
   }
 }
 
-.links-of-blogroll {
-
-  if (hexo-config('links_settings.layout') == 'inline') {
-    clearfix();
-  }
-}
-
 .links-of-blogroll-item {
-  if (hexo-config('links_settings.layout') == 'inline') {
-    display: inline-block;
-  }
   padding: 0;
 
   if (hexo-config('links_settings.layout') == 'inline') {
+    display: inline-block;
     sidebar-inline-links-item();
 
     if (!hexo-config('social_icons.icons_only')) {
