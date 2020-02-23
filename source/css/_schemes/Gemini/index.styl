@@ -35,23 +35,23 @@ $use-seo = hexo-config('seo');
 
 // Post & Comments blocks.
 .post-block {
-  background: white;
+  background: var(--content-bg-color);
   border-radius: $border-radius-inner;
   box-shadow: $box-shadow-inner;
   padding: $content-desktop-padding;
-}
 
-// When blocks are siblings (homepage).
-.post-block + .post-block {
-  border-radius: $border-radius;
-  // Rewrite shadows & borders because all blocks have offsets.
-  box-shadow: $box-shadow;
-  margin-top: $sidebar-offset;
+  // When blocks are siblings (homepage).
+  & + .post-block {
+    border-radius: $border-radius;
+    // Rewrite shadows & borders because all blocks have offsets.
+    box-shadow: $box-shadow;
+    margin-top: $sidebar-offset;
+  }
 }
 
 // Comments blocks.
 .comments {
-  background: white;
+  background: var(--content-bg-color);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   margin: auto;
@@ -80,7 +80,7 @@ $use-seo = hexo-config('seo');
     top: initial;
   }
 
-  background: white;
+  background: var(--content-bg-color);
   border-radius: $border-radius;
   border-top: initial;
   box-shadow: $box-shadow;

@@ -7,24 +7,24 @@ table {
   border-spacing: 0;
   font-size: $table-font-size;
   margin: 0 0 20px 0;
-  width: $table-width;
+  width: 100%;
 }
 
 tbody tr {
   &:nth-of-type(odd) {
-    background: $table-row-odd-bg-color;
+    background: var(--table-row-odd-bg-color);
   }
 
   &:hover {
-    background: $table-row-hover-bg-color;
+    background: var(--table-row-hover-bg-color);
   }
 }
 
 caption, th, td {
   font-weight: normal;
-  padding: $table-cell-padding;
-  text-align: $table-content-alignment;
-  vertical-align: $table-content-vertical;
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
 }
 
 th, td {
@@ -33,7 +33,7 @@ th, td {
 }
 
 th {
-  font-weight: $table-th-font-weight;
+  font-weight: 700;
   padding-bottom: 10px;
 }
 

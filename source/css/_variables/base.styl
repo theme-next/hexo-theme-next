@@ -28,23 +28,34 @@ $orange       = #fc6423;
 // --------------------------------------------------
 // Global text color on <body>
 $text-color                   = $black-light;
+$text-color-dark              = #e1e1e1;
 
 // Global link color.
 $link-color                   = $black-light;
+$link-color-dark              = #e1e1e1;
 $link-hover-color             = $black-deep;
+$link-hover-color-dark        = white;
 $link-decoration-color        = $grey-dark;
-$link-decoration-hover-color  = $black-deep;
 
 // Global border color.
 $border-color                 = $grey-light;
 
 // Background color for <body>
 $body-bg-color                = white;
+$body-bg-color-dark           = #121212;
+$content-bg-color             = white;
+$content-bg-color-dark        = #1d1d1d;
 
 // Selection
 $selection-bg                 = $blue-deep;
 $selection-color              = white;
 
+// Dark mode color
+$card-bg-color                = $whitesmoke;
+$card-bg-color-dark           = #282828;
+
+$menu-item-bg-color           = $whitesmoke;
+$menu-item-bg-color-dark      = $black-dim;
 
 // Typography
 // Font, line-height, and elements colors.
@@ -75,14 +86,6 @@ $font-family-monospace    = get_font_family('codes'), consolas, Menlo, monospace
 $font-family-icons        = 'FontAwesome';
 
 
-// Font Weight
-$font-weight-lighter      = 200;
-$font-weight-light        = 300;
-$font-weight-normal       = 400;
-$font-weight-bold         = 600;
-$font-weight-bolder       = 700;
-
-
 // Font size
 $font-size-base           = (hexo-config('font.enable') and hexo-config('font.global.size') is a 'unit') ? unit(hexo-config('font.global.size'), em) : 1em;
 $font-size-smallest       = .75em;
@@ -106,7 +109,7 @@ $line-height-code-block   = 1.6; // Can't be less than 1.3;
 
 // Z-index master list
 // --------------------------------------------------
-$zindex-0       = 1000
+$zindex-0       = 1000;
 $zindex-1       = 1100;
 $zindex-2       = 1200;
 $zindex-3       = 1300;
@@ -116,36 +119,27 @@ $zindex-5       = 1500;
 
 // Table
 // --------------------------------------------------
-$table-width                    = 100%;
 $table-border-color             = $gray-lighter;
 $table-font-size                = $font-size-small;
-$table-content-alignment        = left;
-$table-content-vertical         = middle;
-$table-th-font-weight           = 700;
-$table-cell-padding             = 8px;
-$table-cell-border-right-color  = $gainsboro;
 $table-cell-border-bottom-color = $gray-lighter;
 $table-row-odd-bg-color         = #f9f9f9;
+$table-row-odd-bg-color-dark    = #282828;
 $table-row-hover-bg-color       = $whitesmoke;
+$table-row-hover-bg-color-dark  = #363636;
 
 
 // Code & Code Blocks
 // --------------------------------------------------
 $code-font-family               = $font-family-monospace;
-$code-border-radius             = 3px;
 $code-foreground                = $black-light;
 $code-background                = $gainsboro;
 
 
 // Buttons
 // --------------------------------------------------
-$btn-font-weight                = normal;
-
 $btn-default-radius             = 0;
 $btn-default-bg                 = $black-deep;
 $btn-default-color              = white;
-$btn-default-font-size          = $font-size-small;
-$btn-default-border-width       = 2px;
 $btn-default-border-color       = $black-deep;
 $btn-default-hover-bg           = white;
 $btn-default-hover-color        = $black-deep;
@@ -195,7 +189,8 @@ $head-bg                        = transparent;
 $site-meta-text-align           = center;
 $brand-color                    = white;
 $brand-hover-color              = white;
-$brand-bg                       = $black-deep;
+$brand-color-dark               = white;
+$brand-hover-color-dark         = white;
 
 $font-size-title                = (hexo-config('font.enable') and hexo-config('font.title.size') is a 'unit') ? unit(hexo-config('font.title.size'), em) : $font-size-largest;
 $font-size-subtitle             = $font-size-smaller;
@@ -219,37 +214,22 @@ $sidebar-nav-color                    = $black-light;
 $sidebar-nav-hover-color              = $whitesmoke;
 $sidebar-highlight                    = $blue-bright;
 
-$site-author-image-padding            = 2px;
 $site-author-image-width              = 96px;
-$site-author-image-height             = auto;
 $site-author-image-border-width       = 2px;
 $site-author-image-border-color       = $black-dim;
 
 $site-author-name-margin              = 5px 0 0;
 $site-author-name-color               = $whitesmoke;
-$site-author-name-align               = center;
 $site-author-name-weight              = normal;
 
 $site-description-font-size           = $font-size-medium;
 $site-description-color               = $grey-dark;
 $site-description-margin-top          = 5px;
-$site-description-align               = center;
 
-$site-state-align                     = center;
 $site-state-item-count-font-size      = $font-size-larger;
-$site-state-item-count-color          = inherit;
 $site-state-item-name-font-size       = $font-size-small;
 $site-state-item-name-color           = inherit;
 $site-state-item-border-color         = $black-dim;
-
-$toc-link-color                       = $grey-dark;
-$toc-link-border-color                = $black-light;
-$toc-link-hover-color                 = $grey-light;
-$toc-link-hover-border-color          = $grey-light;
-$toc-link-active-color                = $sidebar-highlight;
-$toc-link-active-border-color         = $sidebar-highlight;
-$toc-link-active-current-color        = $sidebar-highlight;
-$toc-link-active-current-border-color = $sidebar-highlight;
 
 
 // Components
@@ -264,7 +244,6 @@ $b2t-position-right-mobile    = 20px;
 $b2t-font-size                = 12px;
 $b2t-color                    = white;
 $b2t-bg-color                 = $black-deep;
-$b2t-sidebar-bg-color         = $black-deep;
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator

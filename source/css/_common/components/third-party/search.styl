@@ -11,7 +11,7 @@
 }
 
 .search-popup {
-  background: white;
+  background: var(--card-bg-color);
   border-radius: 5px;
   display: none;
   height: 80%;
@@ -39,7 +39,6 @@
   }
 
   .popup-btn-close {
-    border-left: 1px solid $gainsboro;
     cursor: pointer;
 
     &:hover .fa {
@@ -48,10 +47,10 @@
   }
 
   .search-header {
-    display: flex;
-    background: $whitesmoke;
+    background: $gainsboro;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    display: flex;
     padding: 5px;
   }
 }

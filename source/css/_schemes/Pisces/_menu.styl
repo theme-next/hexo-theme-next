@@ -22,21 +22,17 @@
   }
 }
 
-.menu-item-active a {
-  background: $whitesmoke;
-
-  if (!hexo-config('menu_settings.badges')) {
-    &::after {
-      background: $grey;
-      border-radius: 50%;
-      content: ' ';
-      height: 6px;
-      margin-top: -3px;
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      width: 6px;
-    }
+if (!hexo-config('menu_settings.badges')) {
+  .menu-item-active a::after {
+    background: $grey;
+    border-radius: 50%;
+    content: ' ';
+    height: 6px;
+    margin-top: -3px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 6px;
   }
 }
 

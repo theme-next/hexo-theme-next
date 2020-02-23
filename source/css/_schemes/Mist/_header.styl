@@ -1,7 +1,7 @@
 // Header
 // --------------------------------------------------
 .header {
-  background: $whitesmoke;
+  background: var(--content-bg-color);
 }
 
 .header-inner {
@@ -20,7 +20,6 @@
   line-height: normal;
 
   .brand {
-    background: none;
     padding: 2px 1px;
 
     +mobile() {
@@ -44,14 +43,10 @@
   }
 
   i {
-    background: $black-deep;
+    background: var(--brand-color);
     display: block;
     height: 2px;
     position: relative;
-
-    +mobile() {
-      height: 3px;
-    }
   }
 }
 
