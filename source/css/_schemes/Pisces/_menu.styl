@@ -3,8 +3,12 @@
     flex-column();
   }
 
-  .toggle .toggle-line {
-    background: white;
+  .toggle {
+    color: white;
+
+    .toggle-line {
+      background: white;
+    }
   }
 }
 
@@ -43,7 +47,7 @@ if (!hexo-config('menu_settings.badges')) {
     }
   }
 
-  +tablet() {
+  +tablet-mobile() {
     &.menu-item-search {
       display: none;
     }
