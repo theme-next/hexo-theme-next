@@ -95,11 +95,13 @@ window.addEventListener('DOMContentLoaded', () => {
   search.start();
 
   // Handle and trigger popup window
-  document.querySelector('.popup-trigger').addEventListener('click', () => {
-    document.body.style.overflow = 'hidden';
-    document.querySelector('.search-pop-overlay').style.display = 'block';
-    document.querySelector('.popup').style.display = 'block';
-    document.querySelector('.search-input').focus();
+  document.querySelectorAll('.popup-trigger').forEach(element => {
+    element.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+      document.querySelector('.search-pop-overlay').style.display = 'block';
+      document.querySelector('.popup').style.display = 'block';
+      document.querySelector('.search-input').focus();
+    });
   });
 
   // Monitor main search box

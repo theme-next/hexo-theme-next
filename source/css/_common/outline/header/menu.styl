@@ -12,7 +12,12 @@
   margin: 0 10px;
 
   +mobile() {
+    display: block;
     margin-top: 10px;
+
+    &.menu-item-search {
+      display: none;
+    }
   }
 
   a, span.exturl {

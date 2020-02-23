@@ -286,13 +286,15 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle and trigger popup window
-  document.querySelector('.popup-trigger').addEventListener('click', () => {
-    if (isfetched === false) {
-      searchFunc();
-    } else {
-      proceedSearch();
-    }
-  });
+  document.querySelectorAll('.popup-trigger').forEach(element => {
+    element.addEventListener('click', () => {
+      if (isfetched === false) {
+        searchFunc();
+      } else {
+        proceedSearch();
+      }
+    });
+  })
 
   // Monitor main search box
   const onPopupClose = () => {
