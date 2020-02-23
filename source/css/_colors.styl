@@ -1,4 +1,4 @@
-$color-scheme-light {
+:root {
   --body-bg-color: $body-bg-color;
   --content-bg-color: $content-bg-color;
   --card-bg-color: $card-bg-color;
@@ -12,28 +12,20 @@ $color-scheme-light {
   --menu-item-bg-color: $menu-item-bg-color;
 }
 
-$color-scheme-dark {
-  --body-bg-color: $body-bg-color-dark;
-  --content-bg-color: $content-bg-color-dark;
-  --card-bg-color: $card-bg-color-dark;
-  --text-color: $text-color-dark;
-  --link-color: $link-color-dark;
-  --link-hover-color: $link-hover-color-dark;
-  --brand-color: $brand-color-dark;
-  --brand-hover-color: $brand-hover-color-dark;
-  --table-row-odd-bg-color: $table-row-odd-bg-color-dark;
-  --table-row-hover-bg-color: $table-row-hover-bg-color-dark;
-  --menu-item-bg-color: $menu-item-bg-color-dark;
-}
-
-:root {
-  @extend $color-scheme-light;
-}
-
 if (hexo-config('darkmode')) {
   @media (prefers-color-scheme: dark) {
     :root {
-      @extend $color-scheme-dark;
+      --body-bg-color: $body-bg-color-dark;
+      --content-bg-color: $content-bg-color-dark;
+      --card-bg-color: $card-bg-color-dark;
+      --text-color: $text-color-dark;
+      --link-color: $link-color-dark;
+      --link-hover-color: $link-hover-color-dark;
+      --brand-color: $brand-color-dark;
+      --brand-hover-color: $brand-hover-color-dark;
+      --table-row-odd-bg-color: $table-row-odd-bg-color-dark;
+      --table-row-hover-bg-color: $table-row-hover-bg-color-dark;
+      --menu-item-bg-color: $menu-item-bg-color-dark;
     }
 
     img {

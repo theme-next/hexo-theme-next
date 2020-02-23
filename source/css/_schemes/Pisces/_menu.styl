@@ -1,18 +1,14 @@
-.site-nav-toggle {
+.site-nav-toggle, .site-nav-right {
   +tablet() {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-column();
   }
 
-  .toggle .toggle-line {
-    background: white;
-  }
-}
+  .toggle {
+    color: white;
 
-.site-nav-right {
-  +tablet() {
-    display: block;
+    .toggle-line {
+      background: white;
+    }
   }
 }
 
@@ -48,6 +44,12 @@ if (!hexo-config('menu_settings.badges')) {
 
     &:hover {
       @extend .menu-item-active a;
+    }
+  }
+
+  +tablet-mobile() {
+    &.menu-item-search {
+      display: none;
     }
   }
 
