@@ -290,7 +290,7 @@ window.addEventListener('DOMContentLoaded', () => {
     element.addEventListener('click', () => {
       isfetched ? proceedSearch() : searchFunc();
     });
-  })
+  });
 
   // Monitor main search box
   const onPopupClose = () => {
