@@ -46,6 +46,25 @@
   }
 }
 
+.languages {
+  display: inline-block;
+  font-size: $font-size-large;
+  position: relative;
+
+  .lang-select-label span {
+    margin: 0 .5em;
+  }
+
+  .lang-select {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
 .with-love {
   color: unquote(hexo-config('footer.icon.color'));
   display: inline-block;

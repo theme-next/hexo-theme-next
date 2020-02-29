@@ -1,3 +1,20 @@
+{%- if languages.length > 1 %}
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>{{ language_name(language) }}</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="">
+      {% for language in languages %}
+        <option value="{{ language }}" data-href="{{ i18n_path(language) }}" selected="">
+          {{ language_name(language) }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+{%- endif %}
+
 {%- if theme.footer.beian.enable %}
   <div class="beian">
     {{- next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}

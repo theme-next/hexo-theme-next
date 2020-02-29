@@ -46,7 +46,7 @@ NexT.utils = {
   registerExtURL: function() {
     document.querySelectorAll('.exturl').forEach(element => {
       element.addEventListener('click', event => {
-        var exturl = event.currentTarget.getAttribute('data-url');
+        var exturl = event.currentTarget.dataset.url;
         var decurl = decodeURIComponent(escape(window.atob(exturl)));
         window.open(decurl, '_blank', 'noopener');
         return false;
@@ -210,6 +210,18 @@ NexT.utils = {
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== CONFIG.root && location.pathname.indexOf(target.pathname) === 0;
       element.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
+    });
+  },
+
+  registerLangSelect: function() {
+    let sel = document.querySelector('.lang-select');
+    if (!sel) return;
+    sel.value = CONFIG.page.lang;
+    sel.addEventListener('change', () => {
+      let target = sel.options[sel.selectedIndex];
+      document.querySelector('.lang-select-label span').innerText = target.text;
+      let url = target.dataset.href;
+      window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
     });
   },
 

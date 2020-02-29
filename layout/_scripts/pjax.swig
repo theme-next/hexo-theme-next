@@ -5,6 +5,7 @@ var pjax = new Pjax({
     '#page-configurations',
     '.content-wrap',
     '.post-toc-wrap',
+    '.languages',
     '#pjax'
   ],
   switches: {
