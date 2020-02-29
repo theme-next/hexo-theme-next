@@ -13,7 +13,7 @@ if (document.querySelectorAll('div.pdf').length) {
           view     : 'FitH'
         },
         PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: element.getAttribute('height') || '{{ theme.pdf.height }}'
+        height   : element.getAttribute('height') || '{{ theme.pdf.height }}'
       });
     });
   }, window.PDFObject);

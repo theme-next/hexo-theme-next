@@ -15,9 +15,10 @@
     {%- set menuBadge = '' %}
     {%- if theme.menu_settings.badges %}
       {%- set badges = {
-        archives: site.posts.length,
+        archives  : site.posts.length,
         categories: site.categories.length,
-        tags: site.tags.length }
+        tags      : site.tags.length
+        }
       %}
       {%- for menu, count in badges %}
         {%- if name == menu %}

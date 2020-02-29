@@ -8,7 +8,7 @@
     function addCount(Counter) {
       var visitors = document.querySelector('.leancloud_visitors');
       var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.dataset['flag-title'];
+      var title = visitors.dataset.flagTitle;
 
       Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
         .then(response => response.json())
@@ -33,7 +33,7 @@
               leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
               console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
             {% else %}
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -86,7 +86,7 @@
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+          method,
           headers: {
             'X-LC-Id'     : '{{ theme.leancloud_visitors.app_id }}',
             'X-LC-Key'    : '{{ theme.leancloud_visitors.app_key }}',
