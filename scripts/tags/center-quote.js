@@ -7,9 +7,9 @@
 'use strict';
 
 function centerQuote(args, content) {
-  return '<blockquote class="blockquote-center">'
-       + hexo.render.renderSync({text: content, engine: 'markdown'})
-       + '</blockquote>';
+  return `<blockquote class="blockquote-center">
+            ${hexo.render.renderSync({text: content, engine: 'markdown'})}
+          </blockquote>`;
 }
 
 hexo.extend.tag.register('centerquote', centerQuote, {ends: true});
