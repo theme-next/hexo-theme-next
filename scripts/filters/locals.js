@@ -17,10 +17,7 @@ hexo.extend.filter.register('template_locals', locals => {
   locals.author = __('author') !== 'author' ? __('author') : config.author;
   locals.description = __('description') !== 'description' ? __('description') : config.description;
   let languages = [...i18n.languages];
-  if (languages.includes('default')) {
-    languages.splice(languages.indexOf('default'), 1);
-  }
-  locals.languages = languages;
+  locals.languages = languages.splice(languages.indexOf('default'), 1);
   // Creative Commons
   locals.ccURL = 'https://creativecommons.org/' + (theme.creative_commons.license === 'zero' ? 'publicdomain/zero/1.0/' : 'licenses/' + theme.creative_commons.license + '/4.0/') + (theme.creative_commons.language || '');
   // PJAX
