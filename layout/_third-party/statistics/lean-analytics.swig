@@ -8,7 +8,7 @@
     function addCount(Counter) {
       var visitors = document.querySelector('.leancloud_visitors');
       var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.dataset['flag-title'];
+      var title = visitors.dataset.flagTitle;
 
       Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
         .then(response => response.json())
