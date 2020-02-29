@@ -16,8 +16,9 @@ hexo.extend.filter.register('template_locals', locals => {
   locals.subtitle = __('subtitle') !== 'subtitle' ? __('subtitle') : config.subtitle;
   locals.author = __('author') !== 'author' ? __('author') : config.author;
   locals.description = __('description') !== 'description' ? __('description') : config.description;
-  let languages = [...i18n.languages];
-  locals.languages = languages.splice(languages.indexOf('default'), 1);
+  locals.languages = [...i18n.languages];
+  locals.languages.splice(locals.languages.indexOf('default'), 1);
+  locals.page.lang = locals.page.lang || locals.page.language;
   // Creative Commons
   locals.ccURL = 'https://creativecommons.org/' + (theme.creative_commons.license === 'zero' ? 'publicdomain/zero/1.0/' : 'licenses/' + theme.creative_commons.license + '/4.0/') + (theme.creative_commons.language || '');
   // PJAX

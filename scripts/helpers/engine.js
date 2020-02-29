@@ -73,7 +73,7 @@ hexo.extend.helper.register('canonical', function() {
 hexo.extend.helper.register('i18n_path', function(language) {
   const { path, lang } = this.page;
   const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;
-  return this.url_for((language ? '/' + language : '') + '/' + base);
+  return this.url_for(`${this.languages.indexOf(language) === 0 ? '' : '/' + language}/${base}`);
 });
 
 /**
