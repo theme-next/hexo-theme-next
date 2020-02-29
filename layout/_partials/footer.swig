@@ -2,7 +2,7 @@
   <div class="languages">
     <label class="lang-select-label">
       <i class="fa fa-language"></i>
-      <span>{{ language_name(language) }}</span>
+      <span>{{ language_name(page.lang) }}</span>
       <i class="fa fa-angle-up" aria-hidden="true"></i>
     </label>
     <select class="lang-select" data-canonical="">
