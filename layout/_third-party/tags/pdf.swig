@@ -1,8 +1,5 @@
 {%- if theme.pdf.enable %}
-{%- set pdfobject_uri = theme.vendors.pdfobject or '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js' %}
 <script{{ pjax }}>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('{{ pdfobject_uri }}', () => {
     document.querySelectorAll('div.pdf').forEach(element => {
       PDFObject.embed(element.getAttribute('target'), element, {
         pdfOpenParams: {
@@ -16,7 +13,5 @@ if (document.querySelectorAll('div.pdf').length) {
         height   : element.getAttribute('height') || '{{ theme.pdf.height }}'
       });
     });
-  }, window.PDFObject);
-}
 </script>
 {%- endif %}
