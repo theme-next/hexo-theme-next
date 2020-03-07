@@ -3,7 +3,6 @@
   display: none;
   height: 100%;
   left: 0;
-  overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
@@ -13,11 +12,8 @@
 .search-popup {
   background: var(--card-bg-color);
   border-radius: 5px;
-  display: none;
   height: 80%;
-  left: 50%;
-  margin-left: -350px;
-  padding: 0;
+  left: calc(50% - 350px);
   position: fixed;
   top: 10%;
   width: 700px;
@@ -142,11 +138,6 @@ if (hexo-config('algolia_search.enable')) {
 }
 
 if (hexo-config('local_search.enable')) {
-  .search-loading-icon {
-    margin: 20% auto 0 auto;
-    text-align: center;
-  }
-
   .search-popup {
     .search-input-container {
       flex-grow: 1;
