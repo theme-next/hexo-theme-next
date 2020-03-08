@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let searchPath = CONFIG.path;
   if (searchPath.length === 0) {
     searchPath = 'search.xml';
-  } else if (/json$/i.test(searchPath)) {
+  } else if (searchPath.endsWith('json')) {
     isXml = false;
   }
   const path = CONFIG.root + searchPath;

@@ -3,13 +3,13 @@
   // Initialization
   var calendar = {
     orderBy     : 'startTime',
-    showLocation: 'false',
+    showLocation: false,
     offsetMax   : 72,
     offsetMin   : 4,
-    showDeleted : 'false',
-    singleEvents: 'true',
-    maxResults  : '250'
-  }
+    showDeleted : false,
+    singleEvents: true,
+    maxResults  : 250
+  };
 
   // Read config form theme config file
   Object.assign(calendar, {{ theme.calendar | json }});
@@ -20,27 +20,19 @@
 
   timeMax.setHours(now.getHours() + calendar.offsetMax);
   timeMin.setHours(now.getHours() - calendar.offsetMin);
-  calendar.timeMaxISO      = timeMax.toISOString();
-  calendar.timeMinISO      = timeMin.toISOString();
 
   // Build URL
-  const BASE_URL           = 'https://www.googleapis.com/calendar/v3/calendars/';
-  const FIELD_KEY          = 'key';
-  const FIELD_ORDERBY      = 'orderBy';
-  const FIELD_TIMEMAX      = 'timeMax';
-  const FIELD_TIMEMIN      = 'timeMin';
-  const FIELD_SHOWDELETED  = 'showDeleted';
-  const FIELD_SINGLEEVENTS = 'singleEvents';
-  const FIELD_MAXRESULTS   = 'maxResults';
+  const params = {
+    key         : calendar.api_key,
+    orderBy     : calendar.orderBy,
+    timeMax     : timeMax.toISOString(),
+    timeMin     : timeMin.toISOString(),
+    showDeleted : calendar.showDeleted,
+    singleEvents: calendar.singleEvents,
+    maxResults  : calendar.maxResults
+  };
 
-  var request_url = BASE_URL + calendar.calendar_id  + '/events?' +
-    FIELD_KEY          + '=' + calendar.api_key      + '&' +
-    FIELD_ORDERBY      + '=' + calendar.orderBy      + '&' +
-    FIELD_TIMEMAX      + '=' + calendar.timeMaxISO   + '&' +
-    FIELD_TIMEMIN      + '=' + calendar.timeMinISO   + '&' +
-    FIELD_SHOWDELETED  + '=' + calendar.showDeleted  + '&' +
-    FIELD_SINGLEEVENTS + '=' + calendar.singleEvents + '&' +
-    FIELD_MAXRESULTS   + '=' + calendar.maxResults;
+  var request_url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendar.calendar_id + '/events?' + Object.entries(params).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
 
   fetchData();
   var fetchDataTimer = setInterval(fetchData, 60000);
@@ -71,7 +63,7 @@
 
         tense = judgeTense(now, start, end); // 0:now 1:future -1:past
 
-        if (tense == 1 && prevEnd < now) {
+        if (tense === 1 && prevEnd < now) {
           eventList.innerHTML += '<hr>';
         }
 
@@ -140,7 +132,7 @@
       hour   : '2-digit',
       minute : '2-digit'
     };
-    var relativeTimeStr = (tense == 0) ? 'NOW' : getRelativeTime(now, start);
+    var relativeTimeStr = (tense === 0) ? 'NOW' : getRelativeTime(now, start);
     var durationStr = start.toLocaleTimeString([], durationFormat) + ' - ' + end.toLocaleTimeString([], durationFormat);
 
     var locationDOM = '';

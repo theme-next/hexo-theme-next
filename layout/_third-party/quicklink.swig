@@ -8,7 +8,7 @@
       quicklink({
         timeout : {{ page.quicklink.timeout }},
         priority: {{ page.quicklink.priority }},
-        ignores : [uri => uri.includes('#'),uri => uri == '{{ url | replace('index.html', '') }}',{{ page.quicklink.ignores }}]
+        ignores : [uri => uri.includes('#'),uri => uri === '{{ url | replace('index.html', '') }}',{{ page.quicklink.ignores }}]
       });
     {%- if page.quicklink.delay %}
       });
