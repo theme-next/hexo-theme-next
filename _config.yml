@@ -616,6 +616,18 @@ disqusjs:
   apikey: # Register new application from https://disqus.com/api/applications/
   shortname: # See: https://disqus.com/admin/settings/general/
 
+# Disqus PHP API
+# Demo: https://blog.fooleap.org/disqus-php-api.html
+# For more information: https://github.com/fooleap/disqus-php-api
+disqusapi:
+  enable: false
+  api: # Your server endpoint
+  forum: # Your disqus shortname
+  mode: 1
+  timeout: 3000
+  emojipreview: false
+  relatedtype: Related
+
 # Changyan
 changyan:
   enable: false
