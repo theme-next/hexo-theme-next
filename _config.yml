@@ -354,9 +354,6 @@ mobile_layout_economy: false
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
 
-# Hide sticky headers and color the menu bar on Safari (iOS / macOS).
-safari_rainbow: false
-
 # Custom Logo (Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.jpg
 
