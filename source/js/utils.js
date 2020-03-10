@@ -46,10 +46,10 @@ NexT.utils = {
   registerExtURL: function() {
     document.querySelectorAll('.exturl').forEach(element => {
       let link = document.createElement('a');
-      let exturl = element.dataset.url;
-      link.href = decodeURIComponent(escape(window.atob(exturl)));
+      link.href = decodeURIComponent(escape(atob(element.dataset.url)));
       link.rel = 'noopener external nofollow noreferrer';
       link.target = '_blank';
+      link.className = 'exturl';
       link.innerHTML = element.innerHTML;
       element.parentNode.replaceChild(link, element);
     });
