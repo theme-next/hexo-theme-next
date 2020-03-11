@@ -36,7 +36,7 @@ post:
     license_title: حقوق الملكية
     license_content: "حميع المقالات في هذه المدوّنة منشورة تحت رخصة %s إلا عند التنويه بخلافه."
 footer:
-  powered: "Powered by %s"
+  powered: "تطبيق الموقع %s"
   theme: الثمة
   total_views: إجمالي المشاهدات
   total_visitors: إجمالي الزوار
@@ -44,48 +44,48 @@ counter:
   tag_cloud:
     zero: لا وسوم
     one: وسمٌ واحدٌ
-    other: "%d tags in total"
+    other: "%d وسماً بالمُجمل"
   categories:
     zero: لا تصنيفات
     one: تصنيفٌ واحد
-    other: "%d categories in total"
+    other: "%d تصنيفات بالمُجمل"
   archive_posts:
     zero: لا مقالات.
-    one: 1 post.
-    other: "%d posts in total."
+    one: مقالٌ واحد.
+    other: "%d مقالاً بالمُجمل."
 state:
-  posts: posts
-  tags: tags
-  categories: categories
+  posts: المقالات
+  tags: الوسوم
+  categories: التصنيفات
 search:
-  placeholder: Searching...
+  placeholder: بحث...
 cheers:
-  um: Um..
-  ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  um: هِم..
+  ok: حسناً
+  nice: جميل
+  good: جيد
+  great: عظيم
+  excellent: ممتاز
+keep_on: واصل الكتابة.
 symbol:
-  comma: ", "
+  comma: "، "
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
+  donate: تبرّع
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: مرحباً بك حيثُ أنشر أيضاً
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: تشغيل شريط التصفح
+  prev_page: الصفحة السابقة
+  next_page: الصفحة التالية
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: عدد الحروف في المقال
+  count_total: مُجمل عدد الحروف
+  time: زمن القراءة
+  time_total: مُجمل زمن القراءة
+  time_minutes: دقائق.
