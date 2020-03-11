@@ -225,10 +225,6 @@ window.addEventListener('DOMContentLoaded', () => {
     fetch(CONFIG.root + searchPath)
       .then(response => response.text())
       .then(res => {
-        // Remove loading animation
-        document.getElementById('no-result').innerHTML = '<i class="fa fa-search fa-5x"></i>';
-        input.focus();
-
         // Get the contents from search data
         isfetched = true;
         datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
@@ -248,6 +244,8 @@ window.addEventListener('DOMContentLoaded', () => {
           data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
           return data;
         });
+        // Remove loading animation
+        document.getElementById('no-result').innerHTML = '<i class="fa fa-search fa-5x"></i>';
       });
   };
 
@@ -271,7 +269,8 @@ window.addEventListener('DOMContentLoaded', () => {
     element.addEventListener('click', () => {
       document.body.style.overflow = 'hidden';
       document.querySelector('.search-pop-overlay').style.display = 'block';
-      isfetched ? input.focus() : fetchData();
+      input.focus();
+      if (!isfetched) fetchData();
     });
   });
 

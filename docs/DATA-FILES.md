@@ -38,7 +38,7 @@ This method relies on Hexo [Data files](https://hexo.io/docs/data-files.html). B
 ### Usage
 
 1. Please ensure you are using Hexo 3 (or above).
-2. Create an file named `next.yml` in site's `/source/_data` directory (create `_data` directory if it did not exists).
+2. Create an file named `next.yml` in site's `/source/_data` directory (create `_data` directory if it does not exist).
 
 <p align="center">And after that steps there are <b>2 variants</b>, need to <b>choose only one</b> of them and <b>resume next steps</b>.</p>
 
