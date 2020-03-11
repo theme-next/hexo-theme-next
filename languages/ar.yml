@@ -1,10 +1,9 @@
+---
 title:
   archive: الأرشيف
   category: تصنيف
   tag: وسم
   schedule: التقويم
-
-
 menu:
   home: Home
   archives: الأرشيفات
@@ -15,11 +14,9 @@ menu:
   schedule: التقويم
   sitemap: خريطة الموقع
   commonweal: Commonweal 404
-
 sidebar:
   overview: عام
   toc: المحتويات
-
 post:
   posted: نُشر في
   edited: عُدل في
@@ -38,37 +35,30 @@ post:
     link: رابط المقال
     license_title: حقوق الملكية
     license_content: "حميع المقالات في هذه المدوّنة منشورة تحت رخصة %s إلا عند التنويه بخلافه."
-
 footer:
   powered: "تطبيق الموقع %s"
   theme: الثمة
   total_views: إجمالي المشاهدات
   total_visitors: إجمالي الزوار
-
 counter:
   tag_cloud:
     zero: لا وسوم
     one: وسمٌ واحدٌ
     other: "%d وسماً بالمُجمل"
-
   categories:
     zero: لا تصنيفات
     one: تصنيفٌ واحد
     other: "%d تصنيفات بالمُجمل"
-
   archive_posts:
     zero: لا مقالات.
     one: مقالٌ واحد.
     other: "%d مقالاً بالمُجمل."
-
 state:
   posts: المقالات
   tags: الوسوم
   categories: التصنيفات
-
 search:
   placeholder: بحث...
-
 cheers:
   um: هِم..
   ok: حسناً
@@ -76,29 +66,23 @@ cheers:
   good: جيد
   great: عظيم
   excellent: ممتاز
-
 keep_on: واصل الكتابة.
-
 symbol:
   comma: "، "
   period: ". "
   colon: ": "
-
 reward:
   donate: تبرّع
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
-
 follow_me:
   welcome: مرحباً بك حيثُ أنشر أيضاً
-
 accessibility:
   nav_toggle: تشغيل شريط التصفح
   prev_page: الصفحة السابقة
   next_page: الصفحة التالية
-
 symbols_count_time:
   count: عدد الحروف في المقال
   count_total: مُجمل عدد الحروف
