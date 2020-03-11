@@ -46,23 +46,23 @@ $ git clone https://github.com/theme-next/hexo-theme-next themes/next
 
 ## 插件
 
-在 NexT 配置中有一些第三方插件，它们已经被移至外部仓库。你可以在[组织主页][official-plugins-url]中找到它们。
+NexT 支持大量的第三方插件，它们可以被轻松地配置。
 
-例如，你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，你会看到如下内容：
+例如，你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，启用 `pjax` 配置项：
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
-pjax: false
+pjax: true
 ```
 
-启用 `pjax` 配置项，打开它上面的 «Dependencies» 链接以查看它的安装步骤。
+然后，打开它上面的 «Dependencies» 链接以查看它的安装步骤。
 
 ### 设置 CDN
 
 如果你想要通过 CDN 来加载插件脚本，那么需要设置相关的 CDN 链接。
 
-例如，你使用了 `mediumzoom` 插件并且配置了 CDN 加载链接，进入 Next 配置文件，你会看到如下内容：
+例如，你想要使用 `mediumzoom` 插件并通过 CDN 加载，进入 Next 配置文件并找到如下内容：
 
 ```yml
 vendors:
@@ -72,11 +72,9 @@ vendors:
   mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
-通过设置 CDN 链接来代替通过[插件列表][official-plugins-url]项目进行升级。
-
 ## 更新
 
-你可以通过如下命令更新到最新的 master 分支：
+NexT 每个月都会发布新版本。你可以通过如下命令更新到最新的 master 分支：
 
 ```sh
 $ cd themes/next
@@ -90,10 +88,9 @@ $ git pull
 
 ## 反馈
 
-* 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
+* 浏览 [Awesome NexT][awesome-next-url] 列表，与其它用户分享插件和教程。
 * 加入我们的 [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] 聊天。
 * 请花几秒钟来[添加或修正翻译][i18n-url]。
-* 浏览 [Awesome NexT][awesome-next-url] 列表。
 * 在 [GitHub Issues][issues-bug-url] 报告Bug。
 * 在 [GitHub][issues-feat-url] 请求新的功能。
 * 为 [受欢迎的 Feature request][feat-req-vote-url] 投票。

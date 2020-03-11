@@ -34,6 +34,7 @@
 
     升级到 v6.0.3 及以后版本的用户，需要显式修改 Hexo 主配置文件 `_config.yml` 里的 `language` 配置，否则语言显示不正确。
 5. 更新 Hexo 和 Hexo 插件
+
     如果完成了以上步骤后，执行 `hexo s` 或 `hexo g` 出现错误，这意味着可能是旧版的 Hexo 和 Hexo 插件与新版的 NexT 主题产生了冲突。我们建议将 Hexo 升级至 4.0 以上的版本，将 Hexo 插件升级到最新版本。你可以执行 `npm outdated` 查看所有可以升级的插件。
 
 关于第三方库的启用，参见[这里](https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md#插件)。

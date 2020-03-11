@@ -43,7 +43,7 @@ Also, you can perform a [cursory search](https://github.com/theme-next/hexo-them
 
 Before submitting an Issue on GitHub, you can follow the steps below to debug:
 
-* Execute `hexo clean`, cleare the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader)
+* Execute `hexo clean`, clear the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader)
 * Switch to another theme and check if the bug still exists (e.g. default theme landscape). In other words, prove that this is a NexT issue, not a issue from Hexo.
 * Upgrade theme NexT to the latest version.
 * Upgrade Hexo and Hexo plugins to the latest version.

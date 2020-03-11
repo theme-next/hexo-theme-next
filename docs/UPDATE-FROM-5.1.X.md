@@ -23,6 +23,7 @@ So, we suggest to update from version 5 to version 7 in this way:
 
     Users upgrading to v6.0.3 and later need to explicitly modify the `language` configuration in the Hexo main config file `_config.yml`, otherwise the language display is incorrect.
 5. Update Hexo and Hexo plugin
+
     If after completing the above steps, an error occurs when executing `hexo s` or` hexo g`, it means that there may be a conflict between the old version of Hexo / Hexo plugin and the new version of the theme NexT. We recommend upgrading Hexo to versions 4.0 and higher and upgrading Hexo plugins to the latest version. You can run `npm outdated` to see all the upgradeable plugins.
 
 And how to enable 3rd-party libraries see [here](https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md#plugins).

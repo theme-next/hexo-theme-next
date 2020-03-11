@@ -109,13 +109,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (searchText.length > 0) {
       // Perform local searching
       datas.forEach(({ title, content, url }) => {
-        title = title.trim();
         let titleInLowerCase = title.toLowerCase();
-        if (CONFIG.localsearch.unescape) {
-          content = unescapeHtml(content);
-        }
         let contentInLowerCase = content.toLowerCase();
-        let articleUrl = decodeURIComponent(url).replace(/\/{2,}/g, '/');
         let indexOfTitle = [];
         let indexOfContent = [];
         let searchTextCount = 0;
@@ -184,13 +179,13 @@ window.addEventListener('DOMContentLoaded', () => {
           let resultItem = '';
 
           if (slicesOfTitle.length !== 0) {
-            resultItem += `<li><a href="${articleUrl}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
+            resultItem += `<li><a href="${url}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
           } else {
-            resultItem += `<li><a href="${articleUrl}" class="search-result-title">${title}</a>`;
+            resultItem += `<li><a href="${url}" class="search-result-title">${title}</a>`;
           }
 
           slicesOfContent.forEach(slice => {
-            resultItem += `<a href="${articleUrl}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
+            resultItem += `<a href="${url}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
           });
 
           resultItem += '</li>';
@@ -245,7 +240,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }) : JSON.parse(res);
         // Only match articles with not empty titles
         datas = datas.filter(data => data.title).map(data => {
+          data.title = data.title.trim();
           data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+          if (CONFIG.localsearch.unescape) {
+            data.content = unescapeHtml(data.content);
+          }
+          data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
           return data;
         });
       });

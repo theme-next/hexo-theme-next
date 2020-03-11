@@ -46,23 +46,23 @@ Or you can see [detailed installation instructions][docs-installation-url] if yo
 
 ## Plugins
 
-In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link][official-plugins-url].
+NexT supports a large number of third-party plugins, which can be easily configured.
 
-For example, if you want to enable `pjax` on your site, go to NexT config and see:
+For example, if you want to enable `pjax` on your site, just set `pjax` to `true` in NexT config file:
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
-pjax: false
+pjax: true
 ```
 
-Then turn on `pjax` and go to «Dependencies» link with installation instructions of this module.
+Then visit the «Dependencies» link to get the installation instructions of this module.
 
 ### Configure CDN
 
-If you use CDN for any plugins, you need to replace your CDN link.
+If you want to specify a CDN link for any plugins, you need to set / update the CDN link.
 
-For example, if you want to use `mediumzoom` and you configured a CDN link, go to NexT config and see:
+For example, if you want to use `mediumzoom` and load the plugin via CDN, go to NexT config and see:
 
 ```yml
 vendors:
@@ -72,11 +72,9 @@ vendors:
   mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
-Instead of defining [main organization link][official-plugins-url] for updates.
-
 ## Update
 
-You can update to latest master branch by the following command:
+NexT releases new versions every month. You can update to latest master branch by the following command:
 
 ```sh
 $ cd themes/next
@@ -90,10 +88,9 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 ## Feedback
 
-* Follow us with [Telegram Channel][t-news-url] for latest news.
+* Visit the [Awesome NexT][awesome-next-url] list to share plugins and tutorials with other users.
 * Join our [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] chats.
 * [Add or improve translation][i18n-url] in few seconds.
-* Visit the [Awesome NexT][awesome-next-url] list.
 * Report a bug in [GitHub Issues][issues-bug-url].
 * Request a new feature on [GitHub][issues-feat-url].
 * Vote for [popular feature requests][feat-req-vote-url].
@@ -102,7 +99,7 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 We welcome you to join the development of NexT. Please see [contributing document][contributing-document-url]. 🤗
 
-Also, we welcome Issue or PR to [official-plugins][official-plugins-url].
+Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 ## Contributors
 
