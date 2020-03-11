@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
   } else if (searchPath.endsWith('json')) {
     isXml = false;
   }
-  const path = CONFIG.root + searchPath;
   const input = document.querySelector('.search-input');
   const resultContent = document.getElementById('search-result');
 
@@ -109,20 +108,17 @@ window.addEventListener('DOMContentLoaded', () => {
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
-      datas.forEach(data => {
-        // Only match articles with not empty titles
-        if (!data.title) return;
-        let searchTextCount = 0;
-        let title = data.title.trim();
+      datas.forEach(({ title, content, url }) => {
+        title = title.trim();
         let titleInLowerCase = title.toLowerCase();
-        let content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
         if (CONFIG.localsearch.unescape) {
           content = unescapeHtml(content);
         }
         let contentInLowerCase = content.toLowerCase();
-        let articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+        let articleUrl = decodeURIComponent(url).replace(/\/{2,}/g, '/');
         let indexOfTitle = [];
         let indexOfContent = [];
+        let searchTextCount = 0;
         keywords.forEach(keyword => {
           indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
           indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
@@ -231,7 +227,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   const fetchData = () => {
-    fetch(path)
+    fetch(CONFIG.root + searchPath)
       .then(response => response.text())
       .then(res => {
         // Remove loading animation
@@ -242,11 +238,16 @@ window.addEventListener('DOMContentLoaded', () => {
         isfetched = true;
         datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
           return {
-            title  : element.querySelector('title').innerHTML,
-            content: element.querySelector('content').innerHTML,
-            url    : element.querySelector('url').innerHTML
+            title  : element.querySelector('title').textContent,
+            content: element.querySelector('content').textContent,
+            url    : element.querySelector('url').textContent
           };
         }) : JSON.parse(res);
+        // Only match articles with not empty titles
+        datas = datas.filter(data => data.title).map(data => {
+          data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+          return data;
+        });
       });
   };
 
