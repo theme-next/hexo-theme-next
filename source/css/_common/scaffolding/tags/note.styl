@@ -4,7 +4,7 @@
 
   border-radius: $note-border-radius;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 1em;
   position: relative;
 
   if ($note-style == 'simple') {
@@ -47,14 +47,14 @@
 
   if ($note-icons) {
     &:not(.no-icon) {
-      padding-left: 45px;
+      padding-left: 2.5em;
 
       &::before {
         font-family: $font-family-icons;
-        font-size: larger;
-        left: 15px;
+        font-size: 1.5em;
+        left: .4em;
         position: absolute;
-        top: 13px;
+        top: calc(50% - 1em);
       }
     }
   }

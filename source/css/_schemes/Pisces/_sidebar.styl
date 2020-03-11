@@ -1,5 +1,5 @@
 .sidebar {
-  background: $body-bg-color;
+  background: var(--body-bg-color);
   box-shadow: none;
   margin-top: 100%;
   position: static;
@@ -8,14 +8,6 @@
   +tablet-mobile() {
     display: none;
   }
-  a, span.exturl {
-    color: $black-light;
-
-    &:hover {
-      border-bottom-color: $black-deep;
-      color: $black-deep;
-    }
-  }
 }
 
 .sidebar-toggle {
@@ -23,11 +15,11 @@
 }
 
 .sidebar-inner {
-  background: white;
+  background: var(--content-bg-color);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   box-sizing: border-box;
-  color: $text-color;
+  color: var(--text-color);
   width: $sidebar-desktop;
 
   if (hexo-config('motion.enable') && hexo-config('motion.transition.sidebar')) {
@@ -81,6 +73,10 @@
 .links-of-author-item {
   sidebar-inline-links-item();
 
+  if (!hexo-config('social_icons.icons_only')) {
+    width: 50%;
+  }
+
   a, span.exturl {
     border-bottom: none;
     display: block;
@@ -91,7 +87,7 @@
     }
 
     &:hover {
-      background: $gainsboro;
+      background: var(--body-bg-color);
       border-radius: 4px;
     }
   }
@@ -101,21 +97,27 @@
   }
 }
 
-.links-of-blogroll {
-
-  if (hexo-config('links_settings.layout') == 'inline') {
-    clearfix();
-  }
-}
-
 .links-of-blogroll-item {
   padding: 0;
 
   if (hexo-config('links_settings.layout') == 'inline') {
+    display: inline-block;
     sidebar-inline-links-item();
 
     if (!hexo-config('social_icons.icons_only')) {
       width: unset;
+    }
+  }
+}
+
+if (hexo-config('back2top.sidebar')) {
+  // Only when back2top.sidebar is true, apply the following styles
+  .back-to-top {
+    background: var(--body-bg-color);
+    margin: 8px - $sidebar-offset -10px -18px;
+
+    &.back-to-top-on {
+      margin-top: 16px;
     }
   }
 }

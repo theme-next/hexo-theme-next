@@ -68,18 +68,6 @@ random-color($min, $max) {
   return floor(math(0, 'random') * ($max - $min + 1) + $min);
 }
 
-// Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
-clearfix() {
-  &::before, &::after {
-    content: ' ';
-    display: table;
-  }
-
-  &::after {
-    clear: both;
-  }
-}
-
 word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -90,4 +78,26 @@ disable-user-select() {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+sidebar-inline-links-item() {
+  margin: 5px 0 0;
+
+  a, span.exturl {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 0;
+    max-width: 216px;
+    overflow: hidden;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+flex-column() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

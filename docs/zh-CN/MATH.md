@@ -11,7 +11,7 @@ NexT 内部提供数学公式渲染的引擎，这样你就不需要自己手动
 
 ### MathJax
 
-如果你选择使用 MathJax 进行数学公式渲染，你需要使用 [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) 或者 [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed) 这两个渲染器的其中一个。
+如果你选择使用 MathJax 进行数学公式渲染，你需要使用 [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) 或者 [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed) （不推荐）作为 Hexo 的 Markdown 渲染器。
 
 首先，卸载原有的渲染器 `hexo-renderer-marked`，并安装这两种渲染器的**其中一个**：
 
@@ -40,15 +40,14 @@ hexo clean && hexo g -d
 
 在新版本的 NexT 主题中，我们加入了公式自动编号和引用功能。下面简要介绍一下如何使用这项功能。
 
-为了使用这项功能，一般来说，你必须把所使用的 LaTeX 公式放在 `equation` 环境里面，采用旧的方法（也就是说，仅仅把公式的每一边用两个 $ 符号包含起来）是无效的。如何引用公式？你只需要在书写公式的时候给公式一个 `\
-label{}` 标记（tag），然后在正文中，可以使用 `\ref{}` 或者 `\eqref{}` 命令来引用对应的公式。使用 `\eqref{}` 是推荐的方式，因为如果你使用 `\ref{}`，公式在文中的引用编号将没有圆括号包围。下面介绍几种常见的公式编号例子。
+为了使用这项功能，一般来说，你必须把所使用的 LaTeX 公式放在 `equation` 环境里面，采用旧的方法（也就是说，仅仅把公式的每一边用两个 $ 符号包含起来）是无效的。如何引用公式？你只需要在书写公式的时候给公式一个 `\label{}` 标记（tag），然后在正文中，可以使用 `\ref{}` 或者 `\eqref{}` 命令来引用对应的公式。使用 `\eqref{}` 是推荐的方式，因为如果你使用 `\ref{}`，公式在文中的引用编号将没有圆括号包围。下面介绍几种常见的公式编号例子。
 
 对于简单的公式，使用下面的方式给公式一个标记，
 
 ```latex
-$$\begin{equation}
+$$\begin{equation}\label{eq1}
 e=mc^2
-\end{equation}\label{eq1}$$
+\end{equation}$$
 ```
 
 然后，在正文中，你可以轻松引用上述公式，一个简单的例子如下：
@@ -60,13 +59,13 @@ e=mc^2
 对于多行公式，在 `equation` 环境中，你可以使用 `aligned` 环境把公式分成多行，
 
 ```latex
-$$\begin{equation}
+$$\begin{equation}\label{eq2}
 \begin{aligned}
 a &= b + c \\
   &= d + e + f + g \\
   &= h + i
 \end{aligned}
-\end{equation}\label{eq2}$$
+\end{equation}$$
 ```
 
 要对齐多个公式，我们需要使用 `align` 环境。align 环境中的每个公式都有自己的编号：
@@ -95,7 +94,7 @@ $$\begin{align}
 $$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
 ```
 
-如果你想要了解更多信息，请访问 [MathJax 关于公式编号的官方文档](http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering)。同时，你也可以访问[这篇博客](https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/) 来获取更多细节信息。
+如果你想要了解更多信息，请访问 [MathJax 关于公式编号的官方文档](https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html)。同时，你也可以阅读 [这篇文档](https://theme-next.org/docs/third-party-services/math-equations) 来获取更多细节信息。
 
 ### Katex
 

@@ -12,9 +12,9 @@ For now, NexT provides two Render Engines: [MathJax](https://www.mathjax.org/) a
 
 ### MathJax
 
-If you use MathJax to render Math Equations, you need to use **only one of them**: [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) or [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed).
+If you use MathJax to render Math Equations, you need to use one of them: [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) or [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed) (Not recommended) as the renderer for Markdown.
 
-Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and install one of the renderer above:
+Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and install **one of the renderer above**:
 
 ```sh
 npm uninstall hexo-renderer-marked
@@ -46,9 +46,9 @@ In general, to make the automatic equation numbering work, you have to wrap your
 For simple equations, use the following form to give a tag,
 
 ```latex
-$$\begin{equation}
+$$\begin{equation}\label{eq1}
 e=mc^2
-\end{equation}\label{eq1}$$
+\end{equation}$$
 ```
 
 Then, you can refer to this equation in your text easily by using something like
@@ -60,13 +60,13 @@ the famous matter-energy equation $\eqref{eq1}$ proposed by Einstein ...
 For multi-line equations, inside the `equation` environment, you can use the `aligned` environment to split it into multiple lines:
 
 ```latex
-$$\begin{equation}
+$$\begin{equation}\label{eq2}
 \begin{aligned}
 a &= b + c \\
   &= d + e + f + g \\
   &= h + i
 \end{aligned}
-\end{equation}\label{eq2}$$
+\end{equation}$$
 ```
 
 We can use `align` environment to align multiple equations. Each of these equations will get its own numbers.
@@ -95,7 +95,7 @@ Sometimes, you want to use more “exotic” style to refer your equation. You c
 $$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
 ```
 
-For more information, you can visit the [official MathJax documentation on equation numbering](http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering). You can also visit this [post](https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/) for more details.
+For more information, you can visit the [official MathJax documentation on equation numbering](https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html). You can also visit this [post](https://theme-next.org/docs/third-party-services/math-equations) for more details.
 
 ### Katex
 

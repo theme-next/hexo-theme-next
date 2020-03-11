@@ -63,7 +63,7 @@
 {%- if theme.chat.enable and theme.chat.service !== '' %}
   <div class="sidebar-button motion-element">
   {%- if theme.chat.service == 'chatra' and theme.chatra.enable %}
-    <a onclick="Chatra('openChat', true)">
+    <a onclick="Chatra('openChat', true);">
   {%- endif %}
   {%- if theme.chat.service == 'tidio' and theme.tidio.enable %}
     <a onclick="tidioChatApi.open();">

@@ -3,7 +3,7 @@
 
 2. Always remember that NexT includes 4 schemes. And if on one of them works fine after the changes, on another scheme this changes can be broken. Muse and Mist have similar structure, but Pisces is very difference from them. Gemini is a mirror of Pisces with some styles and layouts remakes. So, please make the tests at least on two schemes (Muse or Mist and Pisces or Gemini).
 
-3. In addition, you need to confirm that the changes made by this PR are compatible with PJAX.
+3. In addition, you need to confirm that the changes made by this PR are compatible with PJAX and Dark Mode.
 
 4. We use ESLint and Stylint for identifying and reporting on patterns in JavaScript and Stylus. Please execute the following commands:
 ```sh
@@ -12,7 +12,6 @@ npm install
 npm run test
 npm run test lint:stylus
 ```
-And make sure that this PR does not cause more warning messages.
 
 5. Please check if your PR fulfills the following requirements.
 -->
@@ -34,8 +33,7 @@ And make sure that this PR does not cause more warning messages.
 - [ ] Feature.
 - [ ] Code style update (formatting, local variables).
 - [ ] Refactoring (no functional changes, no api changes).
-- [ ] Build related changes.
-- [ ] CI related changes.
+- [ ] Build & CI related changes.
 - [ ] Documentation content changes.
 - [ ] Other... Please describe:
 
@@ -55,7 +53,3 @@ In NexT `_config.yml`:
 ```yml
 
 ```
-
-## Does this PR introduce a breaking change?
-- [ ] Yes.
-- [ ] No.

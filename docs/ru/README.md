@@ -11,7 +11,7 @@
   «NexT» — элегантная высококачественная тема под <a href="https://hexo.io">Hexo</a>. Сделана с нуля, с любовью.
 <br>
 <br>
-  <a href="https://github.com/theme-next/hexo-theme-next/releases"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/hexo-theme-next"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E=10.9.0-green?style=flat-square"></a>
   <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E=3.5.0-blue?style=flat-square&logo=hexo"></a>
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
@@ -53,14 +53,14 @@ $ git clone https://github.com/theme-next/hexo-theme-next themes/next
 ```yml
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
-pjax: false
+pjax: true
 ```
 
 Затем включаем параметр `pjax` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
 
 ## Обновление
 
-Можно обновить до последней мастер-ветки следующей командой:
+NexT выпускает новые версии каждый месяц. Можно обновить до последней мастер-ветки следующей командой:
 
 ```sh
 $ cd themes/next
@@ -74,10 +74,9 @@ $ git pull
 
 ## Обратная связь
 
-* Подписаться на новости через [канал Telegram'а][t-news-url].
+* Посетите [Awesome NexT][awesome-next-url] список.
 * Вступить в наши [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] чаты.
 * [Добавить или улучшить перевод][i18n-url] за несколько секунд.
-* Посетите [Awesome NexT][awesome-next-url] список.
 * Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
 * Запросить новую возможность на [GitHub][issues-feat-url].
 * Голосовать за [популярные запросы возможностей][feat-req-vote-url].

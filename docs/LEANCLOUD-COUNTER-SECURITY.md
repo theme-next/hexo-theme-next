@@ -64,7 +64,7 @@ Please note the difference between **site config file** and **theme config file*
 - In the pop up window, click `1` to choose type `Hook`, then choose`beforeUpdate` in `2`, choose `Counter` in `3`. Paste code below into `4`, then click `5` to save it:
   ```javascript
   var query = new AV.Query("Counter");
-  if (request.object.updatedKeys.indexOf('time') !== -1) {
+  if (request.object.updatedKeys.includes('time')) {
       return query.get(request.object.id).then(function (obj) {
           if (obj.get("time") > request.object.get("time")) {
               throw new AV.Cloud.Error('Invalid update!');

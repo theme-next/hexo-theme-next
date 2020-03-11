@@ -12,7 +12,12 @@
   margin: 0 10px;
 
   +mobile() {
+    display: block;
     margin-top: 10px;
+
+    &.menu-item-search {
+      display: none;
+    }
   }
 
   a, span.exturl {
@@ -36,7 +41,7 @@
 
   .badge {
     display: inline-block;
-    font-weight: $font-weight-bolder;
+    font-weight: bold;
     line-height: 1;
     margin-left: .35em;
     margin-top: .35em;
@@ -48,6 +53,10 @@
       margin-left: 0;
     }
   }
+}
+
+.menu-item-active a {
+  background: var(--menu-item-bg-color);
 }
 
 .use-motion .menu-item {

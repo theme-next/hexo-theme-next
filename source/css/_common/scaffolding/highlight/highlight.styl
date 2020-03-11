@@ -20,7 +20,7 @@ pre, code {
 
 code {
   background: $code-background;
-  border-radius: $code-border-radius;
+  border-radius: 3px;
   color: $code-foreground;
   padding: 2px 4px;
   word-wrap();
@@ -53,14 +53,14 @@ code {
   figcaption {
     background: $code-background;
     color: $highlight-foreground;
+    display: flex;
     font-size: $table-font-size;
+    justify-content: space-between;
     line-height: 1.2;
     padding: .5em;
-    clearfix();
 
     a {
       color: $highlight-foreground;
-      float: right;
 
       &:hover {
         border-bottom-color: $highlight-foreground;

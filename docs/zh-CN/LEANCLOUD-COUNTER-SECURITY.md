@@ -69,7 +69,7 @@ leancloud_visitors:
 - 在弹出窗口选择 `1` 处 `Hook` 类型，然后 `2` 处选择 `beforeUpdate`，`3` 处选择刚才建立的 `Counter` 类。在 `4` 中粘贴下方代码后，点 `5` 处保存。
   ```javascript
   var query = new AV.Query("Counter");
-  if (request.object.updatedKeys.indexOf('time') !== -1) {
+  if (request.object.updatedKeys.includes('time')) {
       return query.get(request.object.id).then(function (obj) {
           if (obj.get("time") > request.object.get("time")) {
               throw new AV.Cloud.Error('Invalid update!');

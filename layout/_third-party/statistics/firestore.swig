@@ -3,7 +3,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
   <script>
     firebase.initializeApp({
-      apiKey: '{{ theme.firestore.apiKey }}',
+      apiKey   : '{{ theme.firestore.apiKey }}',
       projectId: '{{ theme.firestore.projectId }}'
     });
 

@@ -9,20 +9,20 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       return GUEST.includes(item);
     });
     new Valine({
-      el: '#valine-comments',
-      verify: {{ theme.valine.verify }},
-      notify: {{ theme.valine.notify }},
-      appId: '{{ theme.valine.appid }}',
-      appKey: '{{ theme.valine.appkey }}',
+      el         : '#valine-comments',
+      verify     : {{ theme.valine.verify }},
+      notify     : {{ theme.valine.notify }},
+      appId      : '{{ theme.valine.appid }}',
+      appKey     : '{{ theme.valine.appkey }}',
       placeholder: {{ theme.valine.placeholder | json }},
-      avatar: '{{ theme.valine.avatar }}',
-      meta: guest,
-      pageSize: '{{ theme.valine.pageSize }}' || 10,
-      visitor: {{ theme.valine.visitor }},
-      lang: '{{ theme.valine.language }}' || 'zh-cn',
-      path: location.pathname,
-      recordIP: {{ theme.valine.recordIP }},
-      serverURLs: '{{ theme.valine.serverURLs }}'
+      avatar     : '{{ theme.valine.avatar }}',
+      meta       : guest,
+      pageSize   : '{{ theme.valine.pageSize }}' || 10,
+      visitor    : {{ theme.valine.visitor }},
+      lang       : '{{ theme.valine.language }}' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : {{ theme.valine.recordIP }},
+      serverURLs : '{{ theme.valine.serverURLs }}'
     });
   }, window.Valine);
 });

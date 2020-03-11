@@ -1,21 +1,17 @@
-.site-nav-toggle {
+.site-nav-toggle, .site-nav-right {
   display: none;
-  left: 10px;
-  position: absolute;
 
   +mobile() {
-    display: block;
+    flex-column();
   }
 
   .toggle {
-    background: transparent;
-    border: 0;
-    margin-top: 2px;
+    color: var(--text-color);
     padding: 10px;
     width: 22px;
 
     .toggle-line {
-      background: $text-color;
+      background: var(--text-color);
       border-radius: 1px;
     }
   }

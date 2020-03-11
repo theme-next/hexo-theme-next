@@ -8,12 +8,12 @@
 NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
   NexT.utils.getScript('{{ disqusjs_js_uri }}', () => {
     window.dsqjs = new DisqusJS({
-      api: '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',
-      apikey: '{{ theme.disqusjs.apikey }}',
-      shortname: '{{ theme.disqusjs.shortname }}',
-      url: {{ page.permalink | json }},
+      api       : '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',
+      apikey    : '{{ theme.disqusjs.apikey }}',
+      shortname : '{{ theme.disqusjs.shortname }}',
+      url       : {{ page.permalink | json }},
       identifier: {{ page.path | json }},
-      title: {{ page.title | json }},
+      title     : {{ page.title | json }},
     });
   }, window.DisqusJS);
 });

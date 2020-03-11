@@ -1,5 +1,5 @@
 .sub-menu {
-  background: white;
+  background: var(--content-bg-color);
   border-bottom: 1px solid $table-border-color;
   margin: 0;
   padding: 6px 0;
@@ -8,11 +8,12 @@
     display: inline-block;
 
     a, span.exturl {
+      background: transparent;
       margin: 5px 10px;
       padding: initial;
 
       &:hover {
-        background: initial;
+        background: transparent;
         color: $sidebar-highlight;
       }
 
@@ -25,12 +26,10 @@
   }
 
   .menu-item-active a {
-    background: white;
     border-bottom-color: $sidebar-highlight;
     color: $sidebar-highlight;
 
     &:hover {
-      background: white;
       border-bottom-color: $sidebar-highlight;
     }
   }

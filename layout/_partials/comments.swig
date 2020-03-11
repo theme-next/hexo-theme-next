@@ -29,7 +29,7 @@
               }
             });
           });
-          let activeClass = CONFIG.comments.activeClass;
+          let { activeClass } = CONFIG.comments;
           if (CONFIG.comments.storage) {
             activeClass = localStorage.getItem('comments_active') || activeClass;
           }
@@ -62,7 +62,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
