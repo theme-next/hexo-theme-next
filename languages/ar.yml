@@ -1,0 +1,91 @@
+---
+title:
+  archive: الأرشيف
+  category: تصنيف
+  tag: وسم
+  schedule: التقويم
+menu:
+  home: Home
+  archives: الأرشيفات
+  categories: التصنيفات
+  tags: الوسوم
+  about: معلومات
+  search: بحث
+  schedule: التقويم
+  sitemap: خريطة الموقع
+  commonweal: Commonweal 404
+sidebar:
+  overview: عام
+  toc: المحتويات
+post:
+  posted: نُشر في
+  edited: عُدل في
+  created: أُنشأ
+  modified: عُدل
+  edit: تحرير هذا المقال
+  in: في
+  more: المزيد
+  read_more: تابع القراءة
+  untitled: بدون عنوان
+  sticky: مثبت
+  views: مشاهدات
+  related_posts: مقالات مشابهة
+  copyright:
+    author: مؤلف المقال
+    link: رابط المقال
+    license_title: حقوق الملكية
+    license_content: "حميع المقالات في هذه المدوّنة منشورة تحت رخصة %s إلا عند التنويه بخلافه."
+footer:
+  powered: "Powered by %s"
+  theme: الثمة
+  total_views: إجمالي المشاهدات
+  total_visitors: إجمالي الزوار
+counter:
+  tag_cloud:
+    zero: لا وسوم
+    one: وسمٌ واحدٌ
+    other: "%d tags in total"
+  categories:
+    zero: لا تصنيفات
+    one: تصنيفٌ واحد
+    other: "%d categories in total"
+  archive_posts:
+    zero: لا مقالات.
+    one: 1 post.
+    other: "%d posts in total."
+state:
+  posts: posts
+  tags: tags
+  categories: categories
+search:
+  placeholder: Searching...
+cheers:
+  um: Um..
+  ok: OK
+  nice: Nice
+  good: Good
+  great: Great
+  excellent: Excellent
+keep_on: Keep on posting.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+reward:
+  donate: Donate
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  paypal: PayPal
+  bitcoin: Bitcoin
+follow_me:
+  welcome: Welcome to my other publishing channels
+accessibility:
+  nav_toggle: Toggle navigation bar
+  prev_page: Previous page
+  next_page: Next page
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.
