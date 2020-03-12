@@ -60,6 +60,13 @@ $btn-default-color            = $text-color;
 $btn-default-border-color     = $text-color;
 $btn-default-hover-bg         = $black-deep;
 $btn-default-hover-color      = white;
+if (hexo-config('darkmode')) {
+  $btn-default-bg                 = #2e2e2e;
+  $btn-default-hover-bg           = #4e4e4e;
+  $btn-default-color              = var(--text-color);
+  $btn-default-border-color       = #3e3e3e;
+  $btn-default-hover-border-color = #4e4e4e;
+}
 
 // Back to top
 $b2t-opacity                  = .6;
