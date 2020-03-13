@@ -45,12 +45,13 @@ NexT.utils = {
 
   registerExtURL: function() {
     document.querySelectorAll('.exturl').forEach(element => {
-      element.addEventListener('click', event => {
-        var exturl = event.currentTarget.dataset.url;
-        var decurl = decodeURIComponent(escape(window.atob(exturl)));
-        window.open(decurl, '_blank', 'noopener');
-        return false;
-      });
+      let link = document.createElement('a');
+      link.href = decodeURIComponent(escape(atob(element.dataset.url)));
+      link.rel = 'noopener external nofollow noreferrer';
+      link.target = '_blank';
+      link.className = 'exturl';
+      link.innerHTML = element.innerHTML;
+      element.parentNode.replaceChild(link, element);
     });
   },
 
