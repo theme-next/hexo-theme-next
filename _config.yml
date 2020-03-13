@@ -5,7 +5,7 @@
 
 # If false, merge configs from `_data/next.yml` into default configuration (rewrite).
 # If true, will fully override default configuration by options from `_data/next.yml` (override). Only for NexT settings.
-# And if true, all config from default NexT `_config.yml` must be copied into `next.yml`. Use if you know what you are doing.
+# And if true, all config from default NexT `_config.yml` have to be copied into `next.yml`. Use if you know what you are doing.
 # Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
 override: false
 
@@ -812,10 +812,9 @@ tabs:
     tabs: false
     labels: true
 
-# PDF tag, requires two plugins: pdfObject and pdf.js
-# pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
-# The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
-# So, you must install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
+# PDF tag
+# NexT will try to load pdf files natively, if failed, pdf.js will be used.
+# So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
 # See: https://github.com/theme-next/theme-next-pdf
 pdf:
   enable: false
@@ -968,11 +967,6 @@ vendors:
   # instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
   algolia_search:
   instant_search:
-
-  # PDF
-  # pdfobject: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
-  # pdfobject: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
-  pdfobject:
 
   # Mermaid
   # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
