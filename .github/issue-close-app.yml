@@ -3,7 +3,7 @@ comment: "This issue has been closed because it does not meet our Issue template
 issueConfigs:
 # There can be several configs for different kind of issues.
 - content:
-  - "Issue Checklist"
+  - "Other Information"
 # Optional configuration:
 #
 # whether the keywords are case-insensitive
