@@ -46,7 +46,10 @@ NexT.utils = {
   registerExtURL: function() {
     document.querySelectorAll('.exturl').forEach(element => {
       let link = document.createElement('a');
-      link.href = decodeURIComponent(escape(atob(element.dataset.url)));
+      // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
+      link.href = decodeURIComponent(atob(element.dataset.url).split('').map(c => {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
       link.rel = 'noopener external nofollow noreferrer';
       link.target = '_blank';
       link.className = 'exturl';
