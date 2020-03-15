@@ -52,7 +52,7 @@ NexT.utils = {
       }).join(''));
       link.rel = 'noopener external nofollow noreferrer';
       link.target = '_blank';
-      link.className = 'exturl';
+      link.className = element.className;
       link.innerHTML = element.innerHTML;
       element.parentNode.replaceChild(link, element);
     });
