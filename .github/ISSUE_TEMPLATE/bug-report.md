@@ -14,8 +14,8 @@ Please follow this Issue template to provide relevant information, such as sourc
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
 - [ ] I am using [the latest](https://github.com/theme-next/hexo-theme-next/releases/latest) version of NexT.
-- [ ] I have reviewed [guidelines for NexT](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md), especially the [Before Submitting An Issue](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md#before-submitting-an-issue) part.
-- [ ] I have reviewed the latest Roadmap on GitHub and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue), which does not help me.
+- [ ] I have read the relevant documents of [Hexo](https://hexo.io/docs/) and [NexT](https://theme-next.org/docs/).
+- [ ] I have reviewed the latest Roadmap on GitHub and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues), which does not help me.
 
 ***
 
