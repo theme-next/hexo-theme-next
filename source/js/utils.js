@@ -44,7 +44,7 @@ NexT.utils = {
   },
 
   registerExtURL: function() {
-    document.querySelectorAll('.exturl').forEach(element => {
+    document.querySelectorAll('span.exturl').forEach(element => {
       let link = document.createElement('a');
       // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
       link.href = decodeURIComponent(atob(element.dataset.url).split('').map(c => {
