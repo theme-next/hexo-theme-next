@@ -1,4 +1,4 @@
-{%- if languages.length > 1 %}
+{%- if theme.multi_language_switch and languages.length > 1 %}
   <div class="languages">
     <label class="lang-select-label">
       <i class="fa fa-language"></i>
