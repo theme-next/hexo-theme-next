@@ -1,8 +1,8 @@
-{%- set valine_uri = theme.vendors.minivaline or '//unpkg.com/minivaline/dist/MiniValine.min.js' %}
+{%- set minivaline_uri = theme.vendors.minivaline or '//unpkg.com/minivaline/dist/MiniValine.min.js' %}
 
 <script>
 NexT.utils.loadComments(document.querySelector('#minivaline-comments'), () => {
-  NexT.utils.getScript('{{ valine_uri }}', () => {
+  NexT.utils.getScript('{{ minivaline_uri }}', () => {
     new MiniValine({
       el: '#minivaline-comments',
       appId: '{{ theme.minivaline.appid }}',
