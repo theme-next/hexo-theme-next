@@ -1,12 +1,19 @@
 .search-pop-overlay {
-  background: rgba(0, 0, 0, .3);
-  display: none;
+  background: rgba(0, 0, 0, 0);
   height: 100%;
   left: 0;
   position: fixed;
+  transition: visibility 0s linear .2s, background .2s;
   top: 0;
+  visibility: hidden;
   width: 100%;
   z-index: $zindex-4;
+
+  &.search-active {
+    background: rgba(0, 0, 0, .3);
+    visibility: visible;
+    transition: background .2s;
+  }
 }
 
 .search-popup {
@@ -15,9 +22,15 @@
   height: 80%;
   left: calc(50% - 350px);
   position: fixed;
+  transform: scale(0);
+  transition: transform .2s;
   top: 10%;
   width: 700px;
   z-index: $zindex-5;
+
+  .search-active & {
+    transform: scale(1);
+  }
 
   +mobile() {
     border-radius: 0;
