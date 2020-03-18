@@ -9,16 +9,10 @@
 .copy-btn {
   color: $black-dim;
   cursor: pointer;
-  display: inline-block;
-  font-weight: bold;
   line-height: 1.6;
   opacity: 0;
-  outline: 0;
   padding: 2px 6px;
   position: absolute;
-  vertical-align: middle;
-  white-space: nowrap;
-  disable-user-select();
   the-transition();
 
   if (hexo-config('codeblock.copy_button.style') == 'flat') {
@@ -60,6 +54,14 @@ if (hexo-config('codeblock.copy_button.style') == 'mac') {
       margin-top: -20px;
       position: absolute;
       width: 12px;
+    }
+
+    .highlight {
+      border-radius: 0 0 5px 5px;
+
+      .table-container {
+        border-radius: 0 0 5px 5px;
+      }
     }
   }
 }
