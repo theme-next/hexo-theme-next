@@ -47,6 +47,9 @@ favicon:
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
+# Show multilingual switcher in footer.
+language_switcher: false
+
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
   #since: 2015

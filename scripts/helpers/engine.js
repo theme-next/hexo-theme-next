@@ -65,3 +65,20 @@ hexo.extend.helper.register('canonical', function() {
   }
   return `<link rel="canonical" href="${url}">`;
 });
+
+/**
+ * Get page path given a certain language tag
+ */
+hexo.extend.helper.register('i18n_path', function(language) {
+  const { path, lang } = this.page;
+  const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;
+  return this.url_for(`${this.languages.indexOf(language) === 0 ? '' : '/' + language}/${base}`);
+});
+
+/**
+ * Get the language name
+ */
+hexo.extend.helper.register('language_name', function(language) {
+  const name = hexo.theme.i18n.__(language)('name');
+  return name === 'name' ? language : name;
+});
