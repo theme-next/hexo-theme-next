@@ -41,8 +41,10 @@ Please note the difference between **site config file** and **theme config file*
   ```yml
   leancloud_visitors:
     enable: true
-    app_id: <your app id>
-    app_key: <your app key>
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
   ```
@@ -92,8 +94,10 @@ Please note the difference between **site config file** and **theme config file*
   ```yml
   leancloud_visitors:
     enable: true
-    app_id: <your app id>
-    app_key: <your app key>
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
   ```

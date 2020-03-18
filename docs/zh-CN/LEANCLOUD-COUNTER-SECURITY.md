@@ -43,13 +43,16 @@
   ![8](https://lc-cqha0xyi.cn-n1.lcfile.com/9501a6372918dd9a8a92.jpg)
 
 - 粘贴 `App ID` 和 `App Key` 到 **NexT主题配置文件** `_config.yml` 对应位置。此时配置文件应如下：
-```yml
-leancloud_visitors:
-  enable: true
-  security: true
-  app_id: <your app id>
-  app_key: <your app key>
-```
+  ```yml
+  leancloud_visitors:
+    enable: true
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
+    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+    security: true
+  ```
 
 - 设置Web安全域名确保域名调用安全。点击 `1` 处进入安全中心，然后在 `2` 处填写自己博客对应的域名（**注意协议、域名和端口号需严格一致**）：
 
@@ -102,8 +105,10 @@ leancloud_visitors:
   ```yml
   leancloud_visitors:
     enable: true
-    app_id: <your app id>
-    app_key: <your app key>
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
   ```
