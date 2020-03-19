@@ -3,16 +3,16 @@
   height: 100%;
   left: 0;
   position: fixed;
-  transition: visibility 0s linear .2s, background .2s;
   top: 0;
+  transition: visibility 0s linear .2s, background .2s;
   visibility: hidden;
   width: 100%;
   z-index: $zindex-4;
 
   &.search-active {
     background: rgba(0, 0, 0, .3);
-    visibility: visible;
     transition: background .2s;
+    visibility: visible;
   }
 }
 
@@ -22,9 +22,9 @@
   height: 80%;
   left: calc(50% - 350px);
   position: fixed;
+  top: 10%;
   transform: scale(0);
   transition: transform .2s;
-  top: 10%;
   width: 700px;
   z-index: $zindex-5;
 
