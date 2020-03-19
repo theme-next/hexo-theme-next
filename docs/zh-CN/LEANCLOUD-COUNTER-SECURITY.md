@@ -43,13 +43,16 @@
   ![8](https://lc-cqha0xyi.cn-n1.lcfile.com/9501a6372918dd9a8a92.jpg)
 
 - 粘贴 `App ID` 和 `App Key` 到 **NexT主题配置文件** `_config.yml` 对应位置。此时配置文件应如下：
-```yml
-leancloud_visitors:
-  enable: true
-  security: true
-  app_id: <<your app id>>
-  app_key: <<your app key>>
-```
+  ```yml
+  leancloud_visitors:
+    enable: true
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
+    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+    security: true
+  ```
 
 - 设置Web安全域名确保域名调用安全。点击 `1` 处进入安全中心，然后在 `2` 处填写自己博客对应的域名（**注意协议、域名和端口号需严格一致**）：
 
@@ -102,15 +105,13 @@ leancloud_visitors:
   ```yml
   leancloud_visitors:
     enable: true
-    app_id: <<your app id>>
-    app_key: <<your app key>>
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
-    betterPerformance: false
   ```
-
-  **对 `betterPerformance` 选项的说明：**
-  由于 LeanCloud 免费版的云引擎存在请求线程数和运行时间限制以及休眠机制，很多时候访客数量加载会很慢。如果设置 `betterPerformance` 为 `true`，则网页则会在提交请求之前直接显示访客人数为查询到的人数+1，以增加用户体验。
 
 - 打开 cmd 并切换至**博客根目录**，键入以下命令以安装 `hexo-leancloud-counter-security` 插件：
   ```
@@ -121,31 +122,31 @@ leancloud_visitors:
   ```yml
   leancloud_counter_security:
     enable_sync: true
-    app_id: <<your app id>>
-    app_key: <<your app key>
+    app_id: <your app id>
+    app_key: <your app key>
     username:
     password:
   ```
 
 - 在相同目录键入以下命令：
   ```
-  hexo lc-counter register <<username>> <<password>>
+  hexo lc-counter register <username> <password>
   ```
   或
   ```
-  hexo lc-counter r <<username>> <<password>>
+  hexo lc-counter r <username> <password>
   ```
 
-  将 `<<username>>` 和 `<<password>>` 替换为你自己的用户名和密码（不必与 LeanCloud 的账号相同）。此用户名和密码将在 Hexo 部署时使用。
+  将 `<username>` 和 `<password>` 替换为你自己的用户名和密码（不必与 LeanCloud 的账号相同）。此用户名和密码将在 Hexo 部署时使用。
 
-  - 打开**博客配置文件** `_config.yml`，将 `<<username>>` 和 `<<password>>` 替换为你刚刚设置的用户名和密码：
+  - 打开**博客配置文件** `_config.yml`，将 `<username>` 和 `<password>` 替换为你刚刚设置的用户名和密码：
   ```yml
   leancloud_counter_security:
     enable_sync: true
-    app_id: <<your app id>>
-    app_key: <<your app key>
-    username: <<your username>> #如留空则将在部署时询问
-    password: <<your password>> #建议留空以保证安全性，如留空则将在部署时询问
+    app_id: <your app id>
+    app_key: <your app key>
+    username: <your username> #如留空则将在部署时询问
+    password: <your password> #建议留空以保证安全性，如留空则将在部署时询问
   ```
 
 - 在**博客配置文件** `_config.yml` 的 `deploy` 下添加项：
