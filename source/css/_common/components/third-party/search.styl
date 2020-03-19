@@ -1,12 +1,19 @@
 .search-pop-overlay {
-  background: rgba(0, 0, 0, .3);
-  display: none;
+  background: rgba(0, 0, 0, 0);
   height: 100%;
   left: 0;
   position: fixed;
   top: 0;
+  transition: visibility 0s linear .2s, background .2s;
+  visibility: hidden;
   width: 100%;
   z-index: $zindex-4;
+
+  &.search-active {
+    background: rgba(0, 0, 0, .3);
+    transition: background .2s;
+    visibility: visible;
+  }
 }
 
 .search-popup {
@@ -16,8 +23,14 @@
   left: calc(50% - 350px);
   position: fixed;
   top: 10%;
+  transform: scale(0);
+  transition: transform .2s;
   width: 700px;
   z-index: $zindex-5;
+
+  .search-active & {
+    transform: scale(1);
+  }
 
   +mobile() {
     border-radius: 0;
@@ -49,16 +62,16 @@
     display: flex;
     padding: 5px;
   }
-}
 
-.site-search input.search-input {
-  background: transparent;
-  border: 0;
-  outline: 0;
-  width: 100%;
+  input.search-input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    width: 100%;
 
-  &::-webkit-search-cancel-button {
-    display: none;
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
   }
 }
 

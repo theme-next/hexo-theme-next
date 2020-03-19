@@ -98,7 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
       document.body.style.overflow = 'hidden';
-      document.querySelector('.search-pop-overlay').style.display = 'block';
+      document.querySelector('.search-pop-overlay').classList.add('search-active');
       document.querySelector('.search-input').focus();
     });
   });
@@ -106,7 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Monitor main search box
   const onPopupClose = () => {
     document.body.style.overflow = '';
-    document.querySelector('.search-pop-overlay').style.display = '';
+    document.querySelector('.search-pop-overlay').classList.remove('search-active');
   };
 
   document.querySelector('.search-pop-overlay').addEventListener('click', event => {
