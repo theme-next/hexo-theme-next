@@ -62,7 +62,7 @@
     }
 
     let { app_id, app_key, server_url } = {{ theme.leancloud_visitors | json }};
-    function getServerURL(api_server) {
+    function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
           method,
@@ -81,15 +81,16 @@
         showTime(Counter);
       }
     }
+
     let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
 
     if (api_server) {
-      getServerURL(api_server);
+      fetchData(api_server);
     } else {
       fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
         .then(response => response.json())
         .then(({ api_server }) => {
-          getServerURL('https://' + api_server);
+          fetchData('https://' + api_server);
         });
     }
   })();
