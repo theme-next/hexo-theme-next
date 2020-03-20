@@ -27,7 +27,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
      ```
      这种方式将**仅提供最新的 release 版本**（其中不附带 `.git` 目录）。\
      因此，将来你将不可能通过 `git` 更新这一方式安装的主题。\
-     取而代之的，为了能不丢失你的自定义配置，你可以使用独立的配置文件（例如 [数据文件][docs-data-files-url]）并下载最新版本到旧版本的目录中（或者下载到新的主题目录中并修改 Hexo 配置中的主题名）。
+     取而代之的，为了能不丢失你的自定义配置，你可以使用独立的配置文件（例如 [数据文件][docs-configuration-url]）并下载最新版本到旧版本的目录中（或者下载到新的主题目录中并修改 Hexo 配置中的主题名）。
 
 ### 选项 2：下载 [tag 指向的 release 版本][releases-url]
 
@@ -118,4 +118,4 @@ theme: next
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
 [update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/README.md#update
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
+[docs-configuration-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/CONFIGURATION.md

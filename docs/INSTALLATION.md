@@ -27,7 +27,7 @@ There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
      ```
      This variant will give to you **only latest release version** (without `.git` directory inside).\
      So, there is impossible to update this version with `git` later.\
-     Instead you always can use separate configuration (e.g. [data-files][docs-data-files-url]) and download new version inside old directory (or create new directory and redefine `theme` in Hexo config), without losing your old configuration.
+     Instead you always can use separate configuration (e.g. [data-files][docs-configuration-url]) and download new version inside old directory (or create new directory and redefine `theme` in Hexo config), without losing your old configuration.
 
 ### Option 2: Download [tagged release version][releases-url]
 
@@ -118,4 +118,4 @@ theme: next
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
 [update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/README.md#update
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
+[docs-configuration-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/CONFIGURATION.md

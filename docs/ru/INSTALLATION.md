@@ -27,7 +27,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
      ```
      Этим способом Вы скачаете **только последнюю версию релиза** (без директории `.git` внутри).\
      Поэтому, в дальнейшем будет невозможно обновить эту версию через `git`.\
-     Зато всегда можно использовать отдельную конфигурацию (т.е. [дата-файлы][docs-data-files-url]) и скачивать новую версию перезаписывая старую (или создать новый каталог и переопределить параметр `theme` в конфиге Hexo), без потери старой конфигурации.
+     Зато всегда можно использовать отдельную конфигурацию (т.е. [дата-файлы][docs-configuration-url]) и скачивать новую версию перезаписывая старую (или создать новый каталог и переопределить параметр `theme` в конфиге Hexo), без потери старой конфигурации.
 
 ### Способ 2: Скачиваем [указанную версию релиза][releases-url]
 
@@ -118,4 +118,4 @@ theme: next
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
 [update-with-git-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/README.md#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
+[docs-configuration-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/CONFIGURATION.md
