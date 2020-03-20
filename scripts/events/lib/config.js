@@ -24,7 +24,6 @@ module.exports = hexo => {
   /**
    * Merge configs from _data/next.yml into hexo.theme.config.
    * If `override`, configs in next.yml will rewrite configs in hexo.theme.config.
-   * If next.yml not exists, merge all `theme_config.*` into hexo.theme.config.
    */
   if (data.next) {
     if (data.next.override) {
@@ -33,10 +32,12 @@ module.exports = hexo => {
       merge(hexo.config, data.next);
       merge(hexo.theme.config, data.next);
     }
-  } else {
-    merge(hexo.theme.config, hexo.config.theme_config);
   }
 
+  if (hexo.theme.config.cache && hexo.theme.config.cache.enable && hexo.theme.language_switcher) {
+    hexo.log.warn('Since `language_switcher` is turned on, the caching is disabled to avoid potential hazards.');
+    hexo.theme.config.cache.enable = false;
+  }
   if (hexo.theme.config.cache && hexo.theme.config.cache.enable && hexo.config.relative_link) {
     hexo.log.warn('Since caching is turned on, the `relative_link` option in Hexo `_config.yml` is set to `false` to avoid potential hazards.');
     hexo.config.relative_link = false;
