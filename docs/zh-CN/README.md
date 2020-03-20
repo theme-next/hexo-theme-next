@@ -134,7 +134,6 @@ $ git pull
 [docs-configuration-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/CONFIGURATION.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md
 
-[t-news-url]: https://t.me/theme_next_news
 [t-chat-url]: https://t.me/theme_next_chinese
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
