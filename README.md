@@ -81,7 +81,7 @@ $ cd themes/next
 $ git pull
 ```
 
-And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
+And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-configuration-url] feature.\
 However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
 **If you want to update from v5.1.x to the latest version, read [this][docs-update-5-1-x-url].**
@@ -134,10 +134,9 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 </p>
 
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
-[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
+[docs-configuration-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/CONFIGURATION.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
 
-[t-news-url]: https://t.me/theme_next_news
 [t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
