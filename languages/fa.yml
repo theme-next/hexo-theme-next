@@ -38,7 +38,6 @@ post:
     license_content: "همه مقالات در این وبلاگ تحت %s مجاز می باشند مگر اینکه به طور اضافی بیان شوند."
 footer:
   powered: "قدرت گرفته از %s"
-  theme: پوسته
   total_views: مجموع بازدیدها
   total_visitors: تعداد بازدید کنندگان
 counter:
