@@ -38,7 +38,6 @@ post:
     license_content: "Tutti gli articoli in questo sito sono sotto licenza %s salvo disposizione contraria."
 footer:
   powered: "Powered by %s"
-  theme: Tema
   total_views: Total Views
   total_visitors: Total Visitors
 counter:
