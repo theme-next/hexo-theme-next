@@ -38,7 +38,6 @@ post:
     license_content: "Todos los artículos de este blog están licenciados bajo %s a no ser que se especifique una licencia adicional."
 footer:
   powered: "Creado mediante %s"
-  theme: Tema
   total_views: Visitas totales
   total_visitors: Visitantes totales
 counter:
