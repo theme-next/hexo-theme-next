@@ -38,7 +38,6 @@ post:
     license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
 footer:
   powered: "Cung cấp bởi %s"
-  theme: Giao Diện
   total_views: Tổng số người xem
   total_visitors: Tổng số truy cập
 counter:
