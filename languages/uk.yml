@@ -38,7 +38,6 @@ post:
     license_content: "Всі записи на цьому сайті захищені ліцензією %s, якщо не вказано додатково."
 footer:
   powered: "Генератор — %s"
-  theme: Тема
   total_views: Всього переглядів
   total_visitors: Всього відвідувачів
 counter:
