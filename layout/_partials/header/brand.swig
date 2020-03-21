@@ -16,19 +16,13 @@
       </div>
     {%- endif %}
 
-    <div>
-      <a href="{{ config.root }}" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">{{ title }}</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="{{ config.root }}" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">{{ title }}</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
     {%- if subtitle %}
-      {%- if theme.seo %}
-        <h1 class="site-subtitle" itemprop="description">{{ subtitle }}</h1>
-      {% else %}
-        <p class="site-subtitle">{{ subtitle }}</p>
-      {%- endif %}
+      <p class="site-subtitle" itemprop="description">{{ subtitle }}</p>
     {%- endif %}
     {%- if theme.custom_logo and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
       <a>
