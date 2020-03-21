@@ -38,7 +38,6 @@ post:
     license_content: "Alle Artikel in diesem Blog sind unter %s lizenziert, außer es wird anders angegeben."
 footer:
   powered: "Erstellt mit  %s"
-  theme: Design
   total_views: Alle Aufrufe
   total_visitors: Alle Besucher
 counter:
