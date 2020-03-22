@@ -42,7 +42,7 @@
   {%- endif %}
 </div>
 
-{%- if theme.footer.powered.enable %}
+{%- if theme.footer.powered %}
   <div class="powered-by">
     {%- set next_site = 'https://theme-next.org' %}
     {%- if theme.scheme !== 'Gemini' %}

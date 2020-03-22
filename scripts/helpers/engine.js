@@ -59,7 +59,7 @@ hexo.extend.helper.register('gitalk_md5', function(path) {
 hexo.extend.helper.register('canonical', function() {
   // https://support.google.com/webmasters/answer/139066
   const { permalink } = hexo.config;
-  var url = this.url.replace(/index\.html$/, '');
+  let url = this.url.replace(/index\.html$/, '');
   if (!permalink.endsWith('.html')) {
     url = url.replace(/\.html$/, '');
   }
