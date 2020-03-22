@@ -4,6 +4,8 @@
 
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ title }}{% endblock %}
 
+{% block class %}category{% endblock %}
+
 {% block content %}
 
   {######################}

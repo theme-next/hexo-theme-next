@@ -4,6 +4,8 @@
 
 {% block title %}{{ __('title.tag') }}: {{ page.tag }} | {{ title }}{% endblock %}
 
+{% block class %}tag{% endblock %}
+
 {% block content %}
 
   {#################}

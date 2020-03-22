@@ -4,6 +4,8 @@
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
+{% block class %}archive{% endblock %}
+
 {% block content %}
 
   {#####################}

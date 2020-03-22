@@ -3,6 +3,8 @@
 
 {% block title %}{{ title }}{%- if theme.index_with_subtitle and subtitle %} - {{ subtitle }}{%- endif %}{% endblock %}
 
+{% block class %}index{% endblock %}
+
 {% block content %}
 
   <div class="posts-expand">
