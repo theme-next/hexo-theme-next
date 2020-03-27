@@ -3,7 +3,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="{{ __('search.placeholder') }}" spellcheck="false"
            type="search" class="search-input">
   </div>

@@ -22,5 +22,5 @@ hexo.extend.filter.register('template_locals', locals => {
   // Creative Commons
   locals.ccURL = 'https://creativecommons.org/' + (theme.creative_commons.license === 'zero' ? 'publicdomain/zero/1.0/' : 'licenses/' + theme.creative_commons.license + '/4.0/') + (theme.creative_commons.language || '');
   // PJAX
-  locals.pjax = theme.pjax ? ' pjax' : '';
+  locals.pjax = theme.pjax ? ' data-pjax' : '';
 });
