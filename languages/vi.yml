@@ -1,4 +1,5 @@
 ---
+name: Tiếng Việt
 title:
   archive: Lưu Trữ
   category: Phân Loại
@@ -13,23 +14,22 @@ menu:
   search: Tìm Kiếm
   schedule: Danh Mục
   sitemap: Bản đồ trang
-  commonweal: Commonweal 404
+  commonweal: Commonwealth Act No. 404
 sidebar:
   overview: Tổng Quan
   toc: Mục Lục
 post:
   posted: Tạo lúc
-  edited: Edited on
+  edited: Chỉnh sửa vào
   created: Được tạo
   modified: Được thay đổi
-  edit: Edit this post
+  edit: Chính sửa bài viết này
   in: Trong
-  more: thêm
   read_more: Đọc tiếp
   untitled: Không có tiêu đề
   sticky: Đính
-  views: Views
-  related_posts: Related Posts
+  views: Lượt xem
+  related_posts: Các bài viết liên quan
   copyright:
     author: Người viết
     link: Liên kết bài viết
@@ -37,9 +37,8 @@ post:
     license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
 footer:
   powered: "Cung cấp bởi %s"
-  theme: Giao Diện
-  total_views: Total Views
-  total_visitors: Total Visitors
+  total_views: Tổng số người xem
+  total_visitors: Tổng số truy cập
 counter:
   tag_cloud:
     zero: Không có thẻ nào
@@ -75,17 +74,17 @@ reward:
   donate: Tài trợ
   wechatpay: WeChat Pay
   alipay: Alipay
-  paypal: PayPal
+  paypal: Paypal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: Xin chào mừng đến với các kênh khác của tôi
 accessibility:
-  nav_toggle: Toggle navigation bar
+  nav_toggle: Thanh điều hướng chuyển đổi
   prev_page: Trang trước
   next_page: Trang sau
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: Số biểu tượng trong bài viết
+  count_total: Tổng số biểu tượng
+  time: Thời lượng đọc
+  time_total: Tổng thời lượng đọc
+  time_minutes: phút.

@@ -1,4 +1,5 @@
 ---
+name: Türk
 title:
   archive: Arşiv
   category: Kategori
@@ -24,7 +25,6 @@ post:
   modified: Değiştirildi
   edit: Bu gönderiyi düzenle
   in: İçinde
-  more: daha fazla
   read_more: Daha fazla oku
   untitled: Başlıksız
   sticky: Sabit
@@ -37,7 +37,6 @@ post:
     license_content: "Bu blogdaki tüm makaleler aksi belirtilmediği sürece %s altında lisanslıdır."
 footer:
   powered: "%s tarafından desteklenmektedir"
-  theme: Tema
   total_views: Toplam görüntülenme
   total_visitors: Toplam Ziyaretçi
 counter:

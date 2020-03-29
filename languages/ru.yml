@@ -1,4 +1,5 @@
 ---
+name: Русский
 title:
   archive: Архив
   category: Категория
@@ -24,7 +25,6 @@ post:
   modified: Изменено
   edit: Редактировать запись
   in: в категории
-  more: more
   read_more: Читать полностью
   untitled: Без имени
   sticky: Ссылка
@@ -37,7 +37,6 @@ post:
     license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
 footer:
   powered: "Генератор — %s"
-  theme: Тема
   total_views: Всего просмотров
   total_visitors: Всего посетителей
 counter:
@@ -78,7 +77,7 @@ reward:
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Добро пожаловать на мои другие издательские каналы
+  welcome: Добро пожаловать на другие мои издательские каналы
 accessibility:
   nav_toggle: Показать/скрыть меню
   prev_page: Предыдущая страница

@@ -1,9 +1,10 @@
 ---
+name: magyar
 title:
   archive: Archive
   category: Category
   tag: Tag
-  schedule: Schedule
+  schedule: Ütemterv
 menu:
   home: Home
   archives: Archives
@@ -24,7 +25,6 @@ post:
   modified: Modified
   edit: Edit this post
   in: In
-  more: more
   read_more: Read more
   untitled: Untitled
   sticky: Sticky
@@ -37,7 +37,6 @@ post:
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 footer:
   powered: "Powered by %s"
-  theme: Theme
   total_views: Total Views
   total_visitors: Total Visitors
 counter:

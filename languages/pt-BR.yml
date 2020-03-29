@@ -1,4 +1,5 @@
 ---
+name: Português
 title:
   archive: Arquivo
   category: Categoria
@@ -24,7 +25,6 @@ post:
   modified: Updated at
   edit: Edit this post
   in: Em
-  more: more
   read_more: Leia mais
   untitled: Sem título
   sticky: Sticky
@@ -37,7 +37,6 @@ post:
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 footer:
   powered: "Feito com %s"
-  theme: Tema
   total_views: Total Views
   total_visitors: Total Visitors
 counter:

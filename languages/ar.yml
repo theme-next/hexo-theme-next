@@ -1,4 +1,5 @@
 ---
+name: عربي
 title:
   archive: الأرشيف
   category: تصنيف
@@ -24,7 +25,6 @@ post:
   modified: عُدل
   edit: تحرير هذا المقال
   in: في
-  more: المزيد
   read_more: تابع القراءة
   untitled: بدون عنوان
   sticky: مثبت
@@ -37,7 +37,6 @@ post:
     license_content: "حميع المقالات في هذه المدوّنة منشورة تحت رخصة %s إلا عند التنويه بخلافه."
 footer:
   powered: "تطبيق الموقع %s"
-  theme: الثمة
   total_views: إجمالي المشاهدات
   total_visitors: إجمالي الزوار
 counter:

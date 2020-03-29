@@ -1,4 +1,5 @@
 ---
+name: 繁體中文（香港）
 title:
   archive: 歸檔
   category: 分類
@@ -24,7 +25,6 @@ post:
   modified: 修改時間
   edit: 編輯
   in: 分類於
-  more: 更多
   read_more: 閱讀全文
   untitled: 未命名
   sticky: 置頂
@@ -37,7 +37,6 @@ post:
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
 footer:
   powered: "由 %s 強力驅動"
-  theme: 主題
   total_views: 總瀏覽次數
   total_visitors: 訪客總數
 counter:

@@ -1,4 +1,5 @@
 ---
+name: 简体中文
 title:
   archive: 归档
   category: 分类
@@ -24,7 +25,6 @@ post:
   modified: 修改时间
   edit: 编辑
   in: 分类于
-  more: 更多
   read_more: 阅读全文
   untitled: 未命名
   sticky: 置顶
@@ -37,7 +37,6 @@ post:
     license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
 footer:
   powered: "由 %s 强力驱动"
-  theme: 主题
   total_views: 总访问量
   total_visitors: 总访客量
 counter:
