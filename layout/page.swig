@@ -15,11 +15,10 @@
   {%- endif %}
 {% endblock %}
 
-{% block class %}page{% endblock %}
+{% block class %}page posts-expand{% endblock %}
 
 {% block content %}
 
-  <div class="posts-expand">
     {##################}
     {### PAGE BLOCK ###}
     {##################}
@@ -70,7 +69,6 @@
     {######################}
     {### END PAGE BLOCK ###}
     {######################}
-  </div>
 
 {% endblock %}
 
