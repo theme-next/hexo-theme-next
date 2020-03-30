@@ -106,7 +106,7 @@
 {%- if theme.links %}
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="{{ (theme.links_settings.icon or 'fa fa-link') | lower }} fa-fw"></i>
+      {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{%- endif %}
       {{ theme.links_settings.title }}
     </div>
     <ul class="links-of-blogroll-list">
