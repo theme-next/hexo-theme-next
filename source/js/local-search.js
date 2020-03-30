@@ -191,7 +191,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (keywords.length === 1 && keywords[0] === '') {
       resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>';
     } else if (resultItems.length === 0) {
-      resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>';
+      resultContent.innerHTML = '<div id="no-result"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       resultItems.sort((resultLeft, resultRight) => {
         if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
