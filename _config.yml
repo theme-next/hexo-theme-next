@@ -620,7 +620,6 @@ valine:
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
   visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
@@ -641,10 +640,6 @@ gitalk:
   client_secret: # GitHub Application Client Secret
   admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
-  # Gitalk's display language depends on user's browser or system environment
-  # If you want everyone visiting your site to see a uniform language, you can set a force language value
-  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language:
 
 
 # ---------------------------------------------------------------

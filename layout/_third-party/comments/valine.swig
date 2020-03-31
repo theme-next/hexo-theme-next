@@ -19,7 +19,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       meta       : guest,
       pageSize   : '{{ theme.valine.pageSize }}' || 10,
       visitor    : {{ theme.valine.visitor }},
-      lang       : '{{ theme.valine.language }}' || 'zh-cn',
+      lang       : (navigator.language || CONFIG.page.lang).toLowerCase(),
       path       : location.pathname,
       recordIP   : {{ theme.valine.recordIP }},
       serverURLs : '{{ theme.valine.serverURLs }}'
