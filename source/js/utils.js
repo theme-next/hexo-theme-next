@@ -53,6 +53,7 @@ NexT.utils = {
       link.rel = 'noopener external nofollow noreferrer';
       link.target = '_blank';
       link.className = element.className;
+      link.title = element.title;
       link.innerHTML = element.innerHTML;
       element.parentNode.replaceChild(link, element);
     });

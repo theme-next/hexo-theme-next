@@ -20,8 +20,7 @@ hexo.extend.filter.register('after_post_render', data => {
       let link = url.parse(href);
       if (!link.protocol || link.hostname === siteHost) return match;
 
-      // If title atribute filled, set it as title; if not, set url as title.
-      return `<span class="exturl" data-url="${Buffer.from(href).toString('base64')}" title="${href}">${html}<i class="fa fa-external-link-alt"></i></span>`;
+      return `<span class="exturl" data-url="${Buffer.from(href).toString('base64')}">${html}<i class="fa fa-external-link-alt"></i></span>`;
     });
   }
 
