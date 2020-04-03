@@ -6,28 +6,22 @@
   position: relative;
   text-align: center;
 
-  &::before, &::after {
-    background-repeat: no-repeat;
-    background-size: 22px 22px;
-    content: ' ';
+  .fa {
     display: block;
-    height: 24px;
-    opacity: .2;
+    opacity: .6;
     position: absolute;
     width: 100%;
   }
 
-  &::before {
-    background-image: url($center-quote-left);
-    background-position: 0 -6px;
+  .fa-quote-left {
     border-top: 1px solid $grey-light;
+    text-align: left;
     top: -20px;
   }
 
-  &::after {
-    background-image: url($center-quote-right);
-    background-position: 100% 8px;
+  .fa-quote-right {
     border-bottom: 1px solid $grey-light;
+    text-align: right;
     bottom: -20px;
   }
 
