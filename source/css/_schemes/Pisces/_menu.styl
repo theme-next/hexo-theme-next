@@ -18,20 +18,6 @@
   }
 }
 
-if (!hexo-config('menu_settings.badges')) {
-  .menu-item-active a::after {
-    background: $grey;
-    border-radius: 50%;
-    content: ' ';
-    height: 6px;
-    margin-top: -3px;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    width: 6px;
-  }
-}
-
 .menu .menu-item {
   display: block;
   margin: 0;
@@ -61,5 +47,19 @@ if (!hexo-config('menu_settings.badges')) {
     padding: 2px 5px;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
     vertical-align: middle;
+  }
+}
+
+if (!hexo-config('menu_settings.badges')) {
+  .main-menu .menu-item-active a::after {
+    background: $grey;
+    border-radius: 50%;
+    content: ' ';
+    height: 6px;
+    margin-top: -3px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 6px;
   }
 }
