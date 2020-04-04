@@ -135,7 +135,9 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git.svg?type=large)](https://app.fossa.com/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git?ref=badge_large)
+<p align="center">
+  <a href="https://app.fossa.com/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git?ref=badge_large"><img src="https://app.fossa.com/api/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git.svg?type=large"></a>
+</p>
 
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
