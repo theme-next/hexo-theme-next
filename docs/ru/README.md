@@ -112,6 +112,10 @@ $ git pull
   <sub>Codacy позволяет нам контролировать качество кода, Travis CI позволяет нам запускать набор тестов.</sub>
 </p>
 
+## Лицензия
+
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git.svg?type=large)](https://app.fossa.com/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git?ref=badge_large)
+
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/UPDATE-FROM-5.1.X.md
