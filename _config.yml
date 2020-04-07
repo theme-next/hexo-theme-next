@@ -117,14 +117,19 @@ darkmode: true
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  about: /about/ || fa fa-user
+  categories: /categories/ || fa fa-th
   tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  schedule: /schedule/ || fa fa-calendar
   sitemap: /sitemap.xml || fa fa-sitemap
-  commonweal: /404/ || fa fa-heartbeat
-
+  about: /about/ || fa fa-user
+  #schedule: /schedule/ || fa fa-calendar
+  #commonweal: /404/ || fa fa-heartbeat
+  Docs:
+    default: /docs/ || fa fa-book
+    Third Party Services:
+      default: /third-party-services/ || fa fa-plug
+      Algolia Search: /algolia-search/ || fa fa-search-plus
+      
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
