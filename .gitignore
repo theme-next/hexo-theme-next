@@ -2,6 +2,7 @@
 .idea/
 *.log
 *.iml
+.vscode
 yarn.lock
 package-lock.json
 node_modules/
