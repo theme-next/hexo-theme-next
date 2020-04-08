@@ -355,7 +355,7 @@ codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: base16-atelier-lakeside
+  highlight_theme: solarized dark
   # Add copy button on codeblock
   copy_button:
     enable: false
