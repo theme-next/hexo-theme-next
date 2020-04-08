@@ -17,7 +17,7 @@ cache:
   enable: true
 
 # Remove unnecessary files after hexo generate.
-minify: false
+minify: true
 
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
@@ -52,7 +52,7 @@ language_switcher: false
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2017
 
   # Icon between year and copyright info.
   icon:
@@ -65,6 +65,7 @@ footer:
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
+    author: wzy
 
   # Powered by Hexo & NexT
   powered: true
@@ -123,13 +124,8 @@ menu:
   sitemap: /sitemap.xml || fa fa-sitemap
   about: /about/ || fa fa-user
   #schedule: /schedule/ || fa fa-calendar
-  #commonweal: /404/ || fa fa-heartbeat
-  Docs:
-    default: /docs/ || fa fa-book
-    Third Party Services:
-      default: /third-party-services/ || fa fa-plug
-      Algolia Search: /algolia-search/ || fa fa-search-plus
-      
+  commonweal: /404/ || fa fa-heartbeat
+
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
@@ -143,8 +139,8 @@ menu_settings:
 
 sidebar:
   # Sidebar Position.
-  position: left
-  #position: right
+  #position: left
+  position: right
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
@@ -359,7 +355,7 @@ codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: normal
+  highlight_theme: base16-atelier-lakeside
   # Add copy button on codeblock
   copy_button:
     enable: false
