@@ -33,6 +33,9 @@ hexo.on('generateAfter', () => {
             isOutdated = true;
             break;
           }
+          if (latest[i] < current[i]) {
+            break;
+          }
         }
         if (isOutdated) {
           hexo.log.warn(`Your theme NexT is outdated. Current version: v${current.join('.')}, latest version: v${latest.join('.')}`);
