@@ -5,10 +5,10 @@
   width: 90%;
 
   button {
-    background: $red;
-    border: 0;
-    border-radius: 5px;
-    color: white;
+    background: transparent;
+    border: 1px solid #fc6423;
+    border-radius: 0;
+    color: #fc6423;
     cursor: pointer;
     line-height: 2;
     outline: 0;
@@ -16,7 +16,9 @@
     vertical-align: text-top;
 
     &:hover {
-      background: lighten($red, 20%);
+      background: #fc6423;
+      border: 1px solid transparent;
+      color: #fa9366
     }
   }
 }
