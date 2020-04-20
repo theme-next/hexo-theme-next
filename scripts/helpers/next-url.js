@@ -1,32 +1,41 @@
+/**
+ * next-url.js | https://theme-next.org/api/helpers/next-url/
+ */
+
 /* global hexo */
 
 'use strict';
 
-const { htmlTag } = require('hexo-util');
-const url = require('url');
+hexo.extend.helper.register('next_url', function(path, text, options) {
+  var htmlTag = require('hexo-util').htmlTag;
+  var config = this.config;
+  var url = require('url');
+  var data = url.parse(path);
+  var siteHost = url.parse(config.url).hostname || config.url;
 
-hexo.extend.helper.register('next_url', function(path, text, options = {}) {
-  const { config } = this;
-  const data = url.parse(path);
-  const siteHost = url.parse(config.url).hostname || config.url;
-
-  const theme = hexo.theme.config;
-  let exturl = '';
-  let tag = 'a';
-  let attrs = { href: this.url_for(path) };
+  var theme = hexo.theme.config;
+  var exturl = '';
+  var tag = 'a';
+  var attrs = { href: this.url_for(path) };
 
   // If `exturl` enabled, set spanned links only on external links.
   if (theme.exturl && data.protocol && data.hostname !== siteHost) {
     tag = 'span';
     exturl = 'exturl';
-    const encoded = Buffer.from(path).toString('base64');
+    var encoded = Buffer.from(path).toString('base64');
     attrs = {
       class     : exturl,
       'data-url': encoded
     };
   }
 
-  for (let key in options) {
+  options = options || {};
+
+  var keys = Object.keys(options);
+  var key = '';
+
+  for (var i = 0, len = keys.length; i < len; i++) {
+    key = keys[i];
 
     /**
      * If option have `class` attribute, add it to
@@ -57,5 +66,5 @@ hexo.extend.helper.register('next_url', function(path, text, options = {}) {
     }
   }
 
-  return htmlTag(tag, attrs, decodeURI(text), false);
+  return htmlTag(tag, attrs, text);
 });

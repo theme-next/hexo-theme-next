@@ -1,1 +1,1 @@
-{{- next_js('schemes/pisces.js') }}
+{% include 'pisces.swig' %}

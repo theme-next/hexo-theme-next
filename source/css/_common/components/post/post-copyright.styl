@@ -1,7 +1,11 @@
 .post-copyright {
-  background: var(--card-bg-color);
-  border-left: 3px solid $red;
+  margin: $post-copyright.margin;
+  padding: $post-copyright.padding;
+  border-left: $post-copyright.border.width $post-copyright.border.style $post-copyright.border.color;
+  background-color: $post-copyright.bg;
   list-style: none;
-  margin: 2em 0 0;
-  padding: .5em 1em;
+
+  i.fa {
+    font-size: 15px;
+  }
 }

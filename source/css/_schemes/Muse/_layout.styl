@@ -1,30 +1,9 @@
-.header-inner, .main-inner, .footer-inner {
-  +mobile() {
-    width: auto;
-  }
+.header-inner, .container .main-inner, .footer-inner {
+  +mobile() { width: auto; }
 }
 
-.header-inner {
-  padding-top: 100px;
-
-  +mobile() {
-    padding-top: 50px;
-  }
-}
-
-.main-inner {
-  padding-bottom: 60px;
-}
-
-.content {
-  padding-top: 70px;
-
-  +mobile() {
-    padding-top: 35px;
-  }
-}
-
+// embed tag
 embed {
-  display: block;
-  margin: 0 auto 25px auto;
+   show();
+   margin:  0px auto 25px auto;
 }

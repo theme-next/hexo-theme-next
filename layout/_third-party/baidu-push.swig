@@ -1,5 +1,5 @@
-{%- if theme.baidu_push %}
-  <script{{ pjax }}>
+{% if theme.baidu_push %}
+  <script>
     (function(){
       var bp = document.createElement('script');
       var curProtocol = window.location.protocol.split(':')[0];
@@ -8,4 +8,4 @@
       s.parentNode.insertBefore(bp, s);
     })();
   </script>
-{%- endif %}
+{% endif %}
