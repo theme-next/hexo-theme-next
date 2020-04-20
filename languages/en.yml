@@ -1,3 +1,5 @@
+name: English
+
 title:
   archive: Archive
   category: Category
@@ -26,30 +28,19 @@ post:
   modified: Modified
   edit: Edit this post
   in: In
-  more: more
   read_more: Read more
   untitled: Untitled
   sticky: Sticky
-  toc_empty: This post does not have a Table of Contents
   views: Views
-  comments_count: Comments
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 
-page:
-  totally: Totally
-  tags: tags
-
 footer:
   powered: "Powered by %s"
-  theme: Theme
   total_views: Total Views
   total_visitors: Total Visitors
 
@@ -71,7 +62,6 @@ counter:
 
 state:
   posts: posts
-  pages: pages
   tags: tags
   categories: categories
 
@@ -97,9 +87,11 @@ reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
 
-gitmentbutton: Show comments from Gitment
+follow_me:
+  welcome: Welcome to my other publishing channels
 
 accessibility:
   nav_toggle: Toggle navigation bar

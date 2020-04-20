@@ -1,5 +1,5 @@
-{% if theme.baidu_analytics %}
-  <script>
+{%- if theme.baidu_analytics %}
+  <script{{ pjax }}>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -8,4 +8,4 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
-{% endif %}
+{%- endif %}

@@ -1,51 +1,44 @@
 .post-nav {
-  display: table;
-  margin-top: 15px;
-  width: 100%;
   border-top: 1px solid $gainsboro;
-}
-
-.post-nav-divider {
-  display: table-cell;
-  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 10px 5px 0;
 }
 
 .post-nav-item {
-  display: table-cell;
-  padding: 10px 0 0 0;
-  width: 45%;
-  vertical-align: top;
+  flex: 1;
 
   a {
-    position: relative;
-    show();
-    line-height: 25px;
-    font-size: 14px;
-    color: $link-color;
     border-bottom: none;
+    display: block;
+    font-size: $font-size-small;
+    line-height: 1.6;
+    position: relative;
 
-    &:hover {
-      color: $link-hover-color;
-      border-bottom: none;
+    &:active {
+      top: 2px;
     }
-
-    &:active { top: 2px; }
   }
 
   .fa {
-    font-size: 12px;
-    margin-right: 5px;
+    font-size: $font-size-smallest;
   }
-}
 
-.post-nav-next {
-  a { padding-left: 5px; }
-}
+  &:first-child {
+    margin-right: 15px;
 
-.post-nav-prev {
-  text-align: right;
+    .fa {
+      margin-right: 5px;
+    }
+  }
 
-  a { padding-right: 5px; }
+  &:last-child {
+    margin-left: 15px;
+    text-align: right;
 
-  .fa { margin-left: 5px; }
+    .fa {
+      margin-left: 5px;
+    }
+  }
 }

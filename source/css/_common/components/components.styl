@@ -1,18 +1,15 @@
-@import "highlight";
-@import "tags";
+if (hexo-config('back2top.enable')) {
+  .back-to-top {
+    font-size: $b2t-font-size;
+    text-align: center;
+    the-transition();
+  }
 
-@import "buttons";
-@import "pagination";
-@import "comments";
-@import (hexo-config('back2top.sidebar') ? "back-to-top-sidebar" : "back-to-top") if (hexo-config('back2top.enable'));
+  @import (hexo-config('back2top.sidebar') ? 'back-to-top-sidebar' : 'back-to-top');
+}
 
-@import "header";
-@import "post";
-@import "sidebar";
-@import "footer";
-@import "third-party";
+@import 'reading-progress' if (hexo-config('reading_progress.enable'));
 
-@import "pages";
-
-@import "rainbow" if hexo-config('safari_rainbow');
-@import "scrollbar" if hexo-config('custom_scrollbar');
+@import 'post';
+@import 'pages';
+@import 'third-party';

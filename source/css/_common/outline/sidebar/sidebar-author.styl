@@ -1,0 +1,35 @@
+.site-author-image {
+  border: $site-author-image-border-width solid $site-author-image-border-color;
+  display: block;
+  margin: 0 auto;
+  max-width: $site-author-image-width;
+  padding: 2px;
+
+  if (hexo-config('avatar.rounded')) {
+    border-radius: 50%;
+  }
+}
+
+if (hexo-config('avatar.rotated')) {
+  .site-author-image {
+    transition: transform 1s ease-out;
+  }
+
+  .site-author-image:hover {
+    transform: rotateZ(360deg);
+  }
+}
+
+.site-author-name {
+  color: $site-author-name-color;
+  font-weight: $site-author-name-weight;
+  margin: $site-author-name-margin;
+  text-align: center;
+}
+
+.site-description {
+  color: $site-description-color;
+  font-size: $site-description-font-size;
+  margin-top: $site-description-margin-top;
+  text-align: center;
+}

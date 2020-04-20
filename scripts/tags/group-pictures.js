@@ -73,9 +73,9 @@ var LAYOUTS = {
 
 function groupBy(group, data) {
   var r = [];
-  for (var i = 0; i < group.length; i++) {
-    r.push(data.slice(0, group[i]));
-    data = data.slice(group[i]);
+  for (let count of group) {
+    r.push(data.slice(0, count));
+    data = data.slice(count);
   }
   return r;
 }
@@ -109,28 +109,19 @@ var templates = {
   },
 
   getHTML: function(rows) {
-    var rowHTML = '';
-
-    for (var i = 0; i < rows.length; i++) {
-      rowHTML += this.getRowHTML(rows[i]);
-    }
+    var rowHTML = rows.map(row => {
+      return `<div class="group-picture-row">${this.getColumnHTML(row)}</div>`;
+    }).join('');
 
     return `<div class="group-picture-container">${rowHTML}</div>`;
   },
 
-  getRowHTML: function(pictures) {
-    return `<div class="group-picture-row">${this.getColumnHTML(pictures)}</div>`;
-  },
-
   getColumnHTML: function(pictures) {
-    var columns = [];
     var columnWidth = 100 / pictures.length;
     var columnStyle = `style="width: ${columnWidth}%;"`;
-
-    for (var i = 0; i < pictures.length; i++) {
-      columns.push(`<div class="group-picture-column" ${columnStyle}>${pictures[i]}</div>`);
-    }
-    return columns.join('');
+    return pictures.map(picture => {
+      return `<div class="group-picture-column" ${columnStyle}>${picture}</div>`;
+    }).join('');
   }
 };
 

@@ -1,6 +1,9 @@
-<div align="right">语言：<a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
-:cn:
-<a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a></div>
+<div align="right">
+  语言：
+  <a title="英语" href="../../.github/CONTRIBUTING.md">:us:</a>
+  :cn:
+  <a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a>
+</div>
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
@@ -8,41 +11,52 @@
 
 ## 目录
 
-[如何为 NexT 做贡献](#how-can-i-contribute)
+[如何为 NexT 做贡献](#如何为-next-做贡献)
 
-  * [你需要了解的](#before-submitting-an-issue)
-  * [反馈 Bug](#reporting-bugs)
-    * [提交漏洞](#reporting-security-bugs)
-  * [提交功能需求](#suggesting-enhancements)
-  * [提交合并请求](#submitting-a-pull-request)
-  * [发布版本](#creating-releases)
+  * [你需要了解的](#你需要了解的)
+    * [阅读文档](#阅读文档)
+    * [快速调试指南](#快速调试指南)
+  * [反馈 Bug](#反馈-bug)
+    * [提交漏洞](#提交漏洞)
+  * [提交功能需求](#提交功能需求)
+  * [提交合并请求](#提交合并请求)
+  * [发布版本](#发布版本)
 
-[规范](#guides)
+[规范](#规范)
 
-  * [行为规范](#coding-rules)
-  * [编码规范](#coding-standards)
-  * [标签规范](#labels-rules)
-  * [提交信息规范](#commit-messages-rules)
-
-<a name="how-can-i-contribute"></a>
+  * [行为规范](#行为规范)
+  * [编码规范](#编码规范)
+  * [标签规范](#标签规范)
+  * [提交信息规范](#提交信息规范)
 
 ## 如何为 NexT 做贡献
 
-目前 NexT 主题已经从 [iissnan](https://github.com/iissnan/hexo-theme-next) 的个人仓库移动到了 [Theme-Next](https://github.com/theme-next) 组织仓库中，并升级到 V6 版本。在 V6+ 版本中，`next/source/lib` 目录下的第三方依赖库将独立放置在 [Theme-Next](https://github.com/theme-next) 组织仓库中。在大多数情况下，NexT V5 版本仍然能够正常运行，但是如果你想获得更多的功能和帮助，还是建议您 [升级到 NexT V6+ 版本](https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md)，并移步 [Theme-Next](https://github.com/theme-next/hexo-theme-next) 仓库。
-
-<a name="before-submitting-an-issue"></a>
-
 ### 你需要了解的
 
-如果你在使用过程中遇到了问题，你可以查阅 FAQs（建设中） 或者 [NexT 帮助文档](https://theme-next.org/docs/)（建设中）。另外，你也可以通过 [这里](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) 进行大致检索，有些问题已经得到解答，你可以自行解决。对于没有解决的 Issue，你也可以继续提问。
+#### 阅读文档
 
-如果你在使用过程中发现了 Bug，请再次确认 Bug 在 [最新发布版本](https://github.com/theme-next/hexo-theme-next/releases/latest) 中是否重现。如果 Bug 重现，欢迎你到我们的 [主题仓库](https://github.com/theme-next/hexo-theme-next) 中 [反馈 Bug ](#reporting-bugs) 或者 [提交功能需求](#suggesting-enhancements)，也更期待您 [提交合并请求](#submitting-a-pull-request)。
+如果你在使用过程中遇到了问题，你可以查阅 [FAQs](https://theme-next.org/docs/faqs) 或者 [NexT 帮助文档](https://theme-next.org/docs/troubleshooting)。
 
-<a name="reporting-bugs"></a>
+另外，你也可以通过 [这里](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) 进行大致检索，有些问题已经得到解答，你可以自行解决。对于没有解决的 Issue，你也可以继续提问。
+
+#### 快速调试指南
+
+在 GitHub 上提交 Issue 前，请先通过以下方法 debug：
+
+* 执行`hexo clean`，清除浏览器缓存，并禁用 CDN 服务（例如 Cloudflare Rocket Loader）；
+* 切换到其它主题并检查 bug 是否仍然存在（例如使用默认主题 landscape）。换言之，证明这是 NexT 主题而非来自 Hexo 的 bug；
+* 将 NexT 主题升级到最新版；
+* 将 Hexo 和 Hexo 插件升级到最新版；
+* 将 Node.js 和 `npm` 升级到最新版；
+* 卸载不必要的 Hexo 插件，或重新通过 `npm install --save` 安装插件。
+
+如果你得到了来自 Hexo 或浏览器控制台的报错信息，请在 Google / Stackoverflow / GitHub Issue 中搜寻，或在提交 Issue 时报告给我们。
+
+如果你在使用过程中发现了 Bug，请再次确认 Bug 在 [最新发布版本](https://github.com/theme-next/hexo-theme-next/releases/latest) 中是否重现。如果 Bug 重现，欢迎你到我们的 [主题仓库](https://github.com/theme-next/hexo-theme-next) 中 [反馈 Bug](#reporting-bugs) 或者 [提交功能需求](#提交功能需求)，也更期待您 [提交合并请求](#提交合并请求)。
 
 ### 反馈 Bug
 
-反馈 Bug 前，请再次确认您已经查看了 [你需要了解的](#before-submitting-an-issue) 内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照 [模板](../../.github/ISSUE_TEMPLATE.md) 尽可能的详细填写相关信息。
+反馈 Bug 前，请再次确认您已经查看了 [你需要了解的](#你需要了解的) 内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照 [模板](../../.github/ISSUE_TEMPLATE.md) 尽可能的详细填写相关信息。
 
 请认真遵守如下指南，这样我们才能更好地理解问题，重现问题和解决问题。
 
@@ -58,19 +72,15 @@
 * 详细描述通过上述重现过程出现的问题。
 * 详细描述你期待的结果。
 
-<a name="reporting-security-bugs"></a>
-
 #### 提交漏洞
 
 如果你发现安全问题，请以负责任的方式行事，即不要在公共 Issue 中提交而是直接向我们反馈，这样我们就可以在漏洞被利用之前对其进行修复。请将相关信息发送到 security@theme-next.com（可接受 PGP 加密邮件）。
 
 我们很乐意对任何提交漏洞的人予以特别感谢以便我们修复它。如果你想保持匿名性或使用笔名替代，请告诉我们。我们将充分尊重你的意愿。
 
-<a name="suggesting-enhancements"></a>
-
 ### 提交功能需求
 
-提交功能需求前，请再次确认您已经查看了 [你需要了解的](#before-submitting-an-issue) 内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照 [模板](../../.github/ISSUE_TEMPLATE.md) 尽可能的详细填写相关信息。
+提交功能需求前，请再次确认您已经查看了 [你需要了解的](#你需要了解的) 内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照 [模板](../../.github/ISSUE_TEMPLATE.md) 尽可能的详细填写相关信息。
 
 请认真遵守如下指南，这样我们才能更好地理解和开发功能需求:pencil:：
 
@@ -78,38 +88,16 @@
 * 详细描述目前所具有的功能和你所期待的功能，并解释为什么需要该功能。
 * 提供功能需求的样例，如图像文件、在线演示网址等等。
 
-<a name="submitting-a-pull-request"></a>
-
 ### 提交合并请求
 
-提交合并请求前，请再次确认您已经查看了 [你需要了解的](#before-submitting-an-issue) 内容，避免提交重复的合并请求。确定相关仓库后，创建合并请求。更多详细操作过程可以查看 [帮助文档](https://help.github.com/articles/creating-a-pull-request/)。
-
-1. 进入 [hexo-theme-next](https://github.com/theme-next/hexo-theme-next) 主页面，点击`Fork`。
-2. 进入到已经`Fork`的个人仓库（`https://github.com/username/hexo-theme-next`），点击 **Clone or download** 并复制该仓库地址。选择本地文件夹，并打开 Git Bash ，输入如下命令并回车，即可完成仓库克隆。
-    ```bash
-    $ git clone git@github.com:username/hexo-theme-next.git
-    ```
-3. 进入 `hexo-theme-next` 本地文件夹，并创建分支。
-    ```bash
-    $ cd hexo-theme-next
-    $ git checkout -b patchname
-    ```
-4. 本地修改并测试，推送分支。
-    ```bash
-    $ git add .
-    $ git commit -m "add commit messamge"
-    $ git push origin patchname
-    ```
-5. 进入 `fork` 后的仓库，切换到新提交的 `patchname` 分支，点击 `patchname` 分支右侧的 **New pull request** 。在 PR 对比页面，正确选择你需要发起合并请求的分支，然后点击 **Create pull request** ，建立一个新的合并申请并描述变动。
+提交合并请求前，请再次确认您已经查看了 [你需要了解的](#你需要了解的) 内容，避免提交重复的合并请求。确定相关仓库后，创建合并请求。更多详细操作过程可以查看 [帮助文档](https://help.github.com/articles/creating-a-pull-request/)。
 
 请认真遵守如下指南，这样我们才能更好地理解你的合并请求：
 
-* 创建合并请求时，请遵守 [编码规范](#coding-rules) 和 [提交信息规范](#commit-messages-rules)。
+* 创建合并请求时，请遵守 [编码规范](#编码规范) 和 [提交信息规范](#提交信息规范)。
 * 在标题中清晰准确地描述你的合并请求，不要加入 Issue 编号。
 * 按照 [模板](../../.github/PULL_REQUEST_TEMPLATE.md) 尽可能的详细填写相关信息。
 * 合并请求需要在所有主题样式中测试通过，并提供所表现功能的样例，如图像文件、在线演示网址等等。
-
-<a name="creating-releases"></a>
 
 ### 发布版本
 
@@ -126,23 +114,15 @@
 5. 如果您希望随版本一起发布二进制文件（如编译的程序），请在上传二进制文件对话框中手动拖放或选择文件。
 6. 如果版本不稳定，请选择 **This is a pre-release**，以通知用户它尚未完全准备好。如果您准备公布您的版本，请点击 **Publish release**。否则，请单击 **Save draft** 以稍后处理。
 
-<a name="guides"></a>
-
 ## 规范
-
-<a name="coding-rules"></a>
 
 ### 行为规范
 
 为了保证本项目的顺利运作，所有参与人都需要遵守 [行为规范](CODE_OF_CONDUCT.md)。
 
-<a name="coding-standards"></a>
-
 ### 编码规范
 
-未完待续。
-
-<a name="labels-rules"></a>
+我们使用 ESLint 和 Stylint 来识别和报告 JavaScript 和 Stylus 中的模式，目的是使代码更加一致并避免错误。编码时应遵循这些规范。
 
 ### 标签规范
 
@@ -150,61 +130,51 @@
 
 如果您不确定某个标签的含义，或者不知道将哪些标签应用于 PR 或 issue，千万别错过这个。
 
-Issues 的标签：使用`类型`+`内容`+`结果`的组合
+Issue 的标签：
 
 - 类型
-    - `Irrelevant`: 与 NexT 主题无关的 Issue
-    - `Duplicate`: 重复提及的 Issue
     - `Bug`: 检测到需要进行确认的 Bug
-    - `Improvement Need`: 需要改进的 Issue
     - `Feature Request`: 提出了新功能请求的 Issue
-    - `High Priority`: 检测到具有高优先级的 Bug 或笔误的 Issue
-    - `Low Priority`: 检测到具有低优先级的 Bug 或笔误的 Issue
-    - `Non English`: 需要多语言维护者参与的 Issue
-    - `Discussion`: 需要进行讨论的 Issue
     - `Question`: 提出疑问的 Issue
-    - `Backlog`: 待解决的 Issue
     - `Meta`: 表明使用条款变更的 Issue
-- 内容
-    - `Roadmap`: 与 NexT 主题发展相关的 Issue
-    - `Hexo`: 与 Hexo 相关的 Issue
-    - `Scheme [1] - Mist`: 与 Mist 主题相关的 Issue
-    - `Scheme [2] - Muse`: 与 Muse 主题相关的 Issue
-    - `Scheme [3] - Pisces`: 与 Pisces 主题相关的 Issue
-    - `Scheme [4] - Gemini`: 与 Gemini 主题相关的 Issue
-    - `3rd Party Service`: 与第三方服务相关的 Issue
-    - `Docs`: 需要添加文档说明的 Issue
-    - `Configurations`: 与 NexT 主题设置相关的 Issue
-    - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue
-    - `Custom`: 与 NexT 主题个性化相关的 Issue
+    - `Support`: 被标记为支持请求的 Issue
+    - `Polls`: 发起投票的 Issue
 - 结果
-    - `Wontfix`: 不能或不被修复的 Issue
+    - `Duplicate`: 重复提及的 Issue
+    - `Irrelevant`: 与 NexT 主题无关的 Issue
+    - `Invalid`: 无法复现的 Issue
+    - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
-    - `Need Verify`: 需要开发人员或用户确认 Bug 或解决方法的 Issue
-    - `Can't Reproduce`: 无法复现的 Issue
     - `Verified`: 已经被确认的 Issue
-    - `Help Wanted`: 需要帮助的 Issue
-    - `Wait for Answer`: 需要开发人员或用户回复的 Issue
-    - `Resolved Maybe`: 可能已经解决的 Issue
     - `Solved`: 已经解决的 Issue
+    - `Backlog`: 待解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
 
-Pull requests 的标签：
+Pull Request 的标签：
 
-- `Breaking Change`: 产生重大变动的 Pull request
-- `External Change`: 针对外部变动进行更新的 Pull request
-- `Bug Fix`: 修复相关 Bug 的 Pull request
-- `Docs`: 添加了文档说明的 Pull request
-- `New Feature`: 添加了新功能的 Pull request
-- `Feature`: 为现有功能提供选项或加成的 Pull request
-- `Improvement`: 改进了 NexT 主题的 Pull request
-- `i18n`: 更新了翻译的 Pull request
-- `Performance`: 提高了 NexT 主题性能的 Pull request
-- `Discussion`: 需要进行讨论的 Pull request
-- `v6.x`: 与 NexT v6.x 旧版相关的用于修复和改进的 Pull request
-- `v7.x`: 与 NexT v7.x 旧版相关的用于修复和改进的 Pull request
+- `Breaking Change`: 产生重大变动的 Pull Request
+- `Bug Fix`: 修复相关 Bug 的 Pull Request
+- `New Feature`: 添加了新功能的 Pull Request
+- `Feature`: 为现有功能提供选项或加成的 Pull Request
+- `i18n`: 更新了翻译的 Pull Request
+- `Work in Progress`: 仍在进行改动和完善的 Pull Request
+- `Skip Release`: 无需在 Release Note 中展现的 Pull Request
 
-<a name="commit-messages-rules"></a>
+两者兼有：
+
+- `Roadmap`: 与 NexT 主题发展相关的 Issue 或者 Pull Request
+- `Help Wanted`: 需要帮助的 Issue 或者 Pull Request
+- `Discussion`: 需要进行讨论的 Issue 或者 Pull Request
+- `Improvement`: 需要改进的 Issue 或者改进了 NexT 主题的 Pull Request
+- `Performance`: 提出性能问题的 Issue 或者提高了 NexT 主题性能的 Pull Request
+- `Hexo`: 与 Hexo 和 Hexo 插件相关的 Issue 或者 Pull Request
+- `Template Engine`: 与模版引擎相关的 Issue 或者 Pull Request
+- `CSS`: 与 NexT 主题 CSS 文件相关的 Issue 或者 Pull Request
+- `Fonts`: 与 NexT 主题字体相关的 Issue 或者 Pull Request
+- `PJAX`: 与 PJAX 相关的 Issue 或者 Pull Request
+- `3rd Party Plugin`: 与第三方插件和服务相关的 Issue 或者 Pull Request
+- `Docs`: 与文档说明相关的 Issue 或者 Pull Request
+- `Configurations`: 与 NexT 主题设置相关的 Issue 或者 Pull Request
 
 ### 提交信息规范
 

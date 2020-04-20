@@ -1,0 +1,31 @@
+// Blockquote with all children centered.
+.blockquote-center {
+  border-left: none;
+  margin: 40px 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+
+  .fa {
+    display: block;
+    opacity: .6;
+    position: absolute;
+    width: 100%;
+  }
+
+  .fa-quote-left {
+    border-top: 1px solid $grey-light;
+    text-align: left;
+    top: -20px;
+  }
+
+  .fa-quote-right {
+    border-bottom: 1px solid $grey-light;
+    text-align: right;
+    bottom: -20px;
+  }
+
+  p, div {
+    text-align: center;
+  }
+}
