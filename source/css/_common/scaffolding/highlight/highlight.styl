@@ -1,0 +1,151 @@
+// https://github.com/chriskempson/tomorrow-theme
+$highlight-theme = hexo-config('codeblock.highlight_theme');
+
+@import 'theme';
+@import 'diff';
+
+@import 'copy-code' if (hexo-config('codeblock.copy_button.enable'));
+
+// Placeholder: $code-block
+$code-block {
+  background: $highlight-background;
+  color: $highlight-foreground;
+  line-height: $line-height-code-block;
+  margin: 0 auto 20px;
+}
+
+pre, code {
+  font-family: $code-font-family;
+}
+
+code {
+  background: $code-background;
+  border-radius: 3px;
+  color: $code-foreground;
+  padding: 2px 4px;
+  word-wrap();
+}
+
+.highlight {
+  @extend $code-block;
+
+  *::selection {
+    background: $highlight-selection;
+  }
+
+  pre {
+    border: 0;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  table {
+    border: 0;
+    margin: 0;
+    width: auto;
+  }
+
+  td {
+    border: 0;
+    padding: 0;
+  }
+
+  figcaption {
+    background: $highlight-gutter.bg-color;
+    color: $highlight-foreground;
+    display: flex;
+    font-size: $table-font-size;
+    justify-content: space-between;
+    line-height: 1.2;
+    padding: .5em;
+
+    a {
+      color: $highlight-foreground;
+
+      &:hover {
+        border-bottom-color: $highlight-foreground;
+      }
+    }
+  }
+
+  .gutter {
+    disable-user-select();
+
+    pre {
+      background: $highlight-gutter.bg-color;
+      color: $highlight-gutter.color;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: right;
+    }
+  }
+
+  .code pre {
+    background: $highlight-background;
+    padding-left: 10px;
+    width: 100%;
+  }
+}
+
+.gist table {
+  width: auto;
+
+  td {
+    border: 0;
+  }
+}
+
+pre {
+  @extend $code-block;
+  overflow: auto;
+  padding: 10px;
+
+  code {
+    background: none;
+    color: $highlight-foreground;
+    font-size: $table-font-size;
+    padding: 0;
+    text-shadow: none;
+  }
+  // For diff highlight
+  .deletion {
+    background: $highlight-deletion;
+  }
+
+  .addition {
+    background: $highlight-addition;
+  }
+
+  .meta {
+    color: $highlight-yellow;
+    disable-user-select();
+  }
+
+  .comment {
+    color: $highlight-comment;
+  }
+
+  .variable, .attribute, .tag, .name, .regexp, .ruby .constant, .xml .tag .title, .xml .pi, .xml .doctype, .html .doctype, .css .id, .css .class, .css .pseudo {
+    color: $highlight-red;
+  }
+
+  .number, .preprocessor, .built_in, .builtin-name, .literal, .params, .constant, .command {
+    color: $highlight-orange;
+  }
+
+  .ruby .class .title, .css .rules .attribute, .string, .symbol, .value, .inheritance, .header, .ruby .symbol, .xml .cdata, .special, .formula {
+    color: $highlight-green;
+  }
+
+  .title, .css .hexcolor {
+    color: $highlight-aqua;
+  }
+
+  .function, .python .decorator, .python .title, .ruby .function .title, .ruby .title .keyword, .perl .sub, .javascript .title, .coffeescript .title {
+    color: $highlight-blue;
+  }
+
+  .keyword, .javascript .function {
+    color: $highlight-purple;
+  }
+}

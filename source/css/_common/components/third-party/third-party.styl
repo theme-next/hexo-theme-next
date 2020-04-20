@@ -1,7 +1,7 @@
-@import "gitalk" if hexo-config('gitalk.enable');
-@import "localsearch";
-@import "algolia-search" if hexo-config('algolia_search.enable');
-@import "needsharebutton" if hexo-config('needmoreshare2.enable');
-@import "related-posts" if hexo-config('related_posts.enable');
-@import "copy-code" if hexo-config('codeblock.copy_button.enable');
-@import "math" if hexo-config('math.enable') and hexo-config('math.engine') == 'mathjax';
+@import 'gitalk' if (hexo-config('gitalk.enable'));
+
+@import 'search' if (hexo-config('local_search.enable') || hexo-config('algolia_search.enable'));
+
+@import 'related-posts' if (hexo-config('related_posts.enable'));
+
+@import 'math' if (hexo-config('math.mathjax.enable'));
