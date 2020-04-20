@@ -1,65 +1,87 @@
-.site-nav-toggle, .site-nav-right {
+.site-nav {
+  border-top: none;
+
   +tablet() {
-    flex-column();
-  }
-
-  .toggle {
-    color: white;
-
-    .toggle-line {
-      background: white;
-    }
+    display: none !important;
   }
 }
 
-.site-nav {
+.site-nav-on {
   +tablet() {
-    display: none;
+    display: block !important;
+  }
+}
+
+.menu-item-active a {
+  background: #f9f9f9;
+  border-bottom-color: white;
+
+  badges = hexo-config('menu_settings.badges');
+  if not badges {
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      right: 15px;
+      width: 6px;
+      height: 6px;
+      background-color: $grey;
+      circle();
+    }
   }
 }
 
 .menu .menu-item {
-  display: block;
+  show();
   margin: 0;
 
   a, span.exturl {
-    padding: 5px 20px;
     position: relative;
+    box-sizing: border-box;
+    padding: 5px 20px;
     text-align: left;
+    line-height: inherit;
     transition-property: background-color;
+    the-transition();
 
     &:hover {
       @extend .menu-item-active a;
     }
-  }
 
-  +tablet-mobile() {
-    &.menu-item-search {
-      display: none;
-    }
+    disable-touch-hover();
   }
 
   .badge {
-    background: $grey-light;
-    border-radius: 10px;
-    color: white;
-    float: right;
+    display: inline-block;
     padding: 2px 5px;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
     vertical-align: middle;
+    background-color: $grey-light;
+    border-radius: 10px;
+    float: right;
+    margin: 0.35em 0 0 0;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
   }
+
+  br { display: none; }
 }
 
-if (!hexo-config('menu_settings.badges')) {
-  .main-menu .menu-item-active a::after {
-    background: $grey;
-    border-radius: 50%;
-    content: ' ';
-    height: 6px;
-    margin-top: -3px;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    width: 6px;
+.btn-bar {
+  background-color: white;
+}
+
+.site-nav-toggle {
+  left: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  +tablet() {
+    show();
   }
 }

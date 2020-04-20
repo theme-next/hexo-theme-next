@@ -1,8 +1,11 @@
-{%- if page.comments %}
+{% set liveRefer = page.path %}
+{% if not is_post() %}
+  {% set liveRefer = page.path.replace('index.html', '') %}
+{% endif %}
+
 <script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
   window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+    refer: '{{ liveRefer }}'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
@@ -12,6 +15,4 @@ NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
     j.async = true;
     e.parentNode.insertBefore(j, e);
   })(document, 'script');
-});
 </script>
-{%- endif %}
