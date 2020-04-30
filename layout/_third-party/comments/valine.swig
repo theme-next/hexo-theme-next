@@ -8,9 +8,9 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
     });
-    var maps = { {{ theme.valine.emojiMaps }} }
-    if (maps = {  }){
-      maps = ''
+    var maps = { {{ theme.valine.emojiMaps }} };
+    if (JSON.stringify(maps) === '{}') {
+      maps = null
     }
     new Valine({
       el         : '#valine-comments',
