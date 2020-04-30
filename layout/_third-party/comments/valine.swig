@@ -8,6 +8,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
     });
+    var maps = { {{ theme.valine.emojiMaps }} }
+    if (maps = {  }){
+      maps = ''
+    }
     new Valine({
       el         : '#valine-comments',
       verify     : {{ theme.valine.verify }},
@@ -22,7 +26,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : '{{ theme.valine.language }}' || 'zh-cn',
       path       : location.pathname,
       recordIP   : {{ theme.valine.recordIP }},
-      serverURLs : '{{ theme.valine.serverURLs }}'
+      serverURLs : '{{ theme.valine.serverURLs }}',
+      emojiCDN   : '{{ theme.valine.emojiCDN }}', 
+      emojiMaps  : maps,
+      enableQQ   : {{ theme.valine.enableQQ }}
     });
   }, window.Valine);
 });
