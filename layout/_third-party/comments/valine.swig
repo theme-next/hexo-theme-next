@@ -14,8 +14,6 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     }
     new Valine({
       el         : '#valine-comments',
-      verify     : {{ theme.valine.verify }},
-      notify     : {{ theme.valine.notify }},
       appId      : '{{ theme.valine.appid }}',
       appKey     : '{{ theme.valine.appkey }}',
       placeholder: {{ theme.valine.placeholder | json }},
