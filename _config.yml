@@ -242,7 +242,7 @@ read_more_btn: true
 post_meta:
   item_text: true
   created_at: true
-  updated_at: true
+  updated_at:
     enable: true
     another_day: true
   categories: true
@@ -995,3 +995,6 @@ vendors:
 css: css
 js: js
 images: images
+
+# Theme version
+version: 7.8.0
