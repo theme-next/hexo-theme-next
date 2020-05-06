@@ -622,7 +622,7 @@ valine:
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
-  enableQQ: true # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
+  enableQQ: false # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
   # See: https://valine.js.org/emoji.html
   emojiCDN: 
   emojiMaps: 
