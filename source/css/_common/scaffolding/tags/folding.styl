@@ -1,0 +1,170 @@
+// gap
+$gap = 16px // base gap
+$gap-h2 = 48px
+$gap-h3 = 32px
+$gap-h4 = 16px
+$gap-paragraph = 1rem // 区块间距
+$gap-row = .5rem // 行间距
+$gap-card = $gap
+// border radius
+$border-codeblock = 4px
+// common
+$color-card = white
+$color-text = #555
+$color-block =  #f6f6f6
+// font size
+$fontsize-meta = .875rem   // 14px
+$fontsize-list = .9375rem // 15px
+//color
+$color-p = #555
+$color-md-blue = #e8f4fd
+$color-md-blue1 = rgba(33,150,243,0.3)
+
+$color-mac-cyan = #e8fafe
+$color-mac-cyan1 = rgba(27,205,252,0.3)
+$color-mac-green = #ebf9ed
+$color-mac-green1 =rgba(61,197,80,.3)
+$color-mac-yellow = #fff8e9
+$color-mac-yellow1 = rgba(255,189,43,0.3)
+$color-mac-red = #feefee
+$color-mac-red1 = rgba(254,95,88,0.3)
+// transition time
+$time = 0.28s
+
+details
+  display: block
+  padding: $gap
+  margin: $gap-row 0
+  border-radius: $border-codeblock
+  background: $color-card
+  font-size: $fontsize-list
+  transition: all $time ease
+  -moz-transition: all $time ease
+  -webkit-transition: all $time ease
+  -o-transition: all $time ease
+
+  summary
+    cursor: url(/images/ayuda.cur),auto;
+    padding: $gap
+    outline:none;
+    margin: 0 - $gap
+    border-radius: $border-codeblock
+    color: alpha($color-p, .7)
+    font-size: $fontsize-meta
+    font-weight: bold
+    position: relative
+    line-height: normal
+
+
+    >p, h1, h2, h3, h4, h5, h6
+      display: inline !important
+      border-bottom: none !important
+      cursor: url(/images/ayuda.cur),auto;
+
+    &:hover
+      color: $color-p
+
+      &:after
+        position: absolute
+        content: '+'
+        text-align: center
+        top: 50%
+        transform: translateY(-50%)
+        right: $gap
+
+  border: 1px solid $color-block
+
+  > summary
+    background: $color-block
+
+  &[blue]
+    border-color: $color-md-blue
+
+    > summary
+      background:$color-md-blue
+
+  &[cyan]
+    border-color:$color-mac-cyan
+
+    > summary
+      background:$color-mac-cyan
+
+  &[green]
+    border-color:$color-mac-green
+
+    > summary
+      background:$color-mac-green
+
+  &[yellow]
+    border-color:$color-mac-yellow
+
+    > summary
+      background:$color-mac-yellow
+
+  &[red]
+    border-color:$color-mac-red
+
+    > summary
+      background:$color-mac-red
+
+details[open]
+  border-color: alpha($color-p, .2)
+
+  > summary
+    border-bottom: 1px solid alpha($color-p, .2)
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+
+  &[blue]
+    border-color: alpha($color-md-blue1, .3)
+
+    > summary
+      border-bottom-color: alpha($color-md-blue1, .3)
+
+  &[cyan]
+    border-color: alpha($color-mac-cyan1, .3)
+
+    > summary
+      border-bottom-color: alpha($color-mac-cyan1, .3)
+
+  &[green]
+    border-color: alpha($color-mac-green1, .3)
+
+    > summary
+      border-bottom-color: alpha($color-mac-green1, .3)
+
+  &[yellow]
+    border-color: alpha($color-mac-yellow1, .3)
+
+    > summary
+      border-bottom-color: alpha($color-mac-yellow1, .3)
+
+  &[red]
+    border-color: alpha($color-mac-red1, .3)
+
+    > summary
+      border-bottom-color: alpha($color-mac-red1, .3)
+
+  > summary
+    color: $color-p
+    margin-bottom: 0
+
+    &:hover
+      &:after
+        content: '-'
+
+  > div.content
+    padding: $gap
+    margin: 0 - $gap
+    margin-top: 0
+
+    p > a:hover
+      text-decoration: underline
+
+    >
+    p, .tabs, ul, ol, .highlight, .note, .fancybox, details
+      &:first-child
+        margin-top: 0
+
+      &:last-child
+        margin-bottom: 0
