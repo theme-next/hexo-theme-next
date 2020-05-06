@@ -25,9 +25,9 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       path       : location.pathname,
       recordIP   : {{ theme.valine.recordIP }},
       serverURLs : '{{ theme.valine.serverURLs }}',
+      enableQQ   : {{ theme.valine.enableQQ }},
       emojiCDN   : '{{ theme.valine.emojiCDN }}', 
-      emojiMaps  : maps,
-      enableQQ   : {{ theme.valine.enableQQ }}
+      emojiMaps  : maps
     });
   }, window.Valine);
 });
