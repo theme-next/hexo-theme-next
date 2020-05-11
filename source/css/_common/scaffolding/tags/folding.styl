@@ -1,56 +1,55 @@
 // gap
-$gap = 16px // base gap
-$gap-h2 = 48px
-$gap-h3 = 32px
-$gap-h4 = 16px
-$gap-paragraph = 1rem // 区块间距
-$gap-row = .5rem // 行间距
-$gap-card = $gap
+$fd-fold-folding-gap = 16px // base gap
+$fd-fold-folding-gap-h2 = 48px
+$fd-fold-folding-gap-h3 = 32px
+$fd-fold-folding-gap-h4 = 16px
+$fd-fold-folding-gap-paragraph = 1rem // 区块间距
+$fd-fold-folding-gap-row = .5rem // 行间距
+$fd-fold-folding-gap-card = $fd-fold-folding-gap
 // border radius
-$border-codeblock = 4px
+$fd-fold-folding-border-codeblock = 4px
 // common
-$color-card = white
-$color-text = #555
-$color-block =  #f6f6f6
+$fd-fold-folding-color-card = white
+$fd-fold-folding-color-block =  #f6f6f6
 // font size
-$fontsize-meta = .875rem   // 14px
-$fontsize-list = .9375rem // 15px
+$fd-fold-folding-fontsize-meta = .875rem   // 14px
+$fd-fold-folding-fontsize-list = .9375rem // 15px
 //color
-$color-p = #555
-$color-md-blue = #e8f4fd
-$color-md-blue1 = rgba(33,150,243,0.3)
+$fd-fold-folding-color-p = #555
+$fd-fold-folding-color-md-blue = #e8f4fd
+$fd-fold-folding-color-md-blue1 = rgba(33,150,243,0.3)
 
-$color-mac-cyan = #e8fafe
-$color-mac-cyan1 = rgba(27,205,252,0.3)
-$color-mac-green = #ebf9ed
-$color-mac-green1 =rgba(61,197,80,.3)
-$color-mac-yellow = #fff8e9
-$color-mac-yellow1 = rgba(255,189,43,0.3)
-$color-mac-red = #feefee
-$color-mac-red1 = rgba(254,95,88,0.3)
+$fd-fold-folding-color-mac-cyan = #e8fafe
+$fd-fold-folding-color-mac-cyan1 = rgba(27,205,252,0.3)
+$fd-fold-folding-color-mac-green = #ebf9ed
+$fd-fold-folding-color-mac-green1 =rgba(61,197,80,.3)
+$fd-fold-folding-color-mac-yellow = #fff8e9
+$fd-fold-folding-color-mac-yellow1 = rgba(255,189,43,0.3)
+$fd-fold-folding-color-mac-red = #feefee
+$fd-fold-folding-color-mac-red1 = rgba(254,95,88,0.3)
 // transition time
-$time = 0.28s
+$fd-fold-folding-time = 0.28s
 
 details
   display: block
-  padding: $gap
-  margin: $gap-row 0
-  border-radius: $border-codeblock
-  background: $color-card
-  font-size: $fontsize-list
-  transition: all $time ease
-  -moz-transition: all $time ease
-  -webkit-transition: all $time ease
-  -o-transition: all $time ease
+  padding: $fd-fold-folding-gap
+  margin: $fd-fold-folding-gap-row 0
+  border-radius: $fd-fold-folding-border-codeblock
+  background: $fd-fold-folding-color-card
+  font-size: $fd-fold-folding-fontsize-list
+  transition: all $fd-fold-folding-time ease
+  -moz-transition: all $fd-fold-folding-time ease
+  -webkit-transition: all $fd-fold-folding-time ease
+  -o-transition: all $fd-fold-folding-time ease
 
   summary
-    cursor: url(/images/ayuda.cur),auto;
-    padding: $gap
+    cursor: pointer;
+    padding: $fd-fold-folding-gap
     outline:none;
-    margin: 0 - $gap
-    border-radius: $border-codeblock
-    color: alpha($color-p, .7)
-    font-size: $fontsize-meta
+    margin: 0 - $fd-fold-folding-gap
+    border-radius: $fd-fold-folding-border-codeblock
+    color: alpha($fd-fold-folding-color-p, .7)
+    font-size: $fd-fold-folding-fontsize-meta
     font-weight: bold
     position: relative
     line-height: normal
@@ -59,10 +58,10 @@ details
     >p, h1, h2, h3, h4, h5, h6
       display: inline !important
       border-bottom: none !important
-      cursor: url(/images/ayuda.cur),auto;
+      cursor: pointer;
 
     &:hover
-      color: $color-p
+      color: $fd-fold-folding-color-p
 
       &:after
         position: absolute
@@ -70,83 +69,83 @@ details
         text-align: center
         top: 50%
         transform: translateY(-50%)
-        right: $gap
+        right: $fd-fold-folding-gap
 
-  border: 1px solid $color-block
+  border: 1px solid $fd-fold-folding-color-block
 
   > summary
-    background: $color-block
+    background: $fd-fold-folding-color-block
 
   &[blue]
-    border-color: $color-md-blue
+    border-color: $fd-fold-folding-color-md-blue
 
     > summary
-      background:$color-md-blue
+      background:$fd-fold-folding-color-md-blue
 
   &[cyan]
-    border-color:$color-mac-cyan
+    border-color:$fd-fold-folding-color-mac-cyan
 
     > summary
-      background:$color-mac-cyan
+      background:$fd-fold-folding-color-mac-cyan
 
   &[green]
-    border-color:$color-mac-green
+    border-color:$fd-fold-folding-color-mac-green
 
     > summary
-      background:$color-mac-green
+      background:$fd-fold-folding-color-mac-green
 
   &[yellow]
-    border-color:$color-mac-yellow
+    border-color:$fd-fold-folding-color-mac-yellow
 
     > summary
-      background:$color-mac-yellow
+      background:$fd-fold-folding-color-mac-yellow
 
   &[red]
-    border-color:$color-mac-red
+    border-color:$fd-fold-folding-color-mac-red
 
     > summary
-      background:$color-mac-red
+      background:$fd-fold-folding-color-mac-red
 
 details[open]
-  border-color: alpha($color-p, .2)
+  border-color: alpha($fd-fold-folding-color-p, .2)
 
   > summary
-    border-bottom: 1px solid alpha($color-p, .2)
+    border-bottom: 1px solid alpha($fd-fold-folding-color-p, .2)
     border-bottom-left-radius: 0
     border-bottom-right-radius: 0
 
   &[blue]
-    border-color: alpha($color-md-blue1, .3)
+    border-color: alpha($fd-fold-folding-color-md-blue1, .3)
 
     > summary
-      border-bottom-color: alpha($color-md-blue1, .3)
+      border-bottom-color: alpha($fd-fold-folding-color-md-blue1, .3)
 
   &[cyan]
-    border-color: alpha($color-mac-cyan1, .3)
+    border-color: alpha($fd-fold-folding-color-mac-cyan1, .3)
 
     > summary
-      border-bottom-color: alpha($color-mac-cyan1, .3)
+      border-bottom-color: alpha($fd-fold-folding-color-mac-cyan1, .3)
 
   &[green]
-    border-color: alpha($color-mac-green1, .3)
+    border-color: alpha($fd-fold-folding-color-mac-green1, .3)
 
     > summary
-      border-bottom-color: alpha($color-mac-green1, .3)
+      border-bottom-color: alpha($fd-fold-folding-color-mac-green1, .3)
 
   &[yellow]
-    border-color: alpha($color-mac-yellow1, .3)
+    border-color: alpha($fd-fold-folding-color-mac-yellow1, .3)
 
     > summary
-      border-bottom-color: alpha($color-mac-yellow1, .3)
+      border-bottom-color: alpha($fd-fold-folding-color-mac-yellow1, .3)
 
   &[red]
-    border-color: alpha($color-mac-red1, .3)
+    border-color: alpha($fd-fold-folding-color-mac-red1, .3)
 
     > summary
-      border-bottom-color: alpha($color-mac-red1, .3)
+      border-bottom-color: alpha($fd-fold-folding-color-mac-red1, .3)
 
   > summary
-    color: $color-p
+    color: $fd-fold-folding-color-p
     margin-bottom: 0
 
     &:hover
@@ -154,8 +153,8 @@ details[open]
         content: '-'
 
   > div.content
-    padding: $gap
-    margin: 0 - $gap
+    padding: $fd-fold-folding-gap
+    margin: 0 - $fd-fold-folding-gap
     margin-top: 0
 
     p > a:hover
