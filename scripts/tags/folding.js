@@ -1,20 +1,20 @@
 'use strict';
 
-// Usage:
-// {% folding 参数（可选）, 标题 %}
-//
-// ![](https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
-//
-// {% endfolding %}
-// 颜色: blue, cyan, green, yellow, red
-// 状态: 状态填写 open 代表默认打开。
-
-// 举例：
-// {% folding cyan open, 查看默认打开的折叠框 %}
-//
-// 这是一个默认打开的折叠框。
-//
-// {% endfolding %}
+/**
+ * Usage:
+ * {% folding [args], title %}
+ * content
+ * {% endfolding %}
+ *
+ * args:
+ *   - color: blue, cyan, green, yellow, red
+ *   - status: open # means open by default
+ *
+ * example:
+ * {% folding cyan open, view the default folding box %}
+ * This is a folding box that opens by default
+ * {% endfolding %}
+ */
 function postFolding(args, content) {
   args = args.join(' ').split(',');
   let style = ''
