@@ -12,3 +12,9 @@
     lang   : '{{ page.lang }}'
   };
 </script>
+
+{% if page.robots %}
+  <meta name="robots" content="{{ page.robots }}">
+{% elif page.noindex %}
+  <meta name="robots" content="noindex">
+{% endif %}
