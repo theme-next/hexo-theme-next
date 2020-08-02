@@ -1,8 +1,14 @@
 {%- if theme.footer.beian.enable %}
   <div class="beian">
-    {{- next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
+    <span> ICP:  </span> 
+    {%- if theme.footer.beian.icp_region  and  theme.footer.beian.icp_region != '' %}
+      {%- set icp_region = theme.footer.beian.icp_region %}
+    {%- else %}
+      {%- set icp_region = 'bj' %}
+    {%- endif %}
+    {{- next_url('http://' + icp_region + '.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
     {%- if theme.footer.beian.gongan_icon_url %}
-      <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}" style="display: inline-block;">
+      &nbsp; <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}" style="display: inline-block;">
     {%- endif %}
     {%- if theme.footer.beian.gongan_id and theme.footer.beian.gongan_num %}
       {{- next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' + theme.footer.beian.gongan_id, theme.footer.beian.gongan_num + ' ') }}
