@@ -7,7 +7,7 @@
 'use strict';
 
 function mermaid(args, content) {
-  return `<pre class="mermaid" style="text-align: center;">
+  return `<pre class="mermaid" style="text-align: center;background: currentColor;">
             ${args.join(' ')}
             ${content}
           </pre>`;
