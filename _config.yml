@@ -65,6 +65,7 @@ footer:
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
+  copyright_url: 
 
   # Powered by Hexo & NexT
   powered: true
@@ -73,6 +74,8 @@ footer:
   beian:
     enable: false
     icp:
+    # ICP region. See: http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n3057722/c6797266/content.html
+    icp_region: gd
     # The digit in the num of gongan beian.
     gongan_id:
     # The full num of gongan beian.
