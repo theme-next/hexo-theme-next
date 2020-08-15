@@ -97,10 +97,10 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-# scheme: Muse
+scheme: Muse
 # scheme: Mist
 # scheme: Pisces
-scheme: Gemini
+# scheme: Gemini
 
 # Dark Mode
 darkmode: false
@@ -118,8 +118,8 @@ darkmode: false
 menu:
   home: / || fa fa-home
   #about: /about/ || fa fa-user
-  tags: /tags/ || fa fa-tags
-  categories: /categories/ || fa fa-th
+  #tags: /tags/ || fa fa-tags
+  #categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
@@ -163,9 +163,9 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /images/avatar.jpg
+  url: #/images/avatar.gif
   # If true, the avatar will be dispalyed in circle.
-  rounded: true
+  rounded: false
   # If true, the avatar will be rotated with the cursor.
   rotated: false
 
@@ -366,9 +366,9 @@ codeblock:
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: true
+  sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: true
+  scrollpercent: false
 
 # Reading progress bar
 reading_progress:
@@ -422,7 +422,7 @@ font:
   global:
     external: true
     family: Lato
-    size: 1
+    size: 0.9
 
   # Font settings for site title (.site-title).
   title:
