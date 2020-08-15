@@ -5,6 +5,7 @@
 yarn.lock
 package-lock.json
 node_modules/
+public/
 
 # Ignore optional external libraries
 source/lib/*
