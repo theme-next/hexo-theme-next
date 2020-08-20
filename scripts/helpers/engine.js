@@ -70,9 +70,66 @@ hexo.extend.helper.register('canonical', function() {
  * Get page path given a certain language tag
  */
 hexo.extend.helper.register('i18n_path', function(language) {
-  const { path, lang } = this.page;
-  const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;
-  return this.url_for(`${this.languages.indexOf(language) === 0 ? '' : '/' + language}/${base}`);
+  const { path, lang } = this.page;  
+  let base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;
+  const trailing_index = hexo.config.pretty_urls.trailing_index;
+  const trailing_html = hexo.config.pretty_urls.trailing_html;
+  const theme = hexo.theme.config;
+  let i18nType = theme.i18n.type;
+  let i18nMode = theme.i18n.mode;
+
+  // Debug
+  // console.log('base: ' + base);
+
+  // Init options
+  if (i18nType && i18nType.length) {
+    if (!Array.isArray(i18nType)) {
+      i18nType = [i18nType];
+    }
+  }
+  if (!i18nMode || i18nMode.length == 0) {
+    i18nMode = 1;
+  }
+
+  // 404/aa/index.html =>  ["404","aa","index.html"]
+  let RPStr = base.split("/")[0]; 
+
+  if (trailing_index && trailing_index === false) {
+    // 404/aa/index.html => 404/aa/
+    base = base.replace(/index.html$/gi, '');
+  }
+  if (trailing_html && trailing_html === false) {
+    // 404/aa/index.html => 404/aa/index
+    base = base.replace(/html$/gi, '');
+  }
+
+  let i18nPath = this.url_for('/' + base);
+  if (i18nType && i18nType.length) {
+    for (const i of i18nType) {
+      if (RPStr.toLowerCase() === i.toLowerCase()) {
+        if (i18nMode == 1) {
+          i18nPath = this.url_for('/' + language + '/' + base);
+        }
+        if (i18nMode == 2) {
+          // this.languages.indexOf(language) === 0
+          //   The indexOf() method can return the location where the specified string value first appears in the string.
+          //   languages: ["en","zh-CN"]  language: en => 0
+          i18nPath = this.url_for(`${this.languages.indexOf(language) === 0 ? '' : '/' + language}/${base}`);
+        }
+      }
+    }
+  }
+
+  // Debug
+  // console.log('base2: ' + base);
+  // console.log('RPStr: ' + RPStr);
+  // console.log('language: ' + language);
+  // console.log('i18nMode: ' + i18nMode);
+  // console.log('i18nPath: ' + i18nPath);
+  // console.log('languages: ' + JSON.stringify(this.languages));
+  // console.log('   ');
+
+  return i18nPath;
 });
 
 /**

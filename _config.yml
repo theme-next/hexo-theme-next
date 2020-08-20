@@ -33,6 +33,16 @@ custom_file_path:
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
+# i18n Path
+# Correct handling of i18n path
+i18n: 
+  # Mode
+  #  1: All language independent directory under <Public/>.
+  #  2: Default language(hexo.config.language[0]) is under <Public/>
+  mode: 1
+  #Type : [posts, archives, categories, tags, about, ...]
+  type: 
+
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -65,6 +75,7 @@ footer:
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
+  copyright_url: 
 
   # Powered by Hexo & NexT
   powered: true
@@ -73,6 +84,8 @@ footer:
   beian:
     enable: false
     icp:
+    # ICP region. See: http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n3057722/c6797266/content.html
+    icp_region: gd
     # The digit in the num of gongan beian.
     gongan_id:
     # The full num of gongan beian.
