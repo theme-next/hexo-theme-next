@@ -8,15 +8,59 @@
 </div>
 
 {%- if theme.site_state %}
+  {%- if theme.menu.archives %}    
+	{%- set archivesURL = theme.menu.archives.split('||')[0] | trim %}
+  {% else %}
+	{%- set archivesURL = config.archive_dir %}
+  {%- endif %}
+  {%- if theme.menu.categories %}    
+	{%- set categoriesURL = theme.menu.categories.split('||')[0] | trim %}
+  {% else %}
+	{%- set categoriesURL = config.category_dir %}
+  {%- endif %}
+  {%- if theme.menu.tags %}    
+	{%- set tagsURL = theme.menu.tags.split('||')[0] | trim %}
+  {% else %}
+	{%- set tagsURL = config.tag_dir %}
+  {%- endif %}
+  
+  {%- set i18nType = theme.i18n.type %}
+  {%- set i18nMode = theme.i18n.mode %}
+  {%- if i18nType and i18nType.length > 1 %}
+    {%- if i18nType[0].length < 1 %}
+      {%- set i18nType = [i18nType] %}
+    {%- endif %}
+  {%- endif %}
+  {%- if languages and languages.length > 1 %}
+    {%- if languages[0].length < 1 %}
+      {%- set languages = [languages] %}
+    {%- endif %}
+    {%- set languageStr = '/' + languages[0] + '/' %}
+  {% else %}
+    {%- set languageStr = '' %}
+  {%- endif %}
+
+  {%- if i18nType and i18nType.length > 1 %}
+    {%- for i in i18nType %}
+	  {%- if i18nMode == 1 %}
+        {%- if archivesURL | lower == i | lower %}
+		  {%- set archivesURL = languageStr + archivesURL + '/'  %}
+	    {%- endif %}
+		{%- if categoriesURL | lower == i | lower %}
+		  {%- set categoriesURL = languageStr + categoriesURL + '/'  %}
+	    {%- endif %}
+		{%- if tagsURL | lower == i | lower %}
+		  {%- set tagsURL = languageStr + tagsURL + '/'  %}
+	    {%- endif %}
+	  {%- endif %}
+    {%- endfor %}
+  {%- endif %}
+
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
     {%- if config.archive_dir != '/' and site.posts.length > 0 %}
       <div class="site-state-item site-state-posts">
-        {%- if theme.menu.archives %}
-          <a href="{{ url_for(theme.menu.archives.split('||')[0] | trim) }}">
-        {% else %}
-          <a href="{{ url_for(config.archive_dir) }}">
-        {%- endif %}
+          <a href="{{ url_for(archivesURL) }}">
           <span class="site-state-item-count">{{ site.posts.length }}</span>
           <span class="site-state-item-name">{{ __('state.posts') }}</span>
         </a>
@@ -28,11 +72,7 @@
       {%- set hasCategoriesPage = categoriesPageQuery.length > 0 %}
       <div class="site-state-item site-state-categories">
         {%- if hasCategoriesPage %}
-          {%- if theme.menu.categories %}
-            <a href="{{ url_for(theme.menu.categories.split('||')[0] | trim) }}">
-          {% else %}
-            <a href="{{ url_for(config.category_dir) + '/' }}">
-          {%- endif %}
+          <a href="{{ url_for(categoriesURL) }}">
         {%- endif %}
         <span class="site-state-item-count">{{ site.categories.length }}</span>
         <span class="site-state-item-name">{{ __('state.categories') }}</span>
@@ -45,11 +85,7 @@
       {%- set hasTagsPage = tagsPageQuery.length > 0 %}
       <div class="site-state-item site-state-tags">
         {%- if hasTagsPage %}
-          {%- if theme.menu.tags %}
-            <a href="{{ url_for(theme.menu.tags.split('||')[0] | trim) }}">
-          {% else %}
-            <a href="{{ url_for(config.tag_dir) + '/' }}">
-          {%- endif %}
+          <a href="{{ url_for(tagsURL) }}">
         {%- endif %}
         <span class="site-state-item-count">{{ site.tags.length }}</span>
         <span class="site-state-item-name">{{ __('state.tags') }}</span>

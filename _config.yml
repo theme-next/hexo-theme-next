@@ -33,6 +33,16 @@ custom_file_path:
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
+# i18n Path
+# Correct handling of i18n path
+i18n: 
+  # Mode
+  #  1: All language independent directory under <Public/>.
+  #  2: Default language(hexo.config.language[0]) is under <Public/>
+  mode: 1
+  #Type : [posts, archives, categories, tags, about, ...]
+  type: 
+
 
 # ---------------------------------------------------------------
 # Site Information Settings
