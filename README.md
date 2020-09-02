@@ -13,6 +13,7 @@
 <br>
   <a href="https://www.npmjs.com/package/hexo-theme-next"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E=10.9.0-green?style=flat-square"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Ftheme-next%2Fhexo-theme-next?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftheme-next%2Fhexo-theme-next.svg?type=shield"/></a>
   <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E=4.0.0-blue?style=flat-square&logo=hexo"></a>
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
 <br>
@@ -23,6 +24,9 @@
 <br>
   <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
 </p>
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftheme-next%2Fhexo-theme-next.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftheme-next%2Fhexo-theme-next?ref=badge_large)
 
 ## Live Preview
 
