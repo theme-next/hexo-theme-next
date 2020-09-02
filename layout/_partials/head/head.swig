@@ -58,4 +58,11 @@
   <script src="{{ pace_js_uri }}"></script>
 {%- endif %}
 
+{%- if not theme.math.per_page or is_index_has_math or page.mathjax %}
+  {%- if theme.math.katex %}
+    {%- set autorender_js_uri = next_vendors('//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js') %}
+    <script defer src="{{ autorender_js_uri }}" onload="renderMathInElement(document.body);"></script>
+  {%- endif %}
+{%- endif %}
+
 {{ next_config() }}
