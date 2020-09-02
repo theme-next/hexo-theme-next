@@ -20,8 +20,8 @@
   <a href="https://travis-ci.org/theme-next/hexo-theme-next?branch=master"><img src="https://img.shields.io/travis/theme-next/hexo-theme-next/master?style=flat-square&logo=travis%20ci" title="Travis CI [Linux]"></a>
   <a href="https://app.codacy.com/manual/theme-next/hexo-theme-next/dashboard"><img src="https://img.shields.io/codacy/grade/72f7fe7609c2438a92069f448e5a341a/master?style=flat-square&logo=codacy" title="Project Grade"></a>
   <img src="https://img.shields.io/snyk/vulnerabilities/github/theme-next/hexo-theme-next?style=flat-square" title="Vulnerabilities">
-<br>
-  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
+<br><br>
+  <img src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/.github/next-logo-en.png">
 </p>
 
 ## Live Preview
@@ -131,6 +131,12 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 <br>
 <br>
   <sub>Codacy allows us to monitor code quality, Travis CI allows us to run the test suite.</sub>
+</p>
+
+## License
+
+<p align="center">
+  <a href="https://app.fossa.com/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git?ref=badge_large"><img src="https://app.fossa.com/api/projects/custom%2B9511%2Fgit%40github.com%3Atheme-next%2Fhexo-theme-next.git.svg?type=large"></a>
 </p>
 
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
