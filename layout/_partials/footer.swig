@@ -1,6 +1,6 @@
 {%- if theme.footer.beian.enable %}
   <div class="beian">
-    {{- next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
+    {{- next_url('https://beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
     {%- if theme.footer.beian.gongan_icon_url %}
       <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}" style="display: inline-block;">
     {%- endif %}
