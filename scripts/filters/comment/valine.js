@@ -22,7 +22,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   if (!theme.valine.enable || !theme.valine.appid || !theme.valine.appkey) return;
 
   injects.postMeta.raw('valine', `
-  {% if post.comments and (is_post() or theme.valine.comment_count) %}
+  {% if post.comments and (is_post() and theme.valine.comment_count) %}
   <span class="post-meta-item">
     ${iconText('far fa-comment', 'valine')}
     <a title="valine" href="{{ url_for(post.path) }}#valine-comments" itemprop="discussionUrl">
