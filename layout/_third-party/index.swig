@@ -2,6 +2,8 @@
 
 {% include 'rating.swig' %}
 
+{% include 'fireworks.swig'%}
+
 {%- if theme.algolia_search.enable %}
   {% include 'search/algolia-search.swig' %}
 {% elif theme.swiftype_key %}

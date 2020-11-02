@@ -867,6 +867,10 @@ canvas_ribbon:
   alpha: 0.6 # The transparency of the ribbon
   zIndex: -1 # The display level of the ribbon
 
+# Fireworks
+# Dependencies: https://github.com/juliangarnier/anime
+fireworks:
+  enable: false
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
