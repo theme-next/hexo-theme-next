@@ -97,7 +97,7 @@
           {%- endif %}
 
           {# LeanCloud PageView #}
-          {%- if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
+          {%- if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) or (theme.waline.enable and theme.waline.serverURL and theme.waline.visitor) %}
             <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}" title="{{ __('post.views') }}">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -106,6 +106,7 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           {%- endif %}
+          
 
           {%- if theme.firestore.enable %}
             <span class="post-meta-item" title="{{ __('post.views') }}">
