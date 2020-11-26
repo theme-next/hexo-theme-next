@@ -565,7 +565,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
+  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine | waline
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -625,7 +625,7 @@ valine:
   recordIP: false # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   #post_meta_order: 0
-
+  
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 livere_uid: # <your_uid>
@@ -644,6 +644,23 @@ gitalk:
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
+
+# Waline
+# For more information: https://waline.js.org, https://github.com/lizheming/waline
+waline:
+  enable: false
+  serverURL: # Waline server URL
+  placeholder: Just go go # Comment box placeholder
+  avatar: mm # Gravatar style
+  guest_info: nick,mail,link # Custom comment header
+  pageSize: 10 # Pagination size
+  language: # Language, available values: en, zh-cn
+  visitor: false # Article reading statistic
+  highlight: false # Comment text highlight
+  emojiCDN: # Emoji server URL
+  emojiMaps: # Emoji map list
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  
 
 
 # ---------------------------------------------------------------
