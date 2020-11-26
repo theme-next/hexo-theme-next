@@ -1,4 +1,4 @@
-{%- if theme.leancloud_visitors.enable and not theme.valine.visitor %}
+{%- if theme.leancloud_visitors.enable and not theme.valine.visitor and not theme.waline.visitor %}
 <script{{ pjax }}>
   (function() {
     function leancloudSelector(url) {
