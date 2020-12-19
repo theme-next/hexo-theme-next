@@ -1,6 +1,6 @@
 .pdfobject-container {
-  height: unquote(hexo-config('pdf.height'));
-  overflow: auto;
-  position: relative;
-  width: 100%;
+  iframe, embed {
+    height: unquote(hexo-config('pdf.height'));
+    width: 100%;
+  }
 }

@@ -10,26 +10,26 @@ function njkCompile(data) {
   const env = nunjucks.configure(templateDir, {
     autoescape: false
   });
-  env.addFilter('attr', function(dictionary, key, value) {
+  env.addFilter('attr', (dictionary, key, value) => {
     dictionary[key] = value;
     return dictionary;
   });
-  env.addFilter('json', function(dictionary) {
+  env.addFilter('json', dictionary => {
     return JSON.stringify(dictionary || '');
   });
   return nunjucks.compile(data.text, env, data.path);
 }
 
-function njkRenderer(data, locals, callback) {
-  return njkCompile(data).render(locals, callback);
+function njkRenderer(data, locals) {
+  return njkCompile(data).render(locals);
 }
 
 // Return a compiled renderer.
 njkRenderer.compile = function(data) {
   const compiledTemplate = njkCompile(data);
   // Need a closure to keep the compiled template.
-  return function(locals, callback) {
-    return compiledTemplate.render(locals, callback);
+  return function(locals) {
+    return compiledTemplate.render(locals);
   };
 };
 

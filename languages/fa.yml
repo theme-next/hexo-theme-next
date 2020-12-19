@@ -1,4 +1,5 @@
 ---
+name: فارسی
 title:
   archive: بایگانی
   category: دسته بندی
@@ -24,26 +25,18 @@ post:
   modified: تغییر یافته
   edit: ویرایش این پست
   in: در
-  more: بیشتر
   read_more: ادامه مطلب
   untitled: بدون عنوان
   sticky: چسبنده
   views: بازدیدها
   related_posts: پست های مرتبط
-  copy_button: کپی
-  copy_success: کپی شد
-  copy_failure: کپی انجام نشد
   copyright:
     author: نویسنده پست
     link: لینک پست
     license_title: مقررات کپی رایت
     license_content: "همه مقالات در این وبلاگ تحت %s مجاز می باشند مگر اینکه به طور اضافی بیان شوند."
-page:
-  totally: درمجموع
-  tags: برجسب ها
 footer:
   powered: "قدرت گرفته از %s"
-  theme: پوسته
   total_views: مجموع بازدیدها
   total_visitors: تعداد بازدید کنندگان
 counter:
@@ -61,7 +54,6 @@ counter:
     other: "%d برچسب در مجموع."
 state:
   posts: پست ها
-  pages: صفحات
   tags: برجسب ها
   categories: دسته بندی ها
 search:
@@ -82,7 +74,10 @@ reward:
   donate: کمک مالی
   wechatpay: پرداخت WeChat
   alipay: AliPay
+  paypal: PayPal
   bitcoin: بیت کوین
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: تغییر ناوبری
   prev_page: صفحه قبلی

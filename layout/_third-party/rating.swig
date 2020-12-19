@@ -4,9 +4,9 @@
     wpac_init = window.wpac_init || [];
     wpac_init.push({
       widget: 'Rating',
-      id: {{ theme.rating.id }},
-      el: 'wpac-rating',
-      color: '{{ theme.rating.color }}'
+      id    : {{ theme.rating.id }},
+      el    : 'wpac-rating',
+      color : '{{ theme.rating.color }}'
     });
     (function() {
       if ('WIDGETPACK_LOADED' in window) return;

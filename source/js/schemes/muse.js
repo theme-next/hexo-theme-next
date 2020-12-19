@@ -1,11 +1,11 @@
 /* global NexT, CONFIG, Velocity */
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   var isRight = CONFIG.sidebar.position === 'right';
   var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
-  var SIDEBAR_DISPLAY_DURATION = 400;
-  var mousePos = {}; var touchPos = {};
+  var SIDEBAR_DISPLAY_DURATION = 200;
+  var mousePos = {};
 
   var sidebarToggleLines = {
     lines: document.querySelector('.sidebar-toggle'),
@@ -34,9 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
-      this.sidebarEl.addEventListener('touchstart', this.touchstartHandler.bind(this));
-      this.sidebarEl.addEventListener('touchend', this.touchendHandler.bind(this));
-      this.sidebarEl.addEventListener('touchmove', event => event.preventDefault());
       window.addEventListener('sidebar:show', this.showSidebar.bind(this));
       window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
     },
@@ -63,18 +60,6 @@ window.addEventListener('DOMContentLoaded', () => {
     mouseLeaveHandler: function() {
       if (!this.isSidebarVisible) {
         sidebarToggleLines.init();
-      }
-    },
-    touchstartHandler: function(event) {
-      touchPos.X = event.touches[0].clientX;
-      touchPos.Y = event.touches[0].clientY;
-    },
-    touchendHandler: function(event) {
-      var deltaX = event.changedTouches[0].clientX - touchPos.X;
-      var deltaY = event.changedTouches[0].clientY - touchPos.Y;
-      var effectiveSliding = Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight));
-      if (this.isSidebarVisible && effectiveSliding) {
-        this.hideSidebar();
       }
     },
     showSidebar: function() {

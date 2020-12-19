@@ -1,9 +1,10 @@
 ---
+name: magyar
 title:
   archive: Archive
   category: Category
   tag: Tag
-  schedule: Schedule
+  schedule: Ütemterv
 menu:
   home: Home
   archives: Archives
@@ -24,26 +25,18 @@ post:
   modified: Modified
   edit: Edit this post
   in: In
-  more: more
   read_more: Read more
   untitled: Untitled
   sticky: Sticky
   views: Views
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
-page:
-  totally: Totally
-  tags: tags
 footer:
   powered: "Powered by %s"
-  theme: Theme
   total_views: Total Views
   total_visitors: Total Visitors
 counter:
@@ -61,7 +54,6 @@ counter:
     other: "%d posts in total."
 state:
   posts: posts
-  pages: pages
   tags: tags
   categories: categories
 search:
@@ -82,7 +74,10 @@ reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page

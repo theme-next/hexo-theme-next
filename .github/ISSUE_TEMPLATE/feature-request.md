@@ -7,14 +7,15 @@ assignees: ''
 
 ---
 
-Please check if your Issue fulfills the following requirements.
-请务必确认您在提交此 Issue 前已经查看并完成了下列检查单中的所有事项。
+Please follow this Issue template to provide relevant information, such as source code repositories, blog links, and screenshots, which will help us investigate.
+请按照此 Issue 模版提供相关信息，例如源码仓库、博客链接和屏幕截图，这将有助于我们进行调查。
 
 ## Issue Checklist <!-- 我确认我已经查看了 -->
-<!-- Change [ ] to [x] to select, not [ x] or [x ] (将 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
+<!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
-- [ ] I have already viewed [NexT Documentation Site](http://theme-next.org/docs/) and [Hexo Docs page](https://hexo.io/docs/), especially [Troubleshooting](https://hexo.io/docs/troubleshooting.html) part.
-- [ ] I have already viewed the latest Roadmap on GitHub and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues?utf8=%E2%9C%93&q=is%3Aissue), which does not help me.
+- [ ] I am using [the latest](https://github.com/theme-next/hexo-theme-next/releases/latest) version of NexT.
+- [ ] I have read the relevant documents of [Hexo](https://hexo.io/docs/) and [NexT](https://theme-next.org/docs/).
+- [ ] I have reviewed the latest Roadmap on GitHub and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues), which does not help me.
 
 ***
 
@@ -32,3 +33,5 @@ Please check if your Issue fulfills the following requirements.
 1. N/A
 2. N/A
 3. N/A
+
+## Other Information <!-- Like Browser, System, Screenshots -->

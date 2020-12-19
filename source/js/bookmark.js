@@ -1,6 +1,6 @@
 /* global CONFIG */
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   var doSaveScroll = () => {
@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!isNaN(top) && location.hash === '') {
       // Auto scroll to the position
       window.anime({
-        targets  : [document.documentElement, document.body],
+        targets  : document.scrollingElement,
         duration : 200,
         easing   : 'linear',
         scrollTop: top

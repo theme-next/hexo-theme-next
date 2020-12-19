@@ -3,24 +3,13 @@
 
 2. Always remember that NexT includes 4 schemes. And if on one of them works fine after the changes, on another scheme this changes can be broken. Muse and Mist have similar structure, but Pisces is very difference from them. Gemini is a mirror of Pisces with some styles and layouts remakes. So, please make the tests at least on two schemes (Muse or Mist and Pisces or Gemini).
 
-3. In addition, you need to confirm that the changes made by this PR are compatible with PJAX.
-
-4. We use ESLint and Stylint for identifying and reporting on patterns in JavaScript and Stylus. Please execute the following commands:
-```sh
-cd path/to/theme-next
-npm install
-npm run test
-npm run test lint:stylus
-```
-And make sure that this PR does not cause more warning messages.
-
-5. Please check if your PR fulfills the following requirements.
+3. In addition, you need to confirm that the changes made by this PR are compatible with PJAX and Dark Mode.
 -->
 
 ## PR Checklist <!-- 我确认我已经查看了 -->
-<!-- Change [ ] to [x] to select, not [ x] or [x ] (将 [ ] 换成 [x] 来选择，而非 [ x] 或者 [x ]) -->
+<!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
-- [ ] The commit message follows [our guidelines](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
+- [ ] The commit message follows [guidelines for NexT](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
 - [ ] Tests for the changes was maked (for bug fixes / features).
    - [ ] Muse | Mist have been tested.
    - [ ] Pisces | Gemini have been tested.
@@ -34,9 +23,9 @@ And make sure that this PR does not cause more warning messages.
 - [ ] Feature.
 - [ ] Code style update (formatting, local variables).
 - [ ] Refactoring (no functional changes, no api changes).
-- [ ] Build related changes.
-- [ ] CI related changes.
-- [ ] Documentation content changes.
+- [ ] Build & CI related changes.
+- [ ] Documentation.
+- [ ] Translation. <!-- We use Crowdin to manage translations https://i18n.theme-next.org -->
 - [ ] Other... Please describe:
 
 ## What is the current behavior?
@@ -55,7 +44,3 @@ In NexT `_config.yml`:
 ```yml
 
 ```
-
-## Does this PR introduce a breaking change?
-- [ ] Yes.
-- [ ] No.

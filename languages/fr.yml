@@ -1,4 +1,5 @@
 ---
+name: Français
 title:
   archive: Archive
   category: Catégorie
@@ -15,44 +16,36 @@ menu:
   sitemap: Sitemap
   commonweal: Commonweal 404
 sidebar:
-  overview: Ensemble
+  overview: Aperçu
   toc: Table Des Matières
 post:
   posted: Posté le
-  edited: Éditer sur
+  edited: Édité le
   created: Article créé le
-  modified: Mise à jour le
+  modified: Mis à jour le
   edit: Éditer cet article
-  in: In
-  more: plus
+  in: dans
   read_more: Lire la suite
-  untitled: Non titré
+  untitled: Sans titre
   sticky: Épingler
   views: Vues
-  related_posts: Articles similares
-  copy_button: Copie
-  copy_success: Copie réussie
-  copy_failure: Copie ratée
+  related_posts: Articles similaires
   copyright:
     author: Auteur de l'article
     link: Lien de l'article
     license_title: Droit d'auteur
     license_content: "Tous les articles de ce blog sont sous licence %s, sauf mention contraire."
-page:
-  totally: Total
-  tags: mots clé
 footer:
-  powered: "Alimenté par %s"
-  theme: Thème
+  powered: "Propulsé par %s"
   total_views: Vues totales
   total_visitors: Total visiteurs
 counter:
   tag_cloud:
-    zero: Aucun mot clé
+    zero: Aucun tag
     one: 1 tag au total
     other: "%d tags au total"
   categories:
-    zero: Aucun categories
+    zero: Aucune categorie
     one: 1 catégorie au total
     other: "%d catégories au total"
   archive_posts:
@@ -61,7 +54,6 @@ counter:
     other: "%d articles au total."
 state:
   posts: articles
-  pages: pages
   tags: mots clé
   categories: catégories
 search:
@@ -82,14 +74,17 @@ reward:
   donate: Donner
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Basculer la barre de navigation
   prev_page: Page précédente
   next_page: Page suivante
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
+  count: Caractères dans l'article
+  count_total: Caractères total
   time: Temps de lecture
   time_total: Temps total de lecture
   time_minutes: mins.

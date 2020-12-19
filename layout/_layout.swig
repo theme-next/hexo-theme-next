@@ -23,7 +23,7 @@
       <div class="main-inner">
         <div class="content-wrap">
           {% include '_partials/header/sub-menu.swig' %}
-          <div class="content">
+          <div class="content {% block class %}{% endblock %}">
             {% block content %}{% endblock %}
           </div>
           {% include '_partials/comments.swig' %}
@@ -36,9 +36,9 @@
 
     <footer class="footer">
       <div class="footer-inner">
+        {% include '_partials/languages.swig' %}
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {{ partial('_partials/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
-        {% block footer %}{% endblock %}
+        {{ partial('_third-party/statistics/index.swig', {}, {cache: theme.cache.enable}) }}
       </div>
     </footer>
   </div>
@@ -49,13 +49,10 @@
   {%- if theme.pjax %}
     <div id="pjax">
   {%- endif %}
-
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/quicklink.swig' %}
-  {% include '_third-party/vkontakte-api.swig' %}
 
   {{- next_inject('bodyEnd') }}
-
   {%- if theme.pjax %}
     </div>
   {%- endif %}

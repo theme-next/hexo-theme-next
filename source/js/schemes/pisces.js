@@ -20,7 +20,10 @@ var Affix = {
   getState: function(scrollHeight, height, offsetTop, offsetBottom) {
     let scrollTop = window.scrollY;
     let targetHeight = window.innerHeight;
-    if (offsetTop != null && this.affixed === 'top') return scrollTop < offsetTop ? 'top' : false;
+    if (offsetTop != null && this.affixed === 'top') {
+      if (document.querySelector('.content-wrap').offsetHeight < offsetTop) return 'top';
+      return scrollTop < offsetTop ? 'top' : false;
+    }
     if (this.affixed === 'bottom') {
       if (offsetTop != null) return this.unpin <= this.element.getBoundingClientRect().top ? false : 'bottom';
       return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
@@ -43,11 +46,11 @@ var Affix = {
   },
   checkPosition: function() {
     if (window.getComputedStyle(this.element).display === 'none') return;
-    let height = this.element.offsetHeight - CONFIG.sidebarPadding;
-    let offset = this.offset;
+    let height = this.element.offsetHeight;
+    let { offset } = this;
     let offsetTop = offset.top;
     let offsetBottom = offset.bottom;
-    let scrollHeight = document.body.scrollHeight;
+    let { scrollHeight } = document.body;
     let affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
     if (this.affixed !== affix) {
       if (this.unpin != null) this.element.style.top = '';
@@ -66,21 +69,18 @@ var Affix = {
 NexT.utils.getAffixParam = function() {
   const sidebarOffset = CONFIG.sidebar.offset || 12;
 
-  let headerOffset = document.querySelector('.header-inner').offsetHeight + sidebarOffset;
-  let footer = document.querySelector('.footer');
-  let footerInner = document.querySelector('.footer-inner');
-  let footerMargin = footer.offsetHeight - footerInner.offsetHeight;
-  let footerOffset = footer.offsetHeight + footerMargin;
+  let headerOffset = document.querySelector('.header-inner').offsetHeight;
+  let footerOffset = document.querySelector('.footer').offsetHeight;
 
-  document.querySelector('.sidebar').style.marginTop = headerOffset + 'px';
+  document.querySelector('.sidebar').style.marginTop = headerOffset + sidebarOffset + 'px';
 
   return {
-    top   : headerOffset - sidebarOffset,
+    top   : headerOffset,
     bottom: footerOffset
   };
 };
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   Affix.init(document.querySelector('.sidebar-inner'), NexT.utils.getAffixParam());
 });

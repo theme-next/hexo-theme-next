@@ -7,9 +7,8 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: {{ page.sidebar | json }},
-    isHome: {{ is_home() }},
-    isPost: {{ is_post() }},
-    isPage: {{ is_page() }},
-    isArchive: {{ is_archive() }}
+    isHome : {{ is_home() }},
+    isPost : {{ is_post() }},
+    lang   : '{{ page.lang }}'
   };
 </script>

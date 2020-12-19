@@ -1,8 +1,3 @@
-.post-toc-wrap {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 .post-toc {
   font-size: $font-size-small;
 
@@ -17,15 +12,8 @@
     }
 
     a {
-      border-bottom-color: $toc-link-border-color;
-      color: $toc-link-color;
       transition-property: all;
       the-transition();
-
-      &:hover {
-        border-bottom-color: $toc-link-hover-border-color;
-        color: $toc-link-hover-color;
-      }
     }
   }
 
@@ -58,15 +46,15 @@
     }
 
     .active > a {
-      border-bottom-color: $toc-link-active-border-color;
-      color: $toc-link-active-color;
+      border-bottom-color: $sidebar-highlight;
+      color: $sidebar-highlight;
     }
 
     .active-current > a {
-      color: $toc-link-active-current-color;
+      color: $sidebar-highlight;
 
       &:hover {
-        color: $toc-link-active-current-border-color;
+        color: $sidebar-highlight;
       }
     }
   }

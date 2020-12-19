@@ -6,23 +6,11 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
 
 1. If a tutorial pops up, you can skip it. Go straight to create an `Index` which will be used later.
 
-    ![](http://theme-next.iissnan.com/uploads/algolia/algolia-step-2.png)
-
-1. Algolia requires users to upload their search index data either manually or via provided APIs. Install and configure [Hexo Algolia](https://github.com/oncletom/hexo-algolia) in your Hexo directory. This plugin will index your site and upload selected data to Algolia.
-
-    ```
-    $ cd hexo
-    $ npm install hexo-algolia
-    ```
+    ![](https://user-images.githubusercontent.com/16272760/73673892-68a29b00-46ea-11ea-90c5-916b4b11fc7a.png)
 
 1. Go to the `API Keys` page and find your credentials. You will need the `Application ID` and the `Search-only API key` in the following sections. The `Admin API key` need to keep confidential. Never store your Admin API Key as apiKey in the` _config.yml` file: it would give full control of your Algolia index to others and you don't want to face the consequences.
 
-    ![](https://user-images.githubusercontent.com/8521181/35479066-64e35aec-0428-11e8-91f9-1ec3afa45c5c.png)
-
-1. In the `API Keys` page, click the `ALL API KEYS` and the `edit` option in the created APIKEY to activate a pop-up box where you can setup authorizations and restrictions with a great level of precision. Check `Add records`, `Delete records`, `List indices`, `Delete index` features in ACL permissions that will be allowed for the given API key. And then click the `Update` button.
-
-    ![](https://user-images.githubusercontent.com/8521181/35479064-611aa0b4-0428-11e8-85a1-cfb449b486ec.png)
-    ![](https://user-images.githubusercontent.com/8521181/35479084-d4f7ac02-0428-11e8-95a6-c4e3b1bef47b.png)
+    ![](https://user-images.githubusercontent.com/16272760/73673895-693b3180-46ea-11ea-8f50-8bae850b50d0.png)
 
 1. In your site's `_config.yml`, add the following configuration and replace the `applicationID` & `apiKey` & `indexName` with corresponding fields obtained at Algolia.
 
@@ -34,11 +22,23 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
       chunkSize: 5000
     ```
 
+1. In the `API Keys` page, click the `All API Keys` button to switch to the corresponding tab. Then click the `New API Key` button to activate a pop-up box where you can setup authorizations and restrictions with a great level of precision. Enter `addObject`, `deleteObject`, `listIndexes`, `deleteIndex` features in ACL permissions that will be allowed for the given API key. And then click the `Create` button. Copy this newly created key to the clipboard, we call it a `High-privilege API key`.
+
+    ![](https://user-images.githubusercontent.com/16272760/73673902-6b04f500-46ea-11ea-9c80-4e5c5002e07b.png)
+    ![](https://user-images.githubusercontent.com/16272760/73673905-6b9d8b80-46ea-11ea-9e01-702ec2a8a297.png)
+
+1. Algolia requires users to upload their search index data either manually or via provided APIs. Install and configure [Hexo Algolia](https://github.com/oncletom/hexo-algolia) in your Hexo directory. This plugin will index your site and upload selected data to Algolia.
+
+    ```
+    $ cd hexo
+    $ npm install hexo-algolia
+    ```
+
 1. Run the following command to upload index data, keep a weather eye out the output of the command.
 
     ```
-    $ export HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # Use Git Bash
-    # set HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # Use Windows command line
+    $ export HEXO_ALGOLIA_INDEXING_KEY=High-privilege API key # Use Git Bash
+    # set HEXO_ALGOLIA_INDEXING_KEY=High-privilege API key # Use Windows command line
     $ hexo clean
     $ hexo algolia
     ```
@@ -65,10 +65,11 @@ NexT provides Algolia search plugin for index your hexo website content. To use 
     ```yml
     vendors:
       ...
-      # Internal version: 1
-      # https://www.algolia.com
-      algolia_instant_js: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
-      algolia_instant_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
+      # Algolia Search
+      # algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
+      # instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
+      algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
+      instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
       ...
     ```
 

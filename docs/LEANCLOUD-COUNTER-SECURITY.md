@@ -41,11 +41,12 @@ Please note the difference between **site config file** and **theme config file*
   ```yml
   leancloud_visitors:
     enable: true
-    app_id: <<your app id>>
-    app_key: <<your app key>>
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
-    betterPerformance: false
   ```
 
 - Set domain whitelist: Click `1`, then type your domain into `2` (**protocol, domain and port should be exactly the same**):
@@ -64,7 +65,7 @@ Please note the difference between **site config file** and **theme config file*
 - In the pop up window, click `1` to choose type `Hook`, then choose`beforeUpdate` in `2`, choose `Counter` in `3`. Paste code below into `4`, then click `5` to save it:
   ```javascript
   var query = new AV.Query("Counter");
-  if (request.object.updatedKeys.indexOf('time') !== -1) {
+  if (request.object.updatedKeys.includes('time')) {
       return query.get(request.object.id).then(function (obj) {
           if (obj.get("time") > request.object.get("time")) {
               throw new AV.Cloud.Error('Invalid update!');
@@ -93,15 +94,13 @@ Please note the difference between **site config file** and **theme config file*
   ```yml
   leancloud_visitors:
     enable: true
-    app_id: <<your app id>>
-    app_key: <<your app key>>
+    app_id: # <your app id>
+    app_key: # <your app key>
+    # Required for apps from CN region
+    server_url: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
-    betterPerformance: false
   ```
-
-  **Explaination for `betterPerformance`:**
-  Because the Leancloud developer's plan has limits in requst thread amount and running time, counter number may be very slow to load in some times. If set `betterPerformance` to true, counter number will be displayed quickly by assuming the request is accepted normally.
 
 - Open cmd then switch to **root path of site**, type commands to install `hexo-leancloud-counter-security` plugin:
   ```
@@ -112,31 +111,31 @@ Please note the difference between **site config file** and **theme config file*
   ```yml
   leancloud_counter_security:
     enable_sync: true
-    app_id: <<your app id>>
-    app_key: <<your app key>
+    app_id: <your app id>
+    app_key: <your app key>
     username:
     password:
   ```
 
 - Type command:
   ```
-  hexo lc-counter register <<username>> <<password>>
+  hexo lc-counter register <username> <password>
   ```
   or
   ```
-  hexo lc-counter r <<username>> <<password>>
+  hexo lc-counter r <username> <password>
   ```
 
-  Change `<<username>>` and `<<password>>` to your own username and password (no need to be the same as leancloud account). They will be used in the hexo deploying.
+  Change `<username>` and `<password>` to your own username and password (no need to be the same as leancloud account). They will be used in the hexo deploying.
 
-  - Open **site config file** `_config.yml`, change `<<username>>` and `<<password>>`to those you set above:
+  - Open **site config file** `_config.yml`, change `<username>` and `<password>`to those you set above:
   ```yml
   leancloud_counter_security:
     enable_sync: true
-    app_id: <<your app id>>
-    app_key: <<your app key>
-    username: <<your username>> # will be asked while deploying if be left blank
-    password: <<your password>> # recommend to leave it blank for security, will be asked while deploying if be left blank
+    app_id: <your app id>
+    app_key: <your app key>
+    username: <your username> # will be asked while deploying if be left blank
+    password: <your password> # recommend to leave it blank for security, will be asked while deploying if be left blank
   ```
 
 - Add the deployer in the `deploy` of **site config file** `_config.yml`:

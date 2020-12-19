@@ -11,10 +11,6 @@
     position: absolute;
     right: 0;
   }
-
-  img {
-    border: 0;
-  }
 }
 
 .footer-inner {
@@ -47,6 +43,25 @@
 
   50%, 70% {
     transform: scale(1.1);
+  }
+}
+
+.languages {
+  display: inline-block;
+  font-size: $font-size-large;
+  position: relative;
+
+  .lang-select-label span {
+    margin: 0 .5em;
+  }
+
+  .lang-select {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 

@@ -13,14 +13,6 @@
 
   // For all schemes wider width.
   .posts-expand {
-    // For Muse & Mist & Pisces schemes only wider width.
-    margin: initial !important;
-    padding-top: $content-mobile-padding !important;
-
-    .post-header {
-      padding: 0 18px;
-    }
-
     .post-meta {
       margin: 3px 0 10px 0 !important;
     }
@@ -29,13 +21,18 @@
   .post-block {
     margin-top: initial !important;
     // Inside posts blocks content padding (default 40px).
-    padding: $content-mobile-padding 0 !important;
+    padding: $content-mobile-padding 18px $content-mobile-padding !important;
+  }
+
+  .posts-collapse {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .post-body {
     // For headers narrow width.
     h1, h2, h3, h4, h5, h6 {
-      margin: 10px 18px 8px;
+      margin: 10px 0 8px;
     }
 
     // Rewrite paddings & margins inside tags.
@@ -48,27 +45,6 @@
     // For paragraphs narrow width.
     > p {
       margin: 0 0 10px 0;
-      padding: 0 18px;
-    }
-
-    // For lists narrow width.
-    > ul {
-      margin-inline-end: 1em;
-    }
-
-    // For blockquotes.
-    > blockquote {
-      margin: 0 18px;
-    }
-
-    // For external links alignment.
-    > span.exturl {
-      margin-left: 18px;
-    }
-
-    // For Mist more button alignment.
-    > .post-button a {
-      margin-left: 18px;
     }
 
     // Rewrite paddings & margins inside tags.
@@ -87,11 +63,6 @@
       if (hexo-config('note.icons')) {
         &:not(.no-icon) {
           padding-left: 35px !important;
-
-          &::before {
-            left: 12px !important;
-            top: 8px !important;
-          }
         }
       }
     }
@@ -101,9 +72,12 @@
     }
   }
 
-  .post-nav {
-    padding-bottom: 2px;
-    // padding: 2px 8px;
+  .post-eof {
+    margin: 40px auto 20px !important;
+  }
+
+  .pagination {
+    margin-top: 40px;
   }
 }
 

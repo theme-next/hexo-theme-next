@@ -2,35 +2,29 @@
 
 NexT provides two render engines for displaying Math Equations.
 
-If you choose to use this feature, you don't need to manually import any JS or CSS. You just need to turn on `enable` of `math` and choose a render engine for it (located in `next/_config.yml`):
+If you choose to use this feature, you don't need to manually import any JS or CSS. You just need to choose a render engine and turn on `enable` for it (located in `next/_config.yml`).
 
-```yml
-math:
-  enable: true
-```
-
-Notice: only turning on `enable` of `math` **cannot let you see the displayed equations correctly**, you need to install the **corresponding Hexo Renderer** to fully support the display of Math Equations. The corresponding Hexo Renderer per engine will be provided below.
+Notice: only turning on `enable` **cannot let you see the displayed equations correctly**, you need to install the **corresponding Hexo Renderer** to fully support the display of Math Equations. The corresponding Hexo Renderer per engine will be provided below.
 
 <h2 align="center">Provided Render Engine</h2>
 
-For now, NexT provides two Render Engines: [MathJax](https://www.mathjax.org/) and [Katex](https://khan.github.io/KaTeX/) (default is MathJax).
+For now, NexT provides two Render Engines: [MathJax](https://www.mathjax.org/) and [Katex](https://khan.github.io/KaTeX/).
 
-### MathJax (default)
+### MathJax
 
-If you use MathJax to render Math Equations, you need to use **only one of them**: [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) or [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed).
+If you use MathJax to render Math Equations, you need to use one of them: [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc) or [hexo-renderer-kramed](https://github.com/sun11/hexo-renderer-kramed) (Not recommended) as the renderer for Markdown.
 
-Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and install one of the renderer above:
+Firstly, you need to uninstall the original renderer `hexo-renderer-marked`, and install **one of the renderer above**:
 
 ```sh
 npm uninstall hexo-renderer-marked
 npm install hexo-renderer-pandoc # or hexo-renderer-kramed
 ```
 
-Secondly, in `next/_config.yml`, turn on `enable` of `math` and choose `mathjax` as engine.
+Secondly, in `next/_config.yml`, turn on `enable` of `mathjax`.
 
 ```yml
 math:
-  enable: true
   ...
   mathjax:
     enable: true
@@ -52,9 +46,9 @@ In general, to make the automatic equation numbering work, you have to wrap your
 For simple equations, use the following form to give a tag,
 
 ```latex
-$$\begin{equation}
+$$\begin{equation}\label{eq1}
 e=mc^2
-\end{equation}\label{eq1}$$
+\end{equation}$$
 ```
 
 Then, you can refer to this equation in your text easily by using something like
@@ -66,13 +60,13 @@ the famous matter-energy equation $\eqref{eq1}$ proposed by Einstein ...
 For multi-line equations, inside the `equation` environment, you can use the `aligned` environment to split it into multiple lines:
 
 ```latex
-$$\begin{equation}
+$$\begin{equation}\label{eq2}
 \begin{aligned}
 a &= b + c \\
   &= d + e + f + g \\
   &= h + i
 \end{aligned}
-\end{equation}\label{eq2}$$
+\end{equation}$$
 ```
 
 We can use `align` environment to align multiple equations. Each of these equations will get its own numbers.
@@ -101,7 +95,7 @@ Sometimes, you want to use more “exotic” style to refer your equation. You c
 $$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
 ```
 
-For more information, you can visit the [official MathJax documentation on equation numbering](http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering). You can also visit this [post](https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/) for more details.
+For more information, you can visit the [official MathJax documentation on equation numbering](https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html). You can also visit this [post](https://theme-next.org/docs/third-party-services/math-equations) for more details.
 
 ### Katex
 
@@ -119,11 +113,10 @@ npm install hexo-renderer-markdown-it-plus
 # or hexo-renderer-markdown-it
 ```
 
-Secondly, in `next/_config.yml`, turn on `enable` option of `math` and choose `katex` as render engine.
+Secondly, in `next/_config.yml`, turn on `enable` option of `katex`.
 
 ```yml
 math:
-  enable: true
   ...
   katex:
     enable: true
@@ -171,9 +164,9 @@ markdown:
    Then in corresponding TOC item it will show the related LaTex code 3 times ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694)).
 6. If you use math in your post's title, it will not be rendered ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879)).
 
-We currently use Katex 0.7.1, some of those bugs might be caused by the outdated version of Katex we use.
+We currently use Katex 0.11.1, some of those bugs might be caused by the outdated version of Katex we use.
 
-But, as what is described in the beginning, the render of Math Equations relies on Hexo Renderer. Currently, Katex-related renderers only support Katex version until 0.7.1.
+But, as what is described in the beginning, the render of Math Equations relies on Hexo Renderer. Currently, Katex-related renderers only support Katex version until 0.11.1.
 
 We will continuously monitor the updates of corresponding renderers, if there is a renderer which supports newer version of Katex, we will update the Katex we use.
 
@@ -193,8 +186,6 @@ If your content of config is put just directly after the config name, then a spa
 ```yml
 # Math Formulas Render Support
 math:
-  enable: true
-
   # Default (true) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
   # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
@@ -212,12 +203,6 @@ math:
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex: false
 ```
-
-### `enable`
-
-`true` or `false`, default is `false`.
-
-`true` to turn on render of Math Equations, `false` to turn off it.
 
 ### `per_page`
 

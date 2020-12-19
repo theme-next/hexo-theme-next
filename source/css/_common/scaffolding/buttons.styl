@@ -1,10 +1,10 @@
 .btn {
-  background: $btn-default-bg;
-  border: $btn-default-border-width solid $btn-default-border-color;
+  background: var(--btn-default-bg);
+  border: 2px solid var(--btn-default-border-color);
   border-radius: $btn-default-radius;
-  color: $btn-default-color;
+  color: var(--btn-default-color);
   display: inline-block;
-  font-size: $btn-default-font-size;
+  font-size: $font-size-small;
   line-height: 2;
   padding: 0 20px;
   text-decoration: none;
@@ -12,9 +12,9 @@
   the-transition();
 
   &:hover {
-    background: $btn-default-hover-bg;
-    border-color: $btn-default-hover-border-color;
-    color: $btn-default-hover-color;
+    background: var(--btn-default-hover-bg);
+    border-color: var(--btn-default-hover-border-color);
+    color: var(--btn-default-hover-color);
   }
 
   + .btn {

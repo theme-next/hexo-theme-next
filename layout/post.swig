@@ -3,11 +3,11 @@
 
 {% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
+{% block class %}post posts-expand{% endblock %}
+
 {% block content %}
 
-  <div class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
-  </div>
+  {{ partial('_macro/post.swig', {post: page}) }}
 
 {% endblock %}
 

@@ -3,10 +3,11 @@
 }
 
 .posts-expand .post-title {
-  word-wrap();
-  font-weight: $font-weight-normal;
+  font-size: $font-size-largest;
+  font-weight: normal;
   margin: initial;
   text-align: center;
+  word-wrap();
 
   if (hexo-config('post_edit.enable')) {
     .post-edit-link {
@@ -15,15 +16,15 @@
       display: inline-block;
       float: right;
       font-size: $font-size-larger;
-      the-transition-ease-in();
       margin-left: -1.2em;
+      the-transition-ease-in();
 
       +mobile-small() {
         margin-left: initial;
       }
 
       &:hover {
-        color: black;
+        color: $sidebar-highlight;
       }
     }
   }
@@ -31,13 +32,13 @@
 
 .posts-expand .post-title-link {
   border-bottom: none;
-  color: $black-light;
+  color: var(--link-color);
   display: inline-block;
   position: relative;
   vertical-align: top;
 
   &::before {
-    background: black;
+    background: var(--link-color);
     bottom: 0;
     content: '';
     height: 2px;
@@ -54,7 +55,7 @@
     visibility: visible;
   }
 
-  .fa {
+  .fa-external-link-alt {
     font-size: $font-size-small;
     margin-left: 5px;
   }

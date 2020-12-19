@@ -1,5 +1,5 @@
 .site-meta {
-  margin: 0;
+  flex-grow: 1;
   text-align: $site-meta-text-align;
 
   +mobile() {
@@ -8,32 +8,29 @@
 }
 
 .brand {
-  background: $brand-bg;
   border-bottom: none;
-  color: $brand-color;
+  color: var(--brand-color);
   display: inline-block;
   line-height: $font-size-title;
   padding: 0 40px;
   position: relative;
 
   &:hover {
-    color: $brand-hover-color;
+    color: var(--brand-hover-color);
   }
 }
 
 .site-title {
-  display: inline-block;
   font-family: $font-family-logo;
   font-size: $font-size-title;
   font-weight: normal;
-  line-height: 1.5;
-  vertical-align: top;
+  margin: 0;
 }
 
 .site-subtitle {
   color: $subtitle-color;
   font-size: $font-size-subtitle;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .use-motion {

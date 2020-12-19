@@ -1,22 +1,23 @@
 {% import 'menu-item.swig' as menu_item with context %}
 
+<nav class="site-nav">
 {%- if theme.menu %}
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
     {%- for name, path in theme.menu %}
       {%- set respath = path %}
       {%- if path == '[object Object]' %}
         {# Main Menu (default menu item for Submenu) #}
         {%- for subname, subpath in path %}
-          {%- set itemName = subname.toLowerCase() %}
+          {%- set itemName = subname | lower %}
           {%- set respath = subpath %}
           {%- if itemName == 'default' %}
-            {%- set itemName = name.toLowerCase() %}
+            {%- set itemName = name | lower %}
             {{ menu_item.render(name, itemName, respath) }}
           {%- endif %}
         {%- endfor %}
       {% else %}
         {# Main Menu (standard menu items) #}
-        {%- set itemName = name.toLowerCase() %}
+        {%- set itemName = name | lower %}
         {{- menu_item.render(name, itemName, respath) | trim }}
       {%- endif %}
     {%- endfor %}
@@ -30,3 +31,4 @@
     {%- endif %}
   </ul>
 {%- endif %}
+</nav>

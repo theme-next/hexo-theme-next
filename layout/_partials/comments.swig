@@ -18,21 +18,21 @@
         (function() {
           let commentButton = document.querySelectorAll('.comment-button');
             commentButton.forEach(element => {
-            let commentClass = item.classList[2];
+            let commentClass = element.classList[2];
             element.addEventListener('click', () => {
               commentButton.forEach(rmActive => rmActive.classList.remove('active'));
               element.classList.add('active');
               document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
               document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
-              {%- if theme.comments.storage %}
+              if (CONFIG.comments.storage) {
                 localStorage.setItem('comments_active', commentClass);
-              {%- endif %}
+              }
             });
           });
-          let activeClass = '{{ theme.comments.activeClass }}';
-          {%- if theme.comments.storage %}
+          let { activeClass } = CONFIG.comments;
+          if (CONFIG.comments.storage) {
             activeClass = localStorage.getItem('comments_active') || activeClass;
-          {%- endif %}
+          }
           if (activeClass) {
             let activeButton = document.querySelector(`.comment-button.${activeClass}`);
             if (activeButton) {
@@ -56,26 +56,28 @@
           {%- endfor %}
         </div>
       </div>
-      <script>
-        window.addEventListener('tabs:register', () => {
-          let activeClass = '{{ theme.comments.activeClass }}';
-          {%- if theme.comments.storage %}
-            activeClass = localStorage.getItem('comments_active') || activeClass;
-          {%- endif %}
-          if (activeClass) {
-            let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-            if (activeTab) {
-              activeTab.click();
-            }
-          }
-        });
-        {%- if theme.comments.storage %}
-        window.addEventListener('tabs:click', event => {
-          let commentClass = event.target.classList[1];
-          localStorage.setItem('comments_active', commentClass);
-        });
-        {%- endif %}
-      </script>
     {%- endif %}
   {%- endif %}
 {%- endif %}
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>

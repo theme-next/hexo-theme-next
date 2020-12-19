@@ -45,7 +45,7 @@ NexT.motion.middleWares = {
     function getMistLineSettings(element, translateX) {
       return {
         e: element,
-        p: {translateX: translateX},
+        p: {translateX},
         o: {
           duration     : 500,
           sequenceQueue: false
@@ -61,13 +61,13 @@ NexT.motion.middleWares = {
       });
     }
 
-    NexT.utils.isMist() && logoLineTop && logoLineBottom
+    CONFIG.scheme === 'Mist' && logoLineTop && logoLineBottom
     && sequence.push(
       getMistLineSettings(logoLineTop, '100%'),
       getMistLineSettings(logoLineBottom, '-100%')
     );
 
-    NexT.utils.isMuse() && image && pushImageToSequence();
+    CONFIG.scheme === 'Muse' && image && pushImageToSequence();
 
     title && sequence.push({
       e: title,
@@ -81,7 +81,7 @@ NexT.motion.middleWares = {
       o: {duration: 200}
     });
 
-    (NexT.utils.isPisces() || NexT.utils.isGemini()) && image && pushImageToSequence();
+    (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') && image && pushImageToSequence();
 
     if (sequence.length > 0) {
       sequence[sequence.length - 1].o.complete = function() {
@@ -98,7 +98,6 @@ NexT.motion.middleWares = {
   },
 
   menu: function(integrator) {
-
     Velocity(document.querySelectorAll('.menu-item'), 'transition.slideDownIn', {
       display : null,
       duration: 200,
@@ -112,8 +111,17 @@ NexT.motion.middleWares = {
     }
   },
 
-  postList: function(integrator) {
+  subMenu: function(integrator) {
+    var subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
+    if (subMenuItem.length > 0) {
+      subMenuItem.forEach(element => {
+        element.style.opacity = 1;
+      });
+    }
+    integrator.next();
+  },
 
+  postList: function(integrator) {
     var postBlock = document.querySelectorAll('.post-block, .pagination, .comments');
     var postBlockTransition = CONFIG.motion.transition.post_block;
     var postHeader = document.querySelectorAll('.post-header');
@@ -122,9 +130,8 @@ NexT.motion.middleWares = {
     var postBodyTransition = CONFIG.motion.transition.post_body;
     var collHeader = document.querySelectorAll('.collection-header');
     var collHeaderTransition = CONFIG.motion.transition.coll_header;
-    var hasPost = postBlock.length > 0;
 
-    if (hasPost) {
+    if (postBlock.length > 0) {
       var postMotionOptions = window.postMotionOptions || {
         stagger : 100,
         drag    : true,
@@ -146,17 +153,16 @@ NexT.motion.middleWares = {
         Velocity(collHeader, 'transition.' + collHeaderTransition, postMotionOptions);
       }
     }
-    if (NexT.utils.isPisces() || NexT.utils.isGemini()) {
+    if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') {
       integrator.next();
     }
   },
 
   sidebar: function(integrator) {
-    NexT.utils.updateSidebarPosition();
     var sidebarAffix = document.querySelector('.sidebar-inner');
     var sidebarAffixTransition = CONFIG.motion.transition.sidebar;
     // Only for Pisces | Gemini.
-    if (CONFIG.motion.transition.sidebar && (NexT.utils.isPisces() || NexT.utils.isGemini())) {
+    if (sidebarAffixTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
       Velocity(sidebarAffix, 'transition.' + sidebarAffixTransition, {
         display : null,
         duration: 200,

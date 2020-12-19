@@ -1,14 +1,14 @@
-/* global instantsearch, CONFIG */
+/* global instantsearch, algoliasearch, CONFIG */
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const algoliaSettings = CONFIG.algolia;
+  const { indexName, appID, apiKey } = algoliaSettings;
 
   let search = instantsearch({
-    appId         : algoliaSettings.appID,
-    apiKey        : algoliaSettings.apiKey,
-    indexName     : algoliaSettings.indexName,
+    indexName,
+    searchClient  : algoliasearch(appID, apiKey),
     searchFunction: helper => {
-      let searchInput = document.querySelector('#search-input input');
+      let searchInput = document.querySelector('.search-input');
       if (searchInput.value) {
         helper.search();
       }
@@ -20,16 +20,27 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // Registering Widgets
-  [
+  search.addWidgets([
+    instantsearch.widgets.configure({
+      hitsPerPage: algoliaSettings.hits.per_page || 10
+    }),
+
     instantsearch.widgets.searchBox({
-      container  : '#search-input',
-      placeholder: algoliaSettings.labels.input_placeholder
+      container           : '.search-input-container',
+      placeholder         : algoliaSettings.labels.input_placeholder,
+      // Hide default icons of algolia search
+      showReset           : false,
+      showSubmit          : false,
+      showLoadingIndicator: false,
+      cssClasses          : {
+        input: 'search-input'
+      }
     }),
 
     instantsearch.widgets.stats({
       container: '#algolia-stats',
       templates: {
-        body: data => {
+        text: data => {
           let stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
@@ -43,9 +54,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.hits({
-      container  : '#algolia-hits',
-      hitsPerPage: algoliaSettings.hits.per_page || 10,
-      templates  : {
+      container: '#algolia-hits',
+      templates: {
         item: data => {
           let link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
@@ -62,47 +72,52 @@ window.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.pagination({
-      container    : '#algolia-pagination',
-      scrollTo     : false,
-      showFirstLast: false,
-      labels       : {
+      container: '#algolia-pagination',
+      scrollTo : false,
+      showFirst: false,
+      showLast : false,
+      templates: {
         first   : '<i class="fa fa-angle-double-left"></i>',
         last    : '<i class="fa fa-angle-double-right"></i>',
         previous: '<i class="fa fa-angle-left"></i>',
         next    : '<i class="fa fa-angle-right"></i>'
       },
       cssClasses: {
-        root    : 'pagination',
-        item    : 'pagination-item',
-        link    : 'page-number',
-        active  : 'current',
-        disabled: 'disabled-item'
+        root        : 'pagination',
+        item        : 'pagination-item',
+        link        : 'page-number',
+        selectedItem: 'current',
+        disabledItem: 'disabled-item'
       }
     })
-  ].forEach(search.addWidget, search);
+  ]);
 
   search.start();
 
   // Handle and trigger popup window
-  document.querySelector('.popup-trigger').addEventListener('click', () => {
-    document.body.style.overflow = 'hidden';
-    document.querySelector('.search-pop-overlay').style.display = 'block';
-    document.querySelector('.popup').style.display = 'block';
-    document.querySelector('#search-input input').focus();
+  document.querySelectorAll('.popup-trigger').forEach(element => {
+    element.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+      document.querySelector('.search-pop-overlay').classList.add('search-active');
+      document.querySelector('.search-input').focus();
+    });
   });
 
   // Monitor main search box
   const onPopupClose = () => {
     document.body.style.overflow = '';
-    document.querySelector('.search-pop-overlay').style.display = 'none';
-    document.querySelector('.popup').style.display = 'none';
+    document.querySelector('.search-pop-overlay').classList.remove('search-active');
   };
 
-  document.querySelector('.search-pop-overlay').addEventListener('click', onPopupClose);
+  document.querySelector('.search-pop-overlay').addEventListener('click', event => {
+    if (event.target === document.querySelector('.search-pop-overlay')) {
+      onPopupClose();
+    }
+  });
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
   window.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', event => {
-    if (event.which === 27) {
+    if (event.key === 'Escape') {
       onPopupClose();
     }
   });

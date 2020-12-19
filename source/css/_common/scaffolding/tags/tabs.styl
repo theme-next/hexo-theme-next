@@ -1,6 +1,3 @@
-// Read tabs border_radius from NexT config and set in "$tbr px" to use it as string variable in this CSS section.
-$tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.border_radius'), px) : 0;
-
 .post-body .tabs {
   margin-bottom: 20px;
 }
@@ -23,8 +20,7 @@ $tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.bo
     }
 
     li.tab {
-      background: white;
-      border-bottom: 1px solid $gray-lighter;
+      border-bottom: 1px solid $grey-lighter;
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
       border-top: 3px solid transparent;
@@ -38,12 +34,10 @@ $tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.bo
         border-top: 1px solid transparent;
       }
 
-      if ($tbr > 0) {
-        border-radius: $tbr $tbr 0 0;
+      border-radius: $tbr $tbr 0 0;
 
-        +mobile-smallest() {
-          border-radius: $tbr;
-        }
+      +mobile-smallest() {
+        border-radius: $tbr;
       }
 
       if (hexo-config('tabs.transition.tabs')) {
@@ -53,7 +47,7 @@ $tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.bo
       a {
         border-bottom: initial;
         display: block;
-        line-height: 1.8em;
+        line-height: 1.8;
         outline: 0;
         padding: .25em .75em;
         text-align: center;
@@ -81,7 +75,7 @@ $tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.bo
         }
 
         a {
-          color: $link-color;
+          color: var(--link-color);
           cursor: default;
         }
       }
@@ -91,11 +85,10 @@ $tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.bo
   .tab-content {
     .tab-pane {
       border: 1px solid $table-border-color;
+      border-top: 0;
       padding: 20px 20px 0 20px;
 
-      if ($tbr > 0) {
-        border-radius: $tbr;
-      }
+      border-radius: $tbr;
 
       &:not(.active) {
         display: none;
@@ -104,13 +97,11 @@ $tbr = hexo-config('tabs.border_radius') is a 'unit' ? unit(hexo-config('tabs.bo
       &.active {
         display: block;
 
-        if ($tbr > 0) {
-          &:nth-of-type(1) {
-            border-radius: 0 $tbr $tbr $tbr;
+        &:nth-of-type(1) {
+          border-radius: 0 $tbr $tbr $tbr;
 
-            +mobile-smallest() {
-              border-radius: $tbr;
-            }
+          +mobile-smallest() {
+            border-radius: $tbr;
           }
         }
       }

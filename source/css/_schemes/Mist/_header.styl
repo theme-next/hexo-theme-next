@@ -1,34 +1,25 @@
 // Header
 // --------------------------------------------------
 .header {
-  background: $whitesmoke;
+  background: var(--content-bg-color);
 }
 
 .header-inner {
-  clearfix();
   align-items: center;
   display: flex;
-  justify-content: center;
   padding: 20px 0;
 
   +mobile() {
     display: block;
-    padding: 10px;
+    padding: 10px 0;
     width: auto;
   }
 }
 
 .site-meta {
-  float: left;
   line-height: normal;
-  margin-left: -20px;
-
-  +mobile() {
-    margin-left: 10px;
-  }
 
   .brand {
-    background: none;
     padding: 2px 1px;
 
     +mobile() {
@@ -52,14 +43,10 @@
   }
 
   i {
-    background: $black-deep;
+    background: var(--brand-color);
     display: block;
     height: 2px;
     position: relative;
-
-    +mobile() {
-      height: 3px;
-    }
   }
 }
 

@@ -14,27 +14,26 @@ hexo.on('generateAfter', () => {
   const https = require('https');
   const path = require('path');
   const { version } = require(path.normalize('../../package.json'));
-  https.get({
-    hostname: 'api.github.com',
-    port    : 443,
-    path    : '/repos/theme-next/hexo-theme-next/releases/latest',
-    method  : 'GET',
-    headers : {
+  https.get('https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest', {
+    headers: {
       'User-Agent': 'Theme NexT Client'
     }
   }, res => {
-    var result = '';
+    let result = '';
     res.on('data', data => {
       result += data;
     });
     res.on('end', () => {
       try {
-        var latest = JSON.parse(result).tag_name.replace('v', '').split('.');
-        var current = version.split('.');
-        var isOutdated = false;
-        for (var i = 0; i < Math.max(latest.length, current.length); i++) {
+        let latest = JSON.parse(result).tag_name.replace('v', '').split('.');
+        let current = version.split('.');
+        let isOutdated = false;
+        for (let i = 0; i < Math.max(latest.length, current.length); i++) {
           if (!current[i] || latest[i] > current[i]) {
             isOutdated = true;
+            break;
+          }
+          if (latest[i] < current[i]) {
             break;
           }
         }
@@ -44,10 +43,13 @@ hexo.on('generateAfter', () => {
         } else {
           hexo.log.info('Congratulations! Your are using the latest version of theme NexT.');
         }
-      } catch (e) {
+      } catch (err) {
         hexo.log.error('Failed to detect version info. Error message:');
-        hexo.log.error(e);
+        hexo.log.error(err);
       }
     });
+  }).on('error', err => {
+    hexo.log.error('Failed to detect version info. Error message:');
+    hexo.log.error(err);
   });
 });
