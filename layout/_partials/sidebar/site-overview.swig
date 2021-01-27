@@ -98,7 +98,7 @@
 {%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
   <div class="cc-license motion-element" itemprop="license">
   {%- set ccStr = '' %}
-  {%- if theme.creative_commons.icon_style == 'standard' %}
+  {%- if theme.creative_commons.icon_display == 'standard' %}
     {%- set ccStr = 'standard-' %}
   {%- endif %}
     {%- set ccImage = '<img src="' + url_for(theme.images + '/cc-' + ccStr + theme.creative_commons.license + '.svg') + '" alt="Creative Commons">' %}
