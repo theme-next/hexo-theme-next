@@ -125,11 +125,17 @@ darkmode: false
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  home: / || fa fa-home
+  #home: / || fa fa-home
+  #docs:
+  #  default: /docs/ || fa fa-book
+  #  getting-started:
+  #    default: /getting-started/ || fa fa-flag
+  #    git-in-win10: /getting-started-for-git-in-win10/ || fab fa-git
+  #    blog-in-win10: /getting-started-for-blog-in-win10/ || fab fa-blogger
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
-  archives: /archives/ || fa fa-archive
+  #archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
