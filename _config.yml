@@ -91,6 +91,15 @@ creative_commons:
   post: false
   language:
 
+  # Icon Display, available values:
+  #  - compact   Default.
+  #  - standard  see https://github.com/theme-next/hexo-theme-next/issues/1605
+  icon_display: compact
+
+  # Manual define the icon width. If commented, will be default for:
+  # Muse | Mist | Pisces | Gemini: 80
+  #icon_width: 100
+
 
 # ---------------------------------------------------------------
 # Scheme Settings
