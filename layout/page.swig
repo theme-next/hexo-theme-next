@@ -64,6 +64,9 @@
       {#####################}
       {### END PAGE BODY ###}
       {#####################}
+      {%- if theme.creative_commons.license and theme.creative_commons.page %}
+        {{ partial('_partials/post/post-copyright.swig') }}
+      {%- endif %}
     </div>
     {% include '_partials/page/breadcrumb.swig' %}
     {######################}

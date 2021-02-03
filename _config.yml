@@ -89,6 +89,7 @@ creative_commons:
   license: by-nc-sa
   sidebar: false
   post: false
+  page: false
   language:
 
   # Icon Display, available values:
