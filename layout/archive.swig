@@ -28,7 +28,10 @@
         {% else %}
           {%- set cheers = 'um' %}
         {%- endif %}
-        <span class="collection-header">{{ __('cheers.' + cheers) }}! {{ _p('counter.archive_posts', site.posts.length) }} {{ __('keep_on') }}</span>
+        {%- if config.archive_generator.page %}
+          {%- set posts_length = site.posts.length + site.pages.length %}
+        {%- endif %}
+        <span class="collection-header">{{ __('cheers.' + cheers) }}! {{ _p('counter.archive_posts', posts_length) }} {{ __('keep_on') }}</span>
       </div>
 
       {{ post_template.render(page.posts) }}

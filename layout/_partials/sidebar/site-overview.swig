@@ -10,14 +10,18 @@
 {%- if theme.site_state %}
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
-    {%- if config.archive_dir != '/' and site.posts.length > 0 %}
+    {%- set posts_length = site.posts.length %}
+    {%- if config.archive_dir != '/' and posts_length > 0 %}
       <div class="site-state-item site-state-posts">
         {%- if theme.menu.archives %}
           <a href="{{ url_for(theme.menu.archives.split('||')[0] | trim) }}">
         {% else %}
           <a href="{{ url_for(config.archive_dir) }}">
         {%- endif %}
-          <span class="site-state-item-count">{{ site.posts.length }}</span>
+        {%- if config.archive_generator.page %}
+          {%- set posts_length = site.posts.length + site.pages.length %}
+        {%- endif %}
+          <span class="site-state-item-count">{{ posts_length }}</span>
           <span class="site-state-item-name">{{ __('state.posts') }}</span>
         </a>
       </div>
