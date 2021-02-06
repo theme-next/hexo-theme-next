@@ -257,6 +257,13 @@ post_meta:
     another_day: true
   categories: true
 
+# Page meta display settings
+page_meta:
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
