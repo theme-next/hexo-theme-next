@@ -20,6 +20,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
         language: '{{ theme.gitalk.language }}',
       {%- endif %}
       distractionFreeMode: {{ theme.gitalk.distraction_free_mode }}
+      createIssueManually: {{ theme.gitalk.create_issue_manually }}
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
