@@ -518,6 +518,10 @@ pjax: false
 # For more information: https://fancyapps.com/fancybox
 fancybox: false
 
+# Add Live2D widget to web page. Compatible with PJAX.
+# For more information: https://github.com/stevenjoezhang/live2d-widget
+live2d-widget: false
+
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://github.com/francoischalifour/medium-zoom
@@ -914,6 +918,10 @@ vendors:
   jquery:
   fancybox:
   fancybox_css:
+
+  # Live2d-widget
+  # live2d-widget: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+  live2d-widget:
 
   # Medium-zoom
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js

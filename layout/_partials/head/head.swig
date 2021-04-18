@@ -51,6 +51,11 @@
   <link rel="stylesheet" href="{{ fancybox_css_uri }}">
 {%- endif %}
 
+{%- if theme.live2d %}
+  {%- set live2d_js_uri = theme.vendors.live2d-widget or next_vendors('//cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js') %}
+  <script src="{{ live2d_js_uri }}"></script>
+{%- endif %}
+
 {%- if theme.pace.enable %}
   {%- set pace_css_uri = theme.vendors.pace_css or next_vendors('pace/pace-theme-' + theme.pace.theme + '.min.css') %}
   {%- set pace_js_uri = theme.vendors.pace or next_vendors('pace/pace.min.js') %}
