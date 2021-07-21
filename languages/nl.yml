@@ -1,4 +1,5 @@
 ---
+name: Niederländisch
 title:
   archive: Archief
   category: Categorie
@@ -24,28 +25,18 @@ post:
   modified: Post aangepast
   edit: Edit this post
   in: In
-  more: meer
   read_more: Lees meer
   untitled: Naamloos
   sticky: Sticky
-  toc_empty: Deze post heeft geen inhoudsopgave
   views: Views
-  comments_count: Comments
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post auteur
     link: Post link
     license_title: Copyright melding
     license_content: "Alle artikelen op deze blog zijn gelicenseerd onder %s, mits niet anders aangegeven."
-page:
-  totally: Totaal
-  tags: labels
 footer:
   powered: "Mede mogelijk gemaakt door %s"
-  theme: Thema
   total_views: Total Views
   total_visitors: Total Visitors
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "%d posts in totaal."
 state:
   posts: posts
-  pages: pagina's
   tags: labels
   categories: categorieën
 search:
@@ -84,12 +74,14 @@ reward:
   donate: Doneer
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  prev_page: Vorige pagina
+  next_page: Volgende pagina
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total

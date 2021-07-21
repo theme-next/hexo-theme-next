@@ -1,4 +1,5 @@
 ---
+name: Italiano
 title:
   archive: Archivio
   category: Categoria
@@ -24,28 +25,18 @@ post:
   modified: Post modificato
   edit: Edit this post
   in: In
-  more: espandi
   read_more: Leggi di più
   untitled: Senza titolo
   sticky: Sticky
-  toc_empty: Questo post non ha un indice
   views: Views
-  comments_count: Comments
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Autore
     link: Link
     license_title: Copyright
     license_content: "Tutti gli articoli in questo sito sono sotto licenza %s salvo disposizione contraria."
-page:
-  totally: Totale
-  tags: tags
 footer:
   powered: "Powered by %s"
-  theme: Tema
   total_views: Total Views
   total_visitors: Total Visitors
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "%d posts in totale."
 state:
   posts: posts
-  pages: pagine
   tags: tags
   categories: categorie
 search:
@@ -84,12 +74,14 @@ reward:
   donate: Dona
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  prev_page: Pagina precedente
+  next_page: Pagina successiva
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total

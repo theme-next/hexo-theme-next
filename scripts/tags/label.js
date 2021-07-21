@@ -1,5 +1,5 @@
 /**
- * label.js | https://theme-next.org/docs/tag-plugins/label/
+ * label.js | https://theme-next.org/docs/tag-plugins/label
  */
 
 /* global hexo */
@@ -13,7 +13,7 @@ function postLabel(args) {
 
   !text && hexo.log.warn('Label text must be defined!');
 
-  return '<span class="label ' + classes.trim() + '">' + text + '</span>';
+  return `<span class="label ${classes.trim()}">${text}</span>`;
 }
 
-hexo.extend.tag.register('label', postLabel, { ends: false });
+hexo.extend.tag.register('label', postLabel, {ends: false});

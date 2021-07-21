@@ -1,0 +1,90 @@
+---
+name: Український
+title:
+  archive: Архів
+  category: Категорія
+  tag: Тег
+  schedule: Календар
+menu:
+  home: Головна
+  archives: Архів
+  categories: Категорії
+  tags: Теги
+  about: Про сайт
+  search: Пошук
+  schedule: Календар
+  sitemap: Карта сайту
+  commonweal: Сторінка 404
+sidebar:
+  overview: Огляд
+  toc: Зміст
+post:
+  posted: Опубліковано
+  edited: Змінено
+  created: Створено
+  modified: Змінено
+  edit: Редагувати запис
+  in: в категорії
+  read_more: Читати повністю
+  untitled: Без імені
+  sticky: Посилання
+  views: Переглядів
+  related_posts: Схожі записи
+  copyright:
+    author: Автор запису
+    link: Посилання на запис
+    license_title: Інформація про авторські права
+    license_content: "Всі записи на цьому сайті захищені ліцензією %s, якщо не вказано додатково."
+footer:
+  powered: "Генератор — %s"
+  total_views: Всього переглядів
+  total_visitors: Всього відвідувачів
+counter:
+  tag_cloud:
+    zero: Немає тегів.
+    one: 1 тег.
+    other: "%d тегів всього."
+  categories:
+    zero: Немає категорій.
+    one: 1 категорія.
+    other: "%d категорій всього."
+  archive_posts:
+    zero: Немає записів.
+    one: 1 запис.
+    other: "%d записів всього."
+state:
+  posts: Архів
+  tags: Теги
+  categories: Категорії
+search:
+  placeholder: Пошук...
+cheers:
+  um: Ем..
+  ok: ОК
+  nice: Не погано
+  good: Добре
+  great: Чудово
+  excellent: Прекрасно
+keep_on: Продовжую писати.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+reward:
+  donate: Донат
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  paypal: PayPal
+  bitcoin: Bitcoin
+follow_me:
+  welcome: Мої інші видавничі канали
+accessibility:
+  nav_toggle: Показати/приховати меню
+  prev_page: Попередня сторінка
+  next_page: Наступна сторінка
+symbols_count_time:
+  count: К-сть символів в статті
+  count_total: Загальна к-сть символів
+  time: Час читання
+  time_total: Загальний час читання
+  time_minutes: хв.

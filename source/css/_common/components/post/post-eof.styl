@@ -1,17 +1,11 @@
-.posts-expand {
-  .post-eof {
-    display: block;
-    margin: $post-eof-margin-top auto $post-eof-margin-bottom;
-    width: 8%;
-    height: 1px;
-    background: $grey-light;
-    text-align: center;
-  }
-}
+.post-eof {
+  background: $grey-light;
+  height: 1px;
+  margin: $post-eof-margin-top auto $post-eof-margin-bottom;
+  text-align: center;
+  width: 8%;
 
-
-.post:last-child {
-  .post-eof.post-eof.post-eof {
+  .post-block:last-of-type & {
     display: none;
   }
 }

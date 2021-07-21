@@ -1,4 +1,5 @@
 ---
+name: Bahasa Indonesia
 title:
   archive: Arsip
   category: Kategori
@@ -24,28 +25,18 @@ post:
   modified: Updated at
   edit: Edit this post
   in: Di
-  more: more
   read_more: Baca lebih
   untitled: Tidak ada title
   sticky: Sticky
-  toc_empty: Posting ini tidak memiliki Daftar Isi
   views: Views
-  comments_count: Comments
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
-page:
-  totally: Total
-  tags: tags
 footer:
   powered: "Powered by %s"
-  theme: Tema
   total_views: Total Views
   total_visitors: Total Visitors
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "%d total posting."
 state:
   posts: posting
-  pages: halaman
   tags: tags
   categories: kategori
 search:
@@ -84,12 +74,14 @@ reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  prev_page: Halaman sebelumnya
+  next_page: Halaman selanjutnya
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total

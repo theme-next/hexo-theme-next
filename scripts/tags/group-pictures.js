@@ -1,13 +1,5 @@
 /**
- * group-pictures.js
- *
- * Usage:
- *
- * {% grouppicture [group]-[layout] %}{% endgrouppicture %}
- * {% gp [group]-[layout] %}{% endgp %}
- *
- * [group]  : Total number of pictures to add in the group.
- * [layout] : Default picture under the group to show.
+ * group-pictures.js | https://theme-next.org/docs/tag-plugins/group-pictures
  */
 
 /* global hexo */
@@ -81,9 +73,9 @@ var LAYOUTS = {
 
 function groupBy(group, data) {
   var r = [];
-  for (var i = 0; i < group.length; i++) {
-    r.push(data.slice(0, group[i]));
-    data = data.slice(group[i]);
+  for (let count of group) {
+    r.push(data.slice(0, count));
+    data = data.slice(count);
   }
   return r;
 }
@@ -106,7 +98,7 @@ var templates = {
    */
   defaults: function(pictures) {
     var ROW_SIZE = 3;
-    var rows = pictures.length / (ROW_SIZE + 1);
+    var rows = pictures.length / ROW_SIZE;
     var pictureArr = [];
 
     for (var i = 0; i < rows; i++) {
@@ -117,30 +109,19 @@ var templates = {
   },
 
   getHTML: function(rows) {
-    var rowHTML = '';
+    var rowHTML = rows.map(row => {
+      return `<div class="group-picture-row">${this.getColumnHTML(row)}</div>`;
+    }).join('');
 
-    for (var i = 0; i < rows.length; i++) {
-      rowHTML += this.getRowHTML(rows[i]);
-    }
-
-    return '<div class="group-picture-container">' + rowHTML + '</div>';
-  },
-
-  getRowHTML: function(pictures) {
-    return (
-      '<div class="group-picture-row">' + this.getColumnHTML(pictures) + '</div>'
-    );
+    return `<div class="group-picture-container">${rowHTML}</div>`;
   },
 
   getColumnHTML: function(pictures) {
-    var columns = [];
     var columnWidth = 100 / pictures.length;
-    var columnStyle = ' style="width: ' + columnWidth + '%;"';
-
-    for (var i = 0; i < pictures.length; i++) {
-      columns.push('<div class="group-picture-column" ' + columnStyle + '>' + pictures[i] + '</div>');
-    }
-    return columns.join('');
+    var columnStyle = `style="width: ${columnWidth}%;"`;
+    return pictures.map(picture => {
+      return `<div class="group-picture-column" ${columnStyle}>${picture}</div>`;
+    }).join('');
   }
 };
 
@@ -153,7 +134,7 @@ function groupPicture(args, content) {
 
   var pictures = content.match(/<img[\s\S]*?>/g);
 
-  return '<div class="group-picture">' + templates.dispatch(pictures, group, layout) + '</div>';
+  return `<div class="group-picture">${templates.dispatch(pictures, group, layout)}</div>`;
 }
 
 hexo.extend.tag.register('grouppicture', groupPicture, {ends: true});

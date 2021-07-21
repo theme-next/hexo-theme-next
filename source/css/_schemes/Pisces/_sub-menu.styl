@@ -1,38 +1,30 @@
 .sub-menu {
+  background: var(--content-bg-color);
+  border-bottom: 1px solid $table-border-color;
   margin: 0;
   padding: 6px 0;
-  background: #fff !important;
-  border-bottom: 1px solid $table-border-color;
-}
 
-.sub-menu .menu-item {
-  display: inline-block !important;
+  .menu-item {
+    display: inline-block;
 
-  & a {
-    padding: initial !important;
-    margin: 5px 10px;
+    a, span.exturl {
+      background: transparent;
+      margin: 5px 10px;
+      padding: initial;
+
+      &:hover {
+        background: transparent;
+        color: $sidebar-highlight;
+      }
+    }
   }
 
-  & a:hover {
-    background: initial !important;
-    color: $sidebar-highlight;
-  }
-}
-
-.sub-menu .menu-item-active a {
-  background: #fff !important;
-  color: $sidebar-highlight;
-  border-bottom-color: $sidebar-highlight;
-
-  &:hover {
-    background: #fff !important;
+  .menu-item-active a {
     border-bottom-color: $sidebar-highlight;
-  }
+    color: $sidebar-highlight;
 
-  badges = hexo-config('menu_settings.badges');
-  if not badges {
-    &:after {
-      content: initial;
+    &:hover {
+      border-bottom-color: $sidebar-highlight;
     }
   }
 }

@@ -1,53 +1,37 @@
 {% extends '_layout.swig' %}
-{% import '_macro/post-collapse.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+{% import '_macro/post-collapse.swig' as post_template with context %}
+{% import '_macro/sidebar.swig' as sidebar_template with context %}
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-archive{% endblock %}
+{% block class %}archive{% endblock %}
 
 {% block content %}
 
   {#####################}
   {### ARCHIVE BLOCK ###}
   {#####################}
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      {% if theme.cheers_enabled %}
-      <span class="archive-page-counter">
-        {% set cheers %}
-        {% set posts_length = site.posts.length %}
-        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
-          {% elif posts_length > 130 %} {% set cheers = 'great' %}
-          {% elif posts_length > 80 %} {% set cheers = 'good' %}
-          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
-          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        {%- set posts_length = site.posts.length %}
+        {%- if posts_length > 210 %}
+          {%- set cheers = 'excellent' %}
+        {% elif posts_length > 130 %}
+          {%- set cheers = 'great' %}
+        {% elif posts_length > 80 %}
+          {%- set cheers = 'good' %}
+        {% elif posts_length > 50 %}
+          {%- set cheers = 'nice' %}
+        {% elif posts_length > 30 %}
+          {%- set cheers = 'ok' %}
         {% else %}
-          {% set cheers = 'um' %}
-        {% endif %}
-        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
-      </span>
-      {% endif %}
+          {%- set cheers = 'um' %}
+        {%- endif %}
+        <span class="collection-header">{{ __('cheers.' + cheers) }}! {{ _p('counter.archive_posts', site.posts.length) }} {{ __('keep_on') }}</span>
+      </div>
 
-      {% for post in page.posts %}
-
-        {# Show year #}
-        {% set year %}
-        {% set post.year = date(post.date, 'YYYY') %}
-
-        {% if post.year !== year %}
-          {% set year = post.year %}
-          <div class="collection-title">
-            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
-          </div>
-        {% endif %}
-        {# endshow #}
-
-        {{ post_template.render(post) }}
-
-      {% endfor %}
+      {{ post_template.render(page.posts) }}
 
     </div>
   </div>

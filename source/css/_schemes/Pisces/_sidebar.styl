@@ -1,25 +1,30 @@
-.use-motion .sidebar .motion-element { opacity: 1; }
-
 .sidebar {
-  margin-left: -100%;
-  right: auto;
-  bottom: auto;
+  background: var(--body-bg-color);
+  box-shadow: none;
+  margin-top: 100%;
+  position: static;
+  width: $sidebar-desktop;
 
-  // Do NOT delete this line
-  // or Affix (position: fixed) will not work in Google Chrome.
-  -webkit-transform: none;
+  +tablet-mobile() {
+    display: none;
+  }
 }
 
+.sidebar-toggle {
+  display: none;
+}
 
 .sidebar-inner {
-//padding: 20px 10px 0;
-  box-sizing: border-box;
-  width: $sidebar-desktop;
-  color: $text-color;
-  background: white;
-  box-shadow: $box-shadow;
+  background: var(--content-bg-color);
   border-radius: $border-radius;
-  if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) { opacity: 0; }
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: var(--text-color);
+  width: $sidebar-desktop;
+
+  if (hexo-config('motion.enable') && hexo-config('motion.transition.sidebar')) {
+    opacity: 0;
+  }
 
   &.affix {
     position: fixed;
@@ -29,101 +34,90 @@
   &.affix-bottom {
     position: absolute;
   }
-
-}
-
-.site-overview {
-  //margin: 0 2px;
-  text-align: left;
-}
-
-.site-author {
-  clearfix();
-}
-
-.sidebar a,
-.sidebar .exturl {
-  color: $black-light;
-
-  &:hover { color: $black-deep; }
 }
 
 .site-state-item {
   padding: 0 10px;
 }
 
-.links-of-author-item {
-  a:before, .exturl:before { display: none; }
-  a, .exturl {
-    border-bottom: none;
-    text-decoration: underline;
-  }
-}
-
-.feed-link {
-  border-top: 1px dotted $grey-light;
+.sidebar-button {
   border-bottom: 1px dotted $grey-light;
+  border-top: 1px dotted $grey-light;
+  margin-top: 10px;
   text-align: center;
-}
 
-.feed-link a {
-  display: block;
-  color: $orange;
-  border: none;
+  a {
+    border: 0;
+    color: $orange;
+    display: block;
 
-  &:hover {
-    background: none;
-    color: darken($orange, 20%);
+    &:hover {
+      background: none;
+      border: 0;
+      color: darken($orange, 20%);
 
-    i { color: darken($orange, 20%); }
+      .fa, .fab, .far, .fas {
+        color: darken($orange, 20%);
+      }
+    }
   }
 }
 
 .links-of-author {
-  //clearfix();
   display: flex;
   flex-wrap: wrap;
+  margin-top: 10px;
   justify-content: center;
-
-  .exturl {
-    font-size: 13px;
-  }
 }
+
 .links-of-author-item {
   sidebar-inline-links-item();
 
-  a, .exturl {
+  if (!hexo-config('social_icons.icons_only')) {
+    width: 50%;
+  }
+
+  a, span.exturl {
+    border-bottom: none;
     display: block;
     text-decoration: none;
 
+    &::before {
+      display: none;
+    }
+
     &:hover {
+      background: var(--body-bg-color);
       border-radius: 4px;
-      background: $gainsboro;
     }
   }
 
-  .fa {
+  .fa, .fab, .far, .fas {
     margin-right: 2px;
-    font-size: 16px;
   }
-  .fa-globe { font-size: 15px; }
 }
 
+.links-of-blogroll-item {
+  padding: 0;
 
-.links-of-blogroll {
-  text-align: center;
-  margin-top: 20px;
-  padding: 3px 0 0;
-  border-top: 1px dotted $grey-light;
-}
-.links-of-blogroll-title { margin-top: 0; }
-.links-of-blogroll-item { padding: 0; }
-.links-of-blogroll-inline {
-  clearfix();
-
-  .links-of-blogroll-item {
-    sidebar-inline-links-item();
+  if (hexo-config('links_settings.layout') == 'inline') {
     display: inline-block;
-    if !hexo-config('social_icons.icons_only') { width: unset; }
+    sidebar-inline-links-item();
+
+    if (!hexo-config('social_icons.icons_only')) {
+      width: unset;
+    }
+  }
+}
+
+if (hexo-config('back2top.sidebar')) {
+  // Only when back2top.sidebar is true, apply the following styles
+  .back-to-top {
+    background: var(--body-bg-color);
+    margin: 8px - $sidebar-offset -10px -18px;
+
+    &.back-to-top-on {
+      margin-top: 16px;
+    }
   }
 }

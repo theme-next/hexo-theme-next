@@ -1,111 +1,121 @@
-// TODO: Refactor.
-
-@media (max-width: 767px) {
-  .posts-collapse {
-    margin: 0 20px;
-
-    .post-title, .post-meta {
-      display: block;
-      width: auto;
-      text-align: left;
-    }
-  }
-}
-
 .posts-collapse {
+  margin-left: $posts-collapse-margin;
   position: relative;
-  z-index: $zindex-1;
-  
-  &::after {
-    content: " ";
-    position: absolute;
-    top: 20px;
-    left: 0;
-    margin-left: -2px;
-    width: 4px;
-    height: 100%;
-    background: $whitesmoke;
-    z-index: $zindex-bottom;
-  }
 
-  margin-left: $posts-collapse-left;
-  +mobile() { margin: 0 20px; }
+  +mobile() {
+    margin-left: $posts-collapse-margin-mobile;
+    margin-right: $posts-collapse-margin-mobile;
+  }
 
   .collection-title {
+    font-size: $font-size-large;
     position: relative;
-    margin: 60px 0;
-
-    h1, h2 { margin-left: 20px; }
-
-    small { color: $grey; margin-left: 5px; }
 
     &::before {
-      content: " ";
-      position: absolute;
+      background: $grey-dark;
+      border: 1px solid white;
+      border-radius: 50%;
+      content: ' ';
+      height: 10px;
       left: 0;
+      margin-left: -6px;
+      margin-top: -4px;
+      position: absolute;
       top: 50%;
+      width: 10px;
+    }
+  }
+
+  .collection-year {
+    font-size: $font-size-largest;
+    font-weight: bold;
+    margin: 60px 0;
+    position: relative;
+
+    &::before {
+      background: $grey;
+      border-radius: 50%;
+      content: ' ';
+      height: 8px;
+      left: 0;
       margin-left: -4px;
       margin-top: -4px;
+      position: absolute;
+      top: 50%;
       width: 8px;
-      height: 8px;
-      background: $grey;
-      circle();
     }
   }
 
-  .post { margin: 30px 0; }
+  .collection-header {
+    display: block;
+    margin: 0 0 0 20px;
+
+    small {
+      color: $grey;
+      margin-left: 5px;
+    }
+  }
 
   .post-header {
-    position: relative;
-    the-transition();
-    transition-property: border;
     border-bottom: 1px dashed $grey-light;
+    margin: 30px 0;
+    padding-left: 15px;
+    position: relative;
+    transition-property: border;
+    the-transition();
 
     &::before {
-      content: " ";
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 6px;
-      height: 6px;
-      margin-left: -4px;
       background: $grey;
-      circle();
       border: 1px solid white;
-      the-transition();
+      border-radius: 50%;
+      content: ' ';
+      height: 6px;
+      left: 0;
+      margin-left: -4px;
+      position: absolute;
+      top: $font-size-smallest;
       transition-property: background;
+      width: 6px;
+      the-transition();
     }
-  }
 
-  .post-header:hover {
-    border-bottom-color: $grey-dim;
+    &:hover {
+      border-bottom-color: $grey-dim;
 
-    &::before { background: $black-deep; }
+      &::before {
+        background: $black-deep;
+      }
+    }
   }
 
   .post-meta {
-    position: absolute;
-    font-size: 12px;
-    left: 20px;
-    top: 5px;
+    display: inline;
+    font-size: $font-size-smallest;
+    margin-right: 10px;
   }
 
-  .post-comments-count { display: none; }
-
   .post-title {
-    margin-left: 60px;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: inherit;
+    display: inline;
 
-    &::after {
-      margin-left: 3px;
-      opacity: 0.6;
-    }
-
-    a {
-      color: $grey-dim;
+    a, span.exturl {
       border-bottom: none;
+      color: var(--link-color);
     }
+
+    .fa-external-link-alt {
+      font-size: $font-size-small;
+      margin-left: 5px;
+    }
+  }
+
+  &::before {
+    background: $whitesmoke;
+    content: ' ';
+    height: 100%;
+    left: 0;
+    margin-left: -2px;
+    position: absolute;
+    top: 1.25em;
+    width: 4px;
   }
 }

@@ -1,4 +1,5 @@
 ---
+name: Português
 title:
   archive: Arquivo
   category: Categoria
@@ -24,28 +25,18 @@ post:
   modified: Updated at
   edit: Edit this post
   in: Em
-  more: more
   read_more: Ler mais
   untitled: Sem título
   sticky: Sticky
-  toc_empty: Esta publicação não possui uma tabela de conteúdo
   views: Views
-  comments_count: Comments
   related_posts: Related Posts
-  copy_button: Copy
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
-page:
-  totally: Totalmente
-  tags: tags
 footer:
   powered: "Desenvolvido com amor com %s"
-  theme: Tema
   total_views: Total Views
   total_visitors: Total Visitors
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "%d publicações no total."
 state:
   posts: publicações
-  pages: páginas
   tags: tags
   categories: categorias
 search:
@@ -84,12 +74,14 @@ reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  prev_page: Página anterior
+  next_page: Página seguinte
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total

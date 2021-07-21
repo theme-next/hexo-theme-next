@@ -1,4 +1,5 @@
 ---
+name: Русский
 title:
   archive: Архив
   category: Категория
@@ -24,28 +25,18 @@ post:
   modified: Изменено
   edit: Редактировать запись
   in: в категории
-  more: more
   read_more: Читать полностью
   untitled: Без имени
   sticky: Ссылка
-  toc_empty: Эта запись без оглавления
   views: Просмотров
-  comments_count: Комментариев
   related_posts: Похожие записи
-  copy_button: Скопировать
-  copy_success: Скопировано!
-  copy_failure: Ошибка копирования!
   copyright:
     author: Автор записи
     link: Ссылка на запись
     license_title: Информация об авторских правах
     license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
-page:
-  totally: Всего
-  tags: тэги
 footer:
   powered: "Генератор — %s"
-  theme: Тема
   total_views: Всего просмотров
   total_visitors: Всего посетителей
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "%d записей всего."
 state:
   posts: Архив
-  pages: Страницы
   tags: Тэги
   categories: Категории
 search:
@@ -84,8 +74,10 @@ reward:
   donate: Донат
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
-gitmentbutton: Открыть Gitment комментарии
+follow_me:
+  welcome: Добро пожаловать на другие мои издательские каналы
 accessibility:
   nav_toggle: Показать/скрыть меню
   prev_page: Предыдущая страница

@@ -1,65 +1,55 @@
-// TODO: Refactor.
-
-.posts-expand {
+.content {
   padding-top: 40px;
 }
 
-@media (max-width: 767px) {
-  .posts-expand {
-    margin: 0 20px;
+.post-body {
+  +desktop() {
+    text-align: unquote(hexo-config('text_align.desktop'));
   }
 
-  .post-body {
-    pre {
-      .gutter pre {
-        padding-right: 10px;
-      }
-    }
-
-    .highlight {
-      margin-left: 0px;
-      margin-right: 0px;
-      padding: 0;
-      .gutter pre {
-        padding-right: 10px;
-      }
-    }
+  +tablet-mobile() {
+    text-align: unquote(hexo-config('text_align.mobile'));
   }
-}
 
-.posts-expand .post-body {
-  +desktop() { text-align: justify; }
-
-
-  h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     padding-top: 10px;
 
-    .header-anchor{
+    .header-anchor {
+      border-bottom-style: none;
+      color: $grey-light;
       float: right;
       margin-left: 10px;
-      color: $grey-light;
-      border-bottom-style: none;
       visibility: hidden;
 
-      &:hover{
+      &:hover {
         color: inherit;
       }
     }
 
-    &:hover .header-anchor{
+    &:hover .header-anchor {
       visibility: visible;
     }
   }
 
-  ul li { list-style: circle; }
+  iframe, img, video {
+    margin-bottom: 20px;
+  }
 
-  img {
-    box-sizing: border-box;
-    margin: auto;
-    padding: 3px;
-    border: 1px solid $gray-lighter;
+  .video-container {
+    height: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-top: 75%;
+    position: relative;
+    width: 100%;
+
+    iframe, object, embed {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 }
-
-.posts-expand .post-body .fancybox img { margin: 0 auto 25px; }
-.posts-expand .post-body img { margin: 0 auto 25px; }
