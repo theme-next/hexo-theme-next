@@ -73,6 +73,30 @@
       display: none;
     }
   }
+
+  .search-footer {
+    background: $gainsboro;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    padding: 5px 15px;
+  }
+  .search-commands-key {
+    align-items: center;
+    background: linear-gradient(-225deg,#d5dbe4,#f8f8f8);
+    border-radius: 2px;
+    box-shadow: inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 2px 1px rgba(30,35,90,0.4);
+    display: flex;
+    height: 18px;
+    justify-content: center;
+    margin-right: .4em;
+    margin-top: 6px;
+    padding-bottom: 2px;
+    width: 20px;
+  }
+  .search-tips {
+    margin-right 10px
+  }
 }
 
 if (hexo-config('algolia_search.enable')) {
@@ -180,7 +204,7 @@ if (hexo-config('local_search.enable')) {
 
     #search-result {
       display: flex;
-      height: calc(100% - 55px);
+      height: calc(100% - 99px);
       overflow: auto;
       padding: 5px 25px;
     }
