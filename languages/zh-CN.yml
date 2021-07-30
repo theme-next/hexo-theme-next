@@ -58,6 +58,9 @@ state:
   categories: 分类
 search:
   placeholder: 搜索...
+  select: 跳转
+  navigate: 上下选择
+  close: 关闭
 cheers:
   um: 嗯..
   ok: 还行

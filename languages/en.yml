@@ -67,6 +67,9 @@ state:
 
 search:
   placeholder: Searching...
+  select: to select
+  navigate: to navigate
+  close: to close
 
 cheers:
   um: Um..

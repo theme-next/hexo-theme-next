@@ -232,6 +232,81 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
+  const stopDefault = (e) => {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    } else {
+      event.returnValue = false;
+    }
+  }
+
+  const select = (el) => {
+    el.style.backgroundColor = 'rgb(204, 204, 204)'
+    el.classList.add('selected')
+  }
+
+  const unselect = (el) => {
+    el.classList.remove("selected")
+    el.style.backgroundColor = ''
+  }
+
+  const goto = (url) => {
+    location.href = url
+  }
+
+  const keydownListenner = (event) => {
+    const div = document.querySelector('#search-result')
+    div.style.position = 'relative'
+    const list = document.querySelector(".search-result-list")
+    const li = document.querySelectorAll(".search-result-list li")
+    const first = li[0]
+    const last = li.length && li[li.length - 1]
+    let current = document.querySelector(".search-result-list .selected")
+    if (event.code == 'ArrowUp') {
+        if (!current) {
+          select(current = first)
+        } else {
+          unselect(current)
+          if(current.previousSibling) {
+            select(current = current.previousSibling)
+          }else {
+            select(current = last)
+          }
+        }
+        stopDefault(event);
+    } else if (event.code == 'ArrowDown') {
+        if (!current) {
+          select(current = first)
+        } else {
+          unselect(current)
+          if(current.nextSibling) {
+            select(current = current.nextSibling)
+          }else {
+            select(current = first)
+          }
+        }
+        stopDefault(event);
+    } else if (event.code == 'Enter'){
+      current && goto(current.querySelector('a').href)
+    }
+    if(current) {
+      let top = current.offsetHeight + current.offsetTop - current.offsetParent.offsetHeight
+      if (top - div.scrollTop > 0) {
+        div.scrollTo({
+          top: top + 20,
+          behavior: "smooth"
+        })
+      }
+      top = div.scrollTop - current.offsetTop
+      if (top > 0) {
+        div.scrollTo({
+          top: current.offsetTop - 20,
+          behavior: "smooth"
+        })
+      }
+    }
+  }
+
   if (CONFIG.localsearch.preload) {
     fetchData();
   }
@@ -254,6 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.search-pop-overlay').classList.add('search-active');
       input.focus();
       if (!isfetched) fetchData();
+      document.addEventListener('keydown', keydownListenner)
     });
   });
 
@@ -261,6 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const onPopupClose = () => {
     document.body.style.overflow = '';
     document.querySelector('.search-pop-overlay').classList.remove('search-active');
+    document.removeEventListener('keydown', keydownListenner)
   };
 
   document.querySelector('.search-pop-overlay').addEventListener('click', event => {
