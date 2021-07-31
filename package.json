@@ -21,6 +21,10 @@
     "url": "https://github.com/theme-next/hexo-theme-next/issues"
   },
   "homepage": "https://theme-next.org",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/theme-next"
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-theme-next": "^1.1.4",
