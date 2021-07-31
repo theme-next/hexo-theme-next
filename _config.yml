@@ -571,6 +571,8 @@ comments:
   storage: true
   # Lazyload all comment systems.
   lazyload: false
+  # Show on home page
+  display: true
   # Modify texts or order for any navs, here are some examples.
   nav:
     #disqus:
