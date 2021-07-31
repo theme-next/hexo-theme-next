@@ -42,11 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
       mousePos.Y = event.pageY;
     },
     mouseupHandler: function(event) {
+      var isdimmer = CONFIG.sidebar.dimmer;
       var deltaX = event.pageX - mousePos.X;
       var deltaY = event.pageY - mousePos.Y;
       var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
-      if (this.isSidebarVisible && (clickingBlankPart || event.target.matches('img.medium-zoom-image, .fancybox img'))) {
-        this.hideSidebar();
+      if (isdimmer) {
+        if (this.isSidebarVisible && (clickingBlankPart || event.target.matches('img.medium-zoom-image, .fancybox img'))) {
+          this.hideSidebar();
+        }
       }
     },
     clickHandler: function() {
