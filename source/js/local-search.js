@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   } else if (searchPath.endsWith('json')) {
     isXml = false;
   }
+
+  let filePath = CONFIG.root + searchPath;
+  // Use CDN to accelerate the speed of loading search.xml
+  if ('cdn' in CONFIG.localsearch && CONFIG.localsearch.cdn.enable === true && CONFIG.localsearch.cdn.url !== null){
+    filePath = CONFIG.localsearch.cdn.url;
+  }
+
   const input = document.querySelector('.search-input');
   const resultContent = document.getElementById('search-result');
 
@@ -207,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const fetchData = () => {
-    fetch(CONFIG.root + searchPath)
+    fetch(filePath)
       .then(response => response.text())
       .then(res => {
         // Get the contents from search data

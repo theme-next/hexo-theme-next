@@ -749,6 +749,11 @@ local_search:
   unescape: false
   # Preload the search data when the page loads.
   preload: false
+  # Use CDN to accelerate the speed of loading search.xml
+  cdn:
+    enable: false
+    # url: //cdn.jsdelivr.net/gh/<username>/<username>.github.io/search.xml
+    url: 
 
 # Swiftype Search API Key
 swiftype_key:
