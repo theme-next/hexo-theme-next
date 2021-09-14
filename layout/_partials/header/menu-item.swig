@@ -8,7 +8,7 @@
 
     {%- set menuIcon = '' %}
     {%- if theme.menu_settings.icons %}
-      {%- set menuIcon = '<i class="' + value.split('||')[1] | trim + ' fa-fw"></i>' %}
+      {%- set menuIcon = '<i class="fa fa-' + value.split('||')[1] | trim + ' fa-fw"></i>' %}
     {%- endif %}
     {%- set menuText = __('menu.' + name) | replace('menu.', '') %}
 
