@@ -646,6 +646,14 @@ gitalk:
   language:
 
 
+utterances:
+  enable: false
+  repo: # Repository to store issues E.g. theme-next/blog-comments
+  pathname: pathname # Issue title
+  # theme: github-light,github-dark,github-dark-orange,icy-dark,photon-dark,dark-blue,boxy-light
+  theme: boxy-light
+  cdn: https://utteranc.es/client.js # No need to change
+
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
 # See: https://theme-next.org/docs/third-party-services/post-widgets
