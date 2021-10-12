@@ -15,14 +15,12 @@ hexo.extend.filter.register('theme_inject', injects => {
   <script src="{{theme.utterances.cdn}}"
         repo="{{theme.utterances.repo}}"
         issue-term="{{theme.utterances.pathname}}"
-        theme="{{theme.utterances.utheme}}"
+        theme="{{theme.utterances.theme}}"
         crossorigin="anonymous"
         async>
     </script>
   </div>
   {% endif %}
   `);
-
-  // injects.bodyEnd.file('utterances', path.join(hexo.theme_dir, 'layout/_third-party/comments/utterances.swig'));
 
 });

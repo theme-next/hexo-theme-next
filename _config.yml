@@ -645,14 +645,28 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
 
-
+# Demo: https://utteranc.es/
 utterances:
   enable: false
   repo: # Repository to store issues E.g. theme-next/blog-comments
   pathname: pathname # Issue title
-  # theme: github-light,github-dark,github-dark-orange,icy-dark,photon-dark,dark-blue,boxy-light
+  # theme: github-light | github-dark | github-dark-orange | icy-dark | photon-dark | dark-blue | boxy-light
   theme: boxy-light
   cdn: https://utteranc.es/client.js # No need to change
+
+# Demo: https://giscus.app/
+giscus:
+  enable: false
+  repo: # Repository to store issues E.g. theme-next/blog-comments
+  repo_id: # Generated from giscus
+  category: General # Github Discussion Category
+  category_id: # Generated from giscus
+  pathname: pathname # Discuss title
+  reactions_enabled: 1
+  emit_metadata: 0
+  # theme: light | dark | dark_dimmed | dark_high_contrast | dark_protanopia | light_protanopia | transparent_dark | preferred_color_scheme
+  theme: dark_dimmed
+  cdn: https://giscus.app/client.js
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
