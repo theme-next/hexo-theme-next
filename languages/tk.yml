@@ -1,0 +1,90 @@
+---
+name: Türkmençe
+title:
+  archive: Arhiw
+  category: Bölüm
+  tag: Teg
+  schedule: Kalendar
+menu:
+  home: Baş sahypa
+  archives: Arhiw
+  categories: Bölümler
+  tags: Tegler
+  about: Saýt hakynda
+  search: Gözleg
+  schedule: Kalendar
+  sitemap: Saýtyň kartasy
+  commonweal: 404 sahypa
+sidebar:
+  overview: Syn
+  toc: Mazmuny
+post:
+  posted: Goýuldy
+  edited: Üýtgedildi
+  created: Döredildi
+  modified: Üýtgedildi
+  edit: Redaktirle
+  in: bölümde
+  read_more: Dowamyny oka
+  untitled: Atlandyrylmadyk
+  sticky: Salgylanma
+  views: Görüldi
+  related_posts: Meňzeş makalalar
+  copyright:
+    author: Makalanyň awtory
+    link: Makala salgylanma
+    license_title: Awtorlyk hukugy hakynda maglumat
+    license_content: "Eger-de goşmaça maglumat berilmedik bolsa, bu saýtdaky ähli maglumatlar %s lisenziýa bilen goragly."
+footer:
+  powered: "Генератор — %s"
+  total_views: Görülme sany
+  total_visitors: Girilen sany
+counter:
+  tag_cloud:
+    zero: Teg ýok.
+    one: 1 teg.
+    other: "%d teg bar."
+  categories:
+    zero: Bölüm ýok.
+    one: 1 bölüm.
+    other: "%d bölüm bar."
+  archive_posts:
+    zero: Makala tapylmady.
+    one: 1 makala.
+    other: "%d makala bar."
+state:
+  posts: Makalalar
+  tags: Tegler
+  categories: Bölümler
+search:
+  placeholder: Gözleg...
+cheers:
+  um: Hmm..
+  ok: OK
+  nice: Erbet däl
+  good: Gowy
+  great: Bet
+  excellent: Örän gowy
+keep_on: Ýazmagy dowam et.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+reward:
+  donate: Donat
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  paypal: PayPal
+  bitcoin: Bitcoin
+follow_me:
+  welcome: Meniň başga paýlaşma platformalarym
+accessibility:
+  nav_toggle: Görkez/Gizle
+  prev_page: Öňki sahypa
+  next_page: Indiki sahypa
+symbols_count_time:
+  count: Makalada symbollaryň mukdary
+  count_total: Symbollaryň umumy sany
+  time: Okalma wagty
+  time_total: Jemi okalma wagty
+  time_minutes: min.
