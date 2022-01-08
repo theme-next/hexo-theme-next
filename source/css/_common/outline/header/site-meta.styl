@@ -1,0 +1,46 @@
+.site-meta {
+  flex-grow: 1;
+  text-align: $site-meta-text-align;
+
+  +mobile() {
+    text-align: center;
+  }
+}
+
+.brand {
+  border-bottom: none;
+  color: var(--brand-color);
+  display: inline-block;
+  line-height: $font-size-title;
+  padding: 0 40px;
+  position: relative;
+
+  &:hover {
+    color: var(--brand-hover-color);
+  }
+}
+
+.site-title {
+  font-family: $font-family-logo;
+  font-size: $font-size-title;
+  font-weight: normal;
+  margin: 0;
+}
+
+.site-subtitle {
+  color: $subtitle-color;
+  font-size: $font-size-subtitle;
+  margin: 10px 0;
+}
+
+.use-motion {
+  .brand {
+    opacity: 0;
+  }
+
+  .site-title, .site-subtitle, .custom-logo-image {
+    opacity: 0;
+    position: relative;
+    top: -10px;
+  }
+}

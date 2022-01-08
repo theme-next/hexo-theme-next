@@ -1,4 +1,5 @@
 ---
+name: 한국어
 title:
   archive: 아카이브
   category: 카테고리
@@ -24,28 +25,18 @@ post:
   modified: Updated at
   edit: Edit this post
   in: In
-  more: more
   read_more: 더 읽어보기
   untitled: 제목 없음
   sticky: 고정
-  toc_empty: 목차 없음
   views: Views
-  comments_count: 댓글
   related_posts: Related Posts
-  copy_button: 복사
-  copy_success: Copied
-  copy_failure: Copy failed
   copyright:
     author: Post author
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
-page:
-  totally: 모두
-  tags: 태그
 footer:
   powered: "Powered by %s"
-  theme: Theme
   total_views: Total Views
   total_visitors: Total Visitors
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "총 %d개의 포스트"
 state:
   posts: 포스트
-  pages: 페이지
   tags: 태그
   categories: 카테고리
 search:
@@ -84,8 +74,10 @@ reward:
   donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
-gitmentbutton: Show comments from Gitment
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: 이전 페이지

@@ -1,1 +1,1 @@
-{% include 'muse.swig' %}
+{{- next_js('schemes/muse.js') }}

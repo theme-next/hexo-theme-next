@@ -1,0 +1,31 @@
+.site-nav-toggle, .site-nav-right {
+  display: none;
+
+  +mobile() {
+    flex-column();
+  }
+
+  .toggle {
+    color: var(--text-color);
+    padding: 10px;
+    width: 22px;
+
+    .toggle-line {
+      background: var(--text-color);
+      border-radius: 1px;
+    }
+  }
+}
+
+.site-nav {
+  display: block;
+
+  +mobile() {
+    clear: both;
+    display: none;
+  }
+
+  &.site-nav-on {
+    display: block;
+  }
+}

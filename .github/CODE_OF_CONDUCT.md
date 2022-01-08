@@ -1,6 +1,9 @@
-<div align="right">Language: :us:
-<a title="Chinese" href="../docs/zh-CN/CODE_OF_CONDUCT.md">:cn:</a>
-<a title="Russian" href="../docs/ru/CODE_OF_CONDUCT.md">:ru:</a></div>
+<div align="right">
+  Language:
+  :us:
+  <a title="Chinese" href="../docs/zh-CN/CODE_OF_CONDUCT.md">:cn:</a>
+  <a title="Russian" href="../docs/ru/CODE_OF_CONDUCT.md">:ru:</a>
+</div>
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 

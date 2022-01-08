@@ -1,0 +1,42 @@
+.comments {
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.comment-button-group {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  margin: 1em 0;
+
+  .comment-button {
+    margin: .1em .2em;
+
+    &.active {
+      background: var(--btn-default-hover-bg);
+      border-color: var(--btn-default-hover-border-color);
+      color: var(--btn-default-hover-color);
+    }
+  }
+}
+
+.comment-position {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.tabs-comment {
+  background: var(--content-bg-color);
+  margin-top: 4em;
+  padding-top: 0;
+
+  .comments {
+    border: 0;
+    box-shadow: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

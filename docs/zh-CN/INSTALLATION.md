@@ -2,16 +2,17 @@
 
 <h2 align="center">步骤 1 &rarr; 进入 Hexo 目录</h2>
 
-进入 **hexo 根**目录。这一目录中应当有 `node_modules`、`source`、`themes` 等若干子目录：
-   ```sh
-   $ cd hexo
-   $ ls
-   _config.yml  node_modules  package.json  public  scaffolds  source  themes
-   ```
+进入 **Hexo 根**目录。这一目录中应当有 `node_modules`、`source`、`themes` 等若干子目录：
+
+```sh
+$ cd hexo
+$ ls
+_config.yml  node_modules  package.json  public  scaffolds  source  themes
+```
 
 <h2 align="center">步骤 2 &rarr; 获取 NexT</h2>
 
-<p align="center">从 GitHub 下载主题。</br>
+<p align="center">从 GitHub 下载主题。<br>
 为了下载这一主题，共有 <b>3 种选项</b>可选。你需要选择其中<b>唯一一个方式</b>。</p>
 
 ### 选项 1：下载[最新 release 版本][releases-latest-url]
@@ -100,7 +101,7 @@
 
 <h2 align="center">步骤 3 &rarr; 完成配置</h2>
 
-在 **hexo 根配置**文件 `_config.yml` 中设置你的主题：
+在 **Hexo 站点配置文件**（`/_config.yml`）中设置你的主题：
 
 ```yml
 theme: next

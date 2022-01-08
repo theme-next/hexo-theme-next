@@ -1,5 +1,5 @@
 /**
- * label.js | https://theme-next.org/docs/tag-plugins/label/
+ * label.js | https://theme-next.org/docs/tag-plugins/label
  */
 
 /* global hexo */

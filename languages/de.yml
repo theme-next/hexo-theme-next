@@ -1,4 +1,5 @@
 ---
+name: Deutsch
 title:
   archive: Archiv
   category: Kategorie
@@ -24,28 +25,18 @@ post:
   modified: Geändert am
   edit: Diesen Beitrag bearbeiten
   in: in
-  more: mehr
   read_more: Weiterlesen
   untitled: Unbenannt
   sticky: Angepinnt
-  toc_empty: Dieser Artikel hat kein Inhaltsverzeichnis
   views: Aufrufe
-  comments_count: Kommentare
   related_posts: Ähnliche Beiträge
-  copy_button: Kopieren
-  copy_success: Kopiert
-  copy_failure: Kopieren fehlgeschlagen
   copyright:
     author: Beitragsautor
     link: Beitragslink
     license_title: Urheberrechtshinweis
     license_content: "Alle Artikel in diesem Blog sind unter %s lizenziert, außer es wird anders angegeben."
-page:
-  totally: Gesamt
-  tags: schlagwörter
 footer:
   powered: "Erstellt mit  %s"
-  theme: Design
   total_views: Alle Aufrufe
   total_visitors: Alle Besucher
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "Insgesamt %d Artikel."
 state:
   posts: Artikel
-  pages: Seiten
   tags: schlagwörter
   categories: Kategorien
 search:
@@ -84,8 +74,10 @@ reward:
   donate: Spenden
   wechatpay: WeChat Bezahlung
   alipay: Alipay
+  paypal: PayPal
   bitcoin: Bitcoin
-gitmentbutton: Zeige Kommentare von Gitment
+follow_me:
+  welcome: Welcome to my other publishing channels
 accessibility:
   nav_toggle: Navigationsleiste an/ausschalten
   prev_page: Vorherige Seite

@@ -10,13 +10,6 @@ node_modules/
 source/lib/*
 
 # Track internal libraries & Ignore unused verdors files
-source/lib/font-awesome/less/
-source/lib/font-awesome/scss/
-!source/lib/font-awesome/*
-
-!source/lib/jquery/
-
-source/lib/ua-parser-js/*
-!source/lib/ua-parser-js/dist/
-
+!source/lib/font-awesome/
+!source/lib/anime.min.js
 !source/lib/velocity/

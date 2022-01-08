@@ -1,4 +1,5 @@
 ---
+name: 繁體中文（香港）
 title:
   archive: 歸檔
   category: 分類
@@ -24,28 +25,18 @@ post:
   modified: 修改時間
   edit: 編輯
   in: 分類於
-  more: 更多
   read_more: 閱讀全文
   untitled: 未命名
   sticky: 置頂
-  toc_empty: 此文章未包含目錄
   views: 閱讀次數
-  comments_count: 評論數
   related_posts: 相關文章
-  copy_button: 複製
-  copy_success: 複製成功
-  copy_failure: 複製失敗
   copyright:
     author: 博主
     link: 文章連結
     license_title: 版權聲明
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
-page:
-  totally: 共有
-  tags: 標籤
 footer:
   powered: "由 %s 強力驅動"
-  theme: 主題
   total_views: 總瀏覽次數
   total_visitors: 訪客總數
 counter:
@@ -63,7 +54,6 @@ counter:
     other: "目前共有 %d 篇文章。"
 state:
   posts: 文章
-  pages: 頁面
   tags: 標籤
   categories: 分類
 search:
@@ -84,8 +74,10 @@ reward:
   donate: 打賞
   wechatpay: 微信支付
   alipay: 支付寶
+  paypal: PayPal
   bitcoin: 比特幣
-gitmentbutton: 顯示 Gitment 評論
+follow_me:
+  welcome: 歡迎關注我的其它發布渠道
 accessibility:
   nav_toggle: 切換導航欄
   prev_page: 上一頁

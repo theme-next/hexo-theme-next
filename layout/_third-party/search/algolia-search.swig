@@ -1,18 +1,6 @@
-{% if theme.algolia_search.enable %}
+{%- set algolia_search_uri = theme.vendors.algolia_search or next_vendors('//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js') %}
+{%- set instant_search_uri = theme.vendors.instant_search or next_vendors('//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js') %}
+<script src="{{ algolia_search_uri }}"></script>
+<script src="{{ instant_search_uri }}"></script>
 
-  {# S: Include Algolia instantsearch.js library #}
-  {% set algolia_instant_css = url_for(theme.vendors._internal + '/algolia-instant-search/instantsearch.min.css') %}
-  {% if theme.vendors.algolia_instant_css %}
-    {% set algolia_instant_css = theme.vendors.algolia_instant_css %}
-  {% endif %}
-  <link rel="stylesheet" href="{{ algolia_instant_css }}"/>
-
-  {% set algolia_instant_js = url_for(theme.vendors._internal + '/algolia-instant-search/instantsearch.min.js') %}
-  {% if theme.vendors.algolia_instant_js %}
-    {% set algolia_instant_js = theme.vendors.algolia_instant_js %}
-  {% endif %}
-  <script src="{{ algolia_instant_js }}"></script>
-  {# E: Include Algolia instantsearch.js library #}
-
-  <script src="{{ url_for(theme.js) }}/src/algolia-search.js?v={{ version }}"></script>
-{% endif %}
+{{- next_js('algolia-search.js') }}
