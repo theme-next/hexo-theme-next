@@ -49,6 +49,8 @@ favicon:
 
 # Show multilingual switcher in footer.
 language_switcher: false
+# Ignore default language in path.
+ignore_default_language: true
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
