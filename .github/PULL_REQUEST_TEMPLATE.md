@@ -30,18 +30,37 @@
 
 ## What is the current behavior?
 <!-- Please describe the current behavior that you are modifying, or link to a relevant issue -->
-The avatar can be changed when mouse on it
+The avatar can be changed when mouse on it.
+
+And also, the original avatar and the other avatar can both be defined in `themes/next/_config.yml`。
 
 Issue resolved: N/A
 
 ## What is the new behavior?
 <!-- Description about this pull, in several words -->
 
-- Screenshots with this changes: N/A
-- Link to demo site with this changes: N/A
+- Screenshots with this changes:
+
+it looks like this:
+
+![avatar-hover-change](./avatar-hover-change.gif)
+
+- Link to demo site with this changes: [Click to jump](http://hexo.sakebow.cn)
 
 ### How to use?
-In NexT `_config.yml`:
-```yml
 
+In NexT `_config.yml`:
+
+```yml
+# Sidebar Avatar
+avatar:
+  url: your_avatar_image
+  # set another image so that your avatar will be changed when mouse over it
+  # if configured as the same as `url`, it will look like nothing happened.
+  url_changed: another_avatar_image
 ```
+
+However, it's worthy mentioned that:
+
++ `url_changed` can **only** take effect when `url` has been already configured
++ if `url_changed` is not configured, your avatar will remain as it is
