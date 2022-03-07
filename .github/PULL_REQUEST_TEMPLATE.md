@@ -10,9 +10,9 @@
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
 - [ ] The commit message follows [guidelines for NexT](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
-- [ ] Tests for the changes was maked (for bug fixes / features).
+- [x] Tests for the changes was maked (for bug fixes / features).
    - [ ] Muse | Mist have been tested.
-   - [ ] Pisces | Gemini have been tested.
+   - [x] Pisces | Gemini have been tested.
 - [ ] [Docs](https://github.com/theme-next/theme-next.org/tree/source/source/docs) in [NexT website](https://theme-next.org/docs/) have been added / updated (for features).
 <!-- For adding Docs edit needed file here: https://github.com/theme-next/theme-next.org/tree/source/source/docs and create PR with this changes here: https://github.com/theme-next/theme-next.org/pulls -->
 
@@ -20,7 +20,7 @@
 <!-- What kind of change does this PR introduce? -->
 
 - [ ] Bugfix.
-- [ ] Feature.
+- [x] Feature.
 - [ ] Code style update (formatting, local variables).
 - [ ] Refactoring (no functional changes, no api changes).
 - [ ] Build & CI related changes.
@@ -30,6 +30,7 @@
 
 ## What is the current behavior?
 <!-- Please describe the current behavior that you are modifying, or link to a relevant issue -->
+The avatar can be changed when mouse on it
 
 Issue resolved: N/A
 
