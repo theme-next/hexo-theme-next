@@ -97,10 +97,10 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-# scheme: Muse
+scheme: Muse
 #scheme: Mist
 # scheme: Pisces
-scheme: Gemini
+# scheme: Gemini
 
 # Dark Mode
 darkmode: false
@@ -164,7 +164,7 @@ sidebar:
 avatar:
   # Replace the default image and set the url here.
   url: /images/avatar.jpg
-  url_changed: #/images/avatarc.png
+  url_changed: /images/avatarc.png
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.

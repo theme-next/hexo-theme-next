@@ -11,7 +11,7 @@
 
 - [ ] The commit message follows [guidelines for NexT](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
 - [x] Tests for the changes was maked (for bug fixes / features).
-   - [ ] Muse | Mist have been tested.
+   - [x] Muse | Mist have been tested.
    - [x] Pisces | Gemini have been tested.
 - [ ] [Docs](https://github.com/theme-next/theme-next.org/tree/source/source/docs) in [NexT website](https://theme-next.org/docs/) have been added / updated (for features).
 <!-- For adding Docs edit needed file here: https://github.com/theme-next/theme-next.org/tree/source/source/docs and create PR with this changes here: https://github.com/theme-next/theme-next.org/pulls -->
