@@ -41,9 +41,11 @@ Issue resolved: N/A
 
 - Screenshots with this changes:
 
-it looks like this:
+It looks like this:
 
 ![avatar-hover-change](./avatar-hover-change.gif)
+
+or look up [here](http://resources.sakebow.cn/markdown/avatar-hover-change.gif)
 
 - Link to demo site with this changes: [Click to jump](http://hexo.sakebow.cn)
 
@@ -64,3 +66,9 @@ However, it's worthy mentioned that:
 
 + `url_changed` can **only** take effect when `url` has been already configured
 + if `url_changed` is not configured, your avatar will remain as it is
+
+But after reviewing,  it seems to cause a new problem:
+
+If users would like to add some events on site-author-image, the events will be overwritten for the highest priority of events defined in HTML tags.
+
+I wonder if there's any other solutions.
