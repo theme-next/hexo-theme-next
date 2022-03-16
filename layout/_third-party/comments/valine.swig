@@ -8,21 +8,26 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
     });
+    const requiredFields = '{{ theme.valine.requiredFields }}'.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
     new Valine({
       el         : '#valine-comments',
-      verify     : {{ theme.valine.verify }},
-      notify     : {{ theme.valine.notify }},
+      // verify     : {{ theme.valine.verify }},
+      // notify     : {{ theme.valine.notify }},
       appId      : '{{ theme.valine.appid }}',
       appKey     : '{{ theme.valine.appkey }}',
       placeholder: {{ theme.valine.placeholder | json }},
       avatar     : '{{ theme.valine.avatar }}',
       meta       : guest,
+      requiredFields: requiredFields,
       pageSize   : '{{ theme.valine.pageSize }}' || 10,
       visitor    : {{ theme.valine.visitor }},
       lang       : '{{ theme.valine.language }}' || 'zh-cn',
       path       : location.pathname,
       recordIP   : {{ theme.valine.recordIP }},
-      serverURLs : '{{ theme.valine.serverURLs }}'
+      serverURLs : '{{ theme.valine.serverURLs }}',
+      enableQQ   : {{ theme.valine.enableQQ }}
     });
   }, window.Valine);
 });
