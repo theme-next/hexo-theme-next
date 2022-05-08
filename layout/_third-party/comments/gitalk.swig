@@ -14,10 +14,10 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       owner       : '{{ theme.gitalk.github_id }}',
       admin       : ['{{ theme.gitalk.admin_user }}'],
       id          : '{{ gitalk_md5(page.path) }}',
-      {%- if theme.gitalk.language == '' %}
-        language: window.navigator.language || window.navigator.userLanguage,
-      {% else %}
+      {%- if theme.gitalk.language %}
         language: '{{ theme.gitalk.language }}',
+      {%- else %}
+        language: window.navigator.language || window.navigator.userLanguage,
       {%- endif %}
       distractionFreeMode: {{ theme.gitalk.distraction_free_mode }}
     });
