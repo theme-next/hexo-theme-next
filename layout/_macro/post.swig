@@ -222,8 +222,10 @@
         {{ partial('_partials/post/post-reward.swig') }}
       {%- endif %}
 
-      {%- if theme.creative_commons.license and theme.creative_commons.post %}
-        {{ partial('_partials/post/post-copyright.swig') }}
+      {%- if post.copyright !== false %}
+        {%- if theme.creative_commons.license and theme.creative_commons.post %}
+          {{ partial('_partials/post/post-copyright.swig') }}
+        {%- endif %}
       {%- endif %}
 
       {%- if theme.follow_me %}
