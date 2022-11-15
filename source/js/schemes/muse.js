@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
   var SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
   var SIDEBAR_DISPLAY_DURATION = 200;
   var mousePos = {};
+  var isRemove = CONFIG.sidebar.display === 'remove';
+
+  if (isRemove) {
+    updateFooterPosition();
+    window.addEventListener('resize', updateFooterPosition);
+    window.addEventListener('scroll', updateFooterPosition);
+    return;
+  }
 
   var sidebarToggleLines = {
     lines: document.querySelector('.sidebar-toggle'),
