@@ -104,6 +104,7 @@ NexT.boot.motion = function() {
       .add(NexT.motion.middleWares.sidebar)
       .bootstrap();
   }
+  if(CONFIG.sidebar.display === 'remove') return;
   NexT.utils.updateSidebarPosition();
 };
 
