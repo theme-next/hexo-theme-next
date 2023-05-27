@@ -52,6 +52,21 @@ $(document).ready(function() {
     });
   }
 
-  initAffix();
-  resizeListener();
+NexT.utils.getAffixParam = function() {
+  const sidebarOffset = CONFIG.sidebar.offset || 12;
+
+  let headerOffset = document.querySelector('.header-inner').offsetHeight;
+  let footerOffset = document.querySelector('.footer').offsetHeight;
+
+  document.querySelector('.sidebar').style.marginTop = headerOffset + sidebarOffset + 'px';
+
+  return {
+    top   : headerOffset,
+    bottom: footerOffset
+  };
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  Affix.init(document.querySelector('.sidebar-inner'), NexT.utils.getAffixParam());
 });

@@ -44,10 +44,8 @@ $(document).ready(function() {
     .add(NexT.motion.middleWares.postList)
     .add(NexT.motion.middleWares.sidebar);
 
-  $(document).trigger('motion:before');
-
-  // Bootstrap Motion.
-  CONFIG.motion.enable && NexT.motion.integrator.bootstrap();
-
-  $(document).trigger('bootstrap:after');
+document.addEventListener('DOMContentLoaded', () => {
+  NexT.boot.registerEvents();
+  NexT.boot.refresh();
+  NexT.boot.motion();
 });

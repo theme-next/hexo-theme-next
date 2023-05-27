@@ -1,10 +1,8 @@
 /* global instantsearch, CONFIG */
 
-$(document).ready(function() {
-  var algoliaSettings = CONFIG.algolia;
-  var isAlgoliaSettingsValid = algoliaSettings.applicationID
-                            && algoliaSettings.apiKey
-                            && algoliaSettings.indexName;
+document.addEventListener('DOMContentLoaded', () => {
+  const algoliaSettings = CONFIG.algolia;
+  const { indexName, appID, apiKey } = algoliaSettings;
 
   if (!isAlgoliaSettingsValid) {
     window.console.error('Algolia Settings are invalid.');

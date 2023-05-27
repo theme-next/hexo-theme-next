@@ -199,10 +199,72 @@ NexT.utils = NexT.$u = {
           var shouldRecalculateAspect = newDimension.width > oldDimension.width
                                      || newDimension.height < oldDimension.height;
 
-          // 163 Music Player has a fixed height, so we need to reset the aspect radio
-          if (shouldRecalculateAspect) {
-            wrap.style.paddingTop = getAspectRadio(newDimension.width, oldDimension.height) + '%';
-          }
+  registerLangSelect: function() {
+    let selects = document.querySelectorAll('.lang-select');
+    selects.forEach(sel => {
+      sel.value = CONFIG.page.lang;
+      sel.addEventListener('change', () => {
+        let target = sel.options[sel.selectedIndex];
+        document.querySelectorAll('.lang-select-label span').forEach(span => span.innerText = target.text);
+        let url = target.dataset.href;
+        window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
+      });
+    });
+  },
+
+  registerSidebarTOC: function() {
+    const navItems = document.querySelectorAll('.post-toc li');
+    const sections = [...navItems].map(element => {
+      var link = element.querySelector('a.nav-link');
+      var target = document.getElementById(decodeURI(link.getAttribute('href')).replace('#', ''));
+      // TOC item animation navigate.
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        var offset = target.getBoundingClientRect().top + window.scrollY;
+        window.anime({
+          targets  : document.scrollingElement,
+          duration : 500,
+          easing   : 'linear',
+          scrollTop: offset + 10
+        });
+      });
+      return target;
+    });
+
+    var tocElement = document.querySelector('.post-toc-wrap');
+    function activateNavByIndex(target) {
+      if (target.classList.contains('active-current')) return;
+
+      document.querySelectorAll('.post-toc .active').forEach(element => {
+        element.classList.remove('active', 'active-current');
+      });
+      target.classList.add('active', 'active-current');
+      var parent = target.parentNode;
+      while (!parent.matches('.post-toc')) {
+        if (parent.matches('li')) parent.classList.add('active');
+        parent = parent.parentNode;
+      }
+      // Scrolling to center active TOC element if TOC content is taller then viewport.
+      window.anime({
+        targets  : tocElement,
+        duration : 200,
+        easing   : 'linear',
+        scrollTop: tocElement.scrollTop - (tocElement.offsetHeight / 2) + target.getBoundingClientRect().top - tocElement.getBoundingClientRect().top
+      });
+    }
+
+    function findIndex(entries) {
+      let index = 0;
+      let entry = entries[index];
+      if (entry.boundingClientRect.top > 0) {
+        index = sections.indexOf(entry.target);
+        return index === 0 ? 0 : index - 1;
+      }
+      for (; index < entries.length; index++) {
+        if (entries[index].boundingClientRect.top <= 0) {
+          entry = entries[index];
+        } else {
+          return sections.indexOf(entry.target);
         }
       }
     });
