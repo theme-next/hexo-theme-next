@@ -1,0 +1,106 @@
+name: Esperanto
+
+title:
+  archive: Arkivo
+  category: Kategorio
+  tag: Etikedo
+  schedule: Horaro
+
+menu:
+  home: Ĉefpaĝo
+  archives: Arkivoj
+  categories: Kategorioj
+  tags: Etikedoj
+  about: Pri
+  search: Serĉi
+  schedule: Horaro
+  sitemap: Retejmapo
+  commonweal: Commonweal 404
+
+sidebar:
+  overview: Superrigardo
+  toc: Enhavtabelo
+
+post:
+  posted: Afiŝita je
+  edited: Redaktita je
+  created: Kreita por
+  modified: Modifita por
+  edit: Redaktu ĉi tiun afiŝon
+  in: En
+  read_more: Legi pli
+  untitled: Neniu titolo
+  sticky: Alpingli al la supro
+  views: Rigardoj
+  related_posts: Rilataj afiŝoj
+  copyright:
+    author: Aŭtoro de ĉi tiu afiŝo
+    link: Ligilo de ĉi tui afiŝo
+    license_title: Copyright
+    license_content: "Ĉiuj artikoloj en ĉi tiu blogo estas licencita sub %s krom se kroma permesilo estas specifita."
+
+footer:
+  powered: "Funkciigita de %s"
+  total_views: Tutaj rigardoj
+  total_visitors: Tutaj visitoj
+
+counter:
+  tag_cloud:
+    zero: Neniuj etikedoj
+    one: Entute 1 etikedo
+    other: "Entute %d etikedoj"
+
+  categories:
+    zero: Neniuj kategorioj
+    one: Entute 1 kategorio
+    other: "Entute %d kategorioj"
+
+  archive_posts:
+    zero: Neniuj afiŝoj.
+    one: Entute 1 afiŝo.
+    other: "Entute %d afiŝoj."
+
+state:
+  posts: afiŝoj
+  tags: etikedoj
+  categories: kategorioj
+
+search:
+  placeholder: Serĉante...
+
+cheers:
+  um: Um..
+  ok: malaĉe
+  nice: bonete
+  good: bone
+  great: bonege
+  excellent: perfekte
+
+keep_on: Daŭre afiŝu!
+
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+
+reward:
+  donate: Doni
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  paypal: PayPal
+  bitcoin: Bitcoin
+
+follow_me:
+  welcome: Bonvenon al miaj aliaj eldonkanaloj
+
+accessibility:
+  nav_toggle: Baskuligi navigacian stangon
+  prev_page: Antaŭa paĝo
+  next_page: Sekva paĝo
+
+symbols_count_time:
+  count: Nombro da signoj en la artikolo
+  count_total: Nombro da signoj en la tuta reto
+  time: Tempo de rigardo
+  time_total: Tempo tuta de rigardo
+  time_minutes: minutoj.
