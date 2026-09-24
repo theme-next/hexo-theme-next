@@ -1,0 +1,37 @@
+{
+  "name": "他说",
+  "short_name": "他说",
+  "description": "梁栋烨的博客网站。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#464aff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/images/logo.ico",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.ico",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.ico",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
